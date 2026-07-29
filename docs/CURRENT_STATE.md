@@ -23,6 +23,7 @@ done, and nothing done is inflated into more than it is.
 | Content factory + validator | **PASS** | `npm run validate:content` |
 | Direction-lock static scan | **PASS** | `npm run validate:direction-lock` |
 | Java 21 + Gradle 8.14 | **PASS** | `bash tools/bootstrap/doctor.sh` |
+| Kotlin/JVM run-capture core | **PASS** | `gradle test` in `native/android-running-plugin` — 9 tests |
 | Supabase CLI local stack | `BLOCKED_TOOLCHAIN` | No Docker daemon (`/var/run/docker.sock` absent). Mitigated: migrations run against real PostgreSQL 16; see ADR-002. |
 | Android SDK / NDK | `BLOCKED_TOOLCHAIN` | `dl.google.com` is refused by the environment network policy (`CONNECT` → 403). No SDK can be fetched. |
 | Unity 6.3 LTS Editor | `BLOCKED_TOOLCHAIN` | No Editor, no Hub, no licence, and installation requires both network access and licence acceptance. |
@@ -79,7 +80,7 @@ carried through every report in this repository.
 | Area | Status |
 |---|---|
 | Unity client (scenes, prefabs, UI, combat, streaming) | not started — `BLOCKED_TOOLCHAIN` |
-| Android Kotlin foreground service runtime behaviour | source only; no Android SDK to compile against |
+| Android foreground service, Health Connect, WorkManager queue | not written — `BLOCKED_TOOLCHAIN`, no Android SDK |
 | Health Connect integration | design + schema only |
 | Edge Functions (Deno) | not started |
 | Friends, crew, leaderboards, Ghost Trial, season runtime | schema groundwork only |

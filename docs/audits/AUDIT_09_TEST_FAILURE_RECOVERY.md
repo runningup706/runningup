@@ -44,6 +44,12 @@ defect as F-09-1: the suite looked healthier than it was.
 The Daily Momentum two-statement update (see AUDIT_03) only surfaced because the tests run
 against a real database with real CHECK constraints.
 
+**F-09-5 (medium, fixed) — a durability bug the tests found immediately.** The run journal
+reported a torn write as *clean* when the trailing fragment was shorter than an 8-byte
+header: the scan loop simply walked past it. A run interrupted at exactly the wrong moment
+would have been declared intact. Fixed by treating any trailing bytes as a truncation
+point. Two of the nine journal tests failed before the fix and pass after it.
+
 ## Anti-pattern sweep
 
 | Anti-pattern | Present? |
@@ -64,7 +70,10 @@ against a real database with real CHECK constraints.
 | Corrupted journal (non-monotonic samples) | yes — rejected as an integrity signal, not repaired |
 | Physically impossible split | yes — discarded rather than recorded |
 | Concurrent same-day sessions | partial — sequential proof only, R-05 open |
-| Process kill / reboot / offline queue | **not covered** — needs the Android runtime |
+| Process kill mid-write | yes — only the in-flight record is lost, and the damage is reported |
+| Reboot (file-only recovery) | yes — 250 records recovered byte-identically |
+| Disk corruption (CRC mismatch) | yes — recovery stops at the bad record |
+| Offline upload queue, foreground service | **not covered** — needs the Android runtime |
 | Migration failure and forward-fix | **not covered** — no upgrade-from-prior-release path exists yet, since this is the first schema |
 
 ## Verdict: **PASS** for what exists; two coverage gaps recorded honestly

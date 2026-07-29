@@ -20,7 +20,7 @@ measurement are impossible in this environment and are reported as blocked, not 
 | Gate 1 — reproducible foundation + first Android smoke | **PARTIAL** | Tooling, scripts and CI exist. `BLOCKED_TOOLCHAIN` for the APK. |
 | Gate 2 — Supabase local, security, ledger | **PASS (adapted)** | Verified on real PostgreSQL 16 + pgTAP; see ADR-002 |
 | Gate 3 — Runner Passport, all start routes | **PASS (domain)** | 8 fixtures green; no UI exists yet |
-| Gate 4 — real run capture, verification, recovery | **BLOCKED_TOOLCHAIN** | Kotlin source authored, cannot compile without the Android SDK |
+| Gate 4 — real run capture, verification, recovery | **PARTIAL** | Append-only journal compiled and tested on the JVM (9/9). The foreground service and Health Connect need the Android SDK: `BLOCKED_TOOLCHAIN`. |
 | Gate 5 — reward, momentum, Monthly Apex 1000 | **PASS** | 44 pgTAP + 18 unit tests over the full ladder |
 | Gate 6 — content pipeline + duplicate validator | **PASS** | Caught and fixed a real reskin |
 | Gate 7 — full launch content | **DATA_PASS** | All 18 categories at floor as validated data; no playable scenes |
@@ -42,6 +42,7 @@ Every number below came from a command that was actually run.
 | Migrations from empty DB | `for f in migrations/*.sql; psql -f $f` | 8/8 applied clean |
 | Seed + content gate | `psql -f backend/supabase/seed.sql` | 16 categories verified in-database |
 | Database suite | `pg_prove backend/supabase/tests/pgtap/*.sql` | **Files=6, Tests=136, Result: PASS** |
+| Run-capture core | `gradle test` (Kotlin/JVM) | **9 run, 0 failed** |
 
 ## Launch content actually implemented
 
