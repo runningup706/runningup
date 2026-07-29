@@ -1,0 +1,640 @@
+{
+  "generated_by": "tools/anti-cheat-simulator/simulate.mjs",
+  "detection_version": "anticheat.v1.0.0",
+  "thresholds": {
+    "max_instant_speed_mps": 12.5,
+    "max_acceleration_mps2": 6,
+    "max_sample_gap_meters": 250,
+    "poor_accuracy_meters": 50,
+    "poor_accuracy_share_limit": 0.35,
+    "min_pace_coefficient_of_variation": 0.012,
+    "max_device_clock_skew_seconds": 300,
+    "severe_device_clock_skew_seconds": 3600,
+    "max_distance_mismatch_ratio": 0.05
+  },
+  "totals": {
+    "normal_fixtures": 38,
+    "attack_fixtures": 14,
+    "true_positive": 14,
+    "false_negative": 0,
+    "true_negative": 38,
+    "false_positive": 0,
+    "honest_pending_review": 0
+  },
+  "metrics": {
+    "precision": 1,
+    "recall": 1,
+    "false_positive_rate": 0,
+    "honest_pending_rate": 0
+  },
+  "results": [
+    {
+      "id": "normal_distance_400m",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_800m",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_1km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_1mile",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_2km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_3km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_5km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_8km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_10km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_12km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_15km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_10mile",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_20km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_half",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_25km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_30km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_32km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_35km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_marathon",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_distance_50km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_duration_10min",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_duration_15min",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_duration_20min",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_duration_30min",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_duration_45min",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_duration_60min",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_duration_75min",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_duration_90min",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_duration_120min",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_duration_180min",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_run_walk_beginner",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_structured_intervals",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_structured_tempo",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_structured_progression",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_structured_fartlek",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "A",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_treadmill_8km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "B",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_indoor_8km",
+      "kind": "normal",
+      "expectation": "verified",
+      "status": "verified",
+      "grade": "B",
+      "suspicion": 0,
+      "reasons": [],
+      "correct": true
+    },
+    {
+      "id": "normal_poor_accuracy_urban",
+      "kind": "normal",
+      "expectation": "verified_or_limited",
+      "status": "verified_limited",
+      "grade": "B",
+      "suspicion": 0.2,
+      "reasons": [
+        "poor_accuracy"
+      ],
+      "correct": true
+    },
+    {
+      "id": "attack_teleport",
+      "kind": "attack",
+      "expectation": "flagged",
+      "status": "rejected",
+      "grade": "X",
+      "suspicion": 0.96,
+      "reasons": [
+        "impossible_speed",
+        "impossible_acceleration",
+        "teleport"
+      ],
+      "correct": true
+    },
+    {
+      "id": "attack_vehicle_speed",
+      "kind": "attack",
+      "expectation": "flagged",
+      "status": "rejected",
+      "grade": "X",
+      "suspicion": 0.8,
+      "reasons": [
+        "impossible_speed"
+      ],
+      "correct": true
+    },
+    {
+      "id": "attack_bicycle_speed",
+      "kind": "attack",
+      "expectation": "flagged",
+      "status": "pending_review",
+      "grade": "C",
+      "suspicion": 0.55,
+      "reasons": [
+        "vehicle_like_speed"
+      ],
+      "correct": true
+    },
+    {
+      "id": "attack_impossible_acceleration",
+      "kind": "attack",
+      "expectation": "flagged",
+      "status": "rejected",
+      "grade": "X",
+      "suspicion": 0.9,
+      "reasons": [
+        "impossible_speed",
+        "impossible_acceleration"
+      ],
+      "correct": true
+    },
+    {
+      "id": "attack_synthetic_perfect_route",
+      "kind": "attack",
+      "expectation": "flagged",
+      "status": "pending_review",
+      "grade": "C",
+      "suspicion": 0.55,
+      "reasons": [
+        "synthetic_route"
+      ],
+      "correct": true
+    },
+    {
+      "id": "attack_nonce_replay",
+      "kind": "attack",
+      "expectation": "flagged",
+      "status": "rejected",
+      "grade": "X",
+      "suspicion": 1,
+      "reasons": [
+        "nonce_replay"
+      ],
+      "correct": true
+    },
+    {
+      "id": "attack_duplicate_import",
+      "kind": "attack",
+      "expectation": "flagged",
+      "status": "rejected",
+      "grade": "X",
+      "suspicion": 1,
+      "reasons": [
+        "duplicate_fingerprint"
+      ],
+      "correct": true
+    },
+    {
+      "id": "attack_device_clock_tamper",
+      "kind": "attack",
+      "expectation": "flagged",
+      "status": "pending_review",
+      "grade": "C",
+      "suspicion": 0.6,
+      "reasons": [
+        "device_clock_skew_severe"
+      ],
+      "correct": true
+    },
+    {
+      "id": "attack_declared_distance_inflation",
+      "kind": "attack",
+      "expectation": "flagged",
+      "status": "pending_review",
+      "grade": "C",
+      "suspicion": 0.45,
+      "reasons": [
+        "distance_mismatch"
+      ],
+      "correct": true
+    },
+    {
+      "id": "attack_journal_reordered",
+      "kind": "attack",
+      "expectation": "flagged",
+      "status": "rejected",
+      "grade": "X",
+      "suspicion": 0.76,
+      "reasons": [
+        "teleport",
+        "sample_discontinuity"
+      ],
+      "correct": true
+    },
+    {
+      "id": "attack_non_running_trail",
+      "kind": "attack",
+      "expectation": "rejected",
+      "status": "rejected",
+      "grade": "X",
+      "suspicion": 1,
+      "reasons": [
+        "non_running_source"
+      ],
+      "correct": true
+    },
+    {
+      "id": "attack_non_running_hiking",
+      "kind": "attack",
+      "expectation": "rejected",
+      "status": "rejected",
+      "grade": "X",
+      "suspicion": 1,
+      "reasons": [
+        "non_running_source"
+      ],
+      "correct": true
+    },
+    {
+      "id": "attack_non_running_cycling",
+      "kind": "attack",
+      "expectation": "rejected",
+      "status": "rejected",
+      "grade": "X",
+      "suspicion": 1,
+      "reasons": [
+        "non_running_source"
+      ],
+      "correct": true
+    },
+    {
+      "id": "attack_non_running_climbing",
+      "kind": "attack",
+      "expectation": "rejected",
+      "status": "rejected",
+      "grade": "X",
+      "suspicion": 1,
+      "reasons": [
+        "non_running_source"
+      ],
+      "correct": true
+    },
+    {
+      "id": "edge_manual_entry",
+      "kind": "edge",
+      "expectation": "limited",
+      "status": "verified_limited",
+      "grade": "D",
+      "suspicion": 0,
+      "reasons": [
+        "manual_entry"
+      ],
+      "correct": true
+    }
+  ],
+  "assertions": [
+    {
+      "name": "no honest run is rejected outright",
+      "ok": true,
+      "detail": "0 false positives"
+    },
+    {
+      "name": "every non-running source is refused",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "every real attack is caught",
+      "ok": true,
+      "detail": "0 attacks slipped through"
+    },
+    {
+      "name": "recall is total across the attack corpus",
+      "ok": true,
+      "detail": "recall 1"
+    },
+    {
+      "name": "manual entry is accepted with limits rather than punished",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "a genuine run with poor GPS is not treated as cheating",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "run-walk and interval sessions pass despite large pace swings",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "honest runs held for review stay rare",
+      "ok": true,
+      "detail": "0.0% of honest runs pending"
+    }
+  ]
+}

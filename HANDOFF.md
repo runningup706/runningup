@@ -21,7 +21,7 @@ measurement are impossible in this environment and are reported as blocked, not 
 | Gate 6b — Unity domain layer | **PASS** | Compiled and tested by .NET without an Editor; conformance-locked to the JS engine |
 | Gate 2 — Supabase local, security, ledger | **PASS (adapted)** | Verified on real PostgreSQL 16 + pgTAP; see ADR-002 |
 | Gate 3 — Runner Passport, all start routes | **PASS (domain)** | 8 fixtures green; no UI exists yet |
-| Gate 4 — real run capture, verification, recovery | **PARTIAL** | Append-only journal compiled and tested on the JVM (9/9). The foreground service and Health Connect need the Android SDK: `BLOCKED_TOOLCHAIN`. |
+| Gate 4 — real run capture, verification, recovery | **PARTIAL** | Journal compiled and tested on the JVM (9/9); verification and anti-cheat engine tested with a 53-fixture corpus. The foreground service and Health Connect need the Android SDK: `BLOCKED_TOOLCHAIN`. |
 | Gate 5 — reward, momentum, Monthly Apex 1000 | **PASS** | 44 pgTAP + 18 unit tests over the full ladder |
 | Gate 6 — content pipeline + duplicate validator | **PASS** | Caught and fixed a real reskin |
 | Gate 7 — full launch content | **DATA_PASS** | All 18 categories at floor as validated data; no playable scenes |
@@ -39,12 +39,13 @@ Every number below came from a command that was actually run.
 | Split reconstruction | `cat 01..08 \| sha256sum` | matches `b80ecb10…1978` |
 | Direction lock | `node tools/direction-lock/scan.mjs` | 94 files, 19 patterns, **0 violations** |
 | Content validation | `node tools/content-validator/validate.mjs` | **all gates passed**, 18/18 categories at floor |
-| Domain engine | `node --test "tools/tests/*.test.mjs"` | **68 pass / 0 fail** |
+| Domain engine | `node --test "tools/tests/*.test.mjs"` | **85 pass / 0 fail** |
 | Migrations from empty DB | `for f in migrations/*.sql; psql -f $f` | 8/8 applied clean |
 | Seed + content gate | `psql -f backend/supabase/seed.sql` | 16 categories verified in-database |
 | Database suite | `pg_prove backend/supabase/tests/pgtap/*.sql` | **Files=7, Tests=1128, Result: PASS** |
 | Run-capture core | `gradle test` (Kotlin/JVM) | **9 run, 0 failed** |
 | Unity domain layer | `dotnet test` (C#) | **29 passed, 0 failed** |
+| Anti-cheat simulation | 38 normal + 14 attack fixtures | **precision 100%, recall 100%, false positives 0** |
 | JS vs C# conformance | 19 cases replayed by the client | **identical** |
 | JS vs SQL conformance | 18 cases, 225 steps, 992 assertions | **identical** |
 

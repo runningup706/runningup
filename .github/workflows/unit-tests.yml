@@ -22,3 +22,16 @@ jobs:
         run: node tools/monthly-apex-simulator/simulate.mjs
       - name: Runner Passport simulation
         run: node tools/runner-passport-simulator/simulate.mjs
+
+      # Regenerate the fixture corpus and fail on drift, then measure detection quality.
+      # The simulator exits non-zero if any honest fixture is rejected or any attack passes.
+      - name: Run fixture corpus is reproducible
+        run: |
+          node tools/run-fixture-generator/generate.mjs
+          if ! git diff --quiet -- content/fixtures; then
+            echo "::error::Generated run fixtures differ from the committed tree."
+            exit 1
+          fi
+
+      - name: Anti-cheat simulation (precision, recall, false positives)
+        run: node tools/anti-cheat-simulator/simulate.mjs

@@ -38,6 +38,15 @@ echo "=============================================================="
 node --test "tools/tests/*.test.mjs"
 
 echo
+echo "--- run fixtures and anti-cheat simulation ---"
+node tools/run-fixture-generator/generate.mjs > /dev/null
+if ! git diff --quiet -- content/fixtures; then
+  echo "FAIL: generated run fixtures differ from the committed tree."
+  exit 1
+fi
+node tools/anti-cheat-simulator/simulate.mjs
+
+echo
 echo "=============================================================="
 echo " 5/6  database migrations, seed and pgTAP"
 echo "=============================================================="

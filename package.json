@@ -18,7 +18,11 @@
     "test:unit": "node --test \"tools/tests/*.test.mjs\"",
     "test:db": "bash tools/test/db.sh",
     "test:fast": "npm run validate:direction-lock && npm run validate:content && npm run test:unit",
-    "test:all": "bash tools/test/all.sh"
+    "test:all": "bash tools/test/all.sh",
+    "fixtures:build": "node tools/run-fixture-generator/generate.mjs",
+    "simulate:anticheat": "node tools/anti-cheat-simulator/simulate.mjs",
+    "conformance:export": "node tools/conformance/export-fixtures.mjs && node tools/conformance/emit-sql-conformance.mjs",
+    "test:client": "dotnet test client/dotnet/RunningUp.Domain.Tests/RunningUp.Domain.Tests.csproj --nologo"
   },
   "dependencies": {},
   "devDependencies": {}

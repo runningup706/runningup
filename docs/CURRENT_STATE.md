@@ -18,7 +18,7 @@ done, and nothing done is inflated into more than it is.
 
 | Capability | Status | Evidence / reason |
 |---|---|---|
-| Node 22 tooling, domain engine, tests | **PASS** | `npm run test:unit` — 68 tests |
+| Node 22 tooling, domain engine, tests | **PASS** | `npm run test:unit` — 85 tests |
 | PostgreSQL 16 + pgTAP 1.3.2 | **PASS** | `bash tools/test/db.sh` — 1128 tests, 7 suites |
 | Content factory + validator | **PASS** | `npm run validate:content` |
 | Direction-lock static scan | **PASS** | `npm run validate:direction-lock` |
@@ -40,7 +40,7 @@ done, and nothing done is inflated into more than it is.
 - `tools/direction-lock/scan.mjs`: 94 files, 19 concept patterns, **0 violations**
 - Enforced additionally by DB CHECK constraints, enum ordering and pgTAP
 
-### Domain engine — 68 unit tests, all passing
+### Domain engine — 85 unit tests, all passing
 | Module | Covers |
 |---|---|
 | `tools/lib/monthly-apex.mjs` | 52 checkpoints, crossings, 999.999/1000/>1000, out-of-order, duplicates, month reset |
@@ -48,6 +48,7 @@ done, and nothing done is inflated into more than it is.
 | `tools/lib/reward.mjs` | 15 independent components, monotonicity, forbidden-input rejection, grade eligibility |
 | `tools/lib/momentum.mjs` | reward day in IANA timezone, same-day sessions, streak reset, weekly/quality/long-run chains |
 | `tools/lib/best-effort.mjs` | fastest-segment extraction for 20 benchmark distances |
+| `tools/lib/anomaly-detection.mjs` | verification grades, replay/duplicate/teleport/vehicle/synthetic detection, honest-runner protection |
 
 ### Backend — 1128 pgTAP tests, all passing
 | Suite | Tests | Focus |
