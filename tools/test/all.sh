@@ -54,9 +54,10 @@ echo "=============================================================="
 echo " 6/6  cross-implementation conformance (JS engine vs C# client)"
 echo "=============================================================="
 node tools/conformance/export-fixtures.mjs > /dev/null
-if ! git diff --quiet -- content/conformance; then
-  echo "FAIL: the conformance fixture is stale."
-  echo "      Run tools/conformance/export-fixtures.mjs and commit the result."
+node tools/conformance/emit-sql-conformance.mjs > /dev/null
+if ! git diff --quiet -- content/conformance backend/supabase/tests/pgtap/07_apex_conformance.sql; then
+  echo "FAIL: the conformance fixture or its generated SQL suite is stale."
+  echo "      Run tools/conformance/export-fixtures.mjs and emit-sql-conformance.mjs, then commit."
   exit 1
 fi
 if command -v dotnet > /dev/null; then

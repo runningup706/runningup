@@ -19,7 +19,7 @@ done, and nothing done is inflated into more than it is.
 | Capability | Status | Evidence / reason |
 |---|---|---|
 | Node 22 tooling, domain engine, tests | **PASS** | `npm run test:unit` — 68 tests |
-| PostgreSQL 16 + pgTAP 1.3.2 | **PASS** | `bash tools/test/db.sh` — 136 tests, 6 suites |
+| PostgreSQL 16 + pgTAP 1.3.2 | **PASS** | `bash tools/test/db.sh` — 1128 tests, 7 suites |
 | Content factory + validator | **PASS** | `npm run validate:content` |
 | Direction-lock static scan | **PASS** | `npm run validate:direction-lock` |
 | Java 21 + Gradle 8.14 | **PASS** | `bash tools/bootstrap/doctor.sh` |
@@ -49,7 +49,7 @@ done, and nothing done is inflated into more than it is.
 | `tools/lib/momentum.mjs` | reward day in IANA timezone, same-day sessions, streak reset, weekly/quality/long-run chains |
 | `tools/lib/best-effort.mjs` | fastest-segment extraction for 20 benchmark distances |
 
-### Backend — 136 pgTAP tests, all passing
+### Backend — 1128 pgTAP tests, all passing
 | Suite | Tests | Focus |
 |---|---:|---|
 | `01_schema_rls.sql` | 33 | RLS on every relation, cross-user denial, private schema unreachable, ledger not client-writable |
@@ -58,6 +58,7 @@ done, and nothing done is inflated into more than it is.
 | `04_ledger_integrity.sql` | 17 | immutability, idempotency, reversal-not-edit, DL-5 source allow-list |
 | `05_content_completeness.sql` | 15 | launch floor enforced in the database |
 | `06_profile_write_scope.sql` | 13 | AUDIT_07 regression: client write scope and timezone attribution |
+| `07_apex_conformance.sql` | 992 | generated: replays the shared fixture against the authoritative transaction |
 
 ### Launch content — validator PASS at every floor
 All 18 categories meet the floor exactly: 12 continents, 96 regions, 72 main stages,

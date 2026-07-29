@@ -42,10 +42,11 @@ Every number below came from a command that was actually run.
 | Domain engine | `node --test "tools/tests/*.test.mjs"` | **68 pass / 0 fail** |
 | Migrations from empty DB | `for f in migrations/*.sql; psql -f $f` | 8/8 applied clean |
 | Seed + content gate | `psql -f backend/supabase/seed.sql` | 16 categories verified in-database |
-| Database suite | `pg_prove backend/supabase/tests/pgtap/*.sql` | **Files=6, Tests=136, Result: PASS** |
+| Database suite | `pg_prove backend/supabase/tests/pgtap/*.sql` | **Files=7, Tests=1128, Result: PASS** |
 | Run-capture core | `gradle test` (Kotlin/JVM) | **9 run, 0 failed** |
 | Unity domain layer | `dotnet test` (C#) | **29 passed, 0 failed** |
-| JS engine vs C# client conformance | 19 cases, 225 steps replayed | **identical** |
+| JS vs C# conformance | 19 cases replayed by the client | **identical** |
+| JS vs SQL conformance | 18 cases, 225 steps, 992 assertions | **identical** |
 
 ## Launch content actually implemented
 

@@ -27,5 +27,8 @@ psql -q -v ON_ERROR_STOP=1 -d "${DB}" -f backend/supabase/seed.sql > /dev/null
 echo "==> enabling pgtap"
 psql -q -d "${DB}" -c "create extension if not exists pgtap"
 
+echo "==> regenerating the SQL conformance suite from the shared fixture"
+node tools/conformance/emit-sql-conformance.mjs > /dev/null
+
 echo "==> running pgTAP suite"
 pg_prove -d "${DB}" backend/supabase/tests/pgtap/*.sql
