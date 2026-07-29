@@ -1,5 +1,7 @@
 # Build output
-artifacts/
+artifacts/*
+# ...except the machine-readable evidence manifest, which is a reviewable deliverable.
+!artifacts/test-evidence-manifest.json
 *.apk
 *.aab
 *.keystore

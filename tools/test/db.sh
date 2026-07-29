@@ -32,3 +32,9 @@ node tools/conformance/emit-sql-conformance.mjs > /dev/null
 
 echo "==> running pgTAP suite"
 pg_prove -d "${DB}" backend/supabase/tests/pgtap/*.sql
+
+# Regenerate the security and schema evidence from the database that just passed, so the
+# RLS matrix can never describe a schema that no longer exists. Exits non-zero if a
+# server-authoritative invariant is violated.
+echo "==> regenerating release evidence from the live schema"
+RUNNINGUP_TEST_DB="${DB}" node tools/release/generate-evidence.mjs
