@@ -1,0 +1,3767 @@
+{
+  "fixture_version": "1.0.0",
+  "generated_by": "tools/conformance/export-fixtures.mjs",
+  "purpose": "every implementation of the Monthly Apex ladder must reproduce these results exactly",
+  "direction_lock": {
+    "final_apex_meters": 1000000,
+    "checkpoint_count": 52,
+    "final_rank_id": "world_crown"
+  },
+  "checkpoint_meters": [
+    0,
+    1000,
+    3000,
+    5000,
+    10000,
+    15000,
+    20000,
+    25000,
+    30000,
+    40000,
+    42195,
+    50000,
+    60000,
+    75000,
+    90000,
+    100000,
+    125000,
+    150000,
+    175000,
+    200000,
+    225000,
+    250000,
+    275000,
+    300000,
+    325000,
+    350000,
+    375000,
+    400000,
+    425000,
+    450000,
+    475000,
+    500000,
+    525000,
+    550000,
+    575000,
+    600000,
+    625000,
+    650000,
+    675000,
+    700000,
+    725000,
+    750000,
+    775000,
+    800000,
+    825000,
+    850000,
+    875000,
+    900000,
+    925000,
+    950000,
+    975000,
+    1000000
+  ],
+  "ranks": [
+    {
+      "id": "awakening",
+      "order": 1,
+      "min_meters": 0,
+      "max_meters": 49999
+    },
+    {
+      "id": "strider",
+      "order": 2,
+      "min_meters": 50000,
+      "max_meters": 99999
+    },
+    {
+      "id": "runner",
+      "order": 3,
+      "min_meters": 100000,
+      "max_meters": 199999
+    },
+    {
+      "id": "challenger",
+      "order": 4,
+      "min_meters": 200000,
+      "max_meters": 299999
+    },
+    {
+      "id": "vanguard",
+      "order": 5,
+      "min_meters": 300000,
+      "max_meters": 399999
+    },
+    {
+      "id": "champion",
+      "order": 6,
+      "min_meters": 400000,
+      "max_meters": 499999
+    },
+    {
+      "id": "master",
+      "order": 7,
+      "min_meters": 500000,
+      "max_meters": 599999
+    },
+    {
+      "id": "grandmaster",
+      "order": 8,
+      "min_meters": 600000,
+      "max_meters": 699999
+    },
+    {
+      "id": "legend",
+      "order": 9,
+      "min_meters": 700000,
+      "max_meters": 799999
+    },
+    {
+      "id": "mythic",
+      "order": 10,
+      "min_meters": 800000,
+      "max_meters": 899999
+    },
+    {
+      "id": "apex",
+      "order": 11,
+      "min_meters": 900000,
+      "max_meters": 999999
+    },
+    {
+      "id": "world_crown",
+      "order": 12,
+      "min_meters": 1000000,
+      "max_meters": null
+    }
+  ],
+  "rank_boundary_probes": [
+    {
+      "meters": 0,
+      "rank": "awakening"
+    },
+    {
+      "meters": 49999,
+      "rank": "awakening"
+    },
+    {
+      "meters": 50000,
+      "rank": "strider"
+    },
+    {
+      "meters": 99999,
+      "rank": "strider"
+    },
+    {
+      "meters": 100000,
+      "rank": "runner"
+    },
+    {
+      "meters": 199999,
+      "rank": "runner"
+    },
+    {
+      "meters": 200000,
+      "rank": "challenger"
+    },
+    {
+      "meters": 299999,
+      "rank": "challenger"
+    },
+    {
+      "meters": 300000,
+      "rank": "vanguard"
+    },
+    {
+      "meters": 400000,
+      "rank": "champion"
+    },
+    {
+      "meters": 500000,
+      "rank": "master"
+    },
+    {
+      "meters": 600000,
+      "rank": "grandmaster"
+    },
+    {
+      "meters": 700000,
+      "rank": "legend"
+    },
+    {
+      "meters": 800000,
+      "rank": "mythic"
+    },
+    {
+      "meters": 900000,
+      "rank": "apex"
+    },
+    {
+      "meters": 999999,
+      "rank": "apex"
+    },
+    {
+      "meters": 1000000,
+      "rank": "world_crown"
+    }
+  ],
+  "cases": [
+    {
+      "id": "empty_month",
+      "sessions": [],
+      "steps": [],
+      "final": {
+        "laddered_meters": 0,
+        "over_crown_meters": 0,
+        "rank": "awakening",
+        "world_crown_awarded": false,
+        "apex_axis_unlocked": false,
+        "total_checkpoints_claimed": 0
+      }
+    },
+    {
+      "id": "first_run_5200m",
+      "sessions": [
+        5200
+      ],
+      "steps": [
+        {
+          "session_meters": 5200,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km"
+          ],
+          "crossed_count": 4,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 5200,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 5200,
+        "over_crown_meters": 0,
+        "rank": "awakening",
+        "world_crown_awarded": false,
+        "apex_axis_unlocked": false,
+        "total_checkpoints_claimed": 4
+      }
+    },
+    {
+      "id": "one_metre_short_of_10km",
+      "sessions": [
+        9999
+      ],
+      "steps": [
+        {
+          "session_meters": 9999,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km"
+          ],
+          "crossed_count": 4,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 9999,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 9999,
+        "over_crown_meters": 0,
+        "rank": "awakening",
+        "world_crown_awarded": false,
+        "apex_axis_unlocked": false,
+        "total_checkpoints_claimed": 4
+      }
+    },
+    {
+      "id": "exactly_10km",
+      "sessions": [
+        10000
+      ],
+      "steps": [
+        {
+          "session_meters": 10000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km",
+            "apex_cp_05_10km"
+          ],
+          "crossed_count": 5,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 10000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 10000,
+        "over_crown_meters": 0,
+        "rank": "awakening",
+        "world_crown_awarded": false,
+        "apex_axis_unlocked": false,
+        "total_checkpoints_claimed": 5
+      }
+    },
+    {
+      "id": "marathon_symbolic_exact",
+      "sessions": [
+        42195
+      ],
+      "steps": [
+        {
+          "session_meters": 42195,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km",
+            "apex_cp_05_10km",
+            "apex_cp_06_15km",
+            "apex_cp_07_20km",
+            "apex_cp_08_25km",
+            "apex_cp_09_30km",
+            "apex_cp_10_40km",
+            "apex_cp_11_42p195km"
+          ],
+          "crossed_count": 11,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 42195,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 42195,
+        "over_crown_meters": 0,
+        "rank": "awakening",
+        "world_crown_awarded": false,
+        "apex_axis_unlocked": false,
+        "total_checkpoints_claimed": 11
+      }
+    },
+    {
+      "id": "one_metre_short_of_marathon_checkpoint",
+      "sessions": [
+        42194
+      ],
+      "steps": [
+        {
+          "session_meters": 42194,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km",
+            "apex_cp_05_10km",
+            "apex_cp_06_15km",
+            "apex_cp_07_20km",
+            "apex_cp_08_25km",
+            "apex_cp_09_30km",
+            "apex_cp_10_40km"
+          ],
+          "crossed_count": 10,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 42194,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 42194,
+        "over_crown_meters": 0,
+        "rank": "awakening",
+        "world_crown_awarded": false,
+        "apex_axis_unlocked": false,
+        "total_checkpoints_claimed": 10
+      }
+    },
+    {
+      "id": "multi_crossing_100km",
+      "sessions": [
+        100000
+      ],
+      "steps": [
+        {
+          "session_meters": 100000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km",
+            "apex_cp_05_10km",
+            "apex_cp_06_15km",
+            "apex_cp_07_20km",
+            "apex_cp_08_25km",
+            "apex_cp_09_30km",
+            "apex_cp_10_40km",
+            "apex_cp_11_42p195km",
+            "apex_cp_12_50km",
+            "apex_cp_13_60km",
+            "apex_cp_14_75km",
+            "apex_cp_15_90km",
+            "apex_cp_16_100km"
+          ],
+          "crossed_count": 16,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 100000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 100000,
+        "over_crown_meters": 0,
+        "rank": "runner",
+        "world_crown_awarded": false,
+        "apex_axis_unlocked": false,
+        "total_checkpoints_claimed": 16
+      }
+    },
+    {
+      "id": "incremental_to_100km",
+      "sessions": [
+        5200,
+        4800,
+        5000,
+        85000
+      ],
+      "steps": [
+        {
+          "session_meters": 5200,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km"
+          ],
+          "crossed_count": 4,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 5200,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 4800,
+          "crossed_checkpoint_ids": [
+            "apex_cp_05_10km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 10000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_06_15km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 15000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 85000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_07_20km",
+            "apex_cp_08_25km",
+            "apex_cp_09_30km",
+            "apex_cp_10_40km",
+            "apex_cp_11_42p195km",
+            "apex_cp_12_50km",
+            "apex_cp_13_60km",
+            "apex_cp_14_75km",
+            "apex_cp_15_90km",
+            "apex_cp_16_100km"
+          ],
+          "crossed_count": 10,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 100000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 100000,
+        "over_crown_meters": 0,
+        "rank": "runner",
+        "world_crown_awarded": false,
+        "apex_axis_unlocked": false,
+        "total_checkpoints_claimed": 16
+      }
+    },
+    {
+      "id": "nine_hundred_ninety_nine_km",
+      "sessions": [
+        999999
+      ],
+      "steps": [
+        {
+          "session_meters": 999999,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km",
+            "apex_cp_05_10km",
+            "apex_cp_06_15km",
+            "apex_cp_07_20km",
+            "apex_cp_08_25km",
+            "apex_cp_09_30km",
+            "apex_cp_10_40km",
+            "apex_cp_11_42p195km",
+            "apex_cp_12_50km",
+            "apex_cp_13_60km",
+            "apex_cp_14_75km",
+            "apex_cp_15_90km",
+            "apex_cp_16_100km",
+            "apex_cp_17_125km",
+            "apex_cp_18_150km",
+            "apex_cp_19_175km",
+            "apex_cp_20_200km",
+            "apex_cp_21_225km",
+            "apex_cp_22_250km",
+            "apex_cp_23_275km",
+            "apex_cp_24_300km",
+            "apex_cp_25_325km",
+            "apex_cp_26_350km",
+            "apex_cp_27_375km",
+            "apex_cp_28_400km",
+            "apex_cp_29_425km",
+            "apex_cp_30_450km",
+            "apex_cp_31_475km",
+            "apex_cp_32_500km",
+            "apex_cp_33_525km",
+            "apex_cp_34_550km",
+            "apex_cp_35_575km",
+            "apex_cp_36_600km",
+            "apex_cp_37_625km",
+            "apex_cp_38_650km",
+            "apex_cp_39_675km",
+            "apex_cp_40_700km",
+            "apex_cp_41_725km",
+            "apex_cp_42_750km",
+            "apex_cp_43_775km",
+            "apex_cp_44_800km",
+            "apex_cp_45_825km",
+            "apex_cp_46_850km",
+            "apex_cp_47_875km",
+            "apex_cp_48_900km",
+            "apex_cp_49_925km",
+            "apex_cp_50_950km",
+            "apex_cp_51_975km"
+          ],
+          "crossed_count": 51,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 999999,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 999999,
+        "over_crown_meters": 0,
+        "rank": "apex",
+        "world_crown_awarded": false,
+        "apex_axis_unlocked": false,
+        "total_checkpoints_claimed": 51
+      }
+    },
+    {
+      "id": "exactly_1000km_in_two_steps",
+      "sessions": [
+        999999,
+        1
+      ],
+      "steps": [
+        {
+          "session_meters": 999999,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km",
+            "apex_cp_05_10km",
+            "apex_cp_06_15km",
+            "apex_cp_07_20km",
+            "apex_cp_08_25km",
+            "apex_cp_09_30km",
+            "apex_cp_10_40km",
+            "apex_cp_11_42p195km",
+            "apex_cp_12_50km",
+            "apex_cp_13_60km",
+            "apex_cp_14_75km",
+            "apex_cp_15_90km",
+            "apex_cp_16_100km",
+            "apex_cp_17_125km",
+            "apex_cp_18_150km",
+            "apex_cp_19_175km",
+            "apex_cp_20_200km",
+            "apex_cp_21_225km",
+            "apex_cp_22_250km",
+            "apex_cp_23_275km",
+            "apex_cp_24_300km",
+            "apex_cp_25_325km",
+            "apex_cp_26_350km",
+            "apex_cp_27_375km",
+            "apex_cp_28_400km",
+            "apex_cp_29_425km",
+            "apex_cp_30_450km",
+            "apex_cp_31_475km",
+            "apex_cp_32_500km",
+            "apex_cp_33_525km",
+            "apex_cp_34_550km",
+            "apex_cp_35_575km",
+            "apex_cp_36_600km",
+            "apex_cp_37_625km",
+            "apex_cp_38_650km",
+            "apex_cp_39_675km",
+            "apex_cp_40_700km",
+            "apex_cp_41_725km",
+            "apex_cp_42_750km",
+            "apex_cp_43_775km",
+            "apex_cp_44_800km",
+            "apex_cp_45_825km",
+            "apex_cp_46_850km",
+            "apex_cp_47_875km",
+            "apex_cp_48_900km",
+            "apex_cp_49_925km",
+            "apex_cp_50_950km",
+            "apex_cp_51_975km"
+          ],
+          "crossed_count": 51,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 999999,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 1,
+          "crossed_checkpoint_ids": [
+            "apex_cp_52_1000km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "world_crown",
+          "world_crown_awarded_now": true,
+          "apex_axis_unlocked_now": true,
+          "laddered_meters_after": 1000000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 1000000,
+        "over_crown_meters": 0,
+        "rank": "world_crown",
+        "world_crown_awarded": true,
+        "apex_axis_unlocked": true,
+        "total_checkpoints_claimed": 52
+      }
+    },
+    {
+      "id": "exactly_1000km_in_one_step",
+      "sessions": [
+        1000000
+      ],
+      "steps": [
+        {
+          "session_meters": 1000000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km",
+            "apex_cp_05_10km",
+            "apex_cp_06_15km",
+            "apex_cp_07_20km",
+            "apex_cp_08_25km",
+            "apex_cp_09_30km",
+            "apex_cp_10_40km",
+            "apex_cp_11_42p195km",
+            "apex_cp_12_50km",
+            "apex_cp_13_60km",
+            "apex_cp_14_75km",
+            "apex_cp_15_90km",
+            "apex_cp_16_100km",
+            "apex_cp_17_125km",
+            "apex_cp_18_150km",
+            "apex_cp_19_175km",
+            "apex_cp_20_200km",
+            "apex_cp_21_225km",
+            "apex_cp_22_250km",
+            "apex_cp_23_275km",
+            "apex_cp_24_300km",
+            "apex_cp_25_325km",
+            "apex_cp_26_350km",
+            "apex_cp_27_375km",
+            "apex_cp_28_400km",
+            "apex_cp_29_425km",
+            "apex_cp_30_450km",
+            "apex_cp_31_475km",
+            "apex_cp_32_500km",
+            "apex_cp_33_525km",
+            "apex_cp_34_550km",
+            "apex_cp_35_575km",
+            "apex_cp_36_600km",
+            "apex_cp_37_625km",
+            "apex_cp_38_650km",
+            "apex_cp_39_675km",
+            "apex_cp_40_700km",
+            "apex_cp_41_725km",
+            "apex_cp_42_750km",
+            "apex_cp_43_775km",
+            "apex_cp_44_800km",
+            "apex_cp_45_825km",
+            "apex_cp_46_850km",
+            "apex_cp_47_875km",
+            "apex_cp_48_900km",
+            "apex_cp_49_925km",
+            "apex_cp_50_950km",
+            "apex_cp_51_975km",
+            "apex_cp_52_1000km"
+          ],
+          "crossed_count": 52,
+          "rank_after": "world_crown",
+          "world_crown_awarded_now": true,
+          "apex_axis_unlocked_now": true,
+          "laddered_meters_after": 1000000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 1000000,
+        "over_crown_meters": 0,
+        "rank": "world_crown",
+        "world_crown_awarded": true,
+        "apex_axis_unlocked": true,
+        "total_checkpoints_claimed": 52
+      }
+    },
+    {
+      "id": "overshoot_1200km",
+      "sessions": [
+        1200000
+      ],
+      "steps": [
+        {
+          "session_meters": 1200000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km",
+            "apex_cp_05_10km",
+            "apex_cp_06_15km",
+            "apex_cp_07_20km",
+            "apex_cp_08_25km",
+            "apex_cp_09_30km",
+            "apex_cp_10_40km",
+            "apex_cp_11_42p195km",
+            "apex_cp_12_50km",
+            "apex_cp_13_60km",
+            "apex_cp_14_75km",
+            "apex_cp_15_90km",
+            "apex_cp_16_100km",
+            "apex_cp_17_125km",
+            "apex_cp_18_150km",
+            "apex_cp_19_175km",
+            "apex_cp_20_200km",
+            "apex_cp_21_225km",
+            "apex_cp_22_250km",
+            "apex_cp_23_275km",
+            "apex_cp_24_300km",
+            "apex_cp_25_325km",
+            "apex_cp_26_350km",
+            "apex_cp_27_375km",
+            "apex_cp_28_400km",
+            "apex_cp_29_425km",
+            "apex_cp_30_450km",
+            "apex_cp_31_475km",
+            "apex_cp_32_500km",
+            "apex_cp_33_525km",
+            "apex_cp_34_550km",
+            "apex_cp_35_575km",
+            "apex_cp_36_600km",
+            "apex_cp_37_625km",
+            "apex_cp_38_650km",
+            "apex_cp_39_675km",
+            "apex_cp_40_700km",
+            "apex_cp_41_725km",
+            "apex_cp_42_750km",
+            "apex_cp_43_775km",
+            "apex_cp_44_800km",
+            "apex_cp_45_825km",
+            "apex_cp_46_850km",
+            "apex_cp_47_875km",
+            "apex_cp_48_900km",
+            "apex_cp_49_925km",
+            "apex_cp_50_950km",
+            "apex_cp_51_975km",
+            "apex_cp_52_1000km"
+          ],
+          "crossed_count": 52,
+          "rank_after": "world_crown",
+          "world_crown_awarded_now": true,
+          "apex_axis_unlocked_now": true,
+          "laddered_meters_after": 1000000,
+          "over_crown_meters_after": 200000,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 1000000,
+        "over_crown_meters": 200000,
+        "rank": "world_crown",
+        "world_crown_awarded": true,
+        "apex_axis_unlocked": true,
+        "total_checkpoints_claimed": 52
+      }
+    },
+    {
+      "id": "crowned_then_further_25km",
+      "sessions": [
+        1000000,
+        25000
+      ],
+      "steps": [
+        {
+          "session_meters": 1000000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km",
+            "apex_cp_05_10km",
+            "apex_cp_06_15km",
+            "apex_cp_07_20km",
+            "apex_cp_08_25km",
+            "apex_cp_09_30km",
+            "apex_cp_10_40km",
+            "apex_cp_11_42p195km",
+            "apex_cp_12_50km",
+            "apex_cp_13_60km",
+            "apex_cp_14_75km",
+            "apex_cp_15_90km",
+            "apex_cp_16_100km",
+            "apex_cp_17_125km",
+            "apex_cp_18_150km",
+            "apex_cp_19_175km",
+            "apex_cp_20_200km",
+            "apex_cp_21_225km",
+            "apex_cp_22_250km",
+            "apex_cp_23_275km",
+            "apex_cp_24_300km",
+            "apex_cp_25_325km",
+            "apex_cp_26_350km",
+            "apex_cp_27_375km",
+            "apex_cp_28_400km",
+            "apex_cp_29_425km",
+            "apex_cp_30_450km",
+            "apex_cp_31_475km",
+            "apex_cp_32_500km",
+            "apex_cp_33_525km",
+            "apex_cp_34_550km",
+            "apex_cp_35_575km",
+            "apex_cp_36_600km",
+            "apex_cp_37_625km",
+            "apex_cp_38_650km",
+            "apex_cp_39_675km",
+            "apex_cp_40_700km",
+            "apex_cp_41_725km",
+            "apex_cp_42_750km",
+            "apex_cp_43_775km",
+            "apex_cp_44_800km",
+            "apex_cp_45_825km",
+            "apex_cp_46_850km",
+            "apex_cp_47_875km",
+            "apex_cp_48_900km",
+            "apex_cp_49_925km",
+            "apex_cp_50_950km",
+            "apex_cp_51_975km",
+            "apex_cp_52_1000km"
+          ],
+          "crossed_count": 52,
+          "rank_after": "world_crown",
+          "world_crown_awarded_now": true,
+          "apex_axis_unlocked_now": true,
+          "laddered_meters_after": 1000000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 25000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "world_crown",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 1000000,
+          "over_crown_meters_after": 25000,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 1000000,
+        "over_crown_meters": 25000,
+        "rank": "world_crown",
+        "world_crown_awarded": true,
+        "apex_axis_unlocked": true,
+        "total_checkpoints_claimed": 52
+      }
+    },
+    {
+      "id": "crowned_then_further_twice",
+      "sessions": [
+        1000000,
+        25000,
+        30000
+      ],
+      "steps": [
+        {
+          "session_meters": 1000000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km",
+            "apex_cp_05_10km",
+            "apex_cp_06_15km",
+            "apex_cp_07_20km",
+            "apex_cp_08_25km",
+            "apex_cp_09_30km",
+            "apex_cp_10_40km",
+            "apex_cp_11_42p195km",
+            "apex_cp_12_50km",
+            "apex_cp_13_60km",
+            "apex_cp_14_75km",
+            "apex_cp_15_90km",
+            "apex_cp_16_100km",
+            "apex_cp_17_125km",
+            "apex_cp_18_150km",
+            "apex_cp_19_175km",
+            "apex_cp_20_200km",
+            "apex_cp_21_225km",
+            "apex_cp_22_250km",
+            "apex_cp_23_275km",
+            "apex_cp_24_300km",
+            "apex_cp_25_325km",
+            "apex_cp_26_350km",
+            "apex_cp_27_375km",
+            "apex_cp_28_400km",
+            "apex_cp_29_425km",
+            "apex_cp_30_450km",
+            "apex_cp_31_475km",
+            "apex_cp_32_500km",
+            "apex_cp_33_525km",
+            "apex_cp_34_550km",
+            "apex_cp_35_575km",
+            "apex_cp_36_600km",
+            "apex_cp_37_625km",
+            "apex_cp_38_650km",
+            "apex_cp_39_675km",
+            "apex_cp_40_700km",
+            "apex_cp_41_725km",
+            "apex_cp_42_750km",
+            "apex_cp_43_775km",
+            "apex_cp_44_800km",
+            "apex_cp_45_825km",
+            "apex_cp_46_850km",
+            "apex_cp_47_875km",
+            "apex_cp_48_900km",
+            "apex_cp_49_925km",
+            "apex_cp_50_950km",
+            "apex_cp_51_975km",
+            "apex_cp_52_1000km"
+          ],
+          "crossed_count": 52,
+          "rank_after": "world_crown",
+          "world_crown_awarded_now": true,
+          "apex_axis_unlocked_now": true,
+          "laddered_meters_after": 1000000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 25000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "world_crown",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 1000000,
+          "over_crown_meters_after": 25000,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 30000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "world_crown",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 1000000,
+          "over_crown_meters_after": 55000,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 1000000,
+        "over_crown_meters": 55000,
+        "rank": "world_crown",
+        "world_crown_awarded": true,
+        "apex_axis_unlocked": true,
+        "total_checkpoints_claimed": 52
+      }
+    },
+    {
+      "id": "zero_distance_session",
+      "sessions": [
+        5000,
+        0
+      ],
+      "steps": [
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km"
+          ],
+          "crossed_count": 4,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 5000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 0,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 5000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 5000,
+        "over_crown_meters": 0,
+        "rank": "awakening",
+        "world_crown_awarded": false,
+        "apex_axis_unlocked": false,
+        "total_checkpoints_claimed": 4
+      }
+    },
+    {
+      "id": "two_hundred_five_km_sessions",
+      "sessions": [
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000,
+        5000
+      ],
+      "steps": [
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km"
+          ],
+          "crossed_count": 4,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 5000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_05_10km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 10000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_06_15km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 15000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_07_20km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 20000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_08_25km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 25000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_09_30km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 30000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 35000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_10_40km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 40000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_11_42p195km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 45000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_12_50km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "strider",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 50000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "strider",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 55000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_13_60km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "strider",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 60000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "strider",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 65000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "strider",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 70000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_14_75km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "strider",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 75000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "strider",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 80000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "strider",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 85000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_15_90km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "strider",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 90000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "strider",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 95000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_16_100km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 100000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 105000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 110000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 115000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 120000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_17_125km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 125000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 130000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 135000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 140000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 145000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_18_150km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 150000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 155000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 160000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 165000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 170000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_19_175km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 175000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 180000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 185000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 190000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "runner",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 195000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_20_200km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 200000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 205000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 210000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 215000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 220000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_21_225km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 225000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 230000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 235000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 240000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 245000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_22_250km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 250000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 255000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 260000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 265000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 270000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_23_275km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 275000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 280000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 285000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 290000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "challenger",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 295000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_24_300km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 300000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 305000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 310000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 315000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 320000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_25_325km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 325000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 330000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 335000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 340000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 345000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_26_350km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 350000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 355000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 360000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 365000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 370000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_27_375km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 375000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 380000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 385000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 390000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "vanguard",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 395000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_28_400km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 400000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 405000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 410000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 415000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 420000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_29_425km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 425000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 430000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 435000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 440000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 445000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_30_450km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 450000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 455000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 460000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 465000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 470000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_31_475km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 475000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 480000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 485000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 490000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "champion",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 495000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_32_500km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 500000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 505000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 510000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 515000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 520000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_33_525km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 525000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 530000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 535000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 540000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 545000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_34_550km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 550000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 555000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 560000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 565000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 570000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_35_575km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 575000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 580000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 585000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 590000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "master",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 595000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_36_600km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 600000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 605000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 610000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 615000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 620000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_37_625km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 625000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 630000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 635000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 640000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 645000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_38_650km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 650000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 655000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 660000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 665000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 670000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_39_675km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 675000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 680000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 685000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 690000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "grandmaster",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 695000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_40_700km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 700000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 705000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 710000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 715000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 720000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_41_725km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 725000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 730000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 735000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 740000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 745000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_42_750km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 750000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 755000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 760000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 765000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 770000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_43_775km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 775000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 780000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 785000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 790000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "legend",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 795000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_44_800km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 800000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 805000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 810000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 815000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 820000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_45_825km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 825000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 830000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 835000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 840000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 845000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_46_850km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 850000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 855000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 860000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 865000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 870000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_47_875km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 875000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 880000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 885000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 890000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "mythic",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 895000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_48_900km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 900000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 905000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 910000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 915000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 920000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_49_925km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 925000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 930000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 935000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 940000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 945000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_50_950km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 950000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 955000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 960000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 965000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 970000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_51_975km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 975000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 980000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 985000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 990000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [],
+          "crossed_count": 0,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 995000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        },
+        {
+          "session_meters": 5000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_52_1000km"
+          ],
+          "crossed_count": 1,
+          "rank_after": "world_crown",
+          "world_crown_awarded_now": true,
+          "apex_axis_unlocked_now": true,
+          "laddered_meters_after": 1000000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 1000000,
+        "over_crown_meters": 0,
+        "rank": "world_crown",
+        "world_crown_awarded": true,
+        "apex_axis_unlocked": true,
+        "total_checkpoints_claimed": 52
+      }
+    },
+    {
+      "id": "rank_boundary_50km",
+      "sessions": [
+        50000
+      ],
+      "steps": [
+        {
+          "session_meters": 50000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km",
+            "apex_cp_05_10km",
+            "apex_cp_06_15km",
+            "apex_cp_07_20km",
+            "apex_cp_08_25km",
+            "apex_cp_09_30km",
+            "apex_cp_10_40km",
+            "apex_cp_11_42p195km",
+            "apex_cp_12_50km"
+          ],
+          "crossed_count": 12,
+          "rank_after": "strider",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 50000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 50000,
+        "over_crown_meters": 0,
+        "rank": "strider",
+        "world_crown_awarded": false,
+        "apex_axis_unlocked": false,
+        "total_checkpoints_claimed": 12
+      }
+    },
+    {
+      "id": "rank_boundary_just_below_50km",
+      "sessions": [
+        49999
+      ],
+      "steps": [
+        {
+          "session_meters": 49999,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km",
+            "apex_cp_05_10km",
+            "apex_cp_06_15km",
+            "apex_cp_07_20km",
+            "apex_cp_08_25km",
+            "apex_cp_09_30km",
+            "apex_cp_10_40km",
+            "apex_cp_11_42p195km"
+          ],
+          "crossed_count": 11,
+          "rank_after": "awakening",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 49999,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 49999,
+        "over_crown_meters": 0,
+        "rank": "awakening",
+        "world_crown_awarded": false,
+        "apex_axis_unlocked": false,
+        "total_checkpoints_claimed": 11
+      }
+    },
+    {
+      "id": "rank_boundary_900km",
+      "sessions": [
+        900000
+      ],
+      "steps": [
+        {
+          "session_meters": 900000,
+          "crossed_checkpoint_ids": [
+            "apex_cp_01_0km",
+            "apex_cp_02_1km",
+            "apex_cp_03_3km",
+            "apex_cp_04_5km",
+            "apex_cp_05_10km",
+            "apex_cp_06_15km",
+            "apex_cp_07_20km",
+            "apex_cp_08_25km",
+            "apex_cp_09_30km",
+            "apex_cp_10_40km",
+            "apex_cp_11_42p195km",
+            "apex_cp_12_50km",
+            "apex_cp_13_60km",
+            "apex_cp_14_75km",
+            "apex_cp_15_90km",
+            "apex_cp_16_100km",
+            "apex_cp_17_125km",
+            "apex_cp_18_150km",
+            "apex_cp_19_175km",
+            "apex_cp_20_200km",
+            "apex_cp_21_225km",
+            "apex_cp_22_250km",
+            "apex_cp_23_275km",
+            "apex_cp_24_300km",
+            "apex_cp_25_325km",
+            "apex_cp_26_350km",
+            "apex_cp_27_375km",
+            "apex_cp_28_400km",
+            "apex_cp_29_425km",
+            "apex_cp_30_450km",
+            "apex_cp_31_475km",
+            "apex_cp_32_500km",
+            "apex_cp_33_525km",
+            "apex_cp_34_550km",
+            "apex_cp_35_575km",
+            "apex_cp_36_600km",
+            "apex_cp_37_625km",
+            "apex_cp_38_650km",
+            "apex_cp_39_675km",
+            "apex_cp_40_700km",
+            "apex_cp_41_725km",
+            "apex_cp_42_750km",
+            "apex_cp_43_775km",
+            "apex_cp_44_800km",
+            "apex_cp_45_825km",
+            "apex_cp_46_850km",
+            "apex_cp_47_875km",
+            "apex_cp_48_900km"
+          ],
+          "crossed_count": 48,
+          "rank_after": "apex",
+          "world_crown_awarded_now": false,
+          "apex_axis_unlocked_now": false,
+          "laddered_meters_after": 900000,
+          "over_crown_meters_after": 0,
+          "base_run_reward_applies": true
+        }
+      ],
+      "final": {
+        "laddered_meters": 900000,
+        "over_crown_meters": 0,
+        "rank": "apex",
+        "world_crown_awarded": false,
+        "apex_axis_unlocked": false,
+        "total_checkpoints_claimed": 48
+      }
+    }
+  ]
+}

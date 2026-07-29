@@ -7,13 +7,13 @@ repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$repo_root"
 
 echo "=============================================================="
-echo " 1/5  direction-lock static scan"
+echo " 1/6  direction-lock static scan"
 echo "=============================================================="
 node tools/direction-lock/scan.mjs
 
 echo
 echo "=============================================================="
-echo " 2/5  content factory is reproducible"
+echo " 2/6  content factory is reproducible"
 echo "=============================================================="
 node tools/content-factory/build.mjs > /dev/null
 node tools/content-factory/emit-seed.mjs > /dev/null
@@ -27,25 +27,43 @@ echo "generated content matches the committed tree"
 
 echo
 echo "=============================================================="
-echo " 3/5  launch content validation"
+echo " 3/6  launch content validation"
 echo "=============================================================="
 node tools/content-validator/validate.mjs
 
 echo
 echo "=============================================================="
-echo " 4/5  domain engine unit tests"
+echo " 4/6  domain engine unit tests"
 echo "=============================================================="
 node --test "tools/tests/*.test.mjs"
 
 echo
 echo "=============================================================="
-echo " 5/5  database migrations, seed and pgTAP"
+echo " 5/6  database migrations, seed and pgTAP"
 echo "=============================================================="
 if command -v pg_prove > /dev/null && pg_isready -q 2>/dev/null; then
   bash tools/test/db.sh
 else
   echo "SKIPPED: no reachable PostgreSQL server or pg_prove not installed."
   echo "         Status: BLOCKED_TOOLCHAIN for the database suite on this machine."
+  exit 2
+fi
+
+echo
+echo "=============================================================="
+echo " 6/6  cross-implementation conformance (JS engine vs C# client)"
+echo "=============================================================="
+node tools/conformance/export-fixtures.mjs > /dev/null
+if ! git diff --quiet -- content/conformance; then
+  echo "FAIL: the conformance fixture is stale."
+  echo "      Run tools/conformance/export-fixtures.mjs and commit the result."
+  exit 1
+fi
+if command -v dotnet > /dev/null; then
+  dotnet test client/dotnet/RunningUp.Domain.Tests/RunningUp.Domain.Tests.csproj --nologo -v q
+else
+  echo "SKIPPED: no .NET SDK on this machine."
+  echo "         Status: BLOCKED_TOOLCHAIN for the Unity domain layer suite."
   exit 2
 fi
 

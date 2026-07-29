@@ -33,3 +33,7 @@ local.properties
 # OS / editor
 .DS_Store
 *.swp
+
+# .NET (Unity domain layer test host)
+client/dotnet/**/bin/
+client/dotnet/**/obj/
