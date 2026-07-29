@@ -123,6 +123,14 @@ These are generated rather than written, because a security document that has dr
 the schema states the wrong thing with confidence. CI fails if the committed copies differ
 from a fresh generation.
 
+## Known issues — read before starting anything
+
+`docs/KNOWN_ISSUES.md` lists every defect, gap and piece of debt found so far, with file
+locations and a recommended order of attack. The largest single item: the authoritative SQL
+reward transaction computes 7 components while the design calls for 15, so eight of them —
+including distance-specific performance and personal improvement — are currently worth zero
+to a real user.
+
 ## Read these first next session
 
 1. `docs/USER_DIRECTION_LOCK.md`
