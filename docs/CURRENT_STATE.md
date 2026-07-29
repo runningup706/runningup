@@ -23,7 +23,7 @@ done, and nothing done is inflated into more than it is.
 | Content factory + validator | **PASS** | `npm run validate:content` |
 | Direction-lock static scan | **PASS** | `npm run validate:direction-lock` |
 | Java 21 + Gradle 8.14 | **PASS** | `bash tools/bootstrap/doctor.sh` |
-| Kotlin/JVM run-capture core | **PASS** | `gradle test` in `native/android-running-plugin` — 9 tests |
+| Kotlin/JVM run-capture core | **PASS** | `gradle test` in `native/android-running-plugin` — 22 tests (journal + upload queue) |
 | .NET 8 SDK (Unity domain layer) | **PASS** | `dotnet test` — 29 tests, no Unity Editor required |
 | Supabase CLI local stack | `BLOCKED_TOOLCHAIN` | No Docker daemon (`/var/run/docker.sock` absent). Mitigated: migrations run against real PostgreSQL 16; see ADR-002. |
 | Android SDK / NDK | `BLOCKED_TOOLCHAIN` | `dl.google.com` is refused by the environment network policy (`CONNECT` → 403). No SDK can be fetched. |

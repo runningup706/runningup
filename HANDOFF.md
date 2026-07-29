@@ -43,7 +43,7 @@ Every number below came from a command that was actually run.
 | Migrations from empty DB | `for f in migrations/*.sql; psql -f $f` | 8/8 applied clean |
 | Seed + content gate | `psql -f backend/supabase/seed.sql` | 16 categories verified in-database |
 | Database suite | `pg_prove backend/supabase/tests/pgtap/*.sql` | **Files=7, Tests=1128, Result: PASS** |
-| Run-capture core | `gradle test` (Kotlin/JVM) | **9 run, 0 failed** |
+| Run-capture core | `gradle test` (Kotlin/JVM) | **22 run, 0 failed** |
 | Unity domain layer | `dotnet test` (C#) | **29 passed, 0 failed** |
 | Anti-cheat simulation | 38 normal + 14 attack fixtures | **precision 100%, recall 100%, false positives 0** |
 | JS vs C# conformance | 19 cases replayed by the client | **identical** |
