@@ -7,13 +7,13 @@ repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$repo_root"
 
 echo "=============================================================="
-echo " 1/6  direction-lock static scan"
+echo " 1/7  direction-lock static scan"
 echo "=============================================================="
 node tools/direction-lock/scan.mjs
 
 echo
 echo "=============================================================="
-echo " 2/6  content factory is reproducible"
+echo " 2/7  content factory is reproducible"
 echo "=============================================================="
 node tools/content-factory/build.mjs > /dev/null
 node tools/content-factory/emit-seed.mjs > /dev/null
@@ -27,13 +27,13 @@ echo "generated content matches the committed tree"
 
 echo
 echo "=============================================================="
-echo " 3/6  launch content validation"
+echo " 3/7  launch content validation"
 echo "=============================================================="
 node tools/content-validator/validate.mjs
 
 echo
 echo "=============================================================="
-echo " 4/6  domain engine unit tests"
+echo " 4/7  domain engine unit tests"
 echo "=============================================================="
 node --test "tools/tests/*.test.mjs"
 
@@ -48,7 +48,7 @@ node tools/anti-cheat-simulator/simulate.mjs
 
 echo
 echo "=============================================================="
-echo " 5/6  database migrations, seed and pgTAP"
+echo " 5/7  database migrations, seed and pgTAP"
 echo "=============================================================="
 if command -v pg_prove > /dev/null && pg_isready -q 2>/dev/null; then
   bash tools/test/db.sh
@@ -60,7 +60,19 @@ fi
 
 echo
 echo "=============================================================="
-echo " 6/6  cross-implementation conformance (JS engine vs C# client)"
+echo " 6/7  playable loop end-to-end (all ability levels)"
+echo "=============================================================="
+if command -v psql > /dev/null && pg_isready -q 2>/dev/null; then
+  RUNNINGUP_DB="${RUNNINGUP_TEST_DB:-runningup_test}" node client/cli/smoke-play.mjs
+else
+  echo "SKIPPED: no reachable PostgreSQL server."
+  echo "         Status: BLOCKED_TOOLCHAIN for the playable loop suite."
+  exit 2
+fi
+
+echo
+echo "=============================================================="
+echo " 7/7  cross-implementation conformance (JS engine vs C# client)"
 echo "=============================================================="
 node tools/conformance/export-fixtures.mjs > /dev/null
 node tools/conformance/emit-sql-conformance.mjs > /dev/null

@@ -22,7 +22,10 @@
     "fixtures:build": "node tools/run-fixture-generator/generate.mjs",
     "simulate:anticheat": "node tools/anti-cheat-simulator/simulate.mjs",
     "conformance:export": "node tools/conformance/export-fixtures.mjs && node tools/conformance/emit-sql-conformance.mjs",
-    "test:client": "dotnet test client/dotnet/RunningUp.Domain.Tests/RunningUp.Domain.Tests.csproj --nologo"
+    "test:client": "dotnet test client/dotnet/RunningUp.Domain.Tests/RunningUp.Domain.Tests.csproj --nologo",
+    "play": "node client/cli/play.mjs",
+    "play:auto": "node client/cli/play.mjs --auto",
+    "play:smoke": "node client/cli/smoke-play.mjs"
   },
   "dependencies": {},
   "devDependencies": {}

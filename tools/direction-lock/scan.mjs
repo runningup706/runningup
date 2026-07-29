@@ -39,6 +39,7 @@ const ALLOWLIST = new Map([
   ['content/fixtures/run-fixtures.json', 'negative test corpus: these activities exist only to be rejected'],
   ['tools/anti-cheat-simulator/simulate.mjs', 'reports how the forbidden sources were handled'],
   ['tools/tests/anomaly-detection.test.mjs', 'asserts every forbidden source is rejected'],
+  ['client/cli/smoke-play.mjs', 'asserts the played session never reports a rank above World Crown'],
   ['tools/lib/anomaly-detection.mjs', 'names the forbidden sources it refuses'],
   ['docs/balance-evidence/anti-cheat-simulation.json', 'evidence file recording the rejected fixtures'],
   ['tools/lib/monthly-apex.mjs', 'enforces the 1000 km ceiling'],

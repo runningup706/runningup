@@ -50,6 +50,11 @@ jobs:
 
       # db.sh regenerates RLS_MATRIX.md, DATABASE_SCHEMA.md and the evidence manifest from
       # the live schema. If they differ from the commit, the documents were stale.
+      # The game itself must run, not just its parts. This plays the full loop for every
+      # ability level against the database db.sh just seeded.
+      - name: Playable loop end-to-end
+        run: RUNNINGUP_DB=runningup_ci node client/cli/smoke-play.mjs
+
       - name: Fail if the generated security evidence drifted
         run: |
           if ! git diff --quiet -- docs/RLS_MATRIX.md docs/DATABASE_SCHEMA.md artifacts/test-evidence-manifest.json; then
