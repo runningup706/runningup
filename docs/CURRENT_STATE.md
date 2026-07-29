@@ -19,7 +19,7 @@ done, and nothing done is inflated into more than it is.
 | Capability | Status | Evidence / reason |
 |---|---|---|
 | Node 22 tooling, domain engine, tests | **PASS** | `npm run test:unit` — 68 tests |
-| PostgreSQL 16 + pgTAP 1.3.2 | **PASS** | `bash tools/test/db.sh` — 123 tests, 5 suites |
+| PostgreSQL 16 + pgTAP 1.3.2 | **PASS** | `bash tools/test/db.sh` — 136 tests, 6 suites |
 | Content factory + validator | **PASS** | `npm run validate:content` |
 | Direction-lock static scan | **PASS** | `npm run validate:direction-lock` |
 | Java 21 + Gradle 8.14 | **PASS** | `bash tools/bootstrap/doctor.sh` |
@@ -35,7 +35,7 @@ done, and nothing done is inflated into more than it is.
 
 ### Direction lock (DL-1 … DL-5)
 - `docs/USER_DIRECTION_LOCK.md` + `content/schemas/direction_lock.json`
-- `tools/direction-lock/scan.mjs`: 46 files, 19 concept patterns, **0 violations**
+- `tools/direction-lock/scan.mjs`: 94 files, 19 concept patterns, **0 violations**
 - Enforced additionally by DB CHECK constraints, enum ordering and pgTAP
 
 ### Domain engine — 68 unit tests, all passing
@@ -47,7 +47,7 @@ done, and nothing done is inflated into more than it is.
 | `tools/lib/momentum.mjs` | reward day in IANA timezone, same-day sessions, streak reset, weekly/quality/long-run chains |
 | `tools/lib/best-effort.mjs` | fastest-segment extraction for 20 benchmark distances |
 
-### Backend — 123 pgTAP tests, all passing
+### Backend — 136 pgTAP tests, all passing
 | Suite | Tests | Focus |
 |---|---:|---|
 | `01_schema_rls.sql` | 33 | RLS on every relation, cross-user denial, private schema unreachable, ledger not client-writable |
@@ -55,6 +55,7 @@ done, and nothing done is inflated into more than it is.
 | `03_monthly_apex.sql` | 44 | the whole of DL-1 against the real transaction |
 | `04_ledger_integrity.sql` | 17 | immutability, idempotency, reversal-not-edit, DL-5 source allow-list |
 | `05_content_completeness.sql` | 15 | launch floor enforced in the database |
+| `06_profile_write_scope.sql` | 13 | AUDIT_07 regression: client write scope and timezone attribution |
 
 ### Launch content — validator PASS at every floor
 All 18 categories meet the floor exactly: 12 continents, 96 regions, 72 main stages,
@@ -89,7 +90,7 @@ carried through every report in this repository.
 
 ```bash
 npm run test:fast                        # direction lock + content + 68 unit tests
-bash tools/test/db.sh                    # migrations + seed + 123 pgTAP tests
+bash tools/test/db.sh                    # migrations + seed + 136 pgTAP tests
 node tools/content-factory/build.mjs     # regenerate content from the design tables
 node tools/content-factory/emit-seed.mjs # regenerate seed.sql from the content
 bash tools/bootstrap/doctor.sh           # re-check toolchain availability

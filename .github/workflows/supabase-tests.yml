@@ -1,0 +1,45 @@
+name: supabase-tests
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  pgtap:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      PGHOST: localhost
+      PGPORT: '5432'
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      RUNNINGUP_TEST_DB: runningup_ci
+
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Install postgres client, pgTAP and pg_prove
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client postgresql-16-pgtap libtap-harness-archive-perl
+
+      # Migrations must apply to a genuinely empty database, the seed must satisfy the
+      # in-database launch content gate, and every pgTAP suite must pass.
+      - name: Migrations, seed and pgTAP suite
+        run: bash tools/test/db.sh

@@ -25,7 +25,7 @@ measurement are impossible in this environment and are reported as blocked, not 
 | Gate 6 — content pipeline + duplicate validator | **PASS** | Caught and fixed a real reskin |
 | Gate 7 — full launch content | **DATA_PASS** | All 18 categories at floor as validated data; no playable scenes |
 | Gate 8 — RPG, social, season, operations | **NOT STARTED** | Schema groundwork only |
-| Gate 9 — quality, performance, 10 audits | **PARTIAL** | Audits recorded in `docs/audits/` |
+| Gate 9 — quality, performance, 10 audits | **PARTIAL** | 10 audits complete in `docs/audits/`; 4 high-severity defects found and fixed. Performance is `BLOCKED_DEVICE`. |
 | Gate 10 — release, APK, GitHub Release | **BLOCKED_TOOLCHAIN** | No APK can be produced here |
 
 ## Verified evidence from this session
@@ -36,12 +36,12 @@ Every number below came from a command that was actually run.
 |---|---|---|
 | Bundle integrity | `sha256sum -c SHA256SUMS.txt` | 17/17 OK |
 | Split reconstruction | `cat 01..08 \| sha256sum` | matches `b80ecb10…1978` |
-| Direction lock | `node tools/direction-lock/scan.mjs` | 46 files, 19 patterns, **0 violations** |
+| Direction lock | `node tools/direction-lock/scan.mjs` | 94 files, 19 patterns, **0 violations** |
 | Content validation | `node tools/content-validator/validate.mjs` | **all gates passed**, 18/18 categories at floor |
 | Domain engine | `node --test "tools/tests/*.test.mjs"` | **68 pass / 0 fail** |
-| Migrations from empty DB | `for f in migrations/*.sql; psql -f $f` | 7/7 applied clean |
+| Migrations from empty DB | `for f in migrations/*.sql; psql -f $f` | 8/8 applied clean |
 | Seed + content gate | `psql -f backend/supabase/seed.sql` | 16 categories verified in-database |
-| Database suite | `pg_prove backend/supabase/tests/pgtap/*.sql` | **Files=5, Tests=123, Result: PASS** |
+| Database suite | `pg_prove backend/supabase/tests/pgtap/*.sql` | **Files=6, Tests=136, Result: PASS** |
 
 ## Launch content actually implemented
 

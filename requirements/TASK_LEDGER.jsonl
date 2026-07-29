@@ -6,4 +6,5 @@
 {"task_id": "T-005", "title": "Direction-lock static scanner", "status": "done", "owner": "claude-opus-5", "touched": ["tools/direction-lock/"], "evidence": "46 files, 19 patterns, 0 violations"}
 {"task_id": "T-006", "title": "Kotlin run capture module", "status": "blocked", "owner": "claude-opus-5", "touched": ["native/android-running-plugin/"], "evidence": "BLOCKED_TOOLCHAIN: no Android SDK (dl.google.com 403)"}
 {"task_id": "T-007", "title": "Unity client", "status": "blocked", "owner": "claude-opus-5", "touched": ["client/unity/"], "evidence": "BLOCKED_TOOLCHAIN: no Unity Editor or licence"}
-{"task_id": "T-008", "title": "Ten independent audits", "status": "in_progress", "owner": "claude-opus-5", "touched": ["docs/audits/"], "evidence": "see docs/audits/"}
+{"task_id": "T-008", "title": "Ten independent audits", "status": "done", "owner": "claude-opus-5", "touched": ["docs/audits/"], "evidence": "10 audit reports in docs/audits/; 4 high-severity defects found and fixed; 136 DB tests green"}
+{"task_id": "T-009", "title": "CI workflows (direction lock, content, unit, supabase, security)", "status": "done", "owner": "claude-opus-5", "touched": [".github/workflows/"], "evidence": "5 workflows, actions pinned to commit SHAs, YAML parses"}
