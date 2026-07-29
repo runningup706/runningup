@@ -1,0 +1,368 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "character_episode",
+  "count": 36,
+  "items": [
+    {
+      "id": "epi_seon_01",
+      "character_id": "chr_seon",
+      "chapter_index": 1,
+      "slug": "the_gate_she_held",
+      "name_key": "episode.seon.01",
+      "unlock": "character_owned",
+      "scene_address": "episode/seon/01",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_seon_02",
+      "character_id": "chr_seon",
+      "chapter_index": 2,
+      "slug": "what_the_light_cost",
+      "name_key": "episode.seon.02",
+      "unlock": "episode_01_complete",
+      "scene_address": "episode/seon/02",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_seon_03",
+      "character_id": "chr_seon",
+      "chapter_index": 3,
+      "slug": "first_axis_vigil",
+      "name_key": "episode.seon.03",
+      "unlock": "episode_02_complete",
+      "scene_address": "episode/seon/03",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_yuwon_01",
+      "character_id": "chr_yuwon",
+      "chapter_index": 1,
+      "slug": "the_boy_who_wired_the_dark",
+      "name_key": "episode.yuwon.01",
+      "unlock": "character_owned",
+      "scene_address": "episode/yuwon/01",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_yuwon_02",
+      "character_id": "chr_yuwon",
+      "chapter_index": 2,
+      "slug": "grid_debt",
+      "name_key": "episode.yuwon.02",
+      "unlock": "episode_01_complete",
+      "scene_address": "episode/yuwon/02",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_yuwon_03",
+      "character_id": "chr_yuwon",
+      "chapter_index": 3,
+      "slug": "what_the_spire_remembers",
+      "name_key": "episode.yuwon.03",
+      "unlock": "episode_02_complete",
+      "scene_address": "episode/yuwon/03",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_hana_01",
+      "character_id": "chr_hana",
+      "chapter_index": 1,
+      "slug": "the_seed_she_kept",
+      "name_key": "episode.hana.01",
+      "unlock": "character_owned",
+      "scene_address": "episode/hana/01",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_hana_02",
+      "character_id": "chr_hana",
+      "chapter_index": 2,
+      "slug": "a_forest_that_forgot",
+      "name_key": "episode.hana.02",
+      "unlock": "episode_01_complete",
+      "scene_address": "episode/hana/02",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_hana_03",
+      "character_id": "chr_hana",
+      "chapter_index": 3,
+      "slug": "breath_returned",
+      "name_key": "episode.hana.03",
+      "unlock": "episode_02_complete",
+      "scene_address": "episode/hana/03",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_dorin_01",
+      "character_id": "chr_dorin",
+      "chapter_index": 1,
+      "slug": "the_fire_he_banked",
+      "name_key": "episode.dorin.01",
+      "unlock": "character_owned",
+      "scene_address": "episode/dorin/01",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_dorin_02",
+      "character_id": "chr_dorin",
+      "chapter_index": 2,
+      "slug": "apprentice_debt",
+      "name_key": "episode.dorin.02",
+      "unlock": "episode_01_complete",
+      "scene_address": "episode/dorin/02",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_dorin_03",
+      "character_id": "chr_dorin",
+      "chapter_index": 3,
+      "slug": "the_heart_relit",
+      "name_key": "episode.dorin.03",
+      "unlock": "episode_02_complete",
+      "scene_address": "episode/dorin/03",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_ari_01",
+      "character_id": "chr_ari",
+      "chapter_index": 1,
+      "slug": "the_road_that_broke",
+      "name_key": "episode.ari.01",
+      "unlock": "character_owned",
+      "scene_address": "episode/ari/01",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_ari_02",
+      "character_id": "chr_ari",
+      "chapter_index": 2,
+      "slug": "a_kite_for_the_lost",
+      "name_key": "episode.ari.02",
+      "unlock": "episode_01_complete",
+      "scene_address": "episode/ari/02",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_ari_03",
+      "character_id": "chr_ari",
+      "chapter_index": 3,
+      "slug": "roads_rejoined",
+      "name_key": "episode.ari.03",
+      "unlock": "episode_02_complete",
+      "scene_address": "episode/ari/03",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_mirae_01",
+      "character_id": "chr_mirae",
+      "chapter_index": 1,
+      "slug": "the_light_she_carried",
+      "name_key": "episode.mirae.01",
+      "unlock": "character_owned",
+      "scene_address": "episode/mirae/01",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_mirae_02",
+      "character_id": "chr_mirae",
+      "chapter_index": 2,
+      "slug": "charts_of_the_drowned",
+      "name_key": "episode.mirae.02",
+      "unlock": "episode_01_complete",
+      "scene_address": "episode/mirae/02",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_mirae_03",
+      "character_id": "chr_mirae",
+      "chapter_index": 3,
+      "slug": "the_road_home",
+      "name_key": "episode.mirae.03",
+      "unlock": "episode_02_complete",
+      "scene_address": "episode/mirae/03",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_taeho_01",
+      "character_id": "chr_taeho",
+      "chapter_index": 1,
+      "slug": "the_watch_he_kept",
+      "name_key": "episode.taeho.01",
+      "unlock": "character_owned",
+      "scene_address": "episode/taeho/01",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_taeho_02",
+      "character_id": "chr_taeho",
+      "chapter_index": 2,
+      "slug": "names_on_the_wall",
+      "name_key": "episode.taeho.02",
+      "unlock": "episode_01_complete",
+      "scene_address": "episode/taeho/02",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_taeho_03",
+      "character_id": "chr_taeho",
+      "chapter_index": 3,
+      "slug": "the_hour_thawed",
+      "name_key": "episode.taeho.03",
+      "unlock": "episode_02_complete",
+      "scene_address": "episode/taeho/03",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_soye_01",
+      "character_id": "chr_soye",
+      "chapter_index": 1,
+      "slug": "the_woman_of_many_roads",
+      "name_key": "episode.soye.01",
+      "unlock": "character_owned",
+      "scene_address": "episode/soye/01",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_soye_02",
+      "character_id": "chr_soye",
+      "chapter_index": 2,
+      "slug": "what_the_glass_kept",
+      "name_key": "episode.soye.02",
+      "unlock": "episode_01_complete",
+      "scene_address": "episode/soye/02",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_soye_03",
+      "character_id": "chr_soye",
+      "chapter_index": 3,
+      "slug": "the_true_path",
+      "name_key": "episode.soye.03",
+      "unlock": "episode_02_complete",
+      "scene_address": "episode/soye/03",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_jiwoo_01",
+      "character_id": "chr_jiwoo",
+      "chapter_index": 1,
+      "slug": "the_isles_he_left",
+      "name_key": "episode.jiwoo.01",
+      "unlock": "character_owned",
+      "scene_address": "episode/jiwoo/01",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_jiwoo_02",
+      "character_id": "chr_jiwoo",
+      "chapter_index": 2,
+      "slug": "anchor_and_rope",
+      "name_key": "episode.jiwoo.02",
+      "unlock": "episode_01_complete",
+      "scene_address": "episode/jiwoo/02",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_jiwoo_03",
+      "character_id": "chr_jiwoo",
+      "chapter_index": 3,
+      "slug": "sky_rejoined",
+      "name_key": "episode.jiwoo.03",
+      "unlock": "episode_02_complete",
+      "scene_address": "episode/jiwoo/03",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_narae_01",
+      "character_id": "chr_narae",
+      "chapter_index": 1,
+      "slug": "what_the_deep_kept",
+      "name_key": "episode.narae.01",
+      "unlock": "character_owned",
+      "scene_address": "episode/narae/01",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_narae_02",
+      "character_id": "chr_narae",
+      "chapter_index": 2,
+      "slug": "a_tether_for_two",
+      "name_key": "episode.narae.02",
+      "unlock": "episode_01_complete",
+      "scene_address": "episode/narae/02",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_narae_03",
+      "character_id": "chr_narae",
+      "chapter_index": 3,
+      "slug": "the_archive_surfaces",
+      "name_key": "episode.narae.03",
+      "unlock": "episode_02_complete",
+      "scene_address": "episode/narae/03",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_eunseo_01",
+      "character_id": "chr_eunseo",
+      "chapter_index": 1,
+      "slug": "the_hour_she_lost",
+      "name_key": "episode.eunseo.01",
+      "unlock": "character_owned",
+      "scene_address": "episode/eunseo/01",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_eunseo_02",
+      "character_id": "chr_eunseo",
+      "chapter_index": 2,
+      "slug": "wound_and_rewound",
+      "name_key": "episode.eunseo.02",
+      "unlock": "episode_01_complete",
+      "scene_address": "episode/eunseo/02",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_eunseo_03",
+      "character_id": "chr_eunseo",
+      "chapter_index": 3,
+      "slug": "order_restored",
+      "name_key": "episode.eunseo.03",
+      "unlock": "episode_02_complete",
+      "scene_address": "episode/eunseo/03",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_haru_01",
+      "character_id": "chr_haru",
+      "chapter_index": 1,
+      "slug": "the_coat_too_big",
+      "name_key": "episode.haru.01",
+      "unlock": "character_owned",
+      "scene_address": "episode/haru/01",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_haru_02",
+      "character_id": "chr_haru",
+      "chapter_index": 2,
+      "slug": "eleven_voices",
+      "name_key": "episode.haru.02",
+      "unlock": "episode_01_complete",
+      "scene_address": "episode/haru/02",
+      "playable_at_launch": true
+    },
+    {
+      "id": "epi_haru_03",
+      "character_id": "chr_haru",
+      "chapter_index": 3,
+      "slug": "the_axis_reunited",
+      "name_key": "episode.haru.03",
+      "unlock": "episode_02_complete",
+      "scene_address": "episode/haru/03",
+      "playable_at_launch": true
+    }
+  ]
+}

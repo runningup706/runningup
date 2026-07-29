@@ -1,0 +1,596 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "quest",
+  "count": 42,
+  "items": [
+    {
+      "id": "qst_discovery_foundation_daily_momentum",
+      "runner_band_pool": "discovery_foundation",
+      "kind": "daily_momentum",
+      "name_key": "quest.discovery_foundation.daily_momentum",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_discovery_foundation_quality_session",
+      "runner_band_pool": "discovery_foundation",
+      "kind": "quality_session",
+      "name_key": "quest.discovery_foundation.quality_session",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_discovery_foundation_long_run",
+      "runner_band_pool": "discovery_foundation",
+      "kind": "long_run",
+      "name_key": "quest.discovery_foundation.long_run",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_discovery_foundation_weekly_volume",
+      "runner_band_pool": "discovery_foundation",
+      "kind": "weekly_volume",
+      "name_key": "quest.discovery_foundation.weekly_volume",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_discovery_foundation_monthly_apex_checkpoint",
+      "runner_band_pool": "discovery_foundation",
+      "kind": "monthly_apex_checkpoint",
+      "name_key": "quest.discovery_foundation.monthly_apex_checkpoint",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_discovery_foundation_character_episode",
+      "runner_band_pool": "discovery_foundation",
+      "kind": "character_episode",
+      "name_key": "quest.discovery_foundation.character_episode",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_discovery_foundation_continent_restoration",
+      "runner_band_pool": "discovery_foundation",
+      "kind": "continent_restoration",
+      "name_key": "quest.discovery_foundation.continent_restoration",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_regular_daily_momentum",
+      "runner_band_pool": "regular",
+      "kind": "daily_momentum",
+      "name_key": "quest.regular.daily_momentum",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_regular_quality_session",
+      "runner_band_pool": "regular",
+      "kind": "quality_session",
+      "name_key": "quest.regular.quality_session",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_regular_long_run",
+      "runner_band_pool": "regular",
+      "kind": "long_run",
+      "name_key": "quest.regular.long_run",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_regular_weekly_volume",
+      "runner_band_pool": "regular",
+      "kind": "weekly_volume",
+      "name_key": "quest.regular.weekly_volume",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_regular_monthly_apex_checkpoint",
+      "runner_band_pool": "regular",
+      "kind": "monthly_apex_checkpoint",
+      "name_key": "quest.regular.monthly_apex_checkpoint",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_regular_character_episode",
+      "runner_band_pool": "regular",
+      "kind": "character_episode",
+      "name_key": "quest.regular.character_episode",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_regular_continent_restoration",
+      "runner_band_pool": "regular",
+      "kind": "continent_restoration",
+      "name_key": "quest.regular.continent_restoration",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_performance_daily_momentum",
+      "runner_band_pool": "performance",
+      "kind": "daily_momentum",
+      "name_key": "quest.performance.daily_momentum",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_performance_quality_session",
+      "runner_band_pool": "performance",
+      "kind": "quality_session",
+      "name_key": "quest.performance.quality_session",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_performance_long_run",
+      "runner_band_pool": "performance",
+      "kind": "long_run",
+      "name_key": "quest.performance.long_run",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_performance_weekly_volume",
+      "runner_band_pool": "performance",
+      "kind": "weekly_volume",
+      "name_key": "quest.performance.weekly_volume",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_performance_monthly_apex_checkpoint",
+      "runner_band_pool": "performance",
+      "kind": "monthly_apex_checkpoint",
+      "name_key": "quest.performance.monthly_apex_checkpoint",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_performance_character_episode",
+      "runner_band_pool": "performance",
+      "kind": "character_episode",
+      "name_key": "quest.performance.character_episode",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_performance_continent_restoration",
+      "runner_band_pool": "performance",
+      "kind": "continent_restoration",
+      "name_key": "quest.performance.continent_restoration",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_endurance_half_daily_momentum",
+      "runner_band_pool": "endurance_half",
+      "kind": "daily_momentum",
+      "name_key": "quest.endurance_half.daily_momentum",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_endurance_half_quality_session",
+      "runner_band_pool": "endurance_half",
+      "kind": "quality_session",
+      "name_key": "quest.endurance_half.quality_session",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_endurance_half_long_run",
+      "runner_band_pool": "endurance_half",
+      "kind": "long_run",
+      "name_key": "quest.endurance_half.long_run",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_endurance_half_weekly_volume",
+      "runner_band_pool": "endurance_half",
+      "kind": "weekly_volume",
+      "name_key": "quest.endurance_half.weekly_volume",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_endurance_half_monthly_apex_checkpoint",
+      "runner_band_pool": "endurance_half",
+      "kind": "monthly_apex_checkpoint",
+      "name_key": "quest.endurance_half.monthly_apex_checkpoint",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_endurance_half_character_episode",
+      "runner_band_pool": "endurance_half",
+      "kind": "character_episode",
+      "name_key": "quest.endurance_half.character_episode",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_endurance_half_continent_restoration",
+      "runner_band_pool": "endurance_half",
+      "kind": "continent_restoration",
+      "name_key": "quest.endurance_half.continent_restoration",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_marathon_daily_momentum",
+      "runner_band_pool": "marathon",
+      "kind": "daily_momentum",
+      "name_key": "quest.marathon.daily_momentum",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_marathon_quality_session",
+      "runner_band_pool": "marathon",
+      "kind": "quality_session",
+      "name_key": "quest.marathon.quality_session",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_marathon_long_run",
+      "runner_band_pool": "marathon",
+      "kind": "long_run",
+      "name_key": "quest.marathon.long_run",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_marathon_weekly_volume",
+      "runner_band_pool": "marathon",
+      "kind": "weekly_volume",
+      "name_key": "quest.marathon.weekly_volume",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_marathon_monthly_apex_checkpoint",
+      "runner_band_pool": "marathon",
+      "kind": "monthly_apex_checkpoint",
+      "name_key": "quest.marathon.monthly_apex_checkpoint",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_marathon_character_episode",
+      "runner_band_pool": "marathon",
+      "kind": "character_episode",
+      "name_key": "quest.marathon.character_episode",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_marathon_continent_restoration",
+      "runner_band_pool": "marathon",
+      "kind": "continent_restoration",
+      "name_key": "quest.marathon.continent_restoration",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_advanced_custom_daily_momentum",
+      "runner_band_pool": "advanced_custom",
+      "kind": "daily_momentum",
+      "name_key": "quest.advanced_custom.daily_momentum",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_advanced_custom_quality_session",
+      "runner_band_pool": "advanced_custom",
+      "kind": "quality_session",
+      "name_key": "quest.advanced_custom.quality_session",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_advanced_custom_long_run",
+      "runner_band_pool": "advanced_custom",
+      "kind": "long_run",
+      "name_key": "quest.advanced_custom.long_run",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_advanced_custom_weekly_volume",
+      "runner_band_pool": "advanced_custom",
+      "kind": "weekly_volume",
+      "name_key": "quest.advanced_custom.weekly_volume",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_advanced_custom_monthly_apex_checkpoint",
+      "runner_band_pool": "advanced_custom",
+      "kind": "monthly_apex_checkpoint",
+      "name_key": "quest.advanced_custom.monthly_apex_checkpoint",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_advanced_custom_character_episode",
+      "runner_band_pool": "advanced_custom",
+      "kind": "character_episode",
+      "name_key": "quest.advanced_custom.character_episode",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    },
+    {
+      "id": "qst_advanced_custom_continent_restoration",
+      "runner_band_pool": "advanced_custom",
+      "kind": "continent_restoration",
+      "name_key": "quest.advanced_custom.continent_restoration",
+      "rerollable": true,
+      "challenge_up_down": true,
+      "allowed_activity_types": [
+        "road",
+        "track",
+        "treadmill",
+        "indoor"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+# Build output
+artifacts/
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+**/service_role*
+**/*secret*
+!docs/SECURITY.md
+
+# Node
+node_modules/
+
+# Unity
+client/unity/Library/
+client/unity/Temp/
+client/unity/Obj/
+client/unity/Build/
+client/unity/Logs/
+client/unity/UserSettings/
+client/unity/MemoryCaptures/
+
+# Gradle / Android
+.gradle/
+native/**/build/
+local.properties
+
+# OS / editor
+.DS_Store
+*.swp

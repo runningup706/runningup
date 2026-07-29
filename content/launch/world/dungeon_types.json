@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "dungeon_type",
+  "count": 6,
+  "items": [
+    {
+      "id": "dgn_spire",
+      "rule": "ascending floors, no healing between them"
+    },
+    {
+      "id": "dgn_gauntlet",
+      "rule": "fixed loadout chosen before entry"
+    },
+    {
+      "id": "dgn_relay",
+      "rule": "three characters, one health pool"
+    },
+    {
+      "id": "dgn_siege",
+      "rule": "defend while the objective moves"
+    },
+    {
+      "id": "dgn_echo",
+      "rule": "the arena replays your previous run as an enemy"
+    },
+    {
+      "id": "dgn_convergence",
+      "rule": "two continent mechanics chosen at random"
+    }
+  ]
+}

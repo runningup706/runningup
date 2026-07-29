@@ -1,0 +1,1640 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "region_node",
+  "count": 96,
+  "items": [
+    {
+      "id": "rgn_lumena_01",
+      "continent_id": "con_lumena",
+      "order": 1,
+      "name_key": "region.lumena.01",
+      "node_type": "battle_node",
+      "scene_address": "world/lumena/region_01",
+      "reachable_from": [
+        "continent_entry"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_lumena_relight_the_gate",
+        "rst_lumena_restore_the_mirror_grid",
+        "rst_lumena_reawaken_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_lumena_02",
+      "continent_id": "con_lumena",
+      "order": 2,
+      "name_key": "region.lumena.02",
+      "node_type": "challenge_node",
+      "scene_address": "world/lumena/region_02",
+      "reachable_from": [
+        "rgn_lumena_01"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_lumena_relight_the_gate",
+        "rst_lumena_restore_the_mirror_grid",
+        "rst_lumena_reawaken_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_lumena_03",
+      "continent_id": "con_lumena",
+      "order": 3,
+      "name_key": "region.lumena.03",
+      "node_type": "battle_node",
+      "scene_address": "world/lumena/region_03",
+      "reachable_from": [
+        "rgn_lumena_02"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_lumena_relight_the_gate",
+        "rst_lumena_restore_the_mirror_grid",
+        "rst_lumena_reawaken_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_lumena_04",
+      "continent_id": "con_lumena",
+      "order": 4,
+      "name_key": "region.lumena.04",
+      "node_type": "battle_node",
+      "scene_address": "world/lumena/region_04",
+      "reachable_from": [
+        "rgn_lumena_03"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_lumena_relight_the_gate",
+        "rst_lumena_restore_the_mirror_grid",
+        "rst_lumena_reawaken_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_lumena_05",
+      "continent_id": "con_lumena",
+      "order": 5,
+      "name_key": "region.lumena.05",
+      "node_type": "challenge_node",
+      "scene_address": "world/lumena/region_05",
+      "reachable_from": [
+        "rgn_lumena_04"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_lumena_relight_the_gate",
+        "rst_lumena_restore_the_mirror_grid",
+        "rst_lumena_reawaken_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_lumena_06",
+      "continent_id": "con_lumena",
+      "order": 6,
+      "name_key": "region.lumena.06",
+      "node_type": "battle_node",
+      "scene_address": "world/lumena/region_06",
+      "reachable_from": [
+        "rgn_lumena_05"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_lumena_relight_the_gate",
+        "rst_lumena_restore_the_mirror_grid",
+        "rst_lumena_reawaken_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_lumena_07",
+      "continent_id": "con_lumena",
+      "order": 7,
+      "name_key": "region.lumena.07",
+      "node_type": "battle_node",
+      "scene_address": "world/lumena/region_07",
+      "reachable_from": [
+        "rgn_lumena_06"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_lumena_relight_the_gate",
+        "rst_lumena_restore_the_mirror_grid",
+        "rst_lumena_reawaken_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_lumena_08",
+      "continent_id": "con_lumena",
+      "order": 8,
+      "name_key": "region.lumena.08",
+      "node_type": "continent_boss_node",
+      "scene_address": "world/lumena/region_08",
+      "reachable_from": [
+        "rgn_lumena_07"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_lumena_relight_the_gate",
+        "rst_lumena_restore_the_mirror_grid",
+        "rst_lumena_reawaken_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_verdia_01",
+      "continent_id": "con_verdia",
+      "order": 1,
+      "name_key": "region.verdia.01",
+      "node_type": "battle_node",
+      "scene_address": "world/verdia/region_01",
+      "reachable_from": [
+        "continent_entry"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_verdia_clear_the_blight",
+        "rst_verdia_regrow_the_canopy",
+        "rst_verdia_wake_the_great_tree"
+      ]
+    },
+    {
+      "id": "rgn_verdia_02",
+      "continent_id": "con_verdia",
+      "order": 2,
+      "name_key": "region.verdia.02",
+      "node_type": "challenge_node",
+      "scene_address": "world/verdia/region_02",
+      "reachable_from": [
+        "rgn_verdia_01"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_verdia_clear_the_blight",
+        "rst_verdia_regrow_the_canopy",
+        "rst_verdia_wake_the_great_tree"
+      ]
+    },
+    {
+      "id": "rgn_verdia_03",
+      "continent_id": "con_verdia",
+      "order": 3,
+      "name_key": "region.verdia.03",
+      "node_type": "battle_node",
+      "scene_address": "world/verdia/region_03",
+      "reachable_from": [
+        "rgn_verdia_02"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_verdia_clear_the_blight",
+        "rst_verdia_regrow_the_canopy",
+        "rst_verdia_wake_the_great_tree"
+      ]
+    },
+    {
+      "id": "rgn_verdia_04",
+      "continent_id": "con_verdia",
+      "order": 4,
+      "name_key": "region.verdia.04",
+      "node_type": "battle_node",
+      "scene_address": "world/verdia/region_04",
+      "reachable_from": [
+        "rgn_verdia_03"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_verdia_clear_the_blight",
+        "rst_verdia_regrow_the_canopy",
+        "rst_verdia_wake_the_great_tree"
+      ]
+    },
+    {
+      "id": "rgn_verdia_05",
+      "continent_id": "con_verdia",
+      "order": 5,
+      "name_key": "region.verdia.05",
+      "node_type": "challenge_node",
+      "scene_address": "world/verdia/region_05",
+      "reachable_from": [
+        "rgn_verdia_04"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_verdia_clear_the_blight",
+        "rst_verdia_regrow_the_canopy",
+        "rst_verdia_wake_the_great_tree"
+      ]
+    },
+    {
+      "id": "rgn_verdia_06",
+      "continent_id": "con_verdia",
+      "order": 6,
+      "name_key": "region.verdia.06",
+      "node_type": "battle_node",
+      "scene_address": "world/verdia/region_06",
+      "reachable_from": [
+        "rgn_verdia_05"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_verdia_clear_the_blight",
+        "rst_verdia_regrow_the_canopy",
+        "rst_verdia_wake_the_great_tree"
+      ]
+    },
+    {
+      "id": "rgn_verdia_07",
+      "continent_id": "con_verdia",
+      "order": 7,
+      "name_key": "region.verdia.07",
+      "node_type": "battle_node",
+      "scene_address": "world/verdia/region_07",
+      "reachable_from": [
+        "rgn_verdia_06"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_verdia_clear_the_blight",
+        "rst_verdia_regrow_the_canopy",
+        "rst_verdia_wake_the_great_tree"
+      ]
+    },
+    {
+      "id": "rgn_verdia_08",
+      "continent_id": "con_verdia",
+      "order": 8,
+      "name_key": "region.verdia.08",
+      "node_type": "continent_boss_node",
+      "scene_address": "world/verdia/region_08",
+      "reachable_from": [
+        "rgn_verdia_07"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_verdia_clear_the_blight",
+        "rst_verdia_regrow_the_canopy",
+        "rst_verdia_wake_the_great_tree"
+      ]
+    },
+    {
+      "id": "rgn_rubra_01",
+      "continent_id": "con_rubra",
+      "order": 1,
+      "name_key": "region.rubra.01",
+      "node_type": "battle_node",
+      "scene_address": "world/rubra/region_01",
+      "reachable_from": [
+        "continent_entry"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_rubra_clear_the_slag",
+        "rst_rubra_restart_the_bellows",
+        "rst_rubra_reignite_the_heart"
+      ]
+    },
+    {
+      "id": "rgn_rubra_02",
+      "continent_id": "con_rubra",
+      "order": 2,
+      "name_key": "region.rubra.02",
+      "node_type": "challenge_node",
+      "scene_address": "world/rubra/region_02",
+      "reachable_from": [
+        "rgn_rubra_01"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_rubra_clear_the_slag",
+        "rst_rubra_restart_the_bellows",
+        "rst_rubra_reignite_the_heart"
+      ]
+    },
+    {
+      "id": "rgn_rubra_03",
+      "continent_id": "con_rubra",
+      "order": 3,
+      "name_key": "region.rubra.03",
+      "node_type": "battle_node",
+      "scene_address": "world/rubra/region_03",
+      "reachable_from": [
+        "rgn_rubra_02"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_rubra_clear_the_slag",
+        "rst_rubra_restart_the_bellows",
+        "rst_rubra_reignite_the_heart"
+      ]
+    },
+    {
+      "id": "rgn_rubra_04",
+      "continent_id": "con_rubra",
+      "order": 4,
+      "name_key": "region.rubra.04",
+      "node_type": "battle_node",
+      "scene_address": "world/rubra/region_04",
+      "reachable_from": [
+        "rgn_rubra_03"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_rubra_clear_the_slag",
+        "rst_rubra_restart_the_bellows",
+        "rst_rubra_reignite_the_heart"
+      ]
+    },
+    {
+      "id": "rgn_rubra_05",
+      "continent_id": "con_rubra",
+      "order": 5,
+      "name_key": "region.rubra.05",
+      "node_type": "challenge_node",
+      "scene_address": "world/rubra/region_05",
+      "reachable_from": [
+        "rgn_rubra_04"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_rubra_clear_the_slag",
+        "rst_rubra_restart_the_bellows",
+        "rst_rubra_reignite_the_heart"
+      ]
+    },
+    {
+      "id": "rgn_rubra_06",
+      "continent_id": "con_rubra",
+      "order": 6,
+      "name_key": "region.rubra.06",
+      "node_type": "battle_node",
+      "scene_address": "world/rubra/region_06",
+      "reachable_from": [
+        "rgn_rubra_05"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_rubra_clear_the_slag",
+        "rst_rubra_restart_the_bellows",
+        "rst_rubra_reignite_the_heart"
+      ]
+    },
+    {
+      "id": "rgn_rubra_07",
+      "continent_id": "con_rubra",
+      "order": 7,
+      "name_key": "region.rubra.07",
+      "node_type": "battle_node",
+      "scene_address": "world/rubra/region_07",
+      "reachable_from": [
+        "rgn_rubra_06"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_rubra_clear_the_slag",
+        "rst_rubra_restart_the_bellows",
+        "rst_rubra_reignite_the_heart"
+      ]
+    },
+    {
+      "id": "rgn_rubra_08",
+      "continent_id": "con_rubra",
+      "order": 8,
+      "name_key": "region.rubra.08",
+      "node_type": "continent_boss_node",
+      "scene_address": "world/rubra/region_08",
+      "reachable_from": [
+        "rgn_rubra_07"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_rubra_clear_the_slag",
+        "rst_rubra_restart_the_bellows",
+        "rst_rubra_reignite_the_heart"
+      ]
+    },
+    {
+      "id": "rgn_anel_01",
+      "continent_id": "con_anel",
+      "order": 1,
+      "name_key": "region.anel.01",
+      "node_type": "battle_node",
+      "scene_address": "world/anel/region_01",
+      "reachable_from": [
+        "continent_entry"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_anel_raise_the_mills",
+        "rst_anel_relink_the_highroad",
+        "rst_anel_bind_the_roads"
+      ]
+    },
+    {
+      "id": "rgn_anel_02",
+      "continent_id": "con_anel",
+      "order": 2,
+      "name_key": "region.anel.02",
+      "node_type": "challenge_node",
+      "scene_address": "world/anel/region_02",
+      "reachable_from": [
+        "rgn_anel_01"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_anel_raise_the_mills",
+        "rst_anel_relink_the_highroad",
+        "rst_anel_bind_the_roads"
+      ]
+    },
+    {
+      "id": "rgn_anel_03",
+      "continent_id": "con_anel",
+      "order": 3,
+      "name_key": "region.anel.03",
+      "node_type": "battle_node",
+      "scene_address": "world/anel/region_03",
+      "reachable_from": [
+        "rgn_anel_02"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_anel_raise_the_mills",
+        "rst_anel_relink_the_highroad",
+        "rst_anel_bind_the_roads"
+      ]
+    },
+    {
+      "id": "rgn_anel_04",
+      "continent_id": "con_anel",
+      "order": 4,
+      "name_key": "region.anel.04",
+      "node_type": "battle_node",
+      "scene_address": "world/anel/region_04",
+      "reachable_from": [
+        "rgn_anel_03"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_anel_raise_the_mills",
+        "rst_anel_relink_the_highroad",
+        "rst_anel_bind_the_roads"
+      ]
+    },
+    {
+      "id": "rgn_anel_05",
+      "continent_id": "con_anel",
+      "order": 5,
+      "name_key": "region.anel.05",
+      "node_type": "challenge_node",
+      "scene_address": "world/anel/region_05",
+      "reachable_from": [
+        "rgn_anel_04"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_anel_raise_the_mills",
+        "rst_anel_relink_the_highroad",
+        "rst_anel_bind_the_roads"
+      ]
+    },
+    {
+      "id": "rgn_anel_06",
+      "continent_id": "con_anel",
+      "order": 6,
+      "name_key": "region.anel.06",
+      "node_type": "battle_node",
+      "scene_address": "world/anel/region_06",
+      "reachable_from": [
+        "rgn_anel_05"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_anel_raise_the_mills",
+        "rst_anel_relink_the_highroad",
+        "rst_anel_bind_the_roads"
+      ]
+    },
+    {
+      "id": "rgn_anel_07",
+      "continent_id": "con_anel",
+      "order": 7,
+      "name_key": "region.anel.07",
+      "node_type": "battle_node",
+      "scene_address": "world/anel/region_07",
+      "reachable_from": [
+        "rgn_anel_06"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_anel_raise_the_mills",
+        "rst_anel_relink_the_highroad",
+        "rst_anel_bind_the_roads"
+      ]
+    },
+    {
+      "id": "rgn_anel_08",
+      "continent_id": "con_anel",
+      "order": 8,
+      "name_key": "region.anel.08",
+      "node_type": "continent_boss_node",
+      "scene_address": "world/anel/region_08",
+      "reachable_from": [
+        "rgn_anel_07"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_anel_raise_the_mills",
+        "rst_anel_relink_the_highroad",
+        "rst_anel_bind_the_roads"
+      ]
+    },
+    {
+      "id": "rgn_serene_01",
+      "continent_id": "con_serene",
+      "order": 1,
+      "name_key": "region.serene.01",
+      "node_type": "battle_node",
+      "scene_address": "world/serene/region_01",
+      "reachable_from": [
+        "continent_entry"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_serene_relight_the_lighthouse",
+        "rst_serene_mark_the_searoad",
+        "rst_serene_restore_the_shrine"
+      ]
+    },
+    {
+      "id": "rgn_serene_02",
+      "continent_id": "con_serene",
+      "order": 2,
+      "name_key": "region.serene.02",
+      "node_type": "challenge_node",
+      "scene_address": "world/serene/region_02",
+      "reachable_from": [
+        "rgn_serene_01"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_serene_relight_the_lighthouse",
+        "rst_serene_mark_the_searoad",
+        "rst_serene_restore_the_shrine"
+      ]
+    },
+    {
+      "id": "rgn_serene_03",
+      "continent_id": "con_serene",
+      "order": 3,
+      "name_key": "region.serene.03",
+      "node_type": "battle_node",
+      "scene_address": "world/serene/region_03",
+      "reachable_from": [
+        "rgn_serene_02"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_serene_relight_the_lighthouse",
+        "rst_serene_mark_the_searoad",
+        "rst_serene_restore_the_shrine"
+      ]
+    },
+    {
+      "id": "rgn_serene_04",
+      "continent_id": "con_serene",
+      "order": 4,
+      "name_key": "region.serene.04",
+      "node_type": "battle_node",
+      "scene_address": "world/serene/region_04",
+      "reachable_from": [
+        "rgn_serene_03"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_serene_relight_the_lighthouse",
+        "rst_serene_mark_the_searoad",
+        "rst_serene_restore_the_shrine"
+      ]
+    },
+    {
+      "id": "rgn_serene_05",
+      "continent_id": "con_serene",
+      "order": 5,
+      "name_key": "region.serene.05",
+      "node_type": "challenge_node",
+      "scene_address": "world/serene/region_05",
+      "reachable_from": [
+        "rgn_serene_04"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_serene_relight_the_lighthouse",
+        "rst_serene_mark_the_searoad",
+        "rst_serene_restore_the_shrine"
+      ]
+    },
+    {
+      "id": "rgn_serene_06",
+      "continent_id": "con_serene",
+      "order": 6,
+      "name_key": "region.serene.06",
+      "node_type": "battle_node",
+      "scene_address": "world/serene/region_06",
+      "reachable_from": [
+        "rgn_serene_05"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_serene_relight_the_lighthouse",
+        "rst_serene_mark_the_searoad",
+        "rst_serene_restore_the_shrine"
+      ]
+    },
+    {
+      "id": "rgn_serene_07",
+      "continent_id": "con_serene",
+      "order": 7,
+      "name_key": "region.serene.07",
+      "node_type": "battle_node",
+      "scene_address": "world/serene/region_07",
+      "reachable_from": [
+        "rgn_serene_06"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_serene_relight_the_lighthouse",
+        "rst_serene_mark_the_searoad",
+        "rst_serene_restore_the_shrine"
+      ]
+    },
+    {
+      "id": "rgn_serene_08",
+      "continent_id": "con_serene",
+      "order": 8,
+      "name_key": "region.serene.08",
+      "node_type": "continent_boss_node",
+      "scene_address": "world/serene/region_08",
+      "reachable_from": [
+        "rgn_serene_07"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_serene_relight_the_lighthouse",
+        "rst_serene_mark_the_searoad",
+        "rst_serene_restore_the_shrine"
+      ]
+    },
+    {
+      "id": "rgn_voltis_01",
+      "continent_id": "con_voltis",
+      "order": 1,
+      "name_key": "region.voltis.01",
+      "node_type": "battle_node",
+      "scene_address": "world/voltis/region_01",
+      "reachable_from": [
+        "continent_entry"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_voltis_restore_the_substation",
+        "rst_voltis_rewire_the_grid",
+        "rst_voltis_stabilise_the_exchange"
+      ]
+    },
+    {
+      "id": "rgn_voltis_02",
+      "continent_id": "con_voltis",
+      "order": 2,
+      "name_key": "region.voltis.02",
+      "node_type": "challenge_node",
+      "scene_address": "world/voltis/region_02",
+      "reachable_from": [
+        "rgn_voltis_01"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_voltis_restore_the_substation",
+        "rst_voltis_rewire_the_grid",
+        "rst_voltis_stabilise_the_exchange"
+      ]
+    },
+    {
+      "id": "rgn_voltis_03",
+      "continent_id": "con_voltis",
+      "order": 3,
+      "name_key": "region.voltis.03",
+      "node_type": "battle_node",
+      "scene_address": "world/voltis/region_03",
+      "reachable_from": [
+        "rgn_voltis_02"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_voltis_restore_the_substation",
+        "rst_voltis_rewire_the_grid",
+        "rst_voltis_stabilise_the_exchange"
+      ]
+    },
+    {
+      "id": "rgn_voltis_04",
+      "continent_id": "con_voltis",
+      "order": 4,
+      "name_key": "region.voltis.04",
+      "node_type": "battle_node",
+      "scene_address": "world/voltis/region_04",
+      "reachable_from": [
+        "rgn_voltis_03"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_voltis_restore_the_substation",
+        "rst_voltis_rewire_the_grid",
+        "rst_voltis_stabilise_the_exchange"
+      ]
+    },
+    {
+      "id": "rgn_voltis_05",
+      "continent_id": "con_voltis",
+      "order": 5,
+      "name_key": "region.voltis.05",
+      "node_type": "challenge_node",
+      "scene_address": "world/voltis/region_05",
+      "reachable_from": [
+        "rgn_voltis_04"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_voltis_restore_the_substation",
+        "rst_voltis_rewire_the_grid",
+        "rst_voltis_stabilise_the_exchange"
+      ]
+    },
+    {
+      "id": "rgn_voltis_06",
+      "continent_id": "con_voltis",
+      "order": 6,
+      "name_key": "region.voltis.06",
+      "node_type": "battle_node",
+      "scene_address": "world/voltis/region_06",
+      "reachable_from": [
+        "rgn_voltis_05"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_voltis_restore_the_substation",
+        "rst_voltis_rewire_the_grid",
+        "rst_voltis_stabilise_the_exchange"
+      ]
+    },
+    {
+      "id": "rgn_voltis_07",
+      "continent_id": "con_voltis",
+      "order": 7,
+      "name_key": "region.voltis.07",
+      "node_type": "battle_node",
+      "scene_address": "world/voltis/region_07",
+      "reachable_from": [
+        "rgn_voltis_06"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_voltis_restore_the_substation",
+        "rst_voltis_rewire_the_grid",
+        "rst_voltis_stabilise_the_exchange"
+      ]
+    },
+    {
+      "id": "rgn_voltis_08",
+      "continent_id": "con_voltis",
+      "order": 8,
+      "name_key": "region.voltis.08",
+      "node_type": "continent_boss_node",
+      "scene_address": "world/voltis/region_08",
+      "reachable_from": [
+        "rgn_voltis_07"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_voltis_restore_the_substation",
+        "rst_voltis_rewire_the_grid",
+        "rst_voltis_stabilise_the_exchange"
+      ]
+    },
+    {
+      "id": "rgn_hora_01",
+      "continent_id": "con_hora",
+      "order": 1,
+      "name_key": "region.hora.01",
+      "node_type": "battle_node",
+      "scene_address": "world/hora/region_01",
+      "reachable_from": [
+        "continent_entry"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_hora_clear_the_mirage",
+        "rst_hora_raise_the_sandglass",
+        "rst_hora_unveil_the_true_road"
+      ]
+    },
+    {
+      "id": "rgn_hora_02",
+      "continent_id": "con_hora",
+      "order": 2,
+      "name_key": "region.hora.02",
+      "node_type": "challenge_node",
+      "scene_address": "world/hora/region_02",
+      "reachable_from": [
+        "rgn_hora_01"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_hora_clear_the_mirage",
+        "rst_hora_raise_the_sandglass",
+        "rst_hora_unveil_the_true_road"
+      ]
+    },
+    {
+      "id": "rgn_hora_03",
+      "continent_id": "con_hora",
+      "order": 3,
+      "name_key": "region.hora.03",
+      "node_type": "battle_node",
+      "scene_address": "world/hora/region_03",
+      "reachable_from": [
+        "rgn_hora_02"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_hora_clear_the_mirage",
+        "rst_hora_raise_the_sandglass",
+        "rst_hora_unveil_the_true_road"
+      ]
+    },
+    {
+      "id": "rgn_hora_04",
+      "continent_id": "con_hora",
+      "order": 4,
+      "name_key": "region.hora.04",
+      "node_type": "battle_node",
+      "scene_address": "world/hora/region_04",
+      "reachable_from": [
+        "rgn_hora_03"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_hora_clear_the_mirage",
+        "rst_hora_raise_the_sandglass",
+        "rst_hora_unveil_the_true_road"
+      ]
+    },
+    {
+      "id": "rgn_hora_05",
+      "continent_id": "con_hora",
+      "order": 5,
+      "name_key": "region.hora.05",
+      "node_type": "challenge_node",
+      "scene_address": "world/hora/region_05",
+      "reachable_from": [
+        "rgn_hora_04"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_hora_clear_the_mirage",
+        "rst_hora_raise_the_sandglass",
+        "rst_hora_unveil_the_true_road"
+      ]
+    },
+    {
+      "id": "rgn_hora_06",
+      "continent_id": "con_hora",
+      "order": 6,
+      "name_key": "region.hora.06",
+      "node_type": "battle_node",
+      "scene_address": "world/hora/region_06",
+      "reachable_from": [
+        "rgn_hora_05"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_hora_clear_the_mirage",
+        "rst_hora_raise_the_sandglass",
+        "rst_hora_unveil_the_true_road"
+      ]
+    },
+    {
+      "id": "rgn_hora_07",
+      "continent_id": "con_hora",
+      "order": 7,
+      "name_key": "region.hora.07",
+      "node_type": "battle_node",
+      "scene_address": "world/hora/region_07",
+      "reachable_from": [
+        "rgn_hora_06"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_hora_clear_the_mirage",
+        "rst_hora_raise_the_sandglass",
+        "rst_hora_unveil_the_true_road"
+      ]
+    },
+    {
+      "id": "rgn_hora_08",
+      "continent_id": "con_hora",
+      "order": 8,
+      "name_key": "region.hora.08",
+      "node_type": "continent_boss_node",
+      "scene_address": "world/hora/region_08",
+      "reachable_from": [
+        "rgn_hora_07"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_hora_clear_the_mirage",
+        "rst_hora_raise_the_sandglass",
+        "rst_hora_unveil_the_true_road"
+      ]
+    },
+    {
+      "id": "rgn_nival_01",
+      "continent_id": "con_nival",
+      "order": 1,
+      "name_key": "region.nival.01",
+      "node_type": "battle_node",
+      "scene_address": "world/nival/region_01",
+      "reachable_from": [
+        "continent_entry"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_nival_break_the_curtain",
+        "rst_nival_reopen_the_springs",
+        "rst_nival_thaw_the_belfry"
+      ]
+    },
+    {
+      "id": "rgn_nival_02",
+      "continent_id": "con_nival",
+      "order": 2,
+      "name_key": "region.nival.02",
+      "node_type": "challenge_node",
+      "scene_address": "world/nival/region_02",
+      "reachable_from": [
+        "rgn_nival_01"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_nival_break_the_curtain",
+        "rst_nival_reopen_the_springs",
+        "rst_nival_thaw_the_belfry"
+      ]
+    },
+    {
+      "id": "rgn_nival_03",
+      "continent_id": "con_nival",
+      "order": 3,
+      "name_key": "region.nival.03",
+      "node_type": "battle_node",
+      "scene_address": "world/nival/region_03",
+      "reachable_from": [
+        "rgn_nival_02"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_nival_break_the_curtain",
+        "rst_nival_reopen_the_springs",
+        "rst_nival_thaw_the_belfry"
+      ]
+    },
+    {
+      "id": "rgn_nival_04",
+      "continent_id": "con_nival",
+      "order": 4,
+      "name_key": "region.nival.04",
+      "node_type": "battle_node",
+      "scene_address": "world/nival/region_04",
+      "reachable_from": [
+        "rgn_nival_03"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_nival_break_the_curtain",
+        "rst_nival_reopen_the_springs",
+        "rst_nival_thaw_the_belfry"
+      ]
+    },
+    {
+      "id": "rgn_nival_05",
+      "continent_id": "con_nival",
+      "order": 5,
+      "name_key": "region.nival.05",
+      "node_type": "challenge_node",
+      "scene_address": "world/nival/region_05",
+      "reachable_from": [
+        "rgn_nival_04"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_nival_break_the_curtain",
+        "rst_nival_reopen_the_springs",
+        "rst_nival_thaw_the_belfry"
+      ]
+    },
+    {
+      "id": "rgn_nival_06",
+      "continent_id": "con_nival",
+      "order": 6,
+      "name_key": "region.nival.06",
+      "node_type": "battle_node",
+      "scene_address": "world/nival/region_06",
+      "reachable_from": [
+        "rgn_nival_05"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_nival_break_the_curtain",
+        "rst_nival_reopen_the_springs",
+        "rst_nival_thaw_the_belfry"
+      ]
+    },
+    {
+      "id": "rgn_nival_07",
+      "continent_id": "con_nival",
+      "order": 7,
+      "name_key": "region.nival.07",
+      "node_type": "battle_node",
+      "scene_address": "world/nival/region_07",
+      "reachable_from": [
+        "rgn_nival_06"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_nival_break_the_curtain",
+        "rst_nival_reopen_the_springs",
+        "rst_nival_thaw_the_belfry"
+      ]
+    },
+    {
+      "id": "rgn_nival_08",
+      "continent_id": "con_nival",
+      "order": 8,
+      "name_key": "region.nival.08",
+      "node_type": "continent_boss_node",
+      "scene_address": "world/nival/region_08",
+      "reachable_from": [
+        "rgn_nival_07"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_nival_break_the_curtain",
+        "rst_nival_reopen_the_springs",
+        "rst_nival_thaw_the_belfry"
+      ]
+    },
+    {
+      "id": "rgn_kael_01",
+      "continent_id": "con_kael",
+      "order": 1,
+      "name_key": "region.kael.01",
+      "node_type": "battle_node",
+      "scene_address": "world/kael/region_01",
+      "reachable_from": [
+        "continent_entry"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_kael_anchor_the_isles",
+        "rst_kael_rebuild_the_skyway",
+        "rst_kael_bind_the_core"
+      ]
+    },
+    {
+      "id": "rgn_kael_02",
+      "continent_id": "con_kael",
+      "order": 2,
+      "name_key": "region.kael.02",
+      "node_type": "challenge_node",
+      "scene_address": "world/kael/region_02",
+      "reachable_from": [
+        "rgn_kael_01"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_kael_anchor_the_isles",
+        "rst_kael_rebuild_the_skyway",
+        "rst_kael_bind_the_core"
+      ]
+    },
+    {
+      "id": "rgn_kael_03",
+      "continent_id": "con_kael",
+      "order": 3,
+      "name_key": "region.kael.03",
+      "node_type": "battle_node",
+      "scene_address": "world/kael/region_03",
+      "reachable_from": [
+        "rgn_kael_02"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_kael_anchor_the_isles",
+        "rst_kael_rebuild_the_skyway",
+        "rst_kael_bind_the_core"
+      ]
+    },
+    {
+      "id": "rgn_kael_04",
+      "continent_id": "con_kael",
+      "order": 4,
+      "name_key": "region.kael.04",
+      "node_type": "battle_node",
+      "scene_address": "world/kael/region_04",
+      "reachable_from": [
+        "rgn_kael_03"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_kael_anchor_the_isles",
+        "rst_kael_rebuild_the_skyway",
+        "rst_kael_bind_the_core"
+      ]
+    },
+    {
+      "id": "rgn_kael_05",
+      "continent_id": "con_kael",
+      "order": 5,
+      "name_key": "region.kael.05",
+      "node_type": "challenge_node",
+      "scene_address": "world/kael/region_05",
+      "reachable_from": [
+        "rgn_kael_04"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_kael_anchor_the_isles",
+        "rst_kael_rebuild_the_skyway",
+        "rst_kael_bind_the_core"
+      ]
+    },
+    {
+      "id": "rgn_kael_06",
+      "continent_id": "con_kael",
+      "order": 6,
+      "name_key": "region.kael.06",
+      "node_type": "battle_node",
+      "scene_address": "world/kael/region_06",
+      "reachable_from": [
+        "rgn_kael_05"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_kael_anchor_the_isles",
+        "rst_kael_rebuild_the_skyway",
+        "rst_kael_bind_the_core"
+      ]
+    },
+    {
+      "id": "rgn_kael_07",
+      "continent_id": "con_kael",
+      "order": 7,
+      "name_key": "region.kael.07",
+      "node_type": "battle_node",
+      "scene_address": "world/kael/region_07",
+      "reachable_from": [
+        "rgn_kael_06"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_kael_anchor_the_isles",
+        "rst_kael_rebuild_the_skyway",
+        "rst_kael_bind_the_core"
+      ]
+    },
+    {
+      "id": "rgn_kael_08",
+      "continent_id": "con_kael",
+      "order": 8,
+      "name_key": "region.kael.08",
+      "node_type": "continent_boss_node",
+      "scene_address": "world/kael/region_08",
+      "reachable_from": [
+        "rgn_kael_07"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_kael_anchor_the_isles",
+        "rst_kael_rebuild_the_skyway",
+        "rst_kael_bind_the_core"
+      ]
+    },
+    {
+      "id": "rgn_neris_01",
+      "continent_id": "con_neris",
+      "order": 1,
+      "name_key": "region.neris.01",
+      "node_type": "battle_node",
+      "scene_address": "world/neris/region_01",
+      "reachable_from": [
+        "continent_entry"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_neris_seal_the_fractures",
+        "rst_neris_restore_the_emitter",
+        "rst_neris_raise_the_records"
+      ]
+    },
+    {
+      "id": "rgn_neris_02",
+      "continent_id": "con_neris",
+      "order": 2,
+      "name_key": "region.neris.02",
+      "node_type": "challenge_node",
+      "scene_address": "world/neris/region_02",
+      "reachable_from": [
+        "rgn_neris_01"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_neris_seal_the_fractures",
+        "rst_neris_restore_the_emitter",
+        "rst_neris_raise_the_records"
+      ]
+    },
+    {
+      "id": "rgn_neris_03",
+      "continent_id": "con_neris",
+      "order": 3,
+      "name_key": "region.neris.03",
+      "node_type": "battle_node",
+      "scene_address": "world/neris/region_03",
+      "reachable_from": [
+        "rgn_neris_02"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_neris_seal_the_fractures",
+        "rst_neris_restore_the_emitter",
+        "rst_neris_raise_the_records"
+      ]
+    },
+    {
+      "id": "rgn_neris_04",
+      "continent_id": "con_neris",
+      "order": 4,
+      "name_key": "region.neris.04",
+      "node_type": "battle_node",
+      "scene_address": "world/neris/region_04",
+      "reachable_from": [
+        "rgn_neris_03"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_neris_seal_the_fractures",
+        "rst_neris_restore_the_emitter",
+        "rst_neris_raise_the_records"
+      ]
+    },
+    {
+      "id": "rgn_neris_05",
+      "continent_id": "con_neris",
+      "order": 5,
+      "name_key": "region.neris.05",
+      "node_type": "challenge_node",
+      "scene_address": "world/neris/region_05",
+      "reachable_from": [
+        "rgn_neris_04"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_neris_seal_the_fractures",
+        "rst_neris_restore_the_emitter",
+        "rst_neris_raise_the_records"
+      ]
+    },
+    {
+      "id": "rgn_neris_06",
+      "continent_id": "con_neris",
+      "order": 6,
+      "name_key": "region.neris.06",
+      "node_type": "battle_node",
+      "scene_address": "world/neris/region_06",
+      "reachable_from": [
+        "rgn_neris_05"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_neris_seal_the_fractures",
+        "rst_neris_restore_the_emitter",
+        "rst_neris_raise_the_records"
+      ]
+    },
+    {
+      "id": "rgn_neris_07",
+      "continent_id": "con_neris",
+      "order": 7,
+      "name_key": "region.neris.07",
+      "node_type": "battle_node",
+      "scene_address": "world/neris/region_07",
+      "reachable_from": [
+        "rgn_neris_06"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_neris_seal_the_fractures",
+        "rst_neris_restore_the_emitter",
+        "rst_neris_raise_the_records"
+      ]
+    },
+    {
+      "id": "rgn_neris_08",
+      "continent_id": "con_neris",
+      "order": 8,
+      "name_key": "region.neris.08",
+      "node_type": "continent_boss_node",
+      "scene_address": "world/neris/region_08",
+      "reachable_from": [
+        "rgn_neris_07"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_neris_seal_the_fractures",
+        "rst_neris_restore_the_emitter",
+        "rst_neris_raise_the_records"
+      ]
+    },
+    {
+      "id": "rgn_tempora_01",
+      "continent_id": "con_tempora",
+      "order": 1,
+      "name_key": "region.tempora.01",
+      "node_type": "battle_node",
+      "scene_address": "world/tempora/region_01",
+      "reachable_from": [
+        "continent_entry"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_tempora_rewind_the_mainspring",
+        "rst_tempora_align_the_escapement",
+        "rst_tempora_restore_the_order"
+      ]
+    },
+    {
+      "id": "rgn_tempora_02",
+      "continent_id": "con_tempora",
+      "order": 2,
+      "name_key": "region.tempora.02",
+      "node_type": "challenge_node",
+      "scene_address": "world/tempora/region_02",
+      "reachable_from": [
+        "rgn_tempora_01"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_tempora_rewind_the_mainspring",
+        "rst_tempora_align_the_escapement",
+        "rst_tempora_restore_the_order"
+      ]
+    },
+    {
+      "id": "rgn_tempora_03",
+      "continent_id": "con_tempora",
+      "order": 3,
+      "name_key": "region.tempora.03",
+      "node_type": "battle_node",
+      "scene_address": "world/tempora/region_03",
+      "reachable_from": [
+        "rgn_tempora_02"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_tempora_rewind_the_mainspring",
+        "rst_tempora_align_the_escapement",
+        "rst_tempora_restore_the_order"
+      ]
+    },
+    {
+      "id": "rgn_tempora_04",
+      "continent_id": "con_tempora",
+      "order": 4,
+      "name_key": "region.tempora.04",
+      "node_type": "battle_node",
+      "scene_address": "world/tempora/region_04",
+      "reachable_from": [
+        "rgn_tempora_03"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_tempora_rewind_the_mainspring",
+        "rst_tempora_align_the_escapement",
+        "rst_tempora_restore_the_order"
+      ]
+    },
+    {
+      "id": "rgn_tempora_05",
+      "continent_id": "con_tempora",
+      "order": 5,
+      "name_key": "region.tempora.05",
+      "node_type": "challenge_node",
+      "scene_address": "world/tempora/region_05",
+      "reachable_from": [
+        "rgn_tempora_04"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_tempora_rewind_the_mainspring",
+        "rst_tempora_align_the_escapement",
+        "rst_tempora_restore_the_order"
+      ]
+    },
+    {
+      "id": "rgn_tempora_06",
+      "continent_id": "con_tempora",
+      "order": 6,
+      "name_key": "region.tempora.06",
+      "node_type": "battle_node",
+      "scene_address": "world/tempora/region_06",
+      "reachable_from": [
+        "rgn_tempora_05"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_tempora_rewind_the_mainspring",
+        "rst_tempora_align_the_escapement",
+        "rst_tempora_restore_the_order"
+      ]
+    },
+    {
+      "id": "rgn_tempora_07",
+      "continent_id": "con_tempora",
+      "order": 7,
+      "name_key": "region.tempora.07",
+      "node_type": "battle_node",
+      "scene_address": "world/tempora/region_07",
+      "reachable_from": [
+        "rgn_tempora_06"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_tempora_rewind_the_mainspring",
+        "rst_tempora_align_the_escapement",
+        "rst_tempora_restore_the_order"
+      ]
+    },
+    {
+      "id": "rgn_tempora_08",
+      "continent_id": "con_tempora",
+      "order": 8,
+      "name_key": "region.tempora.08",
+      "node_type": "continent_boss_node",
+      "scene_address": "world/tempora/region_08",
+      "reachable_from": [
+        "rgn_tempora_07"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_tempora_rewind_the_mainspring",
+        "rst_tempora_align_the_escapement",
+        "rst_tempora_restore_the_order"
+      ]
+    },
+    {
+      "id": "rgn_origin_01",
+      "continent_id": "con_origin",
+      "order": 1,
+      "name_key": "region.origin.01",
+      "node_type": "battle_node",
+      "scene_address": "world/origin/region_01",
+      "reachable_from": [
+        "continent_entry"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_origin_stabilise_the_rift",
+        "rst_origin_gather_the_shards",
+        "rst_origin_reunite_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_origin_02",
+      "continent_id": "con_origin",
+      "order": 2,
+      "name_key": "region.origin.02",
+      "node_type": "challenge_node",
+      "scene_address": "world/origin/region_02",
+      "reachable_from": [
+        "rgn_origin_01"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_origin_stabilise_the_rift",
+        "rst_origin_gather_the_shards",
+        "rst_origin_reunite_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_origin_03",
+      "continent_id": "con_origin",
+      "order": 3,
+      "name_key": "region.origin.03",
+      "node_type": "battle_node",
+      "scene_address": "world/origin/region_03",
+      "reachable_from": [
+        "rgn_origin_02"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_origin_stabilise_the_rift",
+        "rst_origin_gather_the_shards",
+        "rst_origin_reunite_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_origin_04",
+      "continent_id": "con_origin",
+      "order": 4,
+      "name_key": "region.origin.04",
+      "node_type": "battle_node",
+      "scene_address": "world/origin/region_04",
+      "reachable_from": [
+        "rgn_origin_03"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_origin_stabilise_the_rift",
+        "rst_origin_gather_the_shards",
+        "rst_origin_reunite_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_origin_05",
+      "continent_id": "con_origin",
+      "order": 5,
+      "name_key": "region.origin.05",
+      "node_type": "challenge_node",
+      "scene_address": "world/origin/region_05",
+      "reachable_from": [
+        "rgn_origin_04"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_origin_stabilise_the_rift",
+        "rst_origin_gather_the_shards",
+        "rst_origin_reunite_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_origin_06",
+      "continent_id": "con_origin",
+      "order": 6,
+      "name_key": "region.origin.06",
+      "node_type": "battle_node",
+      "scene_address": "world/origin/region_06",
+      "reachable_from": [
+        "rgn_origin_05"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_origin_stabilise_the_rift",
+        "rst_origin_gather_the_shards",
+        "rst_origin_reunite_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_origin_07",
+      "continent_id": "con_origin",
+      "order": 7,
+      "name_key": "region.origin.07",
+      "node_type": "battle_node",
+      "scene_address": "world/origin/region_07",
+      "reachable_from": [
+        "rgn_origin_06"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_origin_stabilise_the_rift",
+        "rst_origin_gather_the_shards",
+        "rst_origin_reunite_the_axis"
+      ]
+    },
+    {
+      "id": "rgn_origin_08",
+      "continent_id": "con_origin",
+      "order": 8,
+      "name_key": "region.origin.08",
+      "node_type": "continent_boss_node",
+      "scene_address": "world/origin/region_08",
+      "reachable_from": [
+        "rgn_origin_07"
+      ],
+      "bypass_allowed": true,
+      "restoration_state_ids": [
+        "rst_origin_stabilise_the_rift",
+        "rst_origin_gather_the_shards",
+        "rst_origin_reunite_the_axis"
+      ]
+    }
+  ]
+}

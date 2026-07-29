@@ -1,0 +1,25 @@
+{
+  "name": "runningup",
+  "version": "0.1.0-alpha.1",
+  "private": true,
+  "description": "RunningUp — 3D real-run linked idle action RPG. Tooling, content pipeline and domain engine.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "doctor": "bash tools/bootstrap/doctor.sh",
+    "content:build": "node tools/content-factory/build.mjs",
+    "content:seed": "node tools/content-factory/emit-seed.mjs",
+    "validate:content": "node tools/content-validator/validate.mjs",
+    "validate:direction-lock": "node tools/direction-lock/scan.mjs",
+    "simulate:passport": "node tools/runner-passport-simulator/simulate.mjs",
+    "simulate:apex": "node tools/monthly-apex-simulator/simulate.mjs",
+    "test:unit": "node --test \"tools/tests/*.test.mjs\"",
+    "test:db": "bash tools/test/db.sh",
+    "test:fast": "npm run validate:direction-lock && npm run validate:content && npm run test:unit",
+    "test:all": "bash tools/test/all.sh"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,620 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "character",
+  "count": 12,
+  "items": [
+    {
+      "id": "chr_seon",
+      "order": 1,
+      "name_key": "character.seon.name",
+      "role": "vanguard",
+      "secondary_role": "counter",
+      "continent_affinity": "con_lumena",
+      "presentation": {
+        "body": "tall broad",
+        "gender": "woman",
+        "skin": "deep",
+        "age": "late thirties"
+      },
+      "silhouette": "wide pauldrons, half-cape torn at the hem, tower shield on the back",
+      "weapon": "tower shield and short spear",
+      "core_conversion": "Endurance and Vitality convert into shield integrity rather than raw attack.",
+      "basic_attack": "shield-forward jabs that build guard stacks",
+      "skill_ids": [
+        "skl_seon_bulwark",
+        "skl_seon_riposte",
+        "skl_seon_unbroken",
+        "skl_seon_dawnwall"
+      ],
+      "specializations": [
+        "guard_stacking",
+        "reflect_timing",
+        "front_line_control"
+      ],
+      "episode_ids": [
+        "epi_seon_01",
+        "epi_seon_02",
+        "epi_seon_03"
+      ],
+      "unlock_path": "starter_selectable",
+      "visible_at_launch": true,
+      "trial_available": true,
+      "trial_stage_address": "character/seon/trial",
+      "paid_gacha": false,
+      "prefab_address": "character/seon/prefab",
+      "portrait_address": "character/seon/portrait",
+      "cosmetic_slot_ids": [
+        "outfit",
+        "hair",
+        "weapon_skin",
+        "cape",
+        "aura",
+        "footstep",
+        "victory_pose",
+        "profile_frame"
+      ]
+    },
+    {
+      "id": "chr_yuwon",
+      "order": 2,
+      "name_key": "character.yuwon.name",
+      "role": "burst",
+      "secondary_role": "summon",
+      "continent_affinity": "con_voltis",
+      "presentation": {
+        "body": "lean wiry",
+        "gender": "man",
+        "skin": "light",
+        "age": "early twenties"
+      },
+      "silhouette": "asymmetric coat, cable-wrapped forearm, floating conductor drone",
+      "weapon": "arc conductor gauntlet",
+      "core_conversion": "Speed converts into chain length instead of attack rate.",
+      "basic_attack": "short arcs that mark conductive targets",
+      "skill_ids": [
+        "skl_yuwon_arcline",
+        "skl_yuwon_drone",
+        "skl_yuwon_capacitor",
+        "skl_yuwon_overload"
+      ],
+      "specializations": [
+        "chain_extension",
+        "drone_control",
+        "burst_banking"
+      ],
+      "episode_ids": [
+        "epi_yuwon_01",
+        "epi_yuwon_02",
+        "epi_yuwon_03"
+      ],
+      "unlock_path": "starter_selectable",
+      "visible_at_launch": true,
+      "trial_available": true,
+      "trial_stage_address": "character/yuwon/trial",
+      "paid_gacha": false,
+      "prefab_address": "character/yuwon/prefab",
+      "portrait_address": "character/yuwon/portrait",
+      "cosmetic_slot_ids": [
+        "outfit",
+        "hair",
+        "weapon_skin",
+        "cape",
+        "aura",
+        "footstep",
+        "victory_pose",
+        "profile_frame"
+      ]
+    },
+    {
+      "id": "chr_hana",
+      "order": 3,
+      "name_key": "character.hana.name",
+      "role": "sustained",
+      "secondary_role": "support",
+      "continent_affinity": "con_verdia",
+      "presentation": {
+        "body": "average",
+        "gender": "woman",
+        "skin": "medium",
+        "age": "mid twenties"
+      },
+      "silhouette": "layered botanist coat, seed satchel, living staff that flowers as she fights",
+      "weapon": "grafted living staff",
+      "core_conversion": "Vitality converts into sustained damage-over-time rather than health.",
+      "basic_attack": "seeding strikes that bloom two beats later",
+      "skill_ids": [
+        "skl_hana_bloom",
+        "skl_hana_purify",
+        "skl_hana_rooted",
+        "skl_hana_greatbreath"
+      ],
+      "specializations": [
+        "seed_timing",
+        "cleanse_conversion",
+        "field_control"
+      ],
+      "episode_ids": [
+        "epi_hana_01",
+        "epi_hana_02",
+        "epi_hana_03"
+      ],
+      "unlock_path": "story_chapter_02",
+      "visible_at_launch": true,
+      "trial_available": true,
+      "trial_stage_address": "character/hana/trial",
+      "paid_gacha": false,
+      "prefab_address": "character/hana/prefab",
+      "portrait_address": "character/hana/portrait",
+      "cosmetic_slot_ids": [
+        "outfit",
+        "hair",
+        "weapon_skin",
+        "cape",
+        "aura",
+        "footstep",
+        "victory_pose",
+        "profile_frame"
+      ]
+    },
+    {
+      "id": "chr_dorin",
+      "order": 4,
+      "name_key": "character.dorin.name",
+      "role": "control",
+      "secondary_role": "burst",
+      "continent_affinity": "con_rubra",
+      "presentation": {
+        "body": "stocky heavy",
+        "gender": "man",
+        "skin": "tan",
+        "age": "fifties"
+      },
+      "silhouette": "smith apron over scarred arms, one mechanical shoulder, enormous tongs",
+      "weapon": "forge tongs and molten ingot",
+      "core_conversion": "Tempo converts into heat management headroom instead of attack speed.",
+      "basic_attack": "heavy swings that raise the shared heat gauge",
+      "skill_ids": [
+        "skl_dorin_vent",
+        "skl_dorin_quench",
+        "skl_dorin_temper",
+        "skl_dorin_heartforge"
+      ],
+      "specializations": [
+        "heat_banking",
+        "shatter_windows",
+        "zone_denial"
+      ],
+      "episode_ids": [
+        "epi_dorin_01",
+        "epi_dorin_02",
+        "epi_dorin_03"
+      ],
+      "unlock_path": "story_chapter_03",
+      "visible_at_launch": true,
+      "trial_available": true,
+      "trial_stage_address": "character/dorin/trial",
+      "paid_gacha": false,
+      "prefab_address": "character/dorin/prefab",
+      "portrait_address": "character/dorin/portrait",
+      "cosmetic_slot_ids": [
+        "outfit",
+        "hair",
+        "weapon_skin",
+        "cape",
+        "aura",
+        "footstep",
+        "victory_pose",
+        "profile_frame"
+      ]
+    },
+    {
+      "id": "chr_ari",
+      "order": 5,
+      "name_key": "character.ari.name",
+      "role": "counter",
+      "secondary_role": "vanguard",
+      "continent_affinity": "con_anel",
+      "presentation": {
+        "body": "slight agile",
+        "gender": "non-binary",
+        "skin": "olive",
+        "age": "late teens"
+      },
+      "silhouette": "kite-cloth wings, wrapped shins, weightless stance",
+      "weapon": "twin wind-blades",
+      "core_conversion": "Pacing converts into counter windows instead of consistency bonuses.",
+      "basic_attack": "lane-dashing slashes that gain damage with momentum",
+      "skill_ids": [
+        "skl_ari_slipstream",
+        "skl_ari_crosswind",
+        "skl_ari_momentum",
+        "skl_ari_roadbind"
+      ],
+      "specializations": [
+        "momentum_chaining",
+        "knockback_reversal",
+        "lane_control"
+      ],
+      "episode_ids": [
+        "epi_ari_01",
+        "epi_ari_02",
+        "epi_ari_03"
+      ],
+      "unlock_path": "story_chapter_04",
+      "visible_at_launch": true,
+      "trial_available": true,
+      "trial_stage_address": "character/ari/trial",
+      "paid_gacha": false,
+      "prefab_address": "character/ari/prefab",
+      "portrait_address": "character/ari/portrait",
+      "cosmetic_slot_ids": [
+        "outfit",
+        "hair",
+        "weapon_skin",
+        "cape",
+        "aura",
+        "footstep",
+        "victory_pose",
+        "profile_frame"
+      ]
+    },
+    {
+      "id": "chr_mirae",
+      "order": 6,
+      "name_key": "character.mirae.name",
+      "role": "support",
+      "secondary_role": "control",
+      "continent_affinity": "con_serene",
+      "presentation": {
+        "body": "tall slender",
+        "gender": "woman",
+        "skin": "light",
+        "age": "early thirties"
+      },
+      "silhouette": "tide-charts sewn into a long coat, lantern buoy at the hip",
+      "weapon": "tide lantern and signal chain",
+      "core_conversion": "Momentum converts into party repositioning instead of streak damage.",
+      "basic_attack": "lantern sweeps that mark the next tide position",
+      "skill_ids": [
+        "skl_mirae_ebb",
+        "skl_mirae_signal",
+        "skl_mirae_navigator",
+        "skl_mirae_searoad"
+      ],
+      "specializations": [
+        "phase_prediction",
+        "party_repositioning",
+        "tempo_denial"
+      ],
+      "episode_ids": [
+        "epi_mirae_01",
+        "epi_mirae_02",
+        "epi_mirae_03"
+      ],
+      "unlock_path": "story_chapter_05",
+      "visible_at_launch": true,
+      "trial_available": true,
+      "trial_stage_address": "character/mirae/trial",
+      "paid_gacha": false,
+      "prefab_address": "character/mirae/prefab",
+      "portrait_address": "character/mirae/portrait",
+      "cosmetic_slot_ids": [
+        "outfit",
+        "hair",
+        "weapon_skin",
+        "cape",
+        "aura",
+        "footstep",
+        "victory_pose",
+        "profile_frame"
+      ]
+    },
+    {
+      "id": "chr_taeho",
+      "order": 7,
+      "name_key": "character.taeho.name",
+      "role": "barrier",
+      "secondary_role": "sustained",
+      "continent_affinity": "con_nival",
+      "presentation": {
+        "body": "broad solid",
+        "gender": "man",
+        "skin": "medium",
+        "age": "forties"
+      },
+      "silhouette": "fur-lined garrison coat, frost-rimed greatshield, slow deliberate stance",
+      "weapon": "frost bastion shield",
+      "core_conversion": "Resolve converts into barrier duration rather than long-term volume bonuses.",
+      "basic_attack": "grounded shield bashes that chill the tile",
+      "skill_ids": [
+        "skl_taeho_bastion",
+        "skl_taeho_thaw",
+        "skl_taeho_garrison",
+        "skl_taeho_whitewall"
+      ],
+      "specializations": [
+        "barrier_uptime",
+        "freeze_manipulation",
+        "ally_protection"
+      ],
+      "episode_ids": [
+        "epi_taeho_01",
+        "epi_taeho_02",
+        "epi_taeho_03"
+      ],
+      "unlock_path": "story_chapter_08",
+      "visible_at_launch": true,
+      "trial_available": true,
+      "trial_stage_address": "character/taeho/trial",
+      "paid_gacha": false,
+      "prefab_address": "character/taeho/prefab",
+      "portrait_address": "character/taeho/portrait",
+      "cosmetic_slot_ids": [
+        "outfit",
+        "hair",
+        "weapon_skin",
+        "cape",
+        "aura",
+        "footstep",
+        "victory_pose",
+        "profile_frame"
+      ]
+    },
+    {
+      "id": "chr_soye",
+      "order": 8,
+      "name_key": "character.soye.name",
+      "role": "summon",
+      "secondary_role": "control",
+      "continent_affinity": "con_hora",
+      "presentation": {
+        "body": "petite",
+        "gender": "woman",
+        "skin": "deep",
+        "age": "sixties"
+      },
+      "silhouette": "desert veil, mirror-shard bracelets, three drifting reflections",
+      "weapon": "mirror shards",
+      "core_conversion": "Speed converts into number of active reflections instead of attack rate.",
+      "basic_attack": "shard throws that leave a standing reflection",
+      "skill_ids": [
+        "skl_soye_split",
+        "skl_soye_shadowtell",
+        "skl_soye_manyselves",
+        "skl_soye_truemirror"
+      ],
+      "specializations": [
+        "reflection_count",
+        "clone_exposure",
+        "damage_distribution"
+      ],
+      "episode_ids": [
+        "epi_soye_01",
+        "epi_soye_02",
+        "epi_soye_03"
+      ],
+      "unlock_path": "story_chapter_07",
+      "visible_at_launch": true,
+      "trial_available": true,
+      "trial_stage_address": "character/soye/trial",
+      "paid_gacha": false,
+      "prefab_address": "character/soye/prefab",
+      "portrait_address": "character/soye/portrait",
+      "cosmetic_slot_ids": [
+        "outfit",
+        "hair",
+        "weapon_skin",
+        "cape",
+        "aura",
+        "footstep",
+        "victory_pose",
+        "profile_frame"
+      ]
+    },
+    {
+      "id": "chr_jiwoo",
+      "order": 9,
+      "name_key": "character.jiwoo.name",
+      "role": "burst",
+      "secondary_role": "counter",
+      "continent_affinity": "con_kael",
+      "presentation": {
+        "body": "athletic compact",
+        "gender": "man",
+        "skin": "light",
+        "age": "late twenties"
+      },
+      "silhouette": "harness rig with grapple spools, one bare shoulder, always mid-motion",
+      "weapon": "grapple lance",
+      "core_conversion": "Endurance converts into aerial uptime instead of stamina.",
+      "basic_attack": "descending lance strikes from height",
+      "skill_ids": [
+        "skl_jiwoo_grapple",
+        "skl_jiwoo_anchor",
+        "skl_jiwoo_highground",
+        "skl_jiwoo_skyfall"
+      ],
+      "specializations": [
+        "height_advantage",
+        "platform_denial",
+        "burst_positioning"
+      ],
+      "episode_ids": [
+        "epi_jiwoo_01",
+        "epi_jiwoo_02",
+        "epi_jiwoo_03"
+      ],
+      "unlock_path": "story_chapter_09",
+      "visible_at_launch": true,
+      "trial_available": true,
+      "trial_stage_address": "character/jiwoo/trial",
+      "paid_gacha": false,
+      "prefab_address": "character/jiwoo/prefab",
+      "portrait_address": "character/jiwoo/portrait",
+      "cosmetic_slot_ids": [
+        "outfit",
+        "hair",
+        "weapon_skin",
+        "cape",
+        "aura",
+        "footstep",
+        "victory_pose",
+        "profile_frame"
+      ]
+    },
+    {
+      "id": "chr_narae",
+      "order": 10,
+      "name_key": "character.narae.name",
+      "role": "control",
+      "secondary_role": "support",
+      "continent_affinity": "con_neris",
+      "presentation": {
+        "body": "average",
+        "gender": "non-binary",
+        "skin": "medium",
+        "age": "mid thirties"
+      },
+      "silhouette": "pressure suit with a sonar collar, cable tether, deliberate slow gait",
+      "weapon": "sonar emitter",
+      "core_conversion": "Tempo converts into pulse frequency instead of cooldown reduction.",
+      "basic_attack": "directed pulses that reveal and stagger",
+      "skill_ids": [
+        "skl_narae_pulse",
+        "skl_narae_tether",
+        "skl_narae_deeplung",
+        "skl_narae_recordrise"
+      ],
+      "specializations": [
+        "pulse_economy",
+        "pressure_relief",
+        "reveal_control"
+      ],
+      "episode_ids": [
+        "epi_narae_01",
+        "epi_narae_02",
+        "epi_narae_03"
+      ],
+      "unlock_path": "story_chapter_10",
+      "visible_at_launch": true,
+      "trial_available": true,
+      "trial_stage_address": "character/narae/trial",
+      "paid_gacha": false,
+      "prefab_address": "character/narae/prefab",
+      "portrait_address": "character/narae/portrait",
+      "cosmetic_slot_ids": [
+        "outfit",
+        "hair",
+        "weapon_skin",
+        "cape",
+        "aura",
+        "footstep",
+        "victory_pose",
+        "profile_frame"
+      ]
+    },
+    {
+      "id": "chr_eunseo",
+      "order": 11,
+      "name_key": "character.eunseo.name",
+      "role": "sustained",
+      "secondary_role": "barrier",
+      "continent_affinity": "con_tempora",
+      "presentation": {
+        "body": "tall lean",
+        "gender": "woman",
+        "skin": "pale",
+        "age": "ageless clockwork-marked"
+      },
+      "silhouette": "escapement arm in place of a left forearm, pendulum at the belt, metronomic walk",
+      "weapon": "escapement blade",
+      "core_conversion": "Pacing converts into tempo-zone authority instead of split consistency.",
+      "basic_attack": "strikes locked to the arena beat for bonus damage",
+      "skill_ids": [
+        "skl_eunseo_slowzone",
+        "skl_eunseo_retrograde",
+        "skl_eunseo_metronome",
+        "skl_eunseo_restoredorder"
+      ],
+      "specializations": [
+        "zone_authority",
+        "action_reversal",
+        "beat_precision"
+      ],
+      "episode_ids": [
+        "epi_eunseo_01",
+        "epi_eunseo_02",
+        "epi_eunseo_03"
+      ],
+      "unlock_path": "story_chapter_11",
+      "visible_at_launch": true,
+      "trial_available": true,
+      "trial_stage_address": "character/eunseo/trial",
+      "paid_gacha": false,
+      "prefab_address": "character/eunseo/prefab",
+      "portrait_address": "character/eunseo/portrait",
+      "cosmetic_slot_ids": [
+        "outfit",
+        "hair",
+        "weapon_skin",
+        "cape",
+        "aura",
+        "footstep",
+        "victory_pose",
+        "profile_frame"
+      ]
+    },
+    {
+      "id": "chr_haru",
+      "order": 12,
+      "name_key": "character.haru.name",
+      "role": "vanguard",
+      "secondary_role": "summon",
+      "continent_affinity": "con_origin",
+      "presentation": {
+        "body": "youthful slight",
+        "gender": "boy",
+        "skin": "medium",
+        "age": "twelve"
+      },
+      "silhouette": "oversized coat inherited from someone taller, shard-lantern, eleven faint echoes",
+      "weapon": "worldline shard",
+      "core_conversion": "The full Fitness Core is split evenly across whichever two continent mechanics are active.",
+      "basic_attack": "shard strikes that borrow the current arena mechanic",
+      "skill_ids": [
+        "skl_haru_borrow",
+        "skl_haru_echo",
+        "skl_haru_convergence",
+        "skl_haru_reunion"
+      ],
+      "specializations": [
+        "mechanic_borrowing",
+        "echo_summoning",
+        "convergence_stacking"
+      ],
+      "episode_ids": [
+        "epi_haru_01",
+        "epi_haru_02",
+        "epi_haru_03"
+      ],
+      "unlock_path": "story_chapter_12",
+      "visible_at_launch": true,
+      "trial_available": true,
+      "trial_stage_address": "character/haru/trial",
+      "paid_gacha": false,
+      "prefab_address": "character/haru/prefab",
+      "portrait_address": "character/haru/portrait",
+      "cosmetic_slot_ids": [
+        "outfit",
+        "hair",
+        "weapon_skin",
+        "cape",
+        "aura",
+        "footstep",
+        "victory_pose",
+        "profile_frame"
+      ]
+    }
+  ]
+}

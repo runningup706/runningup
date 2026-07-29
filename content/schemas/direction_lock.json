@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "lock_id": "runningup.direction_lock.v4",
+  "source_master_sha256": "b80ecb1077daf3967d9b4a8c918b4eebe942d93d5aa8805fdf10de8c7dca1978",
+  "human_readable": "docs/USER_DIRECTION_LOCK.md",
+  "monthly_apex": {
+    "final_distance_km": 1000,
+    "final_distance_meters": 1000000,
+    "checkpoint_count": 52,
+    "checkpoint_count_minimum": 40,
+    "major_rank_count": 11,
+    "final_rank_id": "world_crown",
+    "tiers_above_1000_allowed": false,
+    "distance_above_1000_recorded": true,
+    "per_run_base_reward_above_1000_continues": true,
+    "monthly_rank_or_multiplier_above_1000_increases": false,
+    "apex_axis_unlocks_at_meters": 1000000,
+    "apex_axis_unlocks_per_user_month": 1
+  },
+  "onboarding": {
+    "universal_forced_1km_or_3km_start": false,
+    "low_distance_prerequisite_for_high_distance_goal": false,
+    "advanced_runner_fast_path": true,
+    "custom_distance_and_duration_goal": true,
+    "optional_current_month_import": true,
+    "recommendation_is_never_a_restriction": true,
+    "required_fixtures": [
+      "beginner_no_history",
+      "starter_3k_5k",
+      "regular_10k",
+      "endurance_20k_half",
+      "marathon",
+      "ultra_50k_custom",
+      "current_month_import",
+      "recommendation_override"
+    ]
+  },
+  "activity_scope": {
+    "allowed_activity_types": ["road", "track", "treadmill", "indoor"],
+    "run_walk_is_beginner_method_only": true,
+    "forbidden_activity_types": ["trail", "hiking", "cycling", "climbing", "walking_only"],
+    "elevation_progression_allowed": false,
+    "weather_multiplier_allowed": false,
+    "night_time_multiplier_allowed": false,
+    "advisory_popups_in_gameplay_allowed": false
+  },
+  "launch_content_floor": {
+    "continents": 12,
+    "region_nodes": 96,
+    "main_stages": 72,
+    "side_stages": 24,
+    "playable_characters": 12,
+    "character_episodes": 36,
+    "tactical_skills": 48,
+    "tactical_relics": 72,
+    "standard_enemy_families": 24,
+    "elite_enemy_families": 12,
+    "continent_bosses": 12,
+    "world_bosses": 4,
+    "apex_bosses": 1,
+    "companions": 12,
+    "equipable_cosmetics": 96,
+    "story_chapters": 12,
+    "launch_seasons": 1,
+    "event_arcs": 3
+  },
+  "core_power": {
+    "sources": ["verified_run"],
+    "zero_contribution_sources": [
+      "payment",
+      "advertisement",
+      "login_day",
+      "idle_time",
+      "cosmetic",
+      "random_box",
+      "gold_farming",
+      "referral",
+      "admin_grant"
+    ]
+  },
+  "forbidden_tokens": {
+    "monthly_tiers": ["1250km", "1500km", "2000km", "endless ladder", "endless volume", "infinite ladder"],
+    "activity_modes": ["trail running", "trailrunning", "hiking", "cycling", "mountain climbing", "elevation gain reward", "elevation leaderboard"],
+    "onboarding": ["mandatory_1km_before_3km", "mandatory_3km_before_5km", "beginner_only_first_route"]
+  }
+}

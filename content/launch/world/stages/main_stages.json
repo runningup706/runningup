@@ -1,0 +1,2024 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "main_stage",
+  "count": 72,
+  "items": [
+    {
+      "id": "stg_lumena_main_01",
+      "continent_id": "con_lumena",
+      "region_id": "rgn_lumena_01",
+      "kind": "main",
+      "order": 1,
+      "name_key": "stage.lumena.main.01",
+      "objective": "defense",
+      "objective_twist": "Hold three mirror pylons while the barrier recharges",
+      "mechanic_id": "mech_light_reflection",
+      "enemy_family_ids": [
+        "enm_lumena_01",
+        "enm_lumena_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/lumena/stage_main_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_lumena_main_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_lumena_main_02",
+      "continent_id": "con_lumena",
+      "region_id": "rgn_lumena_02",
+      "kind": "main",
+      "order": 2,
+      "name_key": "stage.lumena.main.02",
+      "objective": "elite_hunt",
+      "objective_twist": "The elite only becomes vulnerable inside reflected light",
+      "mechanic_id": "mech_light_reflection",
+      "enemy_family_ids": [
+        "enm_lumena_01",
+        "enm_lumena_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/lumena/stage_main_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_lumena_main_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_lumena_main_03",
+      "continent_id": "con_lumena",
+      "region_id": "rgn_lumena_03",
+      "kind": "main",
+      "order": 3,
+      "name_key": "stage.lumena.main.03",
+      "objective": "escort",
+      "objective_twist": "Guide a lantern-bearer whose light is the only damage source",
+      "mechanic_id": "mech_light_reflection",
+      "enemy_family_ids": [
+        "enm_lumena_01",
+        "enm_lumena_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/lumena/stage_main_03",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_lumena_main_03",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_lumena_main_04",
+      "continent_id": "con_lumena",
+      "region_id": "rgn_lumena_04",
+      "kind": "main",
+      "order": 4,
+      "name_key": "stage.lumena.main.04",
+      "objective": "resource_control",
+      "objective_twist": "Capture prisms to redirect the beam grid",
+      "mechanic_id": "mech_light_reflection",
+      "enemy_family_ids": [
+        "enm_lumena_01",
+        "enm_lumena_02"
+      ],
+      "elite_family_id": "eli_lumena_01",
+      "scene_address": "world/lumena/stage_main_04",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_lumena_main_04",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_lumena_main_05",
+      "continent_id": "con_lumena",
+      "region_id": "rgn_lumena_05",
+      "kind": "main",
+      "order": 5,
+      "name_key": "stage.lumena.main.05",
+      "objective": "timed_assault",
+      "objective_twist": "The gate seals when the rotating mirrors realign",
+      "mechanic_id": "mech_light_reflection",
+      "enemy_family_ids": [
+        "enm_lumena_01",
+        "enm_lumena_02"
+      ],
+      "elite_family_id": "eli_lumena_01",
+      "scene_address": "world/lumena/stage_main_05",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_lumena_main_05",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_lumena_main_06",
+      "continent_id": "con_lumena",
+      "region_id": "rgn_lumena_06",
+      "kind": "main",
+      "order": 6,
+      "name_key": "stage.lumena.main.06",
+      "objective": "boss_break",
+      "objective_twist": "Break the shield by stacking three reflection angles",
+      "mechanic_id": "mech_light_reflection",
+      "enemy_family_ids": [
+        "enm_lumena_01",
+        "enm_lumena_02"
+      ],
+      "elite_family_id": "eli_lumena_01",
+      "scene_address": "world/lumena/stage_main_06",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_lumena_main_06",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_verdia_main_01",
+      "continent_id": "con_verdia",
+      "region_id": "rgn_verdia_01",
+      "kind": "main",
+      "order": 1,
+      "name_key": "stage.verdia.main.01",
+      "objective": "resource_control",
+      "objective_twist": "Claim spring nodes to slow the root growth clock",
+      "mechanic_id": "mech_growth_bind",
+      "enemy_family_ids": [
+        "enm_verdia_01",
+        "enm_verdia_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/verdia/stage_main_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_verdia_main_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_verdia_main_02",
+      "continent_id": "con_verdia",
+      "region_id": "rgn_verdia_02",
+      "kind": "main",
+      "order": 2,
+      "name_key": "stage.verdia.main.02",
+      "objective": "survival",
+      "objective_twist": "Binding roots convert every dodge into a cleanse window",
+      "mechanic_id": "mech_growth_bind",
+      "enemy_family_ids": [
+        "enm_verdia_01",
+        "enm_verdia_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/verdia/stage_main_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_verdia_main_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_verdia_main_03",
+      "continent_id": "con_verdia",
+      "region_id": "rgn_verdia_03",
+      "kind": "main",
+      "order": 3,
+      "name_key": "stage.verdia.main.03",
+      "objective": "defense",
+      "objective_twist": "Protect saplings that convert cleansed roots into healing",
+      "mechanic_id": "mech_growth_bind",
+      "enemy_family_ids": [
+        "enm_verdia_01",
+        "enm_verdia_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/verdia/stage_main_03",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_verdia_main_03",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_verdia_main_04",
+      "continent_id": "con_verdia",
+      "region_id": "rgn_verdia_04",
+      "kind": "main",
+      "order": 4,
+      "name_key": "stage.verdia.main.04",
+      "objective": "elite_hunt",
+      "objective_twist": "The elite regenerates unless its root anchor is purified first",
+      "mechanic_id": "mech_growth_bind",
+      "enemy_family_ids": [
+        "enm_verdia_01",
+        "enm_verdia_02"
+      ],
+      "elite_family_id": "eli_verdia_01",
+      "scene_address": "world/verdia/stage_main_04",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_verdia_main_04",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_verdia_main_05",
+      "continent_id": "con_verdia",
+      "region_id": "rgn_verdia_05",
+      "kind": "main",
+      "order": 5,
+      "name_key": "stage.verdia.main.05",
+      "objective": "escort",
+      "objective_twist": "Carry spores that must be kept uncorrupted the whole route",
+      "mechanic_id": "mech_growth_bind",
+      "enemy_family_ids": [
+        "enm_verdia_01",
+        "enm_verdia_02"
+      ],
+      "elite_family_id": "eli_verdia_01",
+      "scene_address": "world/verdia/stage_main_05",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_verdia_main_05",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_verdia_main_06",
+      "continent_id": "con_verdia",
+      "region_id": "rgn_verdia_06",
+      "kind": "main",
+      "order": 6,
+      "name_key": "stage.verdia.main.06",
+      "objective": "boss_break",
+      "objective_twist": "Purify three root crowns to open the break gauge",
+      "mechanic_id": "mech_growth_bind",
+      "enemy_family_ids": [
+        "enm_verdia_01",
+        "enm_verdia_02"
+      ],
+      "elite_family_id": "eli_verdia_01",
+      "scene_address": "world/verdia/stage_main_06",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_verdia_main_06",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_rubra_main_01",
+      "continent_id": "con_rubra",
+      "region_id": "rgn_rubra_01",
+      "kind": "main",
+      "order": 1,
+      "name_key": "stage.rubra.main.01",
+      "objective": "timed_assault",
+      "objective_twist": "Strike between vent cycles or lose the heat window",
+      "mechanic_id": "mech_heat_shatter",
+      "enemy_family_ids": [
+        "enm_rubra_01",
+        "enm_rubra_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/rubra/stage_main_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_rubra_main_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_rubra_main_02",
+      "continent_id": "con_rubra",
+      "region_id": "rgn_rubra_02",
+      "kind": "main",
+      "order": 2,
+      "name_key": "stage.rubra.main.02",
+      "objective": "boss_break",
+      "objective_twist": "Only a shatter at peak heat opens the break gauge",
+      "mechanic_id": "mech_heat_shatter",
+      "enemy_family_ids": [
+        "enm_rubra_01",
+        "enm_rubra_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/rubra/stage_main_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_rubra_main_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_rubra_main_03",
+      "continent_id": "con_rubra",
+      "region_id": "rgn_rubra_03",
+      "kind": "main",
+      "order": 3,
+      "name_key": "stage.rubra.main.03",
+      "objective": "defense",
+      "objective_twist": "Keep the furnace fed while enemies force overheat",
+      "mechanic_id": "mech_heat_shatter",
+      "enemy_family_ids": [
+        "enm_rubra_01",
+        "enm_rubra_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/rubra/stage_main_03",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_rubra_main_03",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_rubra_main_04",
+      "continent_id": "con_rubra",
+      "region_id": "rgn_rubra_04",
+      "kind": "main",
+      "order": 4,
+      "name_key": "stage.rubra.main.04",
+      "objective": "survival",
+      "objective_twist": "Heat rises passively; venting is the only safe rhythm",
+      "mechanic_id": "mech_heat_shatter",
+      "enemy_family_ids": [
+        "enm_rubra_01",
+        "enm_rubra_02"
+      ],
+      "elite_family_id": "eli_rubra_01",
+      "scene_address": "world/rubra/stage_main_04",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_rubra_main_04",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_rubra_main_05",
+      "continent_id": "con_rubra",
+      "region_id": "rgn_rubra_05",
+      "kind": "main",
+      "order": 5,
+      "name_key": "stage.rubra.main.05",
+      "objective": "resource_control",
+      "objective_twist": "Route molten flow between three casting basins",
+      "mechanic_id": "mech_heat_shatter",
+      "enemy_family_ids": [
+        "enm_rubra_01",
+        "enm_rubra_02"
+      ],
+      "elite_family_id": "eli_rubra_01",
+      "scene_address": "world/rubra/stage_main_05",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_rubra_main_05",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_rubra_main_06",
+      "continent_id": "con_rubra",
+      "region_id": "rgn_rubra_06",
+      "kind": "main",
+      "order": 6,
+      "name_key": "stage.rubra.main.06",
+      "objective": "elite_hunt",
+      "objective_twist": "The elite absorbs heat you fail to vent",
+      "mechanic_id": "mech_heat_shatter",
+      "enemy_family_ids": [
+        "enm_rubra_01",
+        "enm_rubra_02"
+      ],
+      "elite_family_id": "eli_rubra_01",
+      "scene_address": "world/rubra/stage_main_06",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_rubra_main_06",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_anel_main_01",
+      "continent_id": "con_anel",
+      "region_id": "rgn_anel_01",
+      "kind": "main",
+      "order": 1,
+      "name_key": "stage.anel.main.01",
+      "objective": "escort",
+      "objective_twist": "A cart accelerates in wind lanes and must not overshoot",
+      "mechanic_id": "mech_momentum_push",
+      "enemy_family_ids": [
+        "enm_anel_01",
+        "enm_anel_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/anel/stage_main_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_anel_main_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_anel_main_02",
+      "continent_id": "con_anel",
+      "region_id": "rgn_anel_02",
+      "kind": "main",
+      "order": 2,
+      "name_key": "stage.anel.main.02",
+      "objective": "resource_control",
+      "objective_twist": "Turn mills to redirect the lanes mid-fight",
+      "mechanic_id": "mech_momentum_push",
+      "enemy_family_ids": [
+        "enm_anel_01",
+        "enm_anel_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/anel/stage_main_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_anel_main_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_anel_main_03",
+      "continent_id": "con_anel",
+      "region_id": "rgn_anel_03",
+      "kind": "main",
+      "order": 3,
+      "name_key": "stage.anel.main.03",
+      "objective": "timed_assault",
+      "objective_twist": "Chain wind lanes to reach the target before it lifts off",
+      "mechanic_id": "mech_momentum_push",
+      "enemy_family_ids": [
+        "enm_anel_01",
+        "enm_anel_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/anel/stage_main_03",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_anel_main_03",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_anel_main_04",
+      "continent_id": "con_anel",
+      "region_id": "rgn_anel_04",
+      "kind": "main",
+      "order": 4,
+      "name_key": "stage.anel.main.04",
+      "objective": "survival",
+      "objective_twist": "Constant knockback makes standing still lethal",
+      "mechanic_id": "mech_momentum_push",
+      "enemy_family_ids": [
+        "enm_anel_01",
+        "enm_anel_02"
+      ],
+      "elite_family_id": "eli_anel_01",
+      "scene_address": "world/anel/stage_main_04",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_anel_main_04",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_anel_main_05",
+      "continent_id": "con_anel",
+      "region_id": "rgn_anel_05",
+      "kind": "main",
+      "order": 5,
+      "name_key": "stage.anel.main.05",
+      "objective": "defense",
+      "objective_twist": "Keep gusts off the rebuilt road segments",
+      "mechanic_id": "mech_momentum_push",
+      "enemy_family_ids": [
+        "enm_anel_01",
+        "enm_anel_02"
+      ],
+      "elite_family_id": "eli_anel_01",
+      "scene_address": "world/anel/stage_main_05",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_anel_main_05",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_anel_main_06",
+      "continent_id": "con_anel",
+      "region_id": "rgn_anel_06",
+      "kind": "main",
+      "order": 6,
+      "name_key": "stage.anel.main.06",
+      "objective": "boss_break",
+      "objective_twist": "Stagger the boss only by pushing it into a counter-gust",
+      "mechanic_id": "mech_momentum_push",
+      "enemy_family_ids": [
+        "enm_anel_01",
+        "enm_anel_02"
+      ],
+      "elite_family_id": "eli_anel_01",
+      "scene_address": "world/anel/stage_main_06",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_anel_main_06",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_serene_main_01",
+      "continent_id": "con_serene",
+      "region_id": "rgn_serene_01",
+      "kind": "main",
+      "order": 1,
+      "name_key": "stage.serene.main.01",
+      "objective": "resource_control",
+      "objective_twist": "Hold buoys that survive only one tide phase",
+      "mechanic_id": "mech_tide_swap",
+      "enemy_family_ids": [
+        "enm_serene_01",
+        "enm_serene_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/serene/stage_main_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_serene_main_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_serene_main_02",
+      "continent_id": "con_serene",
+      "region_id": "rgn_serene_02",
+      "kind": "main",
+      "order": 2,
+      "name_key": "stage.serene.main.02",
+      "objective": "survival",
+      "objective_twist": "The floor you stand on is submerged on the next swap",
+      "mechanic_id": "mech_tide_swap",
+      "enemy_family_ids": [
+        "enm_serene_01",
+        "enm_serene_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/serene/stage_main_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_serene_main_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_serene_main_03",
+      "continent_id": "con_serene",
+      "region_id": "rgn_serene_03",
+      "kind": "main",
+      "order": 3,
+      "name_key": "stage.serene.main.03",
+      "objective": "escort",
+      "objective_twist": "A ferry crosses only during the low phase",
+      "mechanic_id": "mech_tide_swap",
+      "enemy_family_ids": [
+        "enm_serene_01",
+        "enm_serene_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/serene/stage_main_03",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_serene_main_03",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_serene_main_04",
+      "continent_id": "con_serene",
+      "region_id": "rgn_serene_04",
+      "kind": "main",
+      "order": 4,
+      "name_key": "stage.serene.main.04",
+      "objective": "boss_break",
+      "objective_twist": "Break windows exist exclusively at tide reversal",
+      "mechanic_id": "mech_tide_swap",
+      "enemy_family_ids": [
+        "enm_serene_01",
+        "enm_serene_02"
+      ],
+      "elite_family_id": "eli_serene_01",
+      "scene_address": "world/serene/stage_main_04",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_serene_main_04",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_serene_main_05",
+      "continent_id": "con_serene",
+      "region_id": "rgn_serene_05",
+      "kind": "main",
+      "order": 5,
+      "name_key": "stage.serene.main.05",
+      "objective": "elite_hunt",
+      "objective_twist": "The elite teleports with the tide swap",
+      "mechanic_id": "mech_tide_swap",
+      "enemy_family_ids": [
+        "enm_serene_01",
+        "enm_serene_02"
+      ],
+      "elite_family_id": "eli_serene_01",
+      "scene_address": "world/serene/stage_main_05",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_serene_main_05",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_serene_main_06",
+      "continent_id": "con_serene",
+      "region_id": "rgn_serene_06",
+      "kind": "main",
+      "order": 6,
+      "name_key": "stage.serene.main.06",
+      "objective": "defense",
+      "objective_twist": "Protect the lighthouse through three full cycles",
+      "mechanic_id": "mech_tide_swap",
+      "enemy_family_ids": [
+        "enm_serene_01",
+        "enm_serene_02"
+      ],
+      "elite_family_id": "eli_serene_01",
+      "scene_address": "world/serene/stage_main_06",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_serene_main_06",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_voltis_main_01",
+      "continent_id": "con_voltis",
+      "region_id": "rgn_voltis_01",
+      "kind": "main",
+      "order": 1,
+      "name_key": "stage.voltis.main.01",
+      "objective": "resource_control",
+      "objective_twist": "Own capacitors to decide which tiles conduct",
+      "mechanic_id": "mech_conduction_chain",
+      "enemy_family_ids": [
+        "enm_voltis_01",
+        "enm_voltis_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/voltis/stage_main_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_voltis_main_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_voltis_main_02",
+      "continent_id": "con_voltis",
+      "region_id": "rgn_voltis_02",
+      "kind": "main",
+      "order": 2,
+      "name_key": "stage.voltis.main.02",
+      "objective": "elite_hunt",
+      "objective_twist": "The elite is immune except while a chain passes through it",
+      "mechanic_id": "mech_conduction_chain",
+      "enemy_family_ids": [
+        "enm_voltis_01",
+        "enm_voltis_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/voltis/stage_main_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_voltis_main_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_voltis_main_03",
+      "continent_id": "con_voltis",
+      "region_id": "rgn_voltis_03",
+      "kind": "main",
+      "order": 3,
+      "name_key": "stage.voltis.main.03",
+      "objective": "timed_assault",
+      "objective_twist": "The grid discharges on a countdown you can advance",
+      "mechanic_id": "mech_conduction_chain",
+      "enemy_family_ids": [
+        "enm_voltis_01",
+        "enm_voltis_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/voltis/stage_main_03",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_voltis_main_03",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_voltis_main_04",
+      "continent_id": "con_voltis",
+      "region_id": "rgn_voltis_04",
+      "kind": "main",
+      "order": 4,
+      "name_key": "stage.voltis.main.04",
+      "objective": "defense",
+      "objective_twist": "Keep insulators intact or the chain hits your own line",
+      "mechanic_id": "mech_conduction_chain",
+      "enemy_family_ids": [
+        "enm_voltis_01",
+        "enm_voltis_02"
+      ],
+      "elite_family_id": "eli_voltis_01",
+      "scene_address": "world/voltis/stage_main_04",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_voltis_main_04",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_voltis_main_05",
+      "continent_id": "con_voltis",
+      "region_id": "rgn_voltis_05",
+      "kind": "main",
+      "order": 5,
+      "name_key": "stage.voltis.main.05",
+      "objective": "survival",
+      "objective_twist": "Every third chain overloads the field",
+      "mechanic_id": "mech_conduction_chain",
+      "enemy_family_ids": [
+        "enm_voltis_01",
+        "enm_voltis_02"
+      ],
+      "elite_family_id": "eli_voltis_01",
+      "scene_address": "world/voltis/stage_main_05",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_voltis_main_05",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_voltis_main_06",
+      "continent_id": "con_voltis",
+      "region_id": "rgn_voltis_06",
+      "kind": "main",
+      "order": 6,
+      "name_key": "stage.voltis.main.06",
+      "objective": "boss_break",
+      "objective_twist": "Break requires a chain of exactly four conductors",
+      "mechanic_id": "mech_conduction_chain",
+      "enemy_family_ids": [
+        "enm_voltis_01",
+        "enm_voltis_02"
+      ],
+      "elite_family_id": "eli_voltis_01",
+      "scene_address": "world/voltis/stage_main_06",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_voltis_main_06",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_hora_main_01",
+      "continent_id": "con_hora",
+      "region_id": "rgn_hora_01",
+      "kind": "main",
+      "order": 1,
+      "name_key": "stage.hora.main.01",
+      "objective": "elite_hunt",
+      "objective_twist": "Six identical elites, one shadow",
+      "mechanic_id": "mech_reflection_clone",
+      "enemy_family_ids": [
+        "enm_hora_01",
+        "enm_hora_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/hora/stage_main_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_hora_main_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_hora_main_02",
+      "continent_id": "con_hora",
+      "region_id": "rgn_hora_02",
+      "kind": "main",
+      "order": 2,
+      "name_key": "stage.hora.main.02",
+      "objective": "survival",
+      "objective_twist": "Clones inherit the damage you deal to the wrong target",
+      "mechanic_id": "mech_reflection_clone",
+      "enemy_family_ids": [
+        "enm_hora_01",
+        "enm_hora_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/hora/stage_main_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_hora_main_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_hora_main_03",
+      "continent_id": "con_hora",
+      "region_id": "rgn_hora_03",
+      "kind": "main",
+      "order": 3,
+      "name_key": "stage.hora.main.03",
+      "objective": "resource_control",
+      "objective_twist": "Occupy wells whose shadows expose the real enemies",
+      "mechanic_id": "mech_reflection_clone",
+      "enemy_family_ids": [
+        "enm_hora_01",
+        "enm_hora_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/hora/stage_main_03",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_hora_main_03",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_hora_main_04",
+      "continent_id": "con_hora",
+      "region_id": "rgn_hora_04",
+      "kind": "main",
+      "order": 4,
+      "name_key": "stage.hora.main.04",
+      "objective": "escort",
+      "objective_twist": "The guide is also duplicated; pick wrong and restart the leg",
+      "mechanic_id": "mech_reflection_clone",
+      "enemy_family_ids": [
+        "enm_hora_01",
+        "enm_hora_02"
+      ],
+      "elite_family_id": "eli_hora_01",
+      "scene_address": "world/hora/stage_main_04",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_hora_main_04",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_hora_main_05",
+      "continent_id": "con_hora",
+      "region_id": "rgn_hora_05",
+      "kind": "main",
+      "order": 5,
+      "name_key": "stage.hora.main.05",
+      "objective": "timed_assault",
+      "objective_twist": "The mirage resets sightlines on a fixed beat",
+      "mechanic_id": "mech_reflection_clone",
+      "enemy_family_ids": [
+        "enm_hora_01",
+        "enm_hora_02"
+      ],
+      "elite_family_id": "eli_hora_01",
+      "scene_address": "world/hora/stage_main_05",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_hora_main_05",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_hora_main_06",
+      "continent_id": "con_hora",
+      "region_id": "rgn_hora_06",
+      "kind": "main",
+      "order": 6,
+      "name_key": "stage.hora.main.06",
+      "objective": "boss_break",
+      "objective_twist": "Break only lands on the shadow-casting body",
+      "mechanic_id": "mech_reflection_clone",
+      "enemy_family_ids": [
+        "enm_hora_01",
+        "enm_hora_02"
+      ],
+      "elite_family_id": "eli_hora_01",
+      "scene_address": "world/hora/stage_main_06",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_hora_main_06",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_nival_main_01",
+      "continent_id": "con_nival",
+      "region_id": "rgn_nival_01",
+      "kind": "main",
+      "order": 1,
+      "name_key": "stage.nival.main.01",
+      "objective": "boss_break",
+      "objective_twist": "Shatter windows open and close with the aurora pulse",
+      "mechanic_id": "mech_freeze_timing",
+      "enemy_family_ids": [
+        "enm_nival_01",
+        "enm_nival_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/nival/stage_main_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_nival_main_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_nival_main_02",
+      "continent_id": "con_nival",
+      "region_id": "rgn_nival_02",
+      "kind": "main",
+      "order": 2,
+      "name_key": "stage.nival.main.02",
+      "objective": "defense",
+      "objective_twist": "Thawed ground refreezes and traps your own line",
+      "mechanic_id": "mech_freeze_timing",
+      "enemy_family_ids": [
+        "enm_nival_01",
+        "enm_nival_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/nival/stage_main_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_nival_main_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_nival_main_03",
+      "continent_id": "con_nival",
+      "region_id": "rgn_nival_03",
+      "kind": "main",
+      "order": 3,
+      "name_key": "stage.nival.main.03",
+      "objective": "survival",
+      "objective_twist": "Standing still freezes the party in two beats",
+      "mechanic_id": "mech_freeze_timing",
+      "enemy_family_ids": [
+        "enm_nival_01",
+        "enm_nival_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/nival/stage_main_03",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_nival_main_03",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_nival_main_04",
+      "continent_id": "con_nival",
+      "region_id": "rgn_nival_04",
+      "kind": "main",
+      "order": 4,
+      "name_key": "stage.nival.main.04",
+      "objective": "resource_control",
+      "objective_twist": "Hold hot springs to keep shatter windows open",
+      "mechanic_id": "mech_freeze_timing",
+      "enemy_family_ids": [
+        "enm_nival_01",
+        "enm_nival_02"
+      ],
+      "elite_family_id": "eli_nival_01",
+      "scene_address": "world/nival/stage_main_04",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_nival_main_04",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_nival_main_05",
+      "continent_id": "con_nival",
+      "region_id": "rgn_nival_05",
+      "kind": "main",
+      "order": 5,
+      "name_key": "stage.nival.main.05",
+      "objective": "escort",
+      "objective_twist": "A brazier must never be allowed to freeze",
+      "mechanic_id": "mech_freeze_timing",
+      "enemy_family_ids": [
+        "enm_nival_01",
+        "enm_nival_02"
+      ],
+      "elite_family_id": "eli_nival_01",
+      "scene_address": "world/nival/stage_main_05",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_nival_main_05",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_nival_main_06",
+      "continent_id": "con_nival",
+      "region_id": "rgn_nival_06",
+      "kind": "main",
+      "order": 6,
+      "name_key": "stage.nival.main.06",
+      "objective": "elite_hunt",
+      "objective_twist": "The elite is invulnerable except while frozen",
+      "mechanic_id": "mech_freeze_timing",
+      "enemy_family_ids": [
+        "enm_nival_01",
+        "enm_nival_02"
+      ],
+      "elite_family_id": "eli_nival_01",
+      "scene_address": "world/nival/stage_main_06",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_nival_main_06",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_kael_main_01",
+      "continent_id": "con_kael",
+      "region_id": "rgn_kael_01",
+      "kind": "main",
+      "order": 1,
+      "name_key": "stage.kael.main.01",
+      "objective": "timed_assault",
+      "objective_twist": "The arena shrinks island by island",
+      "mechanic_id": "mech_platform_fall",
+      "enemy_family_ids": [
+        "enm_kael_01",
+        "enm_kael_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/kael/stage_main_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_kael_main_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_kael_main_02",
+      "continent_id": "con_kael",
+      "region_id": "rgn_kael_02",
+      "kind": "main",
+      "order": 2,
+      "name_key": "stage.kael.main.02",
+      "objective": "escort",
+      "objective_twist": "The escort cannot jump; you must build the bridge",
+      "mechanic_id": "mech_platform_fall",
+      "enemy_family_ids": [
+        "enm_kael_01",
+        "enm_kael_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/kael/stage_main_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_kael_main_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_kael_main_03",
+      "continent_id": "con_kael",
+      "region_id": "rgn_kael_03",
+      "kind": "main",
+      "order": 3,
+      "name_key": "stage.kael.main.03",
+      "objective": "survival",
+      "objective_twist": "Only two platforms are ever safe at once",
+      "mechanic_id": "mech_platform_fall",
+      "enemy_family_ids": [
+        "enm_kael_01",
+        "enm_kael_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/kael/stage_main_03",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_kael_main_03",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_kael_main_04",
+      "continent_id": "con_kael",
+      "region_id": "rgn_kael_04",
+      "kind": "main",
+      "order": 4,
+      "name_key": "stage.kael.main.04",
+      "objective": "resource_control",
+      "objective_twist": "Anchors stop islands from drifting apart",
+      "mechanic_id": "mech_platform_fall",
+      "enemy_family_ids": [
+        "enm_kael_01",
+        "enm_kael_02"
+      ],
+      "elite_family_id": "eli_kael_01",
+      "scene_address": "world/kael/stage_main_04",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_kael_main_04",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_kael_main_05",
+      "continent_id": "con_kael",
+      "region_id": "rgn_kael_05",
+      "kind": "main",
+      "order": 5,
+      "name_key": "stage.kael.main.05",
+      "objective": "elite_hunt",
+      "objective_twist": "The elite knocks targets off the edge instead of killing them",
+      "mechanic_id": "mech_platform_fall",
+      "enemy_family_ids": [
+        "enm_kael_01",
+        "enm_kael_02"
+      ],
+      "elite_family_id": "eli_kael_01",
+      "scene_address": "world/kael/stage_main_05",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_kael_main_05",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_kael_main_06",
+      "continent_id": "con_kael",
+      "region_id": "rgn_kael_06",
+      "kind": "main",
+      "order": 6,
+      "name_key": "stage.kael.main.06",
+      "objective": "boss_break",
+      "objective_twist": "Break the boss only from a higher island",
+      "mechanic_id": "mech_platform_fall",
+      "enemy_family_ids": [
+        "enm_kael_01",
+        "enm_kael_02"
+      ],
+      "elite_family_id": "eli_kael_01",
+      "scene_address": "world/kael/stage_main_06",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_kael_main_06",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_neris_main_01",
+      "continent_id": "con_neris",
+      "region_id": "rgn_neris_01",
+      "kind": "main",
+      "order": 1,
+      "name_key": "stage.neris.main.01",
+      "objective": "survival",
+      "objective_twist": "The pressure timer is the real health bar",
+      "mechanic_id": "mech_pressure_vision",
+      "enemy_family_ids": [
+        "enm_neris_01",
+        "enm_neris_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/neris/stage_main_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_neris_main_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_neris_main_02",
+      "continent_id": "con_neris",
+      "region_id": "rgn_neris_02",
+      "kind": "main",
+      "order": 2,
+      "name_key": "stage.neris.main.02",
+      "objective": "resource_control",
+      "objective_twist": "Hold vents that reset the pressure clock",
+      "mechanic_id": "mech_pressure_vision",
+      "enemy_family_ids": [
+        "enm_neris_01",
+        "enm_neris_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/neris/stage_main_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_neris_main_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_neris_main_03",
+      "continent_id": "con_neris",
+      "region_id": "rgn_neris_03",
+      "kind": "main",
+      "order": 3,
+      "name_key": "stage.neris.main.03",
+      "objective": "elite_hunt",
+      "objective_twist": "The elite is only visible during a sonar pulse",
+      "mechanic_id": "mech_pressure_vision",
+      "enemy_family_ids": [
+        "enm_neris_01",
+        "enm_neris_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/neris/stage_main_03",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_neris_main_03",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_neris_main_04",
+      "continent_id": "con_neris",
+      "region_id": "rgn_neris_04",
+      "kind": "main",
+      "order": 4,
+      "name_key": "stage.neris.main.04",
+      "objective": "escort",
+      "objective_twist": "The archive crate slows you and raises pressure",
+      "mechanic_id": "mech_pressure_vision",
+      "enemy_family_ids": [
+        "enm_neris_01",
+        "enm_neris_02"
+      ],
+      "elite_family_id": "eli_neris_01",
+      "scene_address": "world/neris/stage_main_04",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_neris_main_04",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_neris_main_05",
+      "continent_id": "con_neris",
+      "region_id": "rgn_neris_05",
+      "kind": "main",
+      "order": 5,
+      "name_key": "stage.neris.main.05",
+      "objective": "defense",
+      "objective_twist": "Protect the sonar emitter or fight blind",
+      "mechanic_id": "mech_pressure_vision",
+      "enemy_family_ids": [
+        "enm_neris_01",
+        "enm_neris_02"
+      ],
+      "elite_family_id": "eli_neris_01",
+      "scene_address": "world/neris/stage_main_05",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_neris_main_05",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_neris_main_06",
+      "continent_id": "con_neris",
+      "region_id": "rgn_neris_06",
+      "kind": "main",
+      "order": 6,
+      "name_key": "stage.neris.main.06",
+      "objective": "boss_break",
+      "objective_twist": "Break lands only on the pulse beat",
+      "mechanic_id": "mech_pressure_vision",
+      "enemy_family_ids": [
+        "enm_neris_01",
+        "enm_neris_02"
+      ],
+      "elite_family_id": "eli_neris_01",
+      "scene_address": "world/neris/stage_main_06",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_neris_main_06",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_tempora_main_01",
+      "continent_id": "con_tempora",
+      "region_id": "rgn_tempora_01",
+      "kind": "main",
+      "order": 1,
+      "name_key": "stage.tempora.main.01",
+      "objective": "resource_control",
+      "objective_twist": "Own the zones that decide who acts twice",
+      "mechanic_id": "mech_tempo_shift",
+      "enemy_family_ids": [
+        "enm_tempora_01",
+        "enm_tempora_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/tempora/stage_main_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_tempora_main_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_tempora_main_02",
+      "continent_id": "con_tempora",
+      "region_id": "rgn_tempora_02",
+      "kind": "main",
+      "order": 2,
+      "name_key": "stage.tempora.main.02",
+      "objective": "boss_break",
+      "objective_twist": "The break gauge only fills in a slowed zone",
+      "mechanic_id": "mech_tempo_shift",
+      "enemy_family_ids": [
+        "enm_tempora_01",
+        "enm_tempora_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/tempora/stage_main_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_tempora_main_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_tempora_main_03",
+      "continent_id": "con_tempora",
+      "region_id": "rgn_tempora_03",
+      "kind": "main",
+      "order": 3,
+      "name_key": "stage.tempora.main.03",
+      "objective": "timed_assault",
+      "objective_twist": "Your cooldowns run at zone speed, not real time",
+      "mechanic_id": "mech_tempo_shift",
+      "enemy_family_ids": [
+        "enm_tempora_01",
+        "enm_tempora_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/tempora/stage_main_03",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_tempora_main_03",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_tempora_main_04",
+      "continent_id": "con_tempora",
+      "region_id": "rgn_tempora_04",
+      "kind": "main",
+      "order": 4,
+      "name_key": "stage.tempora.main.04",
+      "objective": "elite_hunt",
+      "objective_twist": "The elite always stands in the fastest zone",
+      "mechanic_id": "mech_tempo_shift",
+      "enemy_family_ids": [
+        "enm_tempora_01",
+        "enm_tempora_02"
+      ],
+      "elite_family_id": "eli_tempora_01",
+      "scene_address": "world/tempora/stage_main_04",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_tempora_main_04",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_tempora_main_05",
+      "continent_id": "con_tempora",
+      "region_id": "rgn_tempora_05",
+      "kind": "main",
+      "order": 5,
+      "name_key": "stage.tempora.main.05",
+      "objective": "survival",
+      "objective_twist": "Zones invert every cycle without warning",
+      "mechanic_id": "mech_tempo_shift",
+      "enemy_family_ids": [
+        "enm_tempora_01",
+        "enm_tempora_02"
+      ],
+      "elite_family_id": "eli_tempora_01",
+      "scene_address": "world/tempora/stage_main_05",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_tempora_main_05",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_tempora_main_06",
+      "continent_id": "con_tempora",
+      "region_id": "rgn_tempora_06",
+      "kind": "main",
+      "order": 6,
+      "name_key": "stage.tempora.main.06",
+      "objective": "defense",
+      "objective_twist": "The thing you defend ages at zone speed",
+      "mechanic_id": "mech_tempo_shift",
+      "enemy_family_ids": [
+        "enm_tempora_01",
+        "enm_tempora_02"
+      ],
+      "elite_family_id": "eli_tempora_01",
+      "scene_address": "world/tempora/stage_main_06",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_tempora_main_06",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_origin_main_01",
+      "continent_id": "con_origin",
+      "region_id": "rgn_origin_01",
+      "kind": "main",
+      "order": 1,
+      "name_key": "stage.origin.main.01",
+      "objective": "boss_break",
+      "objective_twist": "Light reflection plus heat venting in one gauge",
+      "mechanic_id": "mech_combined_rift",
+      "enemy_family_ids": [
+        "enm_origin_01",
+        "enm_origin_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/origin/stage_main_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_origin_main_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_origin_main_02",
+      "continent_id": "con_origin",
+      "region_id": "rgn_origin_02",
+      "kind": "main",
+      "order": 2,
+      "name_key": "stage.origin.main.02",
+      "objective": "survival",
+      "objective_twist": "Tide swaps inside a collapsing platform set",
+      "mechanic_id": "mech_combined_rift",
+      "enemy_family_ids": [
+        "enm_origin_01",
+        "enm_origin_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/origin/stage_main_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_origin_main_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_origin_main_03",
+      "continent_id": "con_origin",
+      "region_id": "rgn_origin_03",
+      "kind": "main",
+      "order": 3,
+      "name_key": "stage.origin.main.03",
+      "objective": "resource_control",
+      "objective_twist": "Conduction chains routed through freeze zones",
+      "mechanic_id": "mech_combined_rift",
+      "enemy_family_ids": [
+        "enm_origin_01",
+        "enm_origin_02"
+      ],
+      "elite_family_id": null,
+      "scene_address": "world/origin/stage_main_03",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_origin_main_03",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_origin_main_04",
+      "continent_id": "con_origin",
+      "region_id": "rgn_origin_04",
+      "kind": "main",
+      "order": 4,
+      "name_key": "stage.origin.main.04",
+      "objective": "elite_hunt",
+      "objective_twist": "Mirror clones that only act in accelerated zones",
+      "mechanic_id": "mech_combined_rift",
+      "enemy_family_ids": [
+        "enm_origin_01",
+        "enm_origin_02"
+      ],
+      "elite_family_id": "eli_origin_01",
+      "scene_address": "world/origin/stage_main_04",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_origin_main_04",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_origin_main_05",
+      "continent_id": "con_origin",
+      "region_id": "rgn_origin_05",
+      "kind": "main",
+      "order": 5,
+      "name_key": "stage.origin.main.05",
+      "objective": "escort",
+      "objective_twist": "A pressure-bound escort along wind lanes",
+      "mechanic_id": "mech_combined_rift",
+      "enemy_family_ids": [
+        "enm_origin_01",
+        "enm_origin_02"
+      ],
+      "elite_family_id": "eli_origin_01",
+      "scene_address": "world/origin/stage_main_05",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_origin_main_05",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "stg_origin_main_06",
+      "continent_id": "con_origin",
+      "region_id": "rgn_origin_06",
+      "kind": "main",
+      "order": 6,
+      "name_key": "stage.origin.main.06",
+      "objective": "timed_assault",
+      "objective_twist": "Root growth counted in clockwork beats",
+      "mechanic_id": "mech_combined_rift",
+      "enemy_family_ids": [
+        "enm_origin_01",
+        "enm_origin_02"
+      ],
+      "elite_family_id": "eli_origin_01",
+      "scene_address": "world/origin/stage_main_06",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_origin_main_06",
+      "enabled": true,
+      "debug_only": false
+    }
+  ]
+}
