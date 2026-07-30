@@ -39,10 +39,23 @@ for test_file in "$repo_dir"/backend/supabase/tests/pgtap/*.sql; do
   psql "${psql_args[@]}" --file "$test_file" | tee -a "$result_file"
 done
 
-if rg --quiet '\bnot ok [0-9]+' "$result_file"; then
+# grep은 POSIX라 어디에나 있다. 이전에는 ripgrep을 썼는데, ripgrep이 없는
+# 머신에서는 `if rg ...`가 exit 127로 거짓이 되어 실패한 assertion이 있어도
+# 이 검사를 조용히 통과했다. 검증 스크립트가 통과를 지어내면 안 된다.
+if grep --quiet --extended-regexp 'not ok [0-9]+' "$result_file"; then
   echo "pgTAP reported a failed assertion." >&2
+  grep --extended-regexp 'not ok [0-9]+' "$result_file" >&2
   exit 1
 fi
 
-test_count="$(rg --only-matching '\bok [0-9]+' "$result_file" | wc -l | tr -d ' ')"
+test_count="$(grep --only-matching --extended-regexp \
+  '(^|[^[:alnum:]_])ok [0-9]+' "$result_file" | wc -l | tr -d ' ')"
+
+# 결과 파일이 비었는데 "PASS: 0 assertions"를 출력하면 아무것도 검증하지 않고
+# 초록으로 보인다. assertion이 하나도 없으면 실패로 취급한다.
+if [[ "$test_count" -eq 0 ]]; then
+  echo "pgTAP produced no assertions. The suite did not run." >&2
+  exit 1
+fi
+
 echo "Supabase pgTAP PASS: $test_count assertions"

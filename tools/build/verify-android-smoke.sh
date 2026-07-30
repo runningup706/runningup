@@ -26,11 +26,11 @@ badging="$("$build_tools/aapt2" dump badging "$apk_path")"
 permissions="$("$build_tools/aapt2" dump permissions "$apk_path")"
 archive_list="$(unzip -l "$apk_path")"
 
-rg -q "package: name='kr\\.robom\\.runningup' versionCode='110000' versionName='11\\.0\\.0'" <<<"$badging"
-rg -q "targetSdkVersion:'36'" <<<"$badging"
-rg -q "launchable-activity: name='com\\.unity3d\\.player\\.UnityPlayerGameActivity'" <<<"$badging"
-rg -q "native-code: 'arm64-v8a'" <<<"$badging"
-rg -q "uses-feature: name='android\\.hardware\\.screen\\.portrait'" <<<"$badging"
+grep --quiet --extended-regexp "package: name='kr\\.robom\\.runningup' versionCode='110000' versionName='11\\.0\\.0'" <<<"$badging"
+grep --quiet --extended-regexp "targetSdkVersion:'36'" <<<"$badging"
+grep --quiet --extended-regexp "launchable-activity: name='com\\.unity3d\\.player\\.UnityPlayerGameActivity'" <<<"$badging"
+grep --quiet --extended-regexp "native-code: 'arm64-v8a'" <<<"$badging"
+grep --quiet --extended-regexp "uses-feature: name='android\\.hardware\\.screen\\.portrait'" <<<"$badging"
 
 for permission in \
   android.permission.ACCESS_FINE_LOCATION \
@@ -41,7 +41,7 @@ for permission in \
   android.permission.health.READ_EXERCISE \
   android.permission.health.READ_DISTANCE
 do
-  rg -q "uses-permission: name='$permission'" <<<"$permissions"
+  grep --quiet --extended-regexp "uses-permission: name='$permission'" <<<"$permissions"
 done
 
 for entry in \
@@ -50,14 +50,14 @@ for entry in \
   lib/arm64-v8a/libmain.so \
   lib/arm64-v8a/libunity.so
 do
-  rg -q "[[:space:]]$entry$" <<<"$archive_list"
+  grep --quiet --extended-regexp "[[:space:]]$entry$" <<<"$archive_list"
 done
 
 signing="$(JAVA_HOME="$java_home" PATH="$java_home/bin:$PATH" \
   "$build_tools/apksigner" verify --verbose "$apk_path")"
 alignment="$("$build_tools/zipalign" -c -P 16 -v 4 "$apk_path")"
-rg -q 'Verified using v2 scheme \(APK Signature Scheme v2\): true' <<<"$signing"
-rg -q 'Verification successful' <<<"$alignment"
+grep --quiet --extended-regexp 'Verified using v2 scheme \(APK Signature Scheme v2\): true' <<<"$signing"
+grep --quiet --extended-regexp 'Verification successful' <<<"$alignment"
 node "$repo_dir/tools/build/verify-apk-zip-layout.mjs" "$apk_path"
 
 printf 'RUNNINGUP_V11_ANDROID_SMOKE_VERIFY_PASS bytes=%s sha256=%s\n' \

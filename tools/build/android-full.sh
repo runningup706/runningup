@@ -14,6 +14,6 @@ mkdir -p "$repo_dir/artifacts/logs" "$repo_dir/artifacts/builds"
   -projectPath "$repo_dir/client/unity" \
   -executeMethod RunningUp.Editor.V11AndroidBuilder.BuildFullSideload \
   -logFile "$log_file"
-rg 'RUNNINGUP_V11_ANDROID_BUILD_PASS' "$log_file"
+grep 'RUNNINGUP_V11_ANDROID_BUILD_PASS' "$log_file"
 test -s "$repo_dir/artifacts/builds/RunningUp-V11-FULL_SIDELOAD.apk"
 

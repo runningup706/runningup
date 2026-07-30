@@ -18,6 +18,6 @@ for platform in EditMode PlayMode; do
     -testPlatform "$platform" \
     -testResults "$result_dir/unity-$lower.xml" \
     -logFile "$log_dir/unity-$lower.log"
-  rg '<test-run .*result="Passed".*failed="0"' "$result_dir/unity-$lower.xml"
+  grep --extended-regexp '<test-run .*result="Passed".*failed="0"' "$result_dir/unity-$lower.xml"
 done
 
