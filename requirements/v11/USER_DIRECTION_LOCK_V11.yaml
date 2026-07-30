@@ -1,0 +1,32 @@
+
+version: 11.0.0
+supersedes: [V8, V9, V10]
+product: portrait 3D idle running journey game
+core_rules:
+  - first_screen_is_live_journey_home
+  - my_runner_is_always_running
+  - no_sword_no_monster_no_damage_no_hp_combat
+  - verified_real_running_is_dominant_permanent_progress
+  - idle_progress_is_small_and_capped
+  - one_daily_run_contract_not_many_chores
+  - one_persistent_my_runner_plus_60_pacers
+  - polished_three_head_chibi_not_stick_figure
+  - bottom_nav_is_home_runner_run_world_crew
+  - run_button_is_center_and_largest
+  - monthly_1000km_is_only_final_world_crown
+  - exactly_120_claimable_monthly_checkpoints_between_1_and_1000km
+  - road_track_treadmill_indoor_run_walk_only
+  - no_trail_hiking_cycling_elevation_progression
+  - no_player_facing_lecture_or_warning_copy
+  - remove_incompatible_legacy_runtime_code_without_legacy_backup_folder
+  - preserve_git_history_and_document_purge
+content_floor:
+  continents: 12
+  regions_per_continent: 16
+  routes_per_region: 12
+  main_routes: 2304
+  my_runner_forms: 12
+  pacers: 60
+  cards: 360
+  running_gear: 192
+  monthly_checkpoints: 120

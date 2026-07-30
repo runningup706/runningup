@@ -1,0 +1,4806 @@
+{
+  "version": "11.0.0",
+  "count": 360,
+  "rarity_order": [
+    "C",
+    "B",
+    "A",
+    "S",
+    "SS",
+    "SSR",
+    "UR",
+    "CROWN"
+  ],
+  "direct_draw_max_rarity": "SSR",
+  "crown_policy": "ASCENSION_AND_WORLD_CROWN_ONLY",
+  "cards": [
+    {
+      "card_id": "PC001",
+      "category": "PACER",
+      "name_ko": "하린의 페이스",
+      "pacer_id": "PACER_001",
+      "rarity": "C",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_001",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "PC002",
+      "category": "PACER",
+      "name_ko": "선우의 페이스",
+      "pacer_id": "PACER_002",
+      "rarity": "C",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_002",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "PC003",
+      "category": "PACER",
+      "name_ko": "지오의 페이스",
+      "pacer_id": "PACER_003",
+      "rarity": "C",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_003",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "PC004",
+      "category": "PACER",
+      "name_ko": "루나의 페이스",
+      "pacer_id": "PACER_004",
+      "rarity": "C",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_004",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "PC005",
+      "category": "PACER",
+      "name_ko": "민서의 페이스",
+      "pacer_id": "PACER_005",
+      "rarity": "C",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_005",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "PC006",
+      "category": "PACER",
+      "name_ko": "태오의 페이스",
+      "pacer_id": "PACER_006",
+      "rarity": "C",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_006",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "PC007",
+      "category": "PACER",
+      "name_ko": "서린의 페이스",
+      "pacer_id": "PACER_007",
+      "rarity": "C",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_007",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "PC008",
+      "category": "PACER",
+      "name_ko": "도윤의 페이스",
+      "pacer_id": "PACER_008",
+      "rarity": "C",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_008",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "PC009",
+      "category": "PACER",
+      "name_ko": "아리의 페이스",
+      "pacer_id": "PACER_009",
+      "rarity": "C",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_009",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "PC010",
+      "category": "PACER",
+      "name_ko": "제이의 페이스",
+      "pacer_id": "PACER_010",
+      "rarity": "C",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_010",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "PC011",
+      "category": "PACER",
+      "name_ko": "미라의 페이스",
+      "pacer_id": "PACER_011",
+      "rarity": "B",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_011",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "PC012",
+      "category": "PACER",
+      "name_ko": "카이의 페이스",
+      "pacer_id": "PACER_012",
+      "rarity": "B",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_012",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "PC013",
+      "category": "PACER",
+      "name_ko": "유나의 페이스",
+      "pacer_id": "PACER_013",
+      "rarity": "B",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_013",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "PC014",
+      "category": "PACER",
+      "name_ko": "리오의 페이스",
+      "pacer_id": "PACER_014",
+      "rarity": "B",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_014",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "PC015",
+      "category": "PACER",
+      "name_ko": "시아의 페이스",
+      "pacer_id": "PACER_015",
+      "rarity": "B",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_015",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "PC016",
+      "category": "PACER",
+      "name_ko": "준의 페이스",
+      "pacer_id": "PACER_016",
+      "rarity": "B",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_016",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "PC017",
+      "category": "PACER",
+      "name_ko": "나리의 페이스",
+      "pacer_id": "PACER_017",
+      "rarity": "B",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_017",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "PC018",
+      "category": "PACER",
+      "name_ko": "렌의 페이스",
+      "pacer_id": "PACER_018",
+      "rarity": "B",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_018",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "PC019",
+      "category": "PACER",
+      "name_ko": "소라의 페이스",
+      "pacer_id": "PACER_019",
+      "rarity": "B",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_019",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "PC020",
+      "category": "PACER",
+      "name_ko": "이안의 페이스",
+      "pacer_id": "PACER_020",
+      "rarity": "B",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_020",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "PC021",
+      "category": "PACER",
+      "name_ko": "보라의 페이스",
+      "pacer_id": "PACER_021",
+      "rarity": "A",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_021",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "PC022",
+      "category": "PACER",
+      "name_ko": "하엘의 페이스",
+      "pacer_id": "PACER_022",
+      "rarity": "A",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_022",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "PC023",
+      "category": "PACER",
+      "name_ko": "라온의 페이스",
+      "pacer_id": "PACER_023",
+      "rarity": "A",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_023",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "PC024",
+      "category": "PACER",
+      "name_ko": "세나의 페이스",
+      "pacer_id": "PACER_024",
+      "rarity": "A",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_024",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "PC025",
+      "category": "PACER",
+      "name_ko": "이루의 페이스",
+      "pacer_id": "PACER_025",
+      "rarity": "A",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_025",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "PC026",
+      "category": "PACER",
+      "name_ko": "다온의 페이스",
+      "pacer_id": "PACER_026",
+      "rarity": "A",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_026",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "PC027",
+      "category": "PACER",
+      "name_ko": "마루의 페이스",
+      "pacer_id": "PACER_027",
+      "rarity": "A",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_027",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "PC028",
+      "category": "PACER",
+      "name_ko": "로아의 페이스",
+      "pacer_id": "PACER_028",
+      "rarity": "A",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_028",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "PC029",
+      "category": "PACER",
+      "name_ko": "수호의 페이스",
+      "pacer_id": "PACER_029",
+      "rarity": "A",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_029",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "PC030",
+      "category": "PACER",
+      "name_ko": "은별의 페이스",
+      "pacer_id": "PACER_030",
+      "rarity": "A",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_030",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "PC031",
+      "category": "PACER",
+      "name_ko": "노아의 페이스",
+      "pacer_id": "PACER_031",
+      "rarity": "S",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_031",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "PC032",
+      "category": "PACER",
+      "name_ko": "채린의 페이스",
+      "pacer_id": "PACER_032",
+      "rarity": "S",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_032",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "PC033",
+      "category": "PACER",
+      "name_ko": "테오의 페이스",
+      "pacer_id": "PACER_033",
+      "rarity": "S",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_033",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "PC034",
+      "category": "PACER",
+      "name_ko": "예린의 페이스",
+      "pacer_id": "PACER_034",
+      "rarity": "S",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_034",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "PC035",
+      "category": "PACER",
+      "name_ko": "레오의 페이스",
+      "pacer_id": "PACER_035",
+      "rarity": "S",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_035",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "PC036",
+      "category": "PACER",
+      "name_ko": "다미의 페이스",
+      "pacer_id": "PACER_036",
+      "rarity": "S",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_036",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "PC037",
+      "category": "PACER",
+      "name_ko": "온유의 페이스",
+      "pacer_id": "PACER_037",
+      "rarity": "S",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_037",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "PC038",
+      "category": "PACER",
+      "name_ko": "유리의 페이스",
+      "pacer_id": "PACER_038",
+      "rarity": "S",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_038",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "PC039",
+      "category": "PACER",
+      "name_ko": "가온의 페이스",
+      "pacer_id": "PACER_039",
+      "rarity": "S",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_039",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "PC040",
+      "category": "PACER",
+      "name_ko": "이솔의 페이스",
+      "pacer_id": "PACER_040",
+      "rarity": "S",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_040",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "PC041",
+      "category": "PACER",
+      "name_ko": "라미의 페이스",
+      "pacer_id": "PACER_041",
+      "rarity": "SS",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_041",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "PC042",
+      "category": "PACER",
+      "name_ko": "지안의 페이스",
+      "pacer_id": "PACER_042",
+      "rarity": "SS",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_042",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "PC043",
+      "category": "PACER",
+      "name_ko": "시온의 페이스",
+      "pacer_id": "PACER_043",
+      "rarity": "SS",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_043",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "PC044",
+      "category": "PACER",
+      "name_ko": "나엘의 페이스",
+      "pacer_id": "PACER_044",
+      "rarity": "SS",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_044",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "PC045",
+      "category": "PACER",
+      "name_ko": "해나의 페이스",
+      "pacer_id": "PACER_045",
+      "rarity": "SS",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_045",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "PC046",
+      "category": "PACER",
+      "name_ko": "우주의 페이스",
+      "pacer_id": "PACER_046",
+      "rarity": "SS",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_046",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "PC047",
+      "category": "PACER",
+      "name_ko": "세림의 페이스",
+      "pacer_id": "PACER_047",
+      "rarity": "SS",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_047",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "PC048",
+      "category": "PACER",
+      "name_ko": "하람의 페이스",
+      "pacer_id": "PACER_048",
+      "rarity": "SS",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_048",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "PC049",
+      "category": "PACER",
+      "name_ko": "루이의 페이스",
+      "pacer_id": "PACER_049",
+      "rarity": "SS",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_049",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "PC050",
+      "category": "PACER",
+      "name_ko": "이든의 페이스",
+      "pacer_id": "PACER_050",
+      "rarity": "SS",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_050",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "PC051",
+      "category": "PACER",
+      "name_ko": "나윤의 페이스",
+      "pacer_id": "PACER_051",
+      "rarity": "SSR",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_051",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "PC052",
+      "category": "PACER",
+      "name_ko": "태린의 페이스",
+      "pacer_id": "PACER_052",
+      "rarity": "SSR",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_052",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "PC053",
+      "category": "PACER",
+      "name_ko": "연우의 페이스",
+      "pacer_id": "PACER_053",
+      "rarity": "SSR",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_053",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "PC054",
+      "category": "PACER",
+      "name_ko": "채온의 페이스",
+      "pacer_id": "PACER_054",
+      "rarity": "SSR",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_054",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "PC055",
+      "category": "PACER",
+      "name_ko": "다율의 페이스",
+      "pacer_id": "PACER_055",
+      "rarity": "SSR",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_055",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "PC056",
+      "category": "PACER",
+      "name_ko": "미오의 페이스",
+      "pacer_id": "PACER_056",
+      "rarity": "SSR",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_056",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "PC057",
+      "category": "PACER",
+      "name_ko": "하진의 페이스",
+      "pacer_id": "PACER_057",
+      "rarity": "SSR",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_057",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "PC058",
+      "category": "PACER",
+      "name_ko": "세아의 페이스",
+      "pacer_id": "PACER_058",
+      "rarity": "SSR",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_058",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "PC059",
+      "category": "PACER",
+      "name_ko": "도하의 페이스",
+      "pacer_id": "PACER_059",
+      "rarity": "SSR",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_059",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "PC060",
+      "category": "PACER",
+      "name_ko": "유엘의 페이스",
+      "pacer_id": "PACER_060",
+      "rarity": "SSR",
+      "direct_crown_draw": false,
+      "effect_id": "CARD_EFFECT_060",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "PACER_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC001",
+      "category": "TECHNIQUE",
+      "name_ko": "로켓 스타트 1",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_061",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC002",
+      "category": "TECHNIQUE",
+      "name_ko": "페이스 락 1",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_062",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC003",
+      "category": "TECHNIQUE",
+      "name_ko": "드래프트 라인 1",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_063",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC004",
+      "category": "TECHNIQUE",
+      "name_ko": "코너 스텝 1",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_064",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC005",
+      "category": "TECHNIQUE",
+      "name_ko": "네거티브 스플릿 1",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_065",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC006",
+      "category": "TECHNIQUE",
+      "name_ko": "피니시 킥 1",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_066",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC007",
+      "category": "TECHNIQUE",
+      "name_ko": "리듬 싱크 1",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_067",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC008",
+      "category": "TECHNIQUE",
+      "name_ko": "브레스 사이클 1",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_068",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC009",
+      "category": "TECHNIQUE",
+      "name_ko": "스마트 오버테이크 1",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_069",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC010",
+      "category": "TECHNIQUE",
+      "name_ko": "롱 크루즈 1",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_070",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC011",
+      "category": "TECHNIQUE",
+      "name_ko": "스플릿 메모리 1",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_071",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC012",
+      "category": "TECHNIQUE",
+      "name_ko": "타이밍 게이트 1",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_072",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC013",
+      "category": "TECHNIQUE",
+      "name_ko": "로켓 스타트 2",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_073",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC014",
+      "category": "TECHNIQUE",
+      "name_ko": "페이스 락 2",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_074",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC015",
+      "category": "TECHNIQUE",
+      "name_ko": "드래프트 라인 2",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_075",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC016",
+      "category": "TECHNIQUE",
+      "name_ko": "코너 스텝 2",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_076",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC017",
+      "category": "TECHNIQUE",
+      "name_ko": "네거티브 스플릿 2",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_077",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC018",
+      "category": "TECHNIQUE",
+      "name_ko": "피니시 킥 2",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_078",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC019",
+      "category": "TECHNIQUE",
+      "name_ko": "리듬 싱크 2",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_079",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC020",
+      "category": "TECHNIQUE",
+      "name_ko": "브레스 사이클 2",
+      "rarity": "C",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_080",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "TC021",
+      "category": "TECHNIQUE",
+      "name_ko": "스마트 오버테이크 2",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_081",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC022",
+      "category": "TECHNIQUE",
+      "name_ko": "롱 크루즈 2",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_082",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC023",
+      "category": "TECHNIQUE",
+      "name_ko": "스플릿 메모리 2",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_083",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC024",
+      "category": "TECHNIQUE",
+      "name_ko": "타이밍 게이트 2",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_084",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC025",
+      "category": "TECHNIQUE",
+      "name_ko": "로켓 스타트 3",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_085",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC026",
+      "category": "TECHNIQUE",
+      "name_ko": "페이스 락 3",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_086",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC027",
+      "category": "TECHNIQUE",
+      "name_ko": "드래프트 라인 3",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_087",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC028",
+      "category": "TECHNIQUE",
+      "name_ko": "코너 스텝 3",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_088",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC029",
+      "category": "TECHNIQUE",
+      "name_ko": "네거티브 스플릿 3",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_089",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC030",
+      "category": "TECHNIQUE",
+      "name_ko": "피니시 킥 3",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_090",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC031",
+      "category": "TECHNIQUE",
+      "name_ko": "리듬 싱크 3",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_091",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC032",
+      "category": "TECHNIQUE",
+      "name_ko": "브레스 사이클 3",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_092",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC033",
+      "category": "TECHNIQUE",
+      "name_ko": "스마트 오버테이크 3",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_093",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC034",
+      "category": "TECHNIQUE",
+      "name_ko": "롱 크루즈 3",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_094",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC035",
+      "category": "TECHNIQUE",
+      "name_ko": "스플릿 메모리 3",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_095",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC036",
+      "category": "TECHNIQUE",
+      "name_ko": "타이밍 게이트 3",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_096",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC037",
+      "category": "TECHNIQUE",
+      "name_ko": "로켓 스타트 4",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_097",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC038",
+      "category": "TECHNIQUE",
+      "name_ko": "페이스 락 4",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_098",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC039",
+      "category": "TECHNIQUE",
+      "name_ko": "드래프트 라인 4",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_099",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC040",
+      "category": "TECHNIQUE",
+      "name_ko": "코너 스텝 4",
+      "rarity": "B",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_100",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "TC041",
+      "category": "TECHNIQUE",
+      "name_ko": "네거티브 스플릿 4",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_101",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC042",
+      "category": "TECHNIQUE",
+      "name_ko": "피니시 킥 4",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_102",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC043",
+      "category": "TECHNIQUE",
+      "name_ko": "리듬 싱크 4",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_103",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC044",
+      "category": "TECHNIQUE",
+      "name_ko": "브레스 사이클 4",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_104",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC045",
+      "category": "TECHNIQUE",
+      "name_ko": "스마트 오버테이크 4",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_105",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC046",
+      "category": "TECHNIQUE",
+      "name_ko": "롱 크루즈 4",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_106",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC047",
+      "category": "TECHNIQUE",
+      "name_ko": "스플릿 메모리 4",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_107",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC048",
+      "category": "TECHNIQUE",
+      "name_ko": "타이밍 게이트 4",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_108",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC049",
+      "category": "TECHNIQUE",
+      "name_ko": "로켓 스타트 5",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_109",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC050",
+      "category": "TECHNIQUE",
+      "name_ko": "페이스 락 5",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_110",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC051",
+      "category": "TECHNIQUE",
+      "name_ko": "드래프트 라인 5",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_111",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC052",
+      "category": "TECHNIQUE",
+      "name_ko": "코너 스텝 5",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_112",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC053",
+      "category": "TECHNIQUE",
+      "name_ko": "네거티브 스플릿 5",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_113",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC054",
+      "category": "TECHNIQUE",
+      "name_ko": "피니시 킥 5",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_114",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC055",
+      "category": "TECHNIQUE",
+      "name_ko": "리듬 싱크 5",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_115",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC056",
+      "category": "TECHNIQUE",
+      "name_ko": "브레스 사이클 5",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_116",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC057",
+      "category": "TECHNIQUE",
+      "name_ko": "스마트 오버테이크 5",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_117",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC058",
+      "category": "TECHNIQUE",
+      "name_ko": "롱 크루즈 5",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_118",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC059",
+      "category": "TECHNIQUE",
+      "name_ko": "스플릿 메모리 5",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_119",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC060",
+      "category": "TECHNIQUE",
+      "name_ko": "타이밍 게이트 5",
+      "rarity": "A",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_120",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "TC061",
+      "category": "TECHNIQUE",
+      "name_ko": "로켓 스타트 6",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_121",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC062",
+      "category": "TECHNIQUE",
+      "name_ko": "페이스 락 6",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_122",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC063",
+      "category": "TECHNIQUE",
+      "name_ko": "드래프트 라인 6",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_123",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC064",
+      "category": "TECHNIQUE",
+      "name_ko": "코너 스텝 6",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_124",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC065",
+      "category": "TECHNIQUE",
+      "name_ko": "네거티브 스플릿 6",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_125",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC066",
+      "category": "TECHNIQUE",
+      "name_ko": "피니시 킥 6",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_126",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC067",
+      "category": "TECHNIQUE",
+      "name_ko": "리듬 싱크 6",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_127",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC068",
+      "category": "TECHNIQUE",
+      "name_ko": "브레스 사이클 6",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_128",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC069",
+      "category": "TECHNIQUE",
+      "name_ko": "스마트 오버테이크 6",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_129",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC070",
+      "category": "TECHNIQUE",
+      "name_ko": "롱 크루즈 6",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_130",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC071",
+      "category": "TECHNIQUE",
+      "name_ko": "스플릿 메모리 6",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_131",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC072",
+      "category": "TECHNIQUE",
+      "name_ko": "타이밍 게이트 6",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_132",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC073",
+      "category": "TECHNIQUE",
+      "name_ko": "로켓 스타트 7",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_133",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC074",
+      "category": "TECHNIQUE",
+      "name_ko": "페이스 락 7",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_134",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC075",
+      "category": "TECHNIQUE",
+      "name_ko": "드래프트 라인 7",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_135",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC076",
+      "category": "TECHNIQUE",
+      "name_ko": "코너 스텝 7",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_136",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC077",
+      "category": "TECHNIQUE",
+      "name_ko": "네거티브 스플릿 7",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_137",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC078",
+      "category": "TECHNIQUE",
+      "name_ko": "피니시 킥 7",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_138",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC079",
+      "category": "TECHNIQUE",
+      "name_ko": "리듬 싱크 7",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_139",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC080",
+      "category": "TECHNIQUE",
+      "name_ko": "브레스 사이클 7",
+      "rarity": "S",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_140",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "TC081",
+      "category": "TECHNIQUE",
+      "name_ko": "스마트 오버테이크 7",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_141",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC082",
+      "category": "TECHNIQUE",
+      "name_ko": "롱 크루즈 7",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_142",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC083",
+      "category": "TECHNIQUE",
+      "name_ko": "스플릿 메모리 7",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_143",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC084",
+      "category": "TECHNIQUE",
+      "name_ko": "타이밍 게이트 7",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_144",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC085",
+      "category": "TECHNIQUE",
+      "name_ko": "로켓 스타트 8",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_145",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC086",
+      "category": "TECHNIQUE",
+      "name_ko": "페이스 락 8",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_146",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC087",
+      "category": "TECHNIQUE",
+      "name_ko": "드래프트 라인 8",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_147",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC088",
+      "category": "TECHNIQUE",
+      "name_ko": "코너 스텝 8",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_148",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC089",
+      "category": "TECHNIQUE",
+      "name_ko": "네거티브 스플릿 8",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_149",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC090",
+      "category": "TECHNIQUE",
+      "name_ko": "피니시 킥 8",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_150",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC091",
+      "category": "TECHNIQUE",
+      "name_ko": "리듬 싱크 8",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_151",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC092",
+      "category": "TECHNIQUE",
+      "name_ko": "브레스 사이클 8",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_152",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC093",
+      "category": "TECHNIQUE",
+      "name_ko": "스마트 오버테이크 8",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_153",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC094",
+      "category": "TECHNIQUE",
+      "name_ko": "롱 크루즈 8",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_154",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC095",
+      "category": "TECHNIQUE",
+      "name_ko": "스플릿 메모리 8",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_155",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC096",
+      "category": "TECHNIQUE",
+      "name_ko": "타이밍 게이트 8",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_156",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC097",
+      "category": "TECHNIQUE",
+      "name_ko": "로켓 스타트 9",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_157",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC098",
+      "category": "TECHNIQUE",
+      "name_ko": "페이스 락 9",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_158",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC099",
+      "category": "TECHNIQUE",
+      "name_ko": "드래프트 라인 9",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_159",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC100",
+      "category": "TECHNIQUE",
+      "name_ko": "코너 스텝 9",
+      "rarity": "SS",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_160",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "TC101",
+      "category": "TECHNIQUE",
+      "name_ko": "네거티브 스플릿 9",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_161",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC102",
+      "category": "TECHNIQUE",
+      "name_ko": "피니시 킥 9",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_162",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC103",
+      "category": "TECHNIQUE",
+      "name_ko": "리듬 싱크 9",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_163",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC104",
+      "category": "TECHNIQUE",
+      "name_ko": "브레스 사이클 9",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_164",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC105",
+      "category": "TECHNIQUE",
+      "name_ko": "스마트 오버테이크 9",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_165",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC106",
+      "category": "TECHNIQUE",
+      "name_ko": "롱 크루즈 9",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_166",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC107",
+      "category": "TECHNIQUE",
+      "name_ko": "스플릿 메모리 9",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_167",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC108",
+      "category": "TECHNIQUE",
+      "name_ko": "타이밍 게이트 9",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_168",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC109",
+      "category": "TECHNIQUE",
+      "name_ko": "로켓 스타트 10",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_169",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC110",
+      "category": "TECHNIQUE",
+      "name_ko": "페이스 락 10",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_170",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC111",
+      "category": "TECHNIQUE",
+      "name_ko": "드래프트 라인 10",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_171",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC112",
+      "category": "TECHNIQUE",
+      "name_ko": "코너 스텝 10",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_172",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC113",
+      "category": "TECHNIQUE",
+      "name_ko": "네거티브 스플릿 10",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_173",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC114",
+      "category": "TECHNIQUE",
+      "name_ko": "피니시 킥 10",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_174",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC115",
+      "category": "TECHNIQUE",
+      "name_ko": "리듬 싱크 10",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_175",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC116",
+      "category": "TECHNIQUE",
+      "name_ko": "브레스 사이클 10",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_176",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC117",
+      "category": "TECHNIQUE",
+      "name_ko": "스마트 오버테이크 10",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_177",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC118",
+      "category": "TECHNIQUE",
+      "name_ko": "롱 크루즈 10",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_178",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC119",
+      "category": "TECHNIQUE",
+      "name_ko": "스플릿 메모리 10",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_179",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "TC120",
+      "category": "TECHNIQUE",
+      "name_ko": "타이밍 게이트 10",
+      "rarity": "SSR",
+      "behavior_change": true,
+      "damage_effect": false,
+      "effect_id": "CARD_EFFECT_180",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "TECHNIQUE_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "MC001",
+      "category": "MEMORY",
+      "name_ko": "하린의 첫 완주",
+      "rarity": "C",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_181",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "MC002",
+      "category": "MEMORY",
+      "name_ko": "선우의 첫 완주",
+      "rarity": "C",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_182",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "MC003",
+      "category": "MEMORY",
+      "name_ko": "지오의 첫 완주",
+      "rarity": "C",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_183",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "MC004",
+      "category": "MEMORY",
+      "name_ko": "루나의 첫 완주",
+      "rarity": "C",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_184",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "MC005",
+      "category": "MEMORY",
+      "name_ko": "민서의 첫 완주",
+      "rarity": "C",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_185",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "MC006",
+      "category": "MEMORY",
+      "name_ko": "태오의 첫 완주",
+      "rarity": "C",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_186",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "MC007",
+      "category": "MEMORY",
+      "name_ko": "서린의 첫 완주",
+      "rarity": "C",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_187",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "MC008",
+      "category": "MEMORY",
+      "name_ko": "도윤의 첫 완주",
+      "rarity": "C",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_188",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "MC009",
+      "category": "MEMORY",
+      "name_ko": "아리의 첫 완주",
+      "rarity": "C",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_189",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "MC010",
+      "category": "MEMORY",
+      "name_ko": "제이의 첫 완주",
+      "rarity": "C",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_190",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "MC011",
+      "category": "MEMORY",
+      "name_ko": "미라의 첫 완주",
+      "rarity": "C",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_191",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "MC012",
+      "category": "MEMORY",
+      "name_ko": "카이의 첫 완주",
+      "rarity": "C",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_192",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "MC013",
+      "category": "MEMORY",
+      "name_ko": "유나의 첫 완주",
+      "rarity": "B",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_193",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "MC014",
+      "category": "MEMORY",
+      "name_ko": "리오의 첫 완주",
+      "rarity": "B",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_194",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "MC015",
+      "category": "MEMORY",
+      "name_ko": "시아의 첫 완주",
+      "rarity": "B",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_195",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "MC016",
+      "category": "MEMORY",
+      "name_ko": "준의 첫 완주",
+      "rarity": "B",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_196",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "MC017",
+      "category": "MEMORY",
+      "name_ko": "나리의 첫 완주",
+      "rarity": "B",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_197",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "MC018",
+      "category": "MEMORY",
+      "name_ko": "렌의 첫 완주",
+      "rarity": "B",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_198",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "MC019",
+      "category": "MEMORY",
+      "name_ko": "소라의 첫 완주",
+      "rarity": "B",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_199",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "MC020",
+      "category": "MEMORY",
+      "name_ko": "이안의 첫 완주",
+      "rarity": "B",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_200",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "MC021",
+      "category": "MEMORY",
+      "name_ko": "보라의 첫 완주",
+      "rarity": "B",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_201",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "MC022",
+      "category": "MEMORY",
+      "name_ko": "하엘의 첫 완주",
+      "rarity": "B",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_202",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "MC023",
+      "category": "MEMORY",
+      "name_ko": "라온의 첫 완주",
+      "rarity": "B",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_203",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "MC024",
+      "category": "MEMORY",
+      "name_ko": "세나의 첫 완주",
+      "rarity": "B",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_204",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "MC025",
+      "category": "MEMORY",
+      "name_ko": "이루의 첫 완주",
+      "rarity": "A",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_205",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "MC026",
+      "category": "MEMORY",
+      "name_ko": "다온의 첫 완주",
+      "rarity": "A",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_206",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "MC027",
+      "category": "MEMORY",
+      "name_ko": "마루의 첫 완주",
+      "rarity": "A",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_207",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "MC028",
+      "category": "MEMORY",
+      "name_ko": "로아의 첫 완주",
+      "rarity": "A",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_208",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "MC029",
+      "category": "MEMORY",
+      "name_ko": "수호의 첫 완주",
+      "rarity": "A",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_209",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "MC030",
+      "category": "MEMORY",
+      "name_ko": "은별의 첫 완주",
+      "rarity": "A",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_210",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "MC031",
+      "category": "MEMORY",
+      "name_ko": "노아의 첫 완주",
+      "rarity": "A",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_211",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "MC032",
+      "category": "MEMORY",
+      "name_ko": "채린의 첫 완주",
+      "rarity": "A",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_212",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "MC033",
+      "category": "MEMORY",
+      "name_ko": "테오의 첫 완주",
+      "rarity": "A",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_213",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "MC034",
+      "category": "MEMORY",
+      "name_ko": "예린의 첫 완주",
+      "rarity": "A",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_214",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "MC035",
+      "category": "MEMORY",
+      "name_ko": "레오의 첫 완주",
+      "rarity": "A",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_215",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "MC036",
+      "category": "MEMORY",
+      "name_ko": "다미의 첫 완주",
+      "rarity": "A",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_216",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "MC037",
+      "category": "MEMORY",
+      "name_ko": "온유의 첫 완주",
+      "rarity": "S",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_217",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "MC038",
+      "category": "MEMORY",
+      "name_ko": "유리의 첫 완주",
+      "rarity": "S",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_218",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "MC039",
+      "category": "MEMORY",
+      "name_ko": "가온의 첫 완주",
+      "rarity": "S",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_219",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "MC040",
+      "category": "MEMORY",
+      "name_ko": "이솔의 첫 완주",
+      "rarity": "S",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_220",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "MC041",
+      "category": "MEMORY",
+      "name_ko": "라미의 첫 완주",
+      "rarity": "S",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_221",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "MC042",
+      "category": "MEMORY",
+      "name_ko": "지안의 첫 완주",
+      "rarity": "S",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_222",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "MC043",
+      "category": "MEMORY",
+      "name_ko": "시온의 첫 완주",
+      "rarity": "S",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_223",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "MC044",
+      "category": "MEMORY",
+      "name_ko": "나엘의 첫 완주",
+      "rarity": "S",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_224",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "MC045",
+      "category": "MEMORY",
+      "name_ko": "해나의 첫 완주",
+      "rarity": "S",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_225",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "MC046",
+      "category": "MEMORY",
+      "name_ko": "우주의 첫 완주",
+      "rarity": "S",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_226",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "MC047",
+      "category": "MEMORY",
+      "name_ko": "세림의 첫 완주",
+      "rarity": "S",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_227",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "MC048",
+      "category": "MEMORY",
+      "name_ko": "하람의 첫 완주",
+      "rarity": "S",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_228",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "MC049",
+      "category": "MEMORY",
+      "name_ko": "루이의 첫 완주",
+      "rarity": "SS",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_229",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "MC050",
+      "category": "MEMORY",
+      "name_ko": "이든의 첫 완주",
+      "rarity": "SS",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_230",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "MC051",
+      "category": "MEMORY",
+      "name_ko": "나윤의 첫 완주",
+      "rarity": "SS",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_231",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "MC052",
+      "category": "MEMORY",
+      "name_ko": "태린의 첫 완주",
+      "rarity": "SS",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_232",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "MC053",
+      "category": "MEMORY",
+      "name_ko": "연우의 첫 완주",
+      "rarity": "SS",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_233",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "MC054",
+      "category": "MEMORY",
+      "name_ko": "채온의 첫 완주",
+      "rarity": "SS",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_234",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "MC055",
+      "category": "MEMORY",
+      "name_ko": "다율의 첫 완주",
+      "rarity": "SS",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_235",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "MC056",
+      "category": "MEMORY",
+      "name_ko": "미오의 첫 완주",
+      "rarity": "SS",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_236",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "MC057",
+      "category": "MEMORY",
+      "name_ko": "하진의 첫 완주",
+      "rarity": "SS",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_237",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "MC058",
+      "category": "MEMORY",
+      "name_ko": "세아의 첫 완주",
+      "rarity": "SS",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_238",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "MC059",
+      "category": "MEMORY",
+      "name_ko": "도하의 첫 완주",
+      "rarity": "SS",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_239",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "MC060",
+      "category": "MEMORY",
+      "name_ko": "유엘의 첫 완주",
+      "rarity": "SS",
+      "bond_story": true,
+      "effect_id": "CARD_EFFECT_240",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "MEMORY_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "AC001",
+      "category": "AURA",
+      "name_ko": "발자국 오라 01",
+      "rarity": "C",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_241",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "AC002",
+      "category": "AURA",
+      "name_ko": "발자국 오라 02",
+      "rarity": "C",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_242",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "AC003",
+      "category": "AURA",
+      "name_ko": "발자국 오라 03",
+      "rarity": "C",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_243",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "AC004",
+      "category": "AURA",
+      "name_ko": "발자국 오라 04",
+      "rarity": "C",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_244",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "AC005",
+      "category": "AURA",
+      "name_ko": "발자국 오라 05",
+      "rarity": "C",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_245",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "AC006",
+      "category": "AURA",
+      "name_ko": "발자국 오라 06",
+      "rarity": "C",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_246",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "AC007",
+      "category": "AURA",
+      "name_ko": "발자국 오라 07",
+      "rarity": "C",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_247",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "AC008",
+      "category": "AURA",
+      "name_ko": "발자국 오라 08",
+      "rarity": "C",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_248",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "AC009",
+      "category": "AURA",
+      "name_ko": "발자국 오라 09",
+      "rarity": "B",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_249",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "AC010",
+      "category": "AURA",
+      "name_ko": "발자국 오라 10",
+      "rarity": "B",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_250",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "AC011",
+      "category": "AURA",
+      "name_ko": "발자국 오라 11",
+      "rarity": "B",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_251",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "AC012",
+      "category": "AURA",
+      "name_ko": "발자국 오라 12",
+      "rarity": "B",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_252",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "AC013",
+      "category": "AURA",
+      "name_ko": "발자국 오라 13",
+      "rarity": "B",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_253",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "AC014",
+      "category": "AURA",
+      "name_ko": "발자국 오라 14",
+      "rarity": "B",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_254",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "AC015",
+      "category": "AURA",
+      "name_ko": "발자국 오라 15",
+      "rarity": "B",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_255",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "AC016",
+      "category": "AURA",
+      "name_ko": "발자국 오라 16",
+      "rarity": "B",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_256",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "AC017",
+      "category": "AURA",
+      "name_ko": "발자국 오라 17",
+      "rarity": "A",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_257",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "AC018",
+      "category": "AURA",
+      "name_ko": "발자국 오라 18",
+      "rarity": "A",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_258",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "AC019",
+      "category": "AURA",
+      "name_ko": "발자국 오라 19",
+      "rarity": "A",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_259",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "AC020",
+      "category": "AURA",
+      "name_ko": "발자국 오라 20",
+      "rarity": "A",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_260",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "AC021",
+      "category": "AURA",
+      "name_ko": "발자국 오라 21",
+      "rarity": "A",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_261",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "AC022",
+      "category": "AURA",
+      "name_ko": "발자국 오라 22",
+      "rarity": "A",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_262",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "AC023",
+      "category": "AURA",
+      "name_ko": "발자국 오라 23",
+      "rarity": "A",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_263",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "AC024",
+      "category": "AURA",
+      "name_ko": "발자국 오라 24",
+      "rarity": "A",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_264",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "AC025",
+      "category": "AURA",
+      "name_ko": "발자국 오라 25",
+      "rarity": "S",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_265",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "AC026",
+      "category": "AURA",
+      "name_ko": "발자국 오라 26",
+      "rarity": "S",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_266",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "AC027",
+      "category": "AURA",
+      "name_ko": "발자국 오라 27",
+      "rarity": "S",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_267",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "AC028",
+      "category": "AURA",
+      "name_ko": "발자국 오라 28",
+      "rarity": "S",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_268",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "AC029",
+      "category": "AURA",
+      "name_ko": "발자국 오라 29",
+      "rarity": "S",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_269",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "AC030",
+      "category": "AURA",
+      "name_ko": "발자국 오라 30",
+      "rarity": "S",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_270",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "AC031",
+      "category": "AURA",
+      "name_ko": "발자국 오라 31",
+      "rarity": "S",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_271",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "AC032",
+      "category": "AURA",
+      "name_ko": "발자국 오라 32",
+      "rarity": "S",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_272",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "AC033",
+      "category": "AURA",
+      "name_ko": "발자국 오라 33",
+      "rarity": "SS",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_273",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "AC034",
+      "category": "AURA",
+      "name_ko": "발자국 오라 34",
+      "rarity": "SS",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_274",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "AC035",
+      "category": "AURA",
+      "name_ko": "발자국 오라 35",
+      "rarity": "SS",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_275",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "AC036",
+      "category": "AURA",
+      "name_ko": "발자국 오라 36",
+      "rarity": "SS",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_276",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "AC037",
+      "category": "AURA",
+      "name_ko": "발자국 오라 37",
+      "rarity": "SS",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_277",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "AC038",
+      "category": "AURA",
+      "name_ko": "발자국 오라 38",
+      "rarity": "SS",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_278",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "AC039",
+      "category": "AURA",
+      "name_ko": "발자국 오라 39",
+      "rarity": "SS",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_279",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "AC040",
+      "category": "AURA",
+      "name_ko": "발자국 오라 40",
+      "rarity": "SS",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_280",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "AC041",
+      "category": "AURA",
+      "name_ko": "발자국 오라 41",
+      "rarity": "SSR",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_281",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "AC042",
+      "category": "AURA",
+      "name_ko": "발자국 오라 42",
+      "rarity": "SSR",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_282",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "AC043",
+      "category": "AURA",
+      "name_ko": "발자국 오라 43",
+      "rarity": "SSR",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_283",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "AC044",
+      "category": "AURA",
+      "name_ko": "발자국 오라 44",
+      "rarity": "SSR",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_284",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "AC045",
+      "category": "AURA",
+      "name_ko": "발자국 오라 45",
+      "rarity": "SSR",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_285",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "AC046",
+      "category": "AURA",
+      "name_ko": "발자국 오라 46",
+      "rarity": "SSR",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_286",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "AC047",
+      "category": "AURA",
+      "name_ko": "발자국 오라 47",
+      "rarity": "SSR",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_287",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "AC048",
+      "category": "AURA",
+      "name_ko": "발자국 오라 48",
+      "rarity": "SSR",
+      "cosmetic_first": true,
+      "effect_id": "CARD_EFFECT_288",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "AURA_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "GC001",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 001",
+      "rarity": "C",
+      "effect_id": "CARD_EFFECT_289",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "GC002",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 002",
+      "rarity": "C",
+      "effect_id": "CARD_EFFECT_290",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "GC003",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 003",
+      "rarity": "C",
+      "effect_id": "CARD_EFFECT_291",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "GC004",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 004",
+      "rarity": "C",
+      "effect_id": "CARD_EFFECT_292",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "GC005",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 005",
+      "rarity": "C",
+      "effect_id": "CARD_EFFECT_293",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "GC006",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 006",
+      "rarity": "C",
+      "effect_id": "CARD_EFFECT_294",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "GC007",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 007",
+      "rarity": "C",
+      "effect_id": "CARD_EFFECT_295",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "GC008",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 008",
+      "rarity": "C",
+      "effect_id": "CARD_EFFECT_296",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "GC009",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 009",
+      "rarity": "C",
+      "effect_id": "CARD_EFFECT_297",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "GC010",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 010",
+      "rarity": "C",
+      "effect_id": "CARD_EFFECT_298",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "GC011",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 011",
+      "rarity": "C",
+      "effect_id": "CARD_EFFECT_299",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "GC012",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 012",
+      "rarity": "C",
+      "effect_id": "CARD_EFFECT_300",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 1
+      }
+    },
+    {
+      "card_id": "GC013",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 013",
+      "rarity": "B",
+      "effect_id": "CARD_EFFECT_301",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "GC014",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 014",
+      "rarity": "B",
+      "effect_id": "CARD_EFFECT_302",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "GC015",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 015",
+      "rarity": "B",
+      "effect_id": "CARD_EFFECT_303",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "GC016",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 016",
+      "rarity": "B",
+      "effect_id": "CARD_EFFECT_304",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "GC017",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 017",
+      "rarity": "B",
+      "effect_id": "CARD_EFFECT_305",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "GC018",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 018",
+      "rarity": "B",
+      "effect_id": "CARD_EFFECT_306",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "GC019",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 019",
+      "rarity": "B",
+      "effect_id": "CARD_EFFECT_307",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "GC020",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 020",
+      "rarity": "B",
+      "effect_id": "CARD_EFFECT_308",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "GC021",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 021",
+      "rarity": "B",
+      "effect_id": "CARD_EFFECT_309",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "GC022",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 022",
+      "rarity": "B",
+      "effect_id": "CARD_EFFECT_310",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "GC023",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 023",
+      "rarity": "B",
+      "effect_id": "CARD_EFFECT_311",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "GC024",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 024",
+      "rarity": "B",
+      "effect_id": "CARD_EFFECT_312",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 2
+      }
+    },
+    {
+      "card_id": "GC025",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 025",
+      "rarity": "A",
+      "effect_id": "CARD_EFFECT_313",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "GC026",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 026",
+      "rarity": "A",
+      "effect_id": "CARD_EFFECT_314",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "GC027",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 027",
+      "rarity": "A",
+      "effect_id": "CARD_EFFECT_315",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "GC028",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 028",
+      "rarity": "A",
+      "effect_id": "CARD_EFFECT_316",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "GC029",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 029",
+      "rarity": "A",
+      "effect_id": "CARD_EFFECT_317",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "GC030",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 030",
+      "rarity": "A",
+      "effect_id": "CARD_EFFECT_318",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "GC031",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 031",
+      "rarity": "A",
+      "effect_id": "CARD_EFFECT_319",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "GC032",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 032",
+      "rarity": "A",
+      "effect_id": "CARD_EFFECT_320",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "GC033",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 033",
+      "rarity": "A",
+      "effect_id": "CARD_EFFECT_321",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "GC034",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 034",
+      "rarity": "A",
+      "effect_id": "CARD_EFFECT_322",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "GC035",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 035",
+      "rarity": "A",
+      "effect_id": "CARD_EFFECT_323",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "GC036",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 036",
+      "rarity": "A",
+      "effect_id": "CARD_EFFECT_324",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 3
+      }
+    },
+    {
+      "card_id": "GC037",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 037",
+      "rarity": "S",
+      "effect_id": "CARD_EFFECT_325",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "GC038",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 038",
+      "rarity": "S",
+      "effect_id": "CARD_EFFECT_326",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "GC039",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 039",
+      "rarity": "S",
+      "effect_id": "CARD_EFFECT_327",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "GC040",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 040",
+      "rarity": "S",
+      "effect_id": "CARD_EFFECT_328",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "GC041",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 041",
+      "rarity": "S",
+      "effect_id": "CARD_EFFECT_329",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "GC042",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 042",
+      "rarity": "S",
+      "effect_id": "CARD_EFFECT_330",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "GC043",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 043",
+      "rarity": "S",
+      "effect_id": "CARD_EFFECT_331",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "GC044",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 044",
+      "rarity": "S",
+      "effect_id": "CARD_EFFECT_332",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "GC045",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 045",
+      "rarity": "S",
+      "effect_id": "CARD_EFFECT_333",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "GC046",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 046",
+      "rarity": "S",
+      "effect_id": "CARD_EFFECT_334",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "GC047",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 047",
+      "rarity": "S",
+      "effect_id": "CARD_EFFECT_335",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "GC048",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 048",
+      "rarity": "S",
+      "effect_id": "CARD_EFFECT_336",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 4
+      }
+    },
+    {
+      "card_id": "GC049",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 049",
+      "rarity": "SS",
+      "effect_id": "CARD_EFFECT_337",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "GC050",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 050",
+      "rarity": "SS",
+      "effect_id": "CARD_EFFECT_338",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "GC051",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 051",
+      "rarity": "SS",
+      "effect_id": "CARD_EFFECT_339",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "GC052",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 052",
+      "rarity": "SS",
+      "effect_id": "CARD_EFFECT_340",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "GC053",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 053",
+      "rarity": "SS",
+      "effect_id": "CARD_EFFECT_341",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "GC054",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 054",
+      "rarity": "SS",
+      "effect_id": "CARD_EFFECT_342",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "GC055",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 055",
+      "rarity": "SS",
+      "effect_id": "CARD_EFFECT_343",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "GC056",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 056",
+      "rarity": "SS",
+      "effect_id": "CARD_EFFECT_344",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "GC057",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 057",
+      "rarity": "SS",
+      "effect_id": "CARD_EFFECT_345",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "GC058",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 058",
+      "rarity": "SS",
+      "effect_id": "CARD_EFFECT_346",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "GC059",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 059",
+      "rarity": "SS",
+      "effect_id": "CARD_EFFECT_347",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "GC060",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 060",
+      "rarity": "SS",
+      "effect_id": "CARD_EFFECT_348",
+      "odds_pool": "DIRECT_DRAW_STANDARD",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 5
+      }
+    },
+    {
+      "card_id": "GC061",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 061",
+      "rarity": "SSR",
+      "effect_id": "CARD_EFFECT_349",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "GC062",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 062",
+      "rarity": "SSR",
+      "effect_id": "CARD_EFFECT_350",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "GC063",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 063",
+      "rarity": "SSR",
+      "effect_id": "CARD_EFFECT_351",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "GC064",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 064",
+      "rarity": "SSR",
+      "effect_id": "CARD_EFFECT_352",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "GC065",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 065",
+      "rarity": "SSR",
+      "effect_id": "CARD_EFFECT_353",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "GC066",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 066",
+      "rarity": "SSR",
+      "effect_id": "CARD_EFFECT_354",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "GC067",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 067",
+      "rarity": "SSR",
+      "effect_id": "CARD_EFFECT_355",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "GC068",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 068",
+      "rarity": "SSR",
+      "effect_id": "CARD_EFFECT_356",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "GC069",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 069",
+      "rarity": "SSR",
+      "effect_id": "CARD_EFFECT_357",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "GC070",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 070",
+      "rarity": "SSR",
+      "effect_id": "CARD_EFFECT_358",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "GC071",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 071",
+      "rarity": "SSR",
+      "effect_id": "CARD_EFFECT_359",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 6
+      }
+    },
+    {
+      "card_id": "GC072",
+      "category": "GEAR_BLUEPRINT",
+      "name_ko": "러닝 장비 설계도 072",
+      "rarity": "SSR",
+      "effect_id": "CARD_EFFECT_360",
+      "odds_pool": "DIRECT_DRAW_SSR_CAP",
+      "duplicate_conversion": {
+        "material_id": "GEAR_BLUEPRINT_MEMORY_DUST",
+        "amount": 6
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "product_version": "11.0.0",
+  "features": [
+    {"id":"F01","name":"Live Journey Home","owner":"client/unity","status":"GATE_0_PENDING"},
+    {"id":"F02","name":"My Runner 12 forms","owner":"client/unity","status":"DATA_IMPORTED"},
+    {"id":"F03","name":"Pacer 60","owner":"content/v11","status":"DATA_IMPORTED_QUALITY_PENDING"},
+    {"id":"F04","name":"Cards 360 and Fusion","owner":"content/v11","status":"DATA_IMPORTED"},
+    {"id":"F05","name":"Running Gear 192","owner":"content/v11","status":"DATA_IMPORTED"},
+    {"id":"F06","name":"World 2304 routes","owner":"content/v11","status":"DATA_IMPORTED_QUALITY_PENDING"},
+    {"id":"F07","name":"Monthly Apex 120","owner":"backend/supabase","status":"DATA_IMPORTED"},
+    {"id":"F08","name":"Daily Run Contract","owner":"client/unity","status":"PENDING"},
+    {"id":"F09","name":"Direct GPS","owner":"native/android-running-plugin","status":"PENDING"},
+    {"id":"F10","name":"Health Connect","owner":"native/android-running-plugin","status":"PENDING"},
+    {"id":"F11","name":"FIT GPX TCX Import","owner":"native/android-running-plugin","status":"PENDING"},
+    {"id":"F12","name":"Run Verification","owner":"backend/supabase","status":"PENDING"},
+    {"id":"F13","name":"Stride Leap","owner":"client/unity","status":"PENDING"},
+    {"id":"F14","name":"Runner Lounge","owner":"client/unity","status":"PENDING"},
+    {"id":"F15","name":"Crew Journey","owner":"backend/supabase","status":"PENDING"},
+    {"id":"F16","name":"Offline FULL_SIDELOAD","owner":"release","status":"PENDING"},
+    {"id":"F17","name":"GitHub Release","owner":"release","status":"PENDING"}
+  ]
+}
+

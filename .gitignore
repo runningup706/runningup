@@ -1,41 +1,43 @@
-# Build output
-artifacts/*
-# ...except the machine-readable evidence manifest, which is a reviewable deliverable.
-!artifacts/test-evidence-manifest.json
-*.apk
-*.aab
-*.keystore
-*.jks
-
-# Secrets — never commit
+# RunningUp V11 빌드 산출물과 로컬 비밀정보를 저장소에서 제외한다.
+.DS_Store
 .env
 .env.*
 !.env.example
-**/service_role*
-**/*secret*
-!docs/SECURITY.md
+*.keystore
+*.jks
+*.key
+*.pem
+*.p12
+*.aab
+*.apk
+*.apks
+*.log
 
-# Node
-node_modules/
+client/unity/[Ll]ibrary/
+client/unity/[Tt]emp/
+client/unity/[Oo]bj/
+client/unity/[Bb]uild/
+client/unity/[Bb]uilds/
+client/unity/[Ll]ogs/
+client/unity/[Uu]ser[Ss]ettings/
+client/unity/.utmp/
+client/unity/*.csproj
+client/unity/*.sln
 
-# Unity
-client/unity/Library/
-client/unity/Temp/
-client/unity/Obj/
-client/unity/Build/
-client/unity/Logs/
-client/unity/UserSettings/
-client/unity/MemoryCaptures/
-
-# Gradle / Android
-.gradle/
-native/**/build/
-local.properties
-
-# OS / editor
-.DS_Store
-*.swp
-
-# .NET (Unity domain layer test host)
 client/dotnet/**/bin/
 client/dotnet/**/obj/
+
+native/android-running-plugin/.gradle/
+native/android-running-plugin/build/
+native/android-running-plugin/local.properties
+
+backend/supabase/.branches/
+backend/supabase/.temp/
+
+artifacts/local/
+artifacts/release/
+artifacts/test-results/domain-upload-policy.txt
+artifacts/validation/
+coverage/
+node_modules/
+

@@ -1,0 +1,23 @@
+requirement_id,priority,requirement,implementation,evidence,status
+V11-HOME-001,P0,My Runner always runs on Live Journey Home,client/unity,portrait runtime capture,FUNCTIONAL_PASS
+V11-ART-001,P0,Premium 3.0 to 3.25 head chibi model,client/unity,model metrics and 1080x1920 capture,BLOCKED_ART_ASSET
+V11-PROG-001,P0,Verified running contributes at least 85 percent,backend/supabase,transaction tests,LOCAL_PASS_REMOTE_BLOCKED
+V11-IDLE-001,P0,Idle grants no monthly km or Fitness Core,backend/supabase,unit and pgTAP tests,PASS
+V11-DAILY-001,P0,One Daily Run Contract per local day,backend/supabase,unit and pgTAP tests,PASS
+V11-WORLD-001,P0,12 continents 192 regions 2304 routes,content/v11/catalogs,catalog validator,PASS
+V11-RUNNER-001,P0,My Runner has 12 forms,content/v11/catalogs,catalog validator,DATA_PASS_ART_BLOCKED
+V11-PACER-001,P0,60 distinct full 3D Pacers,content/v11 and client/unity,semantic validator and captures,DATA_PASS_ART_BLOCKED
+V11-CARD-001,P0,360 cards with direct draw max SSR,content/v11 and backend/supabase,catalog and odds tests,PASS
+V11-GEAR-001,P0,192 running gear items across 12 slots,content/v11 and client/unity,catalog and visual tests,DATA_PASS_ART_BLOCKED
+V11-APEX-001,P0,Exactly 120 checkpoints ending at unique 1000km World Crown,backend/supabase,catalog and pgTAP tests,PASS
+V11-GPS-001,P0,Direct GPS foreground screen-off recording,native/android-running-plugin,JVM and emulator evidence,BLOCKED_REAL_DEVICE_QA
+V11-HC-001,P0,Health Connect import,native/android-running-plugin,JVM and Android integration evidence,BLOCKED_REAL_DEVICE_QA
+V11-FILE-001,P0,FIT GPX TCX import,native/android-running-plugin,parser fixtures,FUNCTIONAL_PASS
+V11-DEDUP-001,P0,Multi-source run canonicalizes once,backend/supabase,pgTAP concurrency tests,LOCAL_PASS_REMOTE_BLOCKED
+V11-UPLOAD-001,P0,Verified run uploads exactly once across 401/403 refresh 409 duplicate network retry and app restart,client/unity/Assets/RunningUp/RunVerification,npm run test:domain 61 assertions and EditMode tests,LOCAL_PASS_REMOTE_BLOCKED
+V11-UPLOAD-002,P0,A rejected run never blocks the runs queued behind it,client/unity/Assets/RunningUp/RunVerification,npm run test:domain batch and abandonment assertions,PASS
+V11-RLS-001,P0,Every exposed relation has RLS,backend/supabase,pgTAP cross-user tests,LOCAL_PASS_REMOTE_BLOCKED
+V11-LEGACY-001,P0,No active V5 to V10 runtime remains,DEPRECATED_PURGE_MANIFEST.json,legacy scanner,PASS
+V11-APK-001,P0,FULL_SIDELOAD APK is self-contained,release,102232511-byte smoke update install cold start 1231ms max ZIP gap 4096 bytes,SMOKE_PASS_FULL_BLOCKED_ART
+V11-PERF-001,P0,30fps on 4GB physical Android device,client/unity,physical device profiler,BLOCKED_DEVICE
+V11-REL-001,P0,GitHub Release asset redownload SHA matches,release,release URL and SHA evidence,BLOCKED_RELEASE

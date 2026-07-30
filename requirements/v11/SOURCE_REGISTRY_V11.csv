@@ -1,0 +1,14 @@
+﻿category,title,url,adopt,reject_or_constraint
+REFERENCE_GAME,슬레이어 키우기 App Store,https://apps.apple.com/kr/app/%EC%8A%AC%EB%A0%88%EC%9D%B4%EC%96%B4-%ED%82%A4%EC%9A%B0%EA%B8%B0/id1635712706,"짧은 접속, 방치 성장, 긴 스테이지 확장, 꾸준한 업데이트",전투·몬스터는 채택하지 않음
+REFERENCE_GAME,픽셀 히어로즈 App Store,https://apps.apple.com/kr/app/%ED%94%BD%EC%85%80-%ED%9E%88%EC%96%B4%EB%A1%9C%EC%A6%88-%EB%B0%A9%EC%B9%98%ED%98%95-rpg/id6756157199,"영웅 수집, 캠프, 뽑기, 방치 루프",지연·번역 품질 문제를 릴리스 차단 기준으로 변환
+REFERENCE_GAME,변신 키우기 App Store,https://apps.apple.com/kr/app/%EB%B3%80%EC%8B%A0-%ED%82%A4%EC%9A%B0%EA%B8%B0/id6746192853,3D 변신 연출과 성장 가시성,전투 변신을 러너 외형 진화로 재설계
+REFERENCE_GAME,나 혼자 만렙 키우기 App Store,https://apps.apple.com/kr/app/%EB%82%98-%ED%98%BC%EC%9E%90-%EB%A7%8C%EB%A0%99-%ED%82%A4%EC%9A%B0%EA%B8%B0/id6566177585,"스테이지 점프, 카메라 설정, 편의 기능, 시즌 확장",전투/레이드 대신 자동 세계 도약과 사회적 거리 목표
+REFERENCE_GAME,라스트 어사일럼 리뷰,https://apps.apple.com/kr/app/%EB%9D%BC%EC%8A%A4%ED%8A%B8-%EC%96%B4%EC%82%AC%EC%9D%BC%EB%9F%BC-%ED%8E%98%EC%8A%A4%ED%8A%B8/id6756989323?platform=iphone&see-all=reviews,대형 세계·거점·길드 화면,렉·상태 동기화·과금 갈등은 거부
+RUNNING_APP,Nike Run Club official newsroom,https://about.nike.com/ko/newsroom/releases/nike-run-club-app-delivers-new-features-to-prepare-support-and-empower-runners,"오디오 가이드, 계획, 커뮤니티, 웨어러블·Strava 동기화",화면을 오래 볼 필요 없는 실제 러닝 경험
+RUNNING_APP,Runna official,https://www.runna.com/en-gb,수준별·사용자 지정 거리·기기 동기화,초보~50K/custom 첫날 시작
+PLATFORM,Health Connect workout experience,https://developer.android.com/health-and-fitness/health-connect/experiences/workouts,세션·거리·속도·심박·케이던스·경로,P0 공식 Android 활동 허브
+PLATFORM,Samsung Health Data SDK,https://developer.samsung.com/health/data/guide/introduction.html,공식 SDK와 파트너 등록 요구,승인 전 가짜 활성화 금지
+PLATFORM,Garmin Activity API,https://developer.garmin.com/gc-developer-program/activity-api/,FIT/GPX/TCX 포함 활동 데이터와 승인 환경,승인·비용 조건을 숨기지 않음
+PLATFORM,Strava API reference,https://developers.strava.com/docs/reference/,OAuth 활동 조회·업로드·클럽·웹훅,약관·개인정보·중복 제거
+PLATFORM,Apple HealthKit workout routes,https://developer.apple.com/documentation/healthkit/creating-a-workout-route,iOS/Watch 운동·경로,Android에서 직접 접근한다고 가정 금지
+BACKEND,Supabase docs,https://supabase.com/docs,Auth·Postgres·RLS·Realtime·Edge Functions,서버 권한·원장·소셜 상태

@@ -1,0 +1,46 @@
+{
+  "version": "11.0.0",
+  "source_of_truth": "V11_ONLY",
+  "create_legacy_backup_folder": false,
+  "preserve_git_history": true,
+  "delete_active_modules_if_incompatible": [
+    "Combat",
+    "Battle",
+    "Enemy",
+    "Monster",
+    "Weapon",
+    "Damage",
+    "BossHP",
+    "AttackPower",
+    "DefensePower",
+    "LiveBattleHome",
+    "AutoBattle"
+  ],
+  "delete_runtime_concepts": [
+    "sword",
+    "gun",
+    "monster",
+    "damage_number",
+    "hp_bar",
+    "enemy_kill",
+    "boss_damage"
+  ],
+  "retain_only_if_refactored_for_v11": [
+    "Auth",
+    "Localization",
+    "BuildPipeline",
+    "SupabaseBase",
+    "GPSJournal",
+    "HealthConnectAdapter",
+    "TelemetryRedaction"
+  ],
+  "required_document": "DEPRECATED_PURGE_MANIFEST.json",
+  "forbidden_archive_names": [
+    "legacy_backup",
+    "v8_old",
+    "v9_old",
+    "v10_old",
+    "deprecated_copy",
+    "old_project_copy"
+  ]
+}

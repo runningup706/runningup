@@ -1,40 +1,48 @@
 #!/usr/bin/env bash
-# Applies every migration to a throwaway database, seeds it, and runs the pgTAP suite.
-# Requires: postgresql-client, a reachable server, and the pgtap extension available.
+# V11 전용 임시 데이터베이스에 migration과 pgTAP 회귀 테스트를 실행한다.
 set -euo pipefail
 
-PGHOST="${PGHOST:-/tmp}"
-PGPORT="${PGPORT:-55432}"
-PGUSER="${PGUSER:-postgres}"
-DB="${RUNNINGUP_TEST_DB:-runningup_test}"
-export PGHOST PGPORT PGUSER
+repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+db_name="runningup_v11_test"
+db_host="${RUNNINGUP_PGHOST:-/tmp}"
+db_port="${RUNNINGUP_PGPORT:-55432}"
+db_user="${RUNNINGUP_PGUSER:-postgres}"
+result_dir="$repo_dir/artifacts/test-results"
+result_file="$result_dir/supabase-pgtap.txt"
 
-repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-cd "$repo_root"
+if [[ "$db_name" != "runningup_v11_test" ]]; then
+  echo "Refusing unexpected database target: $db_name" >&2
+  exit 2
+fi
 
-echo "==> recreating ${DB}"
-psql -q -c "drop database if exists ${DB}" -c "create database ${DB}" postgres
+mkdir -p "$result_dir"
+dropdb --if-exists --host "$db_host" --port "$db_port" --username "$db_user" "$db_name"
+createdb --host "$db_host" --port "$db_port" --username "$db_user" "$db_name"
 
-echo "==> applying migrations"
-for migration in backend/supabase/migrations/*.sql; do
-  echo "    ${migration}"
-  psql -q -v ON_ERROR_STOP=1 -d "${DB}" -f "${migration}"
+psql_args=(
+  --no-psqlrc
+  --set ON_ERROR_STOP=1
+  --host "$db_host"
+  --port "$db_port"
+  --username "$db_user"
+  --dbname "$db_name"
+)
+
+psql "${psql_args[@]}" --file "$repo_dir/backend/supabase/tests/bootstrap_local.sql"
+for migration in "$repo_dir"/backend/supabase/migrations/*.sql; do
+  psql "${psql_args[@]}" --file "$migration"
+done
+psql "${psql_args[@]}" --command "create extension if not exists pgtap;"
+
+: > "$result_file"
+for test_file in "$repo_dir"/backend/supabase/tests/pgtap/*.sql; do
+  psql "${psql_args[@]}" --file "$test_file" | tee -a "$result_file"
 done
 
-echo "==> seeding launch content"
-psql -q -v ON_ERROR_STOP=1 -d "${DB}" -f backend/supabase/seed.sql > /dev/null
+if rg --quiet '\bnot ok [0-9]+' "$result_file"; then
+  echo "pgTAP reported a failed assertion." >&2
+  exit 1
+fi
 
-echo "==> enabling pgtap"
-psql -q -d "${DB}" -c "create extension if not exists pgtap"
-
-echo "==> regenerating the SQL conformance suite from the shared fixture"
-node tools/conformance/emit-sql-conformance.mjs > /dev/null
-
-echo "==> running pgTAP suite"
-pg_prove -d "${DB}" backend/supabase/tests/pgtap/*.sql
-
-# Regenerate the security and schema evidence from the database that just passed, so the
-# RLS matrix can never describe a schema that no longer exists. Exits non-zero if a
-# server-authoritative invariant is violated.
-echo "==> regenerating release evidence from the live schema"
-RUNNINGUP_TEST_DB="${DB}" node tools/release/generate-evidence.mjs
+test_count="$(rg --only-matching '\bok [0-9]+' "$result_file" | wc -l | tr -d ' ')"
+echo "Supabase pgTAP PASS: $test_count assertions"

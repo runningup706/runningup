@@ -1,0 +1,27 @@
+
+orientation: portrait_first
+reference_canvas: 1080x1920
+art_style: premium stylized 3D chibi running world
+character_ratio_heads: [3.0, 3.25]
+color_palette: [sky_blue, mint, warm_amber, coral, lavender, deep_navy]
+first_screen: LIVE_JOURNEY_HOME
+live_3d_viewport_min_percent: 58
+my_runner_screen_height_percent: [28, 44]
+forbidden:
+  - stick_figure
+  - unity_capsule_final
+  - default_gray_material
+  - monster_or_weapon
+  - damage_numbers
+  - static_exercise_dashboard_home
+  - tiny_character
+  - screenshot_as_runtime_background
+  - copied_reference_ui
+  - excessive_red_dots
+required_visual_evidence:
+  - 360x800
+  - 412x915
+  - 1080x1920
+  - large_text_ko
+  - english
+  - low_medium_high_battery_profiles

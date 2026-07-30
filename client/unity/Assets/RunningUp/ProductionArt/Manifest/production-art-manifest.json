@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "BLOCKED_ART_ASSET",
+  "productionScene": "Assets/RunningUp/ProductionArt/Scenes/LiveJourneyProduction.unity",
+  "targetWidth": 1080,
+  "targetHeight": 1920,
+  "minimumCategoryScore": 85,
+  "minimumAverageScore": 90,
+  "minimumExpressionCount": 6,
+  "minimumRunningClipCount": 9,
+  "requiredPackages": [
+    {
+      "name": "com.unity.render-pipelines.universal",
+      "version": "17.3.0"
+    },
+    {
+      "name": "com.unity.shadergraph",
+      "version": "17.3.0"
+    },
+    {
+      "name": "com.unity.cinemachine",
+      "version": "3.1.7"
+    },
+    {
+      "name": "com.unity.animation.rigging",
+      "version": "1.4.1"
+    }
+  ],
+  "requiredAssets": [
+    {
+      "role": "my_runner_production_prefab",
+      "path": "Assets/RunningUp/ProductionArt/Prefabs/MyRunnerProduction.prefab"
+    },
+    {
+      "role": "city_course_production_prefab",
+      "path": "Assets/RunningUp/ProductionArt/Prefabs/CityCourseProduction.prefab"
+    },
+    {
+      "role": "running_animator_controller",
+      "path": "Assets/RunningUp/ProductionArt/Animation/MyRunnerProduction.controller"
+    },
+    {
+      "role": "toon_shader_graph",
+      "path": "Assets/RunningUp/ProductionArt/Shaders/MyRunnerToon.shadergraph"
+    },
+    {
+      "role": "license_evidence",
+      "path": "Assets/RunningUp/ProductionArt/LICENSE_EVIDENCE.md"
+    }
+  ],
+  "requiredHierarchyTokens": [
+    "Face",
+    "Hair",
+    "Expression",
+    "Outfit",
+    "RunningShoes",
+    "Watch",
+    "Hand_L",
+    "Hand_R",
+    "Foot_L",
+    "Foot_R"
+  ],
+  "requiredRunningStates": [
+    "idle_stretch",
+    "easy_jog",
+    "steady_run",
+    "tempo_run",
+    "interval_sprint",
+    "final_kick",
+    "tired_but_proud",
+    "finish",
+    "cheer"
+  ],
+  "prohibitedAssetRoots": [
+    "Assets/RunningUp/Generated",
+    "Assets/RunningUp/ThirdParty/KayKitAdventurers"
+  ],
+  "prohibitedNameTokens": [
+    "Placeholder",
+    "Prototype",
+    "Primitive",
+    "Temp",
+    "ChibiMeshFactory"
+  ],
+  "humanQaScorecard": "artifacts/visual/production-art/scorecard.json",
+  "targetCapture": "artifacts/visual/production-art/target-1080x1920.png",
+  "productionCapture": "artifacts/visual/production-art/live-journey-production-1080x1920.png",
+  "comparisonCapture": "artifacts/visual/production-art/target-vs-unity-2160x1920.png"
+}

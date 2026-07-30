@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- V11 Gate와 출시 증거를 한 화면에서 확인하는 로컬 대시보드다. -->
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RunningUp V11 Evidence Dashboard</title>
+  <style>
+    :root{color-scheme:dark;--bg:#07162f;--panel:#10264c;--sky:#50c8ff;--mint:#5ff0c2;--amber:#ffd15c;--muted:#a9b9d3}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:#f7fbff;font:15px system-ui,sans-serif}
+    main{max-width:980px;margin:auto;padding:28px}.hero,.card{background:var(--panel);border:1px solid #ffffff20;border-radius:18px;padding:20px;margin:12px 0}
+    h1{margin:0 0 8px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .value{font-size:28px;font-weight:800;color:var(--mint)}.pending{color:var(--amber)}
+  </style>
+</head>
+<body>
+<main>
+  <section class="hero"><h1>RunningUp V11</h1><p>Clean rebuild evidence dashboard</p><p class="pending">GATE 0 IN PROGRESS</p></section>
+  <section class="grid">
+    <article class="card"><div class="value">2304</div><div>main routes imported</div></article>
+    <article class="card"><div class="value">60</div><div>Pacers imported</div></article>
+    <article class="card"><div class="value">360</div><div>cards imported</div></article>
+    <article class="card"><div class="value">192</div><div>running gear imported</div></article>
+    <article class="card"><div class="value">120</div><div>monthly checkpoints</div></article>
+    <article class="card"><div class="value">1000km</div><div>unique World Crown</div></article>
+  </section>
+  <section class="card"><h2>Truth boundary</h2><p class="muted">Data is imported. Unity runtime, Android P0, Supabase migrations, APK and GitHub Release are not yet PASS.</p></section>
+</main>
+</body>
+</html>
+

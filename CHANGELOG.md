@@ -1,27 +1,12 @@
 # Changelog
 
-All notable changes to RunningUp. Versions follow the release policy in the master prompt:
-`1.0.0-rc.1` is reserved for a build where **every** P0 gate passes with evidence. Until
-then the project ships real alpha versions.
+<!-- RunningUp V11의 검증된 변경만 기록한다. -->
 
-## [0.1.0-alpha.1] — 2026-07-29
+## 11.0.0 — in progress
 
-Gate 0 through Gate 2 (partial), plus the Monthly Apex and content pipelines.
+- V11 정본 ZIP 무결성과 master prompt 분할 재조립을 검증했다.
+- V11 전체 텍스트·카탈로그·시각 자료·미리보기·프로토타입을 검토했다.
+- V5/V6 추적 파일 281개와 비추적 빌드 캐시를 제거했다.
+- V11 계약과 전체 출시 카탈로그를 새 구조로 가져왔다.
+- 실제 런타임, Supabase, Android P0, APK 검증은 진행 중이며 아직 release PASS가 아니다.
 
-### Added
-- `docs/USER_DIRECTION_LOCK.md` and `content/schemas/direction_lock.json` — the five
-  immutable user directions, in human and machine readable form.
-- Direction-lock static scanner (`tools/direction-lock/scan.mjs`) covering 19 forbidden
-  concepts across source, content, schema, seed, localization and docs.
-- Domain engine: Monthly Apex ladder, Runner Passport, multi-component reward, momentum
-  and chains, best-effort extraction — with 68 unit tests.
-- Launch content: authored design tables for 12 continents and 12 characters, expanded by
-  the content factory into all 18 launch categories with ko/en localization.
-- Content validator with hard count gates, referential integrity, route reachability and
-  semantic duplicate detection.
-- Supabase-compatible backend: 7 migrations, RLS matrix, immutable ledgers and the atomic
-  `private.apply_verified_run_reward` transaction — with 123 pgTAP tests.
-
-### Known blockers
-- Unity Editor, Android SDK and any physical device are unavailable in the build
-  environment. See `docs/CURRENT_STATE.md`; nothing blocked is reported as complete.

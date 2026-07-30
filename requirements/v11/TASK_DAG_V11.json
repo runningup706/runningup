@@ -1,0 +1,1986 @@
+{
+  "version": "11.0.0",
+  "task_count": 200,
+  "tasks": [
+    {
+      "task_id": "V11-001",
+      "gate": "G0",
+      "title": "Read and purge inventory — task 01",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": []
+    },
+    {
+      "task_id": "V11-002",
+      "gate": "G0",
+      "title": "Read and purge inventory — task 02",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-001"
+      ]
+    },
+    {
+      "task_id": "V11-003",
+      "gate": "G0",
+      "title": "Read and purge inventory — task 03",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-002"
+      ]
+    },
+    {
+      "task_id": "V11-004",
+      "gate": "G0",
+      "title": "Read and purge inventory — task 04",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-003"
+      ]
+    },
+    {
+      "task_id": "V11-005",
+      "gate": "G0",
+      "title": "Read and purge inventory — task 05",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-004"
+      ]
+    },
+    {
+      "task_id": "V11-006",
+      "gate": "G0",
+      "title": "Read and purge inventory — task 06",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-005"
+      ]
+    },
+    {
+      "task_id": "V11-007",
+      "gate": "G0",
+      "title": "Read and purge inventory — task 07",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-006"
+      ]
+    },
+    {
+      "task_id": "V11-008",
+      "gate": "G0",
+      "title": "Read and purge inventory — task 08",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-007"
+      ]
+    },
+    {
+      "task_id": "V11-009",
+      "gate": "G0",
+      "title": "Read and purge inventory — task 09",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-008"
+      ]
+    },
+    {
+      "task_id": "V11-010",
+      "gate": "G0",
+      "title": "Read and purge inventory — task 10",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-009"
+      ]
+    },
+    {
+      "task_id": "V11-011",
+      "gate": "G0",
+      "title": "Read and purge inventory — task 11",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-010"
+      ]
+    },
+    {
+      "task_id": "V11-012",
+      "gate": "G0",
+      "title": "Read and purge inventory — task 12",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-011"
+      ]
+    },
+    {
+      "task_id": "V11-013",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 01",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": []
+    },
+    {
+      "task_id": "V11-014",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 02",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-013"
+      ]
+    },
+    {
+      "task_id": "V11-015",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 03",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-014"
+      ]
+    },
+    {
+      "task_id": "V11-016",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 04",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-015"
+      ]
+    },
+    {
+      "task_id": "V11-017",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 05",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-016"
+      ]
+    },
+    {
+      "task_id": "V11-018",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 06",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-017"
+      ]
+    },
+    {
+      "task_id": "V11-019",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 07",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-018"
+      ]
+    },
+    {
+      "task_id": "V11-020",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 08",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-019"
+      ]
+    },
+    {
+      "task_id": "V11-021",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 09",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-020"
+      ]
+    },
+    {
+      "task_id": "V11-022",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 10",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-021"
+      ]
+    },
+    {
+      "task_id": "V11-023",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 11",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-022"
+      ]
+    },
+    {
+      "task_id": "V11-024",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 12",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-023"
+      ]
+    },
+    {
+      "task_id": "V11-025",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 13",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-024"
+      ]
+    },
+    {
+      "task_id": "V11-026",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 14",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-025"
+      ]
+    },
+    {
+      "task_id": "V11-027",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 15",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-026"
+      ]
+    },
+    {
+      "task_id": "V11-028",
+      "gate": "G1",
+      "title": "Portrait smoke and chibi art pipeline — task 16",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-027"
+      ]
+    },
+    {
+      "task_id": "V11-029",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 01",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": []
+    },
+    {
+      "task_id": "V11-030",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 02",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-029"
+      ]
+    },
+    {
+      "task_id": "V11-031",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 03",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-030"
+      ]
+    },
+    {
+      "task_id": "V11-032",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 04",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-031"
+      ]
+    },
+    {
+      "task_id": "V11-033",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 05",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-032"
+      ]
+    },
+    {
+      "task_id": "V11-034",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 06",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-033"
+      ]
+    },
+    {
+      "task_id": "V11-035",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 07",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-034"
+      ]
+    },
+    {
+      "task_id": "V11-036",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 08",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-035"
+      ]
+    },
+    {
+      "task_id": "V11-037",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 09",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-036"
+      ]
+    },
+    {
+      "task_id": "V11-038",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 10",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-037"
+      ]
+    },
+    {
+      "task_id": "V11-039",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 11",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-038"
+      ]
+    },
+    {
+      "task_id": "V11-040",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 12",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-039"
+      ]
+    },
+    {
+      "task_id": "V11-041",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 13",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-040"
+      ]
+    },
+    {
+      "task_id": "V11-042",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 14",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-041"
+      ]
+    },
+    {
+      "task_id": "V11-043",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 15",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-042"
+      ]
+    },
+    {
+      "task_id": "V11-044",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 16",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-043"
+      ]
+    },
+    {
+      "task_id": "V11-045",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 17",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-044"
+      ]
+    },
+    {
+      "task_id": "V11-046",
+      "gate": "G2",
+      "title": "Supabase local and RLS — task 18",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-045"
+      ]
+    },
+    {
+      "task_id": "V11-047",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 01",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": []
+    },
+    {
+      "task_id": "V11-048",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 02",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-047"
+      ]
+    },
+    {
+      "task_id": "V11-049",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 03",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-048"
+      ]
+    },
+    {
+      "task_id": "V11-050",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 04",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-049"
+      ]
+    },
+    {
+      "task_id": "V11-051",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 05",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-050"
+      ]
+    },
+    {
+      "task_id": "V11-052",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 06",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-051"
+      ]
+    },
+    {
+      "task_id": "V11-053",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 07",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-052"
+      ]
+    },
+    {
+      "task_id": "V11-054",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 08",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-053"
+      ]
+    },
+    {
+      "task_id": "V11-055",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 09",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-054"
+      ]
+    },
+    {
+      "task_id": "V11-056",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 10",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-055"
+      ]
+    },
+    {
+      "task_id": "V11-057",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 11",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-056"
+      ]
+    },
+    {
+      "task_id": "V11-058",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 12",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-057"
+      ]
+    },
+    {
+      "task_id": "V11-059",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 13",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-058"
+      ]
+    },
+    {
+      "task_id": "V11-060",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 14",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-059"
+      ]
+    },
+    {
+      "task_id": "V11-061",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 15",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-060"
+      ]
+    },
+    {
+      "task_id": "V11-062",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 16",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-061"
+      ]
+    },
+    {
+      "task_id": "V11-063",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 17",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-062"
+      ]
+    },
+    {
+      "task_id": "V11-064",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 18",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-063"
+      ]
+    },
+    {
+      "task_id": "V11-065",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 19",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-064"
+      ]
+    },
+    {
+      "task_id": "V11-066",
+      "gate": "G3",
+      "title": "Direct GPS and Health Connect — task 20",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-065"
+      ]
+    },
+    {
+      "task_id": "V11-067",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 01",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": []
+    },
+    {
+      "task_id": "V11-068",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 02",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-067"
+      ]
+    },
+    {
+      "task_id": "V11-069",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 03",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-068"
+      ]
+    },
+    {
+      "task_id": "V11-070",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 04",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-069"
+      ]
+    },
+    {
+      "task_id": "V11-071",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 05",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-070"
+      ]
+    },
+    {
+      "task_id": "V11-072",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 06",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-071"
+      ]
+    },
+    {
+      "task_id": "V11-073",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 07",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-072"
+      ]
+    },
+    {
+      "task_id": "V11-074",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 08",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-073"
+      ]
+    },
+    {
+      "task_id": "V11-075",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 09",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-074"
+      ]
+    },
+    {
+      "task_id": "V11-076",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 10",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-075"
+      ]
+    },
+    {
+      "task_id": "V11-077",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 11",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-076"
+      ]
+    },
+    {
+      "task_id": "V11-078",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 12",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-077"
+      ]
+    },
+    {
+      "task_id": "V11-079",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 13",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-078"
+      ]
+    },
+    {
+      "task_id": "V11-080",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 14",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-079"
+      ]
+    },
+    {
+      "task_id": "V11-081",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 15",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-080"
+      ]
+    },
+    {
+      "task_id": "V11-082",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 16",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-081"
+      ]
+    },
+    {
+      "task_id": "V11-083",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 17",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-082"
+      ]
+    },
+    {
+      "task_id": "V11-084",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 18",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-083"
+      ]
+    },
+    {
+      "task_id": "V11-085",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 19",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-084"
+      ]
+    },
+    {
+      "task_id": "V11-086",
+      "gate": "G4",
+      "title": "Verified run to Stride Leap vertical slice — task 20",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-085"
+      ]
+    },
+    {
+      "task_id": "V11-087",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 01",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": []
+    },
+    {
+      "task_id": "V11-088",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 02",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-087"
+      ]
+    },
+    {
+      "task_id": "V11-089",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 03",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-088"
+      ]
+    },
+    {
+      "task_id": "V11-090",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 04",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-089"
+      ]
+    },
+    {
+      "task_id": "V11-091",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 05",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-090"
+      ]
+    },
+    {
+      "task_id": "V11-092",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 06",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-091"
+      ]
+    },
+    {
+      "task_id": "V11-093",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 07",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-092"
+      ]
+    },
+    {
+      "task_id": "V11-094",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 08",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-093"
+      ]
+    },
+    {
+      "task_id": "V11-095",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 09",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-094"
+      ]
+    },
+    {
+      "task_id": "V11-096",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 10",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-095"
+      ]
+    },
+    {
+      "task_id": "V11-097",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 11",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-096"
+      ]
+    },
+    {
+      "task_id": "V11-098",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 12",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-097"
+      ]
+    },
+    {
+      "task_id": "V11-099",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 13",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-098"
+      ]
+    },
+    {
+      "task_id": "V11-100",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 14",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-099"
+      ]
+    },
+    {
+      "task_id": "V11-101",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 15",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-100"
+      ]
+    },
+    {
+      "task_id": "V11-102",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 16",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-101"
+      ]
+    },
+    {
+      "task_id": "V11-103",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 17",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-102"
+      ]
+    },
+    {
+      "task_id": "V11-104",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 18",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-103"
+      ]
+    },
+    {
+      "task_id": "V11-105",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 19",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-104"
+      ]
+    },
+    {
+      "task_id": "V11-106",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 20",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-105"
+      ]
+    },
+    {
+      "task_id": "V11-107",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 21",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-106"
+      ]
+    },
+    {
+      "task_id": "V11-108",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 22",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-107"
+      ]
+    },
+    {
+      "task_id": "V11-109",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 23",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-108"
+      ]
+    },
+    {
+      "task_id": "V11-110",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 24",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-109"
+      ]
+    },
+    {
+      "task_id": "V11-111",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 25",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-110"
+      ]
+    },
+    {
+      "task_id": "V11-112",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 26",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-111"
+      ]
+    },
+    {
+      "task_id": "V11-113",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 27",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-112"
+      ]
+    },
+    {
+      "task_id": "V11-114",
+      "gate": "G5",
+      "title": "My Runner, Pacer, cards, gear — task 28",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-113"
+      ]
+    },
+    {
+      "task_id": "V11-115",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 01",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": []
+    },
+    {
+      "task_id": "V11-116",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 02",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-115"
+      ]
+    },
+    {
+      "task_id": "V11-117",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 03",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-116"
+      ]
+    },
+    {
+      "task_id": "V11-118",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 04",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-117"
+      ]
+    },
+    {
+      "task_id": "V11-119",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 05",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-118"
+      ]
+    },
+    {
+      "task_id": "V11-120",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 06",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-119"
+      ]
+    },
+    {
+      "task_id": "V11-121",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 07",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-120"
+      ]
+    },
+    {
+      "task_id": "V11-122",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 08",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-121"
+      ]
+    },
+    {
+      "task_id": "V11-123",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 09",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-122"
+      ]
+    },
+    {
+      "task_id": "V11-124",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 10",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-123"
+      ]
+    },
+    {
+      "task_id": "V11-125",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 11",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-124"
+      ]
+    },
+    {
+      "task_id": "V11-126",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 12",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-125"
+      ]
+    },
+    {
+      "task_id": "V11-127",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 13",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-126"
+      ]
+    },
+    {
+      "task_id": "V11-128",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 14",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-127"
+      ]
+    },
+    {
+      "task_id": "V11-129",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 15",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-128"
+      ]
+    },
+    {
+      "task_id": "V11-130",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 16",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-129"
+      ]
+    },
+    {
+      "task_id": "V11-131",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 17",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-130"
+      ]
+    },
+    {
+      "task_id": "V11-132",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 18",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-131"
+      ]
+    },
+    {
+      "task_id": "V11-133",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 19",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-132"
+      ]
+    },
+    {
+      "task_id": "V11-134",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 20",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-133"
+      ]
+    },
+    {
+      "task_id": "V11-135",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 21",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-134"
+      ]
+    },
+    {
+      "task_id": "V11-136",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 22",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-135"
+      ]
+    },
+    {
+      "task_id": "V11-137",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 23",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-136"
+      ]
+    },
+    {
+      "task_id": "V11-138",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 24",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-137"
+      ]
+    },
+    {
+      "task_id": "V11-139",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 25",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-138"
+      ]
+    },
+    {
+      "task_id": "V11-140",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 26",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-139"
+      ]
+    },
+    {
+      "task_id": "V11-141",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 27",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-140"
+      ]
+    },
+    {
+      "task_id": "V11-142",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 28",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-141"
+      ]
+    },
+    {
+      "task_id": "V11-143",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 29",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-142"
+      ]
+    },
+    {
+      "task_id": "V11-144",
+      "gate": "G6",
+      "title": "12 continents and 2304 routes — task 30",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-143"
+      ]
+    },
+    {
+      "task_id": "V11-145",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 01",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": []
+    },
+    {
+      "task_id": "V11-146",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 02",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-145"
+      ]
+    },
+    {
+      "task_id": "V11-147",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 03",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-146"
+      ]
+    },
+    {
+      "task_id": "V11-148",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 04",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-147"
+      ]
+    },
+    {
+      "task_id": "V11-149",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 05",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-148"
+      ]
+    },
+    {
+      "task_id": "V11-150",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 06",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-149"
+      ]
+    },
+    {
+      "task_id": "V11-151",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 07",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-150"
+      ]
+    },
+    {
+      "task_id": "V11-152",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 08",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-151"
+      ]
+    },
+    {
+      "task_id": "V11-153",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 09",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-152"
+      ]
+    },
+    {
+      "task_id": "V11-154",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 10",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-153"
+      ]
+    },
+    {
+      "task_id": "V11-155",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 11",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-154"
+      ]
+    },
+    {
+      "task_id": "V11-156",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 12",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-155"
+      ]
+    },
+    {
+      "task_id": "V11-157",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 13",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-156"
+      ]
+    },
+    {
+      "task_id": "V11-158",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 14",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-157"
+      ]
+    },
+    {
+      "task_id": "V11-159",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 15",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-158"
+      ]
+    },
+    {
+      "task_id": "V11-160",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 16",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-159"
+      ]
+    },
+    {
+      "task_id": "V11-161",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 17",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-160"
+      ]
+    },
+    {
+      "task_id": "V11-162",
+      "gate": "G7",
+      "title": "Social lounge and crew — task 18",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-161"
+      ]
+    },
+    {
+      "task_id": "V11-163",
+      "gate": "G8",
+      "title": "120 checkpoints and live ops — task 01",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": []
+    },
+    {
+      "task_id": "V11-164",
+      "gate": "G8",
+      "title": "120 checkpoints and live ops — task 02",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-163"
+      ]
+    },
+    {
+      "task_id": "V11-165",
+      "gate": "G8",
+      "title": "120 checkpoints and live ops — task 03",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-164"
+      ]
+    },
+    {
+      "task_id": "V11-166",
+      "gate": "G8",
+      "title": "120 checkpoints and live ops — task 04",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-165"
+      ]
+    },
+    {
+      "task_id": "V11-167",
+      "gate": "G8",
+      "title": "120 checkpoints and live ops — task 05",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-166"
+      ]
+    },
+    {
+      "task_id": "V11-168",
+      "gate": "G8",
+      "title": "120 checkpoints and live ops — task 06",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-167"
+      ]
+    },
+    {
+      "task_id": "V11-169",
+      "gate": "G8",
+      "title": "120 checkpoints and live ops — task 07",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-168"
+      ]
+    },
+    {
+      "task_id": "V11-170",
+      "gate": "G8",
+      "title": "120 checkpoints and live ops — task 08",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-169"
+      ]
+    },
+    {
+      "task_id": "V11-171",
+      "gate": "G8",
+      "title": "120 checkpoints and live ops — task 09",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-170"
+      ]
+    },
+    {
+      "task_id": "V11-172",
+      "gate": "G8",
+      "title": "120 checkpoints and live ops — task 10",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-171"
+      ]
+    },
+    {
+      "task_id": "V11-173",
+      "gate": "G8",
+      "title": "120 checkpoints and live ops — task 11",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-172"
+      ]
+    },
+    {
+      "task_id": "V11-174",
+      "gate": "G8",
+      "title": "120 checkpoints and live ops — task 12",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-173"
+      ]
+    },
+    {
+      "task_id": "V11-175",
+      "gate": "G8",
+      "title": "120 checkpoints and live ops — task 13",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-174"
+      ]
+    },
+    {
+      "task_id": "V11-176",
+      "gate": "G8",
+      "title": "120 checkpoints and live ops — task 14",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-175"
+      ]
+    },
+    {
+      "task_id": "V11-177",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 01",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": []
+    },
+    {
+      "task_id": "V11-178",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 02",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-177"
+      ]
+    },
+    {
+      "task_id": "V11-179",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 03",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-178"
+      ]
+    },
+    {
+      "task_id": "V11-180",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 04",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-179"
+      ]
+    },
+    {
+      "task_id": "V11-181",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 05",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-180"
+      ]
+    },
+    {
+      "task_id": "V11-182",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 06",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-181"
+      ]
+    },
+    {
+      "task_id": "V11-183",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 07",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-182"
+      ]
+    },
+    {
+      "task_id": "V11-184",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 08",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-183"
+      ]
+    },
+    {
+      "task_id": "V11-185",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 09",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-184"
+      ]
+    },
+    {
+      "task_id": "V11-186",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 10",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-185"
+      ]
+    },
+    {
+      "task_id": "V11-187",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 11",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-186"
+      ]
+    },
+    {
+      "task_id": "V11-188",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 12",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-187"
+      ]
+    },
+    {
+      "task_id": "V11-189",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 13",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-188"
+      ]
+    },
+    {
+      "task_id": "V11-190",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 14",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-189"
+      ]
+    },
+    {
+      "task_id": "V11-191",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 15",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-190"
+      ]
+    },
+    {
+      "task_id": "V11-192",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 16",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-191"
+      ]
+    },
+    {
+      "task_id": "V11-193",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 17",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-192"
+      ]
+    },
+    {
+      "task_id": "V11-194",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 18",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-193"
+      ]
+    },
+    {
+      "task_id": "V11-195",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 19",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-194"
+      ]
+    },
+    {
+      "task_id": "V11-196",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 20",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-195"
+      ]
+    },
+    {
+      "task_id": "V11-197",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 21",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-196"
+      ]
+    },
+    {
+      "task_id": "V11-198",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 22",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-197"
+      ]
+    },
+    {
+      "task_id": "V11-199",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 23",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-198"
+      ]
+    },
+    {
+      "task_id": "V11-200",
+      "gate": "G9",
+      "title": "Performance, QA, release — task 24",
+      "priority": "P0",
+      "status": "TODO",
+      "depends_on": [
+        "V11-199"
+      ]
+    }
+  ]
+}

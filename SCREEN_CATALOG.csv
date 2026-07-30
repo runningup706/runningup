@@ -1,0 +1,23 @@
+screen_id,name,tab,purpose,status
+S01,LIVE_JOURNEY_HOME,홈,항상 달리는 3D My Runner와 현재 코스,GATE_0_PENDING
+S02,RUN_START,RUN,자유·거리·시간·인터벌·템포·장거리·run-walk,PENDING
+S03,RUN_ACTIVE,RUN,거리·시간·페이스·split·가상 코스 진행,PENDING
+S04,IMPORT_HUB,RUN,직접 GPS·Health Connect·파일·승인형 서비스,PENDING
+S05,STRIDE_LEAP,RUN,검증 러닝 후 코스 도약과 성장,PENDING
+S06,MY_RUNNER,러너,한 명의 주인공 커스터마이징,PENDING
+S07,RUNNER_EVOLUTION,러너,12단계 외형 성장,PENDING
+S08,PACER_ROSTER,러너,60명 Pacer 관계와 지원,PENDING
+S09,PACER_SCOUT,러너,확률·천장·기록이 보이는 카드 공개,PENDING
+S10,FUSION_LAB,러너,확정 승급과 Brilliant Finish,PENDING
+S11,GEAR_LOCKER,러너,12부위 러닝 장비,PENDING
+S12,WORLD_ATLAS,월드,12대륙·192지역·2304코스,PENDING
+S13,REGION_ROUTE,월드,지역 12코스와 복구 단계,PENDING
+S14,MONTHLY_APEX,월드,120 checkpoints·1000km final,PENDING
+S15,RUNNER_LOUNGE,크루,친구·크루 3D 라운지,PENDING
+S16,FRIEND_PROFILE,크루,공개 범위별 거리와 현재 대륙,PENDING
+S17,CREW_JOURNEY,크루,주간 공동 거리와 비동기 relay,PENDING
+S18,DAILY_RUN_CONTRACT,홈,오늘 하나의 러닝 콘텐츠,PENDING
+S19,LEGACY_ATLAS,월드,월별·연도별 러닝 기록,PENDING
+S20,SETTINGS_CONNECTIONS,메뉴,권한·연동·개인정보·그래픽,PENDING
+S21,PROJECT_EXPLORER,개발자,기능·파일·DB·테스트 검색,PENDING
+

@@ -1,0 +1,306 @@
+{
+  "version": "11.0.0",
+  "count": 50,
+  "audits": [
+    {
+      "audit_id": "AUDIT_01",
+      "title_ko": "사용자 최신 방향 회귀",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_02",
+      "title_ko": "V8-V10 충돌 코드 제거",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_03",
+      "title_ko": "홈 상시 달리기",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_04",
+      "title_ko": "3등신 캐릭터 품질",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_05",
+      "title_ko": "My Runner 애착",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_06",
+      "title_ko": "Pacer 60명 독창성",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_07",
+      "title_ko": "전투 용어·자산 0건",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_08",
+      "title_ko": "현실 러닝 우선 경제",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_09",
+      "title_ko": "방치 진척 상한",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_10",
+      "title_ko": "하루 한 번 콘텐츠",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_11",
+      "title_ko": "초보 첫날 경로",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_12",
+      "title_ko": "5K·10K·20K·하프·마라톤·50K 경로",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_13",
+      "title_ko": "2304 코스 실재성",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_14",
+      "title_ko": "12대륙 독창성",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_15",
+      "title_ko": "지역 결승 자동 진행",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_16",
+      "title_ko": "Stride Leap 가시성",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_17",
+      "title_ko": "120 체크포인트",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_18",
+      "title_ko": "1000km 최종성",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_19",
+      "title_ko": "직접 GPS",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_20",
+      "title_ko": "Health Connect",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_21",
+      "title_ko": "Samsung 승인 경계",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_22",
+      "title_ko": "Garmin 승인·비용 경계",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_23",
+      "title_ko": "Strava OAuth·webhook",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_24",
+      "title_ko": "Apple/iOS 경계",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_25",
+      "title_ko": "파일 import",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_26",
+      "title_ko": "다중 source 중복 제거",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_27",
+      "title_ko": "보상 exactly-once",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_28",
+      "title_ko": "카드 확률·천장",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_29",
+      "title_ko": "합성 보증",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_30",
+      "title_ko": "러닝 장비 외형 반영",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_31",
+      "title_ko": "Runner Lounge 사회성",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_32",
+      "title_ko": "친구 공개 범위",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_33",
+      "title_ko": "크루 공동 거리",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_34",
+      "title_ko": "원본 경로 비공개",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_35",
+      "title_ko": "Supabase RLS",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_36",
+      "title_ko": "service role 노출 0",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_37",
+      "title_ko": "오프라인 queue",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_38",
+      "title_ko": "save migration",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_39",
+      "title_ko": "한국어 UI",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_40",
+      "title_ko": "영어 UI",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_41",
+      "title_ko": "큰 글자·safe area",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_42",
+      "title_ko": "저사양 30fps",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_43",
+      "title_ko": "메모리·발열·배터리",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_44",
+      "title_ko": "visual golden screenshot",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_45",
+      "title_ko": "fake screenshot 방지",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_46",
+      "title_ko": "FULL_SIDELOAD APK",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_47",
+      "title_ko": "AAB 후보",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_48",
+      "title_ko": "설치·업데이트·재설치",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_49",
+      "title_ko": "GitHub Release·SHA",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    },
+    {
+      "audit_id": "AUDIT_50",
+      "title_ko": "최종 보고 진실성",
+      "requires_evidence": true,
+      "status": "NOT_RUN"
+    }
+  ]
+}

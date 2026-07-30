@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "product_version": "11.0.0",
+  "unity": "6000.3.20f1",
+  "android": {
+    "compile_sdk": 36,
+    "target_sdk": 36,
+    "min_sdk": 28,
+    "ndk": "27.2.12479018",
+    "architecture": "ARM64",
+    "backend": "IL2CPP",
+    "native_page_alignment": 16384
+  },
+  "java": {
+    "unity_android_build": 17,
+    "standalone_plugin_tests": 21
+  },
+  "supabase_cli": "2.109.1",
+  "postgres": "17",
+  "node_min": 22
+}
+

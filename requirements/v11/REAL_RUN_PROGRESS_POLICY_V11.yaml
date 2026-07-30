@@ -1,0 +1,17 @@
+
+permanent_progress_target_share:
+  verified_running_min_percent: 85
+  idle_drift_max_percent: 10
+  manual_menu_play_max_percent: 5
+idle_rules:
+  grants_monthly_km: false
+  grants_fitness_core: false
+  can_clear_region_final: false
+  can_unlock_my_runner_form: false
+  common_materials_only: true
+  weekly_permanent_progress_cap_percent: 10
+daily_run_contract:
+  bonus_contracts_per_local_day: 1
+  additional_runs_keep_base_rewards: true
+  modes: [run_walk, easy, steady, tempo, interval, long, free]
+  user_can_raise_difficulty: true

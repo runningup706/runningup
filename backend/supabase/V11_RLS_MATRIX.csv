@@ -1,0 +1,8 @@
+﻿table_or_view,anon,authenticated_owner,friend_or_crew,public,service_role
+profiles,none,read/update own,read allowed fields by visibility,read public fields,full
+my_runners,none,read/update cosmetic fields own,read public projection only,none,full
+world_progress,none,read own; no direct authoritative insert,aggregated projection,none,full
+monthly_apex,none,read own,read distance summary if allowed,read public summary if allowed,full
+friendships,none,own rows only,participants only,none,full
+private.canonical_runs,none,none direct,none,none,full
+private.reward_ledger,none,read through safe view only,none,none,full

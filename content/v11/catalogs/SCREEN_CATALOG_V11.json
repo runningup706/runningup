@@ -1,0 +1,138 @@
+{
+  "version": "11.0.0",
+  "bottom_nav": [
+    "홈",
+    "러너",
+    "RUN",
+    "월드",
+    "크루"
+  ],
+  "screens": [
+    {
+      "screen_id": "S01",
+      "name": "LIVE_JOURNEY_HOME",
+      "tab": "홈",
+      "purpose": "항상 달리는 3D My Runner, 현재 코스, 친구 거리 스트립, 월간 km"
+    },
+    {
+      "screen_id": "S02",
+      "name": "RUN_START",
+      "tab": "RUN",
+      "purpose": "자유·거리·시간·인터벌·템포·장거리·run-walk 선택"
+    },
+    {
+      "screen_id": "S03",
+      "name": "RUN_ACTIVE",
+      "tab": "RUN",
+      "purpose": "거리·시간·페이스·split·가상 코스 진행"
+    },
+    {
+      "screen_id": "S04",
+      "name": "IMPORT_HUB",
+      "tab": "RUN",
+      "purpose": "직접 GPS·Health Connect·파일·승인형 서비스 연결"
+    },
+    {
+      "screen_id": "S05",
+      "name": "STRIDE_LEAP",
+      "tab": "RUN",
+      "purpose": "실제 러닝 인증 후 여러 코스 도약·캐릭터 성장"
+    },
+    {
+      "screen_id": "S06",
+      "name": "MY_RUNNER",
+      "tab": "러너",
+      "purpose": "한 명의 주인공 커스터마이징·12단계 외형 성장"
+    },
+    {
+      "screen_id": "S07",
+      "name": "RUNNER_EVOLUTION",
+      "tab": "러너",
+      "purpose": "이전/다음 형태 비교·의상·오라·피니시"
+    },
+    {
+      "screen_id": "S08",
+      "name": "PACER_ROSTER",
+      "tab": "러너",
+      "purpose": "60명 Pacer 수집·관계·지원 역할"
+    },
+    {
+      "screen_id": "S09",
+      "name": "PACER_SCOUT",
+      "tab": "러너",
+      "purpose": "등급 공개·천장·확률·기록"
+    },
+    {
+      "screen_id": "S10",
+      "name": "FUSION_LAB",
+      "tab": "러너",
+      "purpose": "확정 승급 + Brilliant Finish 보너스 확률"
+    },
+    {
+      "screen_id": "S11",
+      "name": "GEAR_LOCKER",
+      "tab": "러너",
+      "purpose": "12부위 러닝 장비·프리셋·외형 반영"
+    },
+    {
+      "screen_id": "S12",
+      "name": "WORLD_ATLAS",
+      "tab": "월드",
+      "purpose": "12대륙·192구역·2304코스"
+    },
+    {
+      "screen_id": "S13",
+      "name": "REGION_ROUTE",
+      "tab": "월드",
+      "purpose": "지역 12코스와 자동 진행·복구 단계"
+    },
+    {
+      "screen_id": "S14",
+      "name": "MONTHLY_APEX",
+      "tab": "월드",
+      "purpose": "0 baseline·120 checkpoints·1000km final"
+    },
+    {
+      "screen_id": "S15",
+      "name": "RUNNER_LOUNGE",
+      "tab": "크루",
+      "purpose": "친구·크루 3D 라운지·주간/월간 거리·응원"
+    },
+    {
+      "screen_id": "S16",
+      "name": "FRIEND_PROFILE",
+      "tab": "크루",
+      "purpose": "공개 범위에 따른 주간·월간 거리·현재 대륙"
+    },
+    {
+      "screen_id": "S17",
+      "name": "CREW_JOURNEY",
+      "tab": "크루",
+      "purpose": "주간 공동 거리·비동기 릴레이·클럽하우스 복구"
+    },
+    {
+      "screen_id": "S18",
+      "name": "DAILY_RUN_CONTRACT",
+      "tab": "홈",
+      "purpose": "오늘 한 번의 러닝 콘텐츠·난이도 선택"
+    },
+    {
+      "screen_id": "S19",
+      "name": "LEGACY_ATLAS",
+      "tab": "월드",
+      "purpose": "월별·연도별 기록·완주 대륙·외형 기록"
+    },
+    {
+      "screen_id": "S20",
+      "name": "SETTINGS_CONNECTIONS",
+      "tab": "메뉴",
+      "purpose": "권한·연동·개인정보·알림·그래픽"
+    },
+    {
+      "screen_id": "S21",
+      "name": "PROJECT_EXPLORER",
+      "tab": "개발자",
+      "purpose": "기능·파일·DB·테스트·상태 검색"
+    }
+  ]
+}

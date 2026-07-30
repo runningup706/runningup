@@ -1,0 +1,2451 @@
+{
+  "schema_version": "2.0.0",
+  "product_version": "11.0.0",
+  "legacy_backup_folder_created": false,
+  "git_history_preserved": true,
+  "purges": [
+    {
+      "purge_id": "V11_CLEAN_REBUILD_ORIGIN",
+      "source_commit": "f204b9b377c6332f7c7b167b6712523e0ca16161",
+      "source_branch": "agent/runningup-v11-complete",
+      "policy": "DELETE_ALL_V5_V6_ACTIVE_TREE_AND_REBUILD_V11",
+      "authorization": "User explicitly required all V5-V10 related active code to be deleted",
+      "removal_count": 281,
+      "removed_paths_sha256": "f4f1491443588836afc02176adf487ebbf3b43530368ed822e68e5cfd891d828",
+      "forbidden_runtime_term_file_count_before_purge": 60,
+      "removals": [
+        {
+          "path": ".github/workflows/content-validation.yml",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": ".github/workflows/v11-ci.yml",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": ".github/workflows/direction-lock.yml",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": ".github/workflows/v11-ci.yml",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": ".github/workflows/kotlin-tests.yml",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": ".github/workflows/v11-ci.yml",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": ".github/workflows/security-scan.yml",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": ".github/workflows/v11-ci.yml",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": ".github/workflows/supabase-tests.yml",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": ".github/workflows/v11-ci.yml",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": ".github/workflows/unit-tests.yml",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": ".github/workflows/v11-ci.yml",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": ".github/workflows/unity-domain-tests.yml",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": ".github/workflows/v11-ci.yml",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": ".gitignore",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 root contract or release metadata",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "AGENTS.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 root contract or release metadata",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 root contract or release metadata",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "CLAUDE.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 root contract or release metadata",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "CODEX_HANDOFF.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 root contract or release metadata",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "HANDOFF.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 root contract or release metadata",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "README.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 root contract or release metadata",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "VERSION",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 root contract or release metadata",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "artifacts/test-evidence-manifest.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "artifacts/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/migrations/0001_foundation.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/migrations/0002_running.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/migrations/0003_monthly_apex.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/migrations/0004_ledger_momentum.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/migrations/0005_content.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/migrations/0006_rls.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/migrations/0007_reward_transaction.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/migrations/0008_profile_write_scope.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/migrations/0009_v5_apex_60.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/seed.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/tests/pgtap/01_schema_rls.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/tests/pgtap/02_running_scope.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/tests/pgtap/03_monthly_apex.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/tests/pgtap/04_ledger_integrity.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/tests/pgtap/05_content_completeness.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/tests/pgtap/06_profile_write_scope.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "backend/supabase/tests/pgtap/07_apex_conformance.sql",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "backend/supabase/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/cli/play.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/cli/smoke-play.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/dotnet/RunningUp.Domain.Tests/MonthlyApexConformanceTests.cs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/dotnet/RunningUp.Domain.Tests/RunningUp.Domain.Tests.csproj",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Plugins.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Plugins/Android.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Plugins/Android/AndroidManifest.xml",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Plugins/Android/AndroidManifest.xml.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Plugins/Android/RunningUpCapture.androidlib.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Plugins/Android/RunningUpCapture.androidlib/AndroidManifest.xml",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Plugins/Android/RunningUpCapture.androidlib/build.gradle",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Plugins/Android/RunningUpCapture.androidlib/project.properties",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Plugins/Android/RunningUpCapture.androidlib/src/main/java/kr/robom/runningup/running/RunningCaptureService.java",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Plugins/Android/RunningUpCapture.androidlib/src/main/java/kr/robom/runningup/running/RunningUpBridge.java",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Resources.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Resources/Fonts.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Resources/Fonts/NotoSansKR-Variable.ttf",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Resources/Fonts/NotoSansKR-Variable.ttf.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Resources/Fonts/OFL.txt",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Resources/Fonts/OFL.txt.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Resources/RunningUpWorld.mat",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Resources/RunningUpWorld.mat.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Editor.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Editor/AndroidBuild.cs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Editor/AndroidBuild.cs.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Editor/RunningUp.Editor.asmdef",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Editor/RunningUp.Editor.asmdef.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Progression.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Progression/MonthlyApex.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Progression/MonthlyApex/MonthlyApexLadder.cs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Progression/MonthlyApex/MonthlyApexLadder.cs.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Progression/RunningUp.Progression.asmdef",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Progression/RunningUp.Progression.asmdef.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Runtime.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Runtime/AndroidRunBridge.cs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Runtime/AndroidRunBridge.cs.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Runtime/RunningUp.Runtime.asmdef",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Runtime/RunningUp.Runtime.asmdef.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Runtime/RunningUpGame.cs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Runtime/RunningUpGame.cs.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Scenes.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Scenes/RunningUpBoot.unity",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/Scenes/RunningUpBoot.unity.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/companions.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/companions.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/cosmetics.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/cosmetics/cosmetics.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/cosmetics/cosmetics.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/episodes.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/episodes/character_episodes.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/episodes/character_episodes.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/roster.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/roster/characters.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/roster/characters.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/skills.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/skills/tactical_relics.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/skills/tactical_relics.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/skills/tactical_skills.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/characters/skills/tactical_skills.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/events.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/events/event_arcs.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/events/event_arcs.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/launch_content_manifest.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/launch_content_manifest.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/progression.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/progression/monthly_apex_0_1000.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/progression/monthly_apex_0_1000.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/quests.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/quests/quests.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/quests/quests.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/running.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/running/best_effort_distances.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/running/best_effort_distances.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/running/goal_library.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/running/goal_library.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/running/runner_passport_bands.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/running/runner_passport_bands.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/seasons.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/seasons/season_01.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/seasons/season_01.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/bosses.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/bosses/apex_boss.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/bosses/apex_boss.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/bosses/continent_bosses.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/bosses/continent_bosses.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/bosses/world_bosses.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/bosses/world_bosses.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/continents.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/continents/continents.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/continents/continents.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/dungeon_types.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/dungeon_types.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/enemies.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/enemies/elite_enemy_families.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/enemies/elite_enemy_families.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/enemies/standard_enemy_families.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/enemies/standard_enemy_families.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/regions.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/regions/regions.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/regions/regions.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/restoration.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/restoration/restoration_states.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/restoration/restoration_states.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/stages.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/stages/main_stages.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/stages/main_stages.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/stages/side_stages.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/stages/side_stages.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/story_chapters.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/launch/world/story_chapters.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/localization.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/localization/en.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/localization/en/content.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/localization/en/content.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/localization/ko.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/localization/ko/content.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/StreamingAssets/RunningUpContent/localization/ko/content.json.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/link.xml",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Assets/link.xml.meta",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Packages/manifest.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/Packages/packages-lock.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/AudioManager.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/ClusterInputManager.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/DynamicsManager.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/EditorBuildSettings.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/EditorSettings.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/GraphicsSettings.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/InputManager.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/MemorySettings.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/MultiplayerManager.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/NavMeshAreas.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/Physics2DSettings.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/PresetManager.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/ProjectSettings.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/ProjectVersion.txt",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/QualitySettings.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/SceneTemplateSettings.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/TagManager.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/TimeManager.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/UnityConnectSettings.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/VFXManager.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "client/unity/ProjectSettings/VersionControlSettings.asset",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "client/unity/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/conformance/monthly-apex-cases.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/fixtures/run-fixtures.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/characters/companions.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/characters/cosmetics/cosmetics.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/characters/episodes/character_episodes.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/characters/roster/characters.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/characters/skills/tactical_relics.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/characters/skills/tactical_skills.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/events/event_arcs.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/launch_content_manifest.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/progression/monthly_apex_0_1000.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/quests/quests.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/running/best_effort_distances.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/running/goal_library.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/running/runner_passport_bands.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/seasons/season_01.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/world/bosses/apex_boss.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/world/bosses/continent_bosses.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/world/bosses/world_bosses.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/world/continents/continents.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/world/dungeon_types.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/world/enemies/elite_enemy_families.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/world/enemies/standard_enemy_families.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/world/regions/regions.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/world/restoration/restoration_states.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/world/stages/main_stages.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/world/stages/side_stages.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/launch/world/story_chapters.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/localization/en/content.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/localization/ko/content.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "content/schemas/direction_lock.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "content/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/AGENT_EXECUTION_CONTRACT.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/CURRENT_STATE.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/DATABASE_SCHEMA.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/DECISIONS.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/KNOWN_ISSUES.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/OFFICIAL_SOURCE_SNAPSHOT.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/READ_COMPLETE.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/RESEARCH.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/RISK_REGISTER.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/RLS_MATRIX.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/USER_DIRECTION_LOCK.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/audits/AUDIT_01_USER_DIRECTION.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/audits/AUDIT_02_ALL_SKILL_ONBOARDING.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/audits/AUDIT_03_APEX_1000_ECONOMY.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/audits/AUDIT_04_RUNNING_ONLY.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/audits/AUDIT_05_GRAND_WORLD.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/audits/AUDIT_06_CHARACTER_CONTENT_DEPTH.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/audits/AUDIT_07_BACKEND_SECURITY_INTEGRITY.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/audits/AUDIT_08_ARCHITECTURE_PERFORMANCE_DELIVERY.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/audits/AUDIT_09_TEST_FAILURE_RECOVERY.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/audits/AUDIT_10_RELEASE_TRUTHFULNESS.md",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/balance-evidence/anti-cheat-simulation.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/balance-evidence/monthly-apex-simulation.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/balance-evidence/runner-passport-simulation.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/play-evidence/session-marathon.txt",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "docs/play-evidence/smoke-all-levels.txt",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "docs/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "native/android-running-plugin/build.gradle.kts",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "native/android-running-plugin/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "native/android-running-plugin/settings.gradle.kts",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "native/android-running-plugin/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "native/android-running-plugin/src/main/kotlin/kr/robom/runningup/running/RunJournal.kt",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "native/android-running-plugin/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "native/android-running-plugin/src/main/kotlin/kr/robom/runningup/running/UploadQueue.kt",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "native/android-running-plugin/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "native/android-running-plugin/src/test/kotlin/kr/robom/runningup/running/RunJournalTest.kt",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "native/android-running-plugin/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "native/android-running-plugin/src/test/kotlin/kr/robom/runningup/running/UploadQueueTest.kt",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "native/android-running-plugin/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "package.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 root contract or release metadata",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "requirements/REQUIREMENTS_TRACEABILITY.csv",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "requirements/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "requirements/TASK_LEDGER.jsonl",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "requirements/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "toolchain.lock.json",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 root contract or release metadata",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/anti-cheat-simulator/simulate.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/bootstrap/doctor.sh",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/conformance/emit-sql-conformance.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/conformance/export-fixtures.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/content-factory/build.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/content-factory/characters/character-design.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/content-factory/emit-seed.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/content-factory/world/world-design.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/content-validator/validate.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/direction-lock/scan.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/lib/anomaly-detection.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/lib/battle.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/lib/best-effort.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/lib/constants.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/lib/momentum.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/lib/monthly-apex.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/lib/reward.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/lib/runner-passport.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/monthly-apex-simulator/simulate.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/release/generate-evidence.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/release/verify-apk.sh",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/run-fixture-generator/generate.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/runner-passport-simulator/simulate.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/test/all.sh",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/test/db.sh",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/tests/anomaly-detection.test.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/tests/battle.test.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/tests/best-effort.test.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/tests/momentum.test.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/tests/monthly-apex.test.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/tests/reward.test.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/tests/runner-passport.test.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        },
+        {
+          "path": "tools/tests/unity-release-contract.test.mjs",
+          "reason": "V5_OR_V6_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "tools/v11/",
+          "verification": "git diff --diff-filter=D --name-only"
+        }
+      ]
+    },
+    {
+      "purge_id": "V11_ADOPTION_IN_RUNNINGUP706_RUNNINGUP",
+      "source_commit": "745656eb48adedac135d1879f23fde94540161b1",
+      "source_branch": "claude/runningup-3d-android-dev-3c8gnp",
+      "policy": "REPLACE_V4_APEX1000_ACTIVE_TREE_WITH_V11_CLEAN_REBUILD",
+      "authorization": "User directive 2026-07-30: V11 is the top-level requirement; do not revive V5-V10 combat direction; use the V11 current source as the base repository",
+      "removal_count": 122,
+      "removed_paths_sha256": "296ec30862121e5d9dd5017a55d9b8dd003ed3af4bfbf8fe4234a6e78aaad1a1",
+      "forbidden_runtime_term_file_count_before_purge": 33,
+      "removals": [
+        {
+          "path": ".github/workflows/content-validation.yml",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": ".github/workflows/direction-lock.yml",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": ".github/workflows/kotlin-tests.yml",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": ".github/workflows/security-scan.yml",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": ".github/workflows/supabase-tests.yml",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": ".github/workflows/unit-tests.yml",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": ".github/workflows/unity-domain-tests.yml",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "artifacts/test-evidence-manifest.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/migrations/0001_foundation.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/migrations/0002_running.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/migrations/0003_monthly_apex.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/migrations/0004_ledger_momentum.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/migrations/0005_content.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/migrations/0006_rls.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/migrations/0007_reward_transaction.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/migrations/0008_profile_write_scope.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/seed.sql",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/tests/pgtap/01_schema_rls.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/tests/pgtap/02_running_scope.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/tests/pgtap/03_monthly_apex.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/tests/pgtap/04_ledger_integrity.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/tests/pgtap/05_content_completeness.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/tests/pgtap/06_profile_write_scope.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "backend/supabase/tests/pgtap/07_apex_conformance.sql",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "client/cli/play.mjs",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "client/cli/smoke-play.mjs",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "client/dotnet/RunningUp.Domain.Tests/MonthlyApexConformanceTests.cs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "client/dotnet/RunningUp.Domain.Tests/RunningUp.Domain.Tests.csproj",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "client/unity/Assets/RunningUp/Progression/MonthlyApex/MonthlyApexLadder.cs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/conformance/monthly-apex-cases.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/fixtures/run-fixtures.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/characters/companions.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/characters/cosmetics/cosmetics.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/characters/episodes/character_episodes.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/characters/roster/characters.json",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/characters/skills/tactical_relics.json",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/characters/skills/tactical_skills.json",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/events/event_arcs.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/launch_content_manifest.json",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/progression/monthly_apex_0_1000.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/quests/quests.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/running/best_effort_distances.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/running/goal_library.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/running/runner_passport_bands.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/seasons/season_01.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/world/bosses/apex_boss.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/world/bosses/continent_bosses.json",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/world/bosses/world_bosses.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/world/continents/continents.json",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/world/dungeon_types.json",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/world/enemies/elite_enemy_families.json",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/world/enemies/standard_enemy_families.json",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/world/regions/regions.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/world/restoration/restoration_states.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/world/stages/main_stages.json",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/world/stages/side_stages.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/launch/world/story_chapters.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/localization/en/content.json",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/localization/ko/content.json",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "content/schemas/direction_lock.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/AGENT_EXECUTION_CONTRACT.md",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/CURRENT_STATE.md",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/DATABASE_SCHEMA.md",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/DECISIONS.md",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/KNOWN_ISSUES.md",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/READ_COMPLETE.md",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/RISK_REGISTER.md",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/RLS_MATRIX.md",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/USER_DIRECTION_LOCK.md",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/audits/AUDIT_01_USER_DIRECTION.md",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/audits/AUDIT_02_ALL_SKILL_ONBOARDING.md",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/audits/AUDIT_03_APEX_1000_ECONOMY.md",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/audits/AUDIT_04_RUNNING_ONLY.md",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/audits/AUDIT_05_GRAND_WORLD.md",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/audits/AUDIT_06_CHARACTER_CONTENT_DEPTH.md",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/audits/AUDIT_07_BACKEND_SECURITY_INTEGRITY.md",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/audits/AUDIT_08_ARCHITECTURE_PERFORMANCE_DELIVERY.md",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/audits/AUDIT_09_TEST_FAILURE_RECOVERY.md",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/audits/AUDIT_10_RELEASE_TRUTHFULNESS.md",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/balance-evidence/anti-cheat-simulation.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/balance-evidence/monthly-apex-simulation.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/balance-evidence/runner-passport-simulation.json",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/play-evidence/session-marathon.txt",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "docs/play-evidence/smoke-all-levels.txt",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "native/android-running-plugin/build.gradle.kts",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "native/android-running-plugin/settings.gradle.kts",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "native/android-running-plugin/src/main/kotlin/kr/robom/runningup/running/RunJournal.kt",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "native/android-running-plugin/src/main/kotlin/kr/robom/runningup/running/UploadQueue.kt",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "native/android-running-plugin/src/test/kotlin/kr/robom/runningup/running/RunJournalTest.kt",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "native/android-running-plugin/src/test/kotlin/kr/robom/runningup/running/UploadQueueTest.kt",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "requirements/REQUIREMENTS_TRACEABILITY.csv",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "requirements/TASK_LEDGER.jsonl",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/anti-cheat-simulator/simulate.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/bootstrap/doctor.sh",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/conformance/emit-sql-conformance.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/conformance/export-fixtures.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/content-factory/build.mjs",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/content-factory/characters/character-design.mjs",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/content-factory/emit-seed.mjs",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/content-factory/world/world-design.mjs",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/content-validator/validate.mjs",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/direction-lock/scan.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/lib/anomaly-detection.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/lib/battle.mjs",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/lib/best-effort.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/lib/constants.mjs",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/lib/momentum.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/lib/monthly-apex.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/lib/reward.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/lib/runner-passport.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/monthly-apex-simulator/simulate.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/release/generate-evidence.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/run-fixture-generator/generate.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/runner-passport-simulator/simulate.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/test/all.sh",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/tests/anomaly-detection.test.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/tests/battle.test.mjs",
+          "reason": "V4_APEX1000_COMBAT_RUNTIME_FORBIDDEN_BY_V11_DIRECTION_LOCK",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/tests/best-effort.test.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/tests/momentum.test.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/tests/monthly-apex.test.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/tests/reward.test.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        },
+        {
+          "path": "tools/tests/runner-passport.test.mjs",
+          "reason": "V4_APEX1000_ACTIVE_TREE_SUPERSEDED_BY_V11_CLEAN_REBUILD",
+          "replacement": "V11 clean rebuild tree (backend/, client/, content/v11/, requirements/v11/, tools/)",
+          "verification": "git diff --diff-filter=D --name-only 745656e..HEAD"
+        }
+      ]
+    }
+  ],
+  "total_removal_count": 403
+}

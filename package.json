@@ -1,32 +1,23 @@
 {
-  "name": "runningup",
-  "version": "0.1.0-alpha.1",
+  "name": "runningup-v11",
+  "version": "11.0.0",
   "private": true,
-  "description": "RunningUp — 3D real-run linked idle action RPG. Tooling, content pipeline and domain engine.",
   "type": "module",
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=22"
   },
   "scripts": {
-    "doctor": "bash tools/bootstrap/doctor.sh",
-    "content:build": "node tools/content-factory/build.mjs",
-    "content:seed": "node tools/content-factory/emit-seed.mjs",
-    "validate:content": "node tools/content-validator/validate.mjs",
-    "validate:direction-lock": "node tools/direction-lock/scan.mjs",
-    "simulate:passport": "node tools/runner-passport-simulator/simulate.mjs",
-    "simulate:apex": "node tools/monthly-apex-simulator/simulate.mjs",
-    "test:unit": "node --test \"tools/tests/*.test.mjs\"",
+    "validate": "node tools/validation/validate-v11.mjs",
+    "validate:legacy": "node tools/validation/scan-legacy-runtime.mjs",
+    "art:environment": "node tools/art-pipeline/check-environment.mjs",
+    "art:validate": "node tools/art-pipeline/validate-production-art.mjs",
+    "art:gate": "node tools/art-pipeline/validate-production-art.mjs --require-ready",
+    "package:unity-content": "node tools/content-factory/package-unity-v11.mjs",
+    "test": "node --test tools/tests/*.test.mjs",
     "test:db": "bash tools/test/db.sh",
-    "test:fast": "npm run validate:direction-lock && npm run validate:content && npm run test:unit",
-    "test:all": "bash tools/test/all.sh",
-    "fixtures:build": "node tools/run-fixture-generator/generate.mjs",
-    "simulate:anticheat": "node tools/anti-cheat-simulator/simulate.mjs",
-    "conformance:export": "node tools/conformance/export-fixtures.mjs && node tools/conformance/emit-sql-conformance.mjs",
-    "test:client": "dotnet test client/dotnet/RunningUp.Domain.Tests/RunningUp.Domain.Tests.csproj --nologo",
-    "play": "node client/cli/play.mjs",
-    "play:auto": "node client/cli/play.mjs --auto",
-    "play:smoke": "node client/cli/smoke-play.mjs"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+    "test:domain": "bash tools/test/domain.sh",
+    "test:unity": "bash tools/test/unity.sh",
+    "build:android:smoke": "bash tools/build/android-smoke.sh",
+    "build:android:full": "bash tools/build/android-full.sh"
+  }
 }

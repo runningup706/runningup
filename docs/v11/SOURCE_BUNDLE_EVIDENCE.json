@@ -1,0 +1,190 @@
+{
+  "schema_version": "1.0.0",
+  "product_version": "11.0.0",
+  "zip_name": "RunningUp_V11_Complete.zip",
+  "zip_sha256": "a11d184f6ec2a44ea079e9cfaacf9a7ff1f60e4dd0af9d428cb5fed13960a04f",
+  "master_prompt_sha256": "e816fbf3efd54d71d11b6c57777d6902826dcc330e52197bc15836d1907a9798",
+  "zip_entry_count": 84,
+  "package_manifest_file_count": 82,
+  "path_safety": {
+    "traversal_or_absolute_entries": 0,
+    "casefold_duplicates": 0
+  },
+  "integrity": {
+    "unzip_test": "PASS",
+    "sha256sums": "PASS",
+    "prompt_parts_byte_concatenate": "PASS"
+  },
+  "imported_file_count": 27,
+  "imported_files": [
+    {
+      "source": "DATA/CARD_CATALOG_360_V11.json",
+      "destination": "content/v11/catalogs/CARD_CATALOG_360_V11.json",
+      "bytes": 61768,
+      "sha256": "7cd4791c17c56beba166bfabfde097b8cab0a2c93f0cdb82d9819b45283cdcfc"
+    },
+    {
+      "source": "DATA/MONTHLY_APEX_120_CHECKPOINTS_V11.json",
+      "destination": "content/v11/catalogs/MONTHLY_APEX_120_CHECKPOINTS_V11.json",
+      "bytes": 41342,
+      "sha256": "e9c96f05132fea403b90f8c8b1dff2cfdc25d1ebaa92fc11bc486d498afb739f"
+    },
+    {
+      "source": "DATA/MY_RUNNER_EVOLUTION_V11.json",
+      "destination": "content/v11/catalogs/MY_RUNNER_EVOLUTION_V11.json",
+      "bytes": 2380,
+      "sha256": "ccb2a5e4e0f8bea270c3ca1e1b250402a64a73ce637d9583c637ecea387ec24d"
+    },
+    {
+      "source": "DATA/PACER_ROSTER_60_V11.json",
+      "destination": "content/v11/catalogs/PACER_ROSTER_60_V11.json",
+      "bytes": 30881,
+      "sha256": "3c73c26e835220cf0b46fd67ab1651266416c416f365a1d3038a9d0a55b6791e"
+    },
+    {
+      "source": "DATA/RUNNING_GEAR_192_V11.json",
+      "destination": "content/v11/catalogs/RUNNING_GEAR_192_V11.json",
+      "bytes": 58085,
+      "sha256": "c613cc66304f99eb6ab6fec6349a7c157a4dfa749326198f4a80168a47939746"
+    },
+    {
+      "source": "DATA/SCREEN_CATALOG_V11.json",
+      "destination": "content/v11/catalogs/SCREEN_CATALOG_V11.json",
+      "bytes": 3600,
+      "sha256": "8106591811d803b79ed67a9cdbbd98f99dc934b947095c4bbe5aff2ab67f346b"
+    },
+    {
+      "source": "DATA/WORLD_ROUTE_CATALOG_V11.json",
+      "destination": "content/v11/catalogs/WORLD_ROUTE_CATALOG_V11.json",
+      "bytes": 1700896,
+      "sha256": "f4b4f20ca5b3400a50adba0989033ce5e1e4a63793a99704d2136efa7b821916"
+    },
+    {
+      "source": "DATA/ACTIVITY_INTEGRATION_MATRIX_V11.csv",
+      "destination": "requirements/v11/ACTIVITY_INTEGRATION_MATRIX_V11.csv",
+      "bytes": 1110,
+      "sha256": "fc692cad5ed7062ff776b922921c033cae5fc23f7da99d6daaf8db6110cf239e"
+    },
+    {
+      "source": "SPECS/ACCEPTANCE_SCENARIOS_V11.feature",
+      "destination": "requirements/v11/ACCEPTANCE_SCENARIOS_V11.feature",
+      "bytes": 2103,
+      "sha256": "fcead2390bf7e691e3273301dee453fd2fd9939ad30d68963929070cb6ad14f2"
+    },
+    {
+      "source": "SPECS/GACHA_AND_FUSION_V11.yaml",
+      "destination": "requirements/v11/GACHA_AND_FUSION_V11.yaml",
+      "bytes": 673,
+      "sha256": "d868275f81046086c6d224218fc7ff8250946e8c32e63921f147f45d33513c48"
+    },
+    {
+      "source": "SPECS/LEGACY_PURGE_RULES_V11.json",
+      "destination": "requirements/v11/LEGACY_PURGE_RULES_V11.json",
+      "bytes": 896,
+      "sha256": "5889b9650c3d8318e82b95ee4aefdb2a66f2a0eb27cbce9bf81707281e8010e4"
+    },
+    {
+      "source": "SPECS/QUALITY_GATES_V11.yaml",
+      "destination": "requirements/v11/QUALITY_GATES_V11.yaml",
+      "bytes": 801,
+      "sha256": "e9a2754b4c654887c1f4d02e6d86eb24221c6a7fe2a60ce6bd6526d01e7b99cf"
+    },
+    {
+      "source": "SPECS/REAL_RUN_PROGRESS_POLICY_V11.yaml",
+      "destination": "requirements/v11/REAL_RUN_PROGRESS_POLICY_V11.yaml",
+      "bytes": 535,
+      "sha256": "22d405b3a96b4f4e03fcd33358cab8032bd02635fbbc5d2af94d7f333667cf25"
+    },
+    {
+      "source": "SPECS/TASK_DAG_V11.json",
+      "destination": "requirements/v11/TASK_DAG_V11.json",
+      "bytes": 43156,
+      "sha256": "ebc89ca9a299da573314605fc97585f7049676152bdc97c02ff747798844cc5d"
+    },
+    {
+      "source": "SPECS/USER_DIRECTION_LOCK_V11.yaml",
+      "destination": "requirements/v11/USER_DIRECTION_LOCK_V11.yaml",
+      "bytes": 1099,
+      "sha256": "a6bb51f3b4add5997bbe2df93e57c69544052187abf980286f54d66783f47939"
+    },
+    {
+      "source": "SPECS/VISUAL_DIRECTION_LOCK_V11.yaml",
+      "destination": "requirements/v11/VISUAL_DIRECTION_LOCK_V11.yaml",
+      "bytes": 710,
+      "sha256": "3b7cc06a0d885edc53cec1f11adc9114db8ddca4bba547813dc7b4fdec4c9856"
+    },
+    {
+      "source": "DOCS/V11_CHIBI_3D_ART_BIBLE.md",
+      "destination": "docs/v11/V11_CHIBI_3D_ART_BIBLE.md",
+      "bytes": 1864,
+      "sha256": "e3cbf04d2069b3404d23dd5b41f4672a9922460a6e99c9e4736f834cd791a818"
+    },
+    {
+      "source": "DOCS/V11_CORE_LOOP.md",
+      "destination": "docs/v11/V11_CORE_LOOP.md",
+      "bytes": 1182,
+      "sha256": "393fee5ed7eecd9df2f51a5db39682faea5cf723cf3f2574b9e5204d2fd9fb0c"
+    },
+    {
+      "source": "DOCS/V11_PRODUCT_DECISION.md",
+      "destination": "docs/v11/V11_PRODUCT_DECISION.md",
+      "bytes": 1597,
+      "sha256": "1655df87bc4470da18388e8aaf2de1db846217df6df3e1853408a4e7ef00b832"
+    },
+    {
+      "source": "DOCS/V11_PROJECT_STRUCTURE.md",
+      "destination": "docs/v11/V11_PROJECT_STRUCTURE.md",
+      "bytes": 686,
+      "sha256": "9266a843a69e47478a4bbb19e4b487ca70374b2557048e9273c81a6d69f02515"
+    },
+    {
+      "source": "DOCS/V11_REFERENCE_ANALYSIS.md",
+      "destination": "docs/v11/V11_REFERENCE_ANALYSIS.md",
+      "bytes": 1864,
+      "sha256": "80e9f6103f703708513f1f391d5cea59faddd17ff68ae63336abaaa4428467b0"
+    },
+    {
+      "source": "DOCS/V11_SOCIAL_DESIGN.md",
+      "destination": "docs/v11/V11_SOCIAL_DESIGN.md",
+      "bytes": 985,
+      "sha256": "42ae6aedf6df2307cdb6916dc14276d601d1ce66050f83f709e98becf984db30"
+    },
+    {
+      "source": "DOCS/V11_SUPABASE_ARCHITECTURE.md",
+      "destination": "docs/v11/V11_SUPABASE_ARCHITECTURE.md",
+      "bytes": 818,
+      "sha256": "d079504bf19431eab4c301101975105fed1de819801f22771aec87cbe70c22d6"
+    },
+    {
+      "source": "RESEARCH/SOURCE_REGISTRY_V11.csv",
+      "destination": "requirements/v11/SOURCE_REGISTRY_V11.csv",
+      "bytes": 2958,
+      "sha256": "022bd738a4c9b19fa5f9e4c530a66dafae28c880c7fc2821932c26f91df84731"
+    },
+    {
+      "source": "SUPABASE/V11_RLS_MATRIX.csv",
+      "destination": "backend/supabase/V11_RLS_MATRIX.csv",
+      "bytes": 632,
+      "sha256": "3eb5b52715cfb18acb5d8ef85bc325e98a3802ae3716d3799db84c749c773286"
+    },
+    {
+      "source": "SUPABASE/V11_SCHEMA_BLUEPRINT.sql",
+      "destination": "backend/supabase/blueprint/V11_SCHEMA_BLUEPRINT.sql",
+      "bytes": 3199,
+      "sha256": "d99ea7a4a399f3f241ae36870a6e5743947444f971e436a2035725f451371506"
+    },
+    {
+      "source": "VALIDATION/AUDIT_50_V11.json",
+      "destination": "requirements/v11/AUDIT_50_V11.json",
+      "bytes": 7291,
+      "sha256": "ee085cd962f3bf9f51799574a0ad0573e75bb6e3c5e42bac7b0fcdccf3ee7cbb"
+    }
+  ],
+  "excluded_from_runtime": [
+    "VISUAL_REFERENCES/user_reference_only/**",
+    "VISUAL_REFERENCES/v11_original/**",
+    "PROTOTYPE/**",
+    "PROMPT/**"
+  ],
+  "exclusion_reason": "Reference and prompt material was fully reviewed but is not a runtime asset or duplicated repository payload"
+}

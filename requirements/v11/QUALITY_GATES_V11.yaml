@@ -1,0 +1,29 @@
+
+version: 11.0.0
+release_blockers:
+  - any_active_combat_monster_weapon_damage_runtime
+  - my_runner_not_running_on_home
+  - stick_figure_or_capsule_final_character
+  - visual_score_below_90_on_live_home
+  - verified_run_not_dominant_progression
+  - manual_grind_creates_fitness_core
+  - more_than_one_required_daily_chore
+  - checkpoint_count_not_120
+  - final_monthly_km_not_1000
+  - route_count_below_2304
+  - pacer_count_below_60
+  - exposed_table_without_rls
+  - duplicate_run_reward
+  - fake_integration_button
+  - missing_full_sideload_apk
+  - release_asset_sha_mismatch
+visual_score:
+  live_home_min: 90
+  runner_evolution_min: 90
+  stride_leap_min: 90
+  runner_lounge_min: 86
+  all_other_screens_min: 82
+performance:
+  low_end_target_fps: 30
+  high_end_optional_fps: 60
+  reference_ram_gb: 4

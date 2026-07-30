@@ -1,0 +1,170 @@
+// Unity와 V11 Android 직접 GPS·Health Connect·파일 수집 표면을 연결한다.
+package kr.robom.runningup.v11
+
+import android.Manifest
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.health.connect.client.HealthConnectClient
+import androidx.health.connect.client.permission.HealthPermission
+import androidx.health.connect.client.records.DistanceRecord
+import androidx.health.connect.client.records.ExerciseSessionRecord
+import androidx.health.connect.client.request.AggregateRequest
+import androidx.health.connect.client.request.ReadRecordsRequest
+import androidx.health.connect.client.time.TimeRangeFilter
+import com.unity3d.player.UnityPlayer
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import org.json.JSONArray
+import org.json.JSONObject
+import java.time.Instant
+import java.time.temporal.ChronoUnit
+
+object RunningUpV11Bridge {
+    private const val callbackObject = "V11AndroidRunBridge"
+    private const val locationRequestCode = 711
+
+    @JvmStatic
+    fun directGpsCapability(): String {
+        val activity = UnityPlayer.currentActivity ?: return "activity_unavailable"
+        return if (
+            ContextCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) ==
+            PackageManager.PERMISSION_GRANTED
+        ) "ready" else "permission_required"
+    }
+
+    @JvmStatic
+    fun startDirectGps(): String {
+        val activity = UnityPlayer.currentActivity ?: return "activity_unavailable"
+        if (
+            ContextCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) !=
+            PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                activity,
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                locationRequestCode,
+            )
+            return "permission_requested"
+        }
+
+        val intent = Intent(activity, DirectRunService::class.java)
+            .setAction(DirectRunService.ACTION_START)
+        ContextCompat.startForegroundService(activity, intent)
+        return "started"
+    }
+
+    @JvmStatic
+    fun stopDirectGps(): String {
+        val activity = UnityPlayer.currentActivity ?: return "activity_unavailable"
+        activity.startService(
+            Intent(activity, DirectRunService::class.java)
+                .setAction(DirectRunService.ACTION_STOP),
+        )
+        return "stopping"
+    }
+
+    @JvmStatic
+    fun healthConnectCapability(): String {
+        val activity = UnityPlayer.currentActivity ?: return "activity_unavailable"
+        return when (HealthConnectClient.getSdkStatus(activity)) {
+            HealthConnectClient.SDK_AVAILABLE -> "available"
+            HealthConnectClient.SDK_UNAVAILABLE_PROVIDER_UPDATE_REQUIRED -> "provider_update_required"
+            else -> "unavailable"
+        }
+    }
+
+    @JvmStatic
+    fun requestHealthConnectPermission(): String {
+        val activity = UnityPlayer.currentActivity ?: return "activity_unavailable"
+        if (HealthConnectClient.getSdkStatus(activity) != HealthConnectClient.SDK_AVAILABLE) {
+            return "unavailable"
+        }
+
+        activity.startActivity(Intent(activity, HealthPermissionActivity::class.java))
+        return "permission_screen_opened"
+    }
+
+    @JvmStatic
+    fun readRecentHealthRuns(): String {
+        val activity = UnityPlayer.currentActivity ?: return "activity_unavailable"
+        if (HealthConnectClient.getSdkStatus(activity) != HealthConnectClient.SDK_AVAILABLE) {
+            return "unavailable"
+        }
+
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val client = HealthConnectClient.getOrCreate(activity)
+                val permissions = setOf(
+                    HealthPermission.getReadPermission(ExerciseSessionRecord::class),
+                    HealthPermission.getReadPermission(DistanceRecord::class),
+                )
+                if (!client.permissionController.getGrantedPermissions().containsAll(permissions)) {
+                    send("OnHealthConnectStatus", "permission_required")
+                    return@launch
+                }
+
+                val response = client.readRecords(
+                    ReadRecordsRequest(
+                        recordType = ExerciseSessionRecord::class,
+                        timeRangeFilter = TimeRangeFilter.between(
+                            Instant.now().minus(365, ChronoUnit.DAYS),
+                            Instant.now(),
+                        ),
+                    ),
+                )
+                val payload = JSONArray()
+                response.records
+                    .filter { it.exerciseType == ExerciseSessionRecord.EXERCISE_TYPE_RUNNING }
+                    .forEach { record ->
+                        val aggregate = client.aggregate(
+                            AggregateRequest(
+                                metrics = setOf(DistanceRecord.DISTANCE_TOTAL),
+                                timeRangeFilter = TimeRangeFilter.between(
+                                    record.startTime,
+                                    record.endTime,
+                                ),
+                            ),
+                        )
+                        val distanceMeters =
+                            aggregate[DistanceRecord.DISTANCE_TOTAL]?.inMeters ?: 0.0
+                        payload.put(
+                            JSONObject()
+                                .put("sourceRecordId", record.metadata.id)
+                                .put("startedAtUnixMilliseconds", record.startTime.toEpochMilli())
+                                .put("endedAtUnixMilliseconds", record.endTime.toEpochMilli())
+                                .put("distanceMeters", distanceMeters.toInt())
+                                .put(
+                                    "movingSeconds",
+                                    (record.endTime.epochSecond - record.startTime.epochSecond).toInt(),
+                                )
+                                .put("title", record.title ?: ""),
+                        )
+                    }
+                send("OnHealthConnectPayload", payload.toString())
+            } catch (error: Throwable) {
+                send("OnHealthConnectStatus", "read_error:${safe(error.message)}")
+            }
+        }
+        return "reading"
+    }
+
+    @JvmStatic
+    fun pickTrackFile(): String {
+        val activity = UnityPlayer.currentActivity ?: return "activity_unavailable"
+        activity.startActivity(Intent(activity, TrackFilePickerActivity::class.java))
+        return "picker_opened"
+    }
+
+    internal fun send(method: String, message: String) {
+        UnityPlayer.UnitySendMessage(callbackObject, method, message)
+    }
+
+    private fun safe(value: String?): String =
+        value.orEmpty().replace('\n', ' ').take(120)
+}

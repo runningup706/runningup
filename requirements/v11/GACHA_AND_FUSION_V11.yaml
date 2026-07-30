@@ -1,0 +1,20 @@
+
+rarity_order: [C, B, A, S, SS, SSR, UR, CROWN]
+direct_draw_max: SSR
+crown_source: [ascension, lifetime_running, monthly_world_crown]
+draw_currency_p0: gameplay_and_verified_run_tickets
+server_authoritative: true
+show_before_draw: [card_odds, rarity_odds, pity, banner_pool, version, duplicate_conversion]
+ascension:
+  safe_fusion:
+    result: guaranteed_normal_ascension
+    consumes: duplicates_and_materials
+  brilliant_finish:
+    result: chance_for_bonus_tier_or_cosmetic
+    failure_does_not_cancel_base_ascension: true
+    pity_increases_on_miss: true
+forbidden:
+  - destroying_favorite_base_card
+  - client_random_result
+  - hidden_odds
+  - direct_crown_sale_in_p0

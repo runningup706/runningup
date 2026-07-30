@@ -1,0 +1,9 @@
+﻿source,platform,launch_status,method,approval_or_cost,fallback,fake_button_forbidden
+RunningUp Direct GPS,Android,P0_ACTIVE,Kotlin foreground location service,none,local journal,yes
+Health Connect,Android,P0_ACTIVE,official Health Connect client,user permission,direct GPS,yes
+FIT/GPX/TCX Import,Android,P0_ACTIVE,local file picker and parser,none,manual file import,yes
+Samsung Health Data SDK,Android,FEATURE_FLAG_AFTER_PARTNER_APPROVAL,official partner SDK,package and signing registration,Health Connect/file import,yes
+Garmin Activity API,Cloud,FEATURE_FLAG_AFTER_APPROVAL,official Garmin Connect Developer Program,approval; commercial terms may apply,FIT file/Strava/Health Connect path,yes
+Strava API,Cloud,FEATURE_FLAG_AFTER_OAUTH_REVIEW,OAuth + webhook,API agreement and rate limits,file import,yes
+Apple Health/Watch,iOS companion,P1_IOS,HealthKit/WorkoutKit,iOS app and user permission,Strava/Garmin/file path on Android,yes
+Nike Run Club,Cross-service,NO_DIRECT_API_ASSUMPTION,only via official sync path,no public direct API assumed,Strava/HealthKit/Health Connect imported result,yes

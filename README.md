@@ -1,67 +1,24 @@
-# RunningUp (러닝업)
+# RunningUp V11
 
-A 3D real-run linked idle action RPG for Android. Your verified real-world running is the
-only thing that grows your character, and a month of running is a journey across twelve
-continents toward a single final goal: **1000 km, the World Crown**.
+<!-- V11 새 제품의 실행 표면과 현재 사실을 안내한다. -->
 
-**Status: pre-alpha (`0.1.0-alpha.1`).** Backend, domain engine and launch content data are
-implemented and tested. The Unity client and the Android build are not — see
-[`docs/CURRENT_STATE.md`](docs/CURRENT_STATE.md) for an exact, unembellished breakdown.
+RunningUp V11은 검증된 현실 러닝을 한 명의 3등신 3D `My Runner`가 세계를
+달리는 여정으로 변환하는 Android 세로형 러닝 게임이다.
 
-## The product in five fixed decisions
+이 브랜치는 V5~V10 코드를 재사용하지 않은 clean rebuild다. 현재 정본 계약,
+전체 출시 카탈로그와 Gate 0 삭제 증거가 들어 있으며, Unity·Android·Supabase
+구현은 각 Gate의 테스트와 실행 증거를 함께 추가한다.
 
-These are user decisions, not engineering preferences. They are enforced by tests, database
-constraints and a static scanner — see [`docs/USER_DIRECTION_LOCK.md`](docs/USER_DIRECTION_LOCK.md).
+## 제품 잠금
 
-1. **1000 km is the end of the month.** 52 checkpoints from 0 to 1000 km, 11 ranks plus the
-   World Crown, and nothing above it. Running past 1000 km still earns its ordinary reward;
-   it just does not invent a new tier.
-2. **Everyone starts at their own level on day one.** A marathon runner is never made to
-   finish a 1 km tutorial, and a first-time runner is never handed a marathon. The Runner
-   Passport recommends; it never restricts.
-3. **Running only.** Road, track, treadmill and indoor. Run-walk is a beginner running
-   method. No trail, hiking, cycling or elevation progression — and no weather or
-   time-of-day multipliers.
-4. **The world is broad on launch day.** 12 continents, 96 regions, 72 main stages, 24 side
-   stages and 12 characters, all real. No "coming soon" counted as content.
-5. **Verified running is the only source of power.** Money, ads, idle time, cosmetics and
-   referrals contribute exactly zero.
+- Live Journey Home에서 My Runner가 항상 달린다.
+- 검증 러닝이 영구 성장의 85% 이상을 담당한다.
+- 하루 필수 콘텐츠는 Daily Run Contract 하나다.
+- 12대륙 × 16지역 × 12코스 = 2304코스다.
+- My Runner 12형태, Pacer 60명, 카드 360장, 러닝 장비 192개다.
+- 월간 120개 체크포인트의 마지막은 유일한 1000km World Crown이다.
+- 직접 GPS·Health Connect·FIT/GPX/TCX가 Android P0다.
 
-## Repository map
+정본 정독과 무결성 증거는 `docs/v11/READ_COMPLETE.md`, 이전 코드 삭제 증거는
+`docs/v11/GATE_0_REPORT.md`와 `DEPRECATED_PURGE_MANIFEST.json`에서 확인한다.
 
-| Path | What lives there |
-|---|---|
-| `tools/lib/` | The domain engine: Monthly Apex, Runner Passport, reward, momentum, best efforts |
-| `tools/tests/` | 68 unit tests over that engine |
-| `tools/content-factory/` | Authored design tables + the generator that expands them |
-| `tools/content-validator/` | The hard launch-content gate, including duplicate detection |
-| `tools/direction-lock/` | The forbidden-concept scanner |
-| `content/launch/` | Generated canonical content JSON (do not hand-edit) |
-| `content/localization/` | ko + en catalogues |
-| `backend/supabase/migrations/` | Schema, RLS, ledgers, the atomic reward transaction |
-| `backend/supabase/tests/pgtap/` | 123 database tests |
-| `native/android-running-plugin/` | Kotlin run capture, journal and upload queue |
-| `client/unity/` | Unity client skeleton |
-| `docs/` | Gates, decisions, audits, traceability |
-
-## Getting started
-
-```bash
-bash tools/bootstrap/doctor.sh   # what this machine can and cannot build
-npm run test:fast                # direction lock + content validation + unit tests
-bash tools/test/db.sh            # migrations, seed and the pgTAP suite
-npm run test:all                 # everything above, in CI order
-```
-
-`tools/test/db.sh` expects a reachable PostgreSQL 16 with the `pgtap` extension available.
-
-## Regenerating content
-
-`content/launch/**` and `backend/supabase/seed.sql` are **generated**. Edit the authored
-design tables instead, then regenerate — CI fails if the committed tree and the generated
-output disagree.
-
-```bash
-node tools/content-factory/build.mjs      # design tables -> content JSON + localization
-node tools/content-factory/emit-seed.mjs  # content JSON -> seed.sql
-```

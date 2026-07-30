@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "product_version": "11.0.0",
+  "catalogs": {
+    "continents": 12,
+    "regions": 192,
+    "routes": 2304,
+    "restoration_beats": 11520,
+    "mastery_stamps": 6912,
+    "my_runner_forms": 12,
+    "pacers": 60,
+    "cards": 360,
+    "running_gear": 192,
+    "monthly_claimable_checkpoints": 120,
+    "monthly_final_km": 1000
+  },
+  "source": "content/v11/catalogs",
+  "playability_status": "DATA_IMPORTED_NOT_PLAYABLE_PASS"
+}
+

@@ -1,148 +1,109 @@
-# HANDOFF
+# RunningUp V11 handoff
 
-**Session:** 2026-07-29 · Claude Code (`claude-opus-5`) · branch `claude/runningup-3d-android-dev-3c8gnp`
+<!-- 다음 작업자가 Production Art 차단 경계를 훼손하지 않고 바로 이어가도록 상태를 기록한다. -->
 
-## Overall status
+## 현재 상태
 
-```
-RUNNINGUP 3D REAL-RUN RPG: BLOCKED_TOOLCHAIN
-```
+`ITERATION_4_FUNCTIONAL_READY_BLOCKED_RELEASE`
 
-Backend, domain engine, direction-lock enforcement and the full launch content dataset are
-implemented and passing. The Unity client, the Android APK/AAB and every physical-device
-measurement are impossible in this environment and are reported as blocked, not as done.
+V11 정본은 전부 읽고 무결성을 검증했다. V5~V10 활성 런타임은 clean rebuild
+원칙에 따라 제거됐고 별도 legacy backup 폴더는 없다. V11 전체 카탈로그,
+Supabase, Unity 기능 프로토타입, Android P0 bridge와 자동 검증 기반은 실행된다.
 
-## Current gate
+이 저장소는 반복 4에서 v4.0.0 APEX1000 트리를 V11 clean rebuild로 교체했다.
+122개 파일을 제거했고 그중 33개가 금지 런타임 용어를 포함했다. 내역은
+`DEPRECATED_PURGE_MANIFEST.json`의 두 번째 purge 기록에 있다.
 
-| Gate | State | Note |
-|---|---|---|
-| Gate 0 — read everything, lock the direction | **PASS** | 17/17 checksums verified; split concat reproduces the canonical hash |
-| Gate 1 — reproducible foundation + first Android smoke | **PARTIAL** | Tooling, scripts and CI exist. `BLOCKED_TOOLCHAIN` for the APK. |
-| Gate 6b — Unity domain layer | **PASS** | Compiled and tested by .NET without an Editor; conformance-locked to the JS engine |
-| Gate 2 — Supabase local, security, ledger | **PASS (adapted)** | Verified on real PostgreSQL 16 + pgTAP; see ADR-002 |
-| Gate 3 — Runner Passport, all start routes | **PASS (domain)** | 8 fixtures green; no UI exists yet |
-| Gate 4 — real run capture, verification, recovery | **PARTIAL** | Journal compiled and tested on the JVM (9/9); verification and anti-cheat engine tested with a 53-fixture corpus. The foreground service and Health Connect need the Android SDK: `BLOCKED_TOOLCHAIN`. |
-| Gate 5 — reward, momentum, Monthly Apex 1000 | **PASS** | 44 pgTAP + 18 unit tests over the full ladder |
-| Gate 6 — content pipeline + duplicate validator | **PASS** | Caught and fixed a real reskin |
-| Gate 7 — full launch content | **DATA_PASS** | All 18 categories at floor as validated data; no playable scenes |
-| Gate 8 — RPG, social, season, operations | **PARTIAL** | Auto-battle, continent mechanics, boss phases, modifiers and world restoration are playable end to end. Social, season and live-ops remain schema groundwork. |
-| Gate 9 — quality, performance, 10 audits | **PARTIAL** | 10 audits complete in `docs/audits/`; 4 high-severity defects found and fixed. Performance is `BLOCKED_DEVICE`. |
-| Gate 10 — release, APK, GitHub Release | **BLOCKED_TOOLCHAIN** | No APK can be produced here |
+현재 화면은 기능 프로토타입이며 Production Art가 아니다. 시각 기준선은 평균
+22.29점으로 `FUNCTIONAL_PROTOTYPE_REJECTED`다. 기본 도형·임시 캐릭터·단색
+도시를 정식 아트로 확장하지 않는다.
 
-## Verified evidence from this session
+## 현재 확인한 PASS
 
-Every number below came from a command that was actually run.
+- 콘텐츠 검증 53/53.
+- Node 회귀 테스트 16/16.
+- Supabase pgTAP 60/60.
+- 업로드 판정 도메인 테스트 61/61. `npm run test:domain`은 Unity Editor 없이
+  .NET SDK 8로 `V11UploadPolicy.cs` **원본 파일**을 컴파일해 실행한다.
+- Unity EditMode 17/17, PlayMode 1/1 (반복 3 기준. 반복 4가 추가한 4개
+  EditMode 테스트는 Editor가 있는 머신에서 다시 돌려야 한다).
+- Unity 6000.3.20f1, URP·Shader Graph 17.3.0, Cinemachine 3.1.7,
+  Animation Rigging 1.4.1.
+- Android 16 API 36 에뮬레이터에서 최신 V11 smoke APK 업데이트 설치,
+  cold start 1,231ms, 홈·크루 활성 탭 표시와 Supabase 상태 표시,
+  fatal exception·Unity 오류 0건을 확인했다.
+- smoke APK는 102,232,511 bytes이며 SHA-256은
+  `e27a4a77427e62332486ebc408a0eefaad4bca7f8ce80386e00f9d117ad7d94b`다.
+- APK의 ARM64, portrait, min SDK 28, target SDK 36, GPS·foreground
+  service·Health Connect 권한, v2 서명, zip 정렬을 독립 검증했다.
+- APK ZIP의 최대 local-entry 간격은 4,096 bytes이며 100KB 초과 비정상
+  간격은 0건이다. 모든 Android 빌드는 clean cache를 강제하고 독립 layout
+  verifier가 이 회귀를 차단한다.
+- 서버 승인 전에는 영구 성장을 반영하지 않고 atomic offline queue에 보관한다.
+- Supabase publishable config, 메모리 전용 인증 세션, 401·403 refresh,
+  `ingest_verified_run` 순차 uploader가 소스에 포함됐다.
+- 반복 4가 업로더에서 고친 것: 실패한 러닝 하나가 이후 모든 러닝을 영구히
+  막던 head-of-line 정지, RPC `AUTH_REQUIRED`(errcode 42501 → HTTP 403)가
+  세션을 갱신하지 못하던 문제, 409/duplicate를 영구 거절로 보던 오분류,
+  상한 없는 무한 재시도, 지터 없는 backoff, coroutine 예외 뒤 동기화가 영영
+  멈추던 문제, 재로그인 뒤에도 backoff를 기다리던 문제. 자세한 내용은
+  `docs/v11/UPGRADE_LOOP_ITERATION_4.md`에 있다.
+- 직접 GPS foreground service는 프로세스 재생성 뒤 같은 NDJSON 파일에 이어 쓴다.
 
-| Check | Command | Result |
-|---|---|---|
-| Bundle integrity | `sha256sum -c SHA256SUMS.txt` | 17/17 OK |
-| Split reconstruction | `cat 01..08 \| sha256sum` | matches `b80ecb10…1978` |
-| Direction lock | `node tools/direction-lock/scan.mjs` | 94 files, 19 patterns, **0 violations** |
-| Content validation | `node tools/content-validator/validate.mjs` | **all gates passed**, 18/18 categories at floor |
-| Domain engine | `node --test "tools/tests/*.test.mjs"` | **99 pass / 0 fail** |
-| Migrations from empty DB | `for f in migrations/*.sql; psql -f $f` | 8/8 applied clean |
-| Seed + content gate | `psql -f backend/supabase/seed.sql` | 16 categories verified in-database |
-| Database suite | `pg_prove backend/supabase/tests/pgtap/*.sql` | **Files=7, Tests=1128, Result: PASS** |
-| Run-capture core | `gradle test` (Kotlin/JVM) | **22 run, 0 failed** |
-| Unity domain layer | `dotnet test` (C#) | **29 passed, 0 failed** |
-| Anti-cheat simulation | 38 normal + 14 attack fixtures | **precision 100%, recall 100%, false positives 0** |
-| **Playable loop** | `node client/cli/smoke-play.mjs` | **4/4 ability levels complete the full loop** |
-| JS vs C# conformance | 19 cases replayed by the client | **identical** |
-| JS vs SQL conformance | 18 cases, 225 steps, 992 assertions | **identical** |
+## 이 저장소의 환경 차단
 
-## Launch content actually implemented
+- Unity Editor가 없다. `npm run test:unity`는 `BLOCKED_TOOLCHAIN`이다.
+- Android SDK가 없다(`dl.google.com` 네트워크 정책 차단).
+  `npm run build:android:smoke`는 `BLOCKED_TOOLCHAIN`이다.
+- 따라서 반복 3의 smoke APK
+  `e27a4a77427e62332486ebc408a0eefaad4bca7f8ce80386e00f9d117ad7d94b`는
+  반복 4의 업로더 수정을 **포함하지 않는다**. Unity와 Android SDK가 있는
+  머신에서 반드시 다시 빌드해야 한다.
 
-| Category | Count | Floor | State |
-|---|---:|---:|---|
-| Continents | 12 | 12 | DATA_PASS |
-| Region nodes | 96 | 96 | DATA_PASS |
-| Main stages | 72 | 72 | DATA_PASS |
-| Side stages | 24 | 24 | DATA_PASS |
-| Playable characters | 12 | 12 | DATA_PASS |
-| Character episodes | 36 | 36 | DATA_PASS |
-| Tactical skills | 48 | 48 | DATA_PASS |
-| Tactical relics | 72 | 72 | DATA_PASS |
-| Standard enemy families | 24 | 24 | DATA_PASS |
-| Elite enemy families | 12 | 12 | DATA_PASS |
-| Continent bosses | 12 | 12 | DATA_PASS |
-| World bosses | 4 | 4 | DATA_PASS |
-| Apex 1000 boss | 1 | 1 | DATA_PASS |
-| Companions | 12 | 12 | DATA_PASS |
-| Equipable cosmetics | 96 | 96 | DATA_PASS |
-| Story chapters | 12 | 12 | DATA_PASS |
-| Launch season | 1 | 1 | DATA_PASS |
-| Event arcs | 3 | 3 | DATA_PASS |
+## 정식 빌드 차단 상태
 
-**`DATA_PASS` means:** stable IDs, ko + en localization, valid asset addresses, a reachable
-route graph, backend mapping, reward wiring, automated validation and per-item uniqueness.
-**It does not mean playable** — there is no Unity Editor here, so no scene or prefab has
-been built. Continents playable: **0/12**. Characters playable: **0/12**. See ADR-003.
+`BLOCKED_ART_ASSET`
 
-## Direction lock status
+- Blender가 설치되어 있지 않다.
+- 라이선스 확인 완료 My Runner, 도시, 달리기 모션 원본이 없다.
+- Production Scene, Production prefab, 9개 모션, Shader Graph 결과,
+  라이선스 증거가 없다.
+- 동일 1080x1920 Production 캡처와 사람의 미적 평가가 없다.
+- 따라서 `massGenerationAllowed=false`이며 FULL_SIDELOAD는 의도대로 빌드
+  전에 차단된다.
 
-| Lock | State | How it is held |
-|---|---|---|
-| DL-1 · 1000 km final, 52 checkpoints | **PASS** | Enum order, 4 CHECK constraints, 44 pgTAP tests, 18 unit tests, static scan |
-| DL-2 · every level starts on day one | **PASS** | 8 fixtures; full library selectable by all; no `requires_goal_id` column exists |
-| DL-3 · running only | **PASS** | 4-value enum makes trail/hiking/cycling a cast error; 19 forbidden reward keys throw |
-| DL-4 · broad launch world | **DATA_PASS** | All floors met as data; playability blocked on Unity |
-| DL-5 · verified running is the only power | **PASS** | `core_power_source` enum; cosmetics pinned to zero by CHECK |
+`BLOCKED_SUPABASE_PROJECT`
 
-Forbidden `1250` / `1500` / `2000` / `Endless` scan: **0 occurrences** outside the lock
-document, the scanner itself and the tests that assert their absence.
+- Supabase CLI 인증은 동작하지만 확인된 프로젝트는 RunningUp 전용이 아니다.
+- 기존 다른 서비스 DB에는 V11 migration을 적용하지 않았다.
+- RunningUp 전용 project ref 또는 새 프로젝트 생성 승인이 필요하다.
+- 인증 세션과 `ingest_verified_run` uploader 소스·회귀 테스트는 구현됐지만
+  RunningUp 전용 원격 프로젝트에서 실제 JWT·RPC 통합 검증은 아직 없다.
 
-## External blockers — what a human would need to do
+`BLOCKED_REAL_DEVICE_QA`
 
-| Blocker | Status | Minimum action required |
-|---|---|---|
-| No Android SDK (`dl.google.com` refused by network policy) | `BLOCKED_TOOLCHAIN` | Run the build where `dl.google.com` is reachable, or pre-install the SDK into the image |
-| No Unity Editor or licence | `BLOCKED_TOOLCHAIN` | Provide Unity 6.3 LTS + a licence on the build machine |
-| No Docker, so no Supabase CLI stack | `BLOCKED_TOOLCHAIN` (mitigated) | Optional — the SQL is verified against real PostgreSQL + pgTAP |
-| No physical Android device | `BLOCKED_DEVICE` | Attach a 4 GB-class device with USB debugging for fps/battery/thermal |
-| No Google Play credentials | `BLOCKED_ACCOUNT` | Owner authorises Play access; production rollout needs explicit approval regardless |
+- 실제 Android 기기의 화면 꺼짐 GPS, Health Connect 기록, 60분 발열·배터리·메모리 검증이 없다.
 
-## Next five exact commands
+정확한 추천 자산과 라이선스·버전·URP 조건은 `ASSET_SELECTION.md`에 있다.
+구매 또는 기존 합법 라이선스 확인 뒤 자산을
+`Assets/RunningUp/ProductionArt/Vendor` 아래로만 인입한다.
 
-```bash
-npm run test:fast                          # 1. confirm the tree is still green
-bash tools/test/db.sh                      # 2. confirm the database suite is still green
-node tools/content-factory/build.mjs       # 3. regenerate content after editing design tables
-node tools/content-factory/emit-seed.mjs   # 4. regenerate seed.sql to match
-bash tools/bootstrap/doctor.sh             # 5. re-check whether Unity/Android became available
-```
+## 다음 실행 순서
 
-## Generated evidence
-
-| Document | Source | Regenerated by |
-|---|---|---|
-| `docs/RLS_MATRIX.md` | `pg_catalog` on a migrated database | `tools/test/db.sh` |
-| `docs/DATABASE_SCHEMA.md` | 52 relations, 421 columns, 237 constraints | `tools/test/db.sh` |
-| `artifacts/test-evidence-manifest.json` | 7 suites that ran, 7 items blocked | `tools/test/db.sh` |
-
-These are generated rather than written, because a security document that has drifted from
-the schema states the wrong thing with confidence. CI fails if the committed copies differ
-from a fresh generation.
-
-## Known issues — read before starting anything
-
-`docs/KNOWN_ISSUES.md` lists every defect, gap and piece of debt found so far, with file
-locations and a recommended order of attack. The largest single item: the authoritative SQL
-reward transaction computes 7 components while the design calls for 15, so eight of them —
-including distance-specific performance and personal improvement — are currently worth zero
-to a real user.
-
-## Read these first next session
-
-1. `docs/USER_DIRECTION_LOCK.md`
-2. `docs/CURRENT_STATE.md`
-3. `requirements/REQUIREMENTS_TRACEABILITY.csv`
-4. `docs/DECISIONS.md` (ADR-002 and ADR-003 explain the two adaptations made here)
-5. `docs/audits/`
-
-## Do not
-
-- Do not re-promise the launch counts each session. Continue from the real `DATA_PASS` /
-  `PLAYABLE_PASS` numbers in this file.
-- Do not shrink to three continents or add a tier above 1000 km to make progress look
-  easier. Both fail CI immediately.
-- Do not report a `BLOCKED_*` item as complete.
+0. Unity Editor와 Android SDK가 있는 머신에서 `npm run test:unity`와
+   `npm run build:android:smoke`를 돌려 반복 4의 업로더 수정이 포함된 APK를
+   다시 만든다.
+1. RunningUp 전용 Supabase project ref를 확인하고 migration을 원격 적용한다.
+2. 현재 Unity 인증 세션·RPC uploader를 전용 프로젝트의 실제 JWT에 연결해
+   승인 뒤에만 영구 성장시키는 원격 통합 테스트를 통과한다. 특히 403
+   `AUTH_REQUIRED`, 409 duplicate, 앱 강제 종료 뒤 재업로드를 실제 서버에서
+   확인한다.
+3. Blender를 설치하거나 설치된 바이너리 경로를 제공한다.
+4. `ASSET_SELECTION.md`의 캐릭터·도시·모션 자산을 구매 또는 선택한다.
+5. My Runner 1명과 도시 코스 1개만 Production Art Vertical Slice로 만든다.
+6. 1080x1920 목표·Unity 캡처와 2160x1920 비교 이미지를 생성한다.
+7. 사람이 7개 항목을 평가해 평균 90점, 개별 85점, primitive·placeholder
+   0건을 확인한다.
+8. 첫 Vertical Slice가 합격한 뒤에만 모듈형 시스템과 대량 제작을 시작한다.
+9. 이후 FULL_SIDELOAD, 실기기 P0 검증, 배포 서명, GitHub Release와
+   재다운로드 SHA 검증을 진행한다.

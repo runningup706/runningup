@@ -1,0 +1,31 @@
+<!--
+  Unity Editor 없이 업로드 판정 규칙을 검증한다.
+
+  V11UploadPolicy.cs는 UnityEngine을 참조하지 않으므로 평범한 .NET SDK로
+  그대로 컴파일된다. Editor가 없는 CI와 이 개발 환경에서도 401/403 refresh,
+  409/duplicate, 재시도·포기·jitter 규칙이 실제로 실행되어 검증된다.
+
+  NuGet 패키지에 의존하지 않는 콘솔 러너다. 실패하면 종료 코드가 1이다.
+-->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RootNamespace>RunningUp.V11.Domain.Tests</RootNamespace>
+    <AssemblyName>RunningUp.V11.Domain.Tests</AssemblyName>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <!-- 사본이 아니라 런타임이 쓰는 바로 그 파일을 컴파일한다. -->
+    <Compile Include="../../unity/Assets/RunningUp/RunVerification/V11UploadPolicy.cs"
+             Link="V11UploadPolicy.cs" />
+  </ItemGroup>
+
+</Project>

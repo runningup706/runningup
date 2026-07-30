@@ -1,0 +1,386 @@
+BEGIN
+ plan  
+-------
+ 1..32
+(1 row)
+
+          has_schema          
+------------------------------
+ ok 1 - private schema exists
+(1 row)
+
+         has_schema         
+----------------------------
+ ok 2 - audit schema exists
+(1 row)
+
+       has_table        
+------------------------
+ ok 3 - profiles exists
+(1 row)
+
+        has_table         
+--------------------------
+ ok 4 - my_runners exists
+(1 row)
+
+         has_table         
+---------------------------
+ ok 5 - friendships exists
+(1 row)
+
+      has_table      
+---------------------
+ ok 6 - crews exists
+(1 row)
+
+           has_table            
+--------------------------------
+ ok 7 - crew_memberships exists
+(1 row)
+
+          has_table           
+------------------------------
+ ok 8 - world_progress exists
+(1 row)
+
+         has_table          
+----------------------------
+ ok 9 - monthly_apex exists
+(1 row)
+
+           has_table            
+--------------------------------
+ ok 10 - daily contracts exists
+(1 row)
+
+           has_table           
+-------------------------------
+ ok 11 - canonical runs exists
+(1 row)
+
+          has_table           
+------------------------------
+ ok 12 - reward ledger exists
+(1 row)
+
+              has_view              
+------------------------------------
+ ok 13 - safe runner summary exists
+(1 row)
+
+            has_function            
+------------------------------------
+ ok 14 - verified run ingest exists
+(1 row)
+
+              has_pk              
+----------------------------------
+ ok 15 - profiles has primary key
+(1 row)
+
+            has_pk             
+-------------------------------
+ ok 16 - runs have primary key
+(1 row)
+
+          col_not_null           
+---------------------------------
+ ok 17 - fingerprint is required
+(1 row)
+
+              col_not_null              
+----------------------------------------
+ ok 18 - ledger idempotency is required
+(1 row)
+
+              is              
+------------------------------
+ ok 19 - profiles RLS enabled
+(1 row)
+
+               is               
+--------------------------------
+ ok 20 - my_runners RLS enabled
+(1 row)
+
+                 is                 
+------------------------------------
+ ok 21 - world_progress RLS enabled
+(1 row)
+
+                is                
+----------------------------------
+ ok 22 - monthly_apex RLS enabled
+(1 row)
+
+                      is                      
+----------------------------------------------
+ ok 23 - all exposed-table policies installed
+(1 row)
+
+                    is                     
+-------------------------------------------
+ ok 24 - client cannot read canonical runs
+(1 row)
+
+                     is                     
+--------------------------------------------
+ ok 25 - client cannot insert reward ledger
+(1 row)
+
+                     is                     
+--------------------------------------------
+ ok 26 - client cannot forge world progress
+(1 row)
+
+                    is                    
+------------------------------------------
+ ok 27 - client cannot forge monthly apex
+(1 row)
+
+                        is                         
+---------------------------------------------------
+ ok 28 - client cannot insert forged runner growth
+(1 row)
+
+                         is                          
+-----------------------------------------------------
+ ok 29 - client cannot rewrite profile creation time
+(1 row)
+
+                     is                     
+--------------------------------------------
+ ok 30 - client can update own display name
+(1 row)
+
+                             is                              
+-------------------------------------------------------------
+ ok 31 - client can use guarded friendship status transition
+(1 row)
+
+                          is                           
+-------------------------------------------------------
+ ok 32 - client cannot rewrite friendship participants
+(1 row)
+
+ finish 
+--------
+(0 rows)
+
+ROLLBACK
+BEGIN
+ plan  
+-------
+ 1..20
+(1 row)
+
+INSERT 0 1
+                   is                   
+----------------------------------------
+ ok 1 - account trigger creates profile
+(1 row)
+
+                    is                    
+------------------------------------------
+ ok 2 - account trigger creates My Runner
+(1 row)
+
+SET
+              set_config              
+--------------------------------------
+ 11111111-1111-4111-8111-111111111111
+(1 row)
+
+SELECT 1
+           is            
+-------------------------
+ ok 3 - first run is new
+(1 row)
+
+                         is                         
+----------------------------------------------------
+ ok 4 - first run completes the only daily contract
+(1 row)
+
+                   is                    
+-----------------------------------------
+ ok 5 - 85 percent goes to runner growth
+(1 row)
+
+                  is                  
+--------------------------------------
+ ok 6 - 10 percent goes to pacer bond
+(1 row)
+
+                  is                  
+--------------------------------------
+ ok 7 - 5 percent goes to restoration
+(1 row)
+
+SELECT 1
+                              is                              
+--------------------------------------------------------------
+ ok 8 - additional run does not create another daily contract
+(1 row)
+
+                     is                      
+---------------------------------------------
+ ok 9 - additional run keeps standard reward
+(1 row)
+
+SELECT 1
+                   is                   
+----------------------------------------
+ ok 10 - same fingerprint is idempotent
+(1 row)
+
+                          is                           
+-------------------------------------------------------
+ ok 11 - duplicate does not increase lifetime distance
+(1 row)
+
+                        is                         
+---------------------------------------------------
+ ok 12 - monthly distance includes two unique runs
+(1 row)
+
+                       is                        
+-------------------------------------------------
+ ok 13 - route progress includes two unique runs
+(1 row)
+
+                    is                     
+-------------------------------------------
+ ok 14 - exactly one daily contract exists
+(1 row)
+
+RESET
+                    is                    
+------------------------------------------
+ ok 15 - exactly two canonical runs exist
+(1 row)
+
+                     is                      
+---------------------------------------------
+ ok 16 - exactly two immutable rewards exist
+(1 row)
+
+               throws_ok                
+----------------------------------------
+ ok 17 - reward ledger cannot be edited
+(1 row)
+
+SET
+              set_config              
+--------------------------------------
+ 11111111-1111-4111-8111-111111111111
+(1 row)
+
+              throws_ok              
+-------------------------------------
+ ok 18 - implausible run is rejected
+(1 row)
+
+               throws_ok               
+---------------------------------------
+ ok 19 - unapproved source is rejected
+(1 row)
+
+RESET
+ set_config 
+------------
+ 
+(1 row)
+
+              throws_ok               
+--------------------------------------
+ ok 20 - anonymous ingest is rejected
+(1 row)
+
+ finish 
+--------
+(0 rows)
+
+ROLLBACK
+BEGIN
+ plan 
+------
+ 1..8
+(1 row)
+
+INSERT 0 3
+SET
+              set_config              
+--------------------------------------
+ 22222222-2222-4222-8222-222222222222
+(1 row)
+
+INSERT 0 1
+                       is                        
+-------------------------------------------------
+ ok 1 - requester can create one pending request
+(1 row)
+
+                 throws_ok                  
+--------------------------------------------
+ ok 2 - requester cannot accept own request
+(1 row)
+
+RESET
+SET
+              set_config              
+--------------------------------------
+ 33333333-3333-4333-8333-333333333333
+(1 row)
+
+                  lives_ok                   
+---------------------------------------------
+ ok 3 - addressee can accept pending request
+(1 row)
+
+                  is                  
+--------------------------------------
+ ok 4 - accepted friendship is stored
+(1 row)
+
+RESET
+SET
+              set_config              
+--------------------------------------
+ 22222222-2222-4222-8222-222222222222
+(1 row)
+
+                      throws_ok                       
+------------------------------------------------------
+ ok 5 - participant cannot reopen an accepted request
+(1 row)
+
+RESET
+DELETE 1
+SET
+              set_config              
+--------------------------------------
+ 44444444-4444-4444-8444-444444444444
+(1 row)
+
+                        throws_like                         
+------------------------------------------------------------
+ ok 6 - client cannot recreate My Runner with forged growth
+(1 row)
+
+                    throws_like                     
+----------------------------------------------------
+ ok 7 - client cannot rewrite profile creation time
+(1 row)
+
+                    lives_ok                    
+------------------------------------------------
+ ok 8 - client can update allowed profile field
+(1 row)
+
+ finish 
+--------
+(0 rows)
+
+ROLLBACK
