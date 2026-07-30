@@ -40,18 +40,25 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Install PostgreSQL and pgTAP
+      - name: Install PostgreSQL 16 and pgTAP
         run: |
           sudo apt-get update
-          sudo apt-get install --yes postgresql postgresql-16-pgtap
+          sudo apt-get install --yes postgresql-16 postgresql-16-pgtap
+          echo "/usr/lib/postgresql/16/bin" >> "$GITHUB_PATH"
+      # 러너에 딸린 관리형 클러스터는 postgresql-common이 소유하고 있어
+      # pg_ctl로 직접 띄울 수 없다. 러너 사용자 소유의 임시 클러스터를 새로 만든다.
       - name: Start a throwaway cluster
         run: |
-          sudo -u postgres /usr/lib/postgresql/16/bin/pg_ctl \
-            -D /var/lib/postgresql/16/main \
-            -o "-p 55432 -k /tmp" -l /tmp/pg.log start
+          initdb --pgdata "$RUNNER_TEMP/pgdata" --username postgres --auth trust
+          pg_ctl --pgdata "$RUNNER_TEMP/pgdata" \
+            --options "-p 55432 -k /tmp" \
+            --log "$RUNNER_TEMP/pg.log" --wait start
+          psql --host /tmp --port 55432 --username postgres \
+            --command "select version();"
       - run: npm run test:db
-        env:
-          PATH: /usr/lib/postgresql/16/bin:/usr/local/bin:/usr/bin:/bin
+      - name: Show the server log when the suite fails
+        if: failure()
+        run: cat "$RUNNER_TEMP/pg.log"
 
   art_gate:
     name: production art gate stays closed without licensed assets
