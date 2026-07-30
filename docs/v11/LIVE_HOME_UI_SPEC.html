@@ -1,0 +1,273 @@
+<!--
+  Live Journey Home 레이아웃 계약을 눈으로 확인하기 위한 설계 문서다.
+  런타임 자산이 아니고 Production Art도 아니다. 좌표는 전부
+  content/v11/ui/live-home-layout.json에서 왔고 tools/tests/ui-layout.test.mjs가 검증한다.
+-->
+<meta charset="utf-8">
+<title>RunningUp V11 · Live Journey Home 레이아웃 계약</title>
+<style>
+  :root {
+    --navy: #071730;
+    --panel: #10264c;
+    --panel-2: #16305c;
+    --sky: #50c8ff;
+    --mint: #5ff0c2;
+    --amber: #ffd15c;
+    --coral: #ff7b72;
+    --lavender: #a98cff;
+    --ink: #f7fbff;
+    --muted: #a9b9d3;
+    --scale: 0.36;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #05101f;
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    padding: 32px 20px 64px;
+  }
+  header { max-width: 900px; margin: 0 auto 28px; }
+  h1 { font-size: 22px; margin: 0 0 8px; letter-spacing: -0.01em; }
+  header p { color: var(--muted); line-height: 1.6; margin: 0 0 6px; font-size: 14px; }
+  .warn {
+    border-left: 3px solid var(--amber);
+    background: rgba(255, 209, 92, 0.08);
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    color: #ffe6a8;
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-top: 14px;
+  }
+  .stage { display: flex; gap: 40px; justify-content: center; align-items: flex-start; flex-wrap: wrap; }
+
+  /* 1080x1920을 --scale로 축소해 그린다. 내부 좌표는 실제 픽셀 그대로 쓴다. */
+  .phone {
+    width: calc(1080px * var(--scale));
+    height: calc(1920px * var(--scale));
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    background: var(--navy);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    flex: none;
+  }
+  .canvas {
+    position: absolute;
+    inset: 0;
+    width: 1080px;
+    height: 1920px;
+    transform: scale(var(--scale));
+    transform-origin: top left;
+  }
+  .band { position: absolute; left: 0; width: 1080px; }
+  .opaque { background: var(--panel); border-top: 2px solid rgba(255,255,255,0.06); }
+
+  .chip {
+    position: absolute;
+    background: var(--panel-2);
+    border-radius: 14px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-size: 26px; color: var(--ink); gap: 4px;
+  }
+  .chip small { color: var(--muted); font-size: 21px; }
+
+  /* 3D 뷰포트 — 자산이 들어갈 자리임을 숨기지 않는다. */
+  .viewport {
+    background:
+      linear-gradient(180deg, #2a6fae 0%, #4aa3d8 46%, #2b4664 47%, #223850 100%);
+  }
+  .placeholder {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 18px;
+    background: repeating-linear-gradient(
+      -45deg, rgba(255,255,255,0.05) 0 22px, transparent 22px 44px);
+  }
+  .placeholder b { font-size: 40px; letter-spacing: 0.02em; }
+  .placeholder span { color: #dbe8ff; font-size: 27px; text-align: center; line-height: 1.5; }
+  .ghost {
+    width: 300px; height: 692px;              /* 36% of 1920 */
+    border: 4px dashed rgba(255,255,255,0.5);
+    border-radius: 24px;
+    display: flex; align-items: flex-end; justify-content: center;
+    padding-bottom: 14px; font-size: 24px; color: #eaf3ff;
+  }
+
+  .rail { position: absolute; left: 24px; top: 32px; display: flex; flex-direction: column; gap: 20px; }
+  .rail div {
+    width: 96px; height: 96px; border-radius: 22px;
+    background: rgba(7,23,48,0.78); border: 2px solid rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; color: var(--ink); text-align: center; line-height: 1.25;
+  }
+  .card {
+    position: absolute; left: 180px; top: 24px; width: 720px; height: 236px;
+    background: rgba(7,23,48,0.82); border: 2px solid rgba(255,255,255,0.14);
+    border-radius: 22px; padding: 22px 26px;
+  }
+  .card .name { font-size: 34px; font-weight: 650; }
+  .card .code { font-size: 24px; color: var(--sky); margin-top: 4px; letter-spacing: 0.06em; }
+  .card .obj  { font-size: 24px; color: var(--muted); margin-top: 10px; }
+  .bar { margin-top: 16px; height: 26px; border-radius: 13px; background: rgba(255,255,255,0.14); overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 64.2%; background: linear-gradient(90deg, var(--mint), var(--sky)); }
+  .bar-label { font-size: 22px; color: var(--ink); margin-top: 8px; text-align: right; }
+
+  .pacer {
+    position: absolute; right: 24px; top: 300px; width: 180px;
+    background: rgba(7,23,48,0.78); border: 2px solid rgba(255,255,255,0.12);
+    border-radius: 18px; padding: 14px; font-size: 22px; text-align: center;
+  }
+  .pacer em { display: block; color: var(--mint); font-style: normal; margin-top: 6px; font-size: 20px; }
+
+  .deck { position: absolute; left: 0; width: 1080px; display: flex; gap: 22px; padding: 0 24px; }
+  .deck div {
+    flex: 1; height: 162px; border-radius: 18px;
+    background: var(--panel-2); border: 2px solid rgba(255,255,255,0.10);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 22px; color: var(--muted); gap: 6px;
+  }
+  .deck div b { color: var(--ink); font-size: 24px; font-weight: 600; }
+
+  .nav { position: absolute; left: 0; width: 1080px; height: 204px; }
+  .nav a {
+    position: absolute; top: 0; height: 204px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 10px; text-decoration: none; color: var(--muted); font-size: 26px;
+  }
+  .nav a.on { color: var(--ink); }
+  .nav a.on::before {
+    content: ""; position: absolute; inset: 12px 8px; border-radius: 18px;
+    background: rgba(80, 200, 255, 0.18); border: 2px solid rgba(80,200,255,0.45); z-index: -1;
+  }
+  .nav a.run { font-size: 32px; font-weight: 700; color: #04121f; }
+  .nav a.run::before {
+    content: ""; position: absolute; inset: 8px 6px; border-radius: 22px;
+    background: linear-gradient(180deg, var(--sky), #2ba7e6); z-index: -1;
+  }
+  .safe { position: absolute; left: 0; bottom: 0; width: 1080px; height: 96px; background: rgba(0,0,0,0.35); }
+
+  .legend { max-width: 420px; font-size: 14px; line-height: 1.75; color: var(--muted); }
+  .legend h2 { color: var(--ink); font-size: 16px; margin: 0 0 12px; }
+  .legend table { width: 100%; border-collapse: collapse; }
+  .legend td { padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.08); vertical-align: top; }
+  .legend td:first-child { color: var(--ink); white-space: nowrap; padding-right: 14px; }
+  .ok { color: var(--mint); }
+  .blocked { color: var(--coral); }
+</style>
+
+<header>
+  <h1>Live Journey Home · 레이아웃 계약</h1>
+  <p>좌표는 전부 <code>content/v11/ui/live-home-layout.json</code>에서 왔고,
+     <code>tools/tests/ui-layout.test.mjs</code>의 11개 테스트가 이를
+     <code>VISUAL_DIRECTION_LOCK_V11.yaml</code> 대비 검증한다.</p>
+  <div class="warn">
+    <b>이 문서는 Production Art가 아니다.</b> 정보 구조와 좌표만 확정한 설계 문서다.
+    가운데 빗금 영역은 라이선스가 확인된 캐릭터·도시·모션 자산이 들어갈 자리이며,
+    비워 둔 것이 의도다. 이 자리를 기본 도형으로 채워 정식 아트로 보고하지 않는다.
+  </div>
+</header>
+
+<div class="stage">
+  <div class="phone">
+    <div class="canvas">
+
+      <!-- 0 – 120 : 상단 자원 바 -->
+      <div class="band opaque" style="top:0; height:120px;">
+        <div class="chip" style="left:24px; top:16px; width:88px; height:88px; border-radius:20px;">👤</div>
+        <div class="chip" style="left:124px; top:16px; width:300px; height:88px; align-items:flex-start; padding-left:18px;">
+          Lv.85 RUNNER<small>누적 1,284km</small>
+        </div>
+        <div class="chip" style="left:470px; top:16px; width:170px; height:88px;">⚡ 120/120</div>
+        <div class="chip" style="left:650px; top:16px; width:200px; height:88px;">◈ 12,345,678</div>
+        <div class="chip" style="left:860px; top:16px; width:140px; height:88px;">♦ 8,765</div>
+        <div class="chip" style="left:1008px; top:16px; width:48px; height:88px;">☰</div>
+      </div>
+
+      <!-- 120 – 1290 : 3D 뷰포트 (60.9%, lock 최소 58%) -->
+      <div class="band viewport" style="top:120px; height:1170px;">
+        <div class="placeholder">
+          <b>BLOCKED_ART_ASSET</b>
+          <div class="ghost">My Runner · 화면 높이 36%</div>
+          <span>My Runner 1명 + Pacer 무리 + 도시 코스<br>라이선스 확인된 자산이 들어갈 자리</span>
+        </div>
+
+        <div class="rail">
+          <div>데일리<br>계약</div><div>시즌<br>패스</div><div>우편</div><div>랭킹</div>
+        </div>
+
+        <div class="card">
+          <div class="name">루미나 메트로웨이</div>
+          <div class="code">C01 · R03 · S07</div>
+          <div class="obj">오늘의 Run Contract · TEMPO 6km</div>
+          <div class="bar"><i></i></div>
+          <div class="bar-label">6.42 / 10.00 km</div>
+        </div>
+
+        <div class="pacer">Pacer Nova<em>유대 4단계</em></div>
+      </div>
+
+      <!-- 1290 – 1410 : 라이브 지표 (실제 러닝 지표만) -->
+      <div class="band opaque" style="top:1290px; height:120px;">
+        <div class="chip" style="left:24px; top:14px; width:220px; height:92px;">크루 4/8<small>이번 주</small></div>
+        <div class="chip" style="left:268px; top:14px; width:250px; height:92px;">⏱ 05:32<small>경과</small></div>
+        <div class="chip" style="left:542px; top:14px; width:260px; height:92px;">4'58"/km<small>페이스</small></div>
+        <div class="chip" style="left:826px; top:14px; width:230px; height:92px;">♥ 160<small>심박</small></div>
+      </div>
+
+      <!-- 1410 – 1620 : Technique 덱 5칸 -->
+      <div class="band opaque" style="top:1410px; height:210px;">
+        <div class="deck" style="top:24px;">
+          <div><b>스타트 리듬</b>Technique</div>
+          <div><b>페이스 락</b>Technique</div>
+          <div><b>드래프트</b>Memory</div>
+          <div><b>코너 스텝</b>Technique</div>
+          <div><b>파이널 킥</b>Aura</div>
+        </div>
+      </div>
+
+      <!-- 1620 – 1920 : 하단 내비게이션 (RUN 중앙·최대) -->
+      <div class="band opaque" style="top:1620px; height:300px;">
+        <div class="nav">
+          <a class="on" style="left:0px;   width:216px;">🏠<span>홈</span></a>
+          <a          style="left:216px; width:216px;">🏃<span>러너</span></a>
+          <a class="run" style="left:400px; width:280px;">RUN</a>
+          <a          style="left:648px; width:216px;">🗺<span>월드</span></a>
+          <a          style="left:864px; width:216px;">👥<span>크루</span></a>
+        </div>
+        <div class="safe"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="legend">
+    <h2>이 레이아웃이 지키는 것</h2>
+    <table>
+      <tr><td>3D 뷰포트</td><td><span class="ok">60.9%</span> · lock 최소 58%</td></tr>
+      <tr><td>My Runner</td><td><span class="ok">36%</span> · lock 28–44%</td></tr>
+      <tr><td>하단 5탭</td><td><span class="ok">홈·러너·RUN·월드·크루</span></td></tr>
+      <tr><td>RUN</td><td><span class="ok">중앙 x=540, 폭 280</span> — 가장 큼</td></tr>
+      <tr><td>밴드 합계</td><td><span class="ok">1920px 정확히</span> · 빈틈·겹침 0</td></tr>
+      <tr><td>잘림</td><td><span class="ok">모든 슬롯이 1080px 안</span></td></tr>
+      <tr><td>전투 요소</td><td><span class="ok">피해 수치·HP·무기 슬롯 0개</span></td></tr>
+    </table>
+
+    <h2 style="margin-top:26px;">목표 화면에서 바꿔 가져온 것</h2>
+    <table>
+      <tr><td>순위 목표</td><td>→ Daily Run Contract 목표</td></tr>
+      <tr><td>스킬 5칸</td><td>→ Technique/Memory/Aura 덱</td></tr>
+      <tr><td>4/8 순위</td><td>→ 크루 주간 위치</td></tr>
+      <tr><td>보스·무기</td><td>→ 채택하지 않음</td></tr>
+    </table>
+
+    <h2 style="margin-top:26px;">아직 비어 있는 것</h2>
+    <table>
+      <tr><td class="blocked">캐릭터</td><td>라이선스 자산 필요</td></tr>
+      <tr><td class="blocked">도시</td><td>라이선스 자산 필요</td></tr>
+      <tr><td class="blocked">달리기 모션</td><td>라이선스 자산 필요</td></tr>
+    </table>
+  </div>
+</div>

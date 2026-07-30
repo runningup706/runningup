@@ -1,0 +1,120 @@
+{
+  "$comment": "Live Journey Home의 정보 구조를 1080x1920 좌표로 고정한다. tools/tests/ui-layout.test.mjs가 VISUAL_DIRECTION_LOCK_V11.yaml 대비 검증한다. 이 파일은 레이아웃 계약이며 Production Art가 아니다.",
+  "version": "11.0.0",
+  "screen": "LIVE_JOURNEY_HOME",
+  "reference_canvas": { "width": 1080, "height": 1920 },
+  "source": "사용자 참고 화면의 정보 밀도와 계층만 채택했다. 캐릭터, 아이콘, UI 배치의 직접 복제는 하지 않는다.",
+  "bands": [
+    {
+      "id": "top_resource_bar",
+      "top": 0,
+      "height": 120,
+      "opaque": true,
+      "purpose": "My Runner 요약과 자원을 한 줄로 고정한다.",
+      "slots": [
+        { "id": "runner_portrait", "x": 24, "width": 88, "kind": "portrait" },
+        { "id": "runner_name_level", "x": 124, "width": 300, "kind": "text_stack" },
+        { "id": "pulse_energy", "x": 470, "width": 170, "kind": "resource" },
+        { "id": "crown_shard", "x": 650, "width": 200, "kind": "resource" },
+        { "id": "route_token", "x": 860, "width": 140, "kind": "resource" },
+        { "id": "menu", "x": 1008, "width": 48, "kind": "button" }
+      ]
+    },
+    {
+      "id": "live_viewport",
+      "top": 120,
+      "height": 1170,
+      "opaque": false,
+      "purpose": "My Runner와 Pacer가 실제 코스를 계속 달리는 3D 영역이다.",
+      "overlays": [
+        {
+          "id": "left_rail",
+          "anchor": "left",
+          "top": 32,
+          "width": 96,
+          "item_height": 116,
+          "items": ["daily_contract", "season_pass", "mailbox", "leaderboard"],
+          "purpose": "상시 진입점. 빨간 점은 실제 미확인 항목에만 붙인다."
+        },
+        {
+          "id": "route_card",
+          "anchor": "center",
+          "top": 24,
+          "width": 720,
+          "height": 236,
+          "purpose": "현재 코스, 대륙-지역-코스 번호, Daily Run Contract 목표, 진행 막대를 한 카드에 모은다.",
+          "fields": [
+            "route_emblem",
+            "route_name_ko",
+            "route_code",
+            "contract_objective",
+            "progress_current_m",
+            "progress_target_m"
+          ]
+        },
+        {
+          "id": "pacer_ribbon",
+          "anchor": "right",
+          "top": 300,
+          "width": 180,
+          "purpose": "동행 중인 Pacer의 이름과 유대 단계를 표시한다."
+        }
+      ]
+    },
+    {
+      "id": "live_metrics",
+      "top": 1290,
+      "height": 120,
+      "opaque": true,
+      "purpose": "실제 러닝 지표만 표시한다. 전투 수치는 존재하지 않는다.",
+      "slots": [
+        { "id": "crew_position", "x": 24, "width": 220, "kind": "metric_large" },
+        { "id": "elapsed_time", "x": 268, "width": 250, "kind": "metric" },
+        { "id": "pace_per_km", "x": 542, "width": 260, "kind": "metric" },
+        { "id": "heart_rate", "x": 826, "width": 230, "kind": "metric" }
+      ]
+    },
+    {
+      "id": "technique_deck",
+      "top": 1410,
+      "height": 210,
+      "opaque": true,
+      "purpose": "장착한 Technique/Memory/Aura 카드 5장. 뽑기 연출이 아니라 현재 덱 상태다.",
+      "slot_count": 5,
+      "slot_width": 190,
+      "slot_gap": 22
+    },
+    {
+      "id": "bottom_nav",
+      "top": 1620,
+      "height": 300,
+      "opaque": true,
+      "purpose": "홈·러너·RUN·월드·크루. RUN은 중앙이며 가장 크다.",
+      "items": [
+        { "id": "home", "label_ko": "홈", "center_x": 108, "width": 216, "emphasis": "normal" },
+        { "id": "runner", "label_ko": "러너", "center_x": 324, "width": 216, "emphasis": "normal" },
+        { "id": "run", "label_ko": "RUN", "center_x": 540, "width": 280, "emphasis": "primary" },
+        { "id": "world", "label_ko": "월드", "center_x": 756, "width": 216, "emphasis": "normal" },
+        { "id": "crew", "label_ko": "크루", "center_x": 972, "width": 216, "emphasis": "normal" }
+      ]
+    }
+  ],
+  "my_runner": {
+    "screen_height_percent": 36,
+    "horizontal_center_x": 540,
+    "ground_contact_y": 1240
+  },
+  "safe_area": {
+    "top_inset_max": 120,
+    "bottom_inset_max": 96,
+    "note": "하단 nav는 bottom inset을 포함해도 모든 항목이 터치 가능해야 한다."
+  },
+  "forbidden": [
+    "damage_number",
+    "hp_bar",
+    "monster_or_weapon_icon",
+    "screenshot_as_runtime_background",
+    "copied_reference_ui",
+    "excessive_red_dots"
+  ]
+}
