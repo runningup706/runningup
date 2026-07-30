@@ -1,0 +1,112 @@
+{
+  "$comment": "무료 경로로 Production Art를 시도할 때 인입을 허용하는 출처와 라이선스다. tools/art-pipeline/validate-license-evidence.mjs가 LICENSE_EVIDENCE.md를 이 목록 대비 검증한다. 목록에 없는 라이선스는 통과하지 않는다.",
+  "version": "11.0.0",
+  "allowed_licenses": [
+    {
+      "id": "CC0-1.0",
+      "commercial": true,
+      "attribution_required": false,
+      "note": "퍼블릭 도메인. 상용 게임에 그대로 쓸 수 있다."
+    },
+    {
+      "id": "CC-BY-4.0",
+      "commercial": true,
+      "attribution_required": true,
+      "note": "상용 가능하지만 앱 내 크레딧 화면에 저작자 표기가 필수다."
+    },
+    {
+      "id": "MIT",
+      "commercial": true,
+      "attribution_required": true,
+      "note": "라이선스 전문을 배포물에 포함해야 한다."
+    },
+    {
+      "id": "ADOBE-MIXAMO",
+      "commercial": true,
+      "attribution_required": false,
+      "note": "Adobe 계정으로 받은 Mixamo 모션은 상용 프로젝트에 royalty-free다. 모션 파일 자체를 재판매하거나 라이브러리로 재배포할 수는 없다."
+    },
+    {
+      "id": "UNITY-ASSET-STORE-STANDARD-EULA",
+      "commercial": true,
+      "attribution_required": false,
+      "note": "구매 계정의 좌석 범위가 이 프로젝트 배포 주체와 일치해야 한다."
+    }
+  ],
+  "rejected_licenses": [
+    {
+      "id": "CC-BY-NC-4.0",
+      "reason": "NonCommercial. 상용 출시 게임에 넣을 수 없다."
+    },
+    {
+      "id": "CC-BY-ND-4.0",
+      "reason": "NoDerivatives. 리타깃, LOD 생성, 머티리얼 변환이 전부 파생물이라 불가능하다."
+    },
+    {
+      "id": "UNKNOWN",
+      "reason": "출처와 조건이 확인되지 않은 자산은 인입하지 않는다."
+    },
+    {
+      "id": "SKETCHFAB-EDITORIAL",
+      "reason": "Editorial 전용 자산은 상용 제품에 쓸 수 없다."
+    }
+  ],
+  "vetted_sources": [
+    {
+      "role": "running_motion",
+      "name": "Adobe Mixamo",
+      "license": "ADOBE-MIXAMO",
+      "url": "https://www.mixamo.com/",
+      "cost_usd": 0,
+      "covers": ["idle_stretch", "easy_jog", "steady_run", "tempo_run", "interval_sprint", "final_kick", "finish", "cheer", "tired_but_proud"],
+      "confidence": "high",
+      "note": "9개 러닝 상태를 무료로 가장 확실하게 채우는 출처다. Humanoid 리그라 3등신 리타깃이 된다. In-place와 root motion을 각각 받아야 한다."
+    },
+    {
+      "role": "environment_lighting",
+      "name": "Poly Haven HDRI",
+      "license": "CC0-1.0",
+      "url": "https://polyhaven.com/hdris",
+      "cost_usd": 0,
+      "covers": ["sky_lighting", "reflection_probe"],
+      "confidence": "high",
+      "note": "조명 점수를 올리는 데 비용이 들지 않는다. 낮·노을·야간 3장이면 충분하다."
+    },
+    {
+      "role": "city_course",
+      "name": "Kenney City Kit",
+      "license": "CC0-1.0",
+      "url": "https://kenney.nl/assets",
+      "cost_usd": 0,
+      "covers": ["road_modules", "buildings", "street_props"],
+      "confidence": "medium",
+      "note": "상자 건물보다는 확실히 낫지만 저폴리 평면 셰이딩이라 목표의 도시 밀도에는 못 미친다."
+    },
+    {
+      "role": "city_course",
+      "name": "Quaternius Ultimate Modular City",
+      "license": "CC0-1.0",
+      "url": "https://quaternius.com/",
+      "cost_usd": 0,
+      "covers": ["buildings", "road_modules", "vegetation"],
+      "confidence": "medium",
+      "note": "Kenney와 스타일이 달라 섞어 쓰면 통일감이 깨진다. 하나만 고른다."
+    },
+    {
+      "role": "my_runner_character",
+      "name": "Quaternius Ultimate Modular Characters",
+      "license": "CC0-1.0",
+      "url": "https://quaternius.com/",
+      "cost_usd": 0,
+      "covers": ["base_mesh", "modular_parts"],
+      "confidence": "low",
+      "note": "무료 중에서는 가장 가깝지만 3.0~3.25 heads가 아니고 표정 blend shape가 없다. VISUAL_DIRECTION_LOCK의 얼굴·헤어·표정 요구를 단독으로 충족하지 못한다."
+    }
+  ],
+  "known_gap": {
+    "role": "my_runner_character",
+    "statement": "3.0~3.25 heads, 12개 이상 표정 blend shape, 앞·옆·뒷머리 3층 헤어, 모듈형 의상을 모두 갖춘 무료 자산은 확인되지 않았다.",
+    "consequence": "무료 경로만으로는 캐릭터 조형 항목이 85점에 도달하지 못할 가능성이 높다.",
+    "paid_alternative": "BoZo: Modular Anime Characters - Base Pack 1.8.6, USD 20, UNITY-ASSET-STORE-STANDARD-EULA"
+  }
+}

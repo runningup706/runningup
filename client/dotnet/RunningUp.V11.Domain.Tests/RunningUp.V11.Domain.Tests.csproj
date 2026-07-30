@@ -23,9 +23,12 @@
 
   <ItemGroup>
     <Compile Include="Program.cs" />
-    <!-- 사본이 아니라 런타임이 쓰는 바로 그 파일을 컴파일한다. -->
+    <Compile Include="ArtSpecTests.cs" />
+    <!-- 사본이 아니라 런타임이 쓰는 바로 그 파일들을 컴파일한다. -->
     <Compile Include="../../unity/Assets/RunningUp/RunVerification/V11UploadPolicy.cs"
              Link="V11UploadPolicy.cs" />
+    <Compile Include="../../unity/Assets/RunningUp/ProductionArt/V11ArtSpec.cs"
+             Link="V11ArtSpec.cs" />
   </ItemGroup>
 
 </Project>

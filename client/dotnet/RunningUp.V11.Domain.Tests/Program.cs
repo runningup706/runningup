@@ -26,6 +26,8 @@ namespace RunningUp.V11.Domain.Tests
             BackoffIsDeterministicPerFingerprint();
             BackoffSpreadsRunsAcrossDifferentSeconds();
             FailedRefreshKeepsTheRunQueued();
+            ArtSpecTests.Run(IsTrue, (expected, actual, description) =>
+                AreEqual(expected?.ToString(), actual?.ToString(), description));
 
             Console.WriteLine(
                 $"1..{assertions}");
