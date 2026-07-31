@@ -3,8 +3,8 @@
  * Content factory — expands the authored design tables into the canonical launch content.
  *
  * The factory generates BOILERPLATE (stable IDs, schema envelopes, localization skeletons,
- * route wiring, test fixtures). It never invents gameplay: every mechanic, objective twist,
- * boss phase, character kit and story beat comes from the authored tables in
+ * route wiring, test fixtures). It never invents gameplay: every course trait, race
+ * condition, champion race plan, runner kit and story beat comes from the authored tables in
  * `world-design.mjs` and `character-design.mjs`. That separation is what keeps the launch
  * counts honest instead of turning into a reskin mill — see master # 17.3.
  *
@@ -16,13 +16,19 @@ import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { CONTINENTS, WORLD_BOSSES, APEX_BOSS, DUNGEON_TYPES, STORY_CHAPTERS, OBJECTIVE_TYPES } from './world/world-design.mjs';
-import { CHARACTERS, COMPANIONS, COSMETIC_SLOTS, RELIC_THEMES, ROLES } from './characters/character-design.mjs';
+import {
+  CONTINENTS, OPEN_RACE_EVENTS, APEX_RACE, CHALLENGE_FORMATS, STORY_CHAPTERS, RACE_FORMATS,
+  COURSE_SHAPES, REGION_COURSE_DISTANCES, courseSurface,
+} from './world/world-design.mjs';
+// The surface a continent runs on is a property of its courses, and the race engine is
+// where that already lives. Importing it keeps one continent from having two characters.
+import { CONTINENT_COURSES, RACE_FIELD_SIZE } from '../../packages/domain/race.mjs';
+import { CHARACTERS, COMPANIONS, COSMETIC_SLOTS, GEAR_THEMES, ROLES } from './characters/character-design.mjs';
 import {
   APEX_CHECKPOINT_METERS, MAJOR_RANKS, GOAL_DISTANCES, GOAL_DURATIONS, SESSION_STYLES,
   PASSPORT_BANDS, BEST_EFFORT_DISTANCES, DIFFICULTY_LANES, ALLOWED_ACTIVITY_TYPES,
-  LAUNCH_CONTENT_FLOOR, checkpointId, rankForMeters, APEX_LADDER_VERSION,
-} from '../lib/constants.mjs';
+  LAUNCH_CONTENT_FLOOR, checkpointId, rankForMeters, APEX_LADDER_VERSION, DIRECTION_LOCK,
+} from '../../packages/domain/constants.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const OUT = join(ROOT, 'content', 'launch');
@@ -61,18 +67,19 @@ function write(relPath, data) {
 const pad = (n, w = 2) => String(n).padStart(w, '0');
 
 // ---------------------------------------------------------------------------
-// World: continents, regions, stages, enemies, bosses
+// World: continents, regions, courses, races, rivals, champions
 // ---------------------------------------------------------------------------
 
 const continents = [];
 const regions = [];
-const mainStages = [];
-const sideStages = [];
-const standardEnemies = [];
-const eliteEnemies = [];
-const continentBosses = [];
+const courses = [];
+const mainRaces = [];
+const challengeRaces = [];
+const standardRivals = [];
+const eliteRivals = [];
+const continentChampions = [];
 const restorationStates = [];
-const relics = [];
+const gearSets = [];
 
 for (const c of CONTINENTS) {
   const cShort = c.id.replace('con_', '');
@@ -82,9 +89,9 @@ for (const c of CONTINENTS) {
     order: c.order,
     name_key: loc(`continent.${cShort}.name`, c.name),
     identity_key: loc(`continent.${cShort}.identity`, c.identity),
-    mechanic_id: c.mechanic.id,
-    mechanic_name_key: loc(`mechanic.${c.mechanic.id}`, c.mechanic),
-    mechanic_rule: c.mechanic_rule,
+    trait_id: c.race_trait.id,
+    trait_name_key: loc(`trait.${c.race_trait.id}`, c.race_trait),
+    trait_rule: c.trait_rule,
     palette: c.palette,
     skyline: c.skyline,
     music_motif: c.music_motif,
@@ -110,14 +117,48 @@ for (const c of CONTINENTS) {
       continent_id: c.id,
       order: i + 1,
       name_key: loc(`region.${cShort}.${pad(i + 1)}`, rName),
-      node_type: i === c.regions.length - 1 ? 'continent_boss_node'
-        : i % 3 === 1 ? 'challenge_node' : 'battle_node',
+      node_type: i === c.regions.length - 1 ? 'champion_node'
+        : i % 3 === 1 ? 'challenge_node' : 'race_node',
       scene_address: `world/${cShort}/region_${pad(i + 1)}`,
       // Route wiring: node 1 is the entry, each later node is opened by the previous one.
       // This is a recommended route, not a hard gate: `bypass_allowed` keeps it non-linear.
       reachable_from: i === 0 ? ['continent_entry'] : [`rgn_${cShort}_${pad(i)}`],
       bypass_allowed: true,
       restoration_state_ids: c.restoration.map((s) => `rst_${cShort}_${s}`),
+    });
+  });
+
+  // Twelve courses per region: four distances crossed with three shapes. See
+  // REGION_COURSE_DISTANCES for why the distances grow with the region's position.
+  const continentSurface = CONTINENT_COURSES[c.id]?.surface ?? 'road';
+  c.regions.forEach((rName, i) => {
+    const regionId = `rgn_${cShort}_${pad(i + 1)}`;
+    const distances = REGION_COURSE_DISTANCES[i];
+    distances.forEach((distanceMeters, d) => {
+      COURSE_SHAPES.forEach((shape, sIndex) => {
+        const n = d * COURSE_SHAPES.length + sIndex + 1;
+        const label = distanceMeters % 1000 === 0
+          ? `${distanceMeters / 1000}K`
+          : `${(distanceMeters / 1000).toFixed(3)}K`;
+        courses.push({
+          id: `crs_${cShort}_${pad(i + 1)}_${pad(n)}`,
+          continent_id: c.id,
+          region_id: regionId,
+          order: n,
+          name_key: loc(`course.${cShort}.${pad(i + 1)}.${pad(n)}`, {
+            ko: `${rName.ko} ${label} ${shape.ko}`,
+            en: `${rName.en} ${label} ${shape.en}`,
+          }),
+          distance_meters: distanceMeters,
+          surface: courseSurface(shape.id, continentSurface),
+          shape: shape.id,
+          scene_address: `world/${cShort}/course_${pad(i + 1)}_${pad(n)}`,
+          lane_ids: DIFFICULTY_LANES.map((l) => l.id),
+          reward_table_id: `rwd_${cShort}_course_${pad(i + 1)}_${pad(n)}`,
+          enabled: true,
+          debug_only: false,
+        });
+      });
     });
   });
 
@@ -135,23 +176,25 @@ for (const c of CONTINENTS) {
     });
   });
 
-  c.stages.forEach((s, i) => {
-    const id = `stg_${cShort}_main_${pad(i + 1)}`;
-    mainStages.push({
-      id,
+  c.races.forEach((r, i) => {
+    mainRaces.push({
+      id: `rce_${cShort}_main_${pad(i + 1)}`,
       continent_id: c.id,
       region_id: `rgn_${cShort}_${pad(Math.min(i + 1, c.regions.length))}`,
       kind: 'main',
       order: i + 1,
-      name_key: loc(`stage.${cShort}.main.${pad(i + 1)}`, {
-        ko: `${c.name.ko} ${i + 1}구역`, en: `${c.name.en} — Sector ${i + 1}`,
+      name_key: loc(`race.${cShort}.main.${pad(i + 1)}`, {
+        ko: `${c.name.ko} ${i + 1}구간 레이스`, en: `${c.name.en} — Stage ${i + 1}`,
       }),
-      objective: s.objective,
-      objective_twist: s.twist,
-      mechanic_id: c.mechanic.id,
-      enemy_family_ids: [`enm_${cShort}_01`, `enm_${cShort}_02`],
-      elite_family_id: i >= 3 ? `eli_${cShort}_01` : null,
-      scene_address: `world/${cShort}/stage_main_${pad(i + 1)}`,
+      format: r.format,
+      race_condition: r.twist,
+      trait_id: c.race_trait.id,
+      rival_crew_ids: [`rvl_${cShort}_01`, `rvl_${cShort}_02`],
+      elite_crew_id: i >= 3 ? `rve_${cShort}_01` : null,
+      // The champion only lines up in the format that is named for them.
+      champion_id: r.format === 'championship' ? `chm_${cShort}` : null,
+      field_size: RACE_FIELD_SIZE,
+      scene_address: `world/${cShort}/race_main_${pad(i + 1)}`,
       lane_ids: DIFFICULTY_LANES.map((l) => l.id),
       reward_table_id: `rwd_${cShort}_main_${pad(i + 1)}`,
       enabled: true,
@@ -159,22 +202,27 @@ for (const c of CONTINENTS) {
     });
   });
 
-  c.side_stages.forEach((s, i) => {
-    const id = `stg_${cShort}_side_${pad(i + 1)}`;
-    sideStages.push({
-      id,
+  c.challenges.forEach((r, i) => {
+    challengeRaces.push({
+      id: `rce_${cShort}_side_${pad(i + 1)}`,
       continent_id: c.id,
       region_id: `rgn_${cShort}_${pad(2 + i * 3)}`,
       kind: 'side',
       order: i + 1,
-      name_key: loc(`stage.${cShort}.side.${pad(i + 1)}`, {
-        ko: `${c.name.ko} 도전 ${i + 1}`, en: `${c.name.en} — Challenge ${i + 1}`,
+      name_key: loc(`race.${cShort}.side.${pad(i + 1)}`, {
+        ko: `${c.name.ko} 도전 레이스 ${i + 1}`, en: `${c.name.en} — Challenge ${i + 1}`,
       }),
-      objective: s.objective,
-      objective_twist: s.twist,
-      mechanic_id: c.mechanic.id,
-      dungeon_type_id: DUNGEON_TYPES[(c.order + i) % DUNGEON_TYPES.length].id,
-      scene_address: `world/${cShort}/stage_side_${pad(i + 1)}`,
+      // A challenge race is scored by its challenge format, so the entry format is the
+      // plain time trial and the rule that makes it hard lives in challenge_format_id.
+      format: 'time_trial',
+      race_condition: r.twist,
+      trait_id: c.race_trait.id,
+      challenge_format_id: r.format,
+      rival_crew_ids: [`rvl_${cShort}_${pad(i + 1)}`],
+      elite_crew_id: null,
+      champion_id: null,
+      field_size: RACE_FIELD_SIZE,
+      scene_address: `world/${cShort}/race_side_${pad(i + 1)}`,
       lane_ids: DIFFICULTY_LANES.map((l) => l.id),
       reward_table_id: `rwd_${cShort}_side_${pad(i + 1)}`,
       enabled: true,
@@ -182,98 +230,103 @@ for (const c of CONTINENTS) {
     });
   });
 
-  c.enemies.forEach((e, i) => {
-    standardEnemies.push({
-      id: `enm_${cShort}_${pad(i + 1)}`,
+  c.rivals.forEach((r, i) => {
+    standardRivals.push({
+      id: `rvl_${cShort}_${pad(i + 1)}`,
       continent_id: c.id,
-      family_kind: 'standard',
-      name_key: loc(`enemy.${cShort}.${pad(i + 1)}`, e),
-      behaviour: e.behaviour,
-      mechanic_id: c.mechanic.id,
-      // Three visual/behavioural variants per family = 72 standard variants at launch.
-      variants: [1, 2, 3].map((v) => ({
-        id: `enm_${cShort}_${pad(i + 1)}_v${v}`,
-        variant_rule: `${e.behaviour} (tier ${v})`,
+      crew_kind: 'standard',
+      name_key: loc(`rival.${cShort}.${pad(i + 1)}`, r),
+      tactic: r.tactic,
+      trait_id: c.race_trait.id,
+      // Three runners per crew = 72 individual pacers on the start line at launch. They
+      // share the crew's tactic and differ in depth of form: a front, a middle, a back.
+      runners: [1, 2, 3].map((v) => ({
+        id: `rvl_${cShort}_${pad(i + 1)}_r${v}`,
+        pacer_index: v - 1,
       })),
-      prefab_address: `enemy/${cShort}/standard_${pad(i + 1)}`,
+      prefab_address: `rival/${cShort}/standard_${pad(i + 1)}`,
     });
   });
 
-  eliteEnemies.push({
-    id: `eli_${cShort}_01`,
+  eliteRivals.push({
+    id: `rve_${cShort}_01`,
     continent_id: c.id,
-    family_kind: 'elite',
-    name_key: loc(`enemy.${cShort}.elite`, c.elite),
-    behaviour: c.elite.behaviour,
-    mechanic_id: c.mechanic.id,
-    prefab_address: `enemy/${cShort}/elite_01`,
+    crew_kind: 'elite',
+    name_key: loc(`rival.${cShort}.elite`, c.elite_rival),
+    tactic: c.elite_rival.tactic,
+    trait_id: c.race_trait.id,
+    prefab_address: `rival/${cShort}/elite_01`,
   });
 
-  continentBosses.push({
-    id: `boss_${cShort}`,
+  continentChampions.push({
+    id: `chm_${cShort}`,
     continent_id: c.id,
-    kind: 'continent_boss',
-    name_key: loc(`boss.${cShort}`, c.boss),
-    phases: c.boss.phases,
-    phase_rule: c.boss.phase_rule,
-    mechanic_id: c.mechanic.id,
-    scene_address: `world/${cShort}/boss`,
-    retry_policy: { consumes_entry: false, instant_retry: true, shows_recommended_counter: true },
+    kind: 'continent_champion',
+    name_key: loc(`champion.${cShort}`, c.champion),
+    race_plan: c.champion.race_plan,
+    plan_rule: c.champion.plan_rule,
+    trait_id: c.race_trait.id,
+    scene_address: `world/${cShort}/championship`,
+    // Losing a race costs nothing: the entry is not consumed and the rematch is immediate.
+    retry_policy: { consumes_entry: false, instant_retry: true, shows_recommended_form: true },
   });
 
-  RELIC_THEMES.forEach((theme, i) => {
-    relics.push({
-      id: `rlc_${cShort}_${theme.suffix}`,
+  GEAR_THEMES.forEach((theme, i) => {
+    gearSets.push({
+      id: `ger_${cShort}_${theme.suffix}`,
       continent_id: c.id,
-      name_key: loc(`relic.${cShort}.${theme.suffix}`, {
+      name_key: loc(`gear.${cShort}.${theme.suffix}`, {
         ko: `${c.name.ko}의 ${theme.suffix}`, en: `${theme.suffix} of ${c.name.en}`,
       }),
-      // Sidegrade: relics redistribute the same Fitness Core budget, never add to it.
+      // Sidegrade: gear redistributes the same Fitness Core budget, never adds to it.
       budget_delta: 0,
       // The trade says WHAT moves; the continent condition says WHEN it applies. Without
       // the second half these would be six themes wearing twelve coats of paint, which is
       // exactly what the content validator rejects as a reskin.
+      //
+      // `from` and `to` are literally the axes packages/domain/race.mjs trades in
+      // buildRunnerForm, so a gear set is engine input rather than description.
       trade_from: theme.from,
       trade_to: theme.to,
-      activation_condition: c.relic_condition,
-      sidegrade_axis: `moves ${theme.from.replace(/_/g, ' ')} into ${theme.to.replace(/_/g, ' ')} ${c.relic_condition}`,
-      mechanic_affinity: c.mechanic.id,
-      slot: ['core', 'edge', 'support'][i % 3],
-      icon_address: `relic/${cShort}/${theme.suffix}`,
+      activation_condition: c.gear_condition,
+      sidegrade_axis: `moves ${theme.from} into ${theme.to} ${c.gear_condition}`,
+      trait_affinity: c.race_trait.id,
+      slot: ['shoes', 'kit', 'accessory'][i % 3],
+      icon_address: `gear/${cShort}/${theme.suffix}`,
     });
   });
 }
 
-const worldBosses = WORLD_BOSSES.map((b) => ({
-  id: b.id,
-  kind: 'world_boss',
-  name_key: loc(`boss.world.${b.id}`, b.name),
-  phases: b.phases,
-  rotation_weeks: b.rotation_weeks,
-  mechanic_focus: b.mechanic_focus,
-  scene_address: `world/worldboss/${b.id}`,
+const openRaceEvents = OPEN_RACE_EVENTS.map((e) => ({
+  id: e.id,
+  kind: 'open_race',
+  name_key: loc(`champion.open.${e.id}`, e.name),
+  race_plan: e.race_plan,
+  rotation_weeks: e.rotation_weeks,
+  trait_focus: e.trait_focus,
+  scene_address: `world/openrace/${e.id}`,
 }));
 
-const apexBoss = {
-  id: APEX_BOSS.id,
-  kind: 'apex_boss',
-  name_key: loc('boss.apex_axis', APEX_BOSS.name),
-  phases: APEX_BOSS.phases,
-  phase_rule: APEX_BOSS.phase_rule,
-  unlock_monthly_meters: APEX_BOSS.unlock.monthly_meters,
-  unlocks_per_user_month: APEX_BOSS.unlock.unlocks_per_user_month,
-  rewards: APEX_BOSS.rewards,
+const apexRace = {
+  id: APEX_RACE.id,
+  kind: 'apex_race',
+  name_key: loc('champion.apex_axis', APEX_RACE.name),
+  race_plan: APEX_RACE.legs,
+  plan_rule: APEX_RACE.leg_rule,
+  unlock_monthly_meters: APEX_RACE.unlock.monthly_meters,
+  unlocks_per_user_month: APEX_RACE.unlock.unlocks_per_user_month,
+  rewards: APEX_RACE.rewards,
   scene_address: 'world/apex/axis',
   // DL-1: this is the terminal content of the monthly journey.
   has_content_above: false,
 };
 
 // ---------------------------------------------------------------------------
-// Characters: roster, skills, episodes, cosmetics, companions
+// Runners: roster, techniques, episodes, cosmetics, companions
 // ---------------------------------------------------------------------------
 
 const characters = [];
-const skills = [];
+const techniques = [];
 const episodes = [];
 const cosmetics = [];
 
@@ -288,10 +341,12 @@ for (const ch of CHARACTERS) {
     continent_affinity: ch.continent_affinity,
     presentation: ch.presentation,
     silhouette: ch.silhouette,
-    weapon: ch.weapon,
+    race_kit: ch.race_kit,
     core_conversion: ch.core_conversion,
-    basic_attack: ch.basic_attack,
-    skill_ids: [ch.skill_1.id, ch.skill_2.id, ch.passive.id, ch.ultimate.id],
+    race_signature: ch.race_signature,
+    technique_ids: [
+      ch.technique_open.id, ch.technique_mid.id, ch.technique_habit.id, ch.technique_finish.id,
+    ],
     specializations: ch.specializations,
     episode_ids: ch.episodes.map((e, i) => `epi_${short}_${pad(i + 1)}`),
     unlock_path: ch.unlock_path,
@@ -305,17 +360,21 @@ for (const ch of CHARACTERS) {
     cosmetic_slot_ids: COSMETIC_SLOTS,
   });
 
-  for (const [kind, s] of [['active', ch.skill_1], ['active', ch.skill_2], ['passive', ch.passive], ['ultimate', ch.ultimate]]) {
-    skills.push({
-      id: s.id,
+  for (const [kind, t] of [
+    ['opening', ch.technique_open], ['midrace', ch.technique_mid],
+    ['habit', ch.technique_habit], ['finish', ch.technique_finish],
+  ]) {
+    techniques.push({
+      id: t.id,
       character_id: ch.id,
       kind,
-      name_key: loc(`skill.${s.id}`, s.name),
-      effect: s.effect,
+      name_key: loc(`technique.${t.id}`, t.name),
+      effect: t.effect,
       equipable: true,
-      // Tactical skills change how the shared Fitness Core is expressed, never its size.
+      // A technique changes how the shared Fitness Core is spent across a race, never how
+      // much of it there is. DL-5: only verified running moves that number.
       core_budget_delta: 0,
-      icon_address: `skill/${short}/${s.id}`,
+      icon_address: `technique/${short}/${t.id}`,
     });
   }
 
@@ -373,8 +432,8 @@ const companions = COMPANIONS.map((c, i) => ({
 // ---------------------------------------------------------------------------
 
 const REWARD_BUNDLE_KINDS = [
-  'cosmetic', 'story', 'character_episode', 'relic_choice',
-  'boss_key', 'restoration_scene', 'profile_frame', 'season_point', 'crown_shard',
+  'cosmetic', 'story', 'character_episode', 'gear_choice',
+  'race_entry', 'restoration_scene', 'profile_frame', 'season_point', 'crown_shard',
 ];
 
 const checkpoints = APEX_CHECKPOINT_METERS.map((meters, i) => {
@@ -398,7 +457,12 @@ const checkpoints = APEX_CHECKPOINT_METERS.map((meters, i) => {
     }),
     reward_bundle_id: `bundle_${id}`,
     reward_bundle_kinds: bundle,
-    story_or_world_effect: i === 51
+    // Keyed on the distance, not on the index. This read `i === 51` — correct while the
+    // ladder had 52 checkpoints, silently wrong the moment it grew to 121: the World Crown
+    // ceremony moved to the 509 km checkpoint and the real final one got a restoration
+    // pulse. `is_final` on the line below already used the distance and stayed right, so
+    // the two disagreed and nothing failed.
+    story_or_world_effect: meters === 1_000_000
       ? 'world_crown_ceremony_and_apex_axis_unlock'
       : `restoration_pulse_${(i % 12) + 1}`,
     is_final: meters === 1_000_000,
@@ -523,7 +587,9 @@ const season = {
     'twelve_continent_restoration_campaign', 'twelve_character_trial_week',
     'runner_passport_route_missions', 'distance_challenges_400m_to_custom',
     'daily_momentum_ladder', 'quality_session_chain_event',
-    'monthly_apex_52_checkpoint_journey', 'four_rotating_world_bosses',
+    // Derived, not restated: the season objective named 52 checkpoints for as long as the
+    // ladder had 52, and kept naming 52 after it grew to 121.
+    `monthly_apex_${DIRECTION_LOCK.CHECKPOINT_COUNT}_checkpoint_journey`, 'four_rotating_open_races',
     'crew_cooperative_continent_campaign', 'world_crown_and_apex_axis_finale',
   ],
   catch_up_route: true,
@@ -548,23 +614,25 @@ const eventArcs = [
 const written = [];
 written.push(write('world/continents/continents.json', envelope('continent', continents)));
 written.push(write('world/regions/regions.json', envelope('region_node', regions)));
-written.push(write('world/stages/main_stages.json', envelope('main_stage', mainStages)));
-written.push(write('world/stages/side_stages.json', envelope('side_stage', sideStages)));
-written.push(write('world/bosses/continent_bosses.json', envelope('continent_boss', continentBosses)));
-written.push(write('world/bosses/world_bosses.json', envelope('world_boss', worldBosses)));
-written.push(write('world/bosses/apex_boss.json', envelope('apex_boss', [apexBoss])));
+written.push(write('world/courses/courses.json', envelope('course', courses)));
+written.push(write('world/races/main_races.json', envelope('main_race', mainRaces)));
+written.push(write('world/races/challenge_races.json', envelope('challenge_race', challengeRaces)));
+written.push(write('world/champions/continent_champions.json', envelope('continent_champion', continentChampions)));
+written.push(write('world/champions/open_race_events.json', envelope('open_race_event', openRaceEvents)));
+written.push(write('world/champions/apex_race.json', envelope('apex_race', [apexRace])));
 written.push(write('world/restoration/restoration_states.json', envelope('restoration_state', restorationStates)));
-written.push(write('world/enemies/standard_enemy_families.json', envelope('standard_enemy_family', standardEnemies)));
-written.push(write('world/enemies/elite_enemy_families.json', envelope('elite_enemy_family', eliteEnemies)));
+written.push(write('world/rivals/standard_rival_crews.json', envelope('standard_rival_crew', standardRivals)));
+written.push(write('world/rivals/elite_rival_crews.json', envelope('elite_rival_crew', eliteRivals)));
 written.push(write('world/story_chapters.json', envelope('story_chapter', STORY_CHAPTERS.map((ch) => ({
   ...ch,
   title_key: loc(`chapter.${ch.id}`, ch.title),
 })))));
-written.push(write('world/dungeon_types.json', envelope('dungeon_type', DUNGEON_TYPES)));
+written.push(write('world/race_formats.json', envelope('race_format', RACE_FORMATS.map((id) => ({ id })))));
+written.push(write('world/challenge_formats.json', envelope('challenge_format', CHALLENGE_FORMATS)));
 
 written.push(write('characters/roster/characters.json', envelope('character', characters)));
-written.push(write('characters/skills/tactical_skills.json', envelope('tactical_skill', skills)));
-written.push(write('characters/skills/tactical_relics.json', envelope('tactical_relic', relics)));
+written.push(write('characters/techniques/race_techniques.json', envelope('race_technique', techniques)));
+written.push(write('characters/gear/gear_sets.json', envelope('gear_set', gearSets)));
 written.push(write('characters/episodes/character_episodes.json', envelope('character_episode', episodes)));
 written.push(write('characters/cosmetics/cosmetics.json', envelope('cosmetic', cosmetics)));
 written.push(write('characters/companions.json', envelope('companion', companions)));
@@ -607,17 +675,20 @@ function sortKeys(o) {
 const counts = {
   continents: continents.length,
   region_nodes: regions.length,
-  main_stages: mainStages.length,
-  side_stages: sideStages.length,
+  main_races: mainRaces.length,
+  challenge_races: challengeRaces.length,
   playable_characters: characters.length,
+  courses: courses.length,
   character_episodes: episodes.length,
-  tactical_skills: skills.length,
-  tactical_relics: relics.length,
-  standard_enemy_families: standardEnemies.length,
-  elite_enemy_families: eliteEnemies.length,
-  continent_bosses: continentBosses.length,
-  world_bosses: worldBosses.length,
-  apex_bosses: 1,
+  race_techniques: techniques.length,
+  gear_sets: gearSets.length,
+  standard_rival_crews: standardRivals.length,
+  elite_rival_crews: eliteRivals.length,
+  continent_champions: continentChampions.length,
+  open_race_events: openRaceEvents.length,
+  apex_races: 1,
+  race_formats: RACE_FORMATS.length,
+  challenge_formats: CHALLENGE_FORMATS.length,
   companions: companions.length,
   equipable_cosmetics: cosmetics.length,
   story_chapters: STORY_CHAPTERS.length,
@@ -654,4 +725,25 @@ for (const [k, v] of Object.entries(counts)) {
 }
 console.log(`  localization keys          ${String(Object.keys(locale.ko).length).padStart(4)} (ko + en)`);
 console.log(`  meets launch floor         ${manifest.meets_floor}`);
+
+// "false" on its own is not a diagnosis. This build reported a bare false while the
+// printed table showed every visible category at floor, because the category that was
+// short — courses — had no counter and so was never printed at all. Name the gap.
+{
+  const missingCounter = Object.keys(LAUNCH_CONTENT_FLOOR).filter((k) => !(k in counts));
+  const below = Object.entries(LAUNCH_CONTENT_FLOOR)
+    .filter(([k, v]) => k in counts && counts[k] < v)
+    .map(([k, v]) => `${k}: ${counts[k]} < ${v}`);
+  const extra = Object.keys(counts).filter((k) => !(k in LAUNCH_CONTENT_FLOOR));
+
+  for (const k of missingCounter) {
+    console.error(`::error::${k} has a launch floor but nothing counts it — it can never be met`);
+  }
+  for (const line of below) console.error(`::error::below floor — ${line}`);
+  for (const k of extra) console.error(`::error::${k} is generated but has no launch floor — it ships ungated`);
+
+  if (missingCounter.length > 0 || below.length > 0 || extra.length > 0) {
+    process.exit(1);
+  }
+}
 if (!manifest.meets_floor) process.exitCode = 1;

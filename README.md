@@ -31,8 +31,8 @@ constraints and a static scanner — see [`docs/USER_DIRECTION_LOCK.md`](docs/US
 
 | Path | What lives there |
 |---|---|
-| `tools/lib/` | The domain engine: Monthly Apex, Runner Passport, reward, momentum, best efforts |
-| `tools/tests/` | 68 unit tests over that engine |
+| `packages/domain/` | The domain engine: Monthly Apex, Runner Passport, reward, momentum, best efforts |
+| `tests/` | 99 unit tests over that engine |
 | `tools/content-factory/` | Authored design tables + the generator that expands them |
 | `tools/content-validator/` | The hard launch-content gate, including duplicate detection |
 | `tools/direction-lock/` | The forbidden-concept scanner |
@@ -49,11 +49,11 @@ constraints and a static scanner — see [`docs/USER_DIRECTION_LOCK.md`](docs/US
 ```bash
 bash tools/bootstrap/doctor.sh   # what this machine can and cannot build
 npm run test:fast                # direction lock + content validation + unit tests
-bash tools/test/db.sh            # migrations, seed and the pgTAP suite
+bash scripts/db.sh            # migrations, seed and the pgTAP suite
 npm run test:all                 # everything above, in CI order
 ```
 
-`tools/test/db.sh` expects a reachable PostgreSQL 16 with the `pgtap` extension available.
+`scripts/db.sh` expects a reachable PostgreSQL 16 with the `pgtap` extension available.
 
 ## Regenerating content
 

@@ -1,0 +1,728 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "challenge_race",
+  "count": 24,
+  "items": [
+    {
+      "id": "rce_lumena_side_01",
+      "continent_id": "con_lumena",
+      "region_id": "rgn_lumena_02",
+      "kind": "side",
+      "order": 1,
+      "name_key": "race.lumena.side.01",
+      "format": "time_trial",
+      "race_condition": "Every split must land inside a two-second band or the run is void",
+      "trait_id": "trait_even_effort",
+      "challenge_format_id": "fmt_even_pace",
+      "rival_crew_ids": [
+        "rvl_lumena_01"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/lumena/race_side_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_lumena_side_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_lumena_side_02",
+      "continent_id": "con_lumena",
+      "region_id": "rgn_lumena_05",
+      "kind": "side",
+      "order": 2,
+      "name_key": "race.lumena.side.02",
+      "format": "time_trial",
+      "race_condition": "Each split has to be faster than the one before it, from the first metre",
+      "trait_id": "trait_even_effort",
+      "challenge_format_id": "fmt_progressive",
+      "rival_crew_ids": [
+        "rvl_lumena_02"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/lumena/race_side_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_lumena_side_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_verdia_side_01",
+      "continent_id": "con_verdia",
+      "region_id": "rgn_verdia_02",
+      "kind": "side",
+      "order": 1,
+      "name_key": "race.verdia.side.01",
+      "format": "time_trial",
+      "race_condition": "The surface softens leg by leg while the required pace tightens",
+      "trait_id": "trait_soft_footing",
+      "challenge_format_id": "fmt_progressive",
+      "rival_crew_ids": [
+        "rvl_verdia_01"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/verdia/race_side_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_verdia_side_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_verdia_side_02",
+      "continent_id": "con_verdia",
+      "region_id": "rgn_verdia_05",
+      "kind": "side",
+      "order": 2,
+      "name_key": "race.verdia.side.02",
+      "format": "time_trial",
+      "race_condition": "The crew records the time of its last runner across the line, nobody else",
+      "trait_id": "trait_soft_footing",
+      "challenge_format_id": "fmt_pack_run",
+      "rival_crew_ids": [
+        "rvl_verdia_02"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/verdia/race_side_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_verdia_side_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_rubra_side_01",
+      "continent_id": "con_rubra",
+      "region_id": "rgn_rubra_02",
+      "kind": "side",
+      "order": 1,
+      "name_key": "race.rubra.side.01",
+      "format": "time_trial",
+      "race_condition": "The second half must be quicker on the half that is twice as hot",
+      "trait_id": "trait_late_heat",
+      "challenge_format_id": "fmt_negative_split",
+      "rival_crew_ids": [
+        "rvl_rubra_01"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/rubra/race_side_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_rubra_side_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_rubra_side_02",
+      "continent_id": "con_rubra",
+      "region_id": "rgn_rubra_05",
+      "kind": "side",
+      "order": 2,
+      "name_key": "race.rubra.side.02",
+      "format": "time_trial",
+      "race_condition": "No watch and no split calls, on the one road where fading is invisible until late",
+      "trait_id": "trait_late_heat",
+      "challenge_format_id": "fmt_blind_pace",
+      "rival_crew_ids": [
+        "rvl_rubra_02"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/rubra/race_side_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_rubra_side_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_anel_side_01",
+      "continent_id": "con_anel",
+      "region_id": "rgn_anel_02",
+      "kind": "side",
+      "order": 1,
+      "name_key": "race.anel.side.01",
+      "format": "time_trial",
+      "race_condition": "Effort must stay level while the wind does not, so the pace cannot",
+      "trait_id": "trait_alternating_wind",
+      "challenge_format_id": "fmt_even_pace",
+      "rival_crew_ids": [
+        "rvl_anel_01"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/anel/race_side_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_anel_side_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_anel_side_02",
+      "continent_id": "con_anel",
+      "region_id": "rgn_anel_05",
+      "kind": "side",
+      "order": 2,
+      "name_key": "race.anel.side.02",
+      "format": "time_trial",
+      "race_condition": "The runner at the back of the pack at each mill leaves the course",
+      "trait_id": "trait_alternating_wind",
+      "challenge_format_id": "fmt_last_runner",
+      "rival_crew_ids": [
+        "rvl_anel_02"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/anel/race_side_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_anel_side_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_serene_side_01",
+      "continent_id": "con_serene",
+      "region_id": "rgn_serene_02",
+      "kind": "side",
+      "order": 1,
+      "name_key": "race.serene.side.01",
+      "format": "time_trial",
+      "race_condition": "Each pier section faster than the last, with the span in the middle of them",
+      "trait_id": "trait_forced_surge",
+      "challenge_format_id": "fmt_progressive",
+      "rival_crew_ids": [
+        "rvl_serene_01"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/serene/race_side_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_serene_side_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_serene_side_02",
+      "continent_id": "con_serene",
+      "region_id": "rgn_serene_05",
+      "kind": "side",
+      "order": 2,
+      "name_key": "race.serene.side.02",
+      "format": "time_trial",
+      "race_condition": "The surge sits in the first half and the second half still has to be quicker",
+      "trait_id": "trait_forced_surge",
+      "challenge_format_id": "fmt_negative_split",
+      "rival_crew_ids": [
+        "rvl_serene_02"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/serene/race_side_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_serene_side_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_voltis_side_01",
+      "continent_id": "con_voltis",
+      "region_id": "rgn_voltis_02",
+      "kind": "side",
+      "order": 1,
+      "name_key": "race.voltis.side.01",
+      "format": "time_trial",
+      "race_condition": "The back of the field leaves at every capacitor lap",
+      "trait_id": "trait_tight_corners",
+      "challenge_format_id": "fmt_last_runner",
+      "rival_crew_ids": [
+        "rvl_voltis_01"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/voltis/race_side_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_voltis_side_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_voltis_side_02",
+      "continent_id": "con_voltis",
+      "region_id": "rgn_voltis_05",
+      "kind": "side",
+      "order": 2,
+      "name_key": "race.voltis.side.02",
+      "format": "time_trial",
+      "race_condition": "The crew has to exit every corner together or the lap does not count",
+      "trait_id": "trait_tight_corners",
+      "challenge_format_id": "fmt_pack_run",
+      "rival_crew_ids": [
+        "rvl_voltis_02"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/voltis/race_side_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_voltis_side_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_hora_side_01",
+      "continent_id": "con_hora",
+      "region_id": "rgn_hora_02",
+      "kind": "side",
+      "order": 1,
+      "name_key": "race.hora.side.01",
+      "format": "time_trial",
+      "race_condition": "No watch on the one course where nothing else tells the truth either",
+      "trait_id": "trait_blind_pacing",
+      "challenge_format_id": "fmt_blind_pace",
+      "rival_crew_ids": [
+        "rvl_hora_01"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/hora/race_side_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_hora_side_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_hora_side_02",
+      "continent_id": "con_hora",
+      "region_id": "rgn_hora_05",
+      "kind": "side",
+      "order": 2,
+      "name_key": "race.hora.side.02",
+      "format": "time_trial",
+      "race_condition": "Splits are graded afterwards, so evenness has to be believed rather than seen",
+      "trait_id": "trait_blind_pacing",
+      "challenge_format_id": "fmt_even_pace",
+      "rival_crew_ids": [
+        "rvl_hora_02"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/hora/race_side_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_hora_side_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_nival_side_01",
+      "continent_id": "con_nival",
+      "region_id": "rgn_nival_02",
+      "kind": "side",
+      "order": 1,
+      "name_key": "race.nival.side.01",
+      "format": "time_trial",
+      "race_condition": "Each split faster than the last, beginning from a genuinely cold start",
+      "trait_id": "trait_slow_opening",
+      "challenge_format_id": "fmt_progressive",
+      "rival_crew_ids": [
+        "rvl_nival_01"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/nival/race_side_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_nival_side_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_nival_side_02",
+      "continent_id": "con_nival",
+      "region_id": "rgn_nival_05",
+      "kind": "side",
+      "order": 2,
+      "name_key": "race.nival.side.02",
+      "format": "time_trial",
+      "race_condition": "Nothing to run to but feel, on the course where feel lies the most early",
+      "trait_id": "trait_slow_opening",
+      "challenge_format_id": "fmt_blind_pace",
+      "rival_crew_ids": [
+        "rvl_nival_02"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/nival/race_side_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_nival_side_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_kael_side_01",
+      "continent_id": "con_kael",
+      "region_id": "rgn_kael_02",
+      "kind": "side",
+      "order": 1,
+      "name_key": "race.kael.side.01",
+      "format": "time_trial",
+      "race_condition": "The crew has to negative split together, measured on the last runner",
+      "trait_id": "trait_negative_split",
+      "challenge_format_id": "fmt_pack_run",
+      "rival_crew_ids": [
+        "rvl_kael_01"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/kael/race_side_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_kael_side_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_kael_side_02",
+      "continent_id": "con_kael",
+      "region_id": "rgn_kael_05",
+      "kind": "side",
+      "order": 2,
+      "name_key": "race.kael.side.02",
+      "format": "time_trial",
+      "race_condition": "The margin required grows with every lap of the oval",
+      "trait_id": "trait_negative_split",
+      "challenge_format_id": "fmt_negative_split",
+      "rival_crew_ids": [
+        "rvl_kael_02"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/kael/race_side_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_kael_side_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_neris_side_01",
+      "continent_id": "con_neris",
+      "region_id": "rgn_neris_02",
+      "kind": "side",
+      "order": 1,
+      "name_key": "race.neris.side.01",
+      "format": "time_trial",
+      "race_condition": "Leaving the pack ends the run, so the back of it is the only safe place",
+      "trait_id": "trait_pack_draft",
+      "challenge_format_id": "fmt_last_runner",
+      "rival_crew_ids": [
+        "rvl_neris_01"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/neris/race_side_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_neris_side_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_neris_side_02",
+      "continent_id": "con_neris",
+      "region_id": "rgn_neris_05",
+      "kind": "side",
+      "order": 2,
+      "name_key": "race.neris.side.02",
+      "format": "time_trial",
+      "race_condition": "Sonar only, no clock, and the pack is the only reference left",
+      "trait_id": "trait_pack_draft",
+      "challenge_format_id": "fmt_blind_pace",
+      "rival_crew_ids": [
+        "rvl_neris_02"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/neris/race_side_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_neris_side_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_tempora_side_01",
+      "continent_id": "con_tempora",
+      "region_id": "rgn_tempora_02",
+      "kind": "side",
+      "order": 1,
+      "name_key": "race.tempora.side.01",
+      "format": "time_trial",
+      "race_condition": "The belt makes evenness free, so the tolerance is a tenth of a second",
+      "trait_id": "trait_exact_pace",
+      "challenge_format_id": "fmt_even_pace",
+      "rival_crew_ids": [
+        "rvl_tempora_01"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/tempora/race_side_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_tempora_side_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_tempora_side_02",
+      "continent_id": "con_tempora",
+      "region_id": "rgn_tempora_05",
+      "kind": "side",
+      "order": 2,
+      "name_key": "race.tempora.side.02",
+      "format": "time_trial",
+      "race_condition": "Every notch is announced in advance and none of them may be refused",
+      "trait_id": "trait_exact_pace",
+      "challenge_format_id": "fmt_progressive",
+      "rival_crew_ids": [
+        "rvl_tempora_02"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/tempora/race_side_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_tempora_side_02",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_origin_side_01",
+      "continent_id": "con_origin",
+      "region_id": "rgn_origin_02",
+      "kind": "side",
+      "order": 1,
+      "name_key": "race.origin.side.01",
+      "format": "time_trial",
+      "race_condition": "The crew crosses eleven different roads and has to finish every one together",
+      "trait_id": "trait_championship_composite",
+      "challenge_format_id": "fmt_pack_run",
+      "rival_crew_ids": [
+        "rvl_origin_01"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/origin/race_side_01",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_origin_side_01",
+      "enabled": true,
+      "debug_only": false
+    },
+    {
+      "id": "rce_origin_side_02",
+      "continent_id": "con_origin",
+      "region_id": "rgn_origin_05",
+      "kind": "side",
+      "order": 2,
+      "name_key": "race.origin.side.02",
+      "format": "time_trial",
+      "race_condition": "One runner leaves the course per worldline until a single runner remains",
+      "trait_id": "trait_championship_composite",
+      "challenge_format_id": "fmt_last_runner",
+      "rival_crew_ids": [
+        "rvl_origin_02"
+      ],
+      "elite_crew_id": null,
+      "champion_id": null,
+      "field_size": 8,
+      "scene_address": "world/origin/race_side_02",
+      "lane_ids": [
+        "journey",
+        "standard",
+        "veteran",
+        "master",
+        "legend",
+        "apex"
+      ],
+      "reward_table_id": "rwd_origin_side_02",
+      "enabled": true,
+      "debug_only": false
+    }
+  ]
+}

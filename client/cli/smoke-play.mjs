@@ -4,11 +4,11 @@
  *
  * Master # 22.4 requires the first-run journey to be exercised from an independent clean
  * profile for each ability level, and # 23 Gate 10 requires a run → reward → Apex checkpoint
- * → world → boss end-to-end. This plays the actual client, for each runner profile, against
+ * → world → championship race end-to-end. This plays the actual client, for each runner profile, against
  * the actual database, and asserts on what comes back.
  *
  * It is a smoke test of the GAME, not of a module: if the loop is broken anywhere between
- * onboarding and the battle result, this fails.
+ * onboarding and the race result, this fails.
  *
  * Usage: node client/cli/smoke-play.mjs
  */
@@ -25,10 +25,13 @@ const ROOT = join(HERE, '..', '..');
  * own passport, its own goal, its own continent and character.
  */
 const PROFILES = [
-  { id: 'beginner',    expect: { band: 'R0', minCheckpoints: 2, maxMonthlyKm: 2 } },
-  { id: 'regular_10k', expect: { band: 'R3', minCheckpoints: 5, maxMonthlyKm: 11 } },
-  { id: 'marathon',    expect: { band: 'R6', minCheckpoints: 11, maxMonthlyKm: 43 } },
-  { id: 'ultra',       expect: { band: 'R7', minCheckpoints: 12, maxMonthlyKm: 51 } },
+  // Checkpoint expectations follow the V14 120-step ladder, which starts at 1 km. The
+  // pre-V14 ladder had a 0 km checkpoint, so every profile used to be credited one extra
+  // crossing for having run at all.
+  { id: 'beginner',    expect: { band: 'R0', minCheckpoints: 1, maxMonthlyKm: 2 } },
+  { id: 'regular_10k', expect: { band: 'R3', minCheckpoints: 8, maxMonthlyKm: 11 } },
+  { id: 'marathon',    expect: { band: 'R6', minCheckpoints: 18, maxMonthlyKm: 43 } },
+  { id: 'ultra',       expect: { band: 'R7', minCheckpoints: 20, maxMonthlyKm: 51 } },
 ];
 
 const failures = [];
@@ -83,13 +86,13 @@ for (const profile of PROFILES) {
     check(`${profile.id}: rank never above World Crown`,
       result.major_rank !== null && result.monthly_distance_after < 1_000_000
         ? result.major_rank !== 'world_crown' : true, `rank ${result.major_rank}`),
-    check(`${profile.id}: battle resolved`, typeof result.victory === 'boolean', null),
+    check(`${profile.id}: race resolved`, Number.isInteger(result.placement) && result.placement >= 1 && result.placement <= 8, `placement ${result.placement}`),
 
     // The transcript itself must show the loop actually happened.
     check(`${profile.id}: reached the Grand World`, raw.includes('GRAND WORLD'), null),
     check(`${profile.id}: showed all 12 continents`, raw.includes('12 continents'), null),
     check(`${profile.id}: reached the Monthly Apex screen`, raw.includes('MONTHLY APEX'), null),
-    check(`${profile.id}: fought a battle`, raw.includes('BATTLE'), null),
+    check(`${profile.id}: raced the field`, raw.includes('LIVE RACE'), null),
     check(`${profile.id}: full library remained selectable`, raw.includes('0 prerequisites'), null),
   ].every(Boolean);
 
@@ -118,12 +121,12 @@ if (results.length === PROFILES.length) {
 }
 
 console.log();
-console.log('  profile          band-run   XP        monthly     checkpoints  battle');
+console.log('  profile          band-run   XP        monthly     checkpoints  race');
 for (const r of results) {
   console.log(
     `  ${r.profile.padEnd(14)} ${r.grade.padEnd(9)} ${String(r.final_amount).padStart(9)}` +
     ` ${`${(r.monthly_distance_after / 1000).toFixed(2)} km`.padStart(11)}` +
-    ` ${String(r.crossed).padStart(11)}  ${r.victory ? 'victory' : 'defeat'}`,
+    ` ${String(r.crossed).padStart(11)}  ${r.placement}/8`,
   );
 }
 console.log();
@@ -135,5 +138,5 @@ if (failures.length > 0) {
 }
 
 console.log(`  all ${PROFILES.length} ability levels played the full loop: onboarding → goal → run →`);
-console.log('  verification → reward → Apex checkpoints → battle → restoration.');
+console.log('  verification → reward → Apex checkpoints → race → restoration.');
 process.exit(0);

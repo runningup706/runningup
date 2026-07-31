@@ -252,7 +252,7 @@ begin
   where user_id = v_session.user_id and chain_kind = 'long_run' and rule_version = '1.0.0';
 
   -- ---------------------------------------------------------------------------
-  -- Components. Mirrors tools/lib/reward.mjs; the JS side is a preview, this is the
+  -- Components. Mirrors packages/domain/reward.mjs; the JS side is a preview, this is the
   -- authority. Both are versioned with the same REWARD_FORMULA_VERSION string.
   -- ---------------------------------------------------------------------------
   if v_core_eligible then

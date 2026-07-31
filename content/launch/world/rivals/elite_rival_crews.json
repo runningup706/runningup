@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "elite_rival_crew",
+  "count": 12,
+  "items": [
+    {
+      "id": "rve_lumena_01",
+      "continent_id": "con_lumena",
+      "crew_kind": "elite",
+      "name_key": "rival.lumena.elite",
+      "tactic": "copies whatever pace the player sets and holds it a half-second quicker",
+      "trait_id": "trait_even_effort",
+      "prefab_address": "rival/lumena/elite_01"
+    },
+    {
+      "id": "rve_verdia_01",
+      "continent_id": "con_verdia",
+      "crew_kind": "elite",
+      "name_key": "rival.verdia.elite",
+      "tactic": "never changes gear, so the soft ground costs her less than it costs the field",
+      "trait_id": "trait_soft_footing",
+      "prefab_address": "rival/verdia/elite_01"
+    },
+    {
+      "id": "rve_rubra_01",
+      "continent_id": "con_rubra",
+      "crew_kind": "elite",
+      "name_key": "rival.rubra.elite",
+      "tactic": "reads the heat better than anyone and changes gear exactly once, at the vent",
+      "trait_id": "trait_late_heat",
+      "prefab_address": "rival/rubra/elite_01"
+    },
+    {
+      "id": "rve_anel_01",
+      "continent_id": "con_anel",
+      "crew_kind": "elite",
+      "name_key": "rival.anel.elite",
+      "tactic": "sits exactly one stride behind the leader for the whole headwind and comes past at the turn",
+      "trait_id": "trait_alternating_wind",
+      "prefab_address": "rival/anel/elite_01"
+    },
+    {
+      "id": "rve_serene_01",
+      "continent_id": "con_serene",
+      "crew_kind": "elite",
+      "name_key": "rival.serene.elite",
+      "tactic": "times the surge later than anyone and arrives at the span at full speed",
+      "trait_id": "trait_forced_surge",
+      "prefab_address": "rival/serene/elite_01"
+    },
+    {
+      "id": "rve_voltis_01",
+      "continent_id": "con_voltis",
+      "crew_kind": "elite",
+      "name_key": "rival.voltis.elite",
+      "tactic": "never loses cadence through a turn, so the field pays for corners that cost him nothing",
+      "trait_id": "trait_tight_corners",
+      "prefab_address": "rival/voltis/elite_01"
+    },
+    {
+      "id": "rve_hora_01",
+      "continent_id": "con_hora",
+      "crew_kind": "elite",
+      "name_key": "rival.hora.elite",
+      "tactic": "reads the real horizon off the shadows and never misjudges a distance",
+      "trait_id": "trait_blind_pacing",
+      "prefab_address": "rival/hora/elite_01"
+    },
+    {
+      "id": "rve_nival_01",
+      "continent_id": "con_nival",
+      "crew_kind": "elite",
+      "name_key": "rival.nival.elite",
+      "tactic": "holds an exact effort while cold, so she loses nothing to the opening the field loses",
+      "trait_id": "trait_slow_opening",
+      "prefab_address": "rival/nival/elite_01"
+    },
+    {
+      "id": "rve_kael_01",
+      "continent_id": "con_kael",
+      "crew_kind": "elite",
+      "name_key": "rival.kael.elite",
+      "tactic": "gives away more of the first half than looks survivable and always takes it back",
+      "trait_id": "trait_negative_split",
+      "prefab_address": "rival/kael/elite_01"
+    },
+    {
+      "id": "rve_neris_01",
+      "continent_id": "con_neris",
+      "crew_kind": "elite",
+      "name_key": "rival.neris.elite",
+      "tactic": "sits at the back of the pack all race and only shows herself in the last gallery",
+      "trait_id": "trait_pack_draft",
+      "prefab_address": "rival/neris/elite_01"
+    },
+    {
+      "id": "rve_tempora_01",
+      "continent_id": "con_tempora",
+      "crew_kind": "elite",
+      "name_key": "rival.tempora.elite",
+      "tactic": "holds a chosen pace to the tenth of a second for as long as the race lasts",
+      "trait_id": "trait_exact_pace",
+      "prefab_address": "rival/tempora/elite_01"
+    },
+    {
+      "id": "rve_origin_01",
+      "continent_id": "con_origin",
+      "crew_kind": "elite",
+      "name_key": "rival.origin.elite",
+      "tactic": "mirrors the player own race plan lap for lap and finishes a stride ahead of it",
+      "trait_id": "trait_championship_composite",
+      "prefab_address": "rival/origin/elite_01"
+    }
+  ]
+}

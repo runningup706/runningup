@@ -1,0 +1,78 @@
+{
+  "version": "11.0.0",
+  "main_character_policy": "ONE_PERSISTENT_MY_RUNNER",
+  "forms": [
+    {
+      "form_level": 1,
+      "form_id": "FIRST_STEP",
+      "lifetime_verified_km": 0,
+      "visual_change_ko": "기본 러닝복·깨끗한 운동화·작은 번호표"
+    },
+    {
+      "form_level": 2,
+      "form_id": "ROAD_SPARK",
+      "lifetime_verified_km": 10,
+      "visual_change_ko": "헤어밴드·첫 발자국 빛·표정 세트 확장"
+    },
+    {
+      "form_level": 3,
+      "form_id": "PACE_BLOOM",
+      "lifetime_verified_km": 30,
+      "visual_change_ko": "러닝화 미드솔 발광·팔 동작 보정·피니시 포즈"
+    },
+    {
+      "form_level": 4,
+      "form_id": "RHYTHM_WAVE",
+      "lifetime_verified_km": 75,
+      "visual_change_ko": "리듬 파동 오라·상하의 레이어·새 달리기 폼"
+    },
+    {
+      "form_level": 5,
+      "form_id": "CITY_STRIDER",
+      "lifetime_verified_km": 150,
+      "visual_change_ko": "도시형 재킷·워치 HUD·추월 잔상"
+    },
+    {
+      "form_level": 6,
+      "form_id": "CIRCUIT_STAR",
+      "lifetime_verified_km": 300,
+      "visual_change_ko": "별 프레임·코스별 컬러 라인·관중 반응"
+    },
+    {
+      "form_level": 7,
+      "form_id": "GRAND_RUNNER",
+      "lifetime_verified_km": 500,
+      "visual_change_ko": "고급 의상 실루엣·러닝화 날개형 플레이트"
+    },
+    {
+      "form_level": 8,
+      "form_id": "AURORA_RUNNER",
+      "lifetime_verified_km": 800,
+      "visual_change_ko": "오로라 발자국·헤어 하이라이트·결승 카메라"
+    },
+    {
+      "form_level": 9,
+      "form_id": "CROWN_CHASER",
+      "lifetime_verified_km": 1200,
+      "visual_change_ko": "크라운 패턴 의상·프리즘 워치·피니시 리본"
+    },
+    {
+      "form_level": 10,
+      "form_id": "WORLD_RUNNER",
+      "lifetime_verified_km": 2000,
+      "visual_change_ko": "12대륙 문양·동적 오라·전용 출발 연출"
+    },
+    {
+      "form_level": 11,
+      "form_id": "LEGACY_STRIDER",
+      "lifetime_verified_km": 3500,
+      "visual_change_ko": "과거 시즌 메달이 의상에 누적·전용 라운지 좌석"
+    },
+    {
+      "form_level": 12,
+      "form_id": "CROWN_BEARER",
+      "lifetime_verified_km": 5000,
+      "visual_change_ko": "최종 러너 실루엣·월드 크라운 오라·전용 프로필"
+    }
+  ]
+}

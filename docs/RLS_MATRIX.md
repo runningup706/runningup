@@ -24,16 +24,16 @@ Verified by `backend/supabase/tests/pgtap/01_schema_rls.sql` and `06_profile_wri
 | `account_jobs` | ✅ | ✅ | — — — — | ✅ ✅ — — | `account_jobs_insert_own` (INSERT)<br>`account_jobs_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` INSERT | `completed_at, failure_reason, grace_until, id, job_kind, requested_at, status, user_id` |
 | ↳ column grant | | | | `authenticated` SELECT | `completed_at, failure_reason, grace_until, id, job_kind, requested_at, status, user_id` |
-| `apex_boss_attempts` | ✅ | ✅ | — — — — | ✅ — — — | `apex_attempts_select_own` (SELECT) |
-| ↳ column grant | | | | `authenticated` SELECT | `attempt_index, attempted_at, battle_seed, clear_seconds, cleared, id, month_key, user_id` |
-| `apex_boss_unlocks` | ✅ | ✅ | — — — — | ✅ — — — | `apex_unlock_select_own` (SELECT) |
-| ↳ column grant | | | | `authenticated` SELECT | `boss_id, id, month_key, unlocked_at, user_id` |
+| `apex_race_attempts` | ✅ | ✅ | — — — — | ✅ — — — | `apex_attempts_select_own` (SELECT) |
+| ↳ column grant | | | | `authenticated` SELECT | `attempt_index, attempted_at, clear_seconds, cleared, id, month_key, race_seed, user_id` |
+| `apex_race_entries` | ✅ | ✅ | — — — — | ✅ — — — | `apex_unlock_select_own` (SELECT) |
+| ↳ column grant | | | | `authenticated` SELECT | `id, month_key, race_id, unlocked_at, user_id` |
+| `challenge_formats` | ✅ | ✅ | ✅ — — — | ✅ — — — | `challenge_formats_public_read` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `content_version, id, rule` |
+| ↳ column grant | | | | `authenticated` SELECT | `content_version, id, rule` |
 | `character_episodes` | ✅ | ✅ | ✅ — — — | ✅ — — — | `character_episodes_public_read` (SELECT) |
 | ↳ column grant | | | | `anon` SELECT | `chapter_index, character_id, id, name_key, playable_at_launch, scene_address` |
 | ↳ column grant | | | | `authenticated` SELECT | `chapter_index, character_id, id, name_key, playable_at_launch, scene_address` |
-| `character_skills` | ✅ | ✅ | ✅ — — — | ✅ — — — | `character_skills_public_read` (SELECT) |
-| ↳ column grant | | | | `anon` SELECT | `character_id, core_budget_delta, id, kind, name_key` |
-| ↳ column grant | | | | `authenticated` SELECT | `character_id, core_budget_delta, id, kind, name_key` |
 | `characters` | ✅ | ✅ | ✅ — — — | ✅ — — — | `characters_public_read` (SELECT) |
 | ↳ column grant | | | | `anon` SELECT | `continent_affinity, display_order, id, name_key, paid_gacha, portrait_address, prefab_address, role, secondary_role, trial_available, unlock_path, visible_at_launch` |
 | ↳ column grant | | | | `authenticated` SELECT | `continent_affinity, display_order, id, name_key, paid_gacha, portrait_address, prefab_address, role, secondary_role, trial_available, unlock_path, visible_at_launch` |
@@ -51,9 +51,9 @@ Verified by `backend/supabase/tests/pgtap/01_schema_rls.sql` and `06_profile_wri
 | ↳ column grant | | | | `authenticated` SELECT | `character_id, core_power, extra_core_reward_multiplier, hidden_stat, id, name_key, purchasable_with_real_money, ranking_multiplier, slot, verification_bonus, xp_multiplier` |
 | `currency_ledger` | ✅ | ✅ | — — — — | ✅ — — — | `currency_ledger_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` SELECT | `amount, created_at, currency_kind, id, idempotency_key, source_id, source_type, user_id` |
-| `enemy_families` | ✅ | ✅ | ✅ — — — | ✅ — — — | `enemy_families_public_read` (SELECT) |
-| ↳ column grant | | | | `anon` SELECT | `behaviour, continent_id, family_kind, id, name_key` |
-| ↳ column grant | | | | `authenticated` SELECT | `behaviour, continent_id, family_kind, id, name_key` |
+| `gear_sets` | ✅ | ✅ | ✅ — — — | ✅ — — — | `gear_sets_public_read` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `activation_condition, budget_delta, continent_id, id, name_key, trade_from, trade_to` |
+| ↳ column grant | | | | `authenticated` SELECT | `activation_condition, budget_delta, continent_id, id, name_key, trade_from, trade_to` |
 | `monthly_apex_checkpoint_claims` | ✅ | ✅ | — — — — | ✅ — — — | `apex_claims_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` SELECT | `checkpoint_id, claimed_at, id, ledger_entry_id, month_key, user_id` |
 | `monthly_apex_checkpoints` | ✅ | ✅ | ✅ — — — | ✅ — — — | `monthly_apex_checkpoints_public_read` (SELECT) |
@@ -69,6 +69,15 @@ Verified by `backend/supabase/tests/pgtap/01_schema_rls.sql` and `06_profile_wri
 | `profiles` | ✅ | ✅ | — — — — | ✅ — — — | `profiles_select_own` (SELECT)<br>`profiles_update_own` (UPDATE) |
 | ↳ column grant | | | | `authenticated` SELECT | `created_at, display_name, is_anonymous, locale, profile_visibility, reward_timezone, updated_at, user_code, user_id` |
 | ↳ column grant | | | | `authenticated` UPDATE | `display_name, locale, profile_visibility` |
+| `race_formats` | ✅ | ✅ | ✅ — — — | ✅ — — — | `race_formats_public_read` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `content_version, id` |
+| ↳ column grant | | | | `authenticated` SELECT | `content_version, id` |
+| `race_techniques` | ✅ | ✅ | ✅ — — — | ✅ — — — | `race_techniques_public_read` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `character_id, core_budget_delta, id, kind, name_key` |
+| ↳ column grant | | | | `authenticated` SELECT | `character_id, core_budget_delta, id, kind, name_key` |
+| `rival_crews` | ✅ | ✅ | ✅ — — — | ✅ — — — | `rival_crews_public_read` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `continent_id, crew_kind, id, name_key, tactic` |
+| ↳ column grant | | | | `authenticated` SELECT | `continent_id, crew_kind, id, name_key, tactic` |
 | `run_appeals` | ✅ | ✅ | — — — — | ✅ ✅ — — | `appeals_insert_own` (INSERT)<br>`appeals_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` INSERT | `created_at, id, message, resolved_at, session_id, status, user_id` |
 | ↳ column grant | | | | `authenticated` SELECT | `created_at, id, message, resolved_at, session_id, status, user_id` |
@@ -91,9 +100,6 @@ Verified by `backend/supabase/tests/pgtap/01_schema_rls.sql` and `06_profile_wri
 | `story_chapters` | ✅ | ✅ | ✅ — — — | ✅ — — — | `story_chapters_public_read` (SELECT) |
 | ↳ column grant | | | | `anon` SELECT | `continent_id, display_order, id, requires_previous_chapter, shard_id, title_key` |
 | ↳ column grant | | | | `authenticated` SELECT | `continent_id, display_order, id, requires_previous_chapter, shard_id, title_key` |
-| `tactical_relics` | ✅ | ✅ | ✅ — — — | ✅ — — — | `tactical_relics_public_read` (SELECT) |
-| ↳ column grant | | | | `anon` SELECT | `activation_condition, budget_delta, continent_id, id, name_key, trade_from, trade_to` |
-| ↳ column grant | | | | `authenticated` SELECT | `activation_condition, budget_delta, continent_id, id, name_key, trade_from, trade_to` |
 | `user_chains` | ✅ | ✅ | — — — — | ✅ — — — | `chains_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` SELECT | `best_length, chain_kind, current_length, rule_version, updated_at, user_id` |
 | `user_consecutive_weeks` | ✅ | ✅ | — — — — | ✅ — — — | `weeks_select_own` (SELECT) |
@@ -106,20 +112,23 @@ Verified by `backend/supabase/tests/pgtap/01_schema_rls.sql` and `06_profile_wri
 | ↳ column grant | | | | `authenticated` UPDATE | `audio_cue_frequency, graphics_tier, haptics_enabled, large_text, notification_opt_in, quiet_hours_end, quiet_hours_start, reduced_motion, updated_at, user_id, voice_cues_enabled` |
 | `weekly_goal_snapshots` | ✅ | ✅ | — — — — | ✅ — — — | `weekly_goals_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` SELECT | `achieved_value, goal_kind, met, target_value, user_id, week_key` |
-| `world_bosses` | ✅ | ✅ | ✅ — — — | ✅ — — — | `world_bosses_public_read` (SELECT) |
-| ↳ column grant | | | | `anon` SELECT | `continent_id, id, kind, name_key, phases, scene_address` |
-| ↳ column grant | | | | `authenticated` SELECT | `continent_id, id, kind, name_key, phases, scene_address` |
+| `world_champions` | ✅ | ✅ | ✅ — — — | ✅ — — — | `world_champions_public_read` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `continent_id, id, kind, name_key, race_plan, scene_address` |
+| ↳ column grant | | | | `authenticated` SELECT | `continent_id, id, kind, name_key, race_plan, scene_address` |
 | `world_continents` | ✅ | ✅ | ✅ — — — | ✅ — — — | `world_continents_public_read` (SELECT) |
-| ↳ column grant | | | | `anon` SELECT | `content_pack_id, content_version, display_order, entry_region_id, id, mechanic_id, name_key, playable_at_launch, visible_at_first_login` |
-| ↳ column grant | | | | `authenticated` SELECT | `content_pack_id, content_version, display_order, entry_region_id, id, mechanic_id, name_key, playable_at_launch, visible_at_first_login` |
+| ↳ column grant | | | | `anon` SELECT | `content_pack_id, content_version, display_order, entry_region_id, id, name_key, playable_at_launch, trait_id, visible_at_first_login` |
+| ↳ column grant | | | | `authenticated` SELECT | `content_pack_id, content_version, display_order, entry_region_id, id, name_key, playable_at_launch, trait_id, visible_at_first_login` |
+| `world_courses` | ✅ | ✅ | ✅ — — — | ✅ — — — | `world_courses_public_read` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `content_version, continent_id, debug_only, display_order, distance_meters, enabled, id, name_key, region_id, reward_table_id, scene_address, shape, surface` |
+| ↳ column grant | | | | `authenticated` SELECT | `content_version, continent_id, debug_only, display_order, distance_meters, enabled, id, name_key, region_id, reward_table_id, scene_address, shape, surface` |
 | `world_crown_history` | ✅ | ✅ | — — — — | ✅ — — — | `crown_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` SELECT | `achieved_at, id, laddered_meters, month_key, over_crown_meters_at_award, user_id` |
+| `world_races` | ✅ | ✅ | ✅ — — — | ✅ — — — | `world_races_public_read` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `challenge_format_id, continent_id, debug_only, display_order, enabled, field_size, format, id, kind, name_key, race_condition, region_id, reward_table_id, scene_address` |
+| ↳ column grant | | | | `authenticated` SELECT | `challenge_format_id, continent_id, debug_only, display_order, enabled, field_size, format, id, kind, name_key, race_condition, region_id, reward_table_id, scene_address` |
 | `world_regions` | ✅ | ✅ | ✅ — — — | ✅ — — — | `world_regions_public_read` (SELECT) |
 | ↳ column grant | | | | `anon` SELECT | `bypass_allowed, continent_id, display_order, id, name_key, node_type, scene_address` |
 | ↳ column grant | | | | `authenticated` SELECT | `bypass_allowed, continent_id, display_order, id, name_key, node_type, scene_address` |
-| `world_stages` | ✅ | ✅ | ✅ — — — | ✅ — — — | `world_stages_public_read` (SELECT) |
-| ↳ column grant | | | | `anon` SELECT | `continent_id, debug_only, display_order, enabled, id, kind, name_key, objective, objective_twist, region_id, reward_table_id, scene_address` |
-| ↳ column grant | | | | `authenticated` SELECT | `continent_id, debug_only, display_order, enabled, id, kind, name_key, objective, objective_twist, region_id, reward_table_id, scene_address` |
 | `xp_ledger` | ✅ | ✅ | — — — — | ✅ — — — | `xp_ledger_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` SELECT | `base_components, created_at, crossed_checkpoint_ids, final_amount, formula_version, id, idempotency_key, modifiers, monthly_distance_after, monthly_distance_before, monthly_multiplier, passport_version, reversal_of, source_id, source_type, user_id, verification_grade` |
 

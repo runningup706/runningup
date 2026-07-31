@@ -13,7 +13,7 @@
  *   artifacts/test-evidence-manifest.json  what ran, how many, and what is blocked
  *
  * Usage: node tools/release/generate-evidence.mjs
- * Requires: a database with the migrations applied (tools/test/db.sh leaves one behind).
+ * Requires: a database with the migrations applied (scripts/db.sh leaves one behind).
  */
 
 import { execFileSync } from 'node:child_process';
@@ -148,7 +148,7 @@ for (const schema of ['api', 'private', 'audit', 'analytics_private']) {
 
 // The invariants that matter most, restated as machine-checked facts.
 const ledgerTables = ['xp_ledger', 'stat_ledger', 'currency_ledger', 'monthly_apex_progress',
-  'monthly_apex_checkpoint_claims', 'world_crown_history', 'apex_boss_unlocks', 'runner_passports'];
+  'monthly_apex_checkpoint_claims', 'world_crown_history', 'apex_race_entries', 'runner_passports'];
 // Checked at BOTH levels. A table-level check alone would miss someone granting
 // `update (final_amount)` on the ledger, which is exactly the shape of the AUDIT_07 bug
 // that column-level grants were introduced to fix.
@@ -293,7 +293,7 @@ const manifest = {
   suites: [
     { id: 'direction_lock', tool: 'tools/direction-lock/scan.mjs', kind: 'static_scan', status: 'PASS' },
     { id: 'content_validation', tool: 'tools/content-validator/validate.mjs', kind: 'content_gate', status: 'PASS' },
-    { id: 'domain_engine', tool: 'node --test tools/tests/*.test.mjs', kind: 'unit', status: 'PASS' },
+    { id: 'domain_engine', tool: 'node --test tests/*.test.mjs', kind: 'unit', status: 'PASS' },
     { id: 'database', tool: 'pg_prove backend/supabase/tests/pgtap/*.sql', kind: 'integration', status: 'PASS' },
     { id: 'unity_domain', tool: 'dotnet test client/dotnet/RunningUp.Domain.Tests', kind: 'unit', status: 'PASS' },
     { id: 'run_capture_core', tool: 'gradle test (native/android-running-plugin)', kind: 'unit', status: 'PASS' },

@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "challenge_format",
+  "count": 6,
+  "items": [
+    {
+      "id": "fmt_even_pace",
+      "rule": "every split must land inside a published tolerance band"
+    },
+    {
+      "id": "fmt_negative_split",
+      "rule": "the second half has to be faster than the first"
+    },
+    {
+      "id": "fmt_progressive",
+      "rule": "each split has to be faster than the split before it"
+    },
+    {
+      "id": "fmt_pack_run",
+      "rule": "the crew is scored on its last runner across the line"
+    },
+    {
+      "id": "fmt_last_runner",
+      "rule": "the runner at the back leaves the course each lap"
+    },
+    {
+      "id": "fmt_blind_pace",
+      "rule": "no watch and no split calls until the finish"
+    }
+  ]
+}

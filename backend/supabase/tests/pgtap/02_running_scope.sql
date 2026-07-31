@@ -2,7 +2,7 @@
 -- Master # 22.1 / # 22.6 / audit 4. The point of this suite is that trail, hiking,
 -- cycling and climbing are not merely absent from the data: they are unrepresentable.
 begin;
-select plan(14);
+select plan(16);
 
 select is(
   (select count(*)::int from pg_enum e join pg_type t on t.oid = e.enumtypid
@@ -78,6 +78,21 @@ select is(
    where table_schema in ('api', 'private')
      and (column_name ilike '%elevation%' or column_name ilike '%weather%' or column_name ilike '%night%')),
   0, 'no elevation, weather or night-time column exists anywhere in the schema');
+
+-- DL-3 at the type level: a trail or a hiking route cannot be stored, not merely is not.
+select throws_ok(
+  $$insert into api.world_courses (id, continent_id, region_id, display_order, name_key,
+      distance_meters, surface, shape, scene_address, reward_table_id, content_version)
+    values ('crs_bad_trail','con_lumena','rgn_lumena_01',99,'course.bad',
+      5000,'trail','loop','world/bad','rwd_bad','1.0.0')$$,
+  '23514', null, 'a trail surface is rejected by the schema');
+
+select throws_ok(
+  $$insert into api.world_courses (id, continent_id, region_id, display_order, name_key,
+      distance_meters, surface, shape, scene_address, reward_table_id, content_version)
+    values ('crs_bad_zero','con_lumena','rgn_lumena_01',98,'course.bad',
+      0,'road','loop','world/bad','rwd_bad','1.0.0')$$,
+  '23514', null, 'a zero-distance course is rejected by the schema');
 
 select * from finish();
 rollback;

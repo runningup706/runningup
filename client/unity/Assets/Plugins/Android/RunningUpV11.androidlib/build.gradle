@@ -1,0 +1,29 @@
+// V11 Android 직접 GPS, Health Connect, 기록 파일 선택 기능을 Unity 라이브러리로 빌드한다.
+apply plugin: 'com.android.library'
+
+dependencies {
+    compileOnly files('../libs/unity-classes.jar')
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2"
+    implementation "androidx.activity:activity-ktx:1.10.1"
+    implementation "androidx.health.connect:connect-client:1.1.0"
+}
+
+android {
+    namespace "kr.robom.runningup.v11"
+    compileSdk getProperty("unity.compileSdkVersion") as int
+    buildToolsVersion = getProperty("unity.buildToolsVersion")
+
+    defaultConfig {
+        minSdk getProperty("unity.minSdkVersion") as int
+        targetSdk getProperty("unity.targetSdkVersion") as int
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    sourceSets {
+        main.manifest.srcFile 'AndroidManifest.xml'
+    }
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "apex_race",
+  "count": 1,
+  "items": [
+    {
+      "id": "race_apex_axis",
+      "kind": "apex_race",
+      "name_key": "champion.apex_axis",
+      "race_plan": [
+        "axis_awakening",
+        "twelvefold_trial",
+        "stillfog_convergence",
+        "worldline_collapse",
+        "crown_of_the_runner"
+      ],
+      "plan_rule": "Every leg is run on a different continent road, ending with all twelve in one lap.",
+      "unlock_monthly_meters": 1000000,
+      "unlocks_per_user_month": 1,
+      "rewards": [
+        "world_crown_title",
+        "apex_aura",
+        "profile_frame_crown",
+        "final_restoration_scene",
+        "permanent_codex_entry"
+      ],
+      "scene_address": "world/apex/axis",
+      "has_content_above": false
+    }
+  ]
+}

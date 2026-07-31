@@ -172,6 +172,9 @@ begin
     'world_continents', 'world_regions', 'world_stages', 'world_bosses', 'story_chapters',
     'characters', 'character_skills', 'character_episodes', 'tactical_relics', 'cosmetics',
     'companions', 'enemy_families', 'monthly_apex_definitions', 'monthly_apex_checkpoints',
+    -- The five combat tables above are dropped by 0012, which grants and policies its own
+    -- replacements. They stay named here because this migration is applied history: at the
+    -- point it runs they still exist, and removing them would make 0006 fail on a fresh DB.
     'run_goal_definitions', 'content_versions'
   ]
   loop

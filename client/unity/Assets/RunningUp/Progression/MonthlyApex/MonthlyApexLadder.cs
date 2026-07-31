@@ -24,16 +24,25 @@ namespace RunningUp.Progression.MonthlyApex
         /// <summary>The single final checkpoint. Direction lock DL-1.</summary>
         public const int FinalApexMeters = 1_000_000;
 
-        /// <summary>The canonical 52-checkpoint seed, in integer metres.</summary>
+        /// <summary>The canonical 121-checkpoint ladder, 1 km to 1000 km, in integer metres.</summary>
         public static readonly IReadOnlyList<int> CheckpointMeters = new[]
         {
-                  0,    1_000,    3_000,    5_000,   10_000,   15_000,   20_000,   25_000,
-             30_000,   40_000,   42_195,   50_000,   60_000,   75_000,   90_000,  100_000,
-            125_000,  150_000,  175_000,  200_000,  225_000,  250_000,  275_000,  300_000,
-            325_000,  350_000,  375_000,  400_000,  425_000,  450_000,  475_000,  500_000,
-            525_000,  550_000,  575_000,  600_000,  625_000,  650_000,  675_000,  700_000,
-            725_000,  750_000,  775_000,  800_000,  825_000,  850_000,  875_000,  900_000,
-            925_000,  950_000,  975_000, 1_000_000,
+                1_000,     2_000,     3_000,     4_000,     5_000,     6_000,     8_000,    10_000,
+               13_000,    15_000,    18_000,    21_000,    24_000,    27_000,    30_000,    34_000,
+               37_000,    41_000,    42_195,    45_000,    49_000,    54_000,    58_000,    63_000,
+               67_000,    72_000,    77_000,    82_000,    87_000,    93_000,    98_000,   104_000,
+              110_000,   115_000,   121_000,   127_000,   134_000,   140_000,   146_000,   153_000,
+              160_000,   166_000,   173_000,   180_000,   187_000,   194_000,   202_000,   209_000,
+              217_000,   224_000,   232_000,   240_000,   248_000,   256_000,   264_000,   272_000,
+              281_000,   289_000,   298_000,   306_000,   315_000,   324_000,   333_000,   342_000,
+              351_000,   360_000,   369_000,   379_000,   388_000,   398_000,   407_000,   417_000,
+              427_000,   437_000,   447_000,   457_000,   467_000,   478_000,   488_000,   499_000,
+              509_000,   520_000,   531_000,   541_000,   552_000,   563_000,   574_000,   586_000,
+              597_000,   608_000,   620_000,   631_000,   643_000,   654_000,   666_000,   678_000,
+              690_000,   702_000,   714_000,   726_000,   738_000,   751_000,   763_000,   776_000,
+              788_000,   801_000,   814_000,   826_000,   839_000,   852_000,   865_000,   878_000,
+              892_000,   905_000,   918_000,   932_000,   945_000,   959_000,   972_000,   986_000,
+            1_000_000,
         };
 
         /// <summary>
@@ -61,9 +70,13 @@ namespace RunningUp.Progression.MonthlyApex
         {
             // Fail loudly at type-load rather than shipping a client whose ladder disagrees
             // with the server's.
-            if (CheckpointMeters.Count != 52)
+            if (CheckpointMeters.Count != 121)
             {
-                throw new InvalidOperationException("the Monthly Apex seed must contain exactly 52 checkpoints");
+                throw new InvalidOperationException("the Monthly Apex seed must contain exactly 121 checkpoints");
+            }
+            if (CheckpointMeters[0] != 1_000)
+            {
+                throw new InvalidOperationException("the ladder must start at exactly 1 km");
             }
             if (CheckpointMeters[CheckpointMeters.Count - 1] != FinalApexMeters)
             {

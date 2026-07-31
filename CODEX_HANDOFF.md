@@ -21,7 +21,7 @@
 bash tools/bootstrap/doctor.sh
 
 # 2) 전체 게이트 7개 (약 1분)
-bash tools/test/all.sh
+bash scripts/all.sh
 
 # 3) 게임 실제 플레이
 npm run play              # 직접 조작
@@ -41,7 +41,7 @@ npm run play:smoke        # 4개 실력대 전부 자동 검증
 
 > DB가 안 떠 있으면 먼저:
 > `su postgres -c "/usr/lib/postgresql/16/bin/pg_ctl -D /var/lib/postgresql/runningup-local -o '-p 55432 -k /tmp' start"`
-> 그다음 `export PGHOST=/tmp PGPORT=55432 PGUSER=postgres RUNNINGUP_TEST_DB=runningup_test && bash tools/test/db.sh`
+> 그다음 `export PGHOST=/tmp PGPORT=55432 PGUSER=postgres RUNNINGUP_TEST_DB=runningup_test && bash scripts/db.sh`
 
 ---
 
@@ -81,7 +81,7 @@ npm run play:smoke        # 4개 실력대 전부 자동 검증
 
 ### 3-1. 【최우선】 서버 보상이 설계의 절반만 계산함
 
-`tools/lib/reward.mjs`(설계·참조 구현)는 **15개** 컴포넌트를 계산하는데,
+`packages/domain/reward.mjs`(설계·참조 구현)는 **15개** 컴포넌트를 계산하는데,
 권위인 `private.apply_verified_run_reward`는 **7개만** 계산합니다.
 
 실제 원장(`api.xp_ledger.base_components`)을 쿼리해서 확인한 결과:
@@ -104,7 +104,7 @@ npm run play:smoke        # 4개 실력대 전부 자동 검증
 클라이언트 미리보기에서는 참이고 **DB에서는 거짓**입니다. 실사용자 보상이 설계보다 적습니다.
 
 - **고칠 파일:** `backend/supabase/migrations/0007_reward_transaction.sql` 의 `v_components` 블록
-- **참조 구현:** `tools/lib/reward.mjs`
+- **참조 구현:** `packages/domain/reward.mjs`
 - **고친 뒤 필수:** `node tools/conformance/export-fixtures.mjs && node tools/conformance/emit-sql-conformance.mjs`
   (안 하면 3중 정합성 테스트가 깨집니다)
 
@@ -201,7 +201,7 @@ Unity 없이 **지금 바로** 가능하고 가치가 큰 순서입니다.
 작업 전후로 반드시:
 
 ```bash
-bash tools/test/all.sh    # 7개 게이트가 초록인지
+bash scripts/all.sh    # 7개 게이트가 초록인지
 ```
 
 ---
@@ -233,7 +233,7 @@ bash tools/test/all.sh    # 7개 게이트가 초록인지
 | `docs/CURRENT_STATE.md` | 환경이 뭘 할 수 있고 없는지 |
 | `docs/DECISIONS.md` | ADR 5개 (왜 이렇게 했는지) |
 | `docs/audits/` | 10회 감사 보고서 (실제 결함 4개 발견·수정) |
-| `tools/lib/` | 도메인 엔진 (apex·passport·reward·momentum·best-effort·battle·anti-cheat) |
+| `packages/domain/` | 도메인 엔진 (apex·passport·reward·momentum·best-effort·battle·anti-cheat) |
 | `backend/supabase/migrations/` | 스키마 8개 (RLS·원장·보상 트랜잭션) |
 | `backend/supabase/tests/pgtap/` | DB 테스트 1128개 |
 | `client/cli/` | 플레이 가능한 클라이언트 |

@@ -1,0 +1,488 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "race_technique",
+  "count": 48,
+  "items": [
+    {
+      "id": "tec_seon_bulwark",
+      "character_id": "chr_seon",
+      "kind": "opening",
+      "name_key": "technique.tec_seon_bulwark",
+      "effect": "locks the opening pace and refuses to let the field raise it",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/seon/tec_seon_bulwark"
+    },
+    {
+      "id": "tec_seon_riposte",
+      "character_id": "chr_seon",
+      "kind": "midrace",
+      "name_key": "technique.tec_seon_riposte",
+      "effect": "answers a rival surge within one split instead of letting the gap open",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/seon/tec_seon_riposte"
+    },
+    {
+      "id": "tec_seon_unbroken",
+      "character_id": "chr_seon",
+      "kind": "habit",
+      "name_key": "technique.tec_seon_unbroken",
+      "effect": "holds the same effort through the split where the field usually fades",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/seon/tec_seon_unbroken"
+    },
+    {
+      "id": "tec_seon_dawnwall",
+      "character_id": "chr_seon",
+      "kind": "finish",
+      "name_key": "technique.tec_seon_dawnwall",
+      "effect": "lifts the pace with a lap still to run and holds it to the line",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/seon/tec_seon_dawnwall"
+    },
+    {
+      "id": "tec_yuwon_arcline",
+      "character_id": "chr_yuwon",
+      "kind": "opening",
+      "name_key": "technique.tec_yuwon_arcline",
+      "effect": "takes the shortest line through every early corner to bank distance",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/yuwon/tec_yuwon_arcline"
+    },
+    {
+      "id": "tec_yuwon_relay",
+      "character_id": "chr_yuwon",
+      "kind": "midrace",
+      "name_key": "technique.tec_yuwon_relay",
+      "effect": "trades the lead with a crewmate so neither of them leads twice in a row",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/yuwon/tec_yuwon_relay"
+    },
+    {
+      "id": "tec_yuwon_capacitor",
+      "character_id": "chr_yuwon",
+      "kind": "habit",
+      "name_key": "technique.tec_yuwon_capacitor",
+      "effect": "every split run under target banks into the strength of his last one",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/yuwon/tec_yuwon_capacitor"
+    },
+    {
+      "id": "tec_yuwon_overload",
+      "character_id": "chr_yuwon",
+      "kind": "finish",
+      "name_key": "technique.tec_yuwon_overload",
+      "effect": "spends everything banked in a single closing sprint",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/yuwon/tec_yuwon_overload"
+    },
+    {
+      "id": "tec_hana_bloom",
+      "character_id": "chr_hana",
+      "kind": "opening",
+      "name_key": "technique.tec_hana_bloom",
+      "effect": "starts a full second per kilometre under target and grows into it",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/hana/tec_hana_bloom"
+    },
+    {
+      "id": "tec_hana_clear",
+      "character_id": "chr_hana",
+      "kind": "midrace",
+      "name_key": "technique.tec_hana_clear",
+      "effect": "moves off the softest line early so the back half is run on firm footing",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/hana/tec_hana_clear"
+    },
+    {
+      "id": "tec_hana_rooted",
+      "character_id": "chr_hana",
+      "kind": "habit",
+      "name_key": "technique.tec_hana_rooted",
+      "effect": "never varies cadence, so soft ground costs her less than it costs the field",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/hana/tec_hana_rooted"
+    },
+    {
+      "id": "tec_hana_greatbreath",
+      "character_id": "chr_hana",
+      "kind": "finish",
+      "name_key": "technique.tec_hana_greatbreath",
+      "effect": "closes at the pace she opened with, which by then is the fastest on the road",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/hana/tec_hana_greatbreath"
+    },
+    {
+      "id": "tec_dorin_vent",
+      "character_id": "chr_dorin",
+      "kind": "opening",
+      "name_key": "technique.tec_dorin_vent",
+      "effect": "runs the opening deliberately under pace to keep something for the hot half",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/dorin/tec_dorin_vent"
+    },
+    {
+      "id": "tec_dorin_quench",
+      "character_id": "chr_dorin",
+      "kind": "midrace",
+      "name_key": "technique.tec_dorin_quench",
+      "effect": "takes one full split at recovery effort and gives back less than it looks",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/dorin/tec_dorin_quench"
+    },
+    {
+      "id": "tec_dorin_temper",
+      "character_id": "chr_dorin",
+      "kind": "habit",
+      "name_key": "technique.tec_dorin_temper",
+      "effect": "the hotter the second half is, the less of his pace it takes",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/dorin/tec_dorin_temper"
+    },
+    {
+      "id": "tec_dorin_heartforge",
+      "character_id": "chr_dorin",
+      "kind": "finish",
+      "name_key": "technique.tec_dorin_heartforge",
+      "effect": "attacks at the hottest point of the course rather than the last",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/dorin/tec_dorin_heartforge"
+    },
+    {
+      "id": "tec_ari_slipstream",
+      "character_id": "chr_ari",
+      "kind": "opening",
+      "name_key": "technique.tec_ari_slipstream",
+      "effect": "holds a stride off the leader through every exposed section",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/ari/tec_ari_slipstream"
+    },
+    {
+      "id": "tec_ari_crosswind",
+      "character_id": "chr_ari",
+      "kind": "midrace",
+      "name_key": "technique.tec_ari_crosswind",
+      "effect": "forces a rival to lead into the wind by refusing to come through",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/ari/tec_ari_crosswind"
+    },
+    {
+      "id": "tec_ari_momentum",
+      "character_id": "chr_ari",
+      "kind": "habit",
+      "name_key": "technique.tec_ari_momentum",
+      "effect": "every uninterrupted kilometre raises what the closing move is worth",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/ari/tec_ari_momentum"
+    },
+    {
+      "id": "tec_ari_roadbind",
+      "character_id": "chr_ari",
+      "kind": "finish",
+      "name_key": "technique.tec_ari_roadbind",
+      "effect": "goes at the last turn out of the wind and never leads before it",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/ari/tec_ari_roadbind"
+    },
+    {
+      "id": "tec_mirae_ebb",
+      "character_id": "chr_mirae",
+      "kind": "opening",
+      "name_key": "technique.tec_mirae_ebb",
+      "effect": "moves the crew to the front of the field before the narrow section",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/mirae/tec_mirae_ebb"
+    },
+    {
+      "id": "tec_mirae_signal",
+      "character_id": "chr_mirae",
+      "kind": "midrace",
+      "name_key": "technique.tec_mirae_signal",
+      "effect": "calls the surge one split before it is needed so nobody is caught cold",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/mirae/tec_mirae_signal"
+    },
+    {
+      "id": "tec_mirae_navigator",
+      "character_id": "chr_mirae",
+      "kind": "habit",
+      "name_key": "technique.tec_mirae_navigator",
+      "effect": "the crew never loses ground at a bottleneck she has read in advance",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/mirae/tec_mirae_navigator"
+    },
+    {
+      "id": "tec_mirae_searoad",
+      "character_id": "chr_mirae",
+      "kind": "finish",
+      "name_key": "technique.tec_mirae_searoad",
+      "effect": "leads the crew out at a pace they can all hold to the line",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/mirae/tec_mirae_searoad"
+    },
+    {
+      "id": "tec_taeho_bastion",
+      "character_id": "chr_taeho",
+      "kind": "opening",
+      "name_key": "technique.tec_taeho_bastion",
+      "effect": "gives away the cold opening splits on purpose rather than forcing them",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/taeho/tec_taeho_bastion"
+    },
+    {
+      "id": "tec_taeho_thaw",
+      "character_id": "chr_taeho",
+      "kind": "midrace",
+      "name_key": "technique.tec_taeho_thaw",
+      "effect": "lifts to target pace only once the field has stopped getting faster",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/taeho/tec_taeho_thaw"
+    },
+    {
+      "id": "tec_taeho_garrison",
+      "character_id": "chr_taeho",
+      "kind": "habit",
+      "name_key": "technique.tec_taeho_garrison",
+      "effect": "the longer the race runs, the smaller his pace loss becomes relative to the field",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/taeho/tec_taeho_garrison"
+    },
+    {
+      "id": "tec_taeho_whitewall",
+      "character_id": "chr_taeho",
+      "kind": "finish",
+      "name_key": "technique.tec_taeho_whitewall",
+      "effect": "finishes at the pace he has run all day and passes whoever has slowed",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/taeho/tec_taeho_whitewall"
+    },
+    {
+      "id": "tec_soye_split",
+      "character_id": "chr_soye",
+      "kind": "opening",
+      "name_key": "technique.tec_soye_split",
+      "effect": "makes an early move purely to see who is willing to respond",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/soye/tec_soye_split"
+    },
+    {
+      "id": "tec_soye_shadowtell",
+      "character_id": "chr_soye",
+      "kind": "midrace",
+      "name_key": "technique.tec_soye_shadowtell",
+      "effect": "reads real distance off the shadows where the horizon cannot be trusted",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/soye/tec_soye_shadowtell"
+    },
+    {
+      "id": "tec_soye_manyselves",
+      "character_id": "chr_soye",
+      "kind": "habit",
+      "name_key": "technique.tec_soye_manyselves",
+      "effect": "each acceleration costs her less than the one before it",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/soye/tec_soye_manyselves"
+    },
+    {
+      "id": "tec_soye_truemirror",
+      "character_id": "chr_soye",
+      "kind": "finish",
+      "name_key": "technique.tec_soye_truemirror",
+      "effect": "makes a final move at the exact point the course stops lying about distance",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/soye/tec_soye_truemirror"
+    },
+    {
+      "id": "tec_jiwoo_grapple",
+      "character_id": "chr_jiwoo",
+      "kind": "opening",
+      "name_key": "technique.tec_jiwoo_grapple",
+      "effect": "takes whatever position the leaders open with and refuses to lose it",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/jiwoo/tec_jiwoo_grapple"
+    },
+    {
+      "id": "tec_jiwoo_anchor",
+      "character_id": "chr_jiwoo",
+      "kind": "midrace",
+      "name_key": "technique.tec_jiwoo_anchor",
+      "effect": "covers one rival move per lap and makes no move of his own",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/jiwoo/tec_jiwoo_anchor"
+    },
+    {
+      "id": "tec_jiwoo_highground",
+      "character_id": "chr_jiwoo",
+      "kind": "habit",
+      "name_key": "technique.tec_jiwoo_highground",
+      "effect": "the later the sprint begins, the more of it he still has",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/jiwoo/tec_jiwoo_highground"
+    },
+    {
+      "id": "tec_jiwoo_skyfall",
+      "character_id": "chr_jiwoo",
+      "kind": "finish",
+      "name_key": "technique.tec_jiwoo_skyfall",
+      "effect": "a single closing sprint from the last two hundred metres",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/jiwoo/tec_jiwoo_skyfall"
+    },
+    {
+      "id": "tec_narae_pulse",
+      "character_id": "chr_narae",
+      "kind": "opening",
+      "name_key": "technique.tec_narae_pulse",
+      "effect": "sets a cadence the whole pack can hold and calls it out loud",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/narae/tec_narae_pulse"
+    },
+    {
+      "id": "tec_narae_tether",
+      "character_id": "chr_narae",
+      "kind": "midrace",
+      "name_key": "technique.tec_narae_tether",
+      "effect": "pairs a struggling runner with a stronger one so neither drops",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/narae/tec_narae_tether"
+    },
+    {
+      "id": "tec_narae_deeplung",
+      "character_id": "chr_narae",
+      "kind": "habit",
+      "name_key": "technique.tec_narae_deeplung",
+      "effect": "every runner near them spends slightly less to hold the same pace",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/narae/tec_narae_deeplung"
+    },
+    {
+      "id": "tec_narae_recordrise",
+      "character_id": "chr_narae",
+      "kind": "finish",
+      "name_key": "technique.tec_narae_recordrise",
+      "effect": "breaks the pack open one section from the finish, having led least of anyone",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/narae/tec_narae_recordrise"
+    },
+    {
+      "id": "tec_eunseo_slowzone",
+      "character_id": "chr_eunseo",
+      "kind": "opening",
+      "name_key": "technique.tec_eunseo_slowzone",
+      "effect": "runs the first section a published amount under target and never more",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/eunseo/tec_eunseo_slowzone"
+    },
+    {
+      "id": "tec_eunseo_retrograde",
+      "character_id": "chr_eunseo",
+      "kind": "midrace",
+      "name_key": "technique.tec_eunseo_retrograde",
+      "effect": "gives back exactly the time a split ran fast, rather than keeping it",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/eunseo/tec_eunseo_retrograde"
+    },
+    {
+      "id": "tec_eunseo_metronome",
+      "character_id": "chr_eunseo",
+      "kind": "habit",
+      "name_key": "technique.tec_eunseo_metronome",
+      "effect": "no split of hers ever differs from her target by more than a tenth",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/eunseo/tec_eunseo_metronome"
+    },
+    {
+      "id": "tec_eunseo_restoredorder",
+      "character_id": "chr_eunseo",
+      "kind": "finish",
+      "name_key": "technique.tec_eunseo_restoredorder",
+      "effect": "arrives on the declared time to the second, whatever the field did",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/eunseo/tec_eunseo_restoredorder"
+    },
+    {
+      "id": "tec_haru_borrow",
+      "character_id": "chr_haru",
+      "kind": "opening",
+      "name_key": "technique.tec_haru_borrow",
+      "effect": "adopts the tactic the opening road rewards instead of his own",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/haru/tec_haru_borrow"
+    },
+    {
+      "id": "tec_haru_echo",
+      "character_id": "chr_haru",
+      "kind": "midrace",
+      "name_key": "technique.tec_haru_echo",
+      "effect": "repeats a move a rival already made, one section later and better",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/haru/tec_haru_echo"
+    },
+    {
+      "id": "tec_haru_convergence",
+      "character_id": "chr_haru",
+      "kind": "habit",
+      "name_key": "technique.tec_haru_convergence",
+      "effect": "gains a little each time two course traits overlap in the same section",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/haru/tec_haru_convergence"
+    },
+    {
+      "id": "tec_haru_reunion",
+      "character_id": "chr_haru",
+      "kind": "finish",
+      "name_key": "technique.tec_haru_reunion",
+      "effect": "finishes using every style he borrowed, one per remaining section",
+      "equipable": true,
+      "core_budget_delta": 0,
+      "icon_address": "technique/haru/tec_haru_reunion"
+    }
+  ]
+}

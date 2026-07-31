@@ -1,9 +1,9 @@
 {
   "manifest_version": "1.0.0",
   "generated_by": "tools/release/generate-evidence.mjs",
-  "git_commit": "ab69f06eeb38a1777312dae4c1aa6cd882bfad32",
+  "git_commit": "b5b36fc87a166646ddf169ffe23da9bd5f2c305f",
   "content_version": "1.0.0",
-  "content_sha256": "b02e58bc3789f6095ce50ba57a85ea43007e8ab4d4119e4ca6471692e655d73d",
+  "content_sha256": "5b0ad89528046203d0fc4c99c5874028b1cc73175e97914015c38e35146d2707",
   "suites": [
     {
       "id": "direction_lock",
@@ -19,7 +19,7 @@
     },
     {
       "id": "domain_engine",
-      "tool": "node --test tools/tests/*.test.mjs",
+      "tool": "node --test tests/*.test.mjs",
       "kind": "unit",
       "status": "PASS"
     },
@@ -49,30 +49,33 @@
     }
   ],
   "database": {
-    "relations": 52,
-    "columns": 421,
-    "constraints": 237,
+    "relations": 55,
+    "columns": 441,
+    "constraints": 256,
     "enums": 9,
     "functions": 11,
-    "rls_enabled_relations": 52,
+    "rls_enabled_relations": 55,
     "security_definer_functions_without_pinned_search_path": 0,
     "client_writable_ledger_tables": 0
   },
   "content": {
     "counts": {
       "continents": 12,
-      "region_nodes": 96,
-      "main_stages": 72,
-      "side_stages": 24,
+      "region_nodes": 192,
+      "main_races": 72,
+      "challenge_races": 24,
       "playable_characters": 12,
+      "courses": 2304,
       "character_episodes": 36,
-      "tactical_skills": 48,
-      "tactical_relics": 72,
-      "standard_enemy_families": 24,
-      "elite_enemy_families": 12,
-      "continent_bosses": 12,
-      "world_bosses": 4,
-      "apex_bosses": 1,
+      "race_techniques": 48,
+      "gear_sets": 72,
+      "standard_rival_crews": 24,
+      "elite_rival_crews": 12,
+      "continent_champions": 12,
+      "open_race_events": 4,
+      "apex_races": 1,
+      "race_formats": 7,
+      "challenge_formats": 6,
       "companions": 12,
       "equipable_cosmetics": 96,
       "story_chapters": 12,

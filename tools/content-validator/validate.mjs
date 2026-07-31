@@ -15,7 +15,9 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { LAUNCH_CONTENT_FLOOR, DIRECTION_LOCK } from '../lib/constants.mjs';
+import { LAUNCH_CONTENT_FLOOR, DIRECTION_LOCK } from '../../packages/domain/constants.mjs';
+// The race engine's course table is the other half of the continent identity contract.
+import { CONTINENT_COURSES } from '../../packages/domain/race.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const LAUNCH = join(ROOT, 'content', 'launch');
@@ -36,18 +38,21 @@ const localization = Object.fromEntries(LOCALES.map((l) => [
 
 const continents = items('world/continents/continents.json');
 const regions = items('world/regions/regions.json');
-const mainStages = items('world/stages/main_stages.json');
-const sideStages = items('world/stages/side_stages.json');
-const continentBosses = items('world/bosses/continent_bosses.json');
-const worldBosses = items('world/bosses/world_bosses.json');
-const apexBosses = items('world/bosses/apex_boss.json');
-const standardEnemies = items('world/enemies/standard_enemy_families.json');
-const eliteEnemies = items('world/enemies/elite_enemy_families.json');
+const courses = items('world/courses/courses.json');
+const mainRaces = items('world/races/main_races.json');
+const challengeRaces = items('world/races/challenge_races.json');
+const continentChampions = items('world/champions/continent_champions.json');
+const openRaceEvents = items('world/champions/open_race_events.json');
+const apexRaces = items('world/champions/apex_race.json');
+const standardRivals = items('world/rivals/standard_rival_crews.json');
+const eliteRivals = items('world/rivals/elite_rival_crews.json');
+const raceFormats = items('world/race_formats.json');
+const challengeFormats = items('world/challenge_formats.json');
 const storyChapters = items('world/story_chapters.json');
 const restoration = items('world/restoration/restoration_states.json');
 const characters = items('characters/roster/characters.json');
-const skills = items('characters/skills/tactical_skills.json');
-const relics = items('characters/skills/tactical_relics.json');
+const techniques = items('characters/techniques/race_techniques.json');
+const gearSets = items('characters/gear/gear_sets.json');
 const episodes = items('characters/episodes/character_episodes.json');
 const cosmetics = items('characters/cosmetics/cosmetics.json');
 const companions = items('characters/companions.json');
@@ -63,17 +68,20 @@ const season = read('seasons/season_01.json');
 const counts = {
   continents: continents.length,
   region_nodes: regions.length,
-  main_stages: mainStages.length,
-  side_stages: sideStages.length,
+  courses: courses.length,
+  main_races: mainRaces.length,
+  challenge_races: challengeRaces.length,
   playable_characters: characters.length,
   character_episodes: episodes.length,
-  tactical_skills: skills.length,
-  tactical_relics: relics.length,
-  standard_enemy_families: standardEnemies.length,
-  elite_enemy_families: eliteEnemies.length,
-  continent_bosses: continentBosses.length,
-  world_bosses: worldBosses.length,
-  apex_bosses: apexBosses.length,
+  race_techniques: techniques.length,
+  gear_sets: gearSets.length,
+  standard_rival_crews: standardRivals.length,
+  elite_rival_crews: eliteRivals.length,
+  continent_champions: continentChampions.length,
+  open_race_events: openRaceEvents.length,
+  apex_races: apexRaces.length,
+  race_formats: raceFormats.length,
+  challenge_formats: challengeFormats.length,
   companions: companions.length,
   equipable_cosmetics: cosmetics.length,
   story_chapters: storyChapters.length,
@@ -87,10 +95,22 @@ for (const [key, floor] of Object.entries(LAUNCH_CONTENT_FLOOR)) {
   }
 }
 
+// GATE 1b — the counted categories and the floor must be the same set.
+//
+// A floor without a counter already fails loudly above (`counts[key] ?? 0` is 0). The
+// silent direction is a counted category with no floor: content that ships ungated,
+// which is indistinguishable from content that does not exist as far as the build is
+// concerned. Compare the sets in both directions rather than trusting one.
+for (const key of Object.keys(counts)) {
+  if (!(key in LAUNCH_CONTENT_FLOOR)) {
+    fail('counts', `${key} is counted but has no launch floor — it ships ungated`);
+  }
+}
+
 // ===========================================================================
 // GATE 2 — nothing disabled, debug-only or "coming soon" is counted
 // ===========================================================================
-for (const [label, list] of [['main_stage', mainStages], ['side_stage', sideStages]]) {
+for (const [label, list] of [['main_race', mainRaces], ['challenge_race', challengeRaces]]) {
   for (const s of list) {
     if (s.enabled !== true) fail('availability', `${label} ${s.id} is not enabled`);
     if (s.debug_only === true) fail('availability', `${label} ${s.id} is debug-only`);
@@ -115,12 +135,17 @@ for (const e of episodes) {
 // ===========================================================================
 const allIds = new Map();
 const idGroups = [
-  ['continent', continents], ['region', regions], ['main_stage', mainStages],
-  ['side_stage', sideStages], ['continent_boss', continentBosses], ['world_boss', worldBosses],
-  ['apex_boss', apexBosses], ['standard_enemy', standardEnemies], ['elite_enemy', eliteEnemies],
+  // Courses belong here even though GATE 5c checks them in detail: this is what makes
+  // their ids unique against everything else and their name keys localized in every
+  // locale. Leaving them out reported all 2,304 course keys as orphans.
+  ['continent', continents], ['region', regions], ['course', courses], ['main_race', mainRaces],
+  ['challenge_race', challengeRaces], ['continent_champion', continentChampions],
+  ['open_race_event', openRaceEvents], ['apex_race', apexRaces],
+  ['standard_rival_crew', standardRivals], ['elite_rival_crew', eliteRivals],
   ['story_chapter', storyChapters], ['restoration', restoration], ['character', characters],
-  ['skill', skills], ['relic', relics], ['episode', episodes], ['cosmetic', cosmetics],
-  ['companion', companions], ['quest', quests], ['event_arc', eventArcs],
+  ['race_technique', techniques], ['gear_set', gearSets], ['episode', episodes],
+  ['cosmetic', cosmetics], ['companion', companions], ['quest', quests],
+  ['event_arc', eventArcs],
 ];
 for (const [kind, list] of idGroups) {
   for (const item of list) {
@@ -203,23 +228,135 @@ regions.forEach((r) => {
   requireAddress('region', r, 'scene_address');
   if (!continentIds.has(r.continent_id)) fail('reference', `region ${r.id}: unknown continent ${r.continent_id}`);
 });
-[...mainStages, ...sideStages].forEach((s) => {
-  requireAddress('stage', s, 'scene_address');
-  if (!continentIds.has(s.continent_id)) fail('reference', `stage ${s.id}: unknown continent ${s.continent_id}`);
-  if (!regionIds.has(s.region_id)) fail('reference', `stage ${s.id}: unknown region ${s.region_id}`);
-  if (!s.reward_table_id) fail('reward_wiring', `stage ${s.id}: no reward table`);
+const RACE_FORMAT_IDS = new Set(raceFormats.map((f) => f.id));
+const CHALLENGE_FORMAT_IDS = new Set(challengeFormats.map((f) => f.id));
+[...mainRaces, ...challengeRaces].forEach((s) => {
+  requireAddress('race', s, 'scene_address');
+  if (!continentIds.has(s.continent_id)) fail('reference', `race ${s.id}: unknown continent ${s.continent_id}`);
+  if (!regionIds.has(s.region_id)) fail('reference', `race ${s.id}: unknown region ${s.region_id}`);
+  if (!s.reward_table_id) fail('reward_wiring', `race ${s.id}: no reward table`);
+  if (!RACE_FORMAT_IDS.has(s.format)) fail('race_format', `race ${s.id}: unknown format ${s.format}`);
+  if (s.challenge_format_id !== undefined && !CHALLENGE_FORMAT_IDS.has(s.challenge_format_id)) {
+    fail('race_format', `race ${s.id}: unknown challenge format ${s.challenge_format_id}`);
+  }
+  // A race is a race: eight runners on a start line, and nothing on the record that
+  // implies anyone can be removed from it.
+  if (s.field_size !== 8) fail('race_field', `race ${s.id}: field size ${s.field_size}, expected 8`);
 });
 characters.forEach((c) => {
   requireAddress('character', c, 'prefab_address');
   requireAddress('character', c, 'portrait_address');
   requireAddress('character', c, 'trial_stage_address');
-  if (c.skill_ids.length !== 4) fail('character_kit', `character ${c.id}: expected 4 skills, got ${c.skill_ids.length}`);
+  if (c.technique_ids.length !== 4) fail('character_kit', `character ${c.id}: expected 4 techniques, got ${c.technique_ids.length}`);
   if (c.episode_ids.length !== 3) fail('character_kit', `character ${c.id}: expected 3 episodes`);
 });
-skills.forEach((s) => { if (!characterIds.has(s.character_id)) fail('reference', `skill ${s.id}: unknown character`); });
+techniques.forEach((s) => { if (!characterIds.has(s.character_id)) fail('reference', `technique ${s.id}: unknown character`); });
 episodes.forEach((e) => { if (!characterIds.has(e.character_id)) fail('reference', `episode ${e.id}: unknown character`); });
 cosmetics.forEach((c) => { if (!characterIds.has(c.character_id)) fail('reference', `cosmetic ${c.id}: unknown character`); });
-continentBosses.forEach((b) => { if (!continentIds.has(b.continent_id)) fail('reference', `boss ${b.id}: unknown continent`); });
+continentChampions.forEach((b) => { if (!continentIds.has(b.continent_id)) fail('reference', `champion ${b.id}: unknown continent`); });
+
+/**
+ * GATE 5b — coverage: every parent must actually own its children.
+ *
+ * GATE 5 checks child -> parent (a region's continent exists). That direction alone is
+ * blind to the failure that matters: twelve continent bosses could all belong to Lumena
+ * and eleven continents have none. The count gate passes, every reference resolves, and
+ * eleven twelfths of the world is empty.
+ *
+ * This is the same one-way blindness that let the race engine key its course table on
+ * five continent ids that do not exist while five real continents silently shared
+ * Lumena's course. Counting a set is not the same as checking which set it is.
+ */
+function requireCoverage(label, parentIds, children, parentKey, expectedPerParent) {
+  const byParent = new Map([...parentIds].map((id) => [id, 0]));
+  for (const child of children) {
+    const parent = child[parentKey];
+    if (!byParent.has(parent)) continue; // GATE 5 already reports unknown parents
+    byParent.set(parent, byParent.get(parent) + 1);
+  }
+  for (const [parent, actual] of byParent) {
+    if (actual !== expectedPerParent) {
+      fail('coverage', `${label}: ${parent} owns ${actual}, expected ${expectedPerParent}`);
+    }
+  }
+}
+
+const regionsPerContinent = regions.length / continents.length;
+const coursesPerRegion = courses.length / regions.length;
+const mainRacesPerContinent = mainRaces.length / continents.length;
+const challengeRacesPerContinent = challengeRaces.length / continents.length;
+const cosmeticsPerCharacter = cosmetics.length / characters.length;
+
+for (const [label, count] of [
+  ['regions per continent', regionsPerContinent],
+  ['courses per region', coursesPerRegion],
+  ['main races per continent', mainRacesPerContinent],
+  ['challenge races per continent', challengeRacesPerContinent],
+  ['cosmetics per character', cosmeticsPerCharacter],
+]) {
+  if (!Number.isInteger(count)) {
+    fail('coverage', `${label} is ${count}: the content does not divide evenly, so some parent is short`);
+  }
+}
+
+requireCoverage('regions per continent', continentIds, regions, 'continent_id', regionsPerContinent);
+requireCoverage('courses per region', regionIds, courses, 'region_id', coursesPerRegion);
+requireCoverage('main races per continent', continentIds, mainRaces, 'continent_id', mainRacesPerContinent);
+requireCoverage('challenge races per continent', continentIds, challengeRaces, 'continent_id', challengeRacesPerContinent);
+requireCoverage('continent champions', continentIds, continentChampions, 'continent_id', 1);
+requireCoverage('standard rival crews', continentIds, standardRivals, 'continent_id', standardRivals.length / continents.length);
+requireCoverage('elite rival crews', continentIds, eliteRivals, 'continent_id', eliteRivals.length / continents.length);
+requireCoverage('gear sets per continent', continentIds, gearSets, 'continent_id', gearSets.length / continents.length);
+requireCoverage('companions per continent', continentIds, companions, 'continent_id', companions.length / continents.length);
+requireCoverage('techniques per character', characterIds, techniques, 'character_id', 4);
+requireCoverage('episodes per character', characterIds, episodes, 'character_id', 3);
+requireCoverage('cosmetics per character', characterIds, cosmetics, 'character_id', cosmeticsPerCharacter);
+
+/**
+ * GATE 5c — DL-3 at the course level.
+ *
+ * Running only, and elevation is never a course property. A course that carried an
+ * elevation or gradient field would make climbing a thing the world rewards, which is the
+ * exact line DL-3 draws. Asserted over the data rather than trusted to the generator.
+ */
+const ALLOWED_SURFACES = new Set(['road', 'track', 'treadmill', 'indoor']);
+const ALLOWED_SHAPES = new Set(['loop', 'out_and_back', 'point_to_point']);
+for (const course of courses) {
+  if (!ALLOWED_SURFACES.has(course.surface)) {
+    fail('direction_lock', `course ${course.id}: surface ${course.surface} is not a running surface`);
+  }
+  if (!ALLOWED_SHAPES.has(course.shape)) {
+    fail('course_shape', `course ${course.id}: unknown shape ${course.shape}`);
+  }
+  if (!Number.isInteger(course.distance_meters) || course.distance_meters <= 0) {
+    fail('course_distance', `course ${course.id}: distance must be a positive integer of metres`);
+  }
+  for (const forbidden of ['elevation', 'elevation_gain', 'gradient', 'altitude', 'incline']) {
+    if (forbidden in course) {
+      fail('direction_lock', `course ${course.id}: ${forbidden} may never be a course property (DL-3)`);
+    }
+  }
+  if (!regionIds.has(course.region_id)) fail('reference', `course ${course.id}: unknown region`);
+  if (!continentIds.has(course.continent_id)) fail('reference', `course ${course.id}: unknown continent`);
+  requireAddress('course', course, 'scene_address');
+  if (!course.reward_table_id) fail('reward_wiring', `course ${course.id}: no reward table`);
+  if (course.enabled !== true) fail('availability', `course ${course.id} is not enabled`);
+  if (course.debug_only === true) fail('availability', `course ${course.id} is debug-only`);
+}
+
+// A world where every region offers the same four distances is one region 192 times.
+{
+  const signatures = new Set(
+    regions.map((r) => courses
+      .filter((c) => c.region_id === r.id)
+      .map((c) => c.distance_meters)
+      .sort((a, b) => a - b)
+      .join('/')),
+  );
+  if (signatures.size < 8) {
+    fail('course_variety', `only ${signatures.size} distinct distance sets across 192 regions`);
+  }
+}
 
 // ===========================================================================
 // GATE 6 — route reachability: every region node must be reachable at launch
@@ -248,10 +385,10 @@ for (const continent of continents) {
     fail('non_linear', `continent ${continent.id} requires another continent first`);
   }
 }
-for (const stage of [...mainStages, ...sideStages]) {
-  const region = regions.find((r) => r.id === stage.region_id);
-  if (region && region.continent_id !== stage.continent_id) {
-    fail('reachability', `stage ${stage.id}: region belongs to a different continent`);
+for (const race of [...mainRaces, ...challengeRaces]) {
+  const region = regions.find((r) => r.id === race.region_id);
+  if (region && region.continent_id !== race.continent_id) {
+    fail('reachability', `race ${race.id}: region belongs to a different continent`);
   }
 }
 
@@ -301,47 +438,74 @@ function duplicateScan(kind, records, signatureFn, threshold) {
 }
 
 duplicateScan('continent', continents,
-  (c) => tokens(c.mechanic_id, c.mechanic_rule, c.skyline, c.music_motif, c.palette.join(' ')), 0.45);
+  (c) => tokens(c.trait_id, c.trait_rule, c.skyline, c.music_motif, c.palette.join(' ')), 0.45);
 
-duplicateScan('continent_boss', continentBosses,
-  (b) => tokens(b.phases.join(' '), b.phase_rule, b.mechanic_id), 0.45);
+duplicateScan('continent_champion', continentChampions,
+  (b) => tokens(b.race_plan.join(' '), b.plan_rule, b.trait_id), 0.45);
 
-duplicateScan('main_stage', mainStages,
-  (s) => tokens(s.objective, s.objective_twist, s.mechanic_id), 0.55);
+duplicateScan('main_race', mainRaces,
+  (s) => tokens(s.format, s.race_condition, s.trait_id), 0.55);
 
 duplicateScan('character', characters,
-  (c) => tokens(c.role, c.secondary_role, c.core_conversion, c.silhouette, c.weapon, c.basic_attack,
-    c.specializations.join(' ')), 0.45);
+  (c) => tokens(c.role, c.secondary_role, c.core_conversion, c.silhouette, c.race_kit,
+    c.race_signature, c.specializations.join(' ')), 0.45);
 
-duplicateScan('skill', skills, (s) => tokens(s.effect, s.kind), 0.65);
-duplicateScan('standard_enemy', standardEnemies, (e) => tokens(e.behaviour, e.mechanic_id), 0.6);
-duplicateScan('elite_enemy', eliteEnemies, (e) => tokens(e.behaviour, e.mechanic_id), 0.55);
-// Relics are compared structurally: which budget moves, in which direction, under which
+duplicateScan('race_technique', techniques, (s) => tokens(s.effect, s.kind), 0.65);
+duplicateScan('standard_rival_crew', standardRivals, (e) => tokens(e.tactic, e.trait_id), 0.6);
+duplicateScan('elite_rival_crew', eliteRivals, (e) => tokens(e.tactic, e.trait_id), 0.55);
+// Gear sets are compared structurally: which axis moves, in which direction, under which
 // condition. The trade is one ATOMIC token rather than a bag of words, because word-level
-// similarity would flag `ward` (attack_budget -> guard_uptime) and `edge`
-// (guard_budget -> break_damage) as near-duplicates over the incidental shared word
-// "guard", when they are in fact inverse sidegrades.
-duplicateScan('relic', relics, (r) => new Set([
+// similarity would flag `stride` (kick -> cruise) and `closer` (cruise -> kick) as
+// near-duplicates over the shared words "kick" and "cruise", when they are in fact exact
+// inverses of one another.
+duplicateScan('gear_set', gearSets, (r) => new Set([
   `trade:${r.trade_from}->${r.trade_to}`,
   `when:${r.activation_condition}`,
-  `mech:${r.mechanic_affinity}`,
+  `trait:${r.trait_affinity}`,
 ]), 0.7);
 
-// A continent must not repeat the same objective archetype twice in its main line.
+// A continent must not repeat the same race format twice in its main line.
 for (const continent of continents) {
-  const own = mainStages.filter((s) => s.continent_id === continent.id);
+  const own = mainRaces.filter((s) => s.continent_id === continent.id);
   const seen = new Set();
   for (const s of own) {
-    if (seen.has(s.objective)) {
-      fail('objective_variety', `continent ${continent.id}: objective "${s.objective}" repeats in the main line`);
+    if (seen.has(s.format)) {
+      fail('format_variety', `continent ${continent.id}: format "${s.format}" repeats in the main line`);
     }
-    seen.add(s.objective);
+    seen.add(s.format);
   }
 }
-// Each continent needs a unique combat mechanic identity.
-const mechanicIds = continents.map((c) => c.mechanic_id);
-if (new Set(mechanicIds).size !== mechanicIds.length) {
-  fail('semantic_duplicate', 'two continents share the same combat mechanic id');
+// Each continent needs a unique course-trait identity, and that identity has to be the
+// one the race engine actually resolves races with — a continent whose trait exists only
+// in content prose races exactly like Lumena.
+const traitIds = continents.map((c) => c.trait_id);
+if (new Set(traitIds).size !== traitIds.length) {
+  fail('semantic_duplicate', 'two continents share the same course trait id');
+}
+{
+  const engineContinents = new Set(Object.keys(CONTINENT_COURSES));
+  for (const c of continents) {
+    if (!engineContinents.has(c.id)) {
+      fail('engine_parity', `continent ${c.id} has no entry in the race engine's course table`);
+    }
+  }
+  for (const id of engineContinents) {
+    if (!continentIds.has(id)) {
+      fail('engine_parity', `the race engine has a course for ${id}, which is not a continent`);
+    }
+  }
+}
+// Gear trades have to name axes the race engine can actually move.
+{
+  const AXES = new Set(['cruise', 'stamina', 'kick']);
+  for (const g of gearSets) {
+    if (!AXES.has(g.trade_from) || !AXES.has(g.trade_to)) {
+      fail('sidegrade', `gear set ${g.id}: ${g.trade_from} -> ${g.trade_to} is not a race axis`);
+    }
+    if (g.trade_from === g.trade_to) {
+      fail('sidegrade', `gear set ${g.id}: trades an axis into itself, which moves nothing`);
+    }
+  }
 }
 // The roster must genuinely span roles.
 const roleCount = new Set(characters.flatMap((c) => [c.role, c.secondary_role])).size;
@@ -369,11 +533,11 @@ for (const c of cosmetics) {
     fail('cosmetic_power', `cosmetic ${c.id}: P0 ships with no real-money purchase`);
   }
 }
-for (const r of relics) {
-  if (r.budget_delta !== 0) fail('sidegrade', `relic ${r.id}: budget_delta must be 0 (sidegrade only)`);
+for (const r of gearSets) {
+  if (r.budget_delta !== 0) fail('sidegrade', `gear set ${r.id}: budget_delta must be 0 (sidegrade only)`);
 }
-for (const s of skills) {
-  if (s.core_budget_delta !== 0) fail('sidegrade', `skill ${s.id}: core_budget_delta must be 0`);
+for (const s of techniques) {
+  if (s.core_budget_delta !== 0) fail('sidegrade', `technique ${s.id}: core_budget_delta must be 0`);
 }
 for (const c of companions) {
   if (c.grants_core_power !== false) fail('sidegrade', `companion ${c.id}: must not grant core power`);
@@ -404,10 +568,13 @@ if (!crown || !crown.is_final) fail('direction_lock', 'world_crown is not marked
 if (apexLadder.major_ranks.some((r) => r.order > crown.order)) {
   fail('direction_lock', 'a rank is ordered above World Crown');
 }
-if (apexBosses[0].has_content_above !== false) {
-  fail('direction_lock', 'the Apex boss claims content above it');
+if (apexRaces[0].has_content_above !== false) {
+  fail('direction_lock', 'the Apex race claims content above it');
 }
-if (apexBosses.length !== 1) fail('direction_lock', 'there must be exactly one Apex 1000 boss');
+if (apexRaces.length !== 1) fail('direction_lock', 'there must be exactly one Apex 1000 race');
+if (apexRaces[0].unlock_monthly_meters !== DIRECTION_LOCK.FINAL_APEX_METERS) {
+  fail('direction_lock', 'the Apex race does not unlock at exactly 1000 km');
+}
 
 // DL-2 in content: the goal library is open to everyone with no prerequisites.
 if (goalLibrary.available_to_all_users_on_first_session !== true) {

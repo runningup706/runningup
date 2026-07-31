@@ -2,14 +2,14 @@
 -- Master # 22.3 / # 22.7, audit 3. Every case the master enumerates is attacked here
 -- against the real transaction, not against a mock.
 begin;
-select plan(44);
+select plan(45);
 
 -- ---------------------------------------------------------------------------
 -- Ladder shape
 -- ---------------------------------------------------------------------------
 select is(
   (select count(*)::int from api.monthly_apex_checkpoints where ladder_version = 'apex.v1.0.0'),
-  52, 'the seeded ladder has exactly 52 checkpoints');
+  121, 'the seeded ladder has exactly 121 checkpoints');
 
 select is(
   (select max(threshold_meters) from api.monthly_apex_checkpoints where ladder_version = 'apex.v1.0.0'),
@@ -25,7 +25,11 @@ select is(
 
 select ok(
   exists(select 1 from api.monthly_apex_checkpoints where threshold_meters = 42195),
-  'the 42.195 km marathon-symbolic checkpoint exists with exact precision');
+  'the 42.195 km marathon checkpoint exists with exact precision');
+
+select ok(
+  (select count(*) from api.monthly_apex_checkpoints where threshold_meters in (41000, 45000)) = 2,
+  'the marathon sits between the 41 km and 45 km checkpoints');
 
 -- The enum IS the rank order: world_crown must be the last value.
 select is(
@@ -91,7 +95,7 @@ select is(
     (private.apply_verified_run_reward(
       pg_temp.make_session('aaaaaaaa-0000-0000-0000-000000000001', 5200, '2026-03-02T09:00:00+09'),
       'run-1') -> 'crossed_checkpoint_ids')),
-  4, 'a first 5.2 km run crosses 0, 1, 3 and 5 km');
+  5, 'a first 5.2 km run crosses 1, 2, 3, 4 and 5 km');
 
 select is(
   (select laddered_meters from api.monthly_apex_progress
@@ -154,7 +158,7 @@ select is(
     (private.apply_verified_run_reward(
       pg_temp.make_session('aaaaaaaa-0000-0000-0000-000000000001', 85000, '2026-03-04T09:00:00+09'),
       'run-4') -> 'crossed_checkpoint_ids')),
-  10, 'from 15 km, a single 85 km session crosses 20/25/30/40/42.195/50/60/75/90/100 km');
+  21, 'from 15 km, a single 85 km session crosses the 21 checkpoints in (15 km, 100 km]');
 
 select is(
   (select count(*)::int from api.monthly_apex_checkpoint_claims
@@ -201,7 +205,7 @@ select is(
   1, 'the World Crown is recorded exactly once');
 
 select is(
-  (select count(*)::int from api.apex_boss_unlocks
+  (select count(*)::int from api.apex_race_entries
    where user_id = 'aaaaaaaa-0000-0000-0000-000000000002' and month_key = '2026-04'),
   1, 'the Apex Axis boss unlocks exactly once');
 
@@ -254,7 +258,7 @@ select is(
     (private.apply_verified_run_reward(
       pg_temp.make_session('aaaaaaaa-0000-0000-0000-000000000003', 1200000, '2026-05-01T09:00:00+09'),
       'over-1') -> 'crossed_checkpoint_ids')),
-  52, 'a single 1200 km session claims all 52 checkpoints exactly once');
+  121, 'a single 1200 km session claims all 121 checkpoints exactly once');
 
 select is(
   (select over_crown_meters from api.monthly_apex_progress

@@ -19,8 +19,8 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { applyDistance, emptyProgress } from '../lib/monthly-apex.mjs';
-import { APEX_CHECKPOINT_METERS, MAJOR_RANKS, rankForMeters, DIRECTION_LOCK } from '../lib/constants.mjs';
+import { applyDistance, emptyProgress } from '../../packages/domain/monthly-apex.mjs';
+import { APEX_CHECKPOINT_METERS, MAJOR_RANKS, rankForMeters, DIRECTION_LOCK } from '../../packages/domain/constants.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 

@@ -22,7 +22,7 @@ and looked green. `pg_prove`, which actually parses TAP, reported `Bad plan. You
 tests but ran 26` — five assertions were never executed, and a naive check would have called
 that a pass.
 
-*Fix:* plans corrected; `pg_prove` is now the runner in `tools/test/db.sh` and in CI,
+*Fix:* plans corrected; `pg_prove` is now the runner in `scripts/db.sh` and in CI,
 precisely because it fails on a plan mismatch and a hand-rolled grep does not.
 
 **F-09-2 (HIGH, fixed) — a test that asserted the wrong thing.** `01_schema_rls` asserted

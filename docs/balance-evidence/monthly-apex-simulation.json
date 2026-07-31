@@ -156,13 +156,13 @@
   ],
   "checkpoint_reach": [
     {
-      "threshold_km": 0,
+      "threshold_km": 1,
       "reached_by": 2200,
       "reached_pct": 100
     },
     {
-      "threshold_km": 1,
-      "reached_by": 2200,
+      "threshold_km": 2,
+      "reached_by": 2199,
       "reached_pct": 100
     },
     {
@@ -171,9 +171,24 @@
       "reached_pct": 100
     },
     {
+      "threshold_km": 4,
+      "reached_by": 2198,
+      "reached_pct": 99.9
+    },
+    {
       "threshold_km": 5,
       "reached_by": 2196,
       "reached_pct": 99.8
+    },
+    {
+      "threshold_km": 6,
+      "reached_by": 2195,
+      "reached_pct": 99.8
+    },
+    {
+      "threshold_km": 8,
+      "reached_by": 2182,
+      "reached_pct": 99.2
     },
     {
       "threshold_km": 10,
@@ -181,19 +196,34 @@
       "reached_pct": 98
     },
     {
+      "threshold_km": 13,
+      "reached_by": 2103,
+      "reached_pct": 95.6
+    },
+    {
       "threshold_km": 15,
       "reached_by": 2060,
       "reached_pct": 93.6
     },
     {
-      "threshold_km": 20,
-      "reached_by": 2004,
-      "reached_pct": 91.1
+      "threshold_km": 18,
+      "reached_by": 2024,
+      "reached_pct": 92
     },
     {
-      "threshold_km": 25,
-      "reached_by": 1972,
-      "reached_pct": 89.6
+      "threshold_km": 21,
+      "reached_by": 1993,
+      "reached_pct": 90.6
+    },
+    {
+      "threshold_km": 24,
+      "reached_by": 1979,
+      "reached_pct": 90
+    },
+    {
+      "threshold_km": 27,
+      "reached_by": 1960,
+      "reached_pct": 89.1
     },
     {
       "threshold_km": 30,
@@ -201,9 +231,19 @@
       "reached_pct": 87.8
     },
     {
-      "threshold_km": 40,
-      "reached_by": 1819,
-      "reached_pct": 82.7
+      "threshold_km": 34,
+      "reached_by": 1881,
+      "reached_pct": 85.5
+    },
+    {
+      "threshold_km": 37,
+      "reached_by": 1846,
+      "reached_pct": 83.9
+    },
+    {
+      "threshold_km": 41,
+      "reached_by": 1816,
+      "reached_pct": 82.5
     },
     {
       "threshold_km": 42.195,
@@ -211,204 +251,509 @@
       "reached_pct": 82.1
     },
     {
-      "threshold_km": 50,
-      "reached_by": 1774,
-      "reached_pct": 80.6
+      "threshold_km": 45,
+      "reached_by": 1797,
+      "reached_pct": 81.7
     },
     {
-      "threshold_km": 60,
-      "reached_by": 1735,
-      "reached_pct": 78.9
+      "threshold_km": 49,
+      "reached_by": 1779,
+      "reached_pct": 80.9
     },
     {
-      "threshold_km": 75,
-      "reached_by": 1647,
-      "reached_pct": 74.9
+      "threshold_km": 54,
+      "reached_by": 1759,
+      "reached_pct": 80
     },
     {
-      "threshold_km": 90,
-      "reached_by": 1605,
-      "reached_pct": 73
+      "threshold_km": 58,
+      "reached_by": 1742,
+      "reached_pct": 79.2
     },
     {
-      "threshold_km": 100,
-      "reached_by": 1597,
-      "reached_pct": 72.6
+      "threshold_km": 63,
+      "reached_by": 1713,
+      "reached_pct": 77.9
     },
     {
-      "threshold_km": 125,
-      "reached_by": 1570,
-      "reached_pct": 71.4
+      "threshold_km": 67,
+      "reached_by": 1689,
+      "reached_pct": 76.8
     },
     {
-      "threshold_km": 150,
-      "reached_by": 1511,
-      "reached_pct": 68.7
+      "threshold_km": 72,
+      "reached_by": 1662,
+      "reached_pct": 75.5
     },
     {
-      "threshold_km": 175,
-      "reached_by": 1436,
-      "reached_pct": 65.3
+      "threshold_km": 77,
+      "reached_by": 1639,
+      "reached_pct": 74.5
     },
     {
-      "threshold_km": 200,
-      "reached_by": 1375,
-      "reached_pct": 62.5
+      "threshold_km": 82,
+      "reached_by": 1618,
+      "reached_pct": 73.5
     },
     {
-      "threshold_km": 225,
-      "reached_by": 1322,
-      "reached_pct": 60.1
+      "threshold_km": 87,
+      "reached_by": 1610,
+      "reached_pct": 73.2
     },
     {
-      "threshold_km": 250,
-      "reached_by": 1262,
-      "reached_pct": 57.4
+      "threshold_km": 93,
+      "reached_by": 1603,
+      "reached_pct": 72.9
     },
     {
-      "threshold_km": 275,
-      "reached_by": 1212,
-      "reached_pct": 55.1
+      "threshold_km": 98,
+      "reached_by": 1600,
+      "reached_pct": 72.7
     },
     {
-      "threshold_km": 300,
-      "reached_by": 1176,
+      "threshold_km": 104,
+      "reached_by": 1593,
+      "reached_pct": 72.4
+    },
+    {
+      "threshold_km": 110,
+      "reached_by": 1589,
+      "reached_pct": 72.2
+    },
+    {
+      "threshold_km": 115,
+      "reached_by": 1581,
+      "reached_pct": 71.9
+    },
+    {
+      "threshold_km": 121,
+      "reached_by": 1573,
+      "reached_pct": 71.5
+    },
+    {
+      "threshold_km": 127,
+      "reached_by": 1566,
+      "reached_pct": 71.2
+    },
+    {
+      "threshold_km": 134,
+      "reached_by": 1546,
+      "reached_pct": 70.3
+    },
+    {
+      "threshold_km": 140,
+      "reached_by": 1534,
+      "reached_pct": 69.7
+    },
+    {
+      "threshold_km": 146,
+      "reached_by": 1522,
+      "reached_pct": 69.2
+    },
+    {
+      "threshold_km": 153,
+      "reached_by": 1507,
+      "reached_pct": 68.5
+    },
+    {
+      "threshold_km": 160,
+      "reached_by": 1479,
+      "reached_pct": 67.2
+    },
+    {
+      "threshold_km": 166,
+      "reached_by": 1465,
+      "reached_pct": 66.6
+    },
+    {
+      "threshold_km": 173,
+      "reached_by": 1439,
+      "reached_pct": 65.4
+    },
+    {
+      "threshold_km": 180,
+      "reached_by": 1420,
+      "reached_pct": 64.5
+    },
+    {
+      "threshold_km": 187,
+      "reached_by": 1404,
+      "reached_pct": 63.8
+    },
+    {
+      "threshold_km": 194,
+      "reached_by": 1387,
+      "reached_pct": 63
+    },
+    {
+      "threshold_km": 202,
+      "reached_by": 1370,
+      "reached_pct": 62.3
+    },
+    {
+      "threshold_km": 209,
+      "reached_by": 1352,
+      "reached_pct": 61.5
+    },
+    {
+      "threshold_km": 217,
+      "reached_by": 1336,
+      "reached_pct": 60.7
+    },
+    {
+      "threshold_km": 224,
+      "reached_by": 1324,
+      "reached_pct": 60.2
+    },
+    {
+      "threshold_km": 232,
+      "reached_by": 1305,
+      "reached_pct": 59.3
+    },
+    {
+      "threshold_km": 240,
+      "reached_by": 1286,
+      "reached_pct": 58.5
+    },
+    {
+      "threshold_km": 248,
+      "reached_by": 1270,
+      "reached_pct": 57.7
+    },
+    {
+      "threshold_km": 256,
+      "reached_by": 1247,
+      "reached_pct": 56.7
+    },
+    {
+      "threshold_km": 264,
+      "reached_by": 1228,
+      "reached_pct": 55.8
+    },
+    {
+      "threshold_km": 272,
+      "reached_by": 1217,
+      "reached_pct": 55.3
+    },
+    {
+      "threshold_km": 281,
+      "reached_by": 1203,
+      "reached_pct": 54.7
+    },
+    {
+      "threshold_km": 289,
+      "reached_by": 1192,
+      "reached_pct": 54.2
+    },
+    {
+      "threshold_km": 298,
+      "reached_by": 1178,
       "reached_pct": 53.5
     },
     {
-      "threshold_km": 325,
+      "threshold_km": 306,
+      "reached_by": 1168,
+      "reached_pct": 53.1
+    },
+    {
+      "threshold_km": 315,
+      "reached_by": 1152,
+      "reached_pct": 52.4
+    },
+    {
+      "threshold_km": 324,
       "reached_by": 1136,
       "reached_pct": 51.6
     },
     {
-      "threshold_km": 350,
-      "reached_by": 1081,
-      "reached_pct": 49.1
+      "threshold_km": 333,
+      "reached_by": 1124,
+      "reached_pct": 51.1
     },
     {
-      "threshold_km": 375,
-      "reached_by": 1021,
-      "reached_pct": 46.4
+      "threshold_km": 342,
+      "reached_by": 1104,
+      "reached_pct": 50.2
     },
     {
-      "threshold_km": 400,
-      "reached_by": 930,
-      "reached_pct": 42.3
+      "threshold_km": 351,
+      "reached_by": 1078,
+      "reached_pct": 49
     },
     {
-      "threshold_km": 425,
-      "reached_by": 817,
-      "reached_pct": 37.1
+      "threshold_km": 360,
+      "reached_by": 1058,
+      "reached_pct": 48.1
     },
     {
-      "threshold_km": 450,
-      "reached_by": 727,
-      "reached_pct": 33
+      "threshold_km": 369,
+      "reached_by": 1032,
+      "reached_pct": 46.9
     },
     {
-      "threshold_km": 475,
-      "reached_by": 690,
-      "reached_pct": 31.4
+      "threshold_km": 379,
+      "reached_by": 1011,
+      "reached_pct": 46
     },
     {
-      "threshold_km": 500,
+      "threshold_km": 388,
+      "reached_by": 984,
+      "reached_pct": 44.7
+    },
+    {
+      "threshold_km": 398,
+      "reached_by": 941,
+      "reached_pct": 42.8
+    },
+    {
+      "threshold_km": 407,
+      "reached_by": 905,
+      "reached_pct": 41.1
+    },
+    {
+      "threshold_km": 417,
+      "reached_by": 855,
+      "reached_pct": 38.9
+    },
+    {
+      "threshold_km": 427,
+      "reached_by": 808,
+      "reached_pct": 36.7
+    },
+    {
+      "threshold_km": 437,
+      "reached_by": 767,
+      "reached_pct": 34.9
+    },
+    {
+      "threshold_km": 447,
+      "reached_by": 731,
+      "reached_pct": 33.2
+    },
+    {
+      "threshold_km": 457,
+      "reached_by": 713,
+      "reached_pct": 32.4
+    },
+    {
+      "threshold_km": 467,
+      "reached_by": 697,
+      "reached_pct": 31.7
+    },
+    {
+      "threshold_km": 478,
+      "reached_by": 687,
+      "reached_pct": 31.2
+    },
+    {
+      "threshold_km": 488,
+      "reached_by": 677,
+      "reached_pct": 30.8
+    },
+    {
+      "threshold_km": 499,
       "reached_by": 668,
       "reached_pct": 30.4
     },
     {
-      "threshold_km": 525,
-      "reached_by": 639,
-      "reached_pct": 29
+      "threshold_km": 509,
+      "reached_by": 658,
+      "reached_pct": 29.9
     },
     {
-      "threshold_km": 550,
+      "threshold_km": 520,
+      "reached_by": 641,
+      "reached_pct": 29.1
+    },
+    {
+      "threshold_km": 531,
+      "reached_by": 633,
+      "reached_pct": 28.8
+    },
+    {
+      "threshold_km": 541,
+      "reached_by": 621,
+      "reached_pct": 28.2
+    },
+    {
+      "threshold_km": 552,
       "reached_by": 614,
       "reached_pct": 27.9
     },
     {
-      "threshold_km": 575,
-      "reached_by": 607,
+      "threshold_km": 563,
+      "reached_by": 612,
+      "reached_pct": 27.8
+    },
+    {
+      "threshold_km": 574,
+      "reached_by": 608,
       "reached_pct": 27.6
     },
     {
-      "threshold_km": 600,
+      "threshold_km": 586,
+      "reached_by": 605,
+      "reached_pct": 27.5
+    },
+    {
+      "threshold_km": 597,
+      "reached_by": 604,
+      "reached_pct": 27.5
+    },
+    {
+      "threshold_km": 608,
       "reached_by": 602,
       "reached_pct": 27.4
     },
     {
-      "threshold_km": 625,
-      "reached_by": 599,
-      "reached_pct": 27.2
+      "threshold_km": 620,
+      "reached_by": 600,
+      "reached_pct": 27.3
     },
     {
-      "threshold_km": 650,
+      "threshold_km": 631,
+      "reached_by": 595,
+      "reached_pct": 27
+    },
+    {
+      "threshold_km": 643,
+      "reached_by": 593,
+      "reached_pct": 27
+    },
+    {
+      "threshold_km": 654,
       "reached_by": 591,
       "reached_pct": 26.9
     },
     {
-      "threshold_km": 675,
-      "reached_by": 584,
+      "threshold_km": 666,
+      "reached_by": 587,
+      "reached_pct": 26.7
+    },
+    {
+      "threshold_km": 678,
+      "reached_by": 583,
       "reached_pct": 26.5
     },
     {
-      "threshold_km": 700,
-      "reached_by": 565,
-      "reached_pct": 25.7
+      "threshold_km": 690,
+      "reached_by": 575,
+      "reached_pct": 26.1
     },
     {
-      "threshold_km": 725,
+      "threshold_km": 702,
+      "reached_by": 563,
+      "reached_pct": 25.6
+    },
+    {
+      "threshold_km": 714,
+      "reached_by": 554,
+      "reached_pct": 25.2
+    },
+    {
+      "threshold_km": 726,
       "reached_by": 550,
       "reached_pct": 25
     },
     {
-      "threshold_km": 750,
-      "reached_by": 526,
-      "reached_pct": 23.9
+      "threshold_km": 738,
+      "reached_by": 537,
+      "reached_pct": 24.4
     },
     {
-      "threshold_km": 775,
-      "reached_by": 496,
+      "threshold_km": 751,
+      "reached_by": 524,
+      "reached_pct": 23.8
+    },
+    {
+      "threshold_km": 763,
+      "reached_by": 514,
+      "reached_pct": 23.4
+    },
+    {
+      "threshold_km": 776,
+      "reached_by": 494,
       "reached_pct": 22.5
     },
     {
-      "threshold_km": 800,
+      "threshold_km": 788,
+      "reached_by": 477,
+      "reached_pct": 21.7
+    },
+    {
+      "threshold_km": 801,
       "reached_by": 462,
       "reached_pct": 21
     },
     {
-      "threshold_km": 825,
+      "threshold_km": 814,
+      "reached_by": 452,
+      "reached_pct": 20.5
+    },
+    {
+      "threshold_km": 826,
       "reached_by": 444,
       "reached_pct": 20.2
     },
     {
-      "threshold_km": 850,
-      "reached_by": 426,
-      "reached_pct": 19.4
+      "threshold_km": 839,
+      "reached_by": 431,
+      "reached_pct": 19.6
     },
     {
-      "threshold_km": 875,
-      "reached_by": 409,
-      "reached_pct": 18.6
+      "threshold_km": 852,
+      "reached_by": 425,
+      "reached_pct": 19.3
     },
     {
-      "threshold_km": 900,
-      "reached_by": 401,
+      "threshold_km": 865,
+      "reached_by": 413,
+      "reached_pct": 18.8
+    },
+    {
+      "threshold_km": 878,
+      "reached_by": 407,
+      "reached_pct": 18.5
+    },
+    {
+      "threshold_km": 892,
+      "reached_by": 404,
+      "reached_pct": 18.4
+    },
+    {
+      "threshold_km": 905,
+      "reached_by": 400,
       "reached_pct": 18.2
     },
     {
-      "threshold_km": 925,
-      "reached_by": 395,
+      "threshold_km": 918,
+      "reached_by": 397,
       "reached_pct": 18
     },
     {
-      "threshold_km": 950,
-      "reached_by": 384,
+      "threshold_km": 932,
+      "reached_by": 391,
+      "reached_pct": 17.8
+    },
+    {
+      "threshold_km": 945,
+      "reached_by": 386,
       "reached_pct": 17.5
     },
     {
-      "threshold_km": 975,
-      "reached_by": 367,
-      "reached_pct": 16.7
+      "threshold_km": 959,
+      "reached_by": 379,
+      "reached_pct": 17.2
+    },
+    {
+      "threshold_km": 972,
+      "reached_by": 369,
+      "reached_pct": 16.8
+    },
+    {
+      "threshold_km": 986,
+      "reached_by": 356,
+      "reached_pct": 16.2
     },
     {
       "threshold_km": 1000,
