@@ -8,6 +8,7 @@
     "main_stages": 72,
     "side_stages": 24,
     "playable_characters": 12,
+    "courses": 2304,
     "character_episodes": 36,
     "tactical_skills": 48,
     "tactical_relics": 72,
@@ -43,7 +44,7 @@
     "launch_seasons": 1,
     "event_arcs": 3
   },
-  "meets_floor": false,
+  "meets_floor": true,
   "localization_locales": [
     "ko",
     "en"
@@ -82,5 +83,5 @@
     "content/launch/world/stages/side_stages.json",
     "content/launch/world/story_chapters.json"
   ],
-  "content_sha256": "a01c2e104161f28b1af023f3381e7061eb66b757435da2a2051c1b3d170c247b"
+  "content_sha256": "fcb5e1acdc237cd3064c9c763fa0283fca7b77c383df2dd41b2128e4b4f3797d"
 }

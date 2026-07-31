@@ -652,6 +652,7 @@ const counts = {
   main_stages: mainStages.length,
   side_stages: sideStages.length,
   playable_characters: characters.length,
+  courses: courses.length,
   character_episodes: episodes.length,
   tactical_skills: skills.length,
   tactical_relics: relics.length,
@@ -696,4 +697,25 @@ for (const [k, v] of Object.entries(counts)) {
 }
 console.log(`  localization keys          ${String(Object.keys(locale.ko).length).padStart(4)} (ko + en)`);
 console.log(`  meets launch floor         ${manifest.meets_floor}`);
+
+// "false" on its own is not a diagnosis. This build reported a bare false while the
+// printed table showed every visible category at floor, because the category that was
+// short — courses — had no counter and so was never printed at all. Name the gap.
+{
+  const missingCounter = Object.keys(LAUNCH_CONTENT_FLOOR).filter((k) => !(k in counts));
+  const below = Object.entries(LAUNCH_CONTENT_FLOOR)
+    .filter(([k, v]) => k in counts && counts[k] < v)
+    .map(([k, v]) => `${k}: ${counts[k]} < ${v}`);
+  const extra = Object.keys(counts).filter((k) => !(k in LAUNCH_CONTENT_FLOOR));
+
+  for (const k of missingCounter) {
+    console.error(`::error::${k} has a launch floor but nothing counts it — it can never be met`);
+  }
+  for (const line of below) console.error(`::error::below floor — ${line}`);
+  for (const k of extra) console.error(`::error::${k} is generated but has no launch floor — it ships ungated`);
+
+  if (missingCounter.length > 0 || below.length > 0 || extra.length > 0) {
+    process.exit(1);
+  }
+}
 if (!manifest.meets_floor) process.exitCode = 1;

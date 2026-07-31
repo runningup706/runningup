@@ -1,7 +1,7 @@
 -- =============================================================================
 -- RunningUp seed — GENERATED FILE, do not edit by hand.
 -- Source: content/launch/**  Generator: tools/content-factory/emit-seed.mjs
--- Content version: 1.0.0  Content SHA-256: a01c2e104161f28b1af023f3381e7061eb66b757435da2a2051c1b3d170c247b
+-- Content version: 1.0.0  Content SHA-256: fcb5e1acdc237cd3064c9c763fa0283fca7b77c383df2dd41b2128e4b4f3797d
 --
 -- Idempotent: every insert uses ON CONFLICT DO NOTHING so the seed may be re-applied
 -- to an existing database without duplicating launch content.
@@ -10,7 +10,7 @@
 begin;
 
 -- Content version registry -----------------------------------------------------
-insert into api.content_versions (content_version, schema_version, content_sha256) values ('1.0.0', '1.0.0', 'a01c2e104161f28b1af023f3381e7061eb66b757435da2a2051c1b3d170c247b') on conflict (content_version) do nothing;
+insert into api.content_versions (content_version, schema_version, content_sha256) values ('1.0.0', '1.0.0', 'fcb5e1acdc237cd3064c9c763fa0283fca7b77c383df2dd41b2128e4b4f3797d') on conflict (content_version) do nothing;
 
 -- Monthly Apex ladder ----------------------------------------------------------
 insert into api.monthly_apex_definitions (ladder_version, final_checkpoint_meters, checkpoint_count, content_version) values ('apex.v1.0.0', 1000000, 121, '1.0.0') on conflict (ladder_version) do nothing;
