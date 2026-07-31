@@ -82,10 +82,10 @@ jobs:
 
       # db.sh regenerates RLS_MATRIX.md, DATABASE_SCHEMA.md and the evidence manifest from
       # the live schema. If they differ from the commit, the documents were stale.
+      #
+      # The manifest is compared with its provenance field normalised out. It records
+      # `git rev-parse HEAD`, which by construction can never equal the SHA of the commit
+      # that contains it, so a plain `git diff` on it reported drift after every commit
+      # forever — a gate no commit sequence could satisfy. See the script for detail.
       - name: Fail if the generated security evidence drifted
-        run: |
-          if ! git diff --quiet -- docs/RLS_MATRIX.md docs/DATABASE_SCHEMA.md artifacts/test-evidence-manifest.json; then
-            echo "::error::Generated security evidence is stale. Run tools/test/db.sh and commit the result."
-            git diff --stat -- docs/RLS_MATRIX.md docs/DATABASE_SCHEMA.md artifacts/test-evidence-manifest.json
-            exit 1
-          fi
+        run: node tools/release/check-evidence-drift.mjs
