@@ -112,6 +112,9 @@ Verified by `backend/supabase/tests/pgtap/01_schema_rls.sql` and `06_profile_wri
 | `world_continents` | ✅ | ✅ | ✅ — — — | ✅ — — — | `world_continents_public_read` (SELECT) |
 | ↳ column grant | | | | `anon` SELECT | `content_pack_id, content_version, display_order, entry_region_id, id, mechanic_id, name_key, playable_at_launch, visible_at_first_login` |
 | ↳ column grant | | | | `authenticated` SELECT | `content_pack_id, content_version, display_order, entry_region_id, id, mechanic_id, name_key, playable_at_launch, visible_at_first_login` |
+| `world_courses` | ✅ | ✅ | ✅ — — — | ✅ — — — | `world_courses_public_read` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `content_version, continent_id, debug_only, display_order, distance_meters, enabled, id, name_key, region_id, reward_table_id, scene_address, shape, surface` |
+| ↳ column grant | | | | `authenticated` SELECT | `content_version, continent_id, debug_only, display_order, distance_meters, enabled, id, name_key, region_id, reward_table_id, scene_address, shape, surface` |
 | `world_crown_history` | ✅ | ✅ | — — — — | ✅ — — — | `crown_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` SELECT | `achieved_at, id, laddered_meters, month_key, over_crown_meters_at_award, user_id` |
 | `world_regions` | ✅ | ✅ | ✅ — — — | ✅ — — — | `world_regions_public_read` (SELECT) |

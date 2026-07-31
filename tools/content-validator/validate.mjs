@@ -36,6 +36,7 @@ const localization = Object.fromEntries(LOCALES.map((l) => [
 
 const continents = items('world/continents/continents.json');
 const regions = items('world/regions/regions.json');
+const courses = items('world/courses/courses.json');
 const mainStages = items('world/stages/main_stages.json');
 const sideStages = items('world/stages/side_stages.json');
 const continentBosses = items('world/bosses/continent_bosses.json');
@@ -63,6 +64,7 @@ const season = read('seasons/season_01.json');
 const counts = {
   continents: continents.length,
   region_nodes: regions.length,
+  courses: courses.length,
   main_stages: mainStages.length,
   side_stages: sideStages.length,
   playable_characters: characters.length,
@@ -260,12 +262,14 @@ function requireCoverage(label, parentIds, children, parentKey, expectedPerParen
 }
 
 const regionsPerContinent = regions.length / continents.length;
+const coursesPerRegion = courses.length / regions.length;
 const mainStagesPerContinent = mainStages.length / continents.length;
 const sideStagesPerContinent = sideStages.length / continents.length;
 const cosmeticsPerCharacter = cosmetics.length / characters.length;
 
 for (const [label, count] of [
   ['regions per continent', regionsPerContinent],
+  ['courses per region', coursesPerRegion],
   ['main stages per continent', mainStagesPerContinent],
   ['side stages per continent', sideStagesPerContinent],
   ['cosmetics per character', cosmeticsPerCharacter],
@@ -276,6 +280,7 @@ for (const [label, count] of [
 }
 
 requireCoverage('regions per continent', continentIds, regions, 'continent_id', regionsPerContinent);
+requireCoverage('courses per region', regionIds, courses, 'region_id', coursesPerRegion);
 requireCoverage('main stages per continent', continentIds, mainStages, 'continent_id', mainStagesPerContinent);
 requireCoverage('side stages per continent', continentIds, sideStages, 'continent_id', sideStagesPerContinent);
 requireCoverage('continent bosses', continentIds, continentBosses, 'continent_id', 1);
@@ -285,6 +290,52 @@ requireCoverage('companions per continent', continentIds, companions, 'continent
 requireCoverage('skills per character', characterIds, skills, 'character_id', 4);
 requireCoverage('episodes per character', characterIds, episodes, 'character_id', 3);
 requireCoverage('cosmetics per character', characterIds, cosmetics, 'character_id', cosmeticsPerCharacter);
+
+/**
+ * GATE 5c — DL-3 at the course level.
+ *
+ * Running only, and elevation is never a course property. A course that carried an
+ * elevation or gradient field would make climbing a thing the world rewards, which is the
+ * exact line DL-3 draws. Asserted over the data rather than trusted to the generator.
+ */
+const ALLOWED_SURFACES = new Set(['road', 'track', 'treadmill', 'indoor']);
+const ALLOWED_SHAPES = new Set(['loop', 'out_and_back', 'point_to_point']);
+for (const course of courses) {
+  if (!ALLOWED_SURFACES.has(course.surface)) {
+    fail('direction_lock', `course ${course.id}: surface ${course.surface} is not a running surface`);
+  }
+  if (!ALLOWED_SHAPES.has(course.shape)) {
+    fail('course_shape', `course ${course.id}: unknown shape ${course.shape}`);
+  }
+  if (!Number.isInteger(course.distance_meters) || course.distance_meters <= 0) {
+    fail('course_distance', `course ${course.id}: distance must be a positive integer of metres`);
+  }
+  for (const forbidden of ['elevation', 'elevation_gain', 'gradient', 'altitude', 'incline']) {
+    if (forbidden in course) {
+      fail('direction_lock', `course ${course.id}: ${forbidden} may never be a course property (DL-3)`);
+    }
+  }
+  if (!regionIds.has(course.region_id)) fail('reference', `course ${course.id}: unknown region`);
+  if (!continentIds.has(course.continent_id)) fail('reference', `course ${course.id}: unknown continent`);
+  requireAddress('course', course, 'scene_address');
+  if (!course.reward_table_id) fail('reward_wiring', `course ${course.id}: no reward table`);
+  if (course.enabled !== true) fail('availability', `course ${course.id} is not enabled`);
+  if (course.debug_only === true) fail('availability', `course ${course.id} is debug-only`);
+}
+
+// A world where every region offers the same four distances is one region 192 times.
+{
+  const signatures = new Set(
+    regions.map((r) => courses
+      .filter((c) => c.region_id === r.id)
+      .map((c) => c.distance_meters)
+      .sort((a, b) => a - b)
+      .join('/')),
+  );
+  if (signatures.size < 8) {
+    fail('course_variety', `only ${signatures.size} distinct distance sets across 192 regions`);
+  }
+}
 
 // ===========================================================================
 // GATE 6 — route reachability: every region node must be reachable at launch

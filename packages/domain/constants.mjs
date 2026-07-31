@@ -190,6 +190,7 @@ export const VERIFICATION_GRADES = Object.freeze([
 export const LAUNCH_CONTENT_FLOOR = Object.freeze({
   continents: 12,
   region_nodes: 192,
+  courses: 2304,
   main_stages: 72,
   side_stages: 24,
   playable_characters: 12,

@@ -640,3 +640,57 @@ export const STORY_CHAPTERS = Object.freeze(CONTINENTS.map((c, i) => ({
   shard_id: `shard_${String(i + 1).padStart(2, '0')}`,
   requires_previous_chapter: false,
 })));
+
+/**
+ * Running courses.
+ *
+ * A region carries twelve courses: four distances crossed with three shapes. The distances
+ * grow with the region's position in its continent, so the first region of a continent
+ * offers a 1 km loop and the sixteenth offers a marathon — the world gets longer as you
+ * travel it, rather than every region offering the same menu under a different name.
+ *
+ * DL-3 governs what a course may be. Surface is one of road, track, treadmill or indoor,
+ * and nothing else. There is no elevation field: elevation is inert sensor metadata
+ * elsewhere in the product and must never become a course property that rewards anything.
+ */
+export const COURSE_SHAPES = Object.freeze([
+  { id: 'loop', ko: '순환', en: 'Loop', note: 'starts and finishes at the same point' },
+  { id: 'out_and_back', ko: '왕복', en: 'Out and Back', note: 'turns at halfway' },
+  { id: 'point_to_point', ko: '편도', en: 'Point to Point', note: 'finishes somewhere else' },
+]);
+
+/**
+ * Four distances per region, indexed by the region's order within its continent.
+ *
+ * Whole metres throughout, with one exception: 42_195 is the marathon, and it is exact
+ * for the same reason the Monthly Apex checkpoint is — a runner who covers the distance
+ * should meet the number that names it, not a rounded neighbour.
+ */
+export const REGION_COURSE_DISTANCES = Object.freeze([
+  [ 1_000,  2_000,  3_000,  5_000],
+  [ 1_000,  2_000,  4_000,  6_000],
+  [ 2_000,  3_000,  5_000,  8_000],
+  [ 2_000,  4_000,  6_000, 10_000],
+  [ 3_000,  5_000,  8_000, 10_000],
+  [ 3_000,  5_000, 10_000, 12_000],
+  [ 5_000,  8_000, 12_000, 15_000],
+  [ 5_000, 10_000, 15_000, 20_000],
+  [ 8_000, 12_000, 16_000, 21_000],
+  [10_000, 15_000, 20_000, 25_000],
+  [10_000, 16_000, 24_000, 30_000],
+  [12_000, 20_000, 28_000, 32_000],
+  [15_000, 21_000, 30_000, 35_000],
+  [15_000, 25_000, 35_000, 42_195],
+  [20_000, 30_000, 40_000, 45_000],
+  [25_000, 35_000, 42_195, 50_000],
+]);
+
+/**
+ * The surface a course runs on.
+ *
+ * A point-to-point course has to actually go somewhere, which a treadmill and a track do
+ * not, so those are always road. Everything else takes the continent's own surface.
+ */
+export function courseSurface(shapeId, continentSurface) {
+  return shapeId === 'point_to_point' ? 'road' : continentSurface;
+}

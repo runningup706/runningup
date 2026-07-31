@@ -25,6 +25,7 @@
   "floor": {
     "continents": 12,
     "region_nodes": 192,
+    "courses": 2304,
     "main_stages": 72,
     "side_stages": 24,
     "playable_characters": 12,
@@ -42,12 +43,12 @@
     "launch_seasons": 1,
     "event_arcs": 3
   },
-  "meets_floor": true,
+  "meets_floor": false,
   "localization_locales": [
     "ko",
     "en"
   ],
-  "localization_key_count": 947,
+  "localization_key_count": 3251,
   "monthly_apex": {
     "checkpoint_count": 121,
     "final_checkpoint_meters": 1000000,
@@ -71,6 +72,7 @@
     "content/launch/world/bosses/continent_bosses.json",
     "content/launch/world/bosses/world_bosses.json",
     "content/launch/world/continents/continents.json",
+    "content/launch/world/courses/courses.json",
     "content/launch/world/dungeon_types.json",
     "content/launch/world/enemies/elite_enemy_families.json",
     "content/launch/world/enemies/standard_enemy_families.json",
@@ -80,5 +82,5 @@
     "content/launch/world/stages/side_stages.json",
     "content/launch/world/story_chapters.json"
   ],
-  "content_sha256": "ee51f0916a5a052890c3663da60d6d78425d8e406fbcdc5e80b25b29d19e6c7c"
+  "content_sha256": "a01c2e104161f28b1af023f3381e7061eb66b757435da2a2051c1b3d170c247b"
 }

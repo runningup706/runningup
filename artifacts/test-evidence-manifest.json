@@ -1,9 +1,9 @@
 {
   "manifest_version": "1.0.0",
   "generated_by": "tools/release/generate-evidence.mjs",
-  "git_commit": "5c23c835ff47ff8a3d2bd7da9508a557aae03df3",
+  "git_commit": "9815bc8a9714cb1137a771ee9a2cd00f35d19dcf",
   "content_version": "1.0.0",
-  "content_sha256": "ee51f0916a5a052890c3663da60d6d78425d8e406fbcdc5e80b25b29d19e6c7c",
+  "content_sha256": "a01c2e104161f28b1af023f3381e7061eb66b757435da2a2051c1b3d170c247b",
   "suites": [
     {
       "id": "direction_lock",
@@ -49,12 +49,12 @@
     }
   ],
   "database": {
-    "relations": 52,
-    "columns": 421,
-    "constraints": 237,
+    "relations": 53,
+    "columns": 434,
+    "constraints": 245,
     "enums": 9,
     "functions": 11,
-    "rls_enabled_relations": 52,
+    "rls_enabled_relations": 53,
     "security_definer_functions_without_pinned_search_path": 0,
     "client_writable_ledger_tables": 0
   },
@@ -79,7 +79,7 @@
       "launch_seasons": 1,
       "event_arcs": 3
     },
-    "meets_floor": true
+    "meets_floor": false
   },
   "simulations": {
     "anti_cheat": {

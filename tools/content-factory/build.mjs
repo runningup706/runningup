@@ -16,7 +16,13 @@ import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { CONTINENTS, WORLD_BOSSES, APEX_BOSS, DUNGEON_TYPES, STORY_CHAPTERS, OBJECTIVE_TYPES } from './world/world-design.mjs';
+import {
+  CONTINENTS, WORLD_BOSSES, APEX_BOSS, DUNGEON_TYPES, STORY_CHAPTERS, OBJECTIVE_TYPES,
+  COURSE_SHAPES, REGION_COURSE_DISTANCES, courseSurface,
+} from './world/world-design.mjs';
+// The surface a continent runs on is a property of its courses, and the race engine is
+// where that already lives. Importing it keeps one continent from having two characters.
+import { CONTINENT_COURSES } from '../../packages/domain/race.mjs';
 import { CHARACTERS, COMPANIONS, COSMETIC_SLOTS, RELIC_THEMES, ROLES } from './characters/character-design.mjs';
 import {
   APEX_CHECKPOINT_METERS, MAJOR_RANKS, GOAL_DISTANCES, GOAL_DURATIONS, SESSION_STYLES,
@@ -66,6 +72,7 @@ const pad = (n, w = 2) => String(n).padStart(w, '0');
 
 const continents = [];
 const regions = [];
+const courses = [];
 const mainStages = [];
 const sideStages = [];
 const standardEnemies = [];
@@ -118,6 +125,40 @@ for (const c of CONTINENTS) {
       reachable_from: i === 0 ? ['continent_entry'] : [`rgn_${cShort}_${pad(i)}`],
       bypass_allowed: true,
       restoration_state_ids: c.restoration.map((s) => `rst_${cShort}_${s}`),
+    });
+  });
+
+  // Twelve courses per region: four distances crossed with three shapes. See
+  // REGION_COURSE_DISTANCES for why the distances grow with the region's position.
+  const continentSurface = CONTINENT_COURSES[c.id]?.surface ?? 'road';
+  c.regions.forEach((rName, i) => {
+    const regionId = `rgn_${cShort}_${pad(i + 1)}`;
+    const distances = REGION_COURSE_DISTANCES[i];
+    distances.forEach((distanceMeters, d) => {
+      COURSE_SHAPES.forEach((shape, sIndex) => {
+        const n = d * COURSE_SHAPES.length + sIndex + 1;
+        const label = distanceMeters % 1000 === 0
+          ? `${distanceMeters / 1000}K`
+          : `${(distanceMeters / 1000).toFixed(3)}K`;
+        courses.push({
+          id: `crs_${cShort}_${pad(i + 1)}_${pad(n)}`,
+          continent_id: c.id,
+          region_id: regionId,
+          order: n,
+          name_key: loc(`course.${cShort}.${pad(i + 1)}.${pad(n)}`, {
+            ko: `${rName.ko} ${label} ${shape.ko}`,
+            en: `${rName.en} ${label} ${shape.en}`,
+          }),
+          distance_meters: distanceMeters,
+          surface: courseSurface(shape.id, continentSurface),
+          shape: shape.id,
+          scene_address: `world/${cShort}/course_${pad(i + 1)}_${pad(n)}`,
+          lane_ids: DIFFICULTY_LANES.map((l) => l.id),
+          reward_table_id: `rwd_${cShort}_course_${pad(i + 1)}_${pad(n)}`,
+          enabled: true,
+          debug_only: false,
+        });
+      });
     });
   });
 
@@ -548,6 +589,7 @@ const eventArcs = [
 const written = [];
 written.push(write('world/continents/continents.json', envelope('continent', continents)));
 written.push(write('world/regions/regions.json', envelope('region_node', regions)));
+written.push(write('world/courses/courses.json', envelope('course', courses)));
 written.push(write('world/stages/main_stages.json', envelope('main_stage', mainStages)));
 written.push(write('world/stages/side_stages.json', envelope('side_stage', sideStages)));
 written.push(write('world/bosses/continent_bosses.json', envelope('continent_boss', continentBosses)));

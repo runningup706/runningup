@@ -1,10 +1,11 @@
 -- pgTAP: launch content completeness in the database (direction lock DL-4).
 -- Master # 22.2 / audit 5 / audit 6.
 begin;
-select plan(15);
+select plan(16);
 
 select is((select count(*)::int from api.world_continents), 12, '12 continents are seeded');
 select is((select count(*)::int from api.world_regions), 192, '192 region nodes are seeded');
+select is((select count(*)::int from api.world_courses), 2304, '2304 courses are seeded');
 select is((select count(*)::int from api.world_stages where kind = 'main'), 72, '72 main stages are seeded');
 select is((select count(*)::int from api.world_stages where kind = 'side'), 24, '24 side stages are seeded');
 select is((select count(*)::int from api.characters), 12, '12 playable characters are seeded');

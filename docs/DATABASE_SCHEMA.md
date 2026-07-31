@@ -3,7 +3,7 @@
 **GENERATED FILE.** Produced by `tools/release/generate-evidence.mjs` from a live
 database with all migrations applied. Regenerate after any migration.
 
-Relations: 52 · Columns: 421 · Constraints: 237 · Enums: 9 · Functions: 11
+Relations: 53 · Columns: 434 · Constraints: 245 · Enums: 9 · Functions: 11
 
 ## Enumerated types
 
@@ -769,6 +769,35 @@ Constraints:
 - `world_continents_display_order_key`: `UNIQUE (display_order)`
 - `world_continents_mechanic_id_key`: `UNIQUE (mechanic_id)`
 - `world_continents_pkey`: `PRIMARY KEY (id)`
+
+## `api.world_courses`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `id` | text | no | — |
+| `continent_id` | text | no | — |
+| `region_id` | text | no | — |
+| `display_order` | integer | no | — |
+| `name_key` | text | no | — |
+| `distance_meters` | integer | no | — |
+| `surface` | text | no | — |
+| `shape` | text | no | — |
+| `scene_address` | text | no | — |
+| `reward_table_id` | text | no | — |
+| `enabled` | boolean | no | `true` |
+| `debug_only` | boolean | no | `false` |
+| `content_version` | text | no | — |
+
+Constraints:
+
+- `course_distance_is_positive_metres`: `CHECK ((distance_meters > 0))`
+- `course_distance_within_launch_world`: `CHECK ((distance_meters <= 50000))`
+- `course_shape_is_known`: `CHECK ((shape = ANY (ARRAY['loop'::text, 'out_and_back'::text, 'point_to_point'::text])))`
+- `course_surface_is_running_only`: `CHECK ((surface = ANY (ARRAY['road'::text, 'track'::text, 'treadmill'::text, 'indoor'::text])))`
+- `world_courses_continent_id_fkey`: `FOREIGN KEY (continent_id) REFERENCES api.world_continents(id) ON DELETE CASCADE`
+- `world_courses_pkey`: `PRIMARY KEY (id)`
+- `world_courses_region_id_display_order_key`: `UNIQUE (region_id, display_order)`
+- `world_courses_region_id_fkey`: `FOREIGN KEY (region_id) REFERENCES api.world_regions(id) ON DELETE CASCADE`
 
 ## `api.world_crown_history`
 

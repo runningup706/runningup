@@ -26,6 +26,7 @@ const arr = (a) => `array[${a.map((x) => q(x)).join(', ')}]`;
 
 const continents = items('world/continents/continents.json');
 const regions = items('world/regions/regions.json');
+const courses = items('world/courses/courses.json');
 const mainStages = items('world/stages/main_stages.json');
 const sideStages = items('world/stages/side_stages.json');
 const continentBosses = items('world/bosses/continent_bosses.json');
@@ -88,6 +89,10 @@ for (const c of continents) {
 w('');
 for (const r of regions) {
   w(`insert into api.world_regions (id, continent_id, display_order, name_key, node_type, scene_address, bypass_allowed) values (${q(r.id)}, ${q(r.continent_id)}, ${r.order}, ${q(r.name_key)}, ${q(r.node_type)}, ${q(r.scene_address)}, ${b(r.bypass_allowed)}) on conflict (id) do nothing;`);
+}
+w('');
+for (const cr of courses) {
+  w(`insert into api.world_courses (id, continent_id, region_id, display_order, name_key, distance_meters, surface, shape, scene_address, reward_table_id, enabled, debug_only, content_version) values (${q(cr.id)}, ${q(cr.continent_id)}, ${q(cr.region_id)}, ${cr.order}, ${q(cr.name_key)}, ${cr.distance_meters}, ${q(cr.surface)}, ${q(cr.shape)}, ${q(cr.scene_address)}, ${q(cr.reward_table_id)}, ${b(cr.enabled)}, ${b(cr.debug_only)}, ${q(manifest.content_version)}) on conflict (id) do nothing;`);
 }
 w('');
 for (const s of [...mainStages, ...sideStages]) {
