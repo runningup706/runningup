@@ -84,12 +84,22 @@ fi
 # reporting that the path is missing, go and find the project.
 suggest_paths() {
   local found
-  # Unity keeps its own Library/ inside a project, and macOS has ~/Library; neither is a
-  # project root. maxdepth keeps this from walking an entire home directory.
-  found=$(find "$HOME" -maxdepth 6 -type d -name ProjectSettings 2>/dev/null \
-          | grep -v "/Library/" | head -10 || true)
+  # Depth 10, not 6. The real project turned out to live at
+  #   ~/Documents/Codex/<date>/<goal>/runningup/client/unity
+  # which is eight levels down, so a 6-level search reported "no Unity project on this
+  # machine" about a machine that had one. A search that is too shallow does not fail —
+  # it lies.
+  #
+  # Excluded: Library/ (Unity keeps one inside every project, and macOS has ~/Library),
+  # and unity-editors/ — an installed Editor ships hundreds of sample scenes, and
+  # offering one of those as "your project" would be worse than offering nothing.
+  found=$(find "$HOME" -maxdepth 10 -type d -name ProjectSettings 2>/dev/null \
+          | grep -v "/Library/" \
+          | grep -v "/unity-editors/" \
+          | grep -v "/Unity.app/" \
+          | head -10 || true)
   if [ -z "$found" ]; then
-    printf '     No Unity project found under %s (searched 6 levels deep).\n' "$HOME"
+    printf '     No Unity project found under %s (searched 10 levels deep).\n' "$HOME"
     printf '     Point --from at the folder that contains Assets/ and ProjectSettings/.\n'
     return
   fi
