@@ -58,22 +58,35 @@
 
 ---
 
-## 색을 바꾸려면
+## 색을 바꾸려면 → **`Design/` 폴더 한 곳**
 
-색은 **한곳에 모여 있지 않고** 각 `Build...()` 함수 안에 `new Color(r, g, b, a)` 로 직접
-적혀 있습니다. 같은 파일에 66군데입니다.
+`client/unity/Assets/RunningUp/Design/V14Design.cs`
+
+색은 이제 흩어져 있지 않습니다. 이름 붙은 토큰 18개가 이 파일 하나에 있고, 화면 코드는
+그걸 참조만 합니다. **한 줄 고치면 그 색을 쓰는 모든 화면이 바뀝니다.**
 
 ```csharp
-new Color(0.01f, 0.06f, 0.12f, 0.94f)
-//        빨강   초록   파랑   불투명도     ← 0.0 ~ 1.0
+public static readonly Color SurfaceDeep = new(0.005f, 0.03f, 0.065f);
 ```
 
-포토샵 등에서 쓰는 `#RRGGBB` 값을 **255로 나눈 값**입니다.
-예: `#1A3D5C` → `new Color(26/255f, 61/255f, 92/255f, 1f)`
+투명도는 값에 넣지 않고 쓰는 쪽에서 `.Alpha(0.86f)` 로 지정합니다. 같은 색을 여러
+투명도로 겹쳐 층을 만드는 것이 이 앱 배경의 구조입니다.
 
-> **개선 여지:** 색이 66군데 흩어져 있어 전체 톤을 바꾸려면 66군데를 고쳐야 합니다.
-> 팔레트를 한 파일로 모으는 작업이 필요하면 말씀해 주세요. 지금은 디자인 잠금 상태라
-> 임의로 손대지 않았습니다.
+| 종류 | 토큰 |
+|---|---|
+| 배경 8 | `SurfaceDeep` `SurfaceDeepCool` `SurfaceMid` `SurfacePanel` `SurfacePanelWarm` `SurfaceSlate` `SurfaceTeal` `Scrim` |
+| 글자 3 | `TextMuted` `TextSecondary` `TextPlaceholder` |
+| 버튼 3 | `ButtonHighlighted` `ButtonPressed` `ButtonDisabled` |
+| 아트 스와치 4 | `Swatch*` — 승인된 기준색, 임의 변경 시 아트 게이트에 걸림 |
+
+각 토큰이 어느 화면에 보이는지는 [`Design/README_KO.md`](../client/unity/Assets/RunningUp/Design/README_KO.md) 에
+표로 있습니다.
+
+> 이 정리를 하면서 **화면에 보이는 색은 한 값도 바꾸지 않았습니다.**
+> `tests/design-tokens.test.mjs` 가 정리 전 33개 값과 대조해 증명합니다.
+>
+> 아직 남은 것: **크기·여백은 여전히 코드 안**에 있습니다. 그것까지 모으는 작업이
+> 필요하면 말씀해 주십시오.
 
 ---
 

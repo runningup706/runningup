@@ -6,6 +6,7 @@ using RunningUp.Core;
 using RunningUp.MyRunner;
 using RunningUp.RunVerification;
 using RunningUp.V14.State;
+using RunningUp.Design;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -531,7 +532,7 @@ namespace RunningUp.V14.UI
             var rail = ImagePanel(
                 "StatusRail",
                 flowRoot,
-                new Color(0.01f, 0.06f, 0.12f, 0.94f),
+                V14Design.SurfaceMid.Alpha(0.94f),
                 new Vector2(0f, 0f),
                 new Vector2(1f, 0f),
                 new Vector2(0f, 154f),
@@ -753,7 +754,7 @@ namespace RunningUp.V14.UI
             var preview = ImagePanel(
                 "RunPreview",
                 root,
-                new Color(0.025f, 0.14f, 0.25f, 0.98f),
+                V14Design.SurfacePanel.Alpha(0.98f),
                 new Vector2(0f, 1f),
                 new Vector2(1f, 1f),
                 new Vector2(52f, -420f),
@@ -876,12 +877,12 @@ namespace RunningUp.V14.UI
         {
             var root = ScreenRoot(
                 Screen.Training,
-                new Color(0.005f, 0.03f, 0.065f, 0.70f));
+                V14Design.SurfaceDeep.Alpha(0.7f));
             Header(root, "TRAIN", "Choose a verified plan. Change it any time before GPS starts.");
             var recommendation = ImagePanel(
                 "CoachRecommendation",
                 root,
-                new Color(0.025f, 0.16f, 0.29f, 0.98f),
+                V14Design.SurfacePanelWarm.Alpha(0.98f),
                 new Vector2(0f, 1f),
                 new Vector2(1f, 1f),
                 new Vector2(52f, -292f),
@@ -1030,7 +1031,7 @@ namespace RunningUp.V14.UI
             var metrics = ImagePanel(
                 "RunMetricDeck",
                 root,
-                new Color(0.005f, 0.035f, 0.075f, 0.93f),
+                V14Design.SurfaceDeepCool.Alpha(0.93f),
                 new Vector2(0f, 0f),
                 new Vector2(1f, 0f),
                 new Vector2(28f, 358f),
@@ -1074,7 +1075,7 @@ namespace RunningUp.V14.UI
         {
             var root = ScreenRoot(
                 Screen.Matchmaking,
-                new Color(0.005f, 0.03f, 0.065f, 0.84f));
+                V14Design.SurfaceDeep.Alpha(0.84f));
             Header(root, "LIVE RACE", "Skill-based verified matchmaking. Eight real runners are required.");
             Label(
                 "DistanceTitle",
@@ -1194,7 +1195,7 @@ namespace RunningUp.V14.UI
             var card = ImagePanel(
                 "VerifiedResultCard",
                 root,
-                new Color(0.01f, 0.06f, 0.12f, 0.90f),
+                V14Design.SurfaceMid.Alpha(0.9f),
                 new Vector2(0f, 0f),
                 new Vector2(1f, 0f),
                 new Vector2(52f, 310f),
@@ -1236,7 +1237,7 @@ namespace RunningUp.V14.UI
         {
             var root = ScreenRoot(
                 Screen.Lobby,
-                new Color(0.005f, 0.03f, 0.065f, 0.86f));
+                V14Design.SurfaceDeep.Alpha(0.86f));
             Header(root, "RACE LOBBY", "Server-authoritative participant list and countdown");
             lobbyState = StatusCard(root, "Waiting for a server-created match", -310f);
             for (var index = 0; index < 8; index++)
@@ -1281,13 +1282,13 @@ namespace RunningUp.V14.UI
         {
             var root = ScreenRoot(
                 Screen.LiveRace,
-                new Color(0.005f, 0.03f, 0.065f, 0.18f));
+                V14Design.SurfaceDeep.Alpha(0.18f));
             Header(root, "LIVE RACE", "Rank and opponent progress are accepted only from server snapshots.");
             liveRaceState = StatusCard(root, "No active verified race", -310f);
             var metricsPanel = ImagePanel(
                 "LiveMetricsPanel",
                 root,
-                new Color(0.005f, 0.035f, 0.075f, 0.88f),
+                V14Design.SurfaceDeepCool.Alpha(0.88f),
                 new Vector2(0f, 1f),
                 new Vector2(0f, 1f),
                 new Vector2(42f, -470f),
@@ -1305,7 +1306,7 @@ namespace RunningUp.V14.UI
             var standingsPanel = ImagePanel(
                 "LiveStandingsPanel",
                 root,
-                new Color(0.005f, 0.035f, 0.075f, 0.88f),
+                V14Design.SurfaceDeepCool.Alpha(0.88f),
                 new Vector2(0f, 1f),
                 new Vector2(0f, 1f),
                 new Vector2(520f, -470f),
@@ -1353,7 +1354,7 @@ namespace RunningUp.V14.UI
             var progressStrip = ImagePanel(
                 "RaceRunnerProgressStrip",
                 root,
-                new Color(0.005f, 0.035f, 0.075f, 0.92f),
+                V14Design.SurfaceDeepCool.Alpha(0.92f),
                 new Vector2(0f, 0f),
                 new Vector2(1f, 0f),
                 new Vector2(42f, 202f),
@@ -1369,7 +1370,7 @@ namespace RunningUp.V14.UI
         {
             var root = ScreenRoot(
                 Screen.RaceResult,
-                new Color(0.005f, 0.03f, 0.065f, 0.86f));
+                V14Design.SurfaceDeep.Alpha(0.86f));
             Header(root, "RACE RESULT", "Rewards appear after verified server finalization.");
             raceResultState = StatusCard(root, "No finalized race result", -310f);
             raceResultValues = Label(
@@ -1398,7 +1399,7 @@ namespace RunningUp.V14.UI
         {
             var root = ScreenRoot(
                 Screen.ActivityHistory,
-                new Color(0.005f, 0.03f, 0.065f, 0.90f));
+                V14Design.SurfaceDeep.Alpha(0.9f));
             Header(
                 root,
                 "ACTIVITY HISTORY",
@@ -1437,7 +1438,7 @@ namespace RunningUp.V14.UI
 
         private void BuildCharacter()
         {
-            var root = ScreenRoot(Screen.Character, new Color(0f, 0.03f, 0.07f, 0.48f));
+            var root = ScreenRoot(Screen.Character, V14Design.Scrim.Alpha(0.48f));
             Header(root, "MY RUNNER", "Owned and equipped items are server-authoritative.");
             characterState = StatusCard(root, "Loading wardrobe from your account", -310f);
             var wardrobe = ImagePanel(
@@ -1473,7 +1474,7 @@ namespace RunningUp.V14.UI
             var items = ImagePanel(
                 "CosmeticItems",
                 wardrobe,
-                new Color(0.01f, 0.06f, 0.12f, 0.92f),
+                V14Design.SurfaceMid.Alpha(0.92f),
                 new Vector2(0f, 0f),
                 new Vector2(1f, 1f),
                 new Vector2(30f, 382f),
@@ -1504,7 +1505,7 @@ namespace RunningUp.V14.UI
                 new Vector2(644f, -410f),
                 new Vector2(286f, 82f),
                 new Vector2(0f, 1f),
-                new Color(0.22f, 0.24f, 0.31f, 0.96f),
+                V14Design.SurfaceSlate.Alpha(0.96f),
                 () => journey?.UnequipSelectedCosmetic());
             characterPresetSummary = Label(
                 "WardrobePresetSummary",
@@ -1533,7 +1534,7 @@ namespace RunningUp.V14.UI
                 new Vector2(260f, -594f),
                 new Vector2(440f, 64f),
                 new Vector2(0f, 1f),
-                new Color(0.04f, 0.28f, 0.40f, 0.96f),
+                V14Design.SurfaceTeal.Alpha(0.96f),
                 () => journey?.RefreshCosmeticInventory());
             RefreshCharacterUi();
         }
@@ -1625,7 +1626,7 @@ namespace RunningUp.V14.UI
         {
             var root = ScreenRoot(
                 Screen.MonthlyApex,
-                new Color(0.005f, 0.03f, 0.065f, 0.90f));
+                V14Design.SurfaceDeep.Alpha(0.9f));
             Header(
                 root,
                 "MONTHLY APEX",
@@ -1752,7 +1753,7 @@ namespace RunningUp.V14.UI
             var membership = ImagePanel(
                 "CrewMembership",
                 root,
-                new Color(0.025f, 0.14f, 0.25f, 0.98f),
+                V14Design.SurfacePanel.Alpha(0.98f),
                 new Vector2(0f, 1f),
                 new Vector2(1f, 1f),
                 new Vector2(52f, -890f),
@@ -1995,7 +1996,7 @@ namespace RunningUp.V14.UI
                 detail,
                 20,
                 FontStyle.Normal,
-                available ? Green : new Color(0.64f, 0.70f, 0.78f),
+                available ? Green : V14Design.TextMuted,
                 new Vector2(-20f, -12f),
                 new Vector2(560f, 50f),
                 new Vector2(1f, 1f),
@@ -2978,12 +2979,12 @@ namespace RunningUp.V14.UI
         private static Color CosmeticColor(string itemId) =>
             itemId switch
             {
-                "V13-HAIR-BASE-01" => new Color(0.18f, 0.07f, 0.03f, 1f),
+                "V13-HAIR-BASE-01" => V14Design.SwatchTopBase,
                 "V13-TOP-BASE-02" => Blue,
-                "V13-BOTTOM-BASE-03" => new Color(0.02f, 0.08f, 0.20f, 1f),
-                "V13-SHOES-BASE-04" => new Color(0.10f, 0.92f, 0.66f, 1f),
+                "V13-BOTTOM-BASE-03" => V14Design.SwatchBottomBase,
+                "V13-SHOES-BASE-04" => V14Design.SwatchAccentMint,
                 "V13-WATCH-BASE-05" => Gold,
-                "V13-AURA-BASE-06" => new Color(0.68f, 0.40f, 1f, 1f),
+                "V13-AURA-BASE-06" => V14Design.SwatchAccentViolet,
                 _ => Color.white,
             };
 
@@ -3141,7 +3142,7 @@ namespace RunningUp.V14.UI
                     "Search crew names to see live results.",
                     23,
                     FontStyle.Normal,
-                    new Color(0.70f, 0.80f, 0.88f, 0.9f),
+                    V14Design.TextSecondary.Alpha(0.9f),
                     new Vector2(20f, -20f),
                     new Vector2(900f, 70f),
                     new Vector2(0f, 1f));
@@ -3185,7 +3186,7 @@ namespace RunningUp.V14.UI
                     "NO VERIFIED RUNS YET\nFinish a real run or sync an authorized activity, then refresh.",
                     25,
                     FontStyle.Normal,
-                    new Color(0.70f, 0.80f, 0.88f, 0.9f),
+                    V14Design.TextSecondary.Alpha(0.9f),
                     new Vector2(32f, -36f),
                     new Vector2(890f, 120f),
                     new Vector2(0f, 1f));
@@ -3248,7 +3249,7 @@ namespace RunningUp.V14.UI
                     "LOADING SERVER WARDROBE…",
                     20,
                     FontStyle.Bold,
-                    new Color(0.70f, 0.80f, 0.88f, 0.9f),
+                    V14Design.TextSecondary.Alpha(0.9f),
                     new Vector2(20f, -20f),
                     new Vector2(890f, 80f),
                     new Vector2(0f, 1f),
@@ -3594,9 +3595,9 @@ namespace RunningUp.V14.UI
             button.transition = Selectable.Transition.ColorTint;
             var colors = button.colors;
             colors.normalColor = Color.white;
-            colors.highlightedColor = new Color(0.82f, 0.94f, 1f);
-            colors.pressedColor = new Color(0.64f, 0.82f, 1f);
-            colors.disabledColor = new Color(0.42f, 0.48f, 0.56f, 0.58f);
+            colors.highlightedColor = V14Design.ButtonHighlighted;
+            colors.pressedColor = V14Design.ButtonPressed;
+            colors.disabledColor = V14Design.ButtonDisabled.Alpha(0.58f);
             button.colors = colors;
             if (action != null)
             {
@@ -3618,7 +3619,7 @@ namespace RunningUp.V14.UI
             var panel = ImagePanel(
                 name,
                 parent,
-                new Color(0.01f, 0.06f, 0.12f, 0.98f),
+                V14Design.SurfaceMid.Alpha(0.98f),
                 anchor,
                 anchor,
                 position,
@@ -3648,7 +3649,7 @@ namespace RunningUp.V14.UI
             var placeholderText = placeholder.AddComponent<Text>();
             placeholderText.font = font;
             placeholderText.fontSize = 21;
-            placeholderText.color = new Color(0.62f, 0.73f, 0.82f, 0.82f);
+            placeholderText.color = V14Design.TextPlaceholder.Alpha(0.82f);
             placeholderText.alignment = TextAnchor.MiddleLeft;
             placeholderText.text = placeholderValue;
 
