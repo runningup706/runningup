@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using RunningUp.V14.UI;
 using UnityEngine;
 
 namespace RunningUp.RunVerification
@@ -67,6 +68,9 @@ namespace RunningUp.RunVerification
             gameObject.name = "V11AndroidRunBridge";
             EnsureRuntime();
             RestorePendingHealthRuns();
+#if UNITY_ANDROID && !UNITY_EDITOR
+            CallNative("installBackHandler", "back_handler_unavailable");
+#endif
         }
 
         public string StartDirectGps()
@@ -114,6 +118,12 @@ namespace RunningUp.RunVerification
         }
 
         public void OnDirectGpsStatus(string status) => Publish(status);
+
+        public void OnSystemBackPressed(string _)
+        {
+            FindFirstObjectByType<V14ScreenFlowController>()
+                ?.OnAndroidBackPressed(string.Empty);
+        }
 
         public void OnDirectGpsFinished(string path)
         {

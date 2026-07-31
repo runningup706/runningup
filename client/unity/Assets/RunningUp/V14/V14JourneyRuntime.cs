@@ -645,6 +645,8 @@ namespace RunningUp.V14
         public event Action<string> StatusChanged;
         public event Action StateChanged;
 
+        private bool HasConfiguredBackend => gateway != null && gateway.IsConfigured;
+
         private void Awake()
         {
             gateway ??= GetComponent<V14SupabaseGateway>();
@@ -1955,6 +1957,27 @@ namespace RunningUp.V14
             }
 
             training.Move(V14TrainingState.READY);
+            if (!HasConfiguredBackend)
+            {
+                var localStartStatus = runBridge?.StartDirectGps() ??
+                    "bridge_unavailable";
+                if (localStartStatus is "started" or "capturing")
+                {
+                    training.Move(V14TrainingState.COUNTDOWN);
+                    training.Move(V14TrainingState.ACTIVE);
+                    snapshot.pendingIdempotencyKey = string.Empty;
+                    Save();
+                    operationInProgress = false;
+                    Publish("training_active");
+                    yield break;
+                }
+
+                training.Move(V14TrainingState.SENSOR_CHECK);
+                Save();
+                operationInProgress = false;
+                Publish(localStartStatus);
+                yield break;
+            }
             var request = new V14StartTrainingRequest
             {
                 p_session_id = snapshot.trainingSessionId,
@@ -2017,6 +2040,22 @@ namespace RunningUp.V14
             string acceptedNativeStatus,
             string successStatus)
         {
+            if (!HasConfiguredBackend)
+            {
+                var localNativeStatus = nativeAction();
+                if (localNativeStatus != acceptedNativeStatus)
+                {
+                    operationInProgress = false;
+                    Publish(localNativeStatus);
+                    yield break;
+                }
+
+                training.Move(localNext);
+                Save();
+                operationInProgress = false;
+                Publish(successStatus);
+                yield break;
+            }
             V14ServerReply reply = null;
             yield return gateway.InvokeRpc(
                 $"v14:training:{snapshot.trainingSessionId}:{nextStatus.ToLowerInvariant()}",
@@ -2050,6 +2089,24 @@ namespace RunningUp.V14
 
         private IEnumerator ResumeTrainingFlow()
         {
+            if (!HasConfiguredBackend)
+            {
+                var localNativeStatus = runBridge?.ResumeDirectGps() ??
+                    "bridge_unavailable";
+                if (localNativeStatus != "resuming")
+                {
+                    operationInProgress = false;
+                    Publish(localNativeStatus);
+                    yield break;
+                }
+
+                training.Move(V14TrainingState.RESUMED);
+                training.Move(V14TrainingState.ACTIVE);
+                Save();
+                operationInProgress = false;
+                Publish("training_active");
+                yield break;
+            }
             V14ServerReply reply = null;
             yield return gateway.InvokeRpc(
                 $"v14:training:{snapshot.trainingSessionId}:active-resume",
@@ -2084,6 +2141,16 @@ namespace RunningUp.V14
 
         private IEnumerator FinishTrainingFlow(string expectedStatus)
         {
+            if (!HasConfiguredBackend)
+            {
+                training.Move(V14TrainingState.FINISH_REQUESTED);
+                Save();
+                var localNativeStatus = runBridge?.StopDirectGps() ??
+                    "bridge_unavailable";
+                operationInProgress = false;
+                Publish(localNativeStatus);
+                yield break;
+            }
             V14ServerReply reply = null;
             yield return gateway.InvokeRpc(
                 $"v14:training:{snapshot.trainingSessionId}:local-finished",
@@ -2907,6 +2974,13 @@ namespace RunningUp.V14
             if (training.Current == V14TrainingState.FINISH_REQUESTED)
             {
                 training.Move(V14TrainingState.VERIFYING);
+                if (!HasConfiguredBackend)
+                {
+                    training.Move(V14TrainingState.RESULT);
+                    Save();
+                    Publish("training_local_saved");
+                    return;
+                }
             }
             if (race.Current == V14RaceState.FINISH_PENDING)
             {

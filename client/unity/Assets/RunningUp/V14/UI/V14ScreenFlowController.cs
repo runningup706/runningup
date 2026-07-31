@@ -385,8 +385,11 @@ namespace RunningUp.V14.UI
 
         private void Start()
         {
+            // 앱을 다시 열 때는 진행 중인 러닝을 유지하되 화면은 항상 홈에서 시작한다.
+            currentScreen = Screen.Home;
+            backStack.Clear();
             HideLegacyHud();
-            Show(currentScreen);
+            Show(Screen.Home);
             RefreshRuntimeState();
             Publish("Ready");
         }
@@ -2101,7 +2104,7 @@ namespace RunningUp.V14.UI
                 new Vector2(0f, 1f),
                 new Vector2(x, y),
                 new Vector2(width, 112f));
-            return Label(
+            var metric = Label(
                 name,
                 card,
                 $"{value}\n{caption}",
@@ -2112,6 +2115,8 @@ namespace RunningUp.V14.UI
                 Vector2.zero,
                 new Vector2(0.5f, 0.5f),
                 TextAnchor.MiddleCenter);
+            Stretch(metric.rectTransform);
+            return metric;
         }
 
         private void SelectTraining(string template)
@@ -2552,7 +2557,7 @@ namespace RunningUp.V14.UI
             {
                 ApplyUnequippedCosmetic(status["appearance_unequipped:".Length..]);
             }
-            else if (status == "training_rewarded")
+            else if (status is "training_rewarded" or "training_local_saved")
             {
                 RefreshApprovedResources();
                 RefreshTrainingResult();
@@ -3070,6 +3075,17 @@ namespace RunningUp.V14.UI
             if (journey == null ||
                 string.IsNullOrWhiteSpace(journey.LastVerifiedRunId))
             {
+                if (journey?.LastAcceptedRun != null)
+                {
+                    trainingResultSummary.text =
+                        $"{journey.LastAcceptedRun.distanceMeters / 1000f:0.00} km\n" +
+                        $"{TimeSpan.FromSeconds(journey.LastAcceptedRun.movingSeconds):hh\\:mm\\:ss} MOVING TIME\n" +
+                        "LOCAL RUN SAVED";
+                    trainingResultRewards.text =
+                        "Awaiting secure server verification.\n" +
+                        "No permanent rewards have been granted.";
+                    return;
+                }
                 trainingResultSummary.text =
                     "The server result is not available yet.";
                 trainingResultRewards.text =

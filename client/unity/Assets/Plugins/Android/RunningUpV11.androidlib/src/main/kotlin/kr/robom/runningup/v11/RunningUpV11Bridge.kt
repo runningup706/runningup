@@ -10,6 +10,8 @@ import android.os.Build
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
 import android.util.Base64
+import androidx.activity.ComponentActivity
+import androidx.activity.OnBackPressedCallback
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.health.connect.client.HealthConnectClient
@@ -43,6 +45,27 @@ object RunningUpV11Bridge {
     private const val securePreferenceFile = "runningup_v14_secure"
     private const val secureSessionKey = "supabase_session_aes_gcm"
     private const val keyAlias = "runningup_v14_session_key"
+    @Volatile private var backCallbackInstalled = false
+
+    @JvmStatic
+    fun installBackHandler(): String {
+        val activity = UnityPlayer.currentActivity as? ComponentActivity
+            ?: return "back_handler_unavailable"
+        if (backCallbackInstalled) return "back_handler_ready"
+        activity.runOnUiThread {
+            if (backCallbackInstalled) return@runOnUiThread
+            activity.onBackPressedDispatcher.addCallback(
+                activity,
+                object : OnBackPressedCallback(true) {
+                    override fun handleOnBackPressed() {
+                        send("OnSystemBackPressed", "")
+                    }
+                },
+            )
+            backCallbackInstalled = true
+        }
+        return "back_handler_installing"
+    }
 
     @JvmStatic
     fun directGpsCapability(): String {
