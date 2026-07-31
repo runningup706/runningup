@@ -4,7 +4,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { extractBestEfforts } from '../lib/best-effort.mjs';
+import { extractBestEfforts } from '../packages/domain/best-effort.mjs';
 
 /** Build a session whose speed profile is given per 100 m segment. */
 function buildSamples(speedsPer100m, accuracy = 5) {

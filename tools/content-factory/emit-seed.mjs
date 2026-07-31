@@ -12,7 +12,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { GOAL_DISTANCES, GOAL_DURATIONS, APEX_LADDER_VERSION } from '../lib/constants.mjs';
+import { GOAL_DISTANCES, GOAL_DURATIONS, APEX_LADDER_VERSION } from '../../packages/domain/constants.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const LAUNCH = join(ROOT, 'content', 'launch');

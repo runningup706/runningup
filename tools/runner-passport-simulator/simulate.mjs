@@ -13,8 +13,8 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { buildPassport, recommend, selectGoal, recalculate } from '../lib/runner-passport.mjs';
-import { GOAL_DISTANCES, GOAL_DURATIONS } from '../lib/constants.mjs';
+import { buildPassport, recommend, selectGoal, recalculate } from '../../packages/domain/runner-passport.mjs';
+import { GOAL_DISTANCES, GOAL_DURATIONS } from '../../packages/domain/constants.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const run = (km, min) => ({ meters: Math.round(km * 1000), seconds: Math.round(min * 60), activity_type: 'road', verified: true });

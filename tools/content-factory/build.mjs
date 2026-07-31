@@ -22,7 +22,7 @@ import {
   APEX_CHECKPOINT_METERS, MAJOR_RANKS, GOAL_DISTANCES, GOAL_DURATIONS, SESSION_STYLES,
   PASSPORT_BANDS, BEST_EFFORT_DISTANCES, DIFFICULTY_LANES, ALLOWED_ACTIVITY_TYPES,
   LAUNCH_CONTENT_FLOOR, checkpointId, rankForMeters, APEX_LADDER_VERSION,
-} from '../lib/constants.mjs';
+} from '../../packages/domain/constants.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const OUT = join(ROOT, 'content', 'launch');

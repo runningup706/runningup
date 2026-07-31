@@ -7,8 +7,8 @@ import assert from 'node:assert/strict';
 import {
   rewardDay, monthKey, emptyMomentum, applyDailyMomentum, applyConsecutiveWeek,
   applyQualityChain, applyLongRunChain, longRunThresholdMeters,
-} from '../lib/momentum.mjs';
-import { buildPassport } from '../lib/runner-passport.mjs';
+} from '../packages/domain/momentum.mjs';
+import { buildPassport } from '../packages/domain/runner-passport.mjs';
 
 test('the reward day is computed in the user timezone from the server timestamp', () => {
   // 2026-07-29T22:30Z is already 2026-07-30 in Seoul (UTC+9) but still the 29th in London.

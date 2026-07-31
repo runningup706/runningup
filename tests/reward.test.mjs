@@ -4,8 +4,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { calculateRunReward, monthlyMultiplier, assertNoForbiddenInput } from '../lib/reward.mjs';
-import { FORBIDDEN_ACTIVITY_TYPES, REWARD_FORMULA_VERSION } from '../lib/constants.mjs';
+import { calculateRunReward, monthlyMultiplier, assertNoForbiddenInput } from '../packages/domain/reward.mjs';
+import { FORBIDDEN_ACTIVITY_TYPES, REWARD_FORMULA_VERSION } from '../packages/domain/constants.mjs';
 
 const baseContext = {
   personal_baseline_speed: null,

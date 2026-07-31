@@ -73,7 +73,7 @@ jobs:
       # Migrations must apply to a genuinely empty database, the seed must satisfy the
       # in-database launch content gate, and every pgTAP suite must pass.
       - name: Migrations, seed and pgTAP suite
-        run: bash tools/test/db.sh
+        run: bash scripts/db.sh
 
       # The game itself must run, not just its parts. This plays the full loop for every
       # ability level against the database db.sh just seeded.

@@ -9,7 +9,7 @@ PGUSER="${PGUSER:-postgres}"
 DB="${RUNNINGUP_TEST_DB:-runningup_test}"
 export PGHOST PGPORT PGUSER
 
-repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$repo_root"
 
 echo "==> recreating ${DB}"

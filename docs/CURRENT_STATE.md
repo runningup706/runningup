@@ -25,7 +25,7 @@ done, and nothing done is inflated into more than it is.
 | Capability | Status | 검증 위치 | Evidence / reason |
 |---|---|---|---|
 | Node 22 tooling, domain engine, tests | **PASS** | 로컬 + CI (`unit-tests`) | `npm run test:unit` — **99 tests** |
-| PostgreSQL 16 + pgTAP 1.3.2 | **PASS** | 로컬 + CI (`supabase-tests`) | `bash tools/test/db.sh` — **1128 tests**, 7 suites. CI 통과는 2026-07-31 `095472b`이 처음입니다. |
+| PostgreSQL 16 + pgTAP 1.3.2 | **PASS** | 로컬 + CI (`supabase-tests`) | `bash scripts/db.sh` — **1128 tests**, 7 suites. CI 통과는 2026-07-31 `095472b`이 처음입니다. |
 | Content factory + validator | **PASS** | 로컬 + CI (`content-validation`) | `npm run validate:content` |
 | Direction-lock static scan | **PASS** | 로컬 + CI (`direction-lock`) | `npm run validate:direction-lock` — 124 files, 19 patterns. **단, 강제하는 것은 v4.0.0 잠금입니다.** `docs/V14_MASTER_REMEDIATION_PROMPT_KO.md` §1.3 참조 |
 | Secret scan | **PASS** | CI (`security-scan`) | 2026-07-31 `c4fc040`이 첫 통과. 그 이전 15회는 전부 실패했습니다. |
@@ -50,12 +50,12 @@ done, and nothing done is inflated into more than it is.
 ### Domain engine — 99 unit tests, all passing
 | Module | Covers |
 |---|---|
-| `tools/lib/monthly-apex.mjs` | 52 checkpoints, crossings, 999.999/1000/>1000, out-of-order, duplicates, month reset |
-| `tools/lib/runner-passport.mjs` | 8 first-session fixtures, full library always selectable, recalculation, outlier resistance |
-| `tools/lib/reward.mjs` | 15 independent components, monotonicity, forbidden-input rejection, grade eligibility |
-| `tools/lib/momentum.mjs` | reward day in IANA timezone, same-day sessions, streak reset, weekly/quality/long-run chains |
-| `tools/lib/best-effort.mjs` | fastest-segment extraction for 20 benchmark distances |
-| `tools/lib/anomaly-detection.mjs` | verification grades, replay/duplicate/teleport/vehicle/synthetic detection, honest-runner protection |
+| `packages/domain/monthly-apex.mjs` | 52 checkpoints, crossings, 999.999/1000/>1000, out-of-order, duplicates, month reset |
+| `packages/domain/runner-passport.mjs` | 8 first-session fixtures, full library always selectable, recalculation, outlier resistance |
+| `packages/domain/reward.mjs` | 15 independent components, monotonicity, forbidden-input rejection, grade eligibility |
+| `packages/domain/momentum.mjs` | reward day in IANA timezone, same-day sessions, streak reset, weekly/quality/long-run chains |
+| `packages/domain/best-effort.mjs` | fastest-segment extraction for 20 benchmark distances |
+| `packages/domain/anomaly-detection.mjs` | verification grades, replay/duplicate/teleport/vehicle/synthetic detection, honest-runner protection |
 
 ### Backend — 1128 pgTAP tests, all passing
 | Suite | Tests | Focus |
@@ -102,7 +102,7 @@ carried through every report in this repository.
 
 ```bash
 npm run test:fast                        # direction lock + content + 99 unit tests
-bash tools/test/db.sh                    # migrations + seed + 1128 pgTAP tests
+bash scripts/db.sh                    # migrations + seed + 1128 pgTAP tests
 node tools/content-factory/build.mjs     # regenerate content from the design tables
 node tools/content-factory/emit-seed.mjs # regenerate seed.sql from the content
 bash tools/bootstrap/doctor.sh           # re-check toolchain availability

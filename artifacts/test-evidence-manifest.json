@@ -1,7 +1,7 @@
 {
   "manifest_version": "1.0.0",
   "generated_by": "tools/release/generate-evidence.mjs",
-  "git_commit": "1e2dbdb241f88bebf39d88d65f0dea65aac35f86",
+  "git_commit": "d0a8fc12802003d03d5a6fc0b4e64654e0ce5550",
   "content_version": "1.0.0",
   "content_sha256": "931cbe2d82abc881c8287bc1cc588696da131abe40c6fcd3dc5d85070d76920b",
   "suites": [
@@ -19,7 +19,7 @@
     },
     {
       "id": "domain_engine",
-      "tool": "node --test tools/tests/*.test.mjs",
+      "tool": "node --test tests/*.test.mjs",
       "kind": "unit",
       "status": "PASS"
     },

@@ -190,7 +190,7 @@ export function recommend(passport) {
       profile_confidence: passport.vector.profile_confidence,
       rule_version: PASSPORT_RULES_VERSION,
     },
-    // DL-2 guarantees, asserted by tools/tests/runner-passport.test.mjs
+    // DL-2 guarantees, asserted by tests/runner-passport.test.mjs
     full_library_available: true,
     all_distance_goal_ids: GOAL_DISTANCES.map((d) => d.id),
     all_duration_goal_ids: GOAL_DURATIONS.map((d) => d.id),

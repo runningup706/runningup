@@ -15,7 +15,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { LAUNCH_CONTENT_FLOOR, DIRECTION_LOCK } from '../lib/constants.mjs';
+import { LAUNCH_CONTENT_FLOOR, DIRECTION_LOCK } from '../../packages/domain/constants.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const LAUNCH = join(ROOT, 'content', 'launch');

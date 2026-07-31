@@ -100,7 +100,7 @@ and its machine-readable mirror `content/schemas/direction_lock.json`:
 | Area | Owner path |
 |---|---|
 | Direction lock enforcement | `tools/direction-lock/`, `content/schemas/direction_lock.json` |
-| Domain engine (passport, apex, reward, momentum, best efforts) | `tools/lib/`, tests in `tools/tests/` |
+| Domain engine (passport, apex, reward, momentum, best efforts) | `packages/domain/`, tests in `tests/` |
 | Launch content design + pipeline | `tools/content-factory/`, `content/launch/`, `tools/content-validator/` |
 | Backend schema, RLS, reward transaction | `backend/supabase/migrations/`, `backend/supabase/tests/pgtap/` |
 | Android native running capture | `native/android-running-plugin/` |

@@ -26,7 +26,7 @@
 
 ### B-1. **서버와 클라이언트의 보상 계산이 불일치** (가장 심각)
 
-`tools/lib/reward.mjs`는 **15개 컴포넌트**를 계산하는데,
+`packages/domain/reward.mjs`는 **15개 컴포넌트**를 계산하는데,
 권위인 `private.apply_verified_run_reward`는 **7개만** 계산합니다.
 
 실제 원장(`api.xp_ledger.base_components`)에 들어가는 키:
@@ -51,7 +51,7 @@ quest_event                     퀘스트·이벤트
 "10km 45분과 50분을 구별한다"는 정본의 핵심 약속이 서버에서는 지켜지지 않습니다.
 
 **고칠 위치:** `backend/supabase/migrations/0007_reward_transaction.sql` 의 `v_components` 블록
-(현재 7개 키만 만듦). JS 쪽 `tools/lib/reward.mjs`가 참조 구현입니다.
+(현재 7개 키만 만듦). JS 쪽 `packages/domain/reward.mjs`가 참조 구현입니다.
 
 **주의:** 고친 뒤 `content/conformance/` 픽스처를 재생성해야 3-way 정합성이 유지됩니다.
 
@@ -62,7 +62,7 @@ quest_event                     퀘스트·이벤트
 | 테이블 | 행 | 문제 |
 |---|---:|---|
 | `api.runner_passports` | **0** | 패스포트가 JS 메모리에만 존재. DB에 저장/버전관리 안 됨 |
-| `api.run_best_efforts` | **0** | `tools/lib/best-effort.mjs`는 구현·테스트됐지만 파이프라인에 연결 안 됨 |
+| `api.run_best_efforts` | **0** | `packages/domain/best-effort.mjs`는 구현·테스트됐지만 파이프라인에 연결 안 됨 |
 | `api.personal_baselines` | **0** | 비어 있어서 **개인 향상 보너스가 영원히 0** |
 | `api.user_chains` | **0** | 비어 있어서 quality/long-run 체인이 항상 0 |
 | `api.user_consecutive_weeks` | **0** | 주간 연속 미구현 |
@@ -108,8 +108,8 @@ quest_event                     퀘스트·이벤트
 | C-4 | CLI가 한국어 카탈로그만 읽음. 영어 로컬라이제이션이 존재하는데 미사용 | `client/cli/play.mjs` |
 | C-5 | 동시성이 **순차적으로만** 증명됨. `FOR UPDATE` + unique 제약은 있으나 실제 병렬 부하 테스트 없음 (위험 R-05) | `0007_reward_transaction.sql` |
 | C-6 | 마이그레이션 **업그레이드 경로 없음**. 첫 스키마라 `0001`부터만 검증됨. 이전 릴리스에서 올라오는 경로·롤백·forward-fix 미검증 | `backend/supabase/migrations/` |
-| C-7 | 전투 밸런스가 **합성 시뮬레이션으로만** 튜닝됨. 실제 플레이테스트 없음. 12개 기믹이 "구별되는지"는 검증했으나 "재미있는지"는 검증 불가 | `tools/lib/battle.mjs` |
-| C-8 | 안티치트 임계값이 **자체 생성한 픽스처로만** 튜닝됨. 실제 GPS 로그 없음. 실사용 시 오탐률은 미지수 | `tools/lib/anomaly-detection.mjs` |
+| C-7 | 전투 밸런스가 **합성 시뮬레이션으로만** 튜닝됨. 실제 플레이테스트 없음. 12개 기믹이 "구별되는지"는 검증했으나 "재미있는지"는 검증 불가 | `packages/domain/battle.mjs` |
+| C-8 | 안티치트 임계값이 **자체 생성한 픽스처로만** 튜닝됨. 실제 GPS 로그 없음. 실사용 시 오탐률은 미지수 | `packages/domain/anomaly-detection.mjs` |
 | C-9 | 콘텐츠 유사도 임계값(45~70%)이 경험적. 근거 있는 값이 아님 | `tools/content-validator/validate.mjs` |
 | C-10 | `run_samples`에 좌표를 저장한 적이 없으므로 **home-zone 마스킹·share 파생물·보존 정책이 코드로 존재하지 않음** | 정본 #16.8 |
 
@@ -150,7 +150,7 @@ Unity/Android 없이도 **지금 바로** 할 수 있고 가치가 큰 순서입
 
 ```bash
 bash tools/bootstrap/doctor.sh   # 이 머신이 뭘 할 수 있는지
-bash tools/test/all.sh           # 7개 게이트가 아직 초록인지
+bash scripts/all.sh           # 7개 게이트가 아직 초록인지
 ```
 
 `docs/USER_DIRECTION_LOCK.md`의 DL-1~DL-5는 **협상 대상이 아닙니다.**

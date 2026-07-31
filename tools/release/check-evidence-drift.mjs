@@ -46,7 +46,7 @@ try {
 }
 if (docDiff) {
   fail(
-    'Generated schema documents are stale. Run tools/test/db.sh and commit the result.',
+    'Generated schema documents are stale. Run scripts/db.sh and commit the result.',
     docDiff,
   );
 }
@@ -89,7 +89,7 @@ if (committed !== current) {
     }
   }
   fail(
-    `${MANIFEST} no longer matches the live schema. Run tools/test/db.sh and commit the result.`,
+    `${MANIFEST} no longer matches the live schema. Run scripts/db.sh and commit the result.`,
     differences.join('\n'),
   );
 }

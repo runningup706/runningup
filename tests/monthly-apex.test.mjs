@@ -5,8 +5,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { APEX_CHECKPOINT_METERS, DIRECTION_LOCK, MAJOR_RANKS, rankForMeters, checkpointId } from '../lib/constants.mjs';
-import { applyDistance, applyBatch, emptyProgress, ladderSnapshot, nextCheckpoints } from '../lib/monthly-apex.mjs';
+import { APEX_CHECKPOINT_METERS, DIRECTION_LOCK, MAJOR_RANKS, rankForMeters, checkpointId } from '../packages/domain/constants.mjs';
+import { applyDistance, applyBatch, emptyProgress, ladderSnapshot, nextCheckpoints } from '../packages/domain/monthly-apex.mjs';
 
 const KM = 1000;
 

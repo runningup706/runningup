@@ -25,10 +25,10 @@ import { createInterface } from 'node:readline/promises';
 import { stdin, stdout } from 'node:process';
 import { randomUUID } from 'node:crypto';
 
-import { buildPassport, recommend, selectGoal } from '../../tools/lib/runner-passport.mjs';
-import { verifyRun } from '../../tools/lib/anomaly-detection.mjs';
-import { buildRunnerForm, buildPacer, resolveRace, offerStrategies, CONTINENT_COURSES, RACE_FIELD_SIZE } from '../../tools/lib/race.mjs';
-import { GOAL_DISTANCES, APEX_CHECKPOINT_METERS } from '../../tools/lib/constants.mjs';
+import { buildPassport, recommend, selectGoal } from '../../packages/domain/runner-passport.mjs';
+import { verifyRun } from '../../packages/domain/anomaly-detection.mjs';
+import { buildRunnerForm, buildPacer, resolveRace, offerStrategies, CONTINENT_COURSES, RACE_FIELD_SIZE } from '../../packages/domain/race.mjs';
+import { GOAL_DISTANCES, APEX_CHECKPOINT_METERS } from '../../packages/domain/constants.mjs';
 
 const DB = process.env.RUNNINGUP_DB || process.env.RUNNINGUP_TEST_DB || 'runningup_test';
 const AUTO = process.argv.includes('--auto');

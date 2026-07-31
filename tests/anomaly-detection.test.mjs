@@ -8,8 +8,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { verifyRun, THRESHOLDS, DETECTION_VERSION } from '../lib/anomaly-detection.mjs';
-import { FORBIDDEN_ACTIVITY_TYPES } from '../lib/constants.mjs';
+import { verifyRun, THRESHOLDS, DETECTION_VERSION } from '../packages/domain/anomaly-detection.mjs';
+import { FORBIDDEN_ACTIVITY_TYPES } from '../packages/domain/constants.mjs';
 
 /** A believable trace: steady effort with the small variations every real run has. */
 function honestTrace(meters = 5_000, speed = 3.3) {

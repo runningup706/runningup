@@ -3,7 +3,7 @@
 # green run in CI. Any failure stops the script with a non-zero exit code.
 set -euo pipefail
 
-repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$repo_root"
 
 echo "=============================================================="
@@ -35,7 +35,7 @@ echo
 echo "=============================================================="
 echo " 4/7  domain engine unit tests"
 echo "=============================================================="
-node --test "tools/tests/*.test.mjs"
+node --test "tests/*.test.mjs"
 
 echo
 echo "--- run fixtures and anti-cheat simulation ---"
@@ -51,7 +51,7 @@ echo "=============================================================="
 echo " 5/7  database migrations, seed and pgTAP"
 echo "=============================================================="
 if command -v pg_prove > /dev/null && pg_isready -q 2>/dev/null; then
-  bash tools/test/db.sh
+  bash scripts/db.sh
 else
   echo "SKIPPED: no reachable PostgreSQL server or pg_prove not installed."
   echo "         Status: BLOCKED_TOOLCHAIN for the database suite on this machine."

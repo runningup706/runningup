@@ -28,7 +28,7 @@ GPS distances rather than textbook ones.
 
 *Fix:* R5 and R6 upper edges carry an explicit tolerance above the nominal race distance,
 with the reasoning recorded in the code.
-*Retest:* `node --test tools/tests/runner-passport.test.mjs` → 17/17.
+*Retest:* `node --test tests/runner-passport.test.mjs` → 17/17.
 
 **F-02-2 (medium, fixed).** Two fixtures asserted a shortlist that contradicted the master's
 own acceptance table (# 22.3 states a *recent 5 km user* should see 5/8/10 km). My original

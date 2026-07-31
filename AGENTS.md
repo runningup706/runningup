@@ -15,7 +15,7 @@ Short index for Codex. The full contract is
 ```bash
 bash tools/bootstrap/doctor.sh   # toolchain reality check
 npm run test:fast                # direction lock + content + unit tests
-bash tools/test/db.sh            # migrations + seed + pgTAP
+bash scripts/db.sh            # migrations + seed + pgTAP
 npm run test:all                 # full local gate, mirrors CI
 node tools/content-factory/build.mjs && node tools/content-factory/emit-seed.mjs
 ```
@@ -33,7 +33,7 @@ node tools/content-factory/build.mjs && node tools/content-factory/emit-seed.mjs
 ## Do not
 
 - Hand-edit `content/launch/**` or `backend/supabase/seed.sql` (generated).
-- Re-type a locked number instead of importing it from `tools/lib/constants.mjs`.
+- Re-type a locked number instead of importing it from `packages/domain/constants.mjs`.
 - `git reset --hard`, blanket `git clean`, or force push.
 - Weaken or skip a test to make a gate pass.
 - Report a blocked item as complete, or emulator numbers as device evidence.

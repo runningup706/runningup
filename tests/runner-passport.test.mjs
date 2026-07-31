@@ -8,8 +8,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { buildPassport, recommend, selectGoal, recalculate } from '../lib/runner-passport.mjs';
-import { GOAL_DISTANCES, GOAL_DURATIONS, SESSION_STYLES } from '../lib/constants.mjs';
+import { buildPassport, recommend, selectGoal, recalculate } from '../packages/domain/runner-passport.mjs';
+import { GOAL_DISTANCES, GOAL_DURATIONS, SESSION_STYLES } from '../packages/domain/constants.mjs';
 
 const run = (km, minutes, extra = {}) => ({
   meters: Math.round(km * 1000),

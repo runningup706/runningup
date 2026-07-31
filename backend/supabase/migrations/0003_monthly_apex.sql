@@ -176,7 +176,7 @@ create table api.apex_boss_attempts (
   unique (user_id, month_key, attempt_index)
 );
 
-/** Returns the rank for a laddered distance. Mirrors tools/lib/constants.mjs exactly. */
+/** Returns the rank for a laddered distance. Mirrors packages/domain/constants.mjs exactly. */
 create or replace function private.apex_rank_for_meters(p_meters integer)
 returns private.apex_rank
 language sql immutable

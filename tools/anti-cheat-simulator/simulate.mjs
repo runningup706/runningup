@@ -15,7 +15,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { verifyRun, DETECTION_VERSION, THRESHOLDS } from '../lib/anomaly-detection.mjs';
+import { verifyRun, DETECTION_VERSION, THRESHOLDS } from '../../packages/domain/anomaly-detection.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const corpus = JSON.parse(readFileSync(join(ROOT, 'content', 'fixtures', 'run-fixtures.json'), 'utf8'));

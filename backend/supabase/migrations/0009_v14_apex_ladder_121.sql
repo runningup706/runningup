@@ -22,7 +22,7 @@
 -- DL-1 is unchanged and still asserted at the type level: the final checkpoint is exactly
 -- 1000 km, exactly one checkpoint is final, and nothing may exceed it.
 --
--- The canonical values live in tools/lib/constants.mjs. SQL cannot import them, so the
+-- The canonical values live in packages/domain/constants.mjs. SQL cannot import them, so the
 -- count is restated here and `private.assert_apex_ladder_valid` re-checks the seeded rows
 -- against it — the same arrangement 0003 used.
 

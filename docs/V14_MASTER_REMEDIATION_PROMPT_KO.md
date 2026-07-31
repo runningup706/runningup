@@ -46,7 +46,7 @@ $ git ls-tree -r --name-only origin/main | grep -c "V14\|ScreenFlow\|RunVerifica
 - 추적 파일이 **134개**다. V14 Unity 프로젝트 하나만 해도 수천 개다.
 - `client/unity/Assets/RunningUp/` 아래 실제 파일은 **2개** (`MonthlyApexLadder.cs`, `RunningUp.Progression.asmdef`).
 - 원격 세 브랜치(`main`, `claude/runningup-3d-android-dev-3c8gnp`, `agent/runningup-v5-full-apk`)
-  어디에도 `V14/`, `RunVerification/`, `tools/tests/v14-*`가 없다.
+  어디에도 `V14/`, `RunVerification/`, `tests/v14-*`가 없다.
 - `origin/main` 최신 커밋은 `ab69f06 feat(game): the game now runs — battle engine ...`
   즉 **삭제 대상인 V5 전투 런타임**이 기본 브랜치의 최신 상태다.
 
@@ -64,7 +64,7 @@ $ git ls-tree -r --name-only origin/main | grep -c "V14\|ScreenFlow\|RunVerifica
 확인 명령:
 
 ```
-$ node -e "import('./tools/lib/constants.mjs').then(m=>console.log(
+$ node -e "import('./packages/domain/constants.mjs').then(m=>console.log(
     m.DIRECTION_LOCK.CHECKPOINT_COUNT, m.APEX_CHECKPOINT_METERS.length))"
 52 52
 
@@ -101,7 +101,7 @@ direction-lock scan: 124 files scanned, 19 concept patterns
 No direction-lock violations.
 ```
 
-**전투 엔진(`tools/lib/battle.mjs`, `tools/tests/battle.test.mjs`, `client/cli/play.mjs`)이
+**전투 엔진(`packages/domain/battle.mjs`, `tests/battle.test.mjs`, `client/cli/play.mjs`)이
 저장소에 살아 있는 채로 방향 잠금 검사가 통과한다.** 잠금 장치가 옛 방향을 지키고 있어서
 V14 방향을 위반해도 아무도 막지 못한다.
 
@@ -155,7 +155,7 @@ supabase-tests : failure ×15  (b9d16784 … 745656eb … 3bfe9d1b)
 
 그런데 `docs/CURRENT_STATE.md`는 이렇게 적어 놓았다.
 
-> | PostgreSQL 16 + pgTAP 1.3.2 | **PASS** | `bash tools/test/db.sh` — 1128 tests, 7 suites |
+> | PostgreSQL 16 + pgTAP 1.3.2 | **PASS** | `bash scripts/db.sh` — 1128 tests, 7 suites |
 
 로컬에서만 통과한 결과가 CI에서는 **한 번도 재현된 적이 없는데 PASS로 기록**돼 있다.
 이것이 "증거 없는 PASS 금지" 규칙의 실제 위반 사례다.
@@ -365,7 +365,7 @@ FIX-17~24로 잇는다. 번호는 재사용하지 않는다.
      질문 A: 월간 체크포인트는 52인가 120인가?
      질문 B: Region은 96인가 192인가? 2,304 코스는 region 하위 계층인가?
      질문 C: 장착 아이템은 96인가 600 + 120 outfit set인가?
-  2) 확정된 값을 tools/lib/constants.mjs 한 곳에만 둔다. 어디에도 재입력하지 않는다.
+  2) 확정된 값을 packages/domain/constants.mjs 한 곳에만 둔다. 어디에도 재입력하지 않는다.
   3) 마이그레이션은 기존 파일 수정이 아니라 새 migration으로 제약을 바꾼다.
        alter table ... drop constraint apex_checkpoint_count_is_52;
        alter table ... add  constraint apex_checkpoint_count check (checkpoint_count = <정본>);
@@ -374,7 +374,7 @@ FIX-17~24로 잇는다. 번호는 재사용하지 않는다.
   5) content factory를 재실행해 content/**와 seed.sql을 재생성한다. 손으로 고치지 않는다.
 
 검증:
-  bash tools/test/db.sh
+  bash scripts/db.sh
   node tools/content-factory/build.mjs && node tools/content-factory/emit-seed.mjs
   git diff --exit-code -- content backend/supabase/seed.sql
   → V14 클라이언트의 체크포인트 배열과 서버 사다리가 같은 소스에서 나오는지 정적 테스트 추가
@@ -396,7 +396,7 @@ FIX-17~24로 잇는다. 번호는 재사용하지 않는다.
   3) tools/direction-lock/scan.mjs 에 V14 금지 개념을 추가한다.
        battle | monster | weapon | damage | attack_skill | enemy_family | boss_phase
      단, 아카이브 경로와 스캐너 자신은 allow-list에 넣는다.
-  4) 전투 런타임(tools/lib/battle.mjs, tools/tests/battle.test.mjs, client/cli/play.mjs,
+  4) 전투 런타임(packages/domain/battle.mjs, tests/battle.test.mjs, client/cli/play.mjs,
      client/cli/smoke-play.mjs)의 처리 방침을 사용자에게 확인한다.
      선택지: (a) 아카이브 디렉터리로 이동 (b) 삭제 (c) 당분간 유지하되 잠금 예외로 명시
      ※ 임의 삭제 금지. supabase-tests가 smoke-play.mjs에 의존하므로 옮기면 CI도 함께 고친다.
@@ -615,7 +615,7 @@ $ node tools/direction-lock/scan.mjs
 $ node tools/content-validator/validate.mjs
   All content gates passed.                                          ← PASS
 
-$ node --test "tools/tests/*.test.mjs"
+$ node --test "tests/*.test.mjs"
   tests 99 | pass 99 | fail 0                                        ← PASS
 
 $ node --version
@@ -625,15 +625,15 @@ $ node --version
 ### V14 소스가 올라오면 추가되는 것
 
 ```bash
-node --test tools/tests/canonical-run-merge.test.mjs \
-            tools/tests/direct-run-service.test.mjs \
-            tools/tests/v14-screen-flow.test.mjs
-./tools/test/unity.sh
-./tools/test/v14-server-e2e.sh
+node --test tests/canonical-run-merge.test.mjs \
+            tests/direct-run-service.test.mjs \
+            tests/v14-screen-flow.test.mjs
+./scripts/unity.sh
+./scripts/v14-server-e2e.sh
 bash tools/build/android-v14.sh
 ```
 
-※ `tools/tests/v14-screen-flow.test.mjs`는 `requirements/V14_SCREEN_IMPLEMENTATION_CONTRACT.json`
+※ `tests/v14-screen-flow.test.mjs`는 `requirements/V14_SCREEN_IMPLEMENTATION_CONTRACT.json`
 을 읽는다. **이 파일도 현재 저장소에 없다.** FIX-00에 포함시킨다.
 
 ### 새로 추가할 테스트
@@ -692,7 +692,7 @@ ChatGPT의 `PASS-00` ~ `PASS-10` 11회 루프는 방향이 옳다. 다만 각 �
 **이 셋이 정해지기 전에는 FIX-17/18과 그에 딸린 콘텐츠·DB 작업을 시작할 수 없다.**
 
 1. **정본 숫자** — 월간 체크포인트 52 / 120, Region 96 / 192, 장착 아이템 96 / 600+120.
-2. **전투 자산 처리** — `tools/lib/battle.mjs`, `tools/tests/battle.test.mjs`,
+2. **전투 자산 처리** — `packages/domain/battle.mjs`, `tests/battle.test.mjs`,
    `client/cli/play.mjs`, `client/cli/smoke-play.mjs`, `content/launch/**`의 전투 데이터,
    `backend/.../0005_content.sql`의 전투 테이블을
    (a) 아카이브 이동 (b) 삭제 (c) 유지하되 잠금 예외 — 어느 쪽인가.

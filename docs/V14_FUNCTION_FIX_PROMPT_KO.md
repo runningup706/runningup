@@ -37,7 +37,7 @@ $ git ls-tree -r --name-only origin/main | grep -c "V14\|ScreenFlow\|RunVerifica
 0
 ```
 
-- 세 브랜치 어디에도 `client/unity/Assets/RunningUp/V14/`, `RunVerification/`, `tools/tests/v14-*`가 없다.
+- 세 브랜치 어디에도 `client/unity/Assets/RunningUp/V14/`, `RunVerification/`, `tests/v14-*`가 없다.
 - `origin/main`의 최신 커밋은 `ab69f06 feat(game): battle engine ...` — **삭제 대상인 V5 전투 런타임**이다.
 - `client/unity/Assets/RunningUp/` 아래에 실제로 존재하는 파일은 2개뿐이다
   (`Progression/MonthlyApex/MonthlyApexLadder.cs`, `RunningUp.Progression.asmdef`).
@@ -59,7 +59,7 @@ $ git ls-tree -r --name-only origin/main | grep -c "V14\|ScreenFlow\|RunVerifica
      client/unity/Assets/RunningUp/Core/**
      client/unity/ProjectSettings/**  (targetSdk, CanvasScaler 기준 해상도 확인용)
      client/unity/Assets/Plugins/Android/**  (AndroidManifest.xml 포함)
-     tools/tests/**, tools/test/**, tools/build/android-v14.sh
+     tests/**, scripts/**, tools/build/android-v14.sh
      requirements/V14_SCREEN_IMPLEMENTATION_CONTRACT.json
   3) 대용량 APK는 커밋하지 않는다. SHA-256만 기록한다.
 증거: 푸시 후 `git ls-tree -r --name-only origin/<branch> | grep V14 | wc -l` 출력.
@@ -648,7 +648,7 @@ uGUI는 매 포인터 이벤트마다 모든 활성 raycast 대상을 정렬·�
      - 완료 → Training 선택 화면
   3) 하단 내비의 "TRAIN"과 "RUN"이 둘 다 Screen.Training으로 가는 중복(405-409행)을 없앤다.
   4) requirements/V14_SCREEN_IMPLEMENTATION_CONTRACT.json 에 매핑을 기록하고
-     tools/tests/v14-screen-flow.test.mjs 가 그 계약을 강제하게 한다.
+     tests/v14-screen-flow.test.mjs 가 그 계약을 강제하게 한다.
 
 검증: 20개 목표 화면 전부에 대해 "어떤 버튼 → 어떤 화면"의 정적 계약 테스트 통과.
 ```
@@ -786,7 +786,7 @@ uGUI는 매 포인터 이벤트마다 모든 활성 raycast 대상을 정렬·�
 
   2) 방어적으로 v_existing.id is null 이면 duplicate 분기로 절대 들어가지 않게 한다.
 
-  3) 회귀 테스트를 반드시 추가한다 (tools/tests 또는 pgTAP):
+  3) 회귀 테스트를 반드시 추가한다 (tests 또는 pgTAP):
      - source_record_id = NULL 인 Direct GPS 최초 업로드 → duplicate=false, run_id NOT NULL,
        보상 > 0, monthly_verified_m 증가
      - 같은 러닝을 Health Connect가 source_record_id 有로 재업로드 → duplicate=true, 보상 재지급 없음
@@ -794,8 +794,8 @@ uGUI는 매 포인터 이벤트마다 모든 활성 raycast 대상을 정렬·�
      - source_record_id = '' (빈 문자열)과 '   ' (공백)도 케이스에 포함
 
 검증:
-  ./tools/test/v14-server-e2e.sh
-  node --test tools/tests/canonical-run-merge.test.mjs
+  ./scripts/v14-server-e2e.sh
+  node --test tests/canonical-run-merge.test.mjs
   실제 출력 전문을 증거로 남긴다. "통과했다"는 서술만 쓰지 않는다.
 
 참고: PL/pgSQL에서 PERFORM은 한 행 이상을 생성하면 FOUND를 true로 만든다.
@@ -858,7 +858,7 @@ uGUI는 매 포인터 이벤트마다 모든 활성 raycast 대상을 정렬·�
   4) 전체 화면을 훑어 interactable=false로 렌더되는 컨트롤을 목록화하고
      각각 (a) 제거 (b) 라벨로 전환 (c) 이유 명시 중 하나로 처리한다.
 
-검증: tools/tests에 "이유 문구 없는 비활성 버튼 0개" 정적 검사를 추가한다.
+검증: tests에 "이유 문구 없는 비활성 버튼 0개" 정적 검사를 추가한다.
 ```
 
 ---
@@ -894,11 +894,11 @@ uGUI는 매 포인터 이벤트마다 모든 활성 raycast 대상을 정렬·�
 
 ```bash
 cd runningup
-node --test tools/tests/canonical-run-merge.test.mjs \
-            tools/tests/direct-run-service.test.mjs \
-            tools/tests/v14-screen-flow.test.mjs
-./tools/test/unity.sh
-./tools/test/v14-server-e2e.sh
+node --test tests/canonical-run-merge.test.mjs \
+            tests/direct-run-service.test.mjs \
+            tests/v14-screen-flow.test.mjs
+./scripts/unity.sh
+./scripts/v14-server-e2e.sh
 bash tools/build/android-v14.sh
 ```
 

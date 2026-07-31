@@ -13,8 +13,8 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { applyDistance, applyBatch, emptyProgress, ladderSnapshot } from '../lib/monthly-apex.mjs';
-import { APEX_CHECKPOINT_METERS, rankForMeters } from '../lib/constants.mjs';
+import { applyDistance, applyBatch, emptyProgress, ladderSnapshot } from '../../packages/domain/monthly-apex.mjs';
+import { APEX_CHECKPOINT_METERS, rankForMeters } from '../../packages/domain/constants.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 

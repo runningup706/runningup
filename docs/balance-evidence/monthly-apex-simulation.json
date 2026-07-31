@@ -246,6 +246,11 @@
       "reached_pct": 82.5
     },
     {
+      "threshold_km": 42.195,
+      "reached_by": 1807,
+      "reached_pct": 82.1
+    },
+    {
       "threshold_km": 45,
       "reached_by": 1797,
       "reached_pct": 81.7

@@ -14,10 +14,10 @@
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-// The locked numbers live once, in tools/lib/constants.mjs. This scanner used to restate
+// The locked numbers live once, in packages/domain/constants.mjs. This scanner used to restate
 // the checkpoint count, which meant changing the ladder made the lock itself the last
 // thing to notice — it reported the new, correct ladder as a violation.
-import { DIRECTION_LOCK } from '../lib/constants.mjs';
+import { DIRECTION_LOCK } from '../../packages/domain/constants.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 
@@ -32,21 +32,21 @@ const ALLOWLIST = new Map([
   ['docs/USER_DIRECTION_LOCK.md', 'the lock document defines what is forbidden'],
   ['content/schemas/direction_lock.json', 'the machine-readable lock lists the forbidden tokens'],
   ['tools/direction-lock/scan.mjs', 'this scanner contains the patterns it searches for'],
-  ['tools/tests/monthly-apex.test.mjs', 'asserts the forbidden tiers do not exist'],
-  ['tools/tests/reward.test.mjs', 'asserts forbidden reward inputs are rejected'],
-  ['tools/tests/direction-lock.test.mjs', 'asserts the scanner itself works'],
-  ['tools/lib/constants.mjs', 'declares the forbidden activity list used for negative tests'],
-  ['tools/lib/reward.mjs', 'declares the forbidden reward input keys it rejects'],
+  ['tests/monthly-apex.test.mjs', 'asserts the forbidden tiers do not exist'],
+  ['tests/reward.test.mjs', 'asserts forbidden reward inputs are rejected'],
+  ['tests/direction-lock.test.mjs', 'asserts the scanner itself works'],
+  ['packages/domain/constants.mjs', 'declares the forbidden activity list used for negative tests'],
+  ['packages/domain/reward.mjs', 'declares the forbidden reward input keys it rejects'],
   ['tools/content-validator/validate.mjs', 'the content validator names the rules it enforces'],
   ['tools/content-factory/build.mjs', 'the factory asserts the running-only activity set'],
   ['tools/run-fixture-generator/generate.mjs', 'generates the negative fixtures master # 22.6 requires, to prove they are refused'],
   ['content/fixtures/run-fixtures.json', 'negative test corpus: these activities exist only to be rejected'],
   ['tools/anti-cheat-simulator/simulate.mjs', 'reports how the forbidden sources were handled'],
-  ['tools/tests/anomaly-detection.test.mjs', 'asserts every forbidden source is rejected'],
+  ['tests/anomaly-detection.test.mjs', 'asserts every forbidden source is rejected'],
   ['client/cli/smoke-play.mjs', 'asserts the played session never reports a rank above World Crown'],
-  ['tools/lib/anomaly-detection.mjs', 'names the forbidden sources it refuses'],
+  ['packages/domain/anomaly-detection.mjs', 'names the forbidden sources it refuses'],
   ['docs/balance-evidence/anti-cheat-simulation.json', 'evidence file recording the rejected fixtures'],
-  ['tools/lib/monthly-apex.mjs', 'enforces the 1000 km ceiling'],
+  ['packages/domain/monthly-apex.mjs', 'enforces the 1000 km ceiling'],
   ['backend/supabase/migrations/0003_monthly_apex.sql', 'CHECK constraints name the forbidden range'],
   ['backend/supabase/migrations/0002_running.sql', 'activity_type enum excludes the forbidden types by listing the allowed ones'],
   ['backend/supabase/tests/pgtap/03_monthly_apex.sql', 'asserts the forbidden tiers cannot be inserted'],

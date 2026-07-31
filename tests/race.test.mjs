@@ -16,9 +16,9 @@ import {
   ROLE_IDS,
   RACE_FIELD_SIZE,
   RACE_CONFIG_VERSION,
-} from '../lib/race.mjs';
+} from '../packages/domain/race.mjs';
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 const field = (tier = 2, courseId = 'con_lumena') =>
   Array.from({ length: RACE_FIELD_SIZE - 1 }, (_, i) => buildPacer({ tier, index: i, courseId }));
@@ -36,7 +36,7 @@ const race = (overrides = {}) => resolveRace({
 // ---------------------------------------------------------------------------
 
 test('the race engine contains no combat concepts', () => {
-  const source = readFileSync(join(ROOT, 'tools/lib/race.mjs'), 'utf8');
+  const source = readFileSync(join(ROOT, 'packages/domain/race.mjs'), 'utf8');
   // Prose in this file explains what was removed, so only executable shapes are checked:
   // a combat engine cannot exist without one of these identifiers.
   for (const forbidden of [
@@ -54,7 +54,7 @@ test('the race engine contains no combat concepts', () => {
 });
 
 test('DL-3: courses only use running surfaces, and elevation is not a stat', () => {
-  const source = readFileSync(join(ROOT, 'tools/lib/race.mjs'), 'utf8');
+  const source = readFileSync(join(ROOT, 'packages/domain/race.mjs'), 'utf8');
   for (const course of Object.values(CONTINENT_COURSES)) {
     assert.ok(COURSE_SURFACES.includes(course.surface), `unknown surface ${course.surface}`);
   }

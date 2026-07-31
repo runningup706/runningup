@@ -16,7 +16,7 @@ This file deliberately mirrors `AGENTS.md` and must never contradict it.
 ```bash
 bash tools/bootstrap/doctor.sh   # toolchain reality check
 npm run test:fast                # direction lock + content + unit tests
-bash tools/test/db.sh            # migrations + seed + pgTAP
+bash scripts/db.sh            # migrations + seed + pgTAP
 npm run test:all                 # full local gate, mirrors CI
 ```
 
@@ -32,6 +32,6 @@ npm run test:all                 # full local gate, mirrors CI
 
 - `content/launch/**` and `backend/supabase/seed.sql` are generated — edit the design
   tables in `tools/content-factory/` and regenerate.
-- Locked numbers live once, in `tools/lib/constants.mjs`.
+- Locked numbers live once, in `packages/domain/constants.mjs`.
 - Report status with the master's vocabulary. Blocked stays blocked.
 - Content data is `DATA_PASS` until it is genuinely playable in a build.

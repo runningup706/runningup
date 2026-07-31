@@ -13,7 +13,7 @@
  *   artifacts/test-evidence-manifest.json  what ran, how many, and what is blocked
  *
  * Usage: node tools/release/generate-evidence.mjs
- * Requires: a database with the migrations applied (tools/test/db.sh leaves one behind).
+ * Requires: a database with the migrations applied (scripts/db.sh leaves one behind).
  */
 
 import { execFileSync } from 'node:child_process';
@@ -293,7 +293,7 @@ const manifest = {
   suites: [
     { id: 'direction_lock', tool: 'tools/direction-lock/scan.mjs', kind: 'static_scan', status: 'PASS' },
     { id: 'content_validation', tool: 'tools/content-validator/validate.mjs', kind: 'content_gate', status: 'PASS' },
-    { id: 'domain_engine', tool: 'node --test tools/tests/*.test.mjs', kind: 'unit', status: 'PASS' },
+    { id: 'domain_engine', tool: 'node --test tests/*.test.mjs', kind: 'unit', status: 'PASS' },
     { id: 'database', tool: 'pg_prove backend/supabase/tests/pgtap/*.sql', kind: 'integration', status: 'PASS' },
     { id: 'unity_domain', tool: 'dotnet test client/dotnet/RunningUp.Domain.Tests', kind: 'unit', status: 'PASS' },
     { id: 'run_capture_core', tool: 'gradle test (native/android-running-plugin)', kind: 'unit', status: 'PASS' },

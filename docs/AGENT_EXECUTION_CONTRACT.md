@@ -47,19 +47,19 @@ make a gate green.
 ## 5. Generated files
 
 `content/launch/**` and `backend/supabase/seed.sql` are generated. Edit
-`tools/content-factory/**/*-design.mjs` and regenerate. `tools/test/all.sh` fails if the
+`tools/content-factory/**/*-design.mjs` and regenerate. `scripts/all.sh` fails if the
 committed tree and the regenerated output differ.
 
 ## 6. Single source of truth
 
-Every locked number lives in `tools/lib/constants.mjs` and is mirrored — never re-typed —
+Every locked number lives in `packages/domain/constants.mjs` and is mirrored — never re-typed —
 into SQL and content. If a value appears in two places by hand, that is a defect.
 
 ## 7. Definition of a green commit
 
 ```bash
 npm run test:fast     # direction lock, content validation, unit tests
-bash tools/test/db.sh # migrations, seed, pgTAP
+bash scripts/db.sh # migrations, seed, pgTAP
 ```
 
 Both green, `HANDOFF.md` and `docs/CURRENT_STATE.md` updated to match reality, and the
