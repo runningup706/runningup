@@ -148,7 +148,7 @@ for (const schema of ['api', 'private', 'audit', 'analytics_private']) {
 
 // The invariants that matter most, restated as machine-checked facts.
 const ledgerTables = ['xp_ledger', 'stat_ledger', 'currency_ledger', 'monthly_apex_progress',
-  'monthly_apex_checkpoint_claims', 'world_crown_history', 'apex_boss_unlocks', 'runner_passports'];
+  'monthly_apex_checkpoint_claims', 'world_crown_history', 'apex_race_entries', 'runner_passports'];
 // Checked at BOTH levels. A table-level check alone would miss someone granting
 // `update (final_amount)` on the ledger, which is exactly the shape of the AUDIT_07 bug
 // that column-level grants were introduced to fix.

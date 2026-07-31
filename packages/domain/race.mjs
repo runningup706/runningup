@@ -60,6 +60,8 @@ const RAW_ROLE_SHAPE = Object.freeze({
   control:   { cruise: 1.05, stamina: 1.05, kick: 1.00 },  // tactician
   counter:   { cruise: 0.90, stamina: 1.05, kick: 1.15 },  // sit-and-kick
   support:   { cruise: 1.00, stamina: 1.15, kick: 0.95 },  // pack worker
+  surger:    { cruise: 1.15, stamina: 0.80, kick: 1.10 },  // mid-race attacker
+  grinder:   { cruise: 0.85, stamina: 1.45, kick: 0.75 },  // long-distance grinder
 });
 
 const ROLE_CONVERSION = Object.freeze(Object.fromEntries(

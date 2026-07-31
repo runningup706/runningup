@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0.0",
-  "lock_id": "runningup.direction_lock.v4",
+  "lock_id": "runningup.direction_lock.v5",
   "source_master_sha256": "b80ecb1077daf3967d9b4a8c918b4eebe942d93d5aa8805fdf10de8c7dca1978",
   "human_readable": "docs/USER_DIRECTION_LOCK.md",
   "monthly_apex": {
     "final_distance_km": 1000,
     "final_distance_meters": 1000000,
-    "checkpoint_count": 52,
+    "checkpoint_count": 121,
     "checkpoint_count_minimum": 40,
     "major_rank_count": 11,
     "final_rank_id": "world_crown",
@@ -15,7 +15,9 @@
     "per_run_base_reward_above_1000_continues": true,
     "monthly_rank_or_multiplier_above_1000_increases": false,
     "apex_axis_unlocks_at_meters": 1000000,
-    "apex_axis_unlocks_per_user_month": 1
+    "apex_axis_unlocks_per_user_month": 1,
+    "marathon_checkpoint_meters": 42195,
+    "apex_axis_is_a_race_not_a_boss": true
   },
   "onboarding": {
     "universal_forced_1km_or_3km_start": false,
@@ -36,28 +38,48 @@
     ]
   },
   "activity_scope": {
-    "allowed_activity_types": ["road", "track", "treadmill", "indoor"],
+    "allowed_activity_types": [
+      "road",
+      "track",
+      "treadmill",
+      "indoor"
+    ],
     "run_walk_is_beginner_method_only": true,
-    "forbidden_activity_types": ["trail", "hiking", "cycling", "climbing", "walking_only"],
+    "forbidden_activity_types": [
+      "trail",
+      "hiking",
+      "cycling",
+      "climbing",
+      "walking_only"
+    ],
     "elevation_progression_allowed": false,
     "weather_multiplier_allowed": false,
     "night_time_multiplier_allowed": false,
-    "advisory_popups_in_gameplay_allowed": false
+    "advisory_popups_in_gameplay_allowed": false,
+    "course_surfaces": [
+      "road",
+      "track",
+      "treadmill",
+      "indoor"
+    ]
   },
   "launch_content_floor": {
     "continents": 12,
-    "region_nodes": 96,
-    "main_stages": 72,
-    "side_stages": 24,
+    "region_nodes": 192,
+    "courses": 2304,
+    "main_races": 72,
+    "challenge_races": 24,
     "playable_characters": 12,
     "character_episodes": 36,
-    "tactical_skills": 48,
-    "tactical_relics": 72,
-    "standard_enemy_families": 24,
-    "elite_enemy_families": 12,
-    "continent_bosses": 12,
-    "world_bosses": 4,
-    "apex_bosses": 1,
+    "race_techniques": 48,
+    "gear_sets": 72,
+    "standard_rival_crews": 24,
+    "elite_rival_crews": 12,
+    "continent_champions": 12,
+    "open_race_events": 4,
+    "apex_races": 1,
+    "race_formats": 7,
+    "challenge_formats": 6,
     "companions": 12,
     "equipable_cosmetics": 96,
     "story_chapters": 12,
@@ -65,7 +87,9 @@
     "event_arcs": 3
   },
   "core_power": {
-    "sources": ["verified_run"],
+    "sources": [
+      "verified_run"
+    ],
     "zero_contribution_sources": [
       "payment",
       "advertisement",
@@ -79,8 +103,93 @@
     ]
   },
   "forbidden_tokens": {
-    "monthly_tiers": ["1250km", "1500km", "2000km", "endless ladder", "endless volume", "infinite ladder"],
-    "activity_modes": ["trail running", "trailrunning", "hiking", "cycling", "mountain climbing", "elevation gain reward", "elevation leaderboard"],
-    "onboarding": ["mandatory_1km_before_3km", "mandatory_3km_before_5km", "beginner_only_first_route"]
+    "monthly_tiers": [
+      "1250km",
+      "1500km",
+      "2000km",
+      "endless ladder",
+      "endless volume",
+      "infinite ladder"
+    ],
+    "activity_modes": [
+      "trail running",
+      "trailrunning",
+      "hiking",
+      "cycling",
+      "mountain climbing",
+      "elevation gain reward",
+      "elevation leaderboard"
+    ],
+    "onboarding": [
+      "mandatory_1km_before_3km",
+      "mandatory_3km_before_5km",
+      "beginner_only_first_route"
+    ],
+    "combat": [
+      "world boss",
+      "continent boss",
+      "apex boss",
+      "enemy family",
+      "enemy families",
+      "monster",
+      "auto-battle",
+      "battle stage",
+      "battle node",
+      "combat role",
+      "combat mechanic",
+      "max hp",
+      "hit points",
+      "basic attack",
+      "weapon damage",
+      "tactical skill",
+      "tactical relic",
+      "dungeon"
+    ]
+  },
+  "supersedes": "runningup.direction_lock.v4",
+  "human_readable_archive": "docs/archive/USER_DIRECTION_LOCK_v4.0.0.md",
+  "race_scope": {
+    "product_is_a_running_race": true,
+    "combat_allowed": false,
+    "race_field_size": 8,
+    "race_axes": [
+      "cruise",
+      "stamina",
+      "kick"
+    ],
+    "removed_combat_tables": [
+      "world_stages",
+      "world_bosses",
+      "character_skills",
+      "tactical_relics",
+      "enemy_families"
+    ],
+    "replacement_tables": [
+      "world_races",
+      "world_champions",
+      "race_techniques",
+      "gear_sets",
+      "rival_crews"
+    ],
+    "region_node_types": [
+      "race_node",
+      "challenge_node",
+      "champion_node"
+    ],
+    "forbidden_concepts": [
+      "boss",
+      "enemy",
+      "monster",
+      "battle",
+      "combat",
+      "hp",
+      "damage",
+      "basic_attack",
+      "weapon",
+      "tactical_skill",
+      "tactical_relic",
+      "dungeon"
+    ],
+    "losing_a_race_costs_the_player_nothing": true
   }
 }

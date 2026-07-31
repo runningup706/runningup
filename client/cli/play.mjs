@@ -122,12 +122,13 @@ async function main() {
     select
       (select count(*) from api.world_continents) as continents,
       (select count(*) from api.characters) as characters,
-      (select count(*) from api.world_stages where kind='main') as main_stages,
+      (select count(*) from api.world_races where kind='main') as main_races,
+      (select count(*) from api.world_courses) as courses,
       (select count(*) from api.monthly_apex_checkpoints) as checkpoints
   `, { json: true })[0];
 
   rule('GRAND WORLD');
-  say(`  ${counts.continents} continents · ${counts.characters} characters · ${counts.main_stages} main stages · ${counts.checkpoints} Apex checkpoints`);
+  say(`  ${counts.continents} continents · ${counts.characters} runners · ${counts.main_races} main races · ${counts.courses} courses · ${counts.checkpoints} Apex checkpoints`);
   say();
 
   // -- 1. Account -------------------------------------------------------------
@@ -187,7 +188,7 @@ async function main() {
   // -- 4. Continent -----------------------------------------------------------
   rule('CHOOSE A CONTINENT');
   const continents = sql(`
-    select id, display_order, name_key, mechanic_id, entry_region_id
+    select id, display_order, name_key, trait_id, entry_region_id
     from api.world_continents order by display_order
   `, { json: true });
   continents.forEach((ct) => {

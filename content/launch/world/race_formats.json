@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "race_format",
+  "count": 7,
+  "items": [
+    {
+      "id": "time_trial"
+    },
+    {
+      "id": "mass_start"
+    },
+    {
+      "id": "handicap"
+    },
+    {
+      "id": "pursuit"
+    },
+    {
+      "id": "championship"
+    },
+    {
+      "id": "relay"
+    },
+    {
+      "id": "ladder"
+    }
+  ]
+}

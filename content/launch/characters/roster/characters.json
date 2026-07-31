@@ -17,20 +17,20 @@
         "skin": "deep",
         "age": "late thirties"
       },
-      "silhouette": "wide pauldrons, half-cape torn at the hem, tower shield on the back",
-      "weapon": "tower shield and short spear",
-      "core_conversion": "Endurance and Vitality convert into shield integrity rather than raw attack.",
-      "basic_attack": "shield-forward jabs that build guard stacks",
-      "skill_ids": [
-        "skl_seon_bulwark",
-        "skl_seon_riposte",
-        "skl_seon_unbroken",
-        "skl_seon_dawnwall"
+      "silhouette": "high shoulders, half-cape torn at the hem, race number pinned square",
+      "race_kit": "rigid plated road shoes and a weighted pacing band",
+      "core_conversion": "Endurance and Vitality convert into a higher sustainable cruise rather than a finishing sprint.",
+      "race_signature": "goes to the front from the gun and makes the field come to her",
+      "technique_ids": [
+        "tec_seon_bulwark",
+        "tec_seon_riposte",
+        "tec_seon_unbroken",
+        "tec_seon_dawnwall"
       ],
       "specializations": [
-        "guard_stacking",
-        "reflect_timing",
-        "front_line_control"
+        "front_running",
+        "even_effort",
+        "surge_answering"
       ],
       "episode_ids": [
         "epi_seon_01",
@@ -47,11 +47,11 @@
       "cosmetic_slot_ids": [
         "outfit",
         "hair",
-        "weapon_skin",
-        "cape",
+        "shoe_skin",
+        "jacket",
         "aura",
         "footstep",
-        "victory_pose",
+        "finish_pose",
         "profile_frame"
       ]
     },
@@ -60,7 +60,7 @@
       "order": 2,
       "name_key": "character.yuwon.name",
       "role": "burst",
-      "secondary_role": "summon",
+      "secondary_role": "surger",
       "continent_affinity": "con_voltis",
       "presentation": {
         "body": "lean wiry",
@@ -68,20 +68,20 @@
         "skin": "light",
         "age": "early twenties"
       },
-      "silhouette": "asymmetric coat, cable-wrapped forearm, floating conductor drone",
-      "weapon": "arc conductor gauntlet",
-      "core_conversion": "Speed converts into chain length instead of attack rate.",
-      "basic_attack": "short arcs that mark conductive targets",
-      "skill_ids": [
-        "skl_yuwon_arcline",
-        "skl_yuwon_drone",
-        "skl_yuwon_capacitor",
-        "skl_yuwon_overload"
+      "silhouette": "asymmetric singlet, cable-wrapped forearm, spikes slung at the hip",
+      "race_kit": "featherweight track spikes and a lap-count wristband",
+      "core_conversion": "Speed converts into repeatable short accelerations instead of a higher cruise.",
+      "race_signature": "sits calm for most of the race and changes gear without warning",
+      "technique_ids": [
+        "tec_yuwon_arcline",
+        "tec_yuwon_relay",
+        "tec_yuwon_capacitor",
+        "tec_yuwon_overload"
       ],
       "specializations": [
-        "chain_extension",
-        "drone_control",
-        "burst_banking"
+        "gear_changes",
+        "corner_lines",
+        "finish_banking"
       ],
       "episode_ids": [
         "epi_yuwon_01",
@@ -98,11 +98,11 @@
       "cosmetic_slot_ids": [
         "outfit",
         "hair",
-        "weapon_skin",
-        "cape",
+        "shoe_skin",
+        "jacket",
         "aura",
         "footstep",
-        "victory_pose",
+        "finish_pose",
         "profile_frame"
       ]
     },
@@ -119,20 +119,20 @@
         "skin": "medium",
         "age": "mid twenties"
       },
-      "silhouette": "layered botanist coat, seed satchel, living staff that flowers as she fights",
-      "weapon": "grafted living staff",
-      "core_conversion": "Vitality converts into sustained damage-over-time rather than health.",
-      "basic_attack": "seeding strikes that bloom two beats later",
-      "skill_ids": [
-        "skl_hana_bloom",
-        "skl_hana_purify",
-        "skl_hana_rooted",
-        "skl_hana_greatbreath"
+      "silhouette": "layered botanist wind shell, seed satchel, worn trail-free road flats",
+      "race_kit": "cushioned long-distance flats and a hand-written split card",
+      "core_conversion": "Vitality converts into a pace that decays less over distance rather than into a faster opening.",
+      "race_signature": "runs the whole race at one effort and is still holding it when others are not",
+      "technique_ids": [
+        "tec_hana_bloom",
+        "tec_hana_clear",
+        "tec_hana_rooted",
+        "tec_hana_greatbreath"
       ],
       "specializations": [
-        "seed_timing",
-        "cleanse_conversion",
-        "field_control"
+        "pace_decay_resistance",
+        "line_choice",
+        "long_distance"
       ],
       "episode_ids": [
         "epi_hana_01",
@@ -149,11 +149,11 @@
       "cosmetic_slot_ids": [
         "outfit",
         "hair",
-        "weapon_skin",
-        "cape",
+        "shoe_skin",
+        "jacket",
         "aura",
         "footstep",
-        "victory_pose",
+        "finish_pose",
         "profile_frame"
       ]
     },
@@ -170,20 +170,20 @@
         "skin": "tan",
         "age": "fifties"
       },
-      "silhouette": "smith apron over scarred arms, one mechanical shoulder, enormous tongs",
-      "weapon": "forge tongs and molten ingot",
-      "core_conversion": "Tempo converts into heat management headroom instead of attack speed.",
-      "basic_attack": "heavy swings that raise the shared heat gauge",
-      "skill_ids": [
-        "skl_dorin_vent",
-        "skl_dorin_quench",
-        "skl_dorin_temper",
-        "skl_dorin_heartforge"
+      "silhouette": "smith apron traded for a vest, one mechanical shoulder, heavy-heeled gait",
+      "race_kit": "ventilated heat-race singlet and a forearm split chart",
+      "core_conversion": "Tempo converts into heat tolerance headroom instead of raw turnover.",
+      "race_signature": "reads the road temperature and decides the race at one chosen point",
+      "technique_ids": [
+        "tec_dorin_vent",
+        "tec_dorin_quench",
+        "tec_dorin_temper",
+        "tec_dorin_heartforge"
       ],
       "specializations": [
-        "heat_banking",
-        "shatter_windows",
-        "zone_denial"
+        "heat_tolerance",
+        "attack_timing",
+        "pace_reserve"
       ],
       "episode_ids": [
         "epi_dorin_01",
@@ -200,11 +200,11 @@
       "cosmetic_slot_ids": [
         "outfit",
         "hair",
-        "weapon_skin",
-        "cape",
+        "shoe_skin",
+        "jacket",
         "aura",
         "footstep",
-        "victory_pose",
+        "finish_pose",
         "profile_frame"
       ]
     },
@@ -221,20 +221,20 @@
         "skin": "olive",
         "age": "late teens"
       },
-      "silhouette": "kite-cloth wings, wrapped shins, weightless stance",
-      "weapon": "twin wind-blades",
-      "core_conversion": "Pacing converts into counter windows instead of consistency bonuses.",
-      "basic_attack": "lane-dashing slashes that gain damage with momentum",
-      "skill_ids": [
-        "skl_ari_slipstream",
-        "skl_ari_crosswind",
-        "skl_ari_momentum",
-        "skl_ari_roadbind"
+      "silhouette": "kite-cloth vest, wrapped shins, weightless upright carriage",
+      "race_kit": "wind-cut racing vest and thin road shoes with no plate",
+      "core_conversion": "Pacing converts into shelter economy: the same effort buys more when run behind someone.",
+      "race_signature": "shelters until the wind turns and comes past on the first tailwind metre",
+      "technique_ids": [
+        "tec_ari_slipstream",
+        "tec_ari_crosswind",
+        "tec_ari_momentum",
+        "tec_ari_roadbind"
       ],
       "specializations": [
-        "momentum_chaining",
-        "knockback_reversal",
-        "lane_control"
+        "drafting",
+        "wind_reading",
+        "late_attack"
       ],
       "episode_ids": [
         "epi_ari_01",
@@ -251,11 +251,11 @@
       "cosmetic_slot_ids": [
         "outfit",
         "hair",
-        "weapon_skin",
-        "cape",
+        "shoe_skin",
+        "jacket",
         "aura",
         "footstep",
-        "victory_pose",
+        "finish_pose",
         "profile_frame"
       ]
     },
@@ -272,20 +272,20 @@
         "skin": "light",
         "age": "early thirties"
       },
-      "silhouette": "tide-charts sewn into a long coat, lantern buoy at the hip",
-      "weapon": "tide lantern and signal chain",
-      "core_conversion": "Momentum converts into party repositioning instead of streak damage.",
-      "basic_attack": "lantern sweeps that mark the next tide position",
-      "skill_ids": [
-        "skl_mirae_ebb",
-        "skl_mirae_signal",
-        "skl_mirae_navigator",
-        "skl_mirae_searoad"
+      "silhouette": "tide-charts sewn into a long shell, lantern buoy clipped at the hip",
+      "race_kit": "all-weather crew shell and a printed course profile",
+      "core_conversion": "Momentum converts into crew positioning rather than into her own finishing speed.",
+      "race_signature": "puts her crew where the race is about to be decided before it is",
+      "technique_ids": [
+        "tec_mirae_ebb",
+        "tec_mirae_signal",
+        "tec_mirae_navigator",
+        "tec_mirae_searoad"
       ],
       "specializations": [
-        "phase_prediction",
-        "party_repositioning",
-        "tempo_denial"
+        "crew_positioning",
+        "bottleneck_reading",
+        "surge_calling"
       ],
       "episode_ids": [
         "epi_mirae_01",
@@ -302,11 +302,11 @@
       "cosmetic_slot_ids": [
         "outfit",
         "hair",
-        "weapon_skin",
-        "cape",
+        "shoe_skin",
+        "jacket",
         "aura",
         "footstep",
-        "victory_pose",
+        "finish_pose",
         "profile_frame"
       ]
     },
@@ -314,7 +314,7 @@
       "id": "chr_taeho",
       "order": 7,
       "name_key": "character.taeho.name",
-      "role": "barrier",
+      "role": "grinder",
       "secondary_role": "sustained",
       "continent_affinity": "con_nival",
       "presentation": {
@@ -323,20 +323,20 @@
         "skin": "medium",
         "age": "forties"
       },
-      "silhouette": "fur-lined garrison coat, frost-rimed greatshield, slow deliberate stance",
-      "weapon": "frost bastion shield",
-      "core_conversion": "Resolve converts into barrier duration rather than long-term volume bonuses.",
-      "basic_attack": "grounded shield bashes that chill the tile",
-      "skill_ids": [
-        "skl_taeho_bastion",
-        "skl_taeho_thaw",
-        "skl_taeho_garrison",
-        "skl_taeho_whitewall"
+      "silhouette": "fur-lined warm-up over a plain vest, slow deliberate turnover",
+      "race_kit": "insulated cold-start layers and blunt-lugged winter road shoes",
+      "core_conversion": "Resolve converts into the length of time a pace can be held, never into how fast it is.",
+      "race_signature": "accepts a slow opening without panic and is unchanged forty minutes later",
+      "technique_ids": [
+        "tec_taeho_bastion",
+        "tec_taeho_thaw",
+        "tec_taeho_garrison",
+        "tec_taeho_whitewall"
       ],
       "specializations": [
-        "barrier_uptime",
-        "freeze_manipulation",
-        "ally_protection"
+        "cold_starts",
+        "ultra_distance",
+        "fade_resistance"
       ],
       "episode_ids": [
         "epi_taeho_01",
@@ -353,11 +353,11 @@
       "cosmetic_slot_ids": [
         "outfit",
         "hair",
-        "weapon_skin",
-        "cape",
+        "shoe_skin",
+        "jacket",
         "aura",
         "footstep",
-        "victory_pose",
+        "finish_pose",
         "profile_frame"
       ]
     },
@@ -365,7 +365,7 @@
       "id": "chr_soye",
       "order": 8,
       "name_key": "character.soye.name",
-      "role": "summon",
+      "role": "surger",
       "secondary_role": "control",
       "continent_affinity": "con_hora",
       "presentation": {
@@ -374,20 +374,20 @@
         "skin": "deep",
         "age": "sixties"
       },
-      "silhouette": "desert veil, mirror-shard bracelets, three drifting reflections",
-      "weapon": "mirror shards",
-      "core_conversion": "Speed converts into number of active reflections instead of attack rate.",
-      "basic_attack": "shard throws that leave a standing reflection",
-      "skill_ids": [
-        "skl_soye_split",
-        "skl_soye_shadowtell",
-        "skl_soye_manyselves",
-        "skl_soye_truemirror"
+      "silhouette": "desert veil over a race vest, mirror-shard bracelets, short quick cadence",
+      "race_kit": "sun-shell race vest and low-stack desert road shoes",
+      "core_conversion": "Speed converts into how many mid-race accelerations she can make rather than how fast one is.",
+      "race_signature": "attacks repeatedly in the middle of the race until somebody fails to follow",
+      "technique_ids": [
+        "tec_soye_split",
+        "tec_soye_shadowtell",
+        "tec_soye_manyselves",
+        "tec_soye_truemirror"
       ],
       "specializations": [
-        "reflection_count",
-        "clone_exposure",
-        "damage_distribution"
+        "repeated_surges",
+        "distance_judgement",
+        "field_selection"
       ],
       "episode_ids": [
         "epi_soye_01",
@@ -404,11 +404,11 @@
       "cosmetic_slot_ids": [
         "outfit",
         "hair",
-        "weapon_skin",
-        "cape",
+        "shoe_skin",
+        "jacket",
         "aura",
         "footstep",
-        "victory_pose",
+        "finish_pose",
         "profile_frame"
       ]
     },
@@ -425,20 +425,20 @@
         "skin": "light",
         "age": "late twenties"
       },
-      "silhouette": "harness rig with grapple spools, one bare shoulder, always mid-motion",
-      "weapon": "grapple lance",
-      "core_conversion": "Endurance converts into aerial uptime instead of stamina.",
-      "basic_attack": "descending lance strikes from height",
-      "skill_ids": [
-        "skl_jiwoo_grapple",
-        "skl_jiwoo_anchor",
-        "skl_jiwoo_highground",
-        "skl_jiwoo_skyfall"
+      "silhouette": "harness-strapped race vest, one bare shoulder, always mid-motion",
+      "race_kit": "oval racing spikes and a bare-minimum split watch",
+      "core_conversion": "Endurance converts into how late the closing sprint can be started, not into cruise pace.",
+      "race_signature": "holds position all race and produces one very late, very fast lap",
+      "technique_ids": [
+        "tec_jiwoo_grapple",
+        "tec_jiwoo_anchor",
+        "tec_jiwoo_highground",
+        "tec_jiwoo_skyfall"
       ],
       "specializations": [
-        "height_advantage",
-        "platform_denial",
-        "burst_positioning"
+        "closing_sprint",
+        "position_holding",
+        "move_covering"
       ],
       "episode_ids": [
         "epi_jiwoo_01",
@@ -455,11 +455,11 @@
       "cosmetic_slot_ids": [
         "outfit",
         "hair",
-        "weapon_skin",
-        "cape",
+        "shoe_skin",
+        "jacket",
         "aura",
         "footstep",
-        "victory_pose",
+        "finish_pose",
         "profile_frame"
       ]
     },
@@ -476,20 +476,20 @@
         "skin": "medium",
         "age": "mid thirties"
       },
-      "silhouette": "pressure suit with a sonar collar, cable tether, deliberate slow gait",
-      "weapon": "sonar emitter",
-      "core_conversion": "Tempo converts into pulse frequency instead of cooldown reduction.",
-      "basic_attack": "directed pulses that reveal and stagger",
-      "skill_ids": [
-        "skl_narae_pulse",
-        "skl_narae_tether",
-        "skl_narae_deeplung",
-        "skl_narae_recordrise"
+      "silhouette": "compression suit with a collar mic, deliberate slow-building gait",
+      "race_kit": "humidity-shedding pack suit and a shared-cadence collar metronome",
+      "core_conversion": "Tempo converts into how often the pack can rotate its front runner without losing speed.",
+      "race_signature": "organises whoever is around them into a working group and shares the front",
+      "technique_ids": [
+        "tec_narae_pulse",
+        "tec_narae_tether",
+        "tec_narae_deeplung",
+        "tec_narae_recordrise"
       ],
       "specializations": [
-        "pulse_economy",
-        "pressure_relief",
-        "reveal_control"
+        "pack_work",
+        "front_rotation",
+        "group_economy"
       ],
       "episode_ids": [
         "epi_narae_01",
@@ -506,11 +506,11 @@
       "cosmetic_slot_ids": [
         "outfit",
         "hair",
-        "weapon_skin",
-        "cape",
+        "shoe_skin",
+        "jacket",
         "aura",
         "footstep",
-        "victory_pose",
+        "finish_pose",
         "profile_frame"
       ]
     },
@@ -519,7 +519,7 @@
       "order": 11,
       "name_key": "character.eunseo.name",
       "role": "sustained",
-      "secondary_role": "barrier",
+      "secondary_role": "grinder",
       "continent_affinity": "con_tempora",
       "presentation": {
         "body": "tall lean",
@@ -527,20 +527,20 @@
         "skin": "pale",
         "age": "ageless clockwork-marked"
       },
-      "silhouette": "escapement arm in place of a left forearm, pendulum at the belt, metronomic walk",
-      "weapon": "escapement blade",
-      "core_conversion": "Pacing converts into tempo-zone authority instead of split consistency.",
-      "basic_attack": "strikes locked to the arena beat for bonus damage",
-      "skill_ids": [
-        "skl_eunseo_slowzone",
-        "skl_eunseo_retrograde",
-        "skl_eunseo_metronome",
-        "skl_eunseo_restoredorder"
+      "silhouette": "escapement brace on the left forearm, pendulum at the belt, metronomic walk",
+      "race_kit": "calibrated belt shoes and a pendulum cadence weight",
+      "core_conversion": "Pacing converts into precision: the gap between her target pace and her actual pace.",
+      "race_signature": "declares the time she intends to run and then runs exactly that",
+      "technique_ids": [
+        "tec_eunseo_slowzone",
+        "tec_eunseo_retrograde",
+        "tec_eunseo_metronome",
+        "tec_eunseo_restoredorder"
       ],
       "specializations": [
-        "zone_authority",
-        "action_reversal",
-        "beat_precision"
+        "pace_precision",
+        "split_correction",
+        "target_running"
       ],
       "episode_ids": [
         "epi_eunseo_01",
@@ -557,11 +557,11 @@
       "cosmetic_slot_ids": [
         "outfit",
         "hair",
-        "weapon_skin",
-        "cape",
+        "shoe_skin",
+        "jacket",
         "aura",
         "footstep",
-        "victory_pose",
+        "finish_pose",
         "profile_frame"
       ]
     },
@@ -570,7 +570,7 @@
       "order": 12,
       "name_key": "character.haru.name",
       "role": "vanguard",
-      "secondary_role": "summon",
+      "secondary_role": "surger",
       "continent_affinity": "con_origin",
       "presentation": {
         "body": "youthful slight",
@@ -578,20 +578,20 @@
         "skin": "medium",
         "age": "twelve"
       },
-      "silhouette": "oversized coat inherited from someone taller, shard-lantern, eleven faint echoes",
-      "weapon": "worldline shard",
-      "core_conversion": "The full Fitness Core is split evenly across whichever two continent mechanics are active.",
-      "basic_attack": "shard strikes that borrow the current arena mechanic",
-      "skill_ids": [
-        "skl_haru_borrow",
-        "skl_haru_echo",
-        "skl_haru_convergence",
-        "skl_haru_reunion"
+      "silhouette": "oversized warm-up inherited from someone taller, shard-lantern, eleven faint echoes",
+      "race_kit": "borrowed shoes a size too large and a worldline shard on a lace",
+      "core_conversion": "The full Fitness Core is split evenly across whichever two course traits are in play.",
+      "race_signature": "runs whichever way the road in front of him rewards, and changes at every boundary",
+      "technique_ids": [
+        "tec_haru_borrow",
+        "tec_haru_echo",
+        "tec_haru_convergence",
+        "tec_haru_reunion"
       ],
       "specializations": [
-        "mechanic_borrowing",
-        "echo_summoning",
-        "convergence_stacking"
+        "style_borrowing",
+        "move_echoing",
+        "trait_stacking"
       ],
       "episode_ids": [
         "epi_haru_01",
@@ -608,11 +608,11 @@
       "cosmetic_slot_ids": [
         "outfit",
         "hair",
-        "weapon_skin",
-        "cape",
+        "shoe_skin",
+        "jacket",
         "aura",
         "footstep",
-        "victory_pose",
+        "finish_pose",
         "profile_frame"
       ]
     }

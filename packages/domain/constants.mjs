@@ -34,9 +34,10 @@ export const DIRECTION_LOCK = Object.freeze({
  * V14 client's 120: the distance is the single most meaningful number in the sport, and a
  * runner who covers it in a month should see it named rather than rounded past.
  *
- * This ladder is mirrored verbatim by `MonthlyApexLadder.cs` and must be mirrored by the
- * Unity client's `V14ScreenFlowController.MonthlyCheckpointsKm`, which still ships the
- * 120-value list. All are pinned by content/conformance/monthly-apex-cases.json.
+ * This ladder is mirrored verbatim by `MonthlyApexLadder.cs` and by the Unity client's
+ * `V14ScreenFlowController.MonthlyCheckpointsMeters`. All three are pinned by
+ * content/conformance/monthly-apex-cases.json, and
+ * `node tools/release/emit-client-ladder.mjs --check` compares the client copy directly.
  */
 export const APEX_CHECKPOINT_METERS = Object.freeze([
       1_000,     2_000,     3_000,     4_000,     5_000,     6_000,     8_000,    10_000,
@@ -167,7 +168,10 @@ export const PASSPORT_BANDS = Object.freeze([
   { id: 'R7', label_key: 'passport.band.R7', focus_min_m: 42_195, focus_max_m: null },
 ]);
 
-/** Battle difficulty lanes. Lanes give zero Fitness Core Power — they only change combat. */
+/**
+ * Race difficulty lanes — the strength of the field a runner is matched into.
+ * A lane gives zero Fitness Core Power: it only decides who else is on the start line.
+ */
 export const DIFFICULTY_LANES = Object.freeze([
   { id: 'journey',  order: 1 },
   { id: 'standard', order: 2 },
@@ -186,22 +190,32 @@ export const VERIFICATION_GRADES = Object.freeze([
   { id: 'X', core_power: false, competitive: false },
 ]);
 
-/** Launch content floor. Mirrors content/schemas/direction_lock.json. */
+/**
+ * Launch content floor. Mirrors content/schemas/direction_lock.json.
+ *
+ * RunningUp is a running race, so the world is counted in races, rival crews, champions
+ * and courses. The combat categories these replaced (battle stages, enemy families,
+ * bosses, tactical skills and relics) are gone from the product entirely — see
+ * `docs/USER_DIRECTION_LOCK.md` DL-6. Every category kept its floor across that change:
+ * nothing was deleted to make a number easier to hit.
+ */
 export const LAUNCH_CONTENT_FLOOR = Object.freeze({
   continents: 12,
   region_nodes: 192,
   courses: 2304,
-  main_stages: 72,
-  side_stages: 24,
+  main_races: 72,
+  challenge_races: 24,
   playable_characters: 12,
   character_episodes: 36,
-  tactical_skills: 48,
-  tactical_relics: 72,
-  standard_enemy_families: 24,
-  elite_enemy_families: 12,
-  continent_bosses: 12,
-  world_bosses: 4,
-  apex_bosses: 1,
+  race_techniques: 48,
+  gear_sets: 72,
+  standard_rival_crews: 24,
+  elite_rival_crews: 12,
+  continent_champions: 12,
+  open_race_events: 4,
+  apex_races: 1,
+  race_formats: 7,
+  challenge_formats: 6,
   companions: 12,
   equipable_cosmetics: 96,
   story_chapters: 12,

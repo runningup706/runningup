@@ -9,7 +9,7 @@
       "continent_id": "con_lumena",
       "order": 1,
       "name_key": "region.lumena.01",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/lumena/region_01",
       "reachable_from": [
         "continent_entry"
@@ -43,7 +43,7 @@
       "continent_id": "con_lumena",
       "order": 3,
       "name_key": "region.lumena.03",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/lumena/region_03",
       "reachable_from": [
         "rgn_lumena_02"
@@ -60,7 +60,7 @@
       "continent_id": "con_lumena",
       "order": 4,
       "name_key": "region.lumena.04",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/lumena/region_04",
       "reachable_from": [
         "rgn_lumena_03"
@@ -94,7 +94,7 @@
       "continent_id": "con_lumena",
       "order": 6,
       "name_key": "region.lumena.06",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/lumena/region_06",
       "reachable_from": [
         "rgn_lumena_05"
@@ -111,7 +111,7 @@
       "continent_id": "con_lumena",
       "order": 7,
       "name_key": "region.lumena.07",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/lumena/region_07",
       "reachable_from": [
         "rgn_lumena_06"
@@ -145,7 +145,7 @@
       "continent_id": "con_lumena",
       "order": 9,
       "name_key": "region.lumena.09",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/lumena/region_09",
       "reachable_from": [
         "rgn_lumena_08"
@@ -162,7 +162,7 @@
       "continent_id": "con_lumena",
       "order": 10,
       "name_key": "region.lumena.10",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/lumena/region_10",
       "reachable_from": [
         "rgn_lumena_09"
@@ -196,7 +196,7 @@
       "continent_id": "con_lumena",
       "order": 12,
       "name_key": "region.lumena.12",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/lumena/region_12",
       "reachable_from": [
         "rgn_lumena_11"
@@ -213,7 +213,7 @@
       "continent_id": "con_lumena",
       "order": 13,
       "name_key": "region.lumena.13",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/lumena/region_13",
       "reachable_from": [
         "rgn_lumena_12"
@@ -247,7 +247,7 @@
       "continent_id": "con_lumena",
       "order": 15,
       "name_key": "region.lumena.15",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/lumena/region_15",
       "reachable_from": [
         "rgn_lumena_14"
@@ -264,7 +264,7 @@
       "continent_id": "con_lumena",
       "order": 16,
       "name_key": "region.lumena.16",
-      "node_type": "continent_boss_node",
+      "node_type": "champion_node",
       "scene_address": "world/lumena/region_16",
       "reachable_from": [
         "rgn_lumena_15"
@@ -281,7 +281,7 @@
       "continent_id": "con_verdia",
       "order": 1,
       "name_key": "region.verdia.01",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/verdia/region_01",
       "reachable_from": [
         "continent_entry"
@@ -315,7 +315,7 @@
       "continent_id": "con_verdia",
       "order": 3,
       "name_key": "region.verdia.03",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/verdia/region_03",
       "reachable_from": [
         "rgn_verdia_02"
@@ -332,7 +332,7 @@
       "continent_id": "con_verdia",
       "order": 4,
       "name_key": "region.verdia.04",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/verdia/region_04",
       "reachable_from": [
         "rgn_verdia_03"
@@ -366,7 +366,7 @@
       "continent_id": "con_verdia",
       "order": 6,
       "name_key": "region.verdia.06",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/verdia/region_06",
       "reachable_from": [
         "rgn_verdia_05"
@@ -383,7 +383,7 @@
       "continent_id": "con_verdia",
       "order": 7,
       "name_key": "region.verdia.07",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/verdia/region_07",
       "reachable_from": [
         "rgn_verdia_06"
@@ -417,7 +417,7 @@
       "continent_id": "con_verdia",
       "order": 9,
       "name_key": "region.verdia.09",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/verdia/region_09",
       "reachable_from": [
         "rgn_verdia_08"
@@ -434,7 +434,7 @@
       "continent_id": "con_verdia",
       "order": 10,
       "name_key": "region.verdia.10",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/verdia/region_10",
       "reachable_from": [
         "rgn_verdia_09"
@@ -468,7 +468,7 @@
       "continent_id": "con_verdia",
       "order": 12,
       "name_key": "region.verdia.12",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/verdia/region_12",
       "reachable_from": [
         "rgn_verdia_11"
@@ -485,7 +485,7 @@
       "continent_id": "con_verdia",
       "order": 13,
       "name_key": "region.verdia.13",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/verdia/region_13",
       "reachable_from": [
         "rgn_verdia_12"
@@ -519,7 +519,7 @@
       "continent_id": "con_verdia",
       "order": 15,
       "name_key": "region.verdia.15",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/verdia/region_15",
       "reachable_from": [
         "rgn_verdia_14"
@@ -536,7 +536,7 @@
       "continent_id": "con_verdia",
       "order": 16,
       "name_key": "region.verdia.16",
-      "node_type": "continent_boss_node",
+      "node_type": "champion_node",
       "scene_address": "world/verdia/region_16",
       "reachable_from": [
         "rgn_verdia_15"
@@ -553,7 +553,7 @@
       "continent_id": "con_rubra",
       "order": 1,
       "name_key": "region.rubra.01",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/rubra/region_01",
       "reachable_from": [
         "continent_entry"
@@ -587,7 +587,7 @@
       "continent_id": "con_rubra",
       "order": 3,
       "name_key": "region.rubra.03",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/rubra/region_03",
       "reachable_from": [
         "rgn_rubra_02"
@@ -604,7 +604,7 @@
       "continent_id": "con_rubra",
       "order": 4,
       "name_key": "region.rubra.04",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/rubra/region_04",
       "reachable_from": [
         "rgn_rubra_03"
@@ -638,7 +638,7 @@
       "continent_id": "con_rubra",
       "order": 6,
       "name_key": "region.rubra.06",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/rubra/region_06",
       "reachable_from": [
         "rgn_rubra_05"
@@ -655,7 +655,7 @@
       "continent_id": "con_rubra",
       "order": 7,
       "name_key": "region.rubra.07",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/rubra/region_07",
       "reachable_from": [
         "rgn_rubra_06"
@@ -689,7 +689,7 @@
       "continent_id": "con_rubra",
       "order": 9,
       "name_key": "region.rubra.09",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/rubra/region_09",
       "reachable_from": [
         "rgn_rubra_08"
@@ -706,7 +706,7 @@
       "continent_id": "con_rubra",
       "order": 10,
       "name_key": "region.rubra.10",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/rubra/region_10",
       "reachable_from": [
         "rgn_rubra_09"
@@ -740,7 +740,7 @@
       "continent_id": "con_rubra",
       "order": 12,
       "name_key": "region.rubra.12",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/rubra/region_12",
       "reachable_from": [
         "rgn_rubra_11"
@@ -757,7 +757,7 @@
       "continent_id": "con_rubra",
       "order": 13,
       "name_key": "region.rubra.13",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/rubra/region_13",
       "reachable_from": [
         "rgn_rubra_12"
@@ -791,7 +791,7 @@
       "continent_id": "con_rubra",
       "order": 15,
       "name_key": "region.rubra.15",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/rubra/region_15",
       "reachable_from": [
         "rgn_rubra_14"
@@ -808,7 +808,7 @@
       "continent_id": "con_rubra",
       "order": 16,
       "name_key": "region.rubra.16",
-      "node_type": "continent_boss_node",
+      "node_type": "champion_node",
       "scene_address": "world/rubra/region_16",
       "reachable_from": [
         "rgn_rubra_15"
@@ -825,7 +825,7 @@
       "continent_id": "con_anel",
       "order": 1,
       "name_key": "region.anel.01",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/anel/region_01",
       "reachable_from": [
         "continent_entry"
@@ -859,7 +859,7 @@
       "continent_id": "con_anel",
       "order": 3,
       "name_key": "region.anel.03",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/anel/region_03",
       "reachable_from": [
         "rgn_anel_02"
@@ -876,7 +876,7 @@
       "continent_id": "con_anel",
       "order": 4,
       "name_key": "region.anel.04",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/anel/region_04",
       "reachable_from": [
         "rgn_anel_03"
@@ -910,7 +910,7 @@
       "continent_id": "con_anel",
       "order": 6,
       "name_key": "region.anel.06",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/anel/region_06",
       "reachable_from": [
         "rgn_anel_05"
@@ -927,7 +927,7 @@
       "continent_id": "con_anel",
       "order": 7,
       "name_key": "region.anel.07",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/anel/region_07",
       "reachable_from": [
         "rgn_anel_06"
@@ -961,7 +961,7 @@
       "continent_id": "con_anel",
       "order": 9,
       "name_key": "region.anel.09",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/anel/region_09",
       "reachable_from": [
         "rgn_anel_08"
@@ -978,7 +978,7 @@
       "continent_id": "con_anel",
       "order": 10,
       "name_key": "region.anel.10",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/anel/region_10",
       "reachable_from": [
         "rgn_anel_09"
@@ -1012,7 +1012,7 @@
       "continent_id": "con_anel",
       "order": 12,
       "name_key": "region.anel.12",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/anel/region_12",
       "reachable_from": [
         "rgn_anel_11"
@@ -1029,7 +1029,7 @@
       "continent_id": "con_anel",
       "order": 13,
       "name_key": "region.anel.13",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/anel/region_13",
       "reachable_from": [
         "rgn_anel_12"
@@ -1063,7 +1063,7 @@
       "continent_id": "con_anel",
       "order": 15,
       "name_key": "region.anel.15",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/anel/region_15",
       "reachable_from": [
         "rgn_anel_14"
@@ -1080,7 +1080,7 @@
       "continent_id": "con_anel",
       "order": 16,
       "name_key": "region.anel.16",
-      "node_type": "continent_boss_node",
+      "node_type": "champion_node",
       "scene_address": "world/anel/region_16",
       "reachable_from": [
         "rgn_anel_15"
@@ -1097,7 +1097,7 @@
       "continent_id": "con_serene",
       "order": 1,
       "name_key": "region.serene.01",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/serene/region_01",
       "reachable_from": [
         "continent_entry"
@@ -1131,7 +1131,7 @@
       "continent_id": "con_serene",
       "order": 3,
       "name_key": "region.serene.03",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/serene/region_03",
       "reachable_from": [
         "rgn_serene_02"
@@ -1148,7 +1148,7 @@
       "continent_id": "con_serene",
       "order": 4,
       "name_key": "region.serene.04",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/serene/region_04",
       "reachable_from": [
         "rgn_serene_03"
@@ -1182,7 +1182,7 @@
       "continent_id": "con_serene",
       "order": 6,
       "name_key": "region.serene.06",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/serene/region_06",
       "reachable_from": [
         "rgn_serene_05"
@@ -1199,7 +1199,7 @@
       "continent_id": "con_serene",
       "order": 7,
       "name_key": "region.serene.07",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/serene/region_07",
       "reachable_from": [
         "rgn_serene_06"
@@ -1233,7 +1233,7 @@
       "continent_id": "con_serene",
       "order": 9,
       "name_key": "region.serene.09",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/serene/region_09",
       "reachable_from": [
         "rgn_serene_08"
@@ -1250,7 +1250,7 @@
       "continent_id": "con_serene",
       "order": 10,
       "name_key": "region.serene.10",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/serene/region_10",
       "reachable_from": [
         "rgn_serene_09"
@@ -1284,7 +1284,7 @@
       "continent_id": "con_serene",
       "order": 12,
       "name_key": "region.serene.12",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/serene/region_12",
       "reachable_from": [
         "rgn_serene_11"
@@ -1301,7 +1301,7 @@
       "continent_id": "con_serene",
       "order": 13,
       "name_key": "region.serene.13",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/serene/region_13",
       "reachable_from": [
         "rgn_serene_12"
@@ -1335,7 +1335,7 @@
       "continent_id": "con_serene",
       "order": 15,
       "name_key": "region.serene.15",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/serene/region_15",
       "reachable_from": [
         "rgn_serene_14"
@@ -1352,7 +1352,7 @@
       "continent_id": "con_serene",
       "order": 16,
       "name_key": "region.serene.16",
-      "node_type": "continent_boss_node",
+      "node_type": "champion_node",
       "scene_address": "world/serene/region_16",
       "reachable_from": [
         "rgn_serene_15"
@@ -1369,7 +1369,7 @@
       "continent_id": "con_voltis",
       "order": 1,
       "name_key": "region.voltis.01",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/voltis/region_01",
       "reachable_from": [
         "continent_entry"
@@ -1403,7 +1403,7 @@
       "continent_id": "con_voltis",
       "order": 3,
       "name_key": "region.voltis.03",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/voltis/region_03",
       "reachable_from": [
         "rgn_voltis_02"
@@ -1420,7 +1420,7 @@
       "continent_id": "con_voltis",
       "order": 4,
       "name_key": "region.voltis.04",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/voltis/region_04",
       "reachable_from": [
         "rgn_voltis_03"
@@ -1454,7 +1454,7 @@
       "continent_id": "con_voltis",
       "order": 6,
       "name_key": "region.voltis.06",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/voltis/region_06",
       "reachable_from": [
         "rgn_voltis_05"
@@ -1471,7 +1471,7 @@
       "continent_id": "con_voltis",
       "order": 7,
       "name_key": "region.voltis.07",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/voltis/region_07",
       "reachable_from": [
         "rgn_voltis_06"
@@ -1505,7 +1505,7 @@
       "continent_id": "con_voltis",
       "order": 9,
       "name_key": "region.voltis.09",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/voltis/region_09",
       "reachable_from": [
         "rgn_voltis_08"
@@ -1522,7 +1522,7 @@
       "continent_id": "con_voltis",
       "order": 10,
       "name_key": "region.voltis.10",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/voltis/region_10",
       "reachable_from": [
         "rgn_voltis_09"
@@ -1556,7 +1556,7 @@
       "continent_id": "con_voltis",
       "order": 12,
       "name_key": "region.voltis.12",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/voltis/region_12",
       "reachable_from": [
         "rgn_voltis_11"
@@ -1573,7 +1573,7 @@
       "continent_id": "con_voltis",
       "order": 13,
       "name_key": "region.voltis.13",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/voltis/region_13",
       "reachable_from": [
         "rgn_voltis_12"
@@ -1607,7 +1607,7 @@
       "continent_id": "con_voltis",
       "order": 15,
       "name_key": "region.voltis.15",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/voltis/region_15",
       "reachable_from": [
         "rgn_voltis_14"
@@ -1624,7 +1624,7 @@
       "continent_id": "con_voltis",
       "order": 16,
       "name_key": "region.voltis.16",
-      "node_type": "continent_boss_node",
+      "node_type": "champion_node",
       "scene_address": "world/voltis/region_16",
       "reachable_from": [
         "rgn_voltis_15"
@@ -1641,7 +1641,7 @@
       "continent_id": "con_hora",
       "order": 1,
       "name_key": "region.hora.01",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/hora/region_01",
       "reachable_from": [
         "continent_entry"
@@ -1675,7 +1675,7 @@
       "continent_id": "con_hora",
       "order": 3,
       "name_key": "region.hora.03",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/hora/region_03",
       "reachable_from": [
         "rgn_hora_02"
@@ -1692,7 +1692,7 @@
       "continent_id": "con_hora",
       "order": 4,
       "name_key": "region.hora.04",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/hora/region_04",
       "reachable_from": [
         "rgn_hora_03"
@@ -1726,7 +1726,7 @@
       "continent_id": "con_hora",
       "order": 6,
       "name_key": "region.hora.06",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/hora/region_06",
       "reachable_from": [
         "rgn_hora_05"
@@ -1743,7 +1743,7 @@
       "continent_id": "con_hora",
       "order": 7,
       "name_key": "region.hora.07",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/hora/region_07",
       "reachable_from": [
         "rgn_hora_06"
@@ -1777,7 +1777,7 @@
       "continent_id": "con_hora",
       "order": 9,
       "name_key": "region.hora.09",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/hora/region_09",
       "reachable_from": [
         "rgn_hora_08"
@@ -1794,7 +1794,7 @@
       "continent_id": "con_hora",
       "order": 10,
       "name_key": "region.hora.10",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/hora/region_10",
       "reachable_from": [
         "rgn_hora_09"
@@ -1828,7 +1828,7 @@
       "continent_id": "con_hora",
       "order": 12,
       "name_key": "region.hora.12",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/hora/region_12",
       "reachable_from": [
         "rgn_hora_11"
@@ -1845,7 +1845,7 @@
       "continent_id": "con_hora",
       "order": 13,
       "name_key": "region.hora.13",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/hora/region_13",
       "reachable_from": [
         "rgn_hora_12"
@@ -1879,7 +1879,7 @@
       "continent_id": "con_hora",
       "order": 15,
       "name_key": "region.hora.15",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/hora/region_15",
       "reachable_from": [
         "rgn_hora_14"
@@ -1896,7 +1896,7 @@
       "continent_id": "con_hora",
       "order": 16,
       "name_key": "region.hora.16",
-      "node_type": "continent_boss_node",
+      "node_type": "champion_node",
       "scene_address": "world/hora/region_16",
       "reachable_from": [
         "rgn_hora_15"
@@ -1913,7 +1913,7 @@
       "continent_id": "con_nival",
       "order": 1,
       "name_key": "region.nival.01",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/nival/region_01",
       "reachable_from": [
         "continent_entry"
@@ -1947,7 +1947,7 @@
       "continent_id": "con_nival",
       "order": 3,
       "name_key": "region.nival.03",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/nival/region_03",
       "reachable_from": [
         "rgn_nival_02"
@@ -1964,7 +1964,7 @@
       "continent_id": "con_nival",
       "order": 4,
       "name_key": "region.nival.04",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/nival/region_04",
       "reachable_from": [
         "rgn_nival_03"
@@ -1998,7 +1998,7 @@
       "continent_id": "con_nival",
       "order": 6,
       "name_key": "region.nival.06",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/nival/region_06",
       "reachable_from": [
         "rgn_nival_05"
@@ -2015,7 +2015,7 @@
       "continent_id": "con_nival",
       "order": 7,
       "name_key": "region.nival.07",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/nival/region_07",
       "reachable_from": [
         "rgn_nival_06"
@@ -2049,7 +2049,7 @@
       "continent_id": "con_nival",
       "order": 9,
       "name_key": "region.nival.09",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/nival/region_09",
       "reachable_from": [
         "rgn_nival_08"
@@ -2066,7 +2066,7 @@
       "continent_id": "con_nival",
       "order": 10,
       "name_key": "region.nival.10",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/nival/region_10",
       "reachable_from": [
         "rgn_nival_09"
@@ -2100,7 +2100,7 @@
       "continent_id": "con_nival",
       "order": 12,
       "name_key": "region.nival.12",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/nival/region_12",
       "reachable_from": [
         "rgn_nival_11"
@@ -2117,7 +2117,7 @@
       "continent_id": "con_nival",
       "order": 13,
       "name_key": "region.nival.13",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/nival/region_13",
       "reachable_from": [
         "rgn_nival_12"
@@ -2151,7 +2151,7 @@
       "continent_id": "con_nival",
       "order": 15,
       "name_key": "region.nival.15",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/nival/region_15",
       "reachable_from": [
         "rgn_nival_14"
@@ -2168,7 +2168,7 @@
       "continent_id": "con_nival",
       "order": 16,
       "name_key": "region.nival.16",
-      "node_type": "continent_boss_node",
+      "node_type": "champion_node",
       "scene_address": "world/nival/region_16",
       "reachable_from": [
         "rgn_nival_15"
@@ -2185,7 +2185,7 @@
       "continent_id": "con_kael",
       "order": 1,
       "name_key": "region.kael.01",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/kael/region_01",
       "reachable_from": [
         "continent_entry"
@@ -2219,7 +2219,7 @@
       "continent_id": "con_kael",
       "order": 3,
       "name_key": "region.kael.03",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/kael/region_03",
       "reachable_from": [
         "rgn_kael_02"
@@ -2236,7 +2236,7 @@
       "continent_id": "con_kael",
       "order": 4,
       "name_key": "region.kael.04",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/kael/region_04",
       "reachable_from": [
         "rgn_kael_03"
@@ -2270,7 +2270,7 @@
       "continent_id": "con_kael",
       "order": 6,
       "name_key": "region.kael.06",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/kael/region_06",
       "reachable_from": [
         "rgn_kael_05"
@@ -2287,7 +2287,7 @@
       "continent_id": "con_kael",
       "order": 7,
       "name_key": "region.kael.07",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/kael/region_07",
       "reachable_from": [
         "rgn_kael_06"
@@ -2321,7 +2321,7 @@
       "continent_id": "con_kael",
       "order": 9,
       "name_key": "region.kael.09",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/kael/region_09",
       "reachable_from": [
         "rgn_kael_08"
@@ -2338,7 +2338,7 @@
       "continent_id": "con_kael",
       "order": 10,
       "name_key": "region.kael.10",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/kael/region_10",
       "reachable_from": [
         "rgn_kael_09"
@@ -2372,7 +2372,7 @@
       "continent_id": "con_kael",
       "order": 12,
       "name_key": "region.kael.12",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/kael/region_12",
       "reachable_from": [
         "rgn_kael_11"
@@ -2389,7 +2389,7 @@
       "continent_id": "con_kael",
       "order": 13,
       "name_key": "region.kael.13",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/kael/region_13",
       "reachable_from": [
         "rgn_kael_12"
@@ -2423,7 +2423,7 @@
       "continent_id": "con_kael",
       "order": 15,
       "name_key": "region.kael.15",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/kael/region_15",
       "reachable_from": [
         "rgn_kael_14"
@@ -2440,7 +2440,7 @@
       "continent_id": "con_kael",
       "order": 16,
       "name_key": "region.kael.16",
-      "node_type": "continent_boss_node",
+      "node_type": "champion_node",
       "scene_address": "world/kael/region_16",
       "reachable_from": [
         "rgn_kael_15"
@@ -2457,7 +2457,7 @@
       "continent_id": "con_neris",
       "order": 1,
       "name_key": "region.neris.01",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/neris/region_01",
       "reachable_from": [
         "continent_entry"
@@ -2491,7 +2491,7 @@
       "continent_id": "con_neris",
       "order": 3,
       "name_key": "region.neris.03",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/neris/region_03",
       "reachable_from": [
         "rgn_neris_02"
@@ -2508,7 +2508,7 @@
       "continent_id": "con_neris",
       "order": 4,
       "name_key": "region.neris.04",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/neris/region_04",
       "reachable_from": [
         "rgn_neris_03"
@@ -2542,7 +2542,7 @@
       "continent_id": "con_neris",
       "order": 6,
       "name_key": "region.neris.06",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/neris/region_06",
       "reachable_from": [
         "rgn_neris_05"
@@ -2559,7 +2559,7 @@
       "continent_id": "con_neris",
       "order": 7,
       "name_key": "region.neris.07",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/neris/region_07",
       "reachable_from": [
         "rgn_neris_06"
@@ -2593,7 +2593,7 @@
       "continent_id": "con_neris",
       "order": 9,
       "name_key": "region.neris.09",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/neris/region_09",
       "reachable_from": [
         "rgn_neris_08"
@@ -2610,7 +2610,7 @@
       "continent_id": "con_neris",
       "order": 10,
       "name_key": "region.neris.10",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/neris/region_10",
       "reachable_from": [
         "rgn_neris_09"
@@ -2644,7 +2644,7 @@
       "continent_id": "con_neris",
       "order": 12,
       "name_key": "region.neris.12",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/neris/region_12",
       "reachable_from": [
         "rgn_neris_11"
@@ -2661,7 +2661,7 @@
       "continent_id": "con_neris",
       "order": 13,
       "name_key": "region.neris.13",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/neris/region_13",
       "reachable_from": [
         "rgn_neris_12"
@@ -2695,7 +2695,7 @@
       "continent_id": "con_neris",
       "order": 15,
       "name_key": "region.neris.15",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/neris/region_15",
       "reachable_from": [
         "rgn_neris_14"
@@ -2712,7 +2712,7 @@
       "continent_id": "con_neris",
       "order": 16,
       "name_key": "region.neris.16",
-      "node_type": "continent_boss_node",
+      "node_type": "champion_node",
       "scene_address": "world/neris/region_16",
       "reachable_from": [
         "rgn_neris_15"
@@ -2729,7 +2729,7 @@
       "continent_id": "con_tempora",
       "order": 1,
       "name_key": "region.tempora.01",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/tempora/region_01",
       "reachable_from": [
         "continent_entry"
@@ -2763,7 +2763,7 @@
       "continent_id": "con_tempora",
       "order": 3,
       "name_key": "region.tempora.03",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/tempora/region_03",
       "reachable_from": [
         "rgn_tempora_02"
@@ -2780,7 +2780,7 @@
       "continent_id": "con_tempora",
       "order": 4,
       "name_key": "region.tempora.04",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/tempora/region_04",
       "reachable_from": [
         "rgn_tempora_03"
@@ -2814,7 +2814,7 @@
       "continent_id": "con_tempora",
       "order": 6,
       "name_key": "region.tempora.06",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/tempora/region_06",
       "reachable_from": [
         "rgn_tempora_05"
@@ -2831,7 +2831,7 @@
       "continent_id": "con_tempora",
       "order": 7,
       "name_key": "region.tempora.07",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/tempora/region_07",
       "reachable_from": [
         "rgn_tempora_06"
@@ -2865,7 +2865,7 @@
       "continent_id": "con_tempora",
       "order": 9,
       "name_key": "region.tempora.09",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/tempora/region_09",
       "reachable_from": [
         "rgn_tempora_08"
@@ -2882,7 +2882,7 @@
       "continent_id": "con_tempora",
       "order": 10,
       "name_key": "region.tempora.10",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/tempora/region_10",
       "reachable_from": [
         "rgn_tempora_09"
@@ -2916,7 +2916,7 @@
       "continent_id": "con_tempora",
       "order": 12,
       "name_key": "region.tempora.12",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/tempora/region_12",
       "reachable_from": [
         "rgn_tempora_11"
@@ -2933,7 +2933,7 @@
       "continent_id": "con_tempora",
       "order": 13,
       "name_key": "region.tempora.13",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/tempora/region_13",
       "reachable_from": [
         "rgn_tempora_12"
@@ -2967,7 +2967,7 @@
       "continent_id": "con_tempora",
       "order": 15,
       "name_key": "region.tempora.15",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/tempora/region_15",
       "reachable_from": [
         "rgn_tempora_14"
@@ -2984,7 +2984,7 @@
       "continent_id": "con_tempora",
       "order": 16,
       "name_key": "region.tempora.16",
-      "node_type": "continent_boss_node",
+      "node_type": "champion_node",
       "scene_address": "world/tempora/region_16",
       "reachable_from": [
         "rgn_tempora_15"
@@ -3001,7 +3001,7 @@
       "continent_id": "con_origin",
       "order": 1,
       "name_key": "region.origin.01",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/origin/region_01",
       "reachable_from": [
         "continent_entry"
@@ -3035,7 +3035,7 @@
       "continent_id": "con_origin",
       "order": 3,
       "name_key": "region.origin.03",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/origin/region_03",
       "reachable_from": [
         "rgn_origin_02"
@@ -3052,7 +3052,7 @@
       "continent_id": "con_origin",
       "order": 4,
       "name_key": "region.origin.04",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/origin/region_04",
       "reachable_from": [
         "rgn_origin_03"
@@ -3086,7 +3086,7 @@
       "continent_id": "con_origin",
       "order": 6,
       "name_key": "region.origin.06",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/origin/region_06",
       "reachable_from": [
         "rgn_origin_05"
@@ -3103,7 +3103,7 @@
       "continent_id": "con_origin",
       "order": 7,
       "name_key": "region.origin.07",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/origin/region_07",
       "reachable_from": [
         "rgn_origin_06"
@@ -3137,7 +3137,7 @@
       "continent_id": "con_origin",
       "order": 9,
       "name_key": "region.origin.09",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/origin/region_09",
       "reachable_from": [
         "rgn_origin_08"
@@ -3154,7 +3154,7 @@
       "continent_id": "con_origin",
       "order": 10,
       "name_key": "region.origin.10",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/origin/region_10",
       "reachable_from": [
         "rgn_origin_09"
@@ -3188,7 +3188,7 @@
       "continent_id": "con_origin",
       "order": 12,
       "name_key": "region.origin.12",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/origin/region_12",
       "reachable_from": [
         "rgn_origin_11"
@@ -3205,7 +3205,7 @@
       "continent_id": "con_origin",
       "order": 13,
       "name_key": "region.origin.13",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/origin/region_13",
       "reachable_from": [
         "rgn_origin_12"
@@ -3239,7 +3239,7 @@
       "continent_id": "con_origin",
       "order": 15,
       "name_key": "region.origin.15",
-      "node_type": "battle_node",
+      "node_type": "race_node",
       "scene_address": "world/origin/region_15",
       "reachable_from": [
         "rgn_origin_14"
@@ -3256,7 +3256,7 @@
       "continent_id": "con_origin",
       "order": 16,
       "name_key": "region.origin.16",
-      "node_type": "continent_boss_node",
+      "node_type": "champion_node",
       "scene_address": "world/origin/region_16",
       "reachable_from": [
         "rgn_origin_15"

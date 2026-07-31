@@ -4,7 +4,7 @@
  *
  * Master # 22.4 requires the first-run journey to be exercised from an independent clean
  * profile for each ability level, and # 23 Gate 10 requires a run → reward → Apex checkpoint
- * → world → boss end-to-end. This plays the actual client, for each runner profile, against
+ * → world → championship race end-to-end. This plays the actual client, for each runner profile, against
  * the actual database, and asserts on what comes back.
  *
  * It is a smoke test of the GAME, not of a module: if the loop is broken anywhere between

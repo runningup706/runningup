@@ -1,0 +1,236 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "continent_champion",
+  "count": 12,
+  "items": [
+    {
+      "id": "chm_lumena",
+      "continent_id": "con_lumena",
+      "kind": "continent_champion",
+      "name_key": "champion.lumena",
+      "race_plan": [
+        "measured_opening",
+        "unbroken_middle",
+        "long_drive_home"
+      ],
+      "plan_rule": "Every leg is run at the same effort, so beating her means being even for longer than she is.",
+      "trait_id": "trait_even_effort",
+      "scene_address": "world/lumena/championship",
+      "retry_policy": {
+        "consumes_entry": false,
+        "instant_retry": true,
+        "shows_recommended_form": true
+      }
+    },
+    {
+      "id": "chm_verdia",
+      "continent_id": "con_verdia",
+      "kind": "continent_champion",
+      "name_key": "champion.verdia",
+      "race_plan": [
+        "patient_start",
+        "grinding_third_quarter",
+        "unhurried_finish"
+      ],
+      "plan_rule": "She wins on the ground that punishes fading, so the runner who spends early never sees her again.",
+      "trait_id": "trait_soft_footing",
+      "scene_address": "world/verdia/championship",
+      "retry_policy": {
+        "consumes_entry": false,
+        "instant_retry": true,
+        "shows_recommended_form": true
+      }
+    },
+    {
+      "id": "chm_rubra",
+      "continent_id": "con_rubra",
+      "kind": "continent_champion",
+      "name_key": "champion.rubra",
+      "race_plan": [
+        "cool_opening",
+        "vent_surge",
+        "furnace_finish"
+      ],
+      "plan_rule": "He gives the first half away and takes it all back where the road is hottest.",
+      "trait_id": "trait_late_heat",
+      "scene_address": "world/rubra/championship",
+      "retry_policy": {
+        "consumes_entry": false,
+        "instant_retry": true,
+        "shows_recommended_form": true
+      }
+    },
+    {
+      "id": "chm_anel",
+      "continent_id": "con_anel",
+      "kind": "continent_champion",
+      "name_key": "champion.anel",
+      "race_plan": [
+        "sheltered_opening",
+        "exposed_middle",
+        "tailwind_kick"
+      ],
+      "plan_rule": "He spends nothing until the wind is behind him, and the field is already committed by then.",
+      "trait_id": "trait_alternating_wind",
+      "scene_address": "world/anel/championship",
+      "retry_policy": {
+        "consumes_entry": false,
+        "instant_retry": true,
+        "shows_recommended_form": true
+      }
+    },
+    {
+      "id": "chm_serene",
+      "continent_id": "con_serene",
+      "kind": "continent_champion",
+      "name_key": "champion.serene",
+      "race_plan": [
+        "drifting_opening",
+        "span_surge",
+        "held_lead"
+      ],
+      "plan_rule": "One surge decides her race, and she never makes a second one.",
+      "trait_id": "trait_forced_surge",
+      "scene_address": "world/serene/championship",
+      "retry_policy": {
+        "consumes_entry": false,
+        "instant_retry": true,
+        "shows_recommended_form": true
+      }
+    },
+    {
+      "id": "chm_voltis",
+      "continent_id": "con_voltis",
+      "kind": "continent_champion",
+      "name_key": "champion.voltis",
+      "race_plan": [
+        "cadence_setting",
+        "corner_by_corner",
+        "straight_release"
+      ],
+      "plan_rule": "She turns better than she runs, so the only place to beat her is the last straight.",
+      "trait_id": "trait_tight_corners",
+      "scene_address": "world/voltis/championship",
+      "retry_policy": {
+        "consumes_entry": false,
+        "instant_retry": true,
+        "shows_recommended_form": true
+      }
+    },
+    {
+      "id": "chm_hora",
+      "continent_id": "con_hora",
+      "kind": "continent_champion",
+      "name_key": "champion.hora",
+      "race_plan": [
+        "written_schedule",
+        "ignored_field",
+        "exact_arrival"
+      ],
+      "plan_rule": "He runs the plan and not the race, and the plan is always correct.",
+      "trait_id": "trait_blind_pacing",
+      "scene_address": "world/hora/championship",
+      "retry_policy": {
+        "consumes_entry": false,
+        "instant_retry": true,
+        "shows_recommended_form": true
+      }
+    },
+    {
+      "id": "chm_nival",
+      "continent_id": "con_nival",
+      "kind": "continent_champion",
+      "name_key": "champion.nival",
+      "race_plan": [
+        "cold_patience",
+        "warming_build",
+        "final_release"
+      ],
+      "plan_rule": "She never fights the opening, which is why she is still there when everyone else has.",
+      "trait_id": "trait_slow_opening",
+      "scene_address": "world/nival/championship",
+      "retry_policy": {
+        "consumes_entry": false,
+        "instant_retry": true,
+        "shows_recommended_form": true
+      }
+    },
+    {
+      "id": "chm_kael",
+      "continent_id": "con_kael",
+      "kind": "continent_champion",
+      "name_key": "champion.kael",
+      "race_plan": [
+        "held_back_opening",
+        "measured_build",
+        "fastest_last_lap"
+      ],
+      "plan_rule": "His last lap is his fastest, always, and the field has to survive to see it.",
+      "trait_id": "trait_negative_split",
+      "scene_address": "world/kael/championship",
+      "retry_policy": {
+        "consumes_entry": false,
+        "instant_retry": true,
+        "shows_recommended_form": true
+      }
+    },
+    {
+      "id": "chm_neris",
+      "continent_id": "con_neris",
+      "kind": "continent_champion",
+      "name_key": "champion.neris",
+      "race_plan": [
+        "pack_entry",
+        "shared_front",
+        "solo_departure"
+      ],
+      "plan_rule": "She takes everything the pack gives and leaves it exactly one gallery from the finish.",
+      "trait_id": "trait_pack_draft",
+      "scene_address": "world/neris/championship",
+      "retry_policy": {
+        "consumes_entry": false,
+        "instant_retry": true,
+        "shows_recommended_form": true
+      }
+    },
+    {
+      "id": "chm_tempora",
+      "continent_id": "con_tempora",
+      "kind": "continent_champion",
+      "name_key": "champion.tempora",
+      "race_plan": [
+        "declared_target",
+        "unvarying_belt",
+        "exact_finish"
+      ],
+      "plan_rule": "He announces the time he intends to run and then runs it, so the only way past is to be genuinely faster.",
+      "trait_id": "trait_exact_pace",
+      "scene_address": "world/tempora/championship",
+      "retry_policy": {
+        "consumes_entry": false,
+        "instant_retry": true,
+        "shows_recommended_form": true
+      }
+    },
+    {
+      "id": "chm_origin",
+      "continent_id": "con_origin",
+      "kind": "continent_champion",
+      "name_key": "champion.origin",
+      "race_plan": [
+        "eleven_road_opening",
+        "convergence_middle",
+        "reunion_finish"
+      ],
+      "plan_rule": "Every lap he is the second best runner on that road, and across eleven of them that is first.",
+      "trait_id": "trait_championship_composite",
+      "scene_address": "world/origin/championship",
+      "retry_policy": {
+        "consumes_entry": false,
+        "instant_retry": true,
+        "shows_recommended_form": true
+      }
+    }
+  ]
+}

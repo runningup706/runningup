@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "open_race_event",
+  "count": 4,
+  "items": [
+    {
+      "id": "orv_stillfog_mile",
+      "kind": "open_race",
+      "name_key": "champion.open.orv_stillfog_mile",
+      "race_plan": [
+        "silent_opening",
+        "fogfall_middle",
+        "stillpoint_finish"
+      ],
+      "rotation_weeks": [
+        1,
+        5,
+        9
+      ],
+      "trait_focus": [
+        "trait_even_effort",
+        "trait_pack_draft"
+      ],
+      "scene_address": "world/openrace/orv_stillfog_mile"
+    },
+    {
+      "id": "orv_emberwake_ten",
+      "kind": "open_race",
+      "name_key": "champion.open.orv_emberwake_ten",
+      "race_plan": [
+        "kindling_opening",
+        "firestorm_middle",
+        "cinder_finish"
+      ],
+      "rotation_weeks": [
+        2,
+        6,
+        10
+      ],
+      "trait_focus": [
+        "trait_late_heat",
+        "trait_tight_corners"
+      ],
+      "scene_address": "world/openrace/orv_emberwake_ten"
+    },
+    {
+      "id": "orv_tidebound_half",
+      "kind": "open_race",
+      "name_key": "champion.open.orv_tidebound_half",
+      "race_plan": [
+        "undertow_opening",
+        "breaking_surf_middle",
+        "deep_pull_finish"
+      ],
+      "rotation_weeks": [
+        3,
+        7,
+        11
+      ],
+      "trait_focus": [
+        "trait_forced_surge",
+        "trait_negative_split"
+      ],
+      "scene_address": "world/openrace/orv_tidebound_half"
+    },
+    {
+      "id": "orv_hourless_marathon",
+      "kind": "open_race",
+      "name_key": "champion.open.orv_hourless_marathon",
+      "race_plan": [
+        "slow_hour_opening",
+        "stolen_minute_middle",
+        "no_hour_finish"
+      ],
+      "rotation_weeks": [
+        4,
+        8,
+        12
+      ],
+      "trait_focus": [
+        "trait_exact_pace",
+        "trait_blind_pacing"
+      ],
+      "scene_address": "world/openrace/orv_hourless_marathon"
+    }
+  ]
+}

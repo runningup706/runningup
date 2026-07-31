@@ -54,7 +54,7 @@ select ok(not has_table_privilege('authenticated', 'api.monthly_apex_progress', 
 select ok(not has_table_privilege('authenticated', 'api.monthly_apex_progress', 'update'), 'client cannot UPDATE Monthly Apex progress');
 select ok(not has_table_privilege('authenticated', 'api.monthly_apex_checkpoint_claims', 'insert'), 'client cannot self-claim a checkpoint');
 select ok(not has_table_privilege('authenticated', 'api.world_crown_history', 'insert'), 'client cannot award itself a World Crown');
-select ok(not has_table_privilege('authenticated', 'api.apex_boss_unlocks', 'insert'), 'client cannot unlock the Apex Axis boss');
+select ok(not has_table_privilege('authenticated', 'api.apex_race_entries', 'insert'), 'client cannot enter itself into the Apex Axis race');
 select ok(not has_table_privilege('authenticated', 'api.runner_passports', 'update'), 'client cannot write verified passport fields');
 select ok(not has_table_privilege('authenticated', 'api.user_daily_momentum', 'update'), 'client cannot inflate its own streak');
 select ok(not has_table_privilege('authenticated', 'api.currency_ledger', 'insert'), 'client cannot mint currency');

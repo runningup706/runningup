@@ -27,6 +27,8 @@ npm run test:all                 # full local gate, mirrors CI
 - **DL-3** Running only: road, track, treadmill, indoor.
 - **DL-4** The launch content floor is a build gate.
 - **DL-5** Only verified running grants core power.
+- **DL-6** It is a running race, not a combat game. No bosses, enemies, HP, damage,
+  weapons, tactical skills/relics or dungeons — anywhere.
 
 ## Working notes
 

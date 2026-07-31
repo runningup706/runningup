@@ -35,10 +35,10 @@
       "asset_address": "cosmetic/seon/hair"
     },
     {
-      "id": "csm_seon_weapon_skin",
+      "id": "csm_seon_shoe_skin",
       "character_id": "chr_seon",
-      "slot": "weapon_skin",
-      "name_key": "cosmetic.seon.weapon_skin",
+      "slot": "shoe_skin",
+      "name_key": "cosmetic.seon.shoe_skin",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -47,13 +47,13 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/seon/weapon_skin"
+      "asset_address": "cosmetic/seon/shoe_skin"
     },
     {
-      "id": "csm_seon_cape",
+      "id": "csm_seon_jacket",
       "character_id": "chr_seon",
-      "slot": "cape",
-      "name_key": "cosmetic.seon.cape",
+      "slot": "jacket",
+      "name_key": "cosmetic.seon.jacket",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -62,7 +62,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/seon/cape"
+      "asset_address": "cosmetic/seon/jacket"
     },
     {
       "id": "csm_seon_aura",
@@ -95,10 +95,10 @@
       "asset_address": "cosmetic/seon/footstep"
     },
     {
-      "id": "csm_seon_victory_pose",
+      "id": "csm_seon_finish_pose",
       "character_id": "chr_seon",
-      "slot": "victory_pose",
-      "name_key": "cosmetic.seon.victory_pose",
+      "slot": "finish_pose",
+      "name_key": "cosmetic.seon.finish_pose",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -107,7 +107,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "achievement",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/seon/victory_pose"
+      "asset_address": "cosmetic/seon/finish_pose"
     },
     {
       "id": "csm_seon_profile_frame",
@@ -155,10 +155,10 @@
       "asset_address": "cosmetic/yuwon/hair"
     },
     {
-      "id": "csm_yuwon_weapon_skin",
+      "id": "csm_yuwon_shoe_skin",
       "character_id": "chr_yuwon",
-      "slot": "weapon_skin",
-      "name_key": "cosmetic.yuwon.weapon_skin",
+      "slot": "shoe_skin",
+      "name_key": "cosmetic.yuwon.shoe_skin",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -167,13 +167,13 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/yuwon/weapon_skin"
+      "asset_address": "cosmetic/yuwon/shoe_skin"
     },
     {
-      "id": "csm_yuwon_cape",
+      "id": "csm_yuwon_jacket",
       "character_id": "chr_yuwon",
-      "slot": "cape",
-      "name_key": "cosmetic.yuwon.cape",
+      "slot": "jacket",
+      "name_key": "cosmetic.yuwon.jacket",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -182,7 +182,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/yuwon/cape"
+      "asset_address": "cosmetic/yuwon/jacket"
     },
     {
       "id": "csm_yuwon_aura",
@@ -215,10 +215,10 @@
       "asset_address": "cosmetic/yuwon/footstep"
     },
     {
-      "id": "csm_yuwon_victory_pose",
+      "id": "csm_yuwon_finish_pose",
       "character_id": "chr_yuwon",
-      "slot": "victory_pose",
-      "name_key": "cosmetic.yuwon.victory_pose",
+      "slot": "finish_pose",
+      "name_key": "cosmetic.yuwon.finish_pose",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -227,7 +227,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "achievement",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/yuwon/victory_pose"
+      "asset_address": "cosmetic/yuwon/finish_pose"
     },
     {
       "id": "csm_yuwon_profile_frame",
@@ -275,10 +275,10 @@
       "asset_address": "cosmetic/hana/hair"
     },
     {
-      "id": "csm_hana_weapon_skin",
+      "id": "csm_hana_shoe_skin",
       "character_id": "chr_hana",
-      "slot": "weapon_skin",
-      "name_key": "cosmetic.hana.weapon_skin",
+      "slot": "shoe_skin",
+      "name_key": "cosmetic.hana.shoe_skin",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -287,13 +287,13 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/hana/weapon_skin"
+      "asset_address": "cosmetic/hana/shoe_skin"
     },
     {
-      "id": "csm_hana_cape",
+      "id": "csm_hana_jacket",
       "character_id": "chr_hana",
-      "slot": "cape",
-      "name_key": "cosmetic.hana.cape",
+      "slot": "jacket",
+      "name_key": "cosmetic.hana.jacket",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -302,7 +302,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/hana/cape"
+      "asset_address": "cosmetic/hana/jacket"
     },
     {
       "id": "csm_hana_aura",
@@ -335,10 +335,10 @@
       "asset_address": "cosmetic/hana/footstep"
     },
     {
-      "id": "csm_hana_victory_pose",
+      "id": "csm_hana_finish_pose",
       "character_id": "chr_hana",
-      "slot": "victory_pose",
-      "name_key": "cosmetic.hana.victory_pose",
+      "slot": "finish_pose",
+      "name_key": "cosmetic.hana.finish_pose",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -347,7 +347,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "achievement",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/hana/victory_pose"
+      "asset_address": "cosmetic/hana/finish_pose"
     },
     {
       "id": "csm_hana_profile_frame",
@@ -395,10 +395,10 @@
       "asset_address": "cosmetic/dorin/hair"
     },
     {
-      "id": "csm_dorin_weapon_skin",
+      "id": "csm_dorin_shoe_skin",
       "character_id": "chr_dorin",
-      "slot": "weapon_skin",
-      "name_key": "cosmetic.dorin.weapon_skin",
+      "slot": "shoe_skin",
+      "name_key": "cosmetic.dorin.shoe_skin",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -407,13 +407,13 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/dorin/weapon_skin"
+      "asset_address": "cosmetic/dorin/shoe_skin"
     },
     {
-      "id": "csm_dorin_cape",
+      "id": "csm_dorin_jacket",
       "character_id": "chr_dorin",
-      "slot": "cape",
-      "name_key": "cosmetic.dorin.cape",
+      "slot": "jacket",
+      "name_key": "cosmetic.dorin.jacket",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -422,7 +422,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/dorin/cape"
+      "asset_address": "cosmetic/dorin/jacket"
     },
     {
       "id": "csm_dorin_aura",
@@ -455,10 +455,10 @@
       "asset_address": "cosmetic/dorin/footstep"
     },
     {
-      "id": "csm_dorin_victory_pose",
+      "id": "csm_dorin_finish_pose",
       "character_id": "chr_dorin",
-      "slot": "victory_pose",
-      "name_key": "cosmetic.dorin.victory_pose",
+      "slot": "finish_pose",
+      "name_key": "cosmetic.dorin.finish_pose",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -467,7 +467,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "achievement",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/dorin/victory_pose"
+      "asset_address": "cosmetic/dorin/finish_pose"
     },
     {
       "id": "csm_dorin_profile_frame",
@@ -515,10 +515,10 @@
       "asset_address": "cosmetic/ari/hair"
     },
     {
-      "id": "csm_ari_weapon_skin",
+      "id": "csm_ari_shoe_skin",
       "character_id": "chr_ari",
-      "slot": "weapon_skin",
-      "name_key": "cosmetic.ari.weapon_skin",
+      "slot": "shoe_skin",
+      "name_key": "cosmetic.ari.shoe_skin",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -527,13 +527,13 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/ari/weapon_skin"
+      "asset_address": "cosmetic/ari/shoe_skin"
     },
     {
-      "id": "csm_ari_cape",
+      "id": "csm_ari_jacket",
       "character_id": "chr_ari",
-      "slot": "cape",
-      "name_key": "cosmetic.ari.cape",
+      "slot": "jacket",
+      "name_key": "cosmetic.ari.jacket",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -542,7 +542,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/ari/cape"
+      "asset_address": "cosmetic/ari/jacket"
     },
     {
       "id": "csm_ari_aura",
@@ -575,10 +575,10 @@
       "asset_address": "cosmetic/ari/footstep"
     },
     {
-      "id": "csm_ari_victory_pose",
+      "id": "csm_ari_finish_pose",
       "character_id": "chr_ari",
-      "slot": "victory_pose",
-      "name_key": "cosmetic.ari.victory_pose",
+      "slot": "finish_pose",
+      "name_key": "cosmetic.ari.finish_pose",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -587,7 +587,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "achievement",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/ari/victory_pose"
+      "asset_address": "cosmetic/ari/finish_pose"
     },
     {
       "id": "csm_ari_profile_frame",
@@ -635,10 +635,10 @@
       "asset_address": "cosmetic/mirae/hair"
     },
     {
-      "id": "csm_mirae_weapon_skin",
+      "id": "csm_mirae_shoe_skin",
       "character_id": "chr_mirae",
-      "slot": "weapon_skin",
-      "name_key": "cosmetic.mirae.weapon_skin",
+      "slot": "shoe_skin",
+      "name_key": "cosmetic.mirae.shoe_skin",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -647,13 +647,13 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/mirae/weapon_skin"
+      "asset_address": "cosmetic/mirae/shoe_skin"
     },
     {
-      "id": "csm_mirae_cape",
+      "id": "csm_mirae_jacket",
       "character_id": "chr_mirae",
-      "slot": "cape",
-      "name_key": "cosmetic.mirae.cape",
+      "slot": "jacket",
+      "name_key": "cosmetic.mirae.jacket",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -662,7 +662,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/mirae/cape"
+      "asset_address": "cosmetic/mirae/jacket"
     },
     {
       "id": "csm_mirae_aura",
@@ -695,10 +695,10 @@
       "asset_address": "cosmetic/mirae/footstep"
     },
     {
-      "id": "csm_mirae_victory_pose",
+      "id": "csm_mirae_finish_pose",
       "character_id": "chr_mirae",
-      "slot": "victory_pose",
-      "name_key": "cosmetic.mirae.victory_pose",
+      "slot": "finish_pose",
+      "name_key": "cosmetic.mirae.finish_pose",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -707,7 +707,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "achievement",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/mirae/victory_pose"
+      "asset_address": "cosmetic/mirae/finish_pose"
     },
     {
       "id": "csm_mirae_profile_frame",
@@ -755,10 +755,10 @@
       "asset_address": "cosmetic/taeho/hair"
     },
     {
-      "id": "csm_taeho_weapon_skin",
+      "id": "csm_taeho_shoe_skin",
       "character_id": "chr_taeho",
-      "slot": "weapon_skin",
-      "name_key": "cosmetic.taeho.weapon_skin",
+      "slot": "shoe_skin",
+      "name_key": "cosmetic.taeho.shoe_skin",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -767,13 +767,13 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/taeho/weapon_skin"
+      "asset_address": "cosmetic/taeho/shoe_skin"
     },
     {
-      "id": "csm_taeho_cape",
+      "id": "csm_taeho_jacket",
       "character_id": "chr_taeho",
-      "slot": "cape",
-      "name_key": "cosmetic.taeho.cape",
+      "slot": "jacket",
+      "name_key": "cosmetic.taeho.jacket",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -782,7 +782,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/taeho/cape"
+      "asset_address": "cosmetic/taeho/jacket"
     },
     {
       "id": "csm_taeho_aura",
@@ -815,10 +815,10 @@
       "asset_address": "cosmetic/taeho/footstep"
     },
     {
-      "id": "csm_taeho_victory_pose",
+      "id": "csm_taeho_finish_pose",
       "character_id": "chr_taeho",
-      "slot": "victory_pose",
-      "name_key": "cosmetic.taeho.victory_pose",
+      "slot": "finish_pose",
+      "name_key": "cosmetic.taeho.finish_pose",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -827,7 +827,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "achievement",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/taeho/victory_pose"
+      "asset_address": "cosmetic/taeho/finish_pose"
     },
     {
       "id": "csm_taeho_profile_frame",
@@ -875,10 +875,10 @@
       "asset_address": "cosmetic/soye/hair"
     },
     {
-      "id": "csm_soye_weapon_skin",
+      "id": "csm_soye_shoe_skin",
       "character_id": "chr_soye",
-      "slot": "weapon_skin",
-      "name_key": "cosmetic.soye.weapon_skin",
+      "slot": "shoe_skin",
+      "name_key": "cosmetic.soye.shoe_skin",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -887,13 +887,13 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/soye/weapon_skin"
+      "asset_address": "cosmetic/soye/shoe_skin"
     },
     {
-      "id": "csm_soye_cape",
+      "id": "csm_soye_jacket",
       "character_id": "chr_soye",
-      "slot": "cape",
-      "name_key": "cosmetic.soye.cape",
+      "slot": "jacket",
+      "name_key": "cosmetic.soye.jacket",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -902,7 +902,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/soye/cape"
+      "asset_address": "cosmetic/soye/jacket"
     },
     {
       "id": "csm_soye_aura",
@@ -935,10 +935,10 @@
       "asset_address": "cosmetic/soye/footstep"
     },
     {
-      "id": "csm_soye_victory_pose",
+      "id": "csm_soye_finish_pose",
       "character_id": "chr_soye",
-      "slot": "victory_pose",
-      "name_key": "cosmetic.soye.victory_pose",
+      "slot": "finish_pose",
+      "name_key": "cosmetic.soye.finish_pose",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -947,7 +947,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "achievement",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/soye/victory_pose"
+      "asset_address": "cosmetic/soye/finish_pose"
     },
     {
       "id": "csm_soye_profile_frame",
@@ -995,10 +995,10 @@
       "asset_address": "cosmetic/jiwoo/hair"
     },
     {
-      "id": "csm_jiwoo_weapon_skin",
+      "id": "csm_jiwoo_shoe_skin",
       "character_id": "chr_jiwoo",
-      "slot": "weapon_skin",
-      "name_key": "cosmetic.jiwoo.weapon_skin",
+      "slot": "shoe_skin",
+      "name_key": "cosmetic.jiwoo.shoe_skin",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -1007,13 +1007,13 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/jiwoo/weapon_skin"
+      "asset_address": "cosmetic/jiwoo/shoe_skin"
     },
     {
-      "id": "csm_jiwoo_cape",
+      "id": "csm_jiwoo_jacket",
       "character_id": "chr_jiwoo",
-      "slot": "cape",
-      "name_key": "cosmetic.jiwoo.cape",
+      "slot": "jacket",
+      "name_key": "cosmetic.jiwoo.jacket",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -1022,7 +1022,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/jiwoo/cape"
+      "asset_address": "cosmetic/jiwoo/jacket"
     },
     {
       "id": "csm_jiwoo_aura",
@@ -1055,10 +1055,10 @@
       "asset_address": "cosmetic/jiwoo/footstep"
     },
     {
-      "id": "csm_jiwoo_victory_pose",
+      "id": "csm_jiwoo_finish_pose",
       "character_id": "chr_jiwoo",
-      "slot": "victory_pose",
-      "name_key": "cosmetic.jiwoo.victory_pose",
+      "slot": "finish_pose",
+      "name_key": "cosmetic.jiwoo.finish_pose",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -1067,7 +1067,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "achievement",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/jiwoo/victory_pose"
+      "asset_address": "cosmetic/jiwoo/finish_pose"
     },
     {
       "id": "csm_jiwoo_profile_frame",
@@ -1115,10 +1115,10 @@
       "asset_address": "cosmetic/narae/hair"
     },
     {
-      "id": "csm_narae_weapon_skin",
+      "id": "csm_narae_shoe_skin",
       "character_id": "chr_narae",
-      "slot": "weapon_skin",
-      "name_key": "cosmetic.narae.weapon_skin",
+      "slot": "shoe_skin",
+      "name_key": "cosmetic.narae.shoe_skin",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -1127,13 +1127,13 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/narae/weapon_skin"
+      "asset_address": "cosmetic/narae/shoe_skin"
     },
     {
-      "id": "csm_narae_cape",
+      "id": "csm_narae_jacket",
       "character_id": "chr_narae",
-      "slot": "cape",
-      "name_key": "cosmetic.narae.cape",
+      "slot": "jacket",
+      "name_key": "cosmetic.narae.jacket",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -1142,7 +1142,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/narae/cape"
+      "asset_address": "cosmetic/narae/jacket"
     },
     {
       "id": "csm_narae_aura",
@@ -1175,10 +1175,10 @@
       "asset_address": "cosmetic/narae/footstep"
     },
     {
-      "id": "csm_narae_victory_pose",
+      "id": "csm_narae_finish_pose",
       "character_id": "chr_narae",
-      "slot": "victory_pose",
-      "name_key": "cosmetic.narae.victory_pose",
+      "slot": "finish_pose",
+      "name_key": "cosmetic.narae.finish_pose",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -1187,7 +1187,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "achievement",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/narae/victory_pose"
+      "asset_address": "cosmetic/narae/finish_pose"
     },
     {
       "id": "csm_narae_profile_frame",
@@ -1235,10 +1235,10 @@
       "asset_address": "cosmetic/eunseo/hair"
     },
     {
-      "id": "csm_eunseo_weapon_skin",
+      "id": "csm_eunseo_shoe_skin",
       "character_id": "chr_eunseo",
-      "slot": "weapon_skin",
-      "name_key": "cosmetic.eunseo.weapon_skin",
+      "slot": "shoe_skin",
+      "name_key": "cosmetic.eunseo.shoe_skin",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -1247,13 +1247,13 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/eunseo/weapon_skin"
+      "asset_address": "cosmetic/eunseo/shoe_skin"
     },
     {
-      "id": "csm_eunseo_cape",
+      "id": "csm_eunseo_jacket",
       "character_id": "chr_eunseo",
-      "slot": "cape",
-      "name_key": "cosmetic.eunseo.cape",
+      "slot": "jacket",
+      "name_key": "cosmetic.eunseo.jacket",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -1262,7 +1262,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/eunseo/cape"
+      "asset_address": "cosmetic/eunseo/jacket"
     },
     {
       "id": "csm_eunseo_aura",
@@ -1295,10 +1295,10 @@
       "asset_address": "cosmetic/eunseo/footstep"
     },
     {
-      "id": "csm_eunseo_victory_pose",
+      "id": "csm_eunseo_finish_pose",
       "character_id": "chr_eunseo",
-      "slot": "victory_pose",
-      "name_key": "cosmetic.eunseo.victory_pose",
+      "slot": "finish_pose",
+      "name_key": "cosmetic.eunseo.finish_pose",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -1307,7 +1307,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "achievement",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/eunseo/victory_pose"
+      "asset_address": "cosmetic/eunseo/finish_pose"
     },
     {
       "id": "csm_eunseo_profile_frame",
@@ -1355,10 +1355,10 @@
       "asset_address": "cosmetic/haru/hair"
     },
     {
-      "id": "csm_haru_weapon_skin",
+      "id": "csm_haru_shoe_skin",
       "character_id": "chr_haru",
-      "slot": "weapon_skin",
-      "name_key": "cosmetic.haru.weapon_skin",
+      "slot": "shoe_skin",
+      "name_key": "cosmetic.haru.shoe_skin",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -1367,13 +1367,13 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/haru/weapon_skin"
+      "asset_address": "cosmetic/haru/shoe_skin"
     },
     {
-      "id": "csm_haru_cape",
+      "id": "csm_haru_jacket",
       "character_id": "chr_haru",
-      "slot": "cape",
-      "name_key": "cosmetic.haru.cape",
+      "slot": "jacket",
+      "name_key": "cosmetic.haru.jacket",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -1382,7 +1382,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "world_progress",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/haru/cape"
+      "asset_address": "cosmetic/haru/jacket"
     },
     {
       "id": "csm_haru_aura",
@@ -1415,10 +1415,10 @@
       "asset_address": "cosmetic/haru/footstep"
     },
     {
-      "id": "csm_haru_victory_pose",
+      "id": "csm_haru_finish_pose",
       "character_id": "chr_haru",
-      "slot": "victory_pose",
-      "name_key": "cosmetic.haru.victory_pose",
+      "slot": "finish_pose",
+      "name_key": "cosmetic.haru.finish_pose",
       "core_power": 0,
       "xp_multiplier": 0,
       "ranking_multiplier": 0,
@@ -1427,7 +1427,7 @@
       "extra_core_reward_multiplier": 0,
       "source": "achievement",
       "purchasable_with_real_money": false,
-      "asset_address": "cosmetic/haru/victory_pose"
+      "asset_address": "cosmetic/haru/finish_pose"
     },
     {
       "id": "csm_haru_profile_frame",

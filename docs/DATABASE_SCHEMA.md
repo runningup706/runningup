@@ -3,7 +3,7 @@
 **GENERATED FILE.** Produced by `tools/release/generate-evidence.mjs` from a live
 database with all migrations applied. Regenerate after any migration.
 
-Relations: 53 · Columns: 434 · Constraints: 245 · Enums: 9 · Functions: 11
+Relations: 55 · Columns: 441 · Constraints: 256 · Enums: 9 · Functions: 11
 
 ## Enumerated types
 
@@ -42,7 +42,7 @@ Constraints:
 - `account_jobs_status_check`: `CHECK ((status = ANY (ARRAY['pending'::text, 'running'::text, 'completed'::text, 'failed'::text, 'cancelled'::text])))`
 - `account_jobs_user_id_fkey`: `FOREIGN KEY (user_id) REFERENCES api.profiles(user_id) ON DELETE CASCADE`
 
-## `api.apex_boss_attempts`
+## `api.apex_race_attempts`
 
 | column | type | null | default |
 |---|---|:--:|---|
@@ -52,7 +52,7 @@ Constraints:
 | `attempt_index` | integer | no | — |
 | `cleared` | boolean | no | `false` |
 | `clear_seconds` | integer | yes | — |
-| `battle_seed` | text | no | — |
+| `race_seed` | text | no | — |
 | `attempted_at` | timestamp with time zone | no | `now()` |
 
 Constraints:
@@ -62,14 +62,14 @@ Constraints:
 - `apex_boss_attempts_user_id_fkey`: `FOREIGN KEY (user_id) REFERENCES api.profiles(user_id) ON DELETE CASCADE`
 - `apex_boss_attempts_user_id_month_key_attempt_index_key`: `UNIQUE (user_id, month_key, attempt_index)`
 
-## `api.apex_boss_unlocks`
+## `api.apex_race_entries`
 
 | column | type | null | default |
 |---|---|:--:|---|
 | `id` | uuid | no | `gen_random_uuid()` |
 | `user_id` | uuid | no | — |
 | `month_key` | text | no | — |
-| `boss_id` | text | no | `'boss_apex_axis'::text` |
+| `race_id` | text | no | `'race_apex_axis'::text` |
 | `unlocked_at` | timestamp with time zone | no | `now()` |
 
 Constraints:
@@ -77,6 +77,18 @@ Constraints:
 - `apex_boss_unlocks_pkey`: `PRIMARY KEY (id)`
 - `apex_boss_unlocks_user_id_fkey`: `FOREIGN KEY (user_id) REFERENCES api.profiles(user_id) ON DELETE CASCADE`
 - `apex_boss_unlocks_user_id_month_key_key`: `UNIQUE (user_id, month_key)`
+
+## `api.challenge_formats`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `id` | text | no | — |
+| `rule` | text | no | — |
+| `content_version` | text | no | — |
+
+Constraints:
+
+- `challenge_formats_pkey`: `PRIMARY KEY (id)`
 
 ## `api.character_episodes`
 
@@ -96,23 +108,6 @@ Constraints:
 - `character_episodes_character_id_fkey`: `FOREIGN KEY (character_id) REFERENCES api.characters(id) ON DELETE CASCADE`
 - `character_episodes_pkey`: `PRIMARY KEY (id)`
 - `episode_launch_ready`: `CHECK (playable_at_launch)`
-
-## `api.character_skills`
-
-| column | type | null | default |
-|---|---|:--:|---|
-| `id` | text | no | — |
-| `character_id` | text | no | — |
-| `kind` | text | no | — |
-| `name_key` | text | no | — |
-| `core_budget_delta` | numeric | no | `0` |
-
-Constraints:
-
-- `character_skills_character_id_fkey`: `FOREIGN KEY (character_id) REFERENCES api.characters(id) ON DELETE CASCADE`
-- `character_skills_core_budget_delta_check`: `CHECK ((core_budget_delta = (0)::numeric))`
-- `character_skills_kind_check`: `CHECK ((kind = ANY (ARRAY['active'::text, 'passive'::text, 'ultimate'::text])))`
-- `character_skills_pkey`: `PRIMARY KEY (id)`
 
 ## `api.characters`
 
@@ -238,21 +233,27 @@ Constraints:
 - `currency_ledger_user_id_fkey`: `FOREIGN KEY (user_id) REFERENCES api.profiles(user_id) ON DELETE CASCADE`
 - `currency_ledger_user_id_idempotency_key_key`: `UNIQUE (user_id, idempotency_key)`
 
-## `api.enemy_families`
+## `api.gear_sets`
 
 | column | type | null | default |
 |---|---|:--:|---|
 | `id` | text | no | — |
 | `continent_id` | text | no | — |
-| `family_kind` | text | no | — |
 | `name_key` | text | no | — |
-| `behaviour` | text | no | — |
+| `trade_from` | text | no | — |
+| `trade_to` | text | no | — |
+| `activation_condition` | text | no | — |
+| `budget_delta` | numeric | no | `0` |
 
 Constraints:
 
-- `enemy_families_continent_id_fkey`: `FOREIGN KEY (continent_id) REFERENCES api.world_continents(id) ON DELETE CASCADE`
-- `enemy_families_family_kind_check`: `CHECK ((family_kind = ANY (ARRAY['standard'::text, 'elite'::text])))`
-- `enemy_families_pkey`: `PRIMARY KEY (id)`
+- `gear_sets_budget_delta_check`: `CHECK ((budget_delta = (0)::numeric))`
+- `gear_sets_continent_id_fkey`: `FOREIGN KEY (continent_id) REFERENCES api.world_continents(id) ON DELETE CASCADE`
+- `gear_sets_continent_id_trade_from_trade_to_key`: `UNIQUE (continent_id, trade_from, trade_to)`
+- `gear_sets_pkey`: `PRIMARY KEY (id)`
+- `gear_sets_trade_from_check`: `CHECK ((trade_from = ANY (ARRAY['cruise'::text, 'stamina'::text, 'kick'::text])))`
+- `gear_sets_trade_to_check`: `CHECK ((trade_to = ANY (ARRAY['cruise'::text, 'stamina'::text, 'kick'::text])))`
+- `gear_trade_moves_something`: `CHECK ((trade_from <> trade_to))`
 
 ## `api.monthly_apex_checkpoint_claims`
 
@@ -378,6 +379,52 @@ Constraints:
 - `profiles_pkey`: `PRIMARY KEY (user_id)`
 - `profiles_profile_visibility_check`: `CHECK ((profile_visibility = ANY (ARRAY['private'::text, 'friends'::text, 'public'::text])))`
 - `profiles_user_code_key`: `UNIQUE (user_code)`
+
+## `api.race_formats`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `id` | text | no | — |
+| `content_version` | text | no | — |
+
+Constraints:
+
+- `race_format_is_known`: `CHECK ((id = ANY (ARRAY['time_trial'::text, 'mass_start'::text, 'handicap'::text, 'pursuit'::text, 'championship'::text, 'relay'::text, 'ladder'::text])))`
+- `race_formats_pkey`: `PRIMARY KEY (id)`
+
+## `api.race_techniques`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `id` | text | no | — |
+| `character_id` | text | no | — |
+| `kind` | text | no | — |
+| `name_key` | text | no | — |
+| `core_budget_delta` | numeric | no | `0` |
+
+Constraints:
+
+- `race_techniques_character_id_fkey`: `FOREIGN KEY (character_id) REFERENCES api.characters(id) ON DELETE CASCADE`
+- `race_techniques_character_id_kind_key`: `UNIQUE (character_id, kind)`
+- `race_techniques_core_budget_delta_check`: `CHECK ((core_budget_delta = (0)::numeric))`
+- `race_techniques_kind_check`: `CHECK ((kind = ANY (ARRAY['opening'::text, 'midrace'::text, 'habit'::text, 'finish'::text])))`
+- `race_techniques_pkey`: `PRIMARY KEY (id)`
+
+## `api.rival_crews`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `id` | text | no | — |
+| `continent_id` | text | no | — |
+| `crew_kind` | text | no | — |
+| `name_key` | text | no | — |
+| `tactic` | text | no | — |
+
+Constraints:
+
+- `rival_crews_continent_id_fkey`: `FOREIGN KEY (continent_id) REFERENCES api.world_continents(id) ON DELETE CASCADE`
+- `rival_crews_crew_kind_check`: `CHECK ((crew_kind = ANY (ARRAY['standard'::text, 'elite'::text])))`
+- `rival_crews_pkey`: `PRIMARY KEY (id)`
 
 ## `api.run_appeals`
 
@@ -594,25 +641,6 @@ Constraints:
 - `story_chapters_pkey`: `PRIMARY KEY (id)`
 - `story_chapters_shard_id_key`: `UNIQUE (shard_id)`
 
-## `api.tactical_relics`
-
-| column | type | null | default |
-|---|---|:--:|---|
-| `id` | text | no | — |
-| `continent_id` | text | no | — |
-| `name_key` | text | no | — |
-| `trade_from` | text | no | — |
-| `trade_to` | text | no | — |
-| `activation_condition` | text | no | — |
-| `budget_delta` | numeric | no | `0` |
-
-Constraints:
-
-- `tactical_relics_budget_delta_check`: `CHECK ((budget_delta = (0)::numeric))`
-- `tactical_relics_continent_id_fkey`: `FOREIGN KEY (continent_id) REFERENCES api.world_continents(id) ON DELETE CASCADE`
-- `tactical_relics_continent_id_trade_from_trade_to_key`: `UNIQUE (continent_id, trade_from, trade_to)`
-- `tactical_relics_pkey`: `PRIMARY KEY (id)`
-
 ## `api.user_chains`
 
 | column | type | null | default |
@@ -730,7 +758,7 @@ Constraints:
 - `weekly_goal_snapshots_user_id_fkey`: `FOREIGN KEY (user_id) REFERENCES api.profiles(user_id) ON DELETE CASCADE`
 - `weekly_goal_snapshots_week_key_check`: `CHECK ((week_key ~ '^[0-9]{4}-W[0-9]{2}$'::text))`
 
-## `api.world_bosses`
+## `api.world_champions`
 
 | column | type | null | default |
 |---|---|:--:|---|
@@ -738,16 +766,16 @@ Constraints:
 | `kind` | text | no | — |
 | `continent_id` | text | yes | — |
 | `name_key` | text | no | — |
-| `phases` | ARRAY | no | — |
+| `race_plan` | ARRAY | no | — |
 | `scene_address` | text | no | — |
 
 Constraints:
 
-- `apex_boss_has_no_continent`: `CHECK (((kind <> 'apex_boss'::text) OR (continent_id IS NULL)))`
-- `world_bosses_continent_id_fkey`: `FOREIGN KEY (continent_id) REFERENCES api.world_continents(id) ON DELETE CASCADE`
-- `world_bosses_kind_check`: `CHECK ((kind = ANY (ARRAY['continent_boss'::text, 'world_boss'::text, 'apex_boss'::text])))`
-- `world_bosses_phases_check`: `CHECK ((array_length(phases, 1) >= 3))`
-- `world_bosses_pkey`: `PRIMARY KEY (id)`
+- `apex_race_has_no_continent`: `CHECK (((kind <> 'apex_race'::text) OR (continent_id IS NULL)))`
+- `world_champions_continent_id_fkey`: `FOREIGN KEY (continent_id) REFERENCES api.world_continents(id) ON DELETE CASCADE`
+- `world_champions_kind_check`: `CHECK ((kind = ANY (ARRAY['continent_champion'::text, 'open_race'::text, 'apex_race'::text])))`
+- `world_champions_pkey`: `PRIMARY KEY (id)`
+- `world_champions_race_plan_check`: `CHECK ((array_length(race_plan, 1) >= 3))`
 
 ## `api.world_continents`
 
@@ -756,7 +784,7 @@ Constraints:
 | `id` | text | no | — |
 | `display_order` | integer | no | — |
 | `name_key` | text | no | — |
-| `mechanic_id` | text | no | — |
+| `trait_id` | text | no | — |
 | `visible_at_first_login` | boolean | no | `true` |
 | `playable_at_launch` | boolean | no | `true` |
 | `content_pack_id` | text | no | — |
@@ -767,7 +795,7 @@ Constraints:
 
 - `continent_no_coming_soon`: `CHECK ((playable_at_launch AND visible_at_first_login))`
 - `world_continents_display_order_key`: `UNIQUE (display_order)`
-- `world_continents_mechanic_id_key`: `UNIQUE (mechanic_id)`
+- `world_continents_mechanic_id_key`: `UNIQUE (trait_id)`
 - `world_continents_pkey`: `PRIMARY KEY (id)`
 
 ## `api.world_courses`
@@ -817,6 +845,38 @@ Constraints:
 - `world_crown_history_user_id_fkey`: `FOREIGN KEY (user_id) REFERENCES api.profiles(user_id) ON DELETE CASCADE`
 - `world_crown_history_user_id_month_key_key`: `UNIQUE (user_id, month_key)`
 
+## `api.world_races`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `id` | text | no | — |
+| `continent_id` | text | no | — |
+| `region_id` | text | no | — |
+| `kind` | text | no | — |
+| `display_order` | integer | no | — |
+| `name_key` | text | no | — |
+| `format` | text | no | — |
+| `challenge_format_id` | text | yes | — |
+| `race_condition` | text | no | — |
+| `field_size` | integer | no | `8` |
+| `scene_address` | text | no | — |
+| `reward_table_id` | text | no | — |
+| `enabled` | boolean | no | `true` |
+| `debug_only` | boolean | no | `false` |
+
+Constraints:
+
+- `challenge_format_only_on_challenge_races`: `CHECK (((kind = 'side'::text) OR (challenge_format_id IS NULL)))`
+- `race_launch_ready`: `CHECK ((enabled AND (NOT debug_only)))`
+- `world_races_challenge_format_id_fkey`: `FOREIGN KEY (challenge_format_id) REFERENCES api.challenge_formats(id)`
+- `world_races_continent_id_fkey`: `FOREIGN KEY (continent_id) REFERENCES api.world_continents(id) ON DELETE CASCADE`
+- `world_races_continent_id_kind_display_order_key`: `UNIQUE (continent_id, kind, display_order)`
+- `world_races_field_size_check`: `CHECK ((field_size = 8))`
+- `world_races_format_fkey`: `FOREIGN KEY (format) REFERENCES api.race_formats(id)`
+- `world_races_kind_check`: `CHECK ((kind = ANY (ARRAY['main'::text, 'side'::text])))`
+- `world_races_pkey`: `PRIMARY KEY (id)`
+- `world_races_region_id_fkey`: `FOREIGN KEY (region_id) REFERENCES api.world_regions(id) ON DELETE CASCADE`
+
 ## `api.world_regions`
 
 | column | type | null | default |
@@ -833,34 +893,8 @@ Constraints:
 
 - `world_regions_continent_id_display_order_key`: `UNIQUE (continent_id, display_order)`
 - `world_regions_continent_id_fkey`: `FOREIGN KEY (continent_id) REFERENCES api.world_continents(id) ON DELETE CASCADE`
-- `world_regions_node_type_check`: `CHECK ((node_type = ANY (ARRAY['battle_node'::text, 'challenge_node'::text, 'continent_boss_node'::text])))`
+- `world_regions_node_type_check`: `CHECK ((node_type = ANY (ARRAY['race_node'::text, 'challenge_node'::text, 'champion_node'::text])))`
 - `world_regions_pkey`: `PRIMARY KEY (id)`
-
-## `api.world_stages`
-
-| column | type | null | default |
-|---|---|:--:|---|
-| `id` | text | no | — |
-| `continent_id` | text | no | — |
-| `region_id` | text | no | — |
-| `kind` | text | no | — |
-| `display_order` | integer | no | — |
-| `name_key` | text | no | — |
-| `objective` | text | no | — |
-| `objective_twist` | text | no | — |
-| `scene_address` | text | no | — |
-| `reward_table_id` | text | no | — |
-| `enabled` | boolean | no | `true` |
-| `debug_only` | boolean | no | `false` |
-
-Constraints:
-
-- `stage_launch_ready`: `CHECK ((enabled AND (NOT debug_only)))`
-- `world_stages_continent_id_fkey`: `FOREIGN KEY (continent_id) REFERENCES api.world_continents(id) ON DELETE CASCADE`
-- `world_stages_kind_check`: `CHECK ((kind = ANY (ARRAY['main'::text, 'side'::text])))`
-- `world_stages_objective_check`: `CHECK ((objective = ANY (ARRAY['survival'::text, 'escort'::text, 'defense'::text, 'elite_hunt'::text, 'boss_break'::text, 'resource_control'::text, 'timed_assault'::text])))`
-- `world_stages_pkey`: `PRIMARY KEY (id)`
-- `world_stages_region_id_fkey`: `FOREIGN KEY (region_id) REFERENCES api.world_regions(id) ON DELETE CASCADE`
 
 ## `api.xp_ledger`
 

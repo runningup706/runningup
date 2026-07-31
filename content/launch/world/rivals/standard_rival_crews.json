@@ -1,0 +1,560 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "standard_rival_crew",
+  "count": 24,
+  "items": [
+    {
+      "id": "rvl_lumena_01",
+      "continent_id": "con_lumena",
+      "crew_kind": "standard",
+      "name_key": "rival.lumena.01",
+      "tactic": "sets a metronomic tempo from the gun and refuses to let it drift",
+      "trait_id": "trait_even_effort",
+      "runners": [
+        {
+          "id": "rvl_lumena_01_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_lumena_01_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_lumena_01_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/lumena/standard_01"
+    },
+    {
+      "id": "rvl_lumena_02",
+      "continent_id": "con_lumena",
+      "crew_kind": "standard",
+      "name_key": "rival.lumena.02",
+      "tactic": "splits the lead between four runners so the front never tires",
+      "trait_id": "trait_even_effort",
+      "runners": [
+        {
+          "id": "rvl_lumena_02_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_lumena_02_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_lumena_02_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/lumena/standard_02"
+    },
+    {
+      "id": "rvl_verdia_01",
+      "continent_id": "con_verdia",
+      "crew_kind": "standard",
+      "name_key": "rival.verdia.01",
+      "tactic": "runs the firm outside line and accepts the extra distance for the footing",
+      "trait_id": "trait_soft_footing",
+      "runners": [
+        {
+          "id": "rvl_verdia_01_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_verdia_01_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_verdia_01_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/verdia/standard_01"
+    },
+    {
+      "id": "rvl_verdia_02",
+      "continent_id": "con_verdia",
+      "crew_kind": "standard",
+      "name_key": "rival.verdia.02",
+      "tactic": "starts slower than everyone and reels the field in over the last third",
+      "trait_id": "trait_soft_footing",
+      "runners": [
+        {
+          "id": "rvl_verdia_02_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_verdia_02_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_verdia_02_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/verdia/standard_02"
+    },
+    {
+      "id": "rvl_rubra_01",
+      "continent_id": "con_rubra",
+      "crew_kind": "standard",
+      "name_key": "rival.rubra.01",
+      "tactic": "holds a deliberately modest first half and spends everything after the vent",
+      "trait_id": "trait_late_heat",
+      "runners": [
+        {
+          "id": "rvl_rubra_01_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_rubra_01_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_rubra_01_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/rubra/standard_01"
+    },
+    {
+      "id": "rvl_rubra_02",
+      "continent_id": "con_rubra",
+      "crew_kind": "standard",
+      "name_key": "rival.rubra.02",
+      "tactic": "takes the race out fast and dares the field to follow into the heat",
+      "trait_id": "trait_late_heat",
+      "runners": [
+        {
+          "id": "rvl_rubra_02_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_rubra_02_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_rubra_02_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/rubra/standard_02"
+    },
+    {
+      "id": "rvl_anel_01",
+      "continent_id": "con_anel",
+      "crew_kind": "standard",
+      "name_key": "rival.anel.01",
+      "tactic": "attacks on the tailwind sections and shelters through the headwind",
+      "trait_id": "trait_alternating_wind",
+      "runners": [
+        {
+          "id": "rvl_anel_01_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_anel_01_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_anel_01_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/anel/standard_01"
+    },
+    {
+      "id": "rvl_anel_02",
+      "continent_id": "con_anel",
+      "crew_kind": "standard",
+      "name_key": "rival.anel.02",
+      "tactic": "rotates the lead every mill so no runner takes two headwinds in a row",
+      "trait_id": "trait_alternating_wind",
+      "runners": [
+        {
+          "id": "rvl_anel_02_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_anel_02_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_anel_02_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/anel/standard_02"
+    },
+    {
+      "id": "rvl_serene_01",
+      "continent_id": "con_serene",
+      "crew_kind": "standard",
+      "name_key": "rival.serene.01",
+      "tactic": "sprints for the span from the gun and defends the front of the queue",
+      "trait_id": "trait_forced_surge",
+      "runners": [
+        {
+          "id": "rvl_serene_01_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_serene_01_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_serene_01_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/serene/standard_01"
+    },
+    {
+      "id": "rvl_serene_02",
+      "continent_id": "con_serene",
+      "crew_kind": "standard",
+      "name_key": "rival.serene.02",
+      "tactic": "concedes the span and races the whole second half from the back",
+      "trait_id": "trait_forced_surge",
+      "runners": [
+        {
+          "id": "rvl_serene_02_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_serene_02_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_serene_02_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/serene/standard_02"
+    },
+    {
+      "id": "rvl_voltis_01",
+      "continent_id": "con_voltis",
+      "crew_kind": "standard",
+      "name_key": "rival.voltis.01",
+      "tactic": "shortens its stride before every bend and re-accelerates out of it",
+      "trait_id": "trait_tight_corners",
+      "runners": [
+        {
+          "id": "rvl_voltis_01_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_voltis_01_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_voltis_01_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/voltis/standard_01"
+    },
+    {
+      "id": "rvl_voltis_02",
+      "continent_id": "con_voltis",
+      "crew_kind": "standard",
+      "name_key": "rival.voltis.02",
+      "tactic": "gives up ground on the straights to take the inside line into each corner",
+      "trait_id": "trait_tight_corners",
+      "runners": [
+        {
+          "id": "rvl_voltis_02_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_voltis_02_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_voltis_02_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/voltis/standard_02"
+    },
+    {
+      "id": "rvl_hora_01",
+      "continent_id": "con_hora",
+      "crew_kind": "standard",
+      "name_key": "rival.hora.01",
+      "tactic": "runs entirely to a written schedule and ignores every runner around it",
+      "trait_id": "trait_blind_pacing",
+      "runners": [
+        {
+          "id": "rvl_hora_01_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_hora_01_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_hora_01_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/hora/standard_01"
+    },
+    {
+      "id": "rvl_hora_02",
+      "continent_id": "con_hora",
+      "crew_kind": "standard",
+      "name_key": "rival.hora.02",
+      "tactic": "follows the true road it has memorised even when it looks longer",
+      "trait_id": "trait_blind_pacing",
+      "runners": [
+        {
+          "id": "rvl_hora_02_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_hora_02_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_hora_02_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/hora/standard_02"
+    },
+    {
+      "id": "rvl_nival_01",
+      "continent_id": "con_nival",
+      "crew_kind": "standard",
+      "name_key": "rival.nival.01",
+      "tactic": "deliberately over-paces the first split to break through the cold early",
+      "trait_id": "trait_slow_opening",
+      "runners": [
+        {
+          "id": "rvl_nival_01_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_nival_01_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_nival_01_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/nival/standard_01"
+    },
+    {
+      "id": "rvl_nival_02",
+      "continent_id": "con_nival",
+      "crew_kind": "standard",
+      "name_key": "rival.nival.02",
+      "tactic": "accepts a slow opening without panic and runs the last third hardest",
+      "trait_id": "trait_slow_opening",
+      "runners": [
+        {
+          "id": "rvl_nival_02_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_nival_02_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_nival_02_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/nival/standard_02"
+    },
+    {
+      "id": "rvl_kael_01",
+      "continent_id": "con_kael",
+      "crew_kind": "standard",
+      "name_key": "rival.kael.01",
+      "tactic": "starts three seconds a lap slower than it finishes, every single race",
+      "trait_id": "trait_negative_split",
+      "runners": [
+        {
+          "id": "rvl_kael_01_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_kael_01_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_kael_01_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/kael/standard_01"
+    },
+    {
+      "id": "rvl_kael_02",
+      "continent_id": "con_kael",
+      "crew_kind": "standard",
+      "name_key": "rival.kael.02",
+      "tactic": "runs the first half in the pack and the second half alone at the front",
+      "trait_id": "trait_negative_split",
+      "runners": [
+        {
+          "id": "rvl_kael_02_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_kael_02_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_kael_02_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/kael/standard_02"
+    },
+    {
+      "id": "rvl_neris_01",
+      "continent_id": "con_neris",
+      "crew_kind": "standard",
+      "name_key": "rival.neris.01",
+      "tactic": "never leads and never leaves, and finishes as one line of runners",
+      "trait_id": "trait_pack_draft",
+      "runners": [
+        {
+          "id": "rvl_neris_01_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_neris_01_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_neris_01_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/neris/standard_01"
+    },
+    {
+      "id": "rvl_neris_02",
+      "continent_id": "con_neris",
+      "crew_kind": "standard",
+      "name_key": "rival.neris.02",
+      "tactic": "rotates the front runner every gallery so the cost is shared exactly",
+      "trait_id": "trait_pack_draft",
+      "runners": [
+        {
+          "id": "rvl_neris_02_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_neris_02_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_neris_02_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/neris/standard_02"
+    },
+    {
+      "id": "rvl_tempora_01",
+      "continent_id": "con_tempora",
+      "crew_kind": "standard",
+      "name_key": "rival.tempora.01",
+      "tactic": "sets a pace it can hold for the full distance and holds exactly that",
+      "trait_id": "trait_exact_pace",
+      "runners": [
+        {
+          "id": "rvl_tempora_01_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_tempora_01_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_tempora_01_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/tempora/standard_01"
+    },
+    {
+      "id": "rvl_tempora_02",
+      "continent_id": "con_tempora",
+      "crew_kind": "standard",
+      "name_key": "rival.tempora.02",
+      "tactic": "runs to a published target and treats every other runner as irrelevant",
+      "trait_id": "trait_exact_pace",
+      "runners": [
+        {
+          "id": "rvl_tempora_02_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_tempora_02_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_tempora_02_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/tempora/standard_02"
+    },
+    {
+      "id": "rvl_origin_01",
+      "continent_id": "con_origin",
+      "crew_kind": "standard",
+      "name_key": "rival.origin.01",
+      "tactic": "adopts whichever tactic the current lap rewards and abandons it at the boundary",
+      "trait_id": "trait_championship_composite",
+      "runners": [
+        {
+          "id": "rvl_origin_01_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_origin_01_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_origin_01_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/origin/standard_01"
+    },
+    {
+      "id": "rvl_origin_02",
+      "continent_id": "con_origin",
+      "crew_kind": "standard",
+      "name_key": "rival.origin.02",
+      "tactic": "runs one continent style per lap in a fixed rotation, whatever the field does",
+      "trait_id": "trait_championship_composite",
+      "runners": [
+        {
+          "id": "rvl_origin_02_r1",
+          "pacer_index": 0
+        },
+        {
+          "id": "rvl_origin_02_r2",
+          "pacer_index": 1
+        },
+        {
+          "id": "rvl_origin_02_r3",
+          "pacer_index": 2
+        }
+      ],
+      "prefab_address": "rival/origin/standard_02"
+    }
+  ]
+}

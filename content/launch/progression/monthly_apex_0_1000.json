@@ -161,7 +161,7 @@
       "name_key": "apex.checkpoint.apex_cp_04_4km",
       "reward_bundle_id": "bundle_apex_cp_04_4km",
       "reward_bundle_kinds": [
-        "relic_choice",
+        "gear_choice",
         "character_episode"
       ],
       "story_or_world_effect": "restoration_pulse_4",
@@ -177,7 +177,7 @@
       "name_key": "apex.checkpoint.apex_cp_05_5km",
       "reward_bundle_id": "bundle_apex_cp_05_5km",
       "reward_bundle_kinds": [
-        "boss_key",
+        "race_entry",
         "restoration_scene"
       ],
       "story_or_world_effect": "restoration_pulse_5",
@@ -304,7 +304,7 @@
       "name_key": "apex.checkpoint.apex_cp_13_24km",
       "reward_bundle_id": "bundle_apex_cp_13_24km",
       "reward_bundle_kinds": [
-        "relic_choice",
+        "gear_choice",
         "character_episode"
       ],
       "story_or_world_effect": "restoration_pulse_1",
@@ -320,7 +320,7 @@
       "name_key": "apex.checkpoint.apex_cp_14_27km",
       "reward_bundle_id": "bundle_apex_cp_14_27km",
       "reward_bundle_kinds": [
-        "boss_key",
+        "race_entry",
         "restoration_scene"
       ],
       "story_or_world_effect": "restoration_pulse_2",
@@ -447,7 +447,7 @@
       "name_key": "apex.checkpoint.apex_cp_22_54km",
       "reward_bundle_id": "bundle_apex_cp_22_54km",
       "reward_bundle_kinds": [
-        "relic_choice",
+        "gear_choice",
         "character_episode"
       ],
       "story_or_world_effect": "restoration_pulse_10",
@@ -463,7 +463,7 @@
       "name_key": "apex.checkpoint.apex_cp_23_58km",
       "reward_bundle_id": "bundle_apex_cp_23_58km",
       "reward_bundle_kinds": [
-        "boss_key",
+        "race_entry",
         "restoration_scene"
       ],
       "story_or_world_effect": "restoration_pulse_11",
@@ -590,7 +590,7 @@
       "name_key": "apex.checkpoint.apex_cp_31_98km",
       "reward_bundle_id": "bundle_apex_cp_31_98km",
       "reward_bundle_kinds": [
-        "relic_choice",
+        "gear_choice",
         "character_episode"
       ],
       "story_or_world_effect": "restoration_pulse_7",
@@ -606,7 +606,7 @@
       "name_key": "apex.checkpoint.apex_cp_32_104km",
       "reward_bundle_id": "bundle_apex_cp_32_104km",
       "reward_bundle_kinds": [
-        "boss_key",
+        "race_entry",
         "restoration_scene"
       ],
       "story_or_world_effect": "restoration_pulse_8",
@@ -733,7 +733,7 @@
       "name_key": "apex.checkpoint.apex_cp_40_153km",
       "reward_bundle_id": "bundle_apex_cp_40_153km",
       "reward_bundle_kinds": [
-        "relic_choice",
+        "gear_choice",
         "character_episode"
       ],
       "story_or_world_effect": "restoration_pulse_4",
@@ -749,7 +749,7 @@
       "name_key": "apex.checkpoint.apex_cp_41_160km",
       "reward_bundle_id": "bundle_apex_cp_41_160km",
       "reward_bundle_kinds": [
-        "boss_key",
+        "race_entry",
         "restoration_scene"
       ],
       "story_or_world_effect": "restoration_pulse_5",
@@ -876,7 +876,7 @@
       "name_key": "apex.checkpoint.apex_cp_49_217km",
       "reward_bundle_id": "bundle_apex_cp_49_217km",
       "reward_bundle_kinds": [
-        "relic_choice",
+        "gear_choice",
         "character_episode"
       ],
       "story_or_world_effect": "restoration_pulse_1",
@@ -892,7 +892,7 @@
       "name_key": "apex.checkpoint.apex_cp_50_224km",
       "reward_bundle_id": "bundle_apex_cp_50_224km",
       "reward_bundle_kinds": [
-        "boss_key",
+        "race_entry",
         "restoration_scene"
       ],
       "story_or_world_effect": "restoration_pulse_2",
@@ -927,7 +927,7 @@
         "profile_frame",
         "character_episode"
       ],
-      "story_or_world_effect": "world_crown_ceremony_and_apex_axis_unlock",
+      "story_or_world_effect": "restoration_pulse_4",
       "is_final": false,
       "content_version": "1.0.0"
     },
@@ -1019,7 +1019,7 @@
       "name_key": "apex.checkpoint.apex_cp_58_289km",
       "reward_bundle_id": "bundle_apex_cp_58_289km",
       "reward_bundle_kinds": [
-        "relic_choice",
+        "gear_choice",
         "character_episode"
       ],
       "story_or_world_effect": "restoration_pulse_10",
@@ -1035,7 +1035,7 @@
       "name_key": "apex.checkpoint.apex_cp_59_298km",
       "reward_bundle_id": "bundle_apex_cp_59_298km",
       "reward_bundle_kinds": [
-        "boss_key",
+        "race_entry",
         "restoration_scene"
       ],
       "story_or_world_effect": "restoration_pulse_11",
@@ -1162,7 +1162,7 @@
       "name_key": "apex.checkpoint.apex_cp_67_369km",
       "reward_bundle_id": "bundle_apex_cp_67_369km",
       "reward_bundle_kinds": [
-        "relic_choice",
+        "gear_choice",
         "character_episode"
       ],
       "story_or_world_effect": "restoration_pulse_7",
@@ -1178,7 +1178,7 @@
       "name_key": "apex.checkpoint.apex_cp_68_379km",
       "reward_bundle_id": "bundle_apex_cp_68_379km",
       "reward_bundle_kinds": [
-        "boss_key",
+        "race_entry",
         "restoration_scene"
       ],
       "story_or_world_effect": "restoration_pulse_8",
@@ -1305,7 +1305,7 @@
       "name_key": "apex.checkpoint.apex_cp_76_457km",
       "reward_bundle_id": "bundle_apex_cp_76_457km",
       "reward_bundle_kinds": [
-        "relic_choice",
+        "gear_choice",
         "character_episode"
       ],
       "story_or_world_effect": "restoration_pulse_4",
@@ -1321,7 +1321,7 @@
       "name_key": "apex.checkpoint.apex_cp_77_467km",
       "reward_bundle_id": "bundle_apex_cp_77_467km",
       "reward_bundle_kinds": [
-        "boss_key",
+        "race_entry",
         "restoration_scene"
       ],
       "story_or_world_effect": "restoration_pulse_5",
@@ -1448,7 +1448,7 @@
       "name_key": "apex.checkpoint.apex_cp_85_552km",
       "reward_bundle_id": "bundle_apex_cp_85_552km",
       "reward_bundle_kinds": [
-        "relic_choice",
+        "gear_choice",
         "character_episode"
       ],
       "story_or_world_effect": "restoration_pulse_1",
@@ -1464,7 +1464,7 @@
       "name_key": "apex.checkpoint.apex_cp_86_563km",
       "reward_bundle_id": "bundle_apex_cp_86_563km",
       "reward_bundle_kinds": [
-        "boss_key",
+        "race_entry",
         "restoration_scene"
       ],
       "story_or_world_effect": "restoration_pulse_2",
@@ -1591,7 +1591,7 @@
       "name_key": "apex.checkpoint.apex_cp_94_654km",
       "reward_bundle_id": "bundle_apex_cp_94_654km",
       "reward_bundle_kinds": [
-        "relic_choice",
+        "gear_choice",
         "character_episode"
       ],
       "story_or_world_effect": "restoration_pulse_10",
@@ -1607,7 +1607,7 @@
       "name_key": "apex.checkpoint.apex_cp_95_666km",
       "reward_bundle_id": "bundle_apex_cp_95_666km",
       "reward_bundle_kinds": [
-        "boss_key",
+        "race_entry",
         "restoration_scene"
       ],
       "story_or_world_effect": "restoration_pulse_11",
@@ -1734,7 +1734,7 @@
       "name_key": "apex.checkpoint.apex_cp_103_763km",
       "reward_bundle_id": "bundle_apex_cp_103_763km",
       "reward_bundle_kinds": [
-        "relic_choice",
+        "gear_choice",
         "character_episode"
       ],
       "story_or_world_effect": "restoration_pulse_7",
@@ -1750,7 +1750,7 @@
       "name_key": "apex.checkpoint.apex_cp_104_776km",
       "reward_bundle_id": "bundle_apex_cp_104_776km",
       "reward_bundle_kinds": [
-        "boss_key",
+        "race_entry",
         "restoration_scene"
       ],
       "story_or_world_effect": "restoration_pulse_8",
@@ -1877,7 +1877,7 @@
       "name_key": "apex.checkpoint.apex_cp_112_878km",
       "reward_bundle_id": "bundle_apex_cp_112_878km",
       "reward_bundle_kinds": [
-        "relic_choice",
+        "gear_choice",
         "character_episode"
       ],
       "story_or_world_effect": "restoration_pulse_4",
@@ -1893,7 +1893,7 @@
       "name_key": "apex.checkpoint.apex_cp_113_892km",
       "reward_bundle_id": "bundle_apex_cp_113_892km",
       "reward_bundle_kinds": [
-        "boss_key",
+        "race_entry",
         "restoration_scene"
       ],
       "story_or_world_effect": "restoration_pulse_5",
@@ -2020,10 +2020,10 @@
       "name_key": "apex.checkpoint.apex_cp_121_1000km",
       "reward_bundle_id": "bundle_apex_cp_121_1000km",
       "reward_bundle_kinds": [
-        "relic_choice",
+        "gear_choice",
         "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_1",
+      "story_or_world_effect": "world_crown_ceremony_and_apex_axis_unlock",
       "is_final": true,
       "content_version": "1.0.0"
     }

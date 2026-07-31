@@ -27,17 +27,19 @@ const arr = (a) => `array[${a.map((x) => q(x)).join(', ')}]`;
 const continents = items('world/continents/continents.json');
 const regions = items('world/regions/regions.json');
 const courses = items('world/courses/courses.json');
-const mainStages = items('world/stages/main_stages.json');
-const sideStages = items('world/stages/side_stages.json');
-const continentBosses = items('world/bosses/continent_bosses.json');
-const worldBosses = items('world/bosses/world_bosses.json');
-const apexBoss = items('world/bosses/apex_boss.json')[0];
+const mainRaces = items('world/races/main_races.json');
+const challengeRaces = items('world/races/challenge_races.json');
+const raceFormats = items('world/race_formats.json');
+const challengeFormats = items('world/challenge_formats.json');
+const continentChampions = items('world/champions/continent_champions.json');
+const openRaceEvents = items('world/champions/open_race_events.json');
+const apexRace = items('world/champions/apex_race.json')[0];
 const chapters = items('world/story_chapters.json');
-const standardEnemies = items('world/enemies/standard_enemy_families.json');
-const eliteEnemies = items('world/enemies/elite_enemy_families.json');
+const standardRivals = items('world/rivals/standard_rival_crews.json');
+const eliteRivals = items('world/rivals/elite_rival_crews.json');
 const characters = items('characters/roster/characters.json');
-const skills = items('characters/skills/tactical_skills.json');
-const relics = items('characters/skills/tactical_relics.json');
+const techniques = items('characters/techniques/race_techniques.json');
+const gearSets = items('characters/gear/gear_sets.json');
 const episodes = items('characters/episodes/character_episodes.json');
 const cosmetics = items('characters/cosmetics/cosmetics.json');
 const companions = items('characters/companions.json');
@@ -82,9 +84,9 @@ for (const d of GOAL_DURATIONS) {
 }
 w('');
 
-w('-- World: continents, regions, stages -------------------------------------------');
+w('-- World: continents, regions, courses ------------------------------------------');
 for (const c of continents) {
-  w(`insert into api.world_continents (id, display_order, name_key, mechanic_id, visible_at_first_login, playable_at_launch, content_pack_id, entry_region_id, content_version) values (${q(c.id)}, ${c.order}, ${q(c.name_key)}, ${q(c.mechanic_id)}, ${b(c.visible_at_first_login)}, ${b(c.playable_at_launch)}, ${q(c.content_pack_id)}, ${q(c.entry_region_id)}, ${q(manifest.content_version)}) on conflict (id) do nothing;`);
+  w(`insert into api.world_continents (id, display_order, name_key, trait_id, visible_at_first_login, playable_at_launch, content_pack_id, entry_region_id, content_version) values (${q(c.id)}, ${c.order}, ${q(c.name_key)}, ${q(c.trait_id)}, ${b(c.visible_at_first_login)}, ${b(c.playable_at_launch)}, ${q(c.content_pack_id)}, ${q(c.entry_region_id)}, ${q(manifest.content_version)}) on conflict (id) do nothing;`);
 }
 w('');
 for (const r of regions) {
@@ -95,19 +97,29 @@ for (const cr of courses) {
   w(`insert into api.world_courses (id, continent_id, region_id, display_order, name_key, distance_meters, surface, shape, scene_address, reward_table_id, enabled, debug_only, content_version) values (${q(cr.id)}, ${q(cr.continent_id)}, ${q(cr.region_id)}, ${cr.order}, ${q(cr.name_key)}, ${cr.distance_meters}, ${q(cr.surface)}, ${q(cr.shape)}, ${q(cr.scene_address)}, ${q(cr.reward_table_id)}, ${b(cr.enabled)}, ${b(cr.debug_only)}, ${q(manifest.content_version)}) on conflict (id) do nothing;`);
 }
 w('');
-for (const s of [...mainStages, ...sideStages]) {
-  w(`insert into api.world_stages (id, continent_id, region_id, kind, display_order, name_key, objective, objective_twist, scene_address, reward_table_id, enabled, debug_only) values (${q(s.id)}, ${q(s.continent_id)}, ${q(s.region_id)}, ${q(s.kind)}, ${s.order}, ${q(s.name_key)}, ${q(s.objective)}, ${q(s.objective_twist)}, ${q(s.scene_address)}, ${q(s.reward_table_id)}, ${b(s.enabled)}, ${b(s.debug_only)}) on conflict (id) do nothing;`);
+w('-- Race formats ------------------------------------------------------------------');
+for (const f of raceFormats) {
+  w(`insert into api.race_formats (id, content_version) values (${q(f.id)}, ${q(manifest.content_version)}) on conflict (id) do nothing;`);
+}
+for (const f of challengeFormats) {
+  w(`insert into api.challenge_formats (id, rule, content_version) values (${q(f.id)}, ${q(f.rule)}, ${q(manifest.content_version)}) on conflict (id) do nothing;`);
 }
 w('');
 
-w('-- Bosses ------------------------------------------------------------------------');
-for (const boss of continentBosses) {
-  w(`insert into api.world_bosses (id, kind, continent_id, name_key, phases, scene_address) values (${q(boss.id)}, 'continent_boss', ${q(boss.continent_id)}, ${q(boss.name_key)}, ${arr(boss.phases)}, ${q(boss.scene_address)}) on conflict (id) do nothing;`);
+w('-- Races -------------------------------------------------------------------------');
+for (const s of [...mainRaces, ...challengeRaces]) {
+  w(`insert into api.world_races (id, continent_id, region_id, kind, display_order, name_key, format, challenge_format_id, race_condition, field_size, scene_address, reward_table_id, enabled, debug_only) values (${q(s.id)}, ${q(s.continent_id)}, ${q(s.region_id)}, ${q(s.kind)}, ${s.order}, ${q(s.name_key)}, ${q(s.format)}, ${q(s.challenge_format_id ?? null)}, ${q(s.race_condition)}, ${s.field_size}, ${q(s.scene_address)}, ${q(s.reward_table_id)}, ${b(s.enabled)}, ${b(s.debug_only)}) on conflict (id) do nothing;`);
 }
-for (const boss of worldBosses) {
-  w(`insert into api.world_bosses (id, kind, continent_id, name_key, phases, scene_address) values (${q(boss.id)}, 'world_boss', null, ${q(boss.name_key)}, ${arr(boss.phases)}, ${q(boss.scene_address)}) on conflict (id) do nothing;`);
+w('');
+
+w('-- Champions and open races -------------------------------------------------------');
+for (const ch of continentChampions) {
+  w(`insert into api.world_champions (id, kind, continent_id, name_key, race_plan, scene_address) values (${q(ch.id)}, 'continent_champion', ${q(ch.continent_id)}, ${q(ch.name_key)}, ${arr(ch.race_plan)}, ${q(ch.scene_address)}) on conflict (id) do nothing;`);
 }
-w(`insert into api.world_bosses (id, kind, continent_id, name_key, phases, scene_address) values (${q(apexBoss.id)}, 'apex_boss', null, ${q(apexBoss.name_key)}, ${arr(apexBoss.phases)}, ${q(apexBoss.scene_address)}) on conflict (id) do nothing;`);
+for (const ev of openRaceEvents) {
+  w(`insert into api.world_champions (id, kind, continent_id, name_key, race_plan, scene_address) values (${q(ev.id)}, 'open_race', null, ${q(ev.name_key)}, ${arr(ev.race_plan)}, ${q(ev.scene_address)}) on conflict (id) do nothing;`);
+}
+w(`insert into api.world_champions (id, kind, continent_id, name_key, race_plan, scene_address) values (${q(apexRace.id)}, 'apex_race', null, ${q(apexRace.name_key)}, ${arr(apexRace.race_plan)}, ${q(apexRace.scene_address)}) on conflict (id) do nothing;`);
 w('');
 
 w('-- Story chapters ----------------------------------------------------------------');
@@ -116,9 +128,9 @@ for (const ch of chapters) {
 }
 w('');
 
-w('-- Enemy families ----------------------------------------------------------------');
-for (const e of [...standardEnemies, ...eliteEnemies]) {
-  w(`insert into api.enemy_families (id, continent_id, family_kind, name_key, behaviour) values (${q(e.id)}, ${q(e.continent_id)}, ${q(e.family_kind)}, ${q(e.name_key)}, ${q(e.behaviour)}) on conflict (id) do nothing;`);
+w('-- Rival crews -------------------------------------------------------------------');
+for (const e of [...standardRivals, ...eliteRivals]) {
+  w(`insert into api.rival_crews (id, continent_id, crew_kind, name_key, tactic) values (${q(e.id)}, ${q(e.continent_id)}, ${q(e.crew_kind)}, ${q(e.name_key)}, ${q(e.tactic)}) on conflict (id) do nothing;`);
 }
 w('');
 
@@ -127,12 +139,12 @@ for (const c of characters) {
   w(`insert into api.characters (id, display_order, name_key, role, secondary_role, continent_affinity, visible_at_launch, trial_available, unlock_path, prefab_address, portrait_address, paid_gacha) values (${q(c.id)}, ${c.order}, ${q(c.name_key)}, ${q(c.role)}, ${q(c.secondary_role)}, ${q(c.continent_affinity)}, ${b(c.visible_at_launch)}, ${b(c.trial_available)}, ${q(c.unlock_path)}, ${q(c.prefab_address)}, ${q(c.portrait_address)}, ${b(c.paid_gacha)}) on conflict (id) do nothing;`);
 }
 w('');
-for (const s of skills) {
-  w(`insert into api.character_skills (id, character_id, kind, name_key, core_budget_delta) values (${q(s.id)}, ${q(s.character_id)}, ${q(s.kind)}, ${q(s.name_key)}, 0) on conflict (id) do nothing;`);
+for (const s of techniques) {
+  w(`insert into api.race_techniques (id, character_id, kind, name_key, core_budget_delta) values (${q(s.id)}, ${q(s.character_id)}, ${q(s.kind)}, ${q(s.name_key)}, 0) on conflict (id) do nothing;`);
 }
 w('');
-for (const r of relics) {
-  w(`insert into api.tactical_relics (id, continent_id, name_key, trade_from, trade_to, activation_condition, budget_delta) values (${q(r.id)}, ${q(r.continent_id)}, ${q(r.name_key)}, ${q(r.trade_from)}, ${q(r.trade_to)}, ${q(r.activation_condition)}, 0) on conflict (id) do nothing;`);
+for (const r of gearSets) {
+  w(`insert into api.gear_sets (id, continent_id, name_key, trade_from, trade_to, activation_condition, budget_delta) values (${q(r.id)}, ${q(r.continent_id)}, ${q(r.name_key)}, ${q(r.trade_from)}, ${q(r.trade_to)}, ${q(r.activation_condition)}, 0) on conflict (id) do nothing;`);
 }
 w('');
 for (const e of episodes) {

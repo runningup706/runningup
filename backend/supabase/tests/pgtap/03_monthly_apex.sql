@@ -205,7 +205,7 @@ select is(
   1, 'the World Crown is recorded exactly once');
 
 select is(
-  (select count(*)::int from api.apex_boss_unlocks
+  (select count(*)::int from api.apex_race_entries
    where user_id = 'aaaaaaaa-0000-0000-0000-000000000002' and month_key = '2026-04'),
   1, 'the Apex Axis boss unlocks exactly once');
 

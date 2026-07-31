@@ -1,21 +1,21 @@
 {
   "schema_version": "1.0.0",
   "content_version": "1.0.0",
-  "kind": "apex_boss",
+  "kind": "apex_race",
   "count": 1,
   "items": [
     {
-      "id": "boss_apex_axis",
-      "kind": "apex_boss",
-      "name_key": "boss.apex_axis",
-      "phases": [
+      "id": "race_apex_axis",
+      "kind": "apex_race",
+      "name_key": "champion.apex_axis",
+      "race_plan": [
         "axis_awakening",
         "twelvefold_trial",
         "stillfog_convergence",
         "worldline_collapse",
         "crown_of_the_runner"
       ],
-      "phase_rule": "Every phase demands a different continent mechanic, ending with all twelve at once.",
+      "plan_rule": "Every leg is run on a different continent road, ending with all twelve in one lap.",
       "unlock_monthly_meters": 1000000,
       "unlocks_per_user_month": 1,
       "rewards": [
