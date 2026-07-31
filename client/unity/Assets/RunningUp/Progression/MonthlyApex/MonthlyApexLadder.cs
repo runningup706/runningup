@@ -69,9 +69,13 @@ namespace RunningUp.Progression.MonthlyApex
         {
             // Fail loudly at type-load rather than shipping a client whose ladder disagrees
             // with the server's.
-            if (CheckpointMeters.Count != 52)
+            if (CheckpointMeters.Count != 120)
             {
-                throw new InvalidOperationException("the Monthly Apex seed must contain exactly 52 checkpoints");
+                throw new InvalidOperationException("the Monthly Apex seed must contain exactly 120 checkpoints");
+            }
+            if (CheckpointMeters[0] != 1_000)
+            {
+                throw new InvalidOperationException("the ladder must start at exactly 1 km");
             }
             if (CheckpointMeters[CheckpointMeters.Count - 1] != FinalApexMeters)
             {
