@@ -1,229 +1,238 @@
 #!/usr/bin/env bash
-# Commits and pushes the local V14 Unity project so it stops living on one machine.
+# Copies the V14 Unity project into a clean clone and pushes it.
 #
-# THE PROBLEM THIS SOLVES
-# -----------------------
-# The repository holds four client files. Everything else — scenes, prefabs,
-# ProjectSettings, Packages — exists only on one developer's disk. That means the APK
-# cannot be built anywhere else, cannot be built by CI, and is one disk failure from gone.
+# WHY IT WORKS THIS WAY
+# ---------------------
+# The machine that holds the Unity project has it in a working tree that cannot be safely
+# committed from: 281 staged deletions, of which only 148 are the retired V5 client — the
+# other 133 are CI workflows, Supabase migrations, tests and docs that V14 needs. It also
+# sits on a different branch (`agent/runningup-v11-complete`), so a `git pull` there merges
+# into the wrong lineage. An earlier version of this script tried to sort that tree out in
+# place; unstaging 133 files one at a time is not a procedure anyone should follow.
 #
-# WHY A SCRIPT RATHER THAN "just git add ."
-# -----------------------------------------
-# The working tree that has the project is reported to be in a dangerous state: ~281 V5
-# deletions staged alongside an untracked V14 project. A careless `git checkout`, `git
-# reset --hard` or `git clean` there destroys unrecoverable work — untracked files are not
-# in any commit, so nothing brings them back.
+# None of that work is necessary, because the V14 branch has no V5 tree to delete. It
+# carries eight client files and nothing else. So there is nothing to remove — only
+# something to add.
 #
-# So this script:
-#   * refuses to run any destructive git command, ever;
-#   * shows exactly what it is about to add and stops for confirmation;
-#   * separates the V5 removal from the V14 addition into two commits, so either can be
-#     inspected or reverted on its own;
-#   * refuses to commit Library/, Temp/ and other build junk even if .gitignore is missing;
-#   * refuses to commit a keystore or a service-role key.
+# This script therefore never touches the messy tree. It runs inside a FRESH CLONE of the
+# V14 branch, reads the Unity project out of the old folder, and commits it here. The
+# source directory is opened read-only: nothing is moved, renamed, deleted or staged there.
 #
-# Usage, from the machine that HAS the Unity project:
-#   bash tools/release/push-unity-project.sh            # show the plan, change nothing
-#   bash tools/release/push-unity-project.sh --commit   # do it
+# USAGE
+#   # 1. fresh clone, somewhere new
+#   git clone -b claude/runningup-v14-handoff-hr19xk <repo-url> runningup-v14
+#   cd runningup-v14
+#
+#   # 2. point at the Unity project in the old folder
+#   bash tools/release/push-unity-project.sh --from ~/old/runningup/client/unity
+#   bash tools/release/push-unity-project.sh --from ~/old/runningup/client/unity --commit
 
 set -euo pipefail
 
 BRANCH="claude/runningup-v14-handoff-hr19xk"
-UNITY_DIR="client/unity"
+DEST="client/unity"
+SRC=""
 APPLY=false
-[ "${1:-}" = "--commit" ] && APPLY=true
 
-cd "$(git rev-parse --show-toplevel)"
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --from)   SRC="${2:-}"; shift 2 ;;
+    --commit) APPLY=true; shift ;;
+    *) echo "unknown option: $1" >&2; exit 2 ;;
+  esac
+done
 
 bold() { printf '\033[1m%s\033[0m\n' "$*"; }
 warn() { printf '\033[33m%s\033[0m\n' "$*"; }
-die()  { printf '\033[31mSTOP: %s\033[0m\n' "$*" >&2; exit 1; }
+die()  { printf '\033[31m\nSTOP: %s\033[0m\n' "$*" >&2; exit 1; }
+
+cd "$(git rev-parse --show-toplevel)"
 
 # ---------------------------------------------------------------------------
-# 0. Refuse to run anywhere the project is not actually present
+# 0. This must be a clean clone of the V14 branch, not the working folder
 # ---------------------------------------------------------------------------
-bold "== what is on this machine =="
-scenes=$(find "$UNITY_DIR" -name '*.unity' 2>/dev/null | wc -l | tr -d ' ')
-prefabs=$(find "$UNITY_DIR" -name '*.prefab' 2>/dev/null | wc -l | tr -d ' ')
-has_settings=$([ -d "$UNITY_DIR/ProjectSettings" ] && echo yes || echo no)
-has_packages=$([ -f "$UNITY_DIR/Packages/manifest.json" ] && echo yes || echo no)
+bold "== where am I =="
+current=$(git rev-parse --abbrev-ref HEAD)
+dirty=$(git status --porcelain | wc -l | tr -d ' ')
+printf '  branch        %s\n' "$current"
+printf '  uncommitted   %s file(s)\n' "$dirty"
+echo
 
-printf '  scenes (.unity)      %s\n'  "$scenes"
-printf '  prefabs (.prefab)    %s\n'  "$prefabs"
-printf '  ProjectSettings/     %s\n'  "$has_settings"
-printf '  Packages/manifest    %s\n'  "$has_packages"
+if [ "$current" != "$BRANCH" ]; then
+  die "this clone is on '$current', not '$BRANCH'.
+
+     Do NOT git pull here — that merges V14 into whatever branch you are on.
+     Make a fresh clone instead and run this from inside it:
+
+         git clone -b $BRANCH <repo-url> runningup-v14
+         cd runningup-v14
+
+     Nothing was changed."
+fi
+
+if [ "$dirty" -ne 0 ]; then
+  git status --short | head -20 | sed 's/^/  /'
+  die "this clone has uncommitted changes, so it is not the clean workspace this script
+     needs. Use a fresh clone. Nothing was changed."
+fi
+
+# ---------------------------------------------------------------------------
+# 1. The source has to actually be a Unity project
+# ---------------------------------------------------------------------------
+[ -n "$SRC" ] || die "--from is required: the path to the Unity project in your old folder,
+     e.g. --from ~/runningup/client/unity"
+[ -d "$SRC" ] || die "--from path does not exist: $SRC"
+
+SRC="$(cd "$SRC" && pwd)"          # absolute, so the copy cannot be confused by cwd
+[ "$SRC" = "$(pwd)/$DEST" ] && die "--from points at this clone's own $DEST. Point it at the OLD folder."
+
+bold "== source: $SRC =="
+scenes=$(find "$SRC" -name '*.unity' -not -path '*/Library/*' 2>/dev/null | wc -l | tr -d ' ')
+prefabs=$(find "$SRC" -name '*.prefab' -not -path '*/Library/*' 2>/dev/null | wc -l | tr -d ' ')
+has_settings=$([ -d "$SRC/ProjectSettings" ] && echo yes || echo no)
+has_packages=$([ -f "$SRC/Packages/manifest.json" ] && echo yes || echo no)
+printf '  scenes (.unity)    %s\n' "$scenes"
+printf '  prefabs (.prefab)  %s\n' "$prefabs"
+printf '  ProjectSettings/   %s\n' "$has_settings"
+printf '  Packages/manifest  %s\n' "$has_packages"
 echo
 
 if [ "$scenes" -eq 0 ] || [ "$has_settings" = "no" ] || [ "$has_packages" = "no" ]; then
-  die "no Unity project here. Run this on the machine that has it — not in a container,
-     not on a fresh clone. Nothing was changed."
+  die "that is not a complete Unity project. --from must point at the folder that
+     contains Assets/, ProjectSettings/ and Packages/. Nothing was changed."
 fi
 
 # ---------------------------------------------------------------------------
-# 1. Make sure build junk cannot be committed, whatever .gitignore says
+# 2. What would be copied — and what would be left behind
 # ---------------------------------------------------------------------------
-# Library/ alone is gigabytes and is regenerated from Packages+Assets on every open.
-JUNK=(Library Temp Obj Logs Build UserSettings MemoryCaptures)
-junk_tracked=""
-for dir in "${JUNK[@]}"; do
-  if git ls-files --error-unmatch "$UNITY_DIR/$dir" >/dev/null 2>&1; then
-    junk_tracked="$junk_tracked $dir"
-  fi
-done
-[ -n "$junk_tracked" ] && warn "already tracked build dirs (will not be touched here):$junk_tracked"
+# Library/ alone is gigabytes and Unity rebuilds it from Assets+Packages on open.
+#
+# tar rather than rsync: rsync is absent from this container and from a stock Windows
+# Git Bash, which is one of the machines this has to run on. tar ships with macOS, Linux
+# and Git Bash alike, and `tar -c | tar -x` copies a tree with exclusions and no temp file.
+EXCLUDES=(Library Temp Obj Logs Build Builds UserSettings MemoryCaptures .vs .idea)
+tar_excludes=()
+for e in "${EXCLUDES[@]}"; do tar_excludes+=(--exclude="./$e"); done
+tar_excludes+=(--exclude='*.apk' --exclude='*.aab' --exclude='*.keystore'
+               --exclude='*.jks' --exclude='*.csproj' --exclude='*.sln')
 
-# ---------------------------------------------------------------------------
-# 2. Refuse to commit secrets — an APK signing key or a service-role key in git is
-#    unrecoverable: rewriting history does not un-publish it.
-# ---------------------------------------------------------------------------
-bold "== secret scan over what would be added =="
-candidates=$(git status --porcelain --untracked-files=all -- "$UNITY_DIR" | awk '{print $NF}')
-blocked=""
-while IFS= read -r f; do
-  [ -z "$f" ] && continue
-  case "$f" in
-    *.keystore|*.jks|*.p12|*.pepk) blocked="$blocked
-  signing key: $f" ;;
-  esac
-  if [ -f "$f" ] && grep -qE 'service_role|SUPABASE_SERVICE|sb_secret_' "$f" 2>/dev/null; then
-    blocked="$blocked
-  service-role key: $f"
-  fi
-done <<< "$candidates"
+command -v tar >/dev/null || die "tar is not installed. It ships with macOS, Linux and
+     Git Bash on Windows. Nothing was changed."
 
-if [ -n "$blocked" ]; then
-  die "refusing to continue — these would publish a secret:$blocked
-
-     A signing key or service-role key in git history cannot be taken back.
-     Move them outside the repo (or into GitHub Actions secrets) and re-run."
-fi
-echo "  clean"
-echo
-
-# ---------------------------------------------------------------------------
-# 3. Show the plan
-# ---------------------------------------------------------------------------
-# Staged deletions are NOT all equivalent. The working tree that has the Unity project
-# was reported to have the CI workflows staged for deletion alongside the retired V5
-# client. `git commit` with no pathspec commits everything staged, so an earlier version
-# of this script would have deleted .github/workflows/ from the repository as a side
-# effect of "retiring the V5 client" — silently, in a commit whose message said nothing
-# about it. Deletions are classified, and anything outside the client tree stops the run.
-staged_deletions=$(git diff --cached --name-only --diff-filter=D || true)
-client_deletions=$(echo "$staged_deletions" | grep -E '^(client|Assets|ProjectSettings|Packages)/' || true)
-other_deletions=$(echo "$staged_deletions" | grep -vE '^(client|Assets|ProjectSettings|Packages)/' | grep -v '^$' || true)
-
-deletions=$(echo "$client_deletions" | grep -c . || true)
-additions=$(git status --porcelain --untracked-files=all -- "$UNITY_DIR" | grep -c '^??' || true)
-
-if [ -n "$other_deletions" ]; then
-  warn "== staged deletions OUTSIDE the client tree =="
-  echo "$other_deletions" | sed 's/^/  /'
-  echo
-  die "these are not part of retiring the V5 client, and this script will not commit them.
-
-     Deleting .github/workflows/ would remove the CI that builds the APK. Deleting
-     tools/, backend/, tests/ or docs/ would remove work that is on the remote.
-
-     Unstage them WITHOUT touching your files:
-
-         git restore --staged $(echo "$other_deletions" | head -1)
-
-     ('git restore --staged' only un-stages. It does not modify or delete anything on
-     disk. Do NOT use 'git restore' without --staged, and do not use 'git checkout --'.)
-
-     Then re-run this script. Nothing was changed."
-fi
+plan_list=$(tar -C "$SRC" "${tar_excludes[@]}" -cf - . 2>/dev/null | tar -tf - | grep -v '/$' || true)
+file_count=$(printf '%s\n' "$plan_list" | grep -c . || true)
 
 bold "== plan =="
 cat <<PLAN
-  branch                 $BRANCH
-  commit 1 (removal)     $deletions staged client deletion(s) — the retired V5 client
-  commit 2 (addition)    $additions new file(s) under $UNITY_DIR — the V14 project
+  copy    $file_count file(s)
+  from    $SRC
+          ^ READ ONLY. Nothing there is moved, deleted, staged or committed.
+  into    $(pwd)/$DEST
+  branch  $BRANCH
 
-  Two commits, not one, so the removal can be reviewed or reverted without taking the
-  V14 project with it.
+  skipped: ${EXCLUDES[*]}, *.apk, *.aab, *.keystore, *.jks
 
-  Commit 1 is made with an explicit pathspec, so only client files are removed even if
-  something else is staged.
+  Nothing is deleted. The V14 branch carries no V5 tree, so there is nothing to remove —
+  only something to add. Your 281 staged deletions live on the other branch in the other
+  folder and are not touched by this script at all.
 
-  This script will NEVER run: git reset --hard · git checkout -- . · git clean
-  Your untracked files are the only copy in existence. Nothing here deletes them.
+  This script NEVER runs: git reset --hard · git checkout -- . · git clean
+  against your source folder.
 PLAN
 echo
 
 if [ "$APPLY" != "true" ]; then
   bold "Dry run. Nothing was changed."
-  echo "When the plan above looks right, run:"
-  echo "    bash tools/release/push-unity-project.sh --commit"
+  echo "If the plan looks right, re-run with --commit:"
+  echo "    bash tools/release/push-unity-project.sh --from '$SRC' --commit"
   exit 0
 fi
 
 # ---------------------------------------------------------------------------
-# 4. Do it
+# 3. Copy
 # ---------------------------------------------------------------------------
-git rev-parse --verify "$BRANCH" >/dev/null 2>&1 \
-  && git checkout "$BRANCH" \
-  || git checkout -b "$BRANCH"
+bold "== copying =="
+mkdir -p "$DEST"
+tar -C "$SRC" "${tar_excludes[@]}" -cf - . | tar -C "$DEST" -xf -
+copied=$(find "$DEST" -type f | wc -l | tr -d ' ')
+echo "  $copied file(s) now in $DEST"
 
-if [ "$deletions" -gt 0 ]; then
-  bold "== commit 1: retire the V5 client =="
-  # The pathspec is the exact list of classified deletions, not a guess at which top-level
-  # directories they live in. A guessed pathspec (`-- client Assets ProjectSettings`)
-  # matched nothing when the tree was laid out differently, git errored, the error was
-  # swallowed, and the V5 deletions silently rolled into commit 2 instead. The split still
-  # *looked* fine because the end state was right — which is exactly how a broken step
-  # survives review.
-  paths_file=$(mktemp)
-  printf '%s\n' "$client_deletions" > "$paths_file"
-
-  if ! git commit --pathspec-from-file="$paths_file" -m "chore(client): retire the V5 client tree
-
-$deletions files from the pre-V14 client are removed. Split from the V14 addition so the
-two can be reviewed and reverted independently."; then
-    rm -f "$paths_file"
-    die "the V5 removal commit failed. Nothing else has been committed, and no file on
-     disk was touched. Send the git error above and stop here."
-  fi
-  rm -f "$paths_file"
-
-  # Prove the split actually happened rather than trusting the exit code.
-  if git diff --cached --name-only --diff-filter=D | grep -q .; then
-    warn "some staged deletions remain after commit 1 — they will NOT be swept into
-     commit 2. Inspect them with: git diff --cached --diff-filter=D --name-only"
-  fi
+# The plan promised a count. If the copy produced a different one, say so rather than
+# letting a partial copy look like a complete one.
+if [ "$copied" -lt "$file_count" ]; then
+  warn "copied $copied but planned $file_count — the copy is incomplete. Inspect $DEST
+     before continuing. Your source folder is untouched."
 fi
+echo
 
-bold "== commit 2: add the V14 Unity project =="
-git add -- "$UNITY_DIR"
-git status --short -- "$UNITY_DIR" | head -30
-echo "  ..."
-# Scoped to the Unity directory for the same reason commit 1 is scoped: whatever else is
-# staged in this working tree is not this script's to commit. The pathspec goes AFTER the
-# message — everything following `--` is a pathspec, so `git commit -- dir -m msg` quietly
-# treats "-m" and the message text as two more paths and commits nothing.
-git commit -m "feat(client): commit the V14 Unity project
+# ---------------------------------------------------------------------------
+# 4. Refuse to publish a secret. Rewriting history does not un-publish a key.
+# ---------------------------------------------------------------------------
+bold "== secret scan =="
+blocked=""
+while IFS= read -r f; do
+  [ -f "$f" ] || continue
+  case "$f" in *.keystore|*.jks|*.p12|*.pepk) blocked="$blocked
+  signing key: $f" ;; esac
+  if grep -qE 'service_role|SUPABASE_SERVICE_ROLE|sb_secret_' "$f" 2>/dev/null; then
+    blocked="$blocked
+  service-role key: $f"
+  fi
+done < <(find "$DEST" -type f)
 
-The project existed only on one machine, which meant the APK could not be rebuilt
-anywhere else, CI could not build it at all, and an untracked working tree was the only
-copy of it. With this commit .github/workflows/android-apk.yml can build the APK on
-every push and attach it to a Release on every tag.
+if [ -n "$blocked" ]; then
+  # Undo the copy so this clone is left exactly as it was found. Safe here and only
+  # here: this is a fresh clone whose every file is already in a commit.
+  git clean -fdq -- "$DEST" || true
+  git checkout -- "$DEST" || true
+  die "refusing to continue — these would publish a secret:$blocked
 
-Library/, Temp/, Logs/ and the other regenerated directories are excluded by .gitignore." \
-  -- "$UNITY_DIR"
+     A signing key or service-role key in git history cannot be taken back.
+     The copy was undone in THIS CLONE only; your original folder is untouched.
+     Move the key out of the project (or into GitHub Actions secrets) and re-run."
+fi
+echo "  clean"
+echo
+
+# ---------------------------------------------------------------------------
+# 5. Commit and push
+# ---------------------------------------------------------------------------
+bold "== commit =="
+git add -- "$DEST"
+added=$(git diff --cached --name-only -- "$DEST" | wc -l | tr -d ' ')
+[ "$added" -gt 0 ] || die "nothing changed after the copy — the project may already be
+     committed. Nothing was changed."
+
+git status --short -- "$DEST" | head -20 | sed 's/^/  /'
+[ "$added" -gt 20 ] && echo "  ... and $((added - 20)) more"
+
+# The pathspec follows the message: everything after `--` is a pathspec, so
+# `git commit -- dir -m msg` silently treats "-m" and the message as two more paths.
+git commit -q -m "feat(client): commit the V14 Unity project
+
+The project existed only in one working folder, on a branch of its own, so the APK could
+not be rebuilt anywhere else and CI could not build it at all. With this commit
+.github/workflows/android-apk.yml builds the APK on every push and attaches it to a
+Release on every tag.
+
+Copied from a complete local project into a clean clone; the source folder was opened
+read-only. Library/, Temp/, Logs/ and the other regenerated directories are excluded, as
+are APKs and signing keys.
+
+$added files." -- "$DEST"
 
 bold "== push =="
 for attempt in 1 2 3 4; do
   if git push -u origin "$BRANCH"; then
-    bold "pushed."
     echo
-    echo "Next: set the UNITY_LICENSE / UNITY_EMAIL / UNITY_PASSWORD repository secrets"
-    echo "and the android-apk workflow will build the APK by itself."
-    echo "See docs/ANDROID_BUILD.md."
+    bold "pushed."
+    echo "Next: set the repository secrets listed in docs/ANDROID_BUILD.md, and the"
+    echo "android-apk workflow will build the APK by itself."
     exit 0
   fi
   wait=$((2 ** attempt))
   warn "push failed, retrying in ${wait}s"
   sleep "$wait"
 done
-die "push failed after 4 attempts. Your commits are safe locally — nothing was lost."
+die "push failed after 4 attempts. The commit is safe in this clone — nothing was lost,
+     and your original folder was never modified."

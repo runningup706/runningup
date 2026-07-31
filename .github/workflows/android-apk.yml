@@ -163,12 +163,29 @@ jobs:
           projectPath: client/unity
           targetPlatform: Android
           androidAppBundle: false
-          androidKeystoreName: runningup.keystore
+          # Release signing is OPTIONAL. When ANDROID_KEYSTORE_BASE64 is unset every field
+          # below is the empty string, unity-builder skips keystore setup, and the APK is
+          # debug-signed — installable by adb, not publishable to Play. Passing a keystore
+          # *name* while the base64 is empty is what makes the build fail with an unhelpful
+          # signing error, so the name is conditional on the key being present too.
+          androidKeystoreName: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' && 'runningup.keystore' || '' }}
           androidKeystoreBase64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
           androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}
           androidKeyaliasName: ${{ secrets.ANDROID_KEYALIAS_NAME }}
           androidKeyaliasPass: ${{ secrets.ANDROID_KEYALIAS_PASS }}
           allowDirtyBuild: false
+
+      - name: Say how this APK is signed
+        id: signing
+        env:
+          HAS_KEYSTORE: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+        run: |
+          if [ "$HAS_KEYSTORE" = "true" ]; then
+            echo "mode=release-signed" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=debug-signed" >> "$GITHUB_OUTPUT"
+            echo "::warning::No ANDROID_KEYSTORE_BASE64 secret — the APK is debug-signed. Installable for testing; not publishable to Play."
+          fi
 
       - name: Record what was built
         id: apk
@@ -221,6 +238,7 @@ jobs:
           | Commit | \`${GITHUB_SHA}\` |
           | Package | kr.robom.runningup |
           | targetSdk | 36 |
+          | Signing | ${{ steps.signing.outputs.mode }} |
 
           ## Verified by this build
           - Direction lock, launch content, unit tests and client-ladder parity all passed
