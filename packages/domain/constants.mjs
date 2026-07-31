@@ -189,7 +189,7 @@ export const VERIFICATION_GRADES = Object.freeze([
 /** Launch content floor. Mirrors content/schemas/direction_lock.json. */
 export const LAUNCH_CONTENT_FLOOR = Object.freeze({
   continents: 12,
-  region_nodes: 96,
+  region_nodes: 192,
   main_stages: 72,
   side_stages: 24,
   playable_characters: 12,

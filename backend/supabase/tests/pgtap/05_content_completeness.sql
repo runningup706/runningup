@@ -4,7 +4,7 @@ begin;
 select plan(15);
 
 select is((select count(*)::int from api.world_continents), 12, '12 continents are seeded');
-select is((select count(*)::int from api.world_regions), 96, '96 region nodes are seeded');
+select is((select count(*)::int from api.world_regions), 192, '192 region nodes are seeded');
 select is((select count(*)::int from api.world_stages where kind = 'main'), 72, '72 main stages are seeded');
 select is((select count(*)::int from api.world_stages where kind = 'side'), 24, '24 side stages are seeded');
 select is((select count(*)::int from api.characters), 12, '12 playable characters are seeded');
@@ -18,9 +18,9 @@ select is((select count(*)::int from api.world_bosses where kind = 'apex_boss'),
 -- Per-continent floor: the total must not be carried by a handful of rich continents.
 select is(
   (select count(*)::int from api.world_continents c
-   where (select count(*) from api.world_regions r where r.continent_id = c.id) < 8
+   where (select count(*) from api.world_regions r where r.continent_id = c.id) < 16
       or (select count(*) from api.world_stages s where s.continent_id = c.id and s.kind = 'main') < 6),
-  0, 'every continent carries at least 8 regions and 6 main stages of its own');
+  0, 'every continent carries at least 16 regions and 6 main stages of its own');
 
 -- Availability: nothing counted may be hidden, disabled or gated behind another continent.
 select is(

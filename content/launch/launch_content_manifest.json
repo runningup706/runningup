@@ -4,7 +4,7 @@
   "generated_by": "tools/content-factory/build.mjs",
   "counts": {
     "continents": 12,
-    "region_nodes": 96,
+    "region_nodes": 192,
     "main_stages": 72,
     "side_stages": 24,
     "playable_characters": 12,
@@ -24,7 +24,7 @@
   },
   "floor": {
     "continents": 12,
-    "region_nodes": 96,
+    "region_nodes": 192,
     "main_stages": 72,
     "side_stages": 24,
     "playable_characters": 12,
@@ -47,7 +47,7 @@
     "ko",
     "en"
   ],
-  "localization_key_count": 851,
+  "localization_key_count": 947,
   "monthly_apex": {
     "checkpoint_count": 121,
     "final_checkpoint_meters": 1000000,
@@ -80,5 +80,5 @@
     "content/launch/world/stages/side_stages.json",
     "content/launch/world/story_chapters.json"
   ],
-  "content_sha256": "931cbe2d82abc881c8287bc1cc588696da131abe40c6fcd3dc5d85070d76920b"
+  "content_sha256": "ee51f0916a5a052890c3663da60d6d78425d8e406fbcdc5e80b25b29d19e6c7c"
 }

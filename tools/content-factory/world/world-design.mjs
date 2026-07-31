@@ -34,6 +34,11 @@ export const CONTINENTS = Object.freeze([
       { ko: '기계 성벽 상단', en: 'Rampart Crown' }, { ko: '등불 광장', en: 'Lanternfall Plaza' },
       { ko: '거울 종탑', en: 'Mirror Belfry' }, { ko: '축 관측소', en: 'Axis Observatory' },
       { ko: '침묵한 예배당', en: 'Hushed Chapel' }, { ko: '첫 축의 심부', en: 'Heart of the First Axis' },
+    
+      { ko: '서광 계단', en: 'Firstlight Stair' }, { ko: '프리즘 산책로', en: 'Prism Promenade' },
+      { ko: '성벽 순환로', en: 'Rampart Circuit' }, { ko: '새벽종 길', en: 'Matins Way' },
+      { ko: '굴절 정원', en: 'Refraction Garden' }, { ko: '등불지기 숙소', en: 'Lanternkeeper Quarters' },
+      { ko: '은빛 수로', en: 'Silver Aqueduct' }, { ko: '첫 빛 전망대', en: 'First Light Overlook' },
     ],
     stages: [
       { objective: 'defense', twist: 'Hold three mirror pylons while the barrier recharges' },
@@ -76,6 +81,11 @@ export const CONTINENTS = Object.freeze([
       { ko: '수관 다리', en: 'Canopy Span' }, { ko: '정화의 샘', en: 'Cleansing Spring' },
       { ko: '잠든 묘목원', en: 'Sleeping Nursery' }, { ko: '수액 정제소', en: 'Sap Refinery' },
       { ko: '속박의 덩굴굴', en: 'Bindvine Hollow' }, { ko: '숨결의 대수', en: 'Great Tree of Breath' },
+    
+      { ko: '이끼 계단길', en: 'Mosswalk Stair' }, { ko: '포자 시장', en: 'Sporemarket' },
+      { ko: '뿌리 회랑', en: 'Root Colonnade' }, { ko: '수액 수로', en: 'Sapwater Channel' },
+      { ko: '잎그늘 순환로', en: 'Leafshade Circuit' }, { ko: '밤빛 늪', en: 'Nightglow Marsh' },
+      { ko: '씨앗 보관소', en: 'Seed Vault' }, { ko: '숨결 언덕', en: 'Breathwatch Rise' },
     ],
     stages: [
       { objective: 'resource_control', twist: 'Claim spring nodes to slow the root growth clock' },
@@ -118,6 +128,11 @@ export const CONTINENTS = Object.freeze([
       { ko: '재의 광장', en: 'Cinder Court' }, { ko: '균열 갱도', en: 'Fracture Shaft' },
       { ko: '단조 회랑', en: 'Forging Gallery' }, { ko: '식은 주형터', en: 'Cooled Castyard' },
       { ko: '증기 배출구', en: 'Ventway' }, { ko: '멈춘 심장부', en: 'The Stopped Heart' },
+    
+      { ko: '재의 하상', en: 'Ashbed Wash' }, { ko: '현무암 계단', en: 'Basalt Steps' },
+      { ko: '열기 통로', en: 'Heatvent Run' }, { ko: '담금질 못', en: 'Quench Pool' },
+      { ko: '붉은 협곡 다리', en: 'Redspan Bridge' }, { ko: '용광로 마을', en: 'Furnace Township' },
+      { ko: '식은 용암밭', en: 'Cooled Flow Field' }, { ko: '불씨 전망대', en: 'Emberlook' },
     ],
     stages: [
       { objective: 'timed_assault', twist: 'Strike between vent cycles or lose the heat window' },
@@ -160,6 +175,11 @@ export const CONTINENTS = Object.freeze([
       { ko: '돌풍 회랑', en: 'Gust Corridor' }, { ko: '연 날리는 언덕', en: 'Kite Rise' },
       { ko: '끊긴 대로', en: 'Severed Highroad' }, { ko: '바람 저장고', en: 'Wind Granary' },
       { ko: '표류 정거장', en: 'Drift Station' }, { ko: '길잇는 첨탑', en: 'Roadbinder Spire' },
+    
+      { ko: '열두 풍차', en: 'Twelve Mills' }, { ko: '풀바다 오솔길', en: 'Grasssea Path' },
+      { ko: '연 언덕', en: 'Kitewind Hill' }, { ko: '곡물 창고길', en: 'Granary Road' },
+      { ko: '바람 갈림목', en: 'Windsplit Junction' }, { ko: '떠도는 다리', en: 'Drifting Span' },
+      { ko: '방앗간 도랑', en: 'Millrace Ditch' }, { ko: '지평 관측소', en: 'Horizon Post' },
     ],
     stages: [
       { objective: 'escort', twist: 'A cart accelerates in wind lanes and must not overshoot' },
@@ -202,6 +222,11 @@ export const CONTINENTS = Object.freeze([
       { ko: '수상 시장', en: 'Floating Market' }, { ko: '항로 부표', en: 'Searoad Buoys' },
       { ko: '가라앉은 등대', en: 'Sunken Lighthouse' }, { ko: '조개 골목', en: 'Shell Alley' },
       { ko: '기억의 해구', en: 'Memory Trench' }, { ko: '별물결 신전', en: 'Starwave Shrine' },
+    
+      { ko: '조수 산책로', en: 'Tidewalk' }, { ko: '등불 다리', en: 'Lantern Span' },
+      { ko: '굴 양식장', en: 'Oyster Beds' }, { ko: '밤바다 계단', en: 'Nightsea Stair' },
+      { ko: '별빛 반사장', en: 'Starmirror Flat' }, { ko: '어망 골목', en: 'Netmender Lane' },
+      { ko: '해도 보관소', en: 'Chartroom' }, { ko: '파도 전망대', en: 'Wavewatch' },
     ],
     stages: [
       { objective: 'resource_control', twist: 'Hold buoys that survive only one tide phase' },
@@ -244,6 +269,11 @@ export const CONTINENTS = Object.freeze([
       { ko: '전도 격자', en: 'Conduction Grid' }, { ko: '축전 광장', en: 'Capacitor Square' },
       { ko: '과부하 구역', en: 'Overload Ward' }, { ko: '절연 골목', en: 'Insulator Row' },
       { ko: '뇌격 첨탑', en: 'Thunder Spire' }, { ko: '중앙 배전소', en: 'Central Exchange' },
+    
+      { ko: '변압기 골목', en: 'Transformer Row' }, { ko: '냉각탑 순환로', en: 'Coolant Circuit' },
+      { ko: '전류 다리', en: 'Current Span' }, { ko: '제련 작업장', en: 'Smelting Floor' },
+      { ko: '접지 마당', en: 'Earthing Yard' }, { ko: '케이블 육교', en: 'Cableway Bridge' },
+      { ko: '계량실', en: 'Metering Hall' }, { ko: '방전 전망대', en: 'Discharge Overlook' },
     ],
     stages: [
       { objective: 'resource_control', twist: 'Own capacitors to decide which tiles conduct' },
@@ -286,6 +316,11 @@ export const CONTINENTS = Object.freeze([
       { ko: '거울 열주', en: 'Mirror Colonnade' }, { ko: '그림자 우물', en: 'Shadow Well' },
       { ko: '모래 시계탑', en: 'Sandglass Tower' }, { ko: '반사 미로', en: 'Reflection Maze' },
       { ko: '묻힌 대상로', en: 'Buried Caravan Road' }, { ko: '진실의 유적', en: 'Ruin of Truth' },
+    
+      { ko: '유리 평원', en: 'Glass Flats' }, { ko: '신기루 길', en: 'Mirage Road' },
+      { ko: '모래시계 계곡', en: 'Hourglass Vale' }, { ko: '굴절 언덕', en: 'Refracted Dune' },
+      { ko: '잊힌 우물', en: 'Forgotten Well' }, { ko: '대상 야영지', en: 'Caravan Camp' },
+      { ko: '유리 첨탑', en: 'Glass Needle' }, { ko: '참된 지평', en: 'True Horizon' },
     ],
     stages: [
       { objective: 'elite_hunt', twist: 'Six identical elites, one shadow' },
@@ -328,6 +363,11 @@ export const CONTINENTS = Object.freeze([
       { ko: '고드름 회랑', en: 'Icicle Gallery' }, { ko: '눈보라 안뜰', en: 'Blizzard Ward' },
       { ko: '얼어붙은 병영', en: 'Frozen Barracks' }, { ko: '해빙 온천', en: 'Thawing Springs' },
       { ko: '침묵의 빙하', en: 'Silent Glacier' }, { ko: '멈춘 시계 종루', en: 'Halted Belfry' },
+    
+      { ko: '눈보라 회랑', en: 'Snowdrift Colonnade' }, { ko: '얼음 다리', en: 'Icespan' },
+      { ko: '극광 마당', en: 'Aurora Yard' }, { ko: '온천 계단', en: 'Hotspring Stair' },
+      { ko: '서리 시장', en: 'Frostmarket' }, { ko: '설선 순환로', en: 'Snowline Circuit' },
+      { ko: '침묵의 능선', en: 'Silent Ridgeway' }, { ko: '흰 전망대', en: 'Whitewatch' },
     ],
     stages: [
       { objective: 'boss_break', twist: 'Shatter windows open and close with the aurora pulse' },
@@ -370,6 +410,11 @@ export const CONTINENTS = Object.freeze([
       { ko: '구름 다리', en: 'Cloudbridge' }, { ko: '낙하 협곡', en: 'Fallgap' },
       { ko: '풍력 승강장', en: 'Updraft Landing' }, { ko: '표류섬 시장', en: 'Driftisle Market' },
       { ko: '끊긴 항로', en: 'Severed Skyway' }, { ko: '군도의 심핵', en: 'Archipelago Core' },
+    
+      { ko: '밧줄 다리', en: 'Ropespan' }, { ko: '상승기류 계단', en: 'Updraft Stair' },
+      { ko: '구름 정원', en: 'Cloud Garden' }, { ko: '폭포 가장자리', en: 'Fallsedge' },
+      { ko: '부유섬 순환로', en: 'Driftisle Circuit' }, { ko: '계류탑', en: 'Mooring Tower' },
+      { ko: '하늘시장 골목', en: 'Skymarket Lane' }, { ko: '열도 전망대', en: 'Archipelago Overlook' },
     ],
     stages: [
       { objective: 'timed_assault', twist: 'The arena shrinks island by island' },
@@ -412,6 +457,11 @@ export const CONTINENTS = Object.freeze([
       { ko: '침몰 서고', en: 'Sunken Archive' }, { ko: '해구 계단', en: 'Trench Stair' },
       { ko: '발광 정원', en: 'Glowgarden' }, { ko: '압력 균열', en: 'Pressure Fracture' },
       { ko: '침묵의 종실', en: 'Silent Bellroom' }, { ko: '기록의 심부', en: 'Heart of Records' },
+    
+      { ko: '수압 계단', en: 'Pressure Stair' }, { ko: '잠긴 회랑', en: 'Flooded Colonnade' },
+      { ko: '발광 정원길', en: 'Glowpath' }, { ko: '기록 서고', en: 'Record Stacks' },
+      { ko: '해구 다리', en: 'Trench Span' }, { ko: '산호 골목', en: 'Coral Lane' },
+      { ko: '침묵의 종탑길', en: 'Bellway' }, { ko: '심연 전망대', en: 'Abyss Overlook' },
     ],
     stages: [
       { objective: 'survival', twist: 'The pressure timer is the real health bar' },
@@ -454,6 +504,11 @@ export const CONTINENTS = Object.freeze([
       { ko: '분침 계단', en: 'Minute Stair' }, { ko: '역행 안뜰', en: 'Retrograde Court' },
       { ko: '진자 광장', en: 'Pendulum Plaza' }, { ko: '멈춘 공방', en: 'Stopped Workshop' },
       { ko: '시침 첨탑', en: 'Hour Spire' }, { ko: '순서의 중심', en: 'Core of Order' },
+    
+      { ko: '톱니 회랑', en: 'Gearwork Colonnade' }, { ko: '초침 계단', en: 'Second-hand Stair' },
+      { ko: '태엽 마당', en: 'Winding Yard' }, { ko: '시계공 골목', en: 'Clockmaker Lane' },
+      { ko: '균형추 다리', en: 'Counterweight Span' }, { ko: '정시 광장', en: 'On-the-hour Plaza' },
+      { ko: '멈춘 시계탑', en: 'Halted Clocktower' }, { ko: '시간 전망대', en: 'Timewatch' },
     ],
     stages: [
       { objective: 'resource_control', twist: 'Own the zones that decide who acts twice' },
@@ -496,6 +551,11 @@ export const CONTINENTS = Object.freeze([
       { ko: '기억의 교차로', en: 'Memory Crossing' }, { ko: '파편 정원', en: 'Shard Garden' },
       { ko: '반향 광장', en: 'Echo Plaza' }, { ko: '무너진 세계선', en: 'Collapsed Worldline' },
       { ko: '통합 제단', en: 'Convergence Altar' }, { ko: '세계축의 끝', en: 'End of the World Axis' },
+    
+      { ko: '겹친 계단', en: 'Overlaid Stair' }, { ko: '열한 지평 회랑', en: 'Eleven Horizons Walk' },
+      { ko: '파편 다리', en: 'Shardspan' }, { ko: '반향 골목', en: 'Echo Lane' },
+      { ko: '무너진 광장', en: 'Collapsed Plaza' }, { ko: '경계 순환로', en: 'Boundary Circuit' },
+      { ko: '최초의 길', en: 'The First Road' }, { ko: '세계선 전망대', en: 'Worldline Overlook' },
     ],
     stages: [
       { objective: 'boss_break', twist: 'Light reflection plus heat venting in one gauge' },
