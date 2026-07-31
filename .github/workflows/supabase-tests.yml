@@ -12,18 +12,15 @@ jobs:
   pgtap:
     runs-on: ubuntu-latest
 
-    services:
-      postgres:
-        image: postgres:16
-        env:
-          POSTGRES_PASSWORD: postgres
-        ports: ['5432:5432']
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
+    # No `services:` block on purpose.
+    #
+    # This job used to run PostgreSQL as a service container (`image: postgres:16`) and
+    # apt-install `postgresql-16-pgtap` on the runner. Those are two different
+    # filesystems: the extension landed on the runner host while the server ran inside
+    # the container, so `create extension pgtap` failed with
+    # `Could not open extension control file ".../pgtap.control"` on every commit in the
+    # repository's history. Running the server on the runner itself puts the server and
+    # its extensions in the same place.
     env:
       PGHOST: localhost
       PGPORT: '5432'
@@ -38,23 +35,53 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install postgres client, pgTAP and pg_prove
+      # `libtap-parser-sourcehandler-pgtap-perl` is what actually provides `pg_prove`;
+      # `libtap-harness-archive-perl` alone does not.
+      - name: Install PostgreSQL 16, pgTAP and pg_prove
         run: |
+          set -euo pipefail
           sudo apt-get update
-          sudo apt-get install -y postgresql-client postgresql-16-pgtap libtap-harness-archive-perl
+          sudo apt-get install -y \
+            postgresql-16 \
+            postgresql-client-16 \
+            postgresql-16-pgtap \
+            libtap-parser-sourcehandler-pgtap-perl \
+            libtap-harness-archive-perl
+
+      - name: Start PostgreSQL and set the test password
+        run: |
+          set -euo pipefail
+          sudo pg_ctlcluster 16 main start || sudo systemctl start postgresql@16-main
+          for attempt in $(seq 1 30); do
+            if pg_isready -h localhost -p 5432 -q; then break; fi
+            echo "waiting for postgres (${attempt}/30)"
+            sleep 2
+          done
+          pg_isready -h localhost -p 5432
+          sudo -u postgres psql -c "alter user postgres password 'postgres'"
+
+      # Prove pgTAP is loadable in the server we just started, so a later failure is a
+      # real test failure rather than a missing extension.
+      - name: Verify pgTAP is available in this server
+        run: |
+          set -euo pipefail
+          psql -d postgres -v ON_ERROR_STOP=1 -c "create extension if not exists pgtap"
+          psql -d postgres -tAc "select extversion from pg_extension where extname = 'pgtap'"
+          psql -d postgres -v ON_ERROR_STOP=1 -c "drop extension pgtap"
+          command -v pg_prove
 
       # Migrations must apply to a genuinely empty database, the seed must satisfy the
       # in-database launch content gate, and every pgTAP suite must pass.
       - name: Migrations, seed and pgTAP suite
         run: bash tools/test/db.sh
 
-      # db.sh regenerates RLS_MATRIX.md, DATABASE_SCHEMA.md and the evidence manifest from
-      # the live schema. If they differ from the commit, the documents were stale.
       # The game itself must run, not just its parts. This plays the full loop for every
       # ability level against the database db.sh just seeded.
       - name: Playable loop end-to-end
         run: RUNNINGUP_DB=runningup_ci node client/cli/smoke-play.mjs
 
+      # db.sh regenerates RLS_MATRIX.md, DATABASE_SCHEMA.md and the evidence manifest from
+      # the live schema. If they differ from the commit, the documents were stale.
       - name: Fail if the generated security evidence drifted
         run: |
           if ! git diff --quiet -- docs/RLS_MATRIX.md docs/DATABASE_SCHEMA.md artifacts/test-evidence-manifest.json; then

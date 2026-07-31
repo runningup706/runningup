@@ -8,18 +8,70 @@ on:
 permissions:
   contents: read
 
+env:
+  # Patterns match KEY MATERIAL, not the word `service_role`.
+  #
+  # `service_role` is a legitimate PostgreSQL role name that necessarily appears in every
+  # Supabase grant, in docs/RLS_MATRIX.md and in the .gitignore rule that keeps real key
+  # files out of the tree. Matching the bare name failed this job on every commit in the
+  # repository's history while saying nothing about whether a secret was ever committed.
+  #
+  # `BEGIN [A-Z0-9 ]*PRIVATE KEY` is deliberate. The previous
+  # `BEGIN (RSA|OPENSSH|PRIVATE) KEY` did NOT match `-----BEGIN RSA PRIVATE KEY-----`, the
+  # most common private-key header, because two words sit between BEGIN and KEY. The check
+  # was simultaneously too loud to ever pass and too narrow to catch a real leaked key.
+  SECRET_PATTERNS: >-
+    (SUPABASE_)?SERVICE_ROLE[_A-Z]*[[:space:]]*[=:][[:space:]]*\S{20,}|service_role[^A-Za-z0-9_]{0,4}(key|secret|jwt|token)[[:space:]]*[=:]|sb_secret_[A-Za-z0-9_-]{16,}|eyJ[A-Za-z0-9_-]{10,}\.eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}|BEGIN [A-Z0-9 ]*PRIVATE KEY|ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{30,}|-----BEGIN CERTIFICATE-----
+
 jobs:
   secrets:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      # A service-role key or a signing secret must never reach the repository.
+      # A tightened pattern is only worth having if it still catches real key material,
+      # so prove that before trusting a clean result. Otherwise this job could silently
+      # degrade into an always-green no-op — the failure mode that hides a real leak.
+      - name: Self-test the scanner against synthetic secrets
+        run: |
+          set -euo pipefail
+          fixtures="$(mktemp -d)"
+
+          # The fixtures are assembled from fragments and use obviously-fake values.
+          # A literal that looks like a real token would be blocked by GitHub push
+          # protection before it could ever reach the repository — which is exactly what
+          # happened while writing this step.
+          p_key='PRIVATE'' KEY'
+          {
+            echo "SUPABASE_SERVICE_ROLE_KEY=EXAMPLE-NOT-A-REAL-TOKEN-000000000"
+            echo "service_role_key: ey""JFWEFNUExFX0hFQURFUg.ey""JFWEFNUExFX1BBWUxPQUQ.EXAMPLE-SIG-0000"
+            echo "SB_SECRET=sb""_secret_EXAMPLE_NOT_REAL_0000000"
+            echo "token=gh""p_EXAMPLENOTAREALTOKEN000000000000000"
+            echo "-----BEGIN RSA ${p_key}-----"
+            echo "-----BEGIN OPENSSH ${p_key}-----"
+            echo "-----BEGIN ${p_key}-----"
+          } > "$fixtures/must-match.txt"
+          {
+            echo 'grant usage on schema api to service_role;'
+            echo '- `anon` and `authenticated` are the client roles. `service_role` is the server.'
+            echo '**/service_role*'
+          } > "$fixtures/must-not-match.txt"
+
+          matched="$(grep -cIE "$SECRET_PATTERNS" "$fixtures/must-match.txt" || true)"
+          if [ "$matched" -ne 7 ]; then
+            echo "::error::Scanner caught ${matched}/7 synthetic secrets — it is not detecting real key material."
+            exit 1
+          fi
+          if grep -qIE "$SECRET_PATTERNS" "$fixtures/must-not-match.txt"; then
+            echo "::error::Scanner flags a legitimate PostgreSQL role name as a secret."
+            exit 1
+          fi
+          echo "scanner self-test: 7/7 secrets caught, 0 false positives"
+
       - name: Scan for committed secrets
         run: |
           set -euo pipefail
-          patterns='service_role|SUPABASE_SERVICE|BEGIN (RSA|OPENSSH|PRIVATE) KEY|ghp_[A-Za-z0-9]{20,}|-----BEGIN CERTIFICATE-----'
-          if git grep -nIE "$patterns" -- . ':(exclude).github/workflows/security-scan.yml' ':(exclude)docs/SECURITY.md'; then
+          if git grep -nIE "$SECRET_PATTERNS" -- . ':(exclude).github/workflows/security-scan.yml'; then
             echo "::error::Possible secret committed to the repository."
             exit 1
           fi
