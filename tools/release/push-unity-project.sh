@@ -103,17 +103,49 @@ echo
 # ---------------------------------------------------------------------------
 # 3. Show the plan
 # ---------------------------------------------------------------------------
-deletions=$(git diff --cached --name-only --diff-filter=D | wc -l | tr -d ' ')
+# Staged deletions are NOT all equivalent. The working tree that has the Unity project
+# was reported to have the CI workflows staged for deletion alongside the retired V5
+# client. `git commit` with no pathspec commits everything staged, so an earlier version
+# of this script would have deleted .github/workflows/ from the repository as a side
+# effect of "retiring the V5 client" — silently, in a commit whose message said nothing
+# about it. Deletions are classified, and anything outside the client tree stops the run.
+staged_deletions=$(git diff --cached --name-only --diff-filter=D || true)
+client_deletions=$(echo "$staged_deletions" | grep -E '^(client|Assets|ProjectSettings|Packages)/' || true)
+other_deletions=$(echo "$staged_deletions" | grep -vE '^(client|Assets|ProjectSettings|Packages)/' | grep -v '^$' || true)
+
+deletions=$(echo "$client_deletions" | grep -c . || true)
 additions=$(git status --porcelain --untracked-files=all -- "$UNITY_DIR" | grep -c '^??' || true)
+
+if [ -n "$other_deletions" ]; then
+  warn "== staged deletions OUTSIDE the client tree =="
+  echo "$other_deletions" | sed 's/^/  /'
+  echo
+  die "these are not part of retiring the V5 client, and this script will not commit them.
+
+     Deleting .github/workflows/ would remove the CI that builds the APK. Deleting
+     tools/, backend/, tests/ or docs/ would remove work that is on the remote.
+
+     Unstage them WITHOUT touching your files:
+
+         git restore --staged $(echo "$other_deletions" | head -1)
+
+     ('git restore --staged' only un-stages. It does not modify or delete anything on
+     disk. Do NOT use 'git restore' without --staged, and do not use 'git checkout --'.)
+
+     Then re-run this script. Nothing was changed."
+fi
 
 bold "== plan =="
 cat <<PLAN
   branch                 $BRANCH
-  commit 1 (removal)     $deletions staged deletion(s) — the retired V5 client
+  commit 1 (removal)     $deletions staged client deletion(s) — the retired V5 client
   commit 2 (addition)    $additions new file(s) under $UNITY_DIR — the V14 project
 
   Two commits, not one, so the removal can be reviewed or reverted without taking the
   V14 project with it.
+
+  Commit 1 is made with an explicit pathspec, so only client files are removed even if
+  something else is staged.
 
   This script will NEVER run: git reset --hard · git checkout -- . · git clean
   Your untracked files are the only copy in existence. Nothing here deletes them.
@@ -136,16 +168,40 @@ git rev-parse --verify "$BRANCH" >/dev/null 2>&1 \
 
 if [ "$deletions" -gt 0 ]; then
   bold "== commit 1: retire the V5 client =="
-  git commit -m "chore(client): retire the V5 client tree
+  # The pathspec is the exact list of classified deletions, not a guess at which top-level
+  # directories they live in. A guessed pathspec (`-- client Assets ProjectSettings`)
+  # matched nothing when the tree was laid out differently, git errored, the error was
+  # swallowed, and the V5 deletions silently rolled into commit 2 instead. The split still
+  # *looked* fine because the end state was right — which is exactly how a broken step
+  # survives review.
+  paths_file=$(mktemp)
+  printf '%s\n' "$client_deletions" > "$paths_file"
 
-$deletions files from the pre-V14 client are removed. Split from the V14 addition so
-the two can be reviewed and reverted independently." || warn "nothing to commit"
+  if ! git commit --pathspec-from-file="$paths_file" -m "chore(client): retire the V5 client tree
+
+$deletions files from the pre-V14 client are removed. Split from the V14 addition so the
+two can be reviewed and reverted independently."; then
+    rm -f "$paths_file"
+    die "the V5 removal commit failed. Nothing else has been committed, and no file on
+     disk was touched. Send the git error above and stop here."
+  fi
+  rm -f "$paths_file"
+
+  # Prove the split actually happened rather than trusting the exit code.
+  if git diff --cached --name-only --diff-filter=D | grep -q .; then
+    warn "some staged deletions remain after commit 1 — they will NOT be swept into
+     commit 2. Inspect them with: git diff --cached --diff-filter=D --name-only"
+  fi
 fi
 
 bold "== commit 2: add the V14 Unity project =="
 git add -- "$UNITY_DIR"
 git status --short -- "$UNITY_DIR" | head -30
 echo "  ..."
+# Scoped to the Unity directory for the same reason commit 1 is scoped: whatever else is
+# staged in this working tree is not this script's to commit. The pathspec goes AFTER the
+# message — everything following `--` is a pathspec, so `git commit -- dir -m msg` quietly
+# treats "-m" and the message text as two more paths and commits nothing.
 git commit -m "feat(client): commit the V14 Unity project
 
 The project existed only on one machine, which meant the APK could not be rebuilt
@@ -153,7 +209,8 @@ anywhere else, CI could not build it at all, and an untracked working tree was t
 copy of it. With this commit .github/workflows/android-apk.yml can build the APK on
 every push and attach it to a Release on every tag.
 
-Library/, Temp/, Logs/ and the other regenerated directories are excluded by .gitignore."
+Library/, Temp/, Logs/ and the other regenerated directories are excluded by .gitignore." \
+  -- "$UNITY_DIR"
 
 bold "== push =="
 for attempt in 1 2 3 4; do
