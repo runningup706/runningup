@@ -10,9 +10,10 @@ import { applyDistance, applyBatch, emptyProgress, ladderSnapshot, nextCheckpoin
 
 const KM = 1000;
 
-test('seed shape: exactly 52 checkpoints, ascending, final is exactly 1000 km', () => {
-  assert.equal(APEX_CHECKPOINT_METERS.length, 52);
-  assert.equal(DIRECTION_LOCK.CHECKPOINT_COUNT, 52);
+test('seed shape: exactly 120 checkpoints, ascending, final is exactly 1000 km', () => {
+  assert.equal(APEX_CHECKPOINT_METERS.length, 120);
+  assert.equal(DIRECTION_LOCK.CHECKPOINT_COUNT, 120);
+  assert.equal(APEX_CHECKPOINT_METERS[0], 1_000, 'the ladder starts at 1 km, not 0');
   assert.equal(APEX_CHECKPOINT_METERS.at(-1), 1_000_000);
   for (let i = 1; i < APEX_CHECKPOINT_METERS.length; i += 1) {
     assert.ok(APEX_CHECKPOINT_METERS[i] > APEX_CHECKPOINT_METERS[i - 1], `not ascending at ${i}`);
@@ -31,16 +32,23 @@ test('DL-1: no checkpoint at 1250/1500/2000 km and no rank above World Crown', (
   assert.equal(crown.max_meters, null, 'World Crown is open-ended: nothing exists above it');
 });
 
-test('42.195 km marathon-symbolic checkpoint is exact', () => {
-  assert.ok(APEX_CHECKPOINT_METERS.includes(42_195));
-  const idx = APEX_CHECKPOINT_METERS.indexOf(42_195);
-  assert.equal(checkpointId(idx), 'apex_cp_11_42p195km');
+test('the V14 ladder has no 42.195 km marathon checkpoint', () => {
+  // The pre-V14 52-step ladder carried 42_195 as a marathon-symbolic checkpoint. The V14
+  // 120-step ladder does not — it steps 41 km -> 45 km. This test records that as a
+  // deliberate, known consequence of adopting the V14 ladder rather than an accident, so
+  // that re-introducing it is a visible decision and not a silent drift.
+  assert.ok(!APEX_CHECKPOINT_METERS.includes(42_195));
+  assert.ok(APEX_CHECKPOINT_METERS.includes(41_000));
+  assert.ok(APEX_CHECKPOINT_METERS.includes(45_000));
 });
 
-test('first verified run of a month grants the journey-start checkpoint', () => {
+test('the first checkpoint is 1 km: a runner who has not run reaches nothing', () => {
+  const none = applyDistance(emptyProgress(), 999);
+  assert.deepEqual(none.crossed_checkpoints, [], 'under 1 km crosses no checkpoint');
+
   const r = applyDistance(emptyProgress(), 5_200);
   const ids = r.crossed_checkpoints.map((c) => c.threshold_meters);
-  assert.deepEqual(ids, [0, 1_000, 3_000, 5_000]);
+  assert.deepEqual(ids, [1_000, 2_000, 3_000, 4_000, 5_000]);
   assert.equal(r.after.laddered_meters, 5_200);
 });
 
@@ -89,7 +97,7 @@ test('exceeding 1000 km inside one session: ladder stops at the crown, surplus i
   assert.equal(r.after.laddered_meters, 1_000_000);
   assert.equal(r.after.over_crown_meters, 200_000);
   assert.equal(r.rank_after, 'world_crown');
-  assert.equal(r.crossed_checkpoints.length, 52, 'all 52 checkpoints claimed exactly once');
+  assert.equal(r.crossed_checkpoints.length, 120, 'all 120 checkpoints claimed exactly once');
   assert.equal(r.crossed_checkpoints.at(-1).threshold_meters, 1_000_000);
 });
 
@@ -113,8 +121,8 @@ test('ladder snapshot never advertises a tier above the final one', () => {
   assert.equal(snap.is_final_rank, true);
   assert.equal(snap.rank, 'world_crown');
   assert.deepEqual(snap.next, [], 'nothing is displayed after the crown');
-  assert.equal(snap.checkpoints_total, 52);
-  assert.equal(snap.checkpoints_reached, 52);
+  assert.equal(snap.checkpoints_total, 120);
+  assert.equal(snap.checkpoints_reached, 120);
 });
 
 test('out-of-order import produces the same result as chronological order', () => {
@@ -158,7 +166,7 @@ test('a new month restarts the ladder while lifetime history is a separate conce
   assert.equal(august.laddered_meters, 0);
   assert.equal(rankForMeters(august.laddered_meters).id, 'awakening');
   const first = applyDistance(august, 1_500);
-  assert.deepEqual(first.crossed_checkpoints.map((c) => c.threshold_meters), [0, 1_000]);
+  assert.deepEqual(first.crossed_checkpoints.map((c) => c.threshold_meters), [1_000]);
 });
 
 test('rank boundaries are exact at every major rank', () => {
@@ -189,8 +197,8 @@ test('fractional or negative distance is rejected at the boundary', () => {
 test('next checkpoints guide the home screen and run out at the crown', () => {
   const p = applyDistance(emptyProgress(), 47 * KM).after;
   const next = nextCheckpoints(p, 3);
-  assert.deepEqual(next.map((n) => n.threshold_meters), [50_000, 60_000, 75_000]);
-  assert.equal(next[0].remaining_meters, 3_000);
+  assert.deepEqual(next.map((n) => n.threshold_meters), [49_000, 54_000, 58_000]);
+  assert.equal(next[0].remaining_meters, 2_000);
 
   const crowned = applyDistance(emptyProgress(), 1_000_000).after;
   assert.deepEqual(nextCheckpoints(crowned, 3), []);
@@ -206,8 +214,8 @@ test('every checkpoint is reachable and claimed exactly once across a full month
     claimed.push(...r.crossed_checkpoints.map((c) => c.checkpoint_id));
   }
   assert.equal(progress.laddered_meters, 1_000_000);
-  assert.equal(claimed.length, 52, 'exactly 52 claims for a full month');
-  assert.equal(new Set(claimed).size, 52, 'no checkpoint claimed twice');
+  assert.equal(claimed.length, 120, 'exactly 120 claims for a full month');
+  assert.equal(new Set(claimed).size, 120, 'no checkpoint claimed twice');
   assert.equal(progress.world_crown_awarded, true);
   assert.equal(progress.apex_axis_unlocked, true);
 });

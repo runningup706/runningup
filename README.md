@@ -32,7 +32,7 @@ constraints and a static scanner — see [`docs/USER_DIRECTION_LOCK.md`](docs/US
 | Path | What lives there |
 |---|---|
 | `tools/lib/` | The domain engine: Monthly Apex, Runner Passport, reward, momentum, best efforts |
-| `tools/tests/` | 68 unit tests over that engine |
+| `tools/tests/` | 99 unit tests over that engine |
 | `tools/content-factory/` | Authored design tables + the generator that expands them |
 | `tools/content-validator/` | The hard launch-content gate, including duplicate detection |
 | `tools/direction-lock/` | The forbidden-concept scanner |

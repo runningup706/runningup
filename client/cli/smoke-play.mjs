@@ -25,10 +25,13 @@ const ROOT = join(HERE, '..', '..');
  * own passport, its own goal, its own continent and character.
  */
 const PROFILES = [
-  { id: 'beginner',    expect: { band: 'R0', minCheckpoints: 2, maxMonthlyKm: 2 } },
-  { id: 'regular_10k', expect: { band: 'R3', minCheckpoints: 5, maxMonthlyKm: 11 } },
-  { id: 'marathon',    expect: { band: 'R6', minCheckpoints: 11, maxMonthlyKm: 43 } },
-  { id: 'ultra',       expect: { band: 'R7', minCheckpoints: 12, maxMonthlyKm: 51 } },
+  // Checkpoint expectations follow the V14 120-step ladder, which starts at 1 km. The
+  // pre-V14 ladder had a 0 km checkpoint, so every profile used to be credited one extra
+  // crossing for having run at all.
+  { id: 'beginner',    expect: { band: 'R0', minCheckpoints: 1, maxMonthlyKm: 2 } },
+  { id: 'regular_10k', expect: { band: 'R3', minCheckpoints: 8, maxMonthlyKm: 11 } },
+  { id: 'marathon',    expect: { band: 'R6', minCheckpoints: 18, maxMonthlyKm: 43 } },
+  { id: 'ultra',       expect: { band: 'R7', minCheckpoints: 20, maxMonthlyKm: 51 } },
 ];
 
 const failures = [];

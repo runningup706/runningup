@@ -9,7 +9,7 @@ begin;
 select plan(992);
 
 -- The seed the fixture was generated against must still be the seed in the database.
-select is((select count(*)::int from api.monthly_apex_checkpoints where ladder_version = 'apex.v1.0.0'), 52, 'checkpoint count matches the conformance fixture');
+select is((select count(*)::int from api.monthly_apex_checkpoints where ladder_version = 'apex.v1.0.0'), 120, 'checkpoint count matches the conformance fixture');
 select is((select max(threshold_meters) from api.monthly_apex_checkpoints where ladder_version = 'apex.v1.0.0'), 1000000, 'final checkpoint matches the conformance fixture');
 
 create or replace function pg_temp.conformance_session(
@@ -41,7 +41,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km"]'::jsonb,
   'first_run_5200m step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -60,7 +60,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000001' and month_key = '2026-09'), 0, 'first_run_5200m final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000001' and month_key = '2026-09'), 'awakening', 'first_run_5200m final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000001' and month_key = '2026-09'), false, 'first_run_5200m final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000001' and month_key = '2026-09'), 4, 'first_run_5200m final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000001' and month_key = '2026-09'), 5, 'first_run_5200m final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: one_metre_short_of_10km
@@ -76,7 +76,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km","apex_cp_06_6km","apex_cp_07_8km"]'::jsonb,
   'one_metre_short_of_10km step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -95,7 +95,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000002' and month_key = '2026-09'), 0, 'one_metre_short_of_10km final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000002' and month_key = '2026-09'), 'awakening', 'one_metre_short_of_10km final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000002' and month_key = '2026-09'), false, 'one_metre_short_of_10km final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000002' and month_key = '2026-09'), 4, 'one_metre_short_of_10km final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000002' and month_key = '2026-09'), 7, 'one_metre_short_of_10km final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: exactly_10km
@@ -111,7 +111,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km","apex_cp_05_10km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km","apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km"]'::jsonb,
   'exactly_10km step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -130,7 +130,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000003' and month_key = '2026-09'), 0, 'exactly_10km final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000003' and month_key = '2026-09'), 'awakening', 'exactly_10km final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000003' and month_key = '2026-09'), false, 'exactly_10km final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000003' and month_key = '2026-09'), 5, 'exactly_10km final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000003' and month_key = '2026-09'), 8, 'exactly_10km final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: marathon_symbolic_exact
@@ -146,7 +146,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km","apex_cp_05_10km","apex_cp_06_15km","apex_cp_07_20km","apex_cp_08_25km","apex_cp_09_30km","apex_cp_10_40km","apex_cp_11_42p195km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km","apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km","apex_cp_09_13km","apex_cp_10_15km","apex_cp_11_18km","apex_cp_12_21km","apex_cp_13_24km","apex_cp_14_27km","apex_cp_15_30km","apex_cp_16_34km","apex_cp_17_37km","apex_cp_18_41km"]'::jsonb,
   'marathon_symbolic_exact step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -165,7 +165,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000004' and month_key = '2026-09'), 0, 'marathon_symbolic_exact final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000004' and month_key = '2026-09'), 'awakening', 'marathon_symbolic_exact final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000004' and month_key = '2026-09'), false, 'marathon_symbolic_exact final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000004' and month_key = '2026-09'), 11, 'marathon_symbolic_exact final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000004' and month_key = '2026-09'), 18, 'marathon_symbolic_exact final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: one_metre_short_of_marathon_checkpoint
@@ -181,7 +181,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km","apex_cp_05_10km","apex_cp_06_15km","apex_cp_07_20km","apex_cp_08_25km","apex_cp_09_30km","apex_cp_10_40km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km","apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km","apex_cp_09_13km","apex_cp_10_15km","apex_cp_11_18km","apex_cp_12_21km","apex_cp_13_24km","apex_cp_14_27km","apex_cp_15_30km","apex_cp_16_34km","apex_cp_17_37km","apex_cp_18_41km"]'::jsonb,
   'one_metre_short_of_marathon_checkpoint step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -200,7 +200,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000005' and month_key = '2026-09'), 0, 'one_metre_short_of_marathon_checkpoint final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000005' and month_key = '2026-09'), 'awakening', 'one_metre_short_of_marathon_checkpoint final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000005' and month_key = '2026-09'), false, 'one_metre_short_of_marathon_checkpoint final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000005' and month_key = '2026-09'), 10, 'one_metre_short_of_marathon_checkpoint final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000005' and month_key = '2026-09'), 18, 'one_metre_short_of_marathon_checkpoint final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: multi_crossing_100km
@@ -216,7 +216,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km","apex_cp_05_10km","apex_cp_06_15km","apex_cp_07_20km","apex_cp_08_25km","apex_cp_09_30km","apex_cp_10_40km","apex_cp_11_42p195km","apex_cp_12_50km","apex_cp_13_60km","apex_cp_14_75km","apex_cp_15_90km","apex_cp_16_100km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km","apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km","apex_cp_09_13km","apex_cp_10_15km","apex_cp_11_18km","apex_cp_12_21km","apex_cp_13_24km","apex_cp_14_27km","apex_cp_15_30km","apex_cp_16_34km","apex_cp_17_37km","apex_cp_18_41km","apex_cp_19_45km","apex_cp_20_49km","apex_cp_21_54km","apex_cp_22_58km","apex_cp_23_63km","apex_cp_24_67km","apex_cp_25_72km","apex_cp_26_77km","apex_cp_27_82km","apex_cp_28_87km","apex_cp_29_93km","apex_cp_30_98km"]'::jsonb,
   'multi_crossing_100km step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -235,7 +235,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000006' and month_key = '2026-09'), 0, 'multi_crossing_100km final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000006' and month_key = '2026-09'), 'runner', 'multi_crossing_100km final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000006' and month_key = '2026-09'), false, 'multi_crossing_100km final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000006' and month_key = '2026-09'), 16, 'multi_crossing_100km final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000006' and month_key = '2026-09'), 30, 'multi_crossing_100km final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: incremental_to_100km
@@ -251,7 +251,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km"]'::jsonb,
   'incremental_to_100km step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -274,7 +274,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_05_10km"]'::jsonb,
+  '["apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km"]'::jsonb,
   'incremental_to_100km step 2: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -297,7 +297,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_06_15km"]'::jsonb,
+  '["apex_cp_09_13km","apex_cp_10_15km"]'::jsonb,
   'incremental_to_100km step 3: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -320,7 +320,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_07_20km","apex_cp_08_25km","apex_cp_09_30km","apex_cp_10_40km","apex_cp_11_42p195km","apex_cp_12_50km","apex_cp_13_60km","apex_cp_14_75km","apex_cp_15_90km","apex_cp_16_100km"]'::jsonb,
+  '["apex_cp_11_18km","apex_cp_12_21km","apex_cp_13_24km","apex_cp_14_27km","apex_cp_15_30km","apex_cp_16_34km","apex_cp_17_37km","apex_cp_18_41km","apex_cp_19_45km","apex_cp_20_49km","apex_cp_21_54km","apex_cp_22_58km","apex_cp_23_63km","apex_cp_24_67km","apex_cp_25_72km","apex_cp_26_77km","apex_cp_27_82km","apex_cp_28_87km","apex_cp_29_93km","apex_cp_30_98km"]'::jsonb,
   'incremental_to_100km step 4: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -339,7 +339,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000007' and month_key = '2026-09'), 0, 'incremental_to_100km final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000007' and month_key = '2026-09'), 'runner', 'incremental_to_100km final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000007' and month_key = '2026-09'), false, 'incremental_to_100km final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000007' and month_key = '2026-09'), 16, 'incremental_to_100km final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000007' and month_key = '2026-09'), 30, 'incremental_to_100km final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: nine_hundred_ninety_nine_km
@@ -355,7 +355,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km","apex_cp_05_10km","apex_cp_06_15km","apex_cp_07_20km","apex_cp_08_25km","apex_cp_09_30km","apex_cp_10_40km","apex_cp_11_42p195km","apex_cp_12_50km","apex_cp_13_60km","apex_cp_14_75km","apex_cp_15_90km","apex_cp_16_100km","apex_cp_17_125km","apex_cp_18_150km","apex_cp_19_175km","apex_cp_20_200km","apex_cp_21_225km","apex_cp_22_250km","apex_cp_23_275km","apex_cp_24_300km","apex_cp_25_325km","apex_cp_26_350km","apex_cp_27_375km","apex_cp_28_400km","apex_cp_29_425km","apex_cp_30_450km","apex_cp_31_475km","apex_cp_32_500km","apex_cp_33_525km","apex_cp_34_550km","apex_cp_35_575km","apex_cp_36_600km","apex_cp_37_625km","apex_cp_38_650km","apex_cp_39_675km","apex_cp_40_700km","apex_cp_41_725km","apex_cp_42_750km","apex_cp_43_775km","apex_cp_44_800km","apex_cp_45_825km","apex_cp_46_850km","apex_cp_47_875km","apex_cp_48_900km","apex_cp_49_925km","apex_cp_50_950km","apex_cp_51_975km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km","apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km","apex_cp_09_13km","apex_cp_10_15km","apex_cp_11_18km","apex_cp_12_21km","apex_cp_13_24km","apex_cp_14_27km","apex_cp_15_30km","apex_cp_16_34km","apex_cp_17_37km","apex_cp_18_41km","apex_cp_19_45km","apex_cp_20_49km","apex_cp_21_54km","apex_cp_22_58km","apex_cp_23_63km","apex_cp_24_67km","apex_cp_25_72km","apex_cp_26_77km","apex_cp_27_82km","apex_cp_28_87km","apex_cp_29_93km","apex_cp_30_98km","apex_cp_31_104km","apex_cp_32_110km","apex_cp_33_115km","apex_cp_34_121km","apex_cp_35_127km","apex_cp_36_134km","apex_cp_37_140km","apex_cp_38_146km","apex_cp_39_153km","apex_cp_40_160km","apex_cp_41_166km","apex_cp_42_173km","apex_cp_43_180km","apex_cp_44_187km","apex_cp_45_194km","apex_cp_46_202km","apex_cp_47_209km","apex_cp_48_217km","apex_cp_49_224km","apex_cp_50_232km","apex_cp_51_240km","apex_cp_52_248km","apex_cp_53_256km","apex_cp_54_264km","apex_cp_55_272km","apex_cp_56_281km","apex_cp_57_289km","apex_cp_58_298km","apex_cp_59_306km","apex_cp_60_315km","apex_cp_61_324km","apex_cp_62_333km","apex_cp_63_342km","apex_cp_64_351km","apex_cp_65_360km","apex_cp_66_369km","apex_cp_67_379km","apex_cp_68_388km","apex_cp_69_398km","apex_cp_70_407km","apex_cp_71_417km","apex_cp_72_427km","apex_cp_73_437km","apex_cp_74_447km","apex_cp_75_457km","apex_cp_76_467km","apex_cp_77_478km","apex_cp_78_488km","apex_cp_79_499km","apex_cp_80_509km","apex_cp_81_520km","apex_cp_82_531km","apex_cp_83_541km","apex_cp_84_552km","apex_cp_85_563km","apex_cp_86_574km","apex_cp_87_586km","apex_cp_88_597km","apex_cp_89_608km","apex_cp_90_620km","apex_cp_91_631km","apex_cp_92_643km","apex_cp_93_654km","apex_cp_94_666km","apex_cp_95_678km","apex_cp_96_690km","apex_cp_97_702km","apex_cp_98_714km","apex_cp_99_726km","apex_cp_100_738km","apex_cp_101_751km","apex_cp_102_763km","apex_cp_103_776km","apex_cp_104_788km","apex_cp_105_801km","apex_cp_106_814km","apex_cp_107_826km","apex_cp_108_839km","apex_cp_109_852km","apex_cp_110_865km","apex_cp_111_878km","apex_cp_112_892km","apex_cp_113_905km","apex_cp_114_918km","apex_cp_115_932km","apex_cp_116_945km","apex_cp_117_959km","apex_cp_118_972km","apex_cp_119_986km"]'::jsonb,
   'nine_hundred_ninety_nine_km step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -374,7 +374,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000008' and month_key = '2026-09'), 0, 'nine_hundred_ninety_nine_km final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000008' and month_key = '2026-09'), 'apex', 'nine_hundred_ninety_nine_km final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000008' and month_key = '2026-09'), false, 'nine_hundred_ninety_nine_km final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000008' and month_key = '2026-09'), 51, 'nine_hundred_ninety_nine_km final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000008' and month_key = '2026-09'), 119, 'nine_hundred_ninety_nine_km final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: exactly_1000km_in_two_steps
@@ -390,7 +390,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km","apex_cp_05_10km","apex_cp_06_15km","apex_cp_07_20km","apex_cp_08_25km","apex_cp_09_30km","apex_cp_10_40km","apex_cp_11_42p195km","apex_cp_12_50km","apex_cp_13_60km","apex_cp_14_75km","apex_cp_15_90km","apex_cp_16_100km","apex_cp_17_125km","apex_cp_18_150km","apex_cp_19_175km","apex_cp_20_200km","apex_cp_21_225km","apex_cp_22_250km","apex_cp_23_275km","apex_cp_24_300km","apex_cp_25_325km","apex_cp_26_350km","apex_cp_27_375km","apex_cp_28_400km","apex_cp_29_425km","apex_cp_30_450km","apex_cp_31_475km","apex_cp_32_500km","apex_cp_33_525km","apex_cp_34_550km","apex_cp_35_575km","apex_cp_36_600km","apex_cp_37_625km","apex_cp_38_650km","apex_cp_39_675km","apex_cp_40_700km","apex_cp_41_725km","apex_cp_42_750km","apex_cp_43_775km","apex_cp_44_800km","apex_cp_45_825km","apex_cp_46_850km","apex_cp_47_875km","apex_cp_48_900km","apex_cp_49_925km","apex_cp_50_950km","apex_cp_51_975km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km","apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km","apex_cp_09_13km","apex_cp_10_15km","apex_cp_11_18km","apex_cp_12_21km","apex_cp_13_24km","apex_cp_14_27km","apex_cp_15_30km","apex_cp_16_34km","apex_cp_17_37km","apex_cp_18_41km","apex_cp_19_45km","apex_cp_20_49km","apex_cp_21_54km","apex_cp_22_58km","apex_cp_23_63km","apex_cp_24_67km","apex_cp_25_72km","apex_cp_26_77km","apex_cp_27_82km","apex_cp_28_87km","apex_cp_29_93km","apex_cp_30_98km","apex_cp_31_104km","apex_cp_32_110km","apex_cp_33_115km","apex_cp_34_121km","apex_cp_35_127km","apex_cp_36_134km","apex_cp_37_140km","apex_cp_38_146km","apex_cp_39_153km","apex_cp_40_160km","apex_cp_41_166km","apex_cp_42_173km","apex_cp_43_180km","apex_cp_44_187km","apex_cp_45_194km","apex_cp_46_202km","apex_cp_47_209km","apex_cp_48_217km","apex_cp_49_224km","apex_cp_50_232km","apex_cp_51_240km","apex_cp_52_248km","apex_cp_53_256km","apex_cp_54_264km","apex_cp_55_272km","apex_cp_56_281km","apex_cp_57_289km","apex_cp_58_298km","apex_cp_59_306km","apex_cp_60_315km","apex_cp_61_324km","apex_cp_62_333km","apex_cp_63_342km","apex_cp_64_351km","apex_cp_65_360km","apex_cp_66_369km","apex_cp_67_379km","apex_cp_68_388km","apex_cp_69_398km","apex_cp_70_407km","apex_cp_71_417km","apex_cp_72_427km","apex_cp_73_437km","apex_cp_74_447km","apex_cp_75_457km","apex_cp_76_467km","apex_cp_77_478km","apex_cp_78_488km","apex_cp_79_499km","apex_cp_80_509km","apex_cp_81_520km","apex_cp_82_531km","apex_cp_83_541km","apex_cp_84_552km","apex_cp_85_563km","apex_cp_86_574km","apex_cp_87_586km","apex_cp_88_597km","apex_cp_89_608km","apex_cp_90_620km","apex_cp_91_631km","apex_cp_92_643km","apex_cp_93_654km","apex_cp_94_666km","apex_cp_95_678km","apex_cp_96_690km","apex_cp_97_702km","apex_cp_98_714km","apex_cp_99_726km","apex_cp_100_738km","apex_cp_101_751km","apex_cp_102_763km","apex_cp_103_776km","apex_cp_104_788km","apex_cp_105_801km","apex_cp_106_814km","apex_cp_107_826km","apex_cp_108_839km","apex_cp_109_852km","apex_cp_110_865km","apex_cp_111_878km","apex_cp_112_892km","apex_cp_113_905km","apex_cp_114_918km","apex_cp_115_932km","apex_cp_116_945km","apex_cp_117_959km","apex_cp_118_972km","apex_cp_119_986km"]'::jsonb,
   'exactly_1000km_in_two_steps step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -413,7 +413,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_52_1000km"]'::jsonb,
+  '["apex_cp_120_1000km"]'::jsonb,
   'exactly_1000km_in_two_steps step 2: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -432,7 +432,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000009' and month_key = '2026-09'), 0, 'exactly_1000km_in_two_steps final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000009' and month_key = '2026-09'), 'world_crown', 'exactly_1000km_in_two_steps final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000009' and month_key = '2026-09'), true, 'exactly_1000km_in_two_steps final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000009' and month_key = '2026-09'), 52, 'exactly_1000km_in_two_steps final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000009' and month_key = '2026-09'), 120, 'exactly_1000km_in_two_steps final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: exactly_1000km_in_one_step
@@ -448,7 +448,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km","apex_cp_05_10km","apex_cp_06_15km","apex_cp_07_20km","apex_cp_08_25km","apex_cp_09_30km","apex_cp_10_40km","apex_cp_11_42p195km","apex_cp_12_50km","apex_cp_13_60km","apex_cp_14_75km","apex_cp_15_90km","apex_cp_16_100km","apex_cp_17_125km","apex_cp_18_150km","apex_cp_19_175km","apex_cp_20_200km","apex_cp_21_225km","apex_cp_22_250km","apex_cp_23_275km","apex_cp_24_300km","apex_cp_25_325km","apex_cp_26_350km","apex_cp_27_375km","apex_cp_28_400km","apex_cp_29_425km","apex_cp_30_450km","apex_cp_31_475km","apex_cp_32_500km","apex_cp_33_525km","apex_cp_34_550km","apex_cp_35_575km","apex_cp_36_600km","apex_cp_37_625km","apex_cp_38_650km","apex_cp_39_675km","apex_cp_40_700km","apex_cp_41_725km","apex_cp_42_750km","apex_cp_43_775km","apex_cp_44_800km","apex_cp_45_825km","apex_cp_46_850km","apex_cp_47_875km","apex_cp_48_900km","apex_cp_49_925km","apex_cp_50_950km","apex_cp_51_975km","apex_cp_52_1000km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km","apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km","apex_cp_09_13km","apex_cp_10_15km","apex_cp_11_18km","apex_cp_12_21km","apex_cp_13_24km","apex_cp_14_27km","apex_cp_15_30km","apex_cp_16_34km","apex_cp_17_37km","apex_cp_18_41km","apex_cp_19_45km","apex_cp_20_49km","apex_cp_21_54km","apex_cp_22_58km","apex_cp_23_63km","apex_cp_24_67km","apex_cp_25_72km","apex_cp_26_77km","apex_cp_27_82km","apex_cp_28_87km","apex_cp_29_93km","apex_cp_30_98km","apex_cp_31_104km","apex_cp_32_110km","apex_cp_33_115km","apex_cp_34_121km","apex_cp_35_127km","apex_cp_36_134km","apex_cp_37_140km","apex_cp_38_146km","apex_cp_39_153km","apex_cp_40_160km","apex_cp_41_166km","apex_cp_42_173km","apex_cp_43_180km","apex_cp_44_187km","apex_cp_45_194km","apex_cp_46_202km","apex_cp_47_209km","apex_cp_48_217km","apex_cp_49_224km","apex_cp_50_232km","apex_cp_51_240km","apex_cp_52_248km","apex_cp_53_256km","apex_cp_54_264km","apex_cp_55_272km","apex_cp_56_281km","apex_cp_57_289km","apex_cp_58_298km","apex_cp_59_306km","apex_cp_60_315km","apex_cp_61_324km","apex_cp_62_333km","apex_cp_63_342km","apex_cp_64_351km","apex_cp_65_360km","apex_cp_66_369km","apex_cp_67_379km","apex_cp_68_388km","apex_cp_69_398km","apex_cp_70_407km","apex_cp_71_417km","apex_cp_72_427km","apex_cp_73_437km","apex_cp_74_447km","apex_cp_75_457km","apex_cp_76_467km","apex_cp_77_478km","apex_cp_78_488km","apex_cp_79_499km","apex_cp_80_509km","apex_cp_81_520km","apex_cp_82_531km","apex_cp_83_541km","apex_cp_84_552km","apex_cp_85_563km","apex_cp_86_574km","apex_cp_87_586km","apex_cp_88_597km","apex_cp_89_608km","apex_cp_90_620km","apex_cp_91_631km","apex_cp_92_643km","apex_cp_93_654km","apex_cp_94_666km","apex_cp_95_678km","apex_cp_96_690km","apex_cp_97_702km","apex_cp_98_714km","apex_cp_99_726km","apex_cp_100_738km","apex_cp_101_751km","apex_cp_102_763km","apex_cp_103_776km","apex_cp_104_788km","apex_cp_105_801km","apex_cp_106_814km","apex_cp_107_826km","apex_cp_108_839km","apex_cp_109_852km","apex_cp_110_865km","apex_cp_111_878km","apex_cp_112_892km","apex_cp_113_905km","apex_cp_114_918km","apex_cp_115_932km","apex_cp_116_945km","apex_cp_117_959km","apex_cp_118_972km","apex_cp_119_986km","apex_cp_120_1000km"]'::jsonb,
   'exactly_1000km_in_one_step step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -467,7 +467,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000010' and month_key = '2026-09'), 0, 'exactly_1000km_in_one_step final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000010' and month_key = '2026-09'), 'world_crown', 'exactly_1000km_in_one_step final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000010' and month_key = '2026-09'), true, 'exactly_1000km_in_one_step final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000010' and month_key = '2026-09'), 52, 'exactly_1000km_in_one_step final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000010' and month_key = '2026-09'), 120, 'exactly_1000km_in_one_step final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: overshoot_1200km
@@ -483,7 +483,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km","apex_cp_05_10km","apex_cp_06_15km","apex_cp_07_20km","apex_cp_08_25km","apex_cp_09_30km","apex_cp_10_40km","apex_cp_11_42p195km","apex_cp_12_50km","apex_cp_13_60km","apex_cp_14_75km","apex_cp_15_90km","apex_cp_16_100km","apex_cp_17_125km","apex_cp_18_150km","apex_cp_19_175km","apex_cp_20_200km","apex_cp_21_225km","apex_cp_22_250km","apex_cp_23_275km","apex_cp_24_300km","apex_cp_25_325km","apex_cp_26_350km","apex_cp_27_375km","apex_cp_28_400km","apex_cp_29_425km","apex_cp_30_450km","apex_cp_31_475km","apex_cp_32_500km","apex_cp_33_525km","apex_cp_34_550km","apex_cp_35_575km","apex_cp_36_600km","apex_cp_37_625km","apex_cp_38_650km","apex_cp_39_675km","apex_cp_40_700km","apex_cp_41_725km","apex_cp_42_750km","apex_cp_43_775km","apex_cp_44_800km","apex_cp_45_825km","apex_cp_46_850km","apex_cp_47_875km","apex_cp_48_900km","apex_cp_49_925km","apex_cp_50_950km","apex_cp_51_975km","apex_cp_52_1000km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km","apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km","apex_cp_09_13km","apex_cp_10_15km","apex_cp_11_18km","apex_cp_12_21km","apex_cp_13_24km","apex_cp_14_27km","apex_cp_15_30km","apex_cp_16_34km","apex_cp_17_37km","apex_cp_18_41km","apex_cp_19_45km","apex_cp_20_49km","apex_cp_21_54km","apex_cp_22_58km","apex_cp_23_63km","apex_cp_24_67km","apex_cp_25_72km","apex_cp_26_77km","apex_cp_27_82km","apex_cp_28_87km","apex_cp_29_93km","apex_cp_30_98km","apex_cp_31_104km","apex_cp_32_110km","apex_cp_33_115km","apex_cp_34_121km","apex_cp_35_127km","apex_cp_36_134km","apex_cp_37_140km","apex_cp_38_146km","apex_cp_39_153km","apex_cp_40_160km","apex_cp_41_166km","apex_cp_42_173km","apex_cp_43_180km","apex_cp_44_187km","apex_cp_45_194km","apex_cp_46_202km","apex_cp_47_209km","apex_cp_48_217km","apex_cp_49_224km","apex_cp_50_232km","apex_cp_51_240km","apex_cp_52_248km","apex_cp_53_256km","apex_cp_54_264km","apex_cp_55_272km","apex_cp_56_281km","apex_cp_57_289km","apex_cp_58_298km","apex_cp_59_306km","apex_cp_60_315km","apex_cp_61_324km","apex_cp_62_333km","apex_cp_63_342km","apex_cp_64_351km","apex_cp_65_360km","apex_cp_66_369km","apex_cp_67_379km","apex_cp_68_388km","apex_cp_69_398km","apex_cp_70_407km","apex_cp_71_417km","apex_cp_72_427km","apex_cp_73_437km","apex_cp_74_447km","apex_cp_75_457km","apex_cp_76_467km","apex_cp_77_478km","apex_cp_78_488km","apex_cp_79_499km","apex_cp_80_509km","apex_cp_81_520km","apex_cp_82_531km","apex_cp_83_541km","apex_cp_84_552km","apex_cp_85_563km","apex_cp_86_574km","apex_cp_87_586km","apex_cp_88_597km","apex_cp_89_608km","apex_cp_90_620km","apex_cp_91_631km","apex_cp_92_643km","apex_cp_93_654km","apex_cp_94_666km","apex_cp_95_678km","apex_cp_96_690km","apex_cp_97_702km","apex_cp_98_714km","apex_cp_99_726km","apex_cp_100_738km","apex_cp_101_751km","apex_cp_102_763km","apex_cp_103_776km","apex_cp_104_788km","apex_cp_105_801km","apex_cp_106_814km","apex_cp_107_826km","apex_cp_108_839km","apex_cp_109_852km","apex_cp_110_865km","apex_cp_111_878km","apex_cp_112_892km","apex_cp_113_905km","apex_cp_114_918km","apex_cp_115_932km","apex_cp_116_945km","apex_cp_117_959km","apex_cp_118_972km","apex_cp_119_986km","apex_cp_120_1000km"]'::jsonb,
   'overshoot_1200km step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -502,7 +502,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000011' and month_key = '2026-09'), 200000, 'overshoot_1200km final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000011' and month_key = '2026-09'), 'world_crown', 'overshoot_1200km final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000011' and month_key = '2026-09'), true, 'overshoot_1200km final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000011' and month_key = '2026-09'), 52, 'overshoot_1200km final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000011' and month_key = '2026-09'), 120, 'overshoot_1200km final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: crowned_then_further_25km
@@ -518,7 +518,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km","apex_cp_05_10km","apex_cp_06_15km","apex_cp_07_20km","apex_cp_08_25km","apex_cp_09_30km","apex_cp_10_40km","apex_cp_11_42p195km","apex_cp_12_50km","apex_cp_13_60km","apex_cp_14_75km","apex_cp_15_90km","apex_cp_16_100km","apex_cp_17_125km","apex_cp_18_150km","apex_cp_19_175km","apex_cp_20_200km","apex_cp_21_225km","apex_cp_22_250km","apex_cp_23_275km","apex_cp_24_300km","apex_cp_25_325km","apex_cp_26_350km","apex_cp_27_375km","apex_cp_28_400km","apex_cp_29_425km","apex_cp_30_450km","apex_cp_31_475km","apex_cp_32_500km","apex_cp_33_525km","apex_cp_34_550km","apex_cp_35_575km","apex_cp_36_600km","apex_cp_37_625km","apex_cp_38_650km","apex_cp_39_675km","apex_cp_40_700km","apex_cp_41_725km","apex_cp_42_750km","apex_cp_43_775km","apex_cp_44_800km","apex_cp_45_825km","apex_cp_46_850km","apex_cp_47_875km","apex_cp_48_900km","apex_cp_49_925km","apex_cp_50_950km","apex_cp_51_975km","apex_cp_52_1000km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km","apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km","apex_cp_09_13km","apex_cp_10_15km","apex_cp_11_18km","apex_cp_12_21km","apex_cp_13_24km","apex_cp_14_27km","apex_cp_15_30km","apex_cp_16_34km","apex_cp_17_37km","apex_cp_18_41km","apex_cp_19_45km","apex_cp_20_49km","apex_cp_21_54km","apex_cp_22_58km","apex_cp_23_63km","apex_cp_24_67km","apex_cp_25_72km","apex_cp_26_77km","apex_cp_27_82km","apex_cp_28_87km","apex_cp_29_93km","apex_cp_30_98km","apex_cp_31_104km","apex_cp_32_110km","apex_cp_33_115km","apex_cp_34_121km","apex_cp_35_127km","apex_cp_36_134km","apex_cp_37_140km","apex_cp_38_146km","apex_cp_39_153km","apex_cp_40_160km","apex_cp_41_166km","apex_cp_42_173km","apex_cp_43_180km","apex_cp_44_187km","apex_cp_45_194km","apex_cp_46_202km","apex_cp_47_209km","apex_cp_48_217km","apex_cp_49_224km","apex_cp_50_232km","apex_cp_51_240km","apex_cp_52_248km","apex_cp_53_256km","apex_cp_54_264km","apex_cp_55_272km","apex_cp_56_281km","apex_cp_57_289km","apex_cp_58_298km","apex_cp_59_306km","apex_cp_60_315km","apex_cp_61_324km","apex_cp_62_333km","apex_cp_63_342km","apex_cp_64_351km","apex_cp_65_360km","apex_cp_66_369km","apex_cp_67_379km","apex_cp_68_388km","apex_cp_69_398km","apex_cp_70_407km","apex_cp_71_417km","apex_cp_72_427km","apex_cp_73_437km","apex_cp_74_447km","apex_cp_75_457km","apex_cp_76_467km","apex_cp_77_478km","apex_cp_78_488km","apex_cp_79_499km","apex_cp_80_509km","apex_cp_81_520km","apex_cp_82_531km","apex_cp_83_541km","apex_cp_84_552km","apex_cp_85_563km","apex_cp_86_574km","apex_cp_87_586km","apex_cp_88_597km","apex_cp_89_608km","apex_cp_90_620km","apex_cp_91_631km","apex_cp_92_643km","apex_cp_93_654km","apex_cp_94_666km","apex_cp_95_678km","apex_cp_96_690km","apex_cp_97_702km","apex_cp_98_714km","apex_cp_99_726km","apex_cp_100_738km","apex_cp_101_751km","apex_cp_102_763km","apex_cp_103_776km","apex_cp_104_788km","apex_cp_105_801km","apex_cp_106_814km","apex_cp_107_826km","apex_cp_108_839km","apex_cp_109_852km","apex_cp_110_865km","apex_cp_111_878km","apex_cp_112_892km","apex_cp_113_905km","apex_cp_114_918km","apex_cp_115_932km","apex_cp_116_945km","apex_cp_117_959km","apex_cp_118_972km","apex_cp_119_986km","apex_cp_120_1000km"]'::jsonb,
   'crowned_then_further_25km step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -560,7 +560,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000012' and month_key = '2026-09'), 25000, 'crowned_then_further_25km final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000012' and month_key = '2026-09'), 'world_crown', 'crowned_then_further_25km final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000012' and month_key = '2026-09'), true, 'crowned_then_further_25km final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000012' and month_key = '2026-09'), 52, 'crowned_then_further_25km final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000012' and month_key = '2026-09'), 120, 'crowned_then_further_25km final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: crowned_then_further_twice
@@ -576,7 +576,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km","apex_cp_05_10km","apex_cp_06_15km","apex_cp_07_20km","apex_cp_08_25km","apex_cp_09_30km","apex_cp_10_40km","apex_cp_11_42p195km","apex_cp_12_50km","apex_cp_13_60km","apex_cp_14_75km","apex_cp_15_90km","apex_cp_16_100km","apex_cp_17_125km","apex_cp_18_150km","apex_cp_19_175km","apex_cp_20_200km","apex_cp_21_225km","apex_cp_22_250km","apex_cp_23_275km","apex_cp_24_300km","apex_cp_25_325km","apex_cp_26_350km","apex_cp_27_375km","apex_cp_28_400km","apex_cp_29_425km","apex_cp_30_450km","apex_cp_31_475km","apex_cp_32_500km","apex_cp_33_525km","apex_cp_34_550km","apex_cp_35_575km","apex_cp_36_600km","apex_cp_37_625km","apex_cp_38_650km","apex_cp_39_675km","apex_cp_40_700km","apex_cp_41_725km","apex_cp_42_750km","apex_cp_43_775km","apex_cp_44_800km","apex_cp_45_825km","apex_cp_46_850km","apex_cp_47_875km","apex_cp_48_900km","apex_cp_49_925km","apex_cp_50_950km","apex_cp_51_975km","apex_cp_52_1000km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km","apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km","apex_cp_09_13km","apex_cp_10_15km","apex_cp_11_18km","apex_cp_12_21km","apex_cp_13_24km","apex_cp_14_27km","apex_cp_15_30km","apex_cp_16_34km","apex_cp_17_37km","apex_cp_18_41km","apex_cp_19_45km","apex_cp_20_49km","apex_cp_21_54km","apex_cp_22_58km","apex_cp_23_63km","apex_cp_24_67km","apex_cp_25_72km","apex_cp_26_77km","apex_cp_27_82km","apex_cp_28_87km","apex_cp_29_93km","apex_cp_30_98km","apex_cp_31_104km","apex_cp_32_110km","apex_cp_33_115km","apex_cp_34_121km","apex_cp_35_127km","apex_cp_36_134km","apex_cp_37_140km","apex_cp_38_146km","apex_cp_39_153km","apex_cp_40_160km","apex_cp_41_166km","apex_cp_42_173km","apex_cp_43_180km","apex_cp_44_187km","apex_cp_45_194km","apex_cp_46_202km","apex_cp_47_209km","apex_cp_48_217km","apex_cp_49_224km","apex_cp_50_232km","apex_cp_51_240km","apex_cp_52_248km","apex_cp_53_256km","apex_cp_54_264km","apex_cp_55_272km","apex_cp_56_281km","apex_cp_57_289km","apex_cp_58_298km","apex_cp_59_306km","apex_cp_60_315km","apex_cp_61_324km","apex_cp_62_333km","apex_cp_63_342km","apex_cp_64_351km","apex_cp_65_360km","apex_cp_66_369km","apex_cp_67_379km","apex_cp_68_388km","apex_cp_69_398km","apex_cp_70_407km","apex_cp_71_417km","apex_cp_72_427km","apex_cp_73_437km","apex_cp_74_447km","apex_cp_75_457km","apex_cp_76_467km","apex_cp_77_478km","apex_cp_78_488km","apex_cp_79_499km","apex_cp_80_509km","apex_cp_81_520km","apex_cp_82_531km","apex_cp_83_541km","apex_cp_84_552km","apex_cp_85_563km","apex_cp_86_574km","apex_cp_87_586km","apex_cp_88_597km","apex_cp_89_608km","apex_cp_90_620km","apex_cp_91_631km","apex_cp_92_643km","apex_cp_93_654km","apex_cp_94_666km","apex_cp_95_678km","apex_cp_96_690km","apex_cp_97_702km","apex_cp_98_714km","apex_cp_99_726km","apex_cp_100_738km","apex_cp_101_751km","apex_cp_102_763km","apex_cp_103_776km","apex_cp_104_788km","apex_cp_105_801km","apex_cp_106_814km","apex_cp_107_826km","apex_cp_108_839km","apex_cp_109_852km","apex_cp_110_865km","apex_cp_111_878km","apex_cp_112_892km","apex_cp_113_905km","apex_cp_114_918km","apex_cp_115_932km","apex_cp_116_945km","apex_cp_117_959km","apex_cp_118_972km","apex_cp_119_986km","apex_cp_120_1000km"]'::jsonb,
   'crowned_then_further_twice step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -641,7 +641,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000013' and month_key = '2026-09'), 55000, 'crowned_then_further_twice final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000013' and month_key = '2026-09'), 'world_crown', 'crowned_then_further_twice final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000013' and month_key = '2026-09'), true, 'crowned_then_further_twice final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000013' and month_key = '2026-09'), 52, 'crowned_then_further_twice final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000013' and month_key = '2026-09'), 120, 'crowned_then_further_twice final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: zero_distance_session
@@ -657,7 +657,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km"]'::jsonb,
   'zero_distance_session step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -699,7 +699,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000014' and month_key = '2026-09'), 0, 'zero_distance_session final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000014' and month_key = '2026-09'), 'awakening', 'zero_distance_session final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000014' and month_key = '2026-09'), false, 'zero_distance_session final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000014' and month_key = '2026-09'), 4, 'zero_distance_session final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000014' and month_key = '2026-09'), 5, 'zero_distance_session final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: two_hundred_five_km_sessions
@@ -715,7 +715,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km"]'::jsonb,
   'two_hundred_five_km_sessions step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -738,7 +738,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_05_10km"]'::jsonb,
+  '["apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km"]'::jsonb,
   'two_hundred_five_km_sessions step 2: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -761,7 +761,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_06_15km"]'::jsonb,
+  '["apex_cp_09_13km","apex_cp_10_15km"]'::jsonb,
   'two_hundred_five_km_sessions step 3: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -784,7 +784,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_07_20km"]'::jsonb,
+  '["apex_cp_11_18km"]'::jsonb,
   'two_hundred_five_km_sessions step 4: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -807,7 +807,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_08_25km"]'::jsonb,
+  '["apex_cp_12_21km","apex_cp_13_24km"]'::jsonb,
   'two_hundred_five_km_sessions step 5: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -830,7 +830,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_09_30km"]'::jsonb,
+  '["apex_cp_14_27km","apex_cp_15_30km"]'::jsonb,
   'two_hundred_five_km_sessions step 6: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -853,7 +853,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_16_34km"]'::jsonb,
   'two_hundred_five_km_sessions step 7: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -876,7 +876,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_10_40km"]'::jsonb,
+  '["apex_cp_17_37km"]'::jsonb,
   'two_hundred_five_km_sessions step 8: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -899,7 +899,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_11_42p195km"]'::jsonb,
+  '["apex_cp_18_41km","apex_cp_19_45km"]'::jsonb,
   'two_hundred_five_km_sessions step 9: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -922,7 +922,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_12_50km"]'::jsonb,
+  '["apex_cp_20_49km"]'::jsonb,
   'two_hundred_five_km_sessions step 10: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -945,7 +945,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_21_54km"]'::jsonb,
   'two_hundred_five_km_sessions step 11: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -968,7 +968,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_13_60km"]'::jsonb,
+  '["apex_cp_22_58km"]'::jsonb,
   'two_hundred_five_km_sessions step 12: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -991,7 +991,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_23_63km"]'::jsonb,
   'two_hundred_five_km_sessions step 13: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1014,7 +1014,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_24_67km"]'::jsonb,
   'two_hundred_five_km_sessions step 14: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1037,7 +1037,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_14_75km"]'::jsonb,
+  '["apex_cp_25_72km"]'::jsonb,
   'two_hundred_five_km_sessions step 15: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1060,7 +1060,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_26_77km"]'::jsonb,
   'two_hundred_five_km_sessions step 16: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1083,7 +1083,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_27_82km"]'::jsonb,
   'two_hundred_five_km_sessions step 17: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1106,7 +1106,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_15_90km"]'::jsonb,
+  '["apex_cp_28_87km"]'::jsonb,
   'two_hundred_five_km_sessions step 18: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1129,7 +1129,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_29_93km"]'::jsonb,
   'two_hundred_five_km_sessions step 19: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1152,7 +1152,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_16_100km"]'::jsonb,
+  '["apex_cp_30_98km"]'::jsonb,
   'two_hundred_five_km_sessions step 20: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1175,7 +1175,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_31_104km"]'::jsonb,
   'two_hundred_five_km_sessions step 21: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1198,7 +1198,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_32_110km"]'::jsonb,
   'two_hundred_five_km_sessions step 22: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1221,7 +1221,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_33_115km"]'::jsonb,
   'two_hundred_five_km_sessions step 23: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1267,7 +1267,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_17_125km"]'::jsonb,
+  '["apex_cp_34_121km"]'::jsonb,
   'two_hundred_five_km_sessions step 25: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1290,7 +1290,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_35_127km"]'::jsonb,
   'two_hundred_five_km_sessions step 26: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1313,7 +1313,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_36_134km"]'::jsonb,
   'two_hundred_five_km_sessions step 27: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1336,7 +1336,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_37_140km"]'::jsonb,
   'two_hundred_five_km_sessions step 28: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1382,7 +1382,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_18_150km"]'::jsonb,
+  '["apex_cp_38_146km"]'::jsonb,
   'two_hundred_five_km_sessions step 30: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1405,7 +1405,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_39_153km"]'::jsonb,
   'two_hundred_five_km_sessions step 31: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1428,7 +1428,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_40_160km"]'::jsonb,
   'two_hundred_five_km_sessions step 32: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1474,7 +1474,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_41_166km"]'::jsonb,
   'two_hundred_five_km_sessions step 34: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1497,7 +1497,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_19_175km"]'::jsonb,
+  '["apex_cp_42_173km"]'::jsonb,
   'two_hundred_five_km_sessions step 35: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1520,7 +1520,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_43_180km"]'::jsonb,
   'two_hundred_five_km_sessions step 36: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1566,7 +1566,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_44_187km"]'::jsonb,
   'two_hundred_five_km_sessions step 38: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1589,7 +1589,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_45_194km"]'::jsonb,
   'two_hundred_five_km_sessions step 39: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1612,7 +1612,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_20_200km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 40: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1635,7 +1635,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_46_202km"]'::jsonb,
   'two_hundred_five_km_sessions step 41: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1658,7 +1658,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_47_209km"]'::jsonb,
   'two_hundred_five_km_sessions step 42: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1704,7 +1704,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_48_217km"]'::jsonb,
   'two_hundred_five_km_sessions step 44: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1727,7 +1727,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_21_225km"]'::jsonb,
+  '["apex_cp_49_224km"]'::jsonb,
   'two_hundred_five_km_sessions step 45: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1773,7 +1773,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_50_232km"]'::jsonb,
   'two_hundred_five_km_sessions step 47: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1796,7 +1796,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_51_240km"]'::jsonb,
   'two_hundred_five_km_sessions step 48: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1842,7 +1842,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_22_250km"]'::jsonb,
+  '["apex_cp_52_248km"]'::jsonb,
   'two_hundred_five_km_sessions step 50: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1888,7 +1888,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_53_256km"]'::jsonb,
   'two_hundred_five_km_sessions step 52: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1911,7 +1911,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_54_264km"]'::jsonb,
   'two_hundred_five_km_sessions step 53: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -1957,7 +1957,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_23_275km"]'::jsonb,
+  '["apex_cp_55_272km"]'::jsonb,
   'two_hundred_five_km_sessions step 55: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2003,7 +2003,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_56_281km"]'::jsonb,
   'two_hundred_five_km_sessions step 57: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2026,7 +2026,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_57_289km"]'::jsonb,
   'two_hundred_five_km_sessions step 58: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2072,7 +2072,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_24_300km"]'::jsonb,
+  '["apex_cp_58_298km"]'::jsonb,
   'two_hundred_five_km_sessions step 60: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2118,7 +2118,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_59_306km"]'::jsonb,
   'two_hundred_five_km_sessions step 62: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2141,7 +2141,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_60_315km"]'::jsonb,
   'two_hundred_five_km_sessions step 63: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2187,7 +2187,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_25_325km"]'::jsonb,
+  '["apex_cp_61_324km"]'::jsonb,
   'two_hundred_five_km_sessions step 65: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2233,7 +2233,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_62_333km"]'::jsonb,
   'two_hundred_five_km_sessions step 67: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2279,7 +2279,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_63_342km"]'::jsonb,
   'two_hundred_five_km_sessions step 69: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2302,7 +2302,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_26_350km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 70: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2325,7 +2325,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_64_351km"]'::jsonb,
   'two_hundred_five_km_sessions step 71: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2348,7 +2348,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_65_360km"]'::jsonb,
   'two_hundred_five_km_sessions step 72: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2394,7 +2394,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_66_369km"]'::jsonb,
   'two_hundred_five_km_sessions step 74: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2417,7 +2417,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_27_375km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 75: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2440,7 +2440,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_67_379km"]'::jsonb,
   'two_hundred_five_km_sessions step 76: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2486,7 +2486,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_68_388km"]'::jsonb,
   'two_hundred_five_km_sessions step 78: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2532,7 +2532,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_28_400km"]'::jsonb,
+  '["apex_cp_69_398km"]'::jsonb,
   'two_hundred_five_km_sessions step 80: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2578,7 +2578,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_70_407km"]'::jsonb,
   'two_hundred_five_km_sessions step 82: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2624,7 +2624,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_71_417km"]'::jsonb,
   'two_hundred_five_km_sessions step 84: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2647,7 +2647,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_29_425km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 85: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2670,7 +2670,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_72_427km"]'::jsonb,
   'two_hundred_five_km_sessions step 86: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2716,7 +2716,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_73_437km"]'::jsonb,
   'two_hundred_five_km_sessions step 88: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2762,7 +2762,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_30_450km"]'::jsonb,
+  '["apex_cp_74_447km"]'::jsonb,
   'two_hundred_five_km_sessions step 90: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2808,7 +2808,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_75_457km"]'::jsonb,
   'two_hundred_five_km_sessions step 92: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2854,7 +2854,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_76_467km"]'::jsonb,
   'two_hundred_five_km_sessions step 94: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2877,7 +2877,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_31_475km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 95: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2900,7 +2900,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_77_478km"]'::jsonb,
   'two_hundred_five_km_sessions step 96: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2946,7 +2946,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_78_488km"]'::jsonb,
   'two_hundred_five_km_sessions step 98: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -2992,7 +2992,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_32_500km"]'::jsonb,
+  '["apex_cp_79_499km"]'::jsonb,
   'two_hundred_five_km_sessions step 100: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3038,7 +3038,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_80_509km"]'::jsonb,
   'two_hundred_five_km_sessions step 102: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3084,7 +3084,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_81_520km"]'::jsonb,
   'two_hundred_five_km_sessions step 104: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3107,7 +3107,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_33_525km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 105: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3153,7 +3153,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_82_531km"]'::jsonb,
   'two_hundred_five_km_sessions step 107: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3199,7 +3199,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_83_541km"]'::jsonb,
   'two_hundred_five_km_sessions step 109: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3222,7 +3222,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_34_550km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 110: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3245,7 +3245,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_84_552km"]'::jsonb,
   'two_hundred_five_km_sessions step 111: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3291,7 +3291,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_85_563km"]'::jsonb,
   'two_hundred_five_km_sessions step 113: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3337,7 +3337,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_35_575km"]'::jsonb,
+  '["apex_cp_86_574km"]'::jsonb,
   'two_hundred_five_km_sessions step 115: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3406,7 +3406,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_87_586km"]'::jsonb,
   'two_hundred_five_km_sessions step 118: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3452,7 +3452,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_36_600km"]'::jsonb,
+  '["apex_cp_88_597km"]'::jsonb,
   'two_hundred_five_km_sessions step 120: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3498,7 +3498,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_89_608km"]'::jsonb,
   'two_hundred_five_km_sessions step 122: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3544,7 +3544,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_90_620km"]'::jsonb,
   'two_hundred_five_km_sessions step 124: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3567,7 +3567,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_37_625km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 125: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3613,7 +3613,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_91_631km"]'::jsonb,
   'two_hundred_five_km_sessions step 127: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3659,7 +3659,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_92_643km"]'::jsonb,
   'two_hundred_five_km_sessions step 129: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3682,7 +3682,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_38_650km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 130: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3705,7 +3705,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_93_654km"]'::jsonb,
   'two_hundred_five_km_sessions step 131: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3774,7 +3774,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_94_666km"]'::jsonb,
   'two_hundred_five_km_sessions step 134: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3797,7 +3797,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_39_675km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 135: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3820,7 +3820,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_95_678km"]'::jsonb,
   'two_hundred_five_km_sessions step 136: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3866,7 +3866,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_96_690km"]'::jsonb,
   'two_hundred_five_km_sessions step 138: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3912,7 +3912,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_40_700km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 140: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3935,7 +3935,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_97_702km"]'::jsonb,
   'two_hundred_five_km_sessions step 141: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -3981,7 +3981,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_98_714km"]'::jsonb,
   'two_hundred_five_km_sessions step 143: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4027,7 +4027,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_41_725km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 145: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4050,7 +4050,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_99_726km"]'::jsonb,
   'two_hundred_five_km_sessions step 146: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4096,7 +4096,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_100_738km"]'::jsonb,
   'two_hundred_five_km_sessions step 148: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4142,7 +4142,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_42_750km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 150: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4165,7 +4165,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_101_751km"]'::jsonb,
   'two_hundred_five_km_sessions step 151: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4211,7 +4211,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_102_763km"]'::jsonb,
   'two_hundred_five_km_sessions step 153: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4257,7 +4257,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_43_775km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 155: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4280,7 +4280,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_103_776km"]'::jsonb,
   'two_hundred_five_km_sessions step 156: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4326,7 +4326,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_104_788km"]'::jsonb,
   'two_hundred_five_km_sessions step 158: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4372,7 +4372,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_44_800km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 160: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4395,7 +4395,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_105_801km"]'::jsonb,
   'two_hundred_five_km_sessions step 161: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4441,7 +4441,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_106_814km"]'::jsonb,
   'two_hundred_five_km_sessions step 163: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4487,7 +4487,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_45_825km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 165: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4510,7 +4510,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_107_826km"]'::jsonb,
   'two_hundred_five_km_sessions step 166: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4556,7 +4556,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_108_839km"]'::jsonb,
   'two_hundred_five_km_sessions step 168: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4602,7 +4602,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_46_850km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 170: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4625,7 +4625,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_109_852km"]'::jsonb,
   'two_hundred_five_km_sessions step 171: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4671,7 +4671,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_110_865km"]'::jsonb,
   'two_hundred_five_km_sessions step 173: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4717,7 +4717,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_47_875km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 175: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4740,7 +4740,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_111_878km"]'::jsonb,
   'two_hundred_five_km_sessions step 176: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4809,7 +4809,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_112_892km"]'::jsonb,
   'two_hundred_five_km_sessions step 179: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4832,7 +4832,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_48_900km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 180: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4855,7 +4855,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_113_905km"]'::jsonb,
   'two_hundred_five_km_sessions step 181: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4924,7 +4924,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_114_918km"]'::jsonb,
   'two_hundred_five_km_sessions step 184: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4947,7 +4947,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_49_925km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 185: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -4993,7 +4993,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_115_932km"]'::jsonb,
   'two_hundred_five_km_sessions step 187: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -5039,7 +5039,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_116_945km"]'::jsonb,
   'two_hundred_five_km_sessions step 189: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -5062,7 +5062,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_50_950km"]'::jsonb,
+  '[]'::jsonb,
   'two_hundred_five_km_sessions step 190: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -5108,7 +5108,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_117_959km"]'::jsonb,
   'two_hundred_five_km_sessions step 192: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -5177,7 +5177,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_51_975km"]'::jsonb,
+  '["apex_cp_118_972km"]'::jsonb,
   'two_hundred_five_km_sessions step 195: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -5246,7 +5246,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '[]'::jsonb,
+  '["apex_cp_119_986km"]'::jsonb,
   'two_hundred_five_km_sessions step 198: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -5292,7 +5292,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_52_1000km"]'::jsonb,
+  '["apex_cp_120_1000km"]'::jsonb,
   'two_hundred_five_km_sessions step 200: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -5311,7 +5311,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000015' and month_key = '2026-09'), 0, 'two_hundred_five_km_sessions final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000015' and month_key = '2026-09'), 'world_crown', 'two_hundred_five_km_sessions final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000015' and month_key = '2026-09'), true, 'two_hundred_five_km_sessions final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000015' and month_key = '2026-09'), 52, 'two_hundred_five_km_sessions final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000015' and month_key = '2026-09'), 120, 'two_hundred_five_km_sessions final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: rank_boundary_50km
@@ -5327,7 +5327,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km","apex_cp_05_10km","apex_cp_06_15km","apex_cp_07_20km","apex_cp_08_25km","apex_cp_09_30km","apex_cp_10_40km","apex_cp_11_42p195km","apex_cp_12_50km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km","apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km","apex_cp_09_13km","apex_cp_10_15km","apex_cp_11_18km","apex_cp_12_21km","apex_cp_13_24km","apex_cp_14_27km","apex_cp_15_30km","apex_cp_16_34km","apex_cp_17_37km","apex_cp_18_41km","apex_cp_19_45km","apex_cp_20_49km"]'::jsonb,
   'rank_boundary_50km step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -5346,7 +5346,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000016' and month_key = '2026-09'), 0, 'rank_boundary_50km final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000016' and month_key = '2026-09'), 'strider', 'rank_boundary_50km final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000016' and month_key = '2026-09'), false, 'rank_boundary_50km final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000016' and month_key = '2026-09'), 12, 'rank_boundary_50km final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000016' and month_key = '2026-09'), 20, 'rank_boundary_50km final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: rank_boundary_just_below_50km
@@ -5362,7 +5362,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km","apex_cp_05_10km","apex_cp_06_15km","apex_cp_07_20km","apex_cp_08_25km","apex_cp_09_30km","apex_cp_10_40km","apex_cp_11_42p195km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km","apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km","apex_cp_09_13km","apex_cp_10_15km","apex_cp_11_18km","apex_cp_12_21km","apex_cp_13_24km","apex_cp_14_27km","apex_cp_15_30km","apex_cp_16_34km","apex_cp_17_37km","apex_cp_18_41km","apex_cp_19_45km","apex_cp_20_49km"]'::jsonb,
   'rank_boundary_just_below_50km step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -5381,7 +5381,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000017' and month_key = '2026-09'), 0, 'rank_boundary_just_below_50km final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000017' and month_key = '2026-09'), 'awakening', 'rank_boundary_just_below_50km final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000017' and month_key = '2026-09'), false, 'rank_boundary_just_below_50km final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000017' and month_key = '2026-09'), 11, 'rank_boundary_just_below_50km final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000017' and month_key = '2026-09'), 20, 'rank_boundary_just_below_50km final: total checkpoints claimed');
 
 -- ------------------------------------------------------------------------
 -- case: rank_boundary_900km
@@ -5397,7 +5397,7 @@ select set_config('runningup.conf_result',
 
 select is(
   (current_setting('runningup.conf_result')::jsonb -> 'crossed_checkpoint_ids'),
-  '["apex_cp_01_0km","apex_cp_02_1km","apex_cp_03_3km","apex_cp_04_5km","apex_cp_05_10km","apex_cp_06_15km","apex_cp_07_20km","apex_cp_08_25km","apex_cp_09_30km","apex_cp_10_40km","apex_cp_11_42p195km","apex_cp_12_50km","apex_cp_13_60km","apex_cp_14_75km","apex_cp_15_90km","apex_cp_16_100km","apex_cp_17_125km","apex_cp_18_150km","apex_cp_19_175km","apex_cp_20_200km","apex_cp_21_225km","apex_cp_22_250km","apex_cp_23_275km","apex_cp_24_300km","apex_cp_25_325km","apex_cp_26_350km","apex_cp_27_375km","apex_cp_28_400km","apex_cp_29_425km","apex_cp_30_450km","apex_cp_31_475km","apex_cp_32_500km","apex_cp_33_525km","apex_cp_34_550km","apex_cp_35_575km","apex_cp_36_600km","apex_cp_37_625km","apex_cp_38_650km","apex_cp_39_675km","apex_cp_40_700km","apex_cp_41_725km","apex_cp_42_750km","apex_cp_43_775km","apex_cp_44_800km","apex_cp_45_825km","apex_cp_46_850km","apex_cp_47_875km","apex_cp_48_900km"]'::jsonb,
+  '["apex_cp_01_1km","apex_cp_02_2km","apex_cp_03_3km","apex_cp_04_4km","apex_cp_05_5km","apex_cp_06_6km","apex_cp_07_8km","apex_cp_08_10km","apex_cp_09_13km","apex_cp_10_15km","apex_cp_11_18km","apex_cp_12_21km","apex_cp_13_24km","apex_cp_14_27km","apex_cp_15_30km","apex_cp_16_34km","apex_cp_17_37km","apex_cp_18_41km","apex_cp_19_45km","apex_cp_20_49km","apex_cp_21_54km","apex_cp_22_58km","apex_cp_23_63km","apex_cp_24_67km","apex_cp_25_72km","apex_cp_26_77km","apex_cp_27_82km","apex_cp_28_87km","apex_cp_29_93km","apex_cp_30_98km","apex_cp_31_104km","apex_cp_32_110km","apex_cp_33_115km","apex_cp_34_121km","apex_cp_35_127km","apex_cp_36_134km","apex_cp_37_140km","apex_cp_38_146km","apex_cp_39_153km","apex_cp_40_160km","apex_cp_41_166km","apex_cp_42_173km","apex_cp_43_180km","apex_cp_44_187km","apex_cp_45_194km","apex_cp_46_202km","apex_cp_47_209km","apex_cp_48_217km","apex_cp_49_224km","apex_cp_50_232km","apex_cp_51_240km","apex_cp_52_248km","apex_cp_53_256km","apex_cp_54_264km","apex_cp_55_272km","apex_cp_56_281km","apex_cp_57_289km","apex_cp_58_298km","apex_cp_59_306km","apex_cp_60_315km","apex_cp_61_324km","apex_cp_62_333km","apex_cp_63_342km","apex_cp_64_351km","apex_cp_65_360km","apex_cp_66_369km","apex_cp_67_379km","apex_cp_68_388km","apex_cp_69_398km","apex_cp_70_407km","apex_cp_71_417km","apex_cp_72_427km","apex_cp_73_437km","apex_cp_74_447km","apex_cp_75_457km","apex_cp_76_467km","apex_cp_77_478km","apex_cp_78_488km","apex_cp_79_499km","apex_cp_80_509km","apex_cp_81_520km","apex_cp_82_531km","apex_cp_83_541km","apex_cp_84_552km","apex_cp_85_563km","apex_cp_86_574km","apex_cp_87_586km","apex_cp_88_597km","apex_cp_89_608km","apex_cp_90_620km","apex_cp_91_631km","apex_cp_92_643km","apex_cp_93_654km","apex_cp_94_666km","apex_cp_95_678km","apex_cp_96_690km","apex_cp_97_702km","apex_cp_98_714km","apex_cp_99_726km","apex_cp_100_738km","apex_cp_101_751km","apex_cp_102_763km","apex_cp_103_776km","apex_cp_104_788km","apex_cp_105_801km","apex_cp_106_814km","apex_cp_107_826km","apex_cp_108_839km","apex_cp_109_852km","apex_cp_110_865km","apex_cp_111_878km","apex_cp_112_892km"]'::jsonb,
   'rank_boundary_900km step 1: crossed checkpoints match the JS engine');
 select is(
   (current_setting('runningup.conf_result')::jsonb ->> 'major_rank'),
@@ -5416,7 +5416,7 @@ select is((select laddered_meters from api.monthly_apex_progress where user_id =
 select is((select over_crown_meters from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000018' and month_key = '2026-09'), 0, 'rank_boundary_900km final: over-crown metres');
 select is((select major_rank::text from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000018' and month_key = '2026-09'), 'apex', 'rank_boundary_900km final: rank');
 select is((select world_crown_awarded from api.monthly_apex_progress where user_id = 'f0000000-0000-4000-8000-000000000018' and month_key = '2026-09'), false, 'rank_boundary_900km final: World Crown state');
-select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000018' and month_key = '2026-09'), 48, 'rank_boundary_900km final: total checkpoints claimed');
+select is((select count(*)::int from api.monthly_apex_checkpoint_claims where user_id = 'f0000000-0000-4000-8000-000000000018' and month_key = '2026-09'), 112, 'rank_boundary_900km final: total checkpoints claimed');
 
 select * from finish();
 rollback;

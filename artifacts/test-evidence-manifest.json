@@ -1,9 +1,9 @@
 {
   "manifest_version": "1.0.0",
   "generated_by": "tools/release/generate-evidence.mjs",
-  "git_commit": "ab69f06eeb38a1777312dae4c1aa6cd882bfad32",
+  "git_commit": "095472b6c54e83142a406f9f85c9e02fb1b462b2",
   "content_version": "1.0.0",
-  "content_sha256": "b02e58bc3789f6095ce50ba57a85ea43007e8ab4d4119e4ca6471692e655d73d",
+  "content_sha256": "149a662f4b59319933b46def7e2f46854232d041d3999f8b978918a38a3f14e9",
   "suites": [
     {
       "id": "direction_lock",

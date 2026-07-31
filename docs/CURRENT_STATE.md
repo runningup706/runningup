@@ -1,6 +1,12 @@
 # CURRENT_STATE
 
-Last updated: 2026-07-29 · Branch `claude/runningup-3d-android-dev-3c8gnp`
+Last updated: 2026-07-31 · Branch `claude/runningup-v14-handoff-hr19xk`
+
+> **PASS의 뜻이 바뀌었습니다.** 2026-07-31 이전의 `PASS`는 전부 *로컬 실행 결과*였습니다.
+> `security-scan`과 `supabase-tests`는 저장소 전 역사(각 15회 실행)에서 **한 번도 통과한 적이
+> 없는데**, 이 문서는 pgTAP 스위트를 `PASS`로 기록하고 있었습니다. 두 워크플로의 원인을
+> 찾아 고친 뒤 지금은 CI에서도 통과합니다. 아래 표의 `PASS`는 **어디서 검증됐는지**를
+> 함께 적습니다. 로컬만 통과한 것을 `PASS`로 적지 않습니다.
 
 ## Overall status
 
@@ -16,15 +22,16 @@ done, and nothing done is inflated into more than it is.
 
 ## What the environment can and cannot do
 
-| Capability | Status | Evidence / reason |
-|---|---|---|
-| Node 22 tooling, domain engine, tests | **PASS** | `npm run test:unit` — 85 tests |
-| PostgreSQL 16 + pgTAP 1.3.2 | **PASS** | `bash tools/test/db.sh` — 1128 tests, 7 suites |
-| Content factory + validator | **PASS** | `npm run validate:content` |
-| Direction-lock static scan | **PASS** | `npm run validate:direction-lock` |
-| Java 21 + Gradle 8.14 | **PASS** | `bash tools/bootstrap/doctor.sh` |
-| Kotlin/JVM run-capture core | **PASS** | `gradle test` in `native/android-running-plugin` — 22 tests (journal + upload queue) |
-| .NET 8 SDK (Unity domain layer) | **PASS** | `dotnet test` — 29 tests, no Unity Editor required |
+| Capability | Status | 검증 위치 | Evidence / reason |
+|---|---|---|---|
+| Node 22 tooling, domain engine, tests | **PASS** | 로컬 + CI (`unit-tests`) | `npm run test:unit` — **99 tests** |
+| PostgreSQL 16 + pgTAP 1.3.2 | **PASS** | 로컬 + CI (`supabase-tests`) | `bash tools/test/db.sh` — **1128 tests**, 7 suites. CI 통과는 2026-07-31 `095472b`이 처음입니다. |
+| Content factory + validator | **PASS** | 로컬 + CI (`content-validation`) | `npm run validate:content` |
+| Direction-lock static scan | **PASS** | 로컬 + CI (`direction-lock`) | `npm run validate:direction-lock` — 124 files, 19 patterns. **단, 강제하는 것은 v4.0.0 잠금입니다.** `docs/V14_MASTER_REMEDIATION_PROMPT_KO.md` §1.3 참조 |
+| Secret scan | **PASS** | CI (`security-scan`) | 2026-07-31 `c4fc040`이 첫 통과. 그 이전 15회는 전부 실패했습니다. |
+| Java 21 + Gradle 8.14 | **PASS** | 로컬 + CI (`kotlin-tests`) | `bash tools/bootstrap/doctor.sh` |
+| Kotlin/JVM run-capture core | **PASS** | 로컬 + CI (`kotlin-tests`) | `gradle test` in `native/android-running-plugin` — 22 tests (journal + upload queue) |
+| .NET 8 SDK (Unity domain layer) | **PASS** | CI (`unity-domain-tests`) | `dotnet test` — 29 tests. **이 컨테이너에는 dotnet이 없어 로컬 재현 불가.** |
 | Supabase CLI local stack | `BLOCKED_TOOLCHAIN` | No Docker daemon (`/var/run/docker.sock` absent). Mitigated: migrations run against real PostgreSQL 16; see ADR-002. |
 | Android SDK / NDK | `BLOCKED_TOOLCHAIN` | `dl.google.com` is refused by the environment network policy (`CONNECT` → 403). No SDK can be fetched. |
 | Unity 6.3 LTS Editor | `BLOCKED_TOOLCHAIN` | No Editor, no Hub, no licence, and installation requires both network access and licence acceptance. |
@@ -40,7 +47,7 @@ done, and nothing done is inflated into more than it is.
 - `tools/direction-lock/scan.mjs`: 94 files, 19 concept patterns, **0 violations**
 - Enforced additionally by DB CHECK constraints, enum ordering and pgTAP
 
-### Domain engine — 85 unit tests, all passing
+### Domain engine — 99 unit tests, all passing
 | Module | Covers |
 |---|---|
 | `tools/lib/monthly-apex.mjs` | 52 checkpoints, crossings, 999.999/1000/>1000, out-of-order, duplicates, month reset |
@@ -94,8 +101,8 @@ carried through every report in this repository.
 ## Next five exact commands
 
 ```bash
-npm run test:fast                        # direction lock + content + 68 unit tests
-bash tools/test/db.sh                    # migrations + seed + 136 pgTAP tests
+npm run test:fast                        # direction lock + content + 99 unit tests
+bash tools/test/db.sh                    # migrations + seed + 1128 pgTAP tests
 node tools/content-factory/build.mjs     # regenerate content from the design tables
 node tools/content-factory/emit-seed.mjs # regenerate seed.sql from the content
 bash tools/bootstrap/doctor.sh           # re-check toolchain availability

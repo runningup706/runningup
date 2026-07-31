@@ -290,8 +290,8 @@ Constraints:
 Constraints:
 
 - `apex_cp_final_flag_matches`: `CHECK (((is_final = true) = (threshold_meters = 1000000)))`
-- `apex_cp_within_ladder`: `CHECK (((threshold_meters >= 0) AND (threshold_meters <= 1000000)))`
-- `monthly_apex_checkpoints_index_check`: `CHECK (((index >= 1) AND (index <= 52)))`
+- `apex_cp_index_within_ladder`: `CHECK (((index >= 1) AND (index <= 120)))`
+- `apex_cp_within_ladder`: `CHECK (((threshold_meters >= 1000) AND (threshold_meters <= 1000000)))`
 - `monthly_apex_checkpoints_ladder_version_fkey`: `FOREIGN KEY (ladder_version) REFERENCES api.monthly_apex_definitions(ladder_version)`
 - `monthly_apex_checkpoints_ladder_version_index_key`: `UNIQUE (ladder_version, index)`
 - `monthly_apex_checkpoints_ladder_version_threshold_meters_key`: `UNIQUE (ladder_version, threshold_meters)`
@@ -310,7 +310,7 @@ Constraints:
 
 Constraints:
 
-- `apex_checkpoint_count_is_52`: `CHECK ((checkpoint_count = 52))`
+- `apex_checkpoint_count_is_120`: `CHECK ((checkpoint_count = 120))`
 - `apex_final_is_exactly_1000km`: `CHECK ((final_checkpoint_meters = 1000000))`
 - `monthly_apex_definitions_pkey`: `PRIMARY KEY (ladder_version)`
 

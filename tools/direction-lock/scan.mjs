@@ -14,6 +14,10 @@
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+// The locked numbers live once, in tools/lib/constants.mjs. This scanner used to restate
+// the checkpoint count, which meant changing the ladder made the lock itself the last
+// thing to notice — it reported the new, correct ladder as a violation.
+import { DIRECTION_LOCK } from '../lib/constants.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 
@@ -133,8 +137,8 @@ for (const cp of ladder.checkpoints) {
     violations.push({ file: 'content/launch/progression/monthly_apex_0_1000.json', line: 0, id: 'tier_above_1000', why: 'checkpoint above 1000 km', text: cp.checkpoint_id });
   }
 }
-if (ladder.checkpoints.length !== 52) {
-  violations.push({ file: 'content/launch/progression/monthly_apex_0_1000.json', line: 0, id: 'checkpoint_count', why: 'the canonical seed is 52 checkpoints', text: `found ${ladder.checkpoints.length}` });
+if (ladder.checkpoints.length !== DIRECTION_LOCK.CHECKPOINT_COUNT) {
+  violations.push({ file: 'content/launch/progression/monthly_apex_0_1000.json', line: 0, id: 'checkpoint_count', why: `the canonical seed is ${DIRECTION_LOCK.CHECKPOINT_COUNT} checkpoints`, text: `found ${ladder.checkpoints.length}` });
 }
 
 console.log(`direction-lock scan: ${scanned} files scanned, ${PATTERNS.length} concept patterns`);
