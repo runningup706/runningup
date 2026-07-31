@@ -8,7 +8,7 @@
         tools:replace="android:enableOnBackInvokedCallback">
         <activity
             android:name="com.unity3d.player.UnityPlayerGameActivity"
-            android:theme="@style/UnityThemeSelector"
+            android:theme="@style/BaseUnityGameActivityTheme"
             android:exported="true"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
             android:hardwareAccelerated="true">
