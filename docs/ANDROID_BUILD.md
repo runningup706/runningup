@@ -66,13 +66,43 @@ Windows는 **Git Bash**에서 실행하십시오. `rsync` 대신 `tar` 를 쓰�
 | `UNITY_PASSWORD` | Unity 계정 비밀번호 |
 | `UNITY_LICENSE` | `.ulf` 라이선스 파일의 **내용 전체** |
 
-`.ulf` 얻는 법 — Unity Hub가 설치된 PC에서 Personal 라이선스로 로그인한 뒤:
+#### `.ulf` 얻는 법
+
+> ⚠️ **Unity 6(6000.x)에는 `.ulf` 파일이 없습니다.** 라이선스 형식이
+> `~/Library/Unity/licenses/UnityEntitlementLicense.xml` 로 바뀌었습니다. 아무리 찾아도
+> `.ulf`가 안 나오는 게 정상입니다. 아래 수동 활성화로 **하나 만들어야** 합니다.
+> (game-ci 빌더는 여전히 `.ulf` 형식을 요구합니다.)
+
+**1) 활성화 파일(`.alf`) 생성** — 설치된 에디터로 실행합니다.
+
+```bash
+cd ~
+"<Unity 설치경로>/Unity.app/Contents/MacOS/Unity" \
+  -batchmode -nographics -quit -logFile /dev/stdout -createManualActivationFile
+ls -la ~/*.alf
+```
+
+Windows는 `"C:\Program Files\Unity\Hub\Editor\<버전>\Editor\Unity.exe"`,
+Linux는 `~/Unity/Hub/Editor/<버전>/Editor/Unity` 로 같은 인자를 씁니다.
+
+**2) 웹에서 `.ulf`로 교환** — <https://license.unity3d.com/manual>
+
+`.alf` 업로드 → **Unity Personal Edition** 선택 → "I don't use Unity in a professional
+capacity" 선택 → **Download license file**.
+
+**3) 시크릿에 넣기**
+
+```bash
+cat ~/Downloads/Unity_v*.ulf | pbcopy      # macOS
+```
+
+`UNITY_LICENSE` 칸에 붙여넣습니다.
+
+**구버전(2022 이하)** 은 파일이 이미 존재합니다:
 
 - **Windows** `C:\ProgramData\Unity\Unity_lic.ulf`
-- **macOS** `/Library/Application Support/Unity/Unity_lic.ulf`
+- **macOS** `/Library/Application Support/Unity/Unity_lic.ulf` (물결표 없는 시스템 경로)
 - **Linux** `~/.local/share/unity3d/Unity/Unity_lic.ulf`
-
-파일을 텍스트 편집기로 열어 내용을 통째로 붙여넣습니다.
 
 ### Supabase (필수)
 
@@ -166,5 +196,6 @@ git push origin v14.0.1
 | `this clone has uncommitted changes` | 같은 이유입니다. 깨끗한 새 클론이 필요합니다 |
 | `Signing: debug-signed` | 정상입니다. 서명 키 시크릿을 안 넣은 것뿐이고, 테스트 설치는 가능합니다 |
 | `UNITY_LICENSE secret is not set` | 2단계를 아직 안 했습니다 |
+| `.ulf` 파일이 어디에도 없음 | Unity 6이면 **정상입니다.** 형식이 `UnityEntitlementLicense.xml` 로 바뀌었습니다. 위 수동 활성화로 `.ulf` 를 만드십시오 |
 | Unity 라이선스 활성화 실패 | `.ulf`는 PC마다 다릅니다. Personal 라이선스는 동시 사용 대수 제한이 있으니 Unity 계정에서 기존 활성화를 해제하고 다시 받으십시오 |
 | `Unity reported success but produced no APK` | 종료 코드만 보고 성공으로 처리하지 않기 위한 검사입니다. 이전에 SIGTERM(143)을 성공으로 오인한 적이 있습니다 |
