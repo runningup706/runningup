@@ -88,7 +88,36 @@ test('a run in progress is left running rather than abandoned by a back press', 
     controller.indexOf('public void OnAndroidBackPressed('),
   );
   assert.match(handler, /Screen\.ActiveTraining or Screen\.LiveRace/);
-  assert.match(handler, /GoTo\(Screen\.Home, recordHistory: false\)/);
+
+  // Asserted as behaviour, not as a method name. This test used to require the exact
+  // call `GoTo(Screen.Home, recordHistory: false)`, so a later refactor that split the
+  // same behaviour into GoTo (records history) and Show (renders only) failed it while
+  // being strictly better. A test that breaks on a rename teaches people to delete it.
+  //
+  // What must remain true: leaving a run goes Home *without* recording history — going
+  // "back" from Home should exit, not walk into the run the user just left.
+  const leavesRun = handler.slice(0, handler.indexOf('backStack'));
+  assert.match(leavesRun, /Show\(Screen\.Home\)/,
+    'back during a run must land on Home');
+  assert.doesNotMatch(leavesRun, /GoTo\(Screen\.Home\)/,
+    'it must not record history: back from Home would then re-enter the run screen');
+  assert.match(handler, /Run continues/i,
+    'the user has to be told the run is still recording');
+});
+
+test('back is a single path: every exit from a screen goes through GoTo or Show', () => {
+  // The regression this catches actually happened. A refactor left three navigation
+  // buttons calling Show(Screen.X) directly, so those screens changed without being
+  // pushed onto the back stack and back silently skipped over them.
+  assert.doesNotMatch(
+    controller,
+    /\(\)\s*=>\s*Show\(Screen\./,
+    'a navigation button calls Show directly; it must call GoTo so back can return',
+  );
+  // Show renders, GoTo records. If Show ever takes a persistence flag again, the last
+  // screen is being stored somewhere and the cold-start bug has a way back in.
+  assert.match(controller, /private void Show\(Screen screen\)/,
+    'Show must render only — no persist flag');
 });
 
 test('back at the root asks once before letting the app close', () => {

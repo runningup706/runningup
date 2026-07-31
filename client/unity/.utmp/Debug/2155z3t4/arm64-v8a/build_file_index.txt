@@ -1,3 +1,0 @@
-/Users/runner706/Documents/Codex/2026-07-29/goal-runningup-3d-real-run-rpg/runningup/client/unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt
-/Users/runner706/Documents/Codex/2026-07-29/goal-runningup-3d-real-run-rpg/runningup/client/unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/FramePacing/CMakeLists.txt
-/Users/runner706/Documents/Codex/2026-07-29/goal-runningup-3d-real-run-rpg/runningup/client/unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/CMakeLists.txt

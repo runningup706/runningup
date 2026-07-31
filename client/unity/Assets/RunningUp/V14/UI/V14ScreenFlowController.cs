@@ -314,7 +314,7 @@ namespace RunningUp.V14.UI
         {
             if (currentScreen is Screen.ActiveTraining or Screen.LiveRace)
             {
-                Show(Screen.Home, false);
+                Show(Screen.Home);
                 Publish("Run continues in the background");
                 return true;
             }
@@ -328,12 +328,12 @@ namespace RunningUp.V14.UI
             {
                 var previous = backStack[^1];
                 backStack.RemoveAt(backStack.Count - 1);
-                Show(previous, false);
+                Show(previous);
                 return true;
             }
             if (currentScreen != Screen.Home)
             {
-                Show(Screen.Home, false);
+                Show(Screen.Home);
                 return true;
             }
             if (Time.unscaledTime <= homeExitArmedUntil)
@@ -386,7 +386,7 @@ namespace RunningUp.V14.UI
         private void Start()
         {
             HideLegacyHud();
-            Show(currentScreen, false);
+            Show(currentScreen);
             RefreshRuntimeState();
             Publish("Ready");
         }
@@ -984,7 +984,7 @@ namespace RunningUp.V14.UI
                 new Vector2(976f, 112f),
                 new Vector2(0f, 1f),
                 PanelSoft,
-                () => Show(Screen.Matchmaking));
+                () => GoTo(Screen.Matchmaking));
             Label(
                 "TrainingTruth",
                 root,
@@ -1591,7 +1591,7 @@ namespace RunningUp.V14.UI
                     new Vector2(976f, 80f),
                     new Vector2(0f, 1f),
                     Gold,
-                    () => Show(Screen.MonthlyApex));
+                    () => GoTo(Screen.MonthlyApex));
             }
         }
 
@@ -1615,7 +1615,7 @@ namespace RunningUp.V14.UI
             Destroy(old);
             screens.Remove(Screen.World);
             BuildWorld();
-            Show(Screen.World, false);
+            Show(Screen.World);
         }
 
         private void BuildMonthlyApex()
@@ -1897,7 +1897,7 @@ namespace RunningUp.V14.UI
                 new Vector2(976f, 96f),
                 new Vector2(0f, 1f),
                 PanelSoft,
-                () => Show(Screen.Crew));
+                () => GoTo(Screen.Crew));
             Label(
                 "SettingsTruth",
                 root,
@@ -2452,7 +2452,7 @@ namespace RunningUp.V14.UI
             screens.Remove(Screen.Settings);
             BuildSettings();
             screens[Screen.Settings].transform.SetSiblingIndex(11);
-            Show(Screen.Settings, false);
+            Show(Screen.Settings);
         }
 
         private void OnJourneyStatus(string status)
@@ -2537,7 +2537,7 @@ namespace RunningUp.V14.UI
             }
             if (status == "training_active")
             {
-                Show(Screen.ActiveTraining, false);
+                Show(Screen.ActiveTraining);
                 runner?.Play("steady_run");
             }
             else if (status.StartsWith(
@@ -2556,38 +2556,38 @@ namespace RunningUp.V14.UI
             {
                 RefreshApprovedResources();
                 RefreshTrainingResult();
-                Show(Screen.TrainingResult, false);
+                Show(Screen.TrainingResult);
             }
             else if (status == "race_lobby_ready")
             {
                 RefreshRaceUi();
-                Show(Screen.Lobby, false);
+                Show(Screen.Lobby);
             }
             else if (status.StartsWith(
                          "race_countdown:",
                          StringComparison.Ordinal))
             {
                 RefreshRaceUi();
-                Show(Screen.Lobby, false);
+                Show(Screen.Lobby);
             }
             else if (status == "race_active" ||
                      status == "race_reconnected")
             {
                 RefreshRaceUi();
-                Show(Screen.LiveRace, false);
+                Show(Screen.LiveRace);
                 runner?.Play("steady_run");
             }
             else if (status == "race_reconnect_requested" ||
                      status == "race_reconnecting")
             {
                 RefreshRaceUi();
-                Show(Screen.LiveRace, false);
+                Show(Screen.LiveRace);
             }
             else if (status == "race_rewarded")
             {
                 RefreshApprovedResources();
                 RefreshRaceUi();
-                Show(Screen.RaceResult, false);
+                Show(Screen.RaceResult);
             }
         }
 
@@ -3335,7 +3335,7 @@ namespace RunningUp.V14.UI
             }
         }
 
-        private void Show(Screen screen, bool persist = true)
+        private void Show(Screen screen)
         {
             currentScreen = screen;
             var approvedHomeVisible =
@@ -3368,11 +3368,14 @@ namespace RunningUp.V14.UI
                 button.transform.parent.gameObject.SetActive(
                     !immersive && !approvedHomeVisible);
             }
-            if (persist)
-            {
-                PlayerPrefs.SetString(ScreenKey, screen.ToString());
-                PlayerPrefs.Save();
-            }
+            // Deliberately does not persist the current screen.
+            //
+            // Awake deletes ScreenKey and starts at Home, so this write fed nothing —
+            // but it ran on every navigation and called PlayerPrefs.Save(), which is a
+            // synchronous disk flush. Worse, a stored value that nothing reads is an
+            // invitation for someone to start reading it again, which is exactly the
+            // cold-start bug ("the app reopens the screen it died on") coming back.
+            // ScreenKey survives only so Awake can clear a value left by an older build.
             if (screen == Screen.Home)
             {
                 runner?.Play("steady_run");

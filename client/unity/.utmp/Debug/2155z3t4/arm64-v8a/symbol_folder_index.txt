@@ -1,1 +1,0 @@
-/Users/runner706/Documents/Codex/2026-07-29/goal-runningup-3d-real-run-rpg/runningup/client/unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/2155z3t4/obj/arm64-v8a

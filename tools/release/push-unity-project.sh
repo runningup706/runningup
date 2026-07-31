@@ -162,11 +162,15 @@ fi
 # tar rather than rsync: rsync is absent from this container and from a stock Windows
 # Git Bash, which is one of the machines this has to run on. tar ships with macOS, Linux
 # and Git Bash alike, and `tar -c | tar -x` copies a tree with exclusions and no temp file.
-EXCLUDES=(Library Temp Obj Logs Build Builds UserSettings MemoryCaptures .vs .idea)
+# .utmp is the Android/IL2CPP scratch tree — CMake caches, ninja logs, .o files. It is
+# not in Unity's own documented ignore list, so it is easy to miss, and 55 of its files
+# reached a commit before it was added here.
+EXCLUDES=(Library Temp Obj Logs Build Builds UserSettings MemoryCaptures .utmp .vs .idea)
 tar_excludes=()
 for e in "${EXCLUDES[@]}"; do tar_excludes+=(--exclude="./$e"); done
 tar_excludes+=(--exclude='*.apk' --exclude='*.aab' --exclude='*.keystore'
-               --exclude='*.jks' --exclude='*.csproj' --exclude='*.sln')
+               --exclude='*.jks' --exclude='*.csproj' --exclude='*.sln'
+               --exclude='mono_crash.*.json')
 
 command -v tar >/dev/null || die "tar is not installed. It ships with macOS, Linux and
      Git Bash on Windows. Nothing was changed."
