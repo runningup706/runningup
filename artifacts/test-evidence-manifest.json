@@ -1,7 +1,7 @@
 {
   "manifest_version": "1.0.0",
   "generated_by": "tools/release/generate-evidence.mjs",
-  "git_commit": "46bf5a3126143a200ec8025d6987fe1feef50c3d",
+  "git_commit": "b5b36fc87a166646ddf169ffe23da9bd5f2c305f",
   "content_version": "1.0.0",
   "content_sha256": "5b0ad89528046203d0fc4c99c5874028b1cc73175e97914015c38e35146d2707",
   "suites": [
