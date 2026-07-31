@@ -145,6 +145,39 @@ node tools/release/emit-client-ladder.mjs --check
 `still stores the ladder as MonthlyCheckpointsKm` 가 나오면 클라이언트가 옛날 52개
 km 사다리를 들고 있다는 뜻이니 멈추고 보고하라.
 
+### B-3-0. Android SDK 탐지가 멈추면 (실제로 발생한 문제)
+
+Unity 가 `/opt/homebrew/bin/sdkmanager --list` 에서 5분 넘게 멈추는 사례가 보고됐다.
+Unity 는 자기 번들 SDK 를 쓰도록 설정해도 **PATH 에 있는 sdkmanager 를 먼저 탐지한다.**
+homebrew 쪽 `sdkmanager` 는 stdin 을 기다리며 응답하지 않는다.
+
+빌드 전에 PATH 에서 homebrew 를 빼고 Unity 번들 SDK/JDK 를 명시하라:
+
+```bash
+UNITY_APP="/Users/runner706/Documents/Codex/2026-07-29/goal-runningup-3d-real-run-rpg/work/toolchains/unity-editors/6000.3.20f1/Unity.app"
+PLAYBACK="$UNITY_APP/Contents/PlaybackEngines/AndroidPlayer"
+
+# 번들 SDK/NDK/JDK 가 실제로 있는지부터 확인하고 보고하라
+ls -d "$PLAYBACK/SDK" "$PLAYBACK/NDK" "$PLAYBACK/OpenJDK" 2>&1
+
+export PATH=$(echo "$PATH" | tr ':' '\n' | grep -v '/opt/homebrew/bin' | paste -sd: -)
+export ANDROID_HOME="$PLAYBACK/SDK"
+export ANDROID_SDK_ROOT="$PLAYBACK/SDK"
+export ANDROID_NDK_HOME="$PLAYBACK/NDK"
+export JAVA_HOME="$PLAYBACK/OpenJDK"
+```
+
+번들 SDK 가 없으면 그 사실을 보고하고 로컬 빌드는 `BLOCKED_TOOLCHAIN` 으로 남겨라.
+**로컬 빌드는 부가 목표다.** CI 러너에는 이 문제가 없으므로, 막히면 무리하지 말고
+작업 A(라이선스)에 집중하라 — 그쪽이 APK 를 얻는 확실한 경로다.
+
+타임아웃을 걸어 다시 5분씩 잡아먹지 않게 하라:
+
+```bash
+timeout 900 "$UNITY_APP/Contents/MacOS/Unity" -batchmode -nographics -quit ... || \
+  echo "BLOCKED_TOOLCHAIN: Unity 빌드가 900초 안에 끝나지 않음"
+```
+
 ### B-3. 빌드
 
 ```bash
