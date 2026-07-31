@@ -89,47 +89,47 @@ export const CONTINENT_COURSES = Object.freeze({
     onSplit: (ctx) => { ctx.evenPaceBonus = 0.04; },
   },
   con_verdia: {
-    surface: 'road', label: 'soft forest boardwalk; the footing saps a little from every split',
+    surface: 'road', label: 'soft canopy boardwalk; the footing saps a little from every split',
     onSplit: (ctx) => { ctx.effortCost += 0.03; },
   },
-  con_ferran: {
-    surface: 'track', label: 'banked oval; lap splits are read out, so drift is punished early',
-    onSplit: (ctx) => { ctx.driftPenalty += 0.05; },
-  },
-  con_zephyr: {
-    surface: 'road', label: 'exposed coastal lanes; a headwind alternates with a tailwind',
-    onSplit: (ctx) => { ctx.effortCost += ctx.split % 2 === 0 ? -0.04 : 0.06; },
-  },
-  con_mareth: {
-    surface: 'road', label: 'harbour causeway; a narrow section forces a mid-race surge',
-    onSplit: (ctx) => { if (ctx.split === Math.floor(ctx.splitCount / 2)) ctx.requiredSurge += 0.08; },
-  },
-  con_ionis: {
-    surface: 'indoor', label: 'tight indoor circuit; frequent corners cost the tall stride',
-    onSplit: (ctx) => { ctx.cornerCost += 0.04; },
-  },
-  con_solane: {
-    surface: 'road', label: 'mirrored plaza loops; the pack bunches and surges together',
-    onSplit: (ctx) => { ctx.packDraft += 0.05; },
-  },
-  con_nival: {
-    surface: 'indoor', label: 'cold indoor hall; the first two splits run slower than they feel',
-    onSplit: (ctx) => { if (ctx.split < 2) ctx.effortCost += 0.05; },
+  con_rubra: {
+    surface: 'road', label: 'canyon furnace road; radiant heat builds and bites late',
+    onSplit: (ctx) => { ctx.effortCost += ctx.split >= ctx.splitCount / 2 ? 0.05 : 0.01; },
   },
   con_anel: {
-    surface: 'treadmill', label: 'calibrated treadmill hall; pace is exact and nothing is gifted',
-    onSplit: (ctx) => { ctx.jitter *= 0.4; },
-  },
-  con_kael: {
-    surface: 'track', label: 'sea-level fast track; a well-judged negative split pays double',
-    onSplit: (ctx) => { ctx.negativeSplitBonus += 0.05; },
-  },
-  con_rubra: {
-    surface: 'road', label: 'stadium approach; the closing stretch is long and honest',
-    onSplit: (ctx) => { if (ctx.split === ctx.splitCount - 1) ctx.kickWindow += 0.10; },
+    surface: 'road', label: 'open grass-sea highroad; a headwind alternates with a tailwind',
+    onSplit: (ctx) => { ctx.effortCost += ctx.split % 2 === 0 ? -0.04 : 0.06; },
   },
   con_serene: {
-    surface: 'road', label: 'championship course; every earlier course trait appears once',
+    surface: 'road', label: 'lantern piers on stilts; a narrow span forces a mid-race surge',
+    onSplit: (ctx) => { if (ctx.split === Math.floor(ctx.splitCount / 2)) ctx.requiredSurge += 0.08; },
+  },
+  con_voltis: {
+    surface: 'indoor', label: 'tight substation circuit; frequent corners cost the tall stride',
+    onSplit: (ctx) => { ctx.cornerCost += 0.04; },
+  },
+  con_hora: {
+    surface: 'road', label: 'glass desert flats; false horizons make pace judgement unreliable',
+    onSplit: (ctx) => { ctx.driftPenalty += 0.05; ctx.jitter *= 1.4; },
+  },
+  con_nival: {
+    surface: 'indoor', label: 'frozen ridge hall; the first two splits run slower than they feel',
+    onSplit: (ctx) => { if (ctx.split < 2) ctx.effortCost += 0.05; },
+  },
+  con_kael: {
+    surface: 'track', label: 'sky-island oval; a well-judged negative split pays double',
+    onSplit: (ctx) => { ctx.negativeSplitBonus += 0.05; },
+  },
+  con_neris: {
+    surface: 'indoor', label: 'pressure galleries; dense air rewards the pack that works together',
+    onSplit: (ctx) => { ctx.packDraft += 0.05; },
+  },
+  con_tempora: {
+    surface: 'treadmill', label: 'calibrated escapement hall; pace is exact and nothing is gifted',
+    onSplit: (ctx) => { ctx.jitter *= 0.4; },
+  },
+  con_origin: {
+    surface: 'track', label: 'worldline championship track; every earlier course trait appears once',
     onSplit: (ctx) => {
       ctx.effortCost += ctx.split % 3 === 0 ? 0.04 : 0;
       ctx.negativeSplitBonus += 0.03;

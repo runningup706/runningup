@@ -204,6 +204,18 @@ test('the config version is reported so a result can be replayed', () => {
 // Courses and strategies
 // ---------------------------------------------------------------------------
 
+test('every course id is a real continent, and every continent has a course', async () => {
+  // Counting to twelve is not enough. The first version of CONTINENT_COURSES invented
+  // five continent ids that do not exist (con_ferran, con_zephyr, con_mareth, con_ionis,
+  // con_solane) while five real ones (con_voltis, con_hora, con_neris, con_tempora,
+  // con_origin) had no entry — so those five silently fell back to Lumena's course and
+  // every race there was the same race. The set must match exactly, both ways.
+  const { CONTINENTS } = await import('../tools/content-factory/world/world-design.mjs');
+  const real = CONTINENTS.map((c) => c.id).sort();
+  const courses = Object.keys(CONTINENT_COURSES).sort();
+  assert.deepEqual(courses, real, 'course ids must be exactly the continent ids');
+});
+
 test('all twelve continents have a distinct course character', () => {
   const ids = Object.keys(CONTINENT_COURSES);
   assert.equal(ids.length, 12);
@@ -213,7 +225,7 @@ test('all twelve continents have a distinct course character', () => {
 
 test('course choice actually changes the race', () => {
   const base = race({ courseId: 'con_lumena' });
-  const other = race({ courseId: 'con_anel' });
+  const other = race({ courseId: 'con_tempora' });
   assert.notDeepEqual(base.splits, other.splits, 'course traits must not be decorative');
 });
 
