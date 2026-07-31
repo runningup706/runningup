@@ -62,7 +62,7 @@ namespace RunningUp.Domain.Tests
                 .EnumerateArray().Select(e => e.GetInt32()).ToList();
 
             Assert.Equal(expected, MonthlyApexLadder.CheckpointMeters.ToList());
-            Assert.Equal(120, expected.Count);
+            Assert.Equal(121, expected.Count);
             Assert.Equal(1_000_000, expected.Last());
             Assert.DoesNotContain(expected, m => m > 1_000_000);
         }
@@ -197,8 +197,8 @@ namespace RunningUp.Domain.Tests
             Assert.False(snapshot.HasTierAboveFinal);
             Assert.True(snapshot.IsFinalRank);
             Assert.Empty(snapshot.Next);
-            Assert.Equal(120, snapshot.CheckpointsReached);
-            Assert.Equal(120, snapshot.CheckpointsTotal);
+            Assert.Equal(121, snapshot.CheckpointsReached);
+            Assert.Equal(121, snapshot.CheckpointsTotal);
         }
 
         [Fact]
@@ -215,8 +215,8 @@ namespace RunningUp.Domain.Tests
             }
 
             Assert.Equal(1_000_000, progress.LadderedMeters);
-            Assert.Equal(120, claimed.Count);
-            Assert.Equal(120, claimed.Distinct().Count());
+            Assert.Equal(121, claimed.Count);
+            Assert.Equal(121, claimed.Distinct().Count());
             Assert.True(progress.WorldCrownAwarded);
             Assert.True(progress.ApexAxisUnlocked);
         }
@@ -224,10 +224,11 @@ namespace RunningUp.Domain.Tests
         [Fact]
         public void CheckpointIdsMatchTheServerNamingIncludingTheFractionalOne()
         {
-            // The V14 ladder starts at 1 km and has no fractional 42.195 km checkpoint.
+            // The ladder starts at 1 km and keeps 42.195 km as the one fractional checkpoint.
             Assert.Equal("apex_cp_01_1km", MonthlyApexLadder.CheckpointId(0));
             Assert.Equal("apex_cp_11_18km", MonthlyApexLadder.CheckpointId(10));
-            Assert.Equal("apex_cp_120_1000km", MonthlyApexLadder.CheckpointId(119));
+            Assert.Equal("apex_cp_19_42p195km", MonthlyApexLadder.CheckpointId(18));
+            Assert.Equal("apex_cp_121_1000km", MonthlyApexLadder.CheckpointId(120));
         }
 
         [Fact]

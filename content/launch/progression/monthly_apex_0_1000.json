@@ -3,7 +3,7 @@
   "content_version": "1.0.0",
   "ladder_version": "apex.v1.0.0",
   "final_checkpoint_meters": 1000000,
-  "checkpoint_count": 120,
+  "checkpoint_count": 121,
   "tiers_above_final": [],
   "major_ranks": [
     {
@@ -391,188 +391,188 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_19_45km",
+      "checkpoint_id": "apex_cp_19_42p195km",
       "index": 19,
+      "threshold_meters": 42195,
+      "threshold_km": 42.195,
+      "major_rank": "awakening",
+      "name_key": "apex.checkpoint.apex_cp_19_42p195km",
+      "reward_bundle_id": "bundle_apex_cp_19_42p195km",
+      "reward_bundle_kinds": [
+        "cosmetic",
+        "character_episode"
+      ],
+      "story_or_world_effect": "restoration_pulse_7",
+      "is_final": false,
+      "content_version": "1.0.0"
+    },
+    {
+      "checkpoint_id": "apex_cp_20_45km",
+      "index": 20,
       "threshold_meters": 45000,
       "threshold_km": 45,
       "major_rank": "awakening",
-      "name_key": "apex.checkpoint.apex_cp_19_45km",
-      "reward_bundle_id": "bundle_apex_cp_19_45km",
+      "name_key": "apex.checkpoint.apex_cp_20_45km",
+      "reward_bundle_id": "bundle_apex_cp_20_45km",
       "reward_bundle_kinds": [
-        "cosmetic",
-        "character_episode"
+        "story",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_7",
+      "story_or_world_effect": "restoration_pulse_8",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_20_49km",
-      "index": 20,
+      "checkpoint_id": "apex_cp_21_49km",
+      "index": 21,
       "threshold_meters": 49000,
       "threshold_km": 49,
       "major_rank": "awakening",
-      "name_key": "apex.checkpoint.apex_cp_20_49km",
-      "reward_bundle_id": "bundle_apex_cp_20_49km",
+      "name_key": "apex.checkpoint.apex_cp_21_49km",
+      "reward_bundle_id": "bundle_apex_cp_21_49km",
       "reward_bundle_kinds": [
-        "story",
-        "restoration_scene"
+        "character_episode",
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_8",
+      "story_or_world_effect": "restoration_pulse_9",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_21_54km",
-      "index": 21,
+      "checkpoint_id": "apex_cp_22_54km",
+      "index": 22,
       "threshold_meters": 54000,
       "threshold_km": 54,
       "major_rank": "strider",
-      "name_key": "apex.checkpoint.apex_cp_21_54km",
-      "reward_bundle_id": "bundle_apex_cp_21_54km",
+      "name_key": "apex.checkpoint.apex_cp_22_54km",
+      "reward_bundle_id": "bundle_apex_cp_22_54km",
       "reward_bundle_kinds": [
-        "character_episode",
-        "crown_shard"
+        "relic_choice",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_9",
+      "story_or_world_effect": "restoration_pulse_10",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_22_58km",
-      "index": 22,
+      "checkpoint_id": "apex_cp_23_58km",
+      "index": 23,
       "threshold_meters": 58000,
       "threshold_km": 58,
       "major_rank": "strider",
-      "name_key": "apex.checkpoint.apex_cp_22_58km",
-      "reward_bundle_id": "bundle_apex_cp_22_58km",
+      "name_key": "apex.checkpoint.apex_cp_23_58km",
+      "reward_bundle_id": "bundle_apex_cp_23_58km",
       "reward_bundle_kinds": [
-        "relic_choice",
-        "character_episode"
+        "boss_key",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_10",
+      "story_or_world_effect": "restoration_pulse_11",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_23_63km",
-      "index": 23,
+      "checkpoint_id": "apex_cp_24_63km",
+      "index": 24,
       "threshold_meters": 63000,
       "threshold_km": 63,
       "major_rank": "strider",
-      "name_key": "apex.checkpoint.apex_cp_23_63km",
-      "reward_bundle_id": "bundle_apex_cp_23_63km",
+      "name_key": "apex.checkpoint.apex_cp_24_63km",
+      "reward_bundle_id": "bundle_apex_cp_24_63km",
       "reward_bundle_kinds": [
-        "boss_key",
-        "restoration_scene"
+        "restoration_scene",
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_11",
+      "story_or_world_effect": "restoration_pulse_12",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_24_67km",
-      "index": 24,
+      "checkpoint_id": "apex_cp_25_67km",
+      "index": 25,
       "threshold_meters": 67000,
       "threshold_km": 67,
       "major_rank": "strider",
-      "name_key": "apex.checkpoint.apex_cp_24_67km",
-      "reward_bundle_id": "bundle_apex_cp_24_67km",
+      "name_key": "apex.checkpoint.apex_cp_25_67km",
+      "reward_bundle_id": "bundle_apex_cp_25_67km",
       "reward_bundle_kinds": [
-        "restoration_scene",
-        "crown_shard"
+        "profile_frame",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_12",
+      "story_or_world_effect": "restoration_pulse_1",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_25_72km",
-      "index": 25,
+      "checkpoint_id": "apex_cp_26_72km",
+      "index": 26,
       "threshold_meters": 72000,
       "threshold_km": 72,
       "major_rank": "strider",
-      "name_key": "apex.checkpoint.apex_cp_25_72km",
-      "reward_bundle_id": "bundle_apex_cp_25_72km",
+      "name_key": "apex.checkpoint.apex_cp_26_72km",
+      "reward_bundle_id": "bundle_apex_cp_26_72km",
       "reward_bundle_kinds": [
-        "profile_frame",
-        "character_episode"
+        "season_point",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_1",
+      "story_or_world_effect": "restoration_pulse_2",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_26_77km",
-      "index": 26,
+      "checkpoint_id": "apex_cp_27_77km",
+      "index": 27,
       "threshold_meters": 77000,
       "threshold_km": 77,
       "major_rank": "strider",
-      "name_key": "apex.checkpoint.apex_cp_26_77km",
-      "reward_bundle_id": "bundle_apex_cp_26_77km",
+      "name_key": "apex.checkpoint.apex_cp_27_77km",
+      "reward_bundle_id": "bundle_apex_cp_27_77km",
       "reward_bundle_kinds": [
-        "season_point",
-        "restoration_scene"
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_2",
+      "story_or_world_effect": "restoration_pulse_3",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_27_82km",
-      "index": 27,
+      "checkpoint_id": "apex_cp_28_82km",
+      "index": 28,
       "threshold_meters": 82000,
       "threshold_km": 82,
       "major_rank": "strider",
-      "name_key": "apex.checkpoint.apex_cp_27_82km",
-      "reward_bundle_id": "bundle_apex_cp_27_82km",
+      "name_key": "apex.checkpoint.apex_cp_28_82km",
+      "reward_bundle_id": "bundle_apex_cp_28_82km",
       "reward_bundle_kinds": [
-        "crown_shard"
+        "cosmetic",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_3",
+      "story_or_world_effect": "restoration_pulse_4",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_28_87km",
-      "index": 28,
+      "checkpoint_id": "apex_cp_29_87km",
+      "index": 29,
       "threshold_meters": 87000,
       "threshold_km": 87,
       "major_rank": "strider",
-      "name_key": "apex.checkpoint.apex_cp_28_87km",
-      "reward_bundle_id": "bundle_apex_cp_28_87km",
+      "name_key": "apex.checkpoint.apex_cp_29_87km",
+      "reward_bundle_id": "bundle_apex_cp_29_87km",
       "reward_bundle_kinds": [
-        "cosmetic",
-        "character_episode"
+        "story",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_4",
+      "story_or_world_effect": "restoration_pulse_5",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_29_93km",
-      "index": 29,
+      "checkpoint_id": "apex_cp_30_93km",
+      "index": 30,
       "threshold_meters": 93000,
       "threshold_km": 93,
       "major_rank": "strider",
-      "name_key": "apex.checkpoint.apex_cp_29_93km",
-      "reward_bundle_id": "bundle_apex_cp_29_93km",
-      "reward_bundle_kinds": [
-        "story",
-        "restoration_scene"
-      ],
-      "story_or_world_effect": "restoration_pulse_5",
-      "is_final": false,
-      "content_version": "1.0.0"
-    },
-    {
-      "checkpoint_id": "apex_cp_30_98km",
-      "index": 30,
-      "threshold_meters": 98000,
-      "threshold_km": 98,
-      "major_rank": "strider",
-      "name_key": "apex.checkpoint.apex_cp_30_98km",
-      "reward_bundle_id": "bundle_apex_cp_30_98km",
+      "name_key": "apex.checkpoint.apex_cp_30_93km",
+      "reward_bundle_id": "bundle_apex_cp_30_93km",
       "reward_bundle_kinds": [
         "character_episode",
         "crown_shard"
@@ -582,13 +582,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_31_104km",
+      "checkpoint_id": "apex_cp_31_98km",
       "index": 31,
-      "threshold_meters": 104000,
-      "threshold_km": 104,
-      "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_31_104km",
-      "reward_bundle_id": "bundle_apex_cp_31_104km",
+      "threshold_meters": 98000,
+      "threshold_km": 98,
+      "major_rank": "strider",
+      "name_key": "apex.checkpoint.apex_cp_31_98km",
+      "reward_bundle_id": "bundle_apex_cp_31_98km",
       "reward_bundle_kinds": [
         "relic_choice",
         "character_episode"
@@ -598,13 +598,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_32_110km",
+      "checkpoint_id": "apex_cp_32_104km",
       "index": 32,
-      "threshold_meters": 110000,
-      "threshold_km": 110,
+      "threshold_meters": 104000,
+      "threshold_km": 104,
       "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_32_110km",
-      "reward_bundle_id": "bundle_apex_cp_32_110km",
+      "name_key": "apex.checkpoint.apex_cp_32_104km",
+      "reward_bundle_id": "bundle_apex_cp_32_104km",
       "reward_bundle_kinds": [
         "boss_key",
         "restoration_scene"
@@ -614,13 +614,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_33_115km",
+      "checkpoint_id": "apex_cp_33_110km",
       "index": 33,
-      "threshold_meters": 115000,
-      "threshold_km": 115,
+      "threshold_meters": 110000,
+      "threshold_km": 110,
       "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_33_115km",
-      "reward_bundle_id": "bundle_apex_cp_33_115km",
+      "name_key": "apex.checkpoint.apex_cp_33_110km",
+      "reward_bundle_id": "bundle_apex_cp_33_110km",
       "reward_bundle_kinds": [
         "restoration_scene",
         "crown_shard"
@@ -630,13 +630,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_34_121km",
+      "checkpoint_id": "apex_cp_34_115km",
       "index": 34,
-      "threshold_meters": 121000,
-      "threshold_km": 121,
+      "threshold_meters": 115000,
+      "threshold_km": 115,
       "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_34_121km",
-      "reward_bundle_id": "bundle_apex_cp_34_121km",
+      "name_key": "apex.checkpoint.apex_cp_34_115km",
+      "reward_bundle_id": "bundle_apex_cp_34_115km",
       "reward_bundle_kinds": [
         "profile_frame",
         "character_episode"
@@ -646,13 +646,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_35_127km",
+      "checkpoint_id": "apex_cp_35_121km",
       "index": 35,
-      "threshold_meters": 127000,
-      "threshold_km": 127,
+      "threshold_meters": 121000,
+      "threshold_km": 121,
       "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_35_127km",
-      "reward_bundle_id": "bundle_apex_cp_35_127km",
+      "name_key": "apex.checkpoint.apex_cp_35_121km",
+      "reward_bundle_id": "bundle_apex_cp_35_121km",
       "reward_bundle_kinds": [
         "season_point",
         "restoration_scene"
@@ -662,13 +662,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_36_134km",
+      "checkpoint_id": "apex_cp_36_127km",
       "index": 36,
-      "threshold_meters": 134000,
-      "threshold_km": 134,
+      "threshold_meters": 127000,
+      "threshold_km": 127,
       "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_36_134km",
-      "reward_bundle_id": "bundle_apex_cp_36_134km",
+      "name_key": "apex.checkpoint.apex_cp_36_127km",
+      "reward_bundle_id": "bundle_apex_cp_36_127km",
       "reward_bundle_kinds": [
         "crown_shard"
       ],
@@ -677,13 +677,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_37_140km",
+      "checkpoint_id": "apex_cp_37_134km",
       "index": 37,
-      "threshold_meters": 140000,
-      "threshold_km": 140,
+      "threshold_meters": 134000,
+      "threshold_km": 134,
       "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_37_140km",
-      "reward_bundle_id": "bundle_apex_cp_37_140km",
+      "name_key": "apex.checkpoint.apex_cp_37_134km",
+      "reward_bundle_id": "bundle_apex_cp_37_134km",
       "reward_bundle_kinds": [
         "cosmetic",
         "character_episode"
@@ -693,13 +693,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_38_146km",
+      "checkpoint_id": "apex_cp_38_140km",
       "index": 38,
-      "threshold_meters": 146000,
-      "threshold_km": 146,
+      "threshold_meters": 140000,
+      "threshold_km": 140,
       "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_38_146km",
-      "reward_bundle_id": "bundle_apex_cp_38_146km",
+      "name_key": "apex.checkpoint.apex_cp_38_140km",
+      "reward_bundle_id": "bundle_apex_cp_38_140km",
       "reward_bundle_kinds": [
         "story",
         "restoration_scene"
@@ -709,13 +709,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_39_153km",
+      "checkpoint_id": "apex_cp_39_146km",
       "index": 39,
-      "threshold_meters": 153000,
-      "threshold_km": 153,
+      "threshold_meters": 146000,
+      "threshold_km": 146,
       "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_39_153km",
-      "reward_bundle_id": "bundle_apex_cp_39_153km",
+      "name_key": "apex.checkpoint.apex_cp_39_146km",
+      "reward_bundle_id": "bundle_apex_cp_39_146km",
       "reward_bundle_kinds": [
         "character_episode",
         "crown_shard"
@@ -725,13 +725,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_40_160km",
+      "checkpoint_id": "apex_cp_40_153km",
       "index": 40,
-      "threshold_meters": 160000,
-      "threshold_km": 160,
+      "threshold_meters": 153000,
+      "threshold_km": 153,
       "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_40_160km",
-      "reward_bundle_id": "bundle_apex_cp_40_160km",
+      "name_key": "apex.checkpoint.apex_cp_40_153km",
+      "reward_bundle_id": "bundle_apex_cp_40_153km",
       "reward_bundle_kinds": [
         "relic_choice",
         "character_episode"
@@ -741,13 +741,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_41_166km",
+      "checkpoint_id": "apex_cp_41_160km",
       "index": 41,
-      "threshold_meters": 166000,
-      "threshold_km": 166,
+      "threshold_meters": 160000,
+      "threshold_km": 160,
       "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_41_166km",
-      "reward_bundle_id": "bundle_apex_cp_41_166km",
+      "name_key": "apex.checkpoint.apex_cp_41_160km",
+      "reward_bundle_id": "bundle_apex_cp_41_160km",
       "reward_bundle_kinds": [
         "boss_key",
         "restoration_scene"
@@ -757,13 +757,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_42_173km",
+      "checkpoint_id": "apex_cp_42_166km",
       "index": 42,
-      "threshold_meters": 173000,
-      "threshold_km": 173,
+      "threshold_meters": 166000,
+      "threshold_km": 166,
       "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_42_173km",
-      "reward_bundle_id": "bundle_apex_cp_42_173km",
+      "name_key": "apex.checkpoint.apex_cp_42_166km",
+      "reward_bundle_id": "bundle_apex_cp_42_166km",
       "reward_bundle_kinds": [
         "restoration_scene",
         "crown_shard"
@@ -773,13 +773,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_43_180km",
+      "checkpoint_id": "apex_cp_43_173km",
       "index": 43,
-      "threshold_meters": 180000,
-      "threshold_km": 180,
+      "threshold_meters": 173000,
+      "threshold_km": 173,
       "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_43_180km",
-      "reward_bundle_id": "bundle_apex_cp_43_180km",
+      "name_key": "apex.checkpoint.apex_cp_43_173km",
+      "reward_bundle_id": "bundle_apex_cp_43_173km",
       "reward_bundle_kinds": [
         "profile_frame",
         "character_episode"
@@ -789,13 +789,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_44_187km",
+      "checkpoint_id": "apex_cp_44_180km",
       "index": 44,
-      "threshold_meters": 187000,
-      "threshold_km": 187,
+      "threshold_meters": 180000,
+      "threshold_km": 180,
       "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_44_187km",
-      "reward_bundle_id": "bundle_apex_cp_44_187km",
+      "name_key": "apex.checkpoint.apex_cp_44_180km",
+      "reward_bundle_id": "bundle_apex_cp_44_180km",
       "reward_bundle_kinds": [
         "season_point",
         "restoration_scene"
@@ -805,13 +805,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_45_194km",
+      "checkpoint_id": "apex_cp_45_187km",
       "index": 45,
-      "threshold_meters": 194000,
-      "threshold_km": 194,
+      "threshold_meters": 187000,
+      "threshold_km": 187,
       "major_rank": "runner",
-      "name_key": "apex.checkpoint.apex_cp_45_194km",
-      "reward_bundle_id": "bundle_apex_cp_45_194km",
+      "name_key": "apex.checkpoint.apex_cp_45_187km",
+      "reward_bundle_id": "bundle_apex_cp_45_187km",
       "reward_bundle_kinds": [
         "crown_shard"
       ],
@@ -820,13 +820,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_46_202km",
+      "checkpoint_id": "apex_cp_46_194km",
       "index": 46,
-      "threshold_meters": 202000,
-      "threshold_km": 202,
-      "major_rank": "challenger",
-      "name_key": "apex.checkpoint.apex_cp_46_202km",
-      "reward_bundle_id": "bundle_apex_cp_46_202km",
+      "threshold_meters": 194000,
+      "threshold_km": 194,
+      "major_rank": "runner",
+      "name_key": "apex.checkpoint.apex_cp_46_194km",
+      "reward_bundle_id": "bundle_apex_cp_46_194km",
       "reward_bundle_kinds": [
         "cosmetic",
         "character_episode"
@@ -836,13 +836,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_47_209km",
+      "checkpoint_id": "apex_cp_47_202km",
       "index": 47,
-      "threshold_meters": 209000,
-      "threshold_km": 209,
+      "threshold_meters": 202000,
+      "threshold_km": 202,
       "major_rank": "challenger",
-      "name_key": "apex.checkpoint.apex_cp_47_209km",
-      "reward_bundle_id": "bundle_apex_cp_47_209km",
+      "name_key": "apex.checkpoint.apex_cp_47_202km",
+      "reward_bundle_id": "bundle_apex_cp_47_202km",
       "reward_bundle_kinds": [
         "story",
         "restoration_scene"
@@ -852,13 +852,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_48_217km",
+      "checkpoint_id": "apex_cp_48_209km",
       "index": 48,
-      "threshold_meters": 217000,
-      "threshold_km": 217,
+      "threshold_meters": 209000,
+      "threshold_km": 209,
       "major_rank": "challenger",
-      "name_key": "apex.checkpoint.apex_cp_48_217km",
-      "reward_bundle_id": "bundle_apex_cp_48_217km",
+      "name_key": "apex.checkpoint.apex_cp_48_209km",
+      "reward_bundle_id": "bundle_apex_cp_48_209km",
       "reward_bundle_kinds": [
         "character_episode",
         "crown_shard"
@@ -868,13 +868,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_49_224km",
+      "checkpoint_id": "apex_cp_49_217km",
       "index": 49,
-      "threshold_meters": 224000,
-      "threshold_km": 224,
+      "threshold_meters": 217000,
+      "threshold_km": 217,
       "major_rank": "challenger",
-      "name_key": "apex.checkpoint.apex_cp_49_224km",
-      "reward_bundle_id": "bundle_apex_cp_49_224km",
+      "name_key": "apex.checkpoint.apex_cp_49_217km",
+      "reward_bundle_id": "bundle_apex_cp_49_217km",
       "reward_bundle_kinds": [
         "relic_choice",
         "character_episode"
@@ -884,13 +884,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_50_232km",
+      "checkpoint_id": "apex_cp_50_224km",
       "index": 50,
-      "threshold_meters": 232000,
-      "threshold_km": 232,
+      "threshold_meters": 224000,
+      "threshold_km": 224,
       "major_rank": "challenger",
-      "name_key": "apex.checkpoint.apex_cp_50_232km",
-      "reward_bundle_id": "bundle_apex_cp_50_232km",
+      "name_key": "apex.checkpoint.apex_cp_50_224km",
+      "reward_bundle_id": "bundle_apex_cp_50_224km",
       "reward_bundle_kinds": [
         "boss_key",
         "restoration_scene"
@@ -900,13 +900,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_51_240km",
+      "checkpoint_id": "apex_cp_51_232km",
       "index": 51,
-      "threshold_meters": 240000,
-      "threshold_km": 240,
+      "threshold_meters": 232000,
+      "threshold_km": 232,
       "major_rank": "challenger",
-      "name_key": "apex.checkpoint.apex_cp_51_240km",
-      "reward_bundle_id": "bundle_apex_cp_51_240km",
+      "name_key": "apex.checkpoint.apex_cp_51_232km",
+      "reward_bundle_id": "bundle_apex_cp_51_232km",
       "reward_bundle_kinds": [
         "restoration_scene",
         "crown_shard"
@@ -916,13 +916,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_52_248km",
+      "checkpoint_id": "apex_cp_52_240km",
       "index": 52,
-      "threshold_meters": 248000,
-      "threshold_km": 248,
+      "threshold_meters": 240000,
+      "threshold_km": 240,
       "major_rank": "challenger",
-      "name_key": "apex.checkpoint.apex_cp_52_248km",
-      "reward_bundle_id": "bundle_apex_cp_52_248km",
+      "name_key": "apex.checkpoint.apex_cp_52_240km",
+      "reward_bundle_id": "bundle_apex_cp_52_240km",
       "reward_bundle_kinds": [
         "profile_frame",
         "character_episode"
@@ -932,744 +932,744 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_53_256km",
+      "checkpoint_id": "apex_cp_53_248km",
       "index": 53,
+      "threshold_meters": 248000,
+      "threshold_km": 248,
+      "major_rank": "challenger",
+      "name_key": "apex.checkpoint.apex_cp_53_248km",
+      "reward_bundle_id": "bundle_apex_cp_53_248km",
+      "reward_bundle_kinds": [
+        "season_point",
+        "restoration_scene"
+      ],
+      "story_or_world_effect": "restoration_pulse_5",
+      "is_final": false,
+      "content_version": "1.0.0"
+    },
+    {
+      "checkpoint_id": "apex_cp_54_256km",
+      "index": 54,
       "threshold_meters": 256000,
       "threshold_km": 256,
       "major_rank": "challenger",
-      "name_key": "apex.checkpoint.apex_cp_53_256km",
-      "reward_bundle_id": "bundle_apex_cp_53_256km",
+      "name_key": "apex.checkpoint.apex_cp_54_256km",
+      "reward_bundle_id": "bundle_apex_cp_54_256km",
       "reward_bundle_kinds": [
-        "season_point",
-        "restoration_scene"
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_5",
+      "story_or_world_effect": "restoration_pulse_6",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_54_264km",
-      "index": 54,
+      "checkpoint_id": "apex_cp_55_264km",
+      "index": 55,
       "threshold_meters": 264000,
       "threshold_km": 264,
       "major_rank": "challenger",
-      "name_key": "apex.checkpoint.apex_cp_54_264km",
-      "reward_bundle_id": "bundle_apex_cp_54_264km",
+      "name_key": "apex.checkpoint.apex_cp_55_264km",
+      "reward_bundle_id": "bundle_apex_cp_55_264km",
       "reward_bundle_kinds": [
-        "crown_shard"
+        "cosmetic",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_6",
+      "story_or_world_effect": "restoration_pulse_7",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_55_272km",
-      "index": 55,
+      "checkpoint_id": "apex_cp_56_272km",
+      "index": 56,
       "threshold_meters": 272000,
       "threshold_km": 272,
       "major_rank": "challenger",
-      "name_key": "apex.checkpoint.apex_cp_55_272km",
-      "reward_bundle_id": "bundle_apex_cp_55_272km",
+      "name_key": "apex.checkpoint.apex_cp_56_272km",
+      "reward_bundle_id": "bundle_apex_cp_56_272km",
       "reward_bundle_kinds": [
-        "cosmetic",
-        "character_episode"
+        "story",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_7",
+      "story_or_world_effect": "restoration_pulse_8",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_56_281km",
-      "index": 56,
+      "checkpoint_id": "apex_cp_57_281km",
+      "index": 57,
       "threshold_meters": 281000,
       "threshold_km": 281,
       "major_rank": "challenger",
-      "name_key": "apex.checkpoint.apex_cp_56_281km",
-      "reward_bundle_id": "bundle_apex_cp_56_281km",
+      "name_key": "apex.checkpoint.apex_cp_57_281km",
+      "reward_bundle_id": "bundle_apex_cp_57_281km",
       "reward_bundle_kinds": [
-        "story",
-        "restoration_scene"
+        "character_episode",
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_8",
+      "story_or_world_effect": "restoration_pulse_9",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_57_289km",
-      "index": 57,
+      "checkpoint_id": "apex_cp_58_289km",
+      "index": 58,
       "threshold_meters": 289000,
       "threshold_km": 289,
       "major_rank": "challenger",
-      "name_key": "apex.checkpoint.apex_cp_57_289km",
-      "reward_bundle_id": "bundle_apex_cp_57_289km",
+      "name_key": "apex.checkpoint.apex_cp_58_289km",
+      "reward_bundle_id": "bundle_apex_cp_58_289km",
       "reward_bundle_kinds": [
-        "character_episode",
-        "crown_shard"
+        "relic_choice",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_9",
+      "story_or_world_effect": "restoration_pulse_10",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_58_298km",
-      "index": 58,
+      "checkpoint_id": "apex_cp_59_298km",
+      "index": 59,
       "threshold_meters": 298000,
       "threshold_km": 298,
       "major_rank": "challenger",
-      "name_key": "apex.checkpoint.apex_cp_58_298km",
-      "reward_bundle_id": "bundle_apex_cp_58_298km",
+      "name_key": "apex.checkpoint.apex_cp_59_298km",
+      "reward_bundle_id": "bundle_apex_cp_59_298km",
       "reward_bundle_kinds": [
-        "relic_choice",
-        "character_episode"
+        "boss_key",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_10",
+      "story_or_world_effect": "restoration_pulse_11",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_59_306km",
-      "index": 59,
+      "checkpoint_id": "apex_cp_60_306km",
+      "index": 60,
       "threshold_meters": 306000,
       "threshold_km": 306,
       "major_rank": "vanguard",
-      "name_key": "apex.checkpoint.apex_cp_59_306km",
-      "reward_bundle_id": "bundle_apex_cp_59_306km",
+      "name_key": "apex.checkpoint.apex_cp_60_306km",
+      "reward_bundle_id": "bundle_apex_cp_60_306km",
       "reward_bundle_kinds": [
-        "boss_key",
-        "restoration_scene"
+        "restoration_scene",
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_11",
+      "story_or_world_effect": "restoration_pulse_12",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_60_315km",
-      "index": 60,
+      "checkpoint_id": "apex_cp_61_315km",
+      "index": 61,
       "threshold_meters": 315000,
       "threshold_km": 315,
       "major_rank": "vanguard",
-      "name_key": "apex.checkpoint.apex_cp_60_315km",
-      "reward_bundle_id": "bundle_apex_cp_60_315km",
+      "name_key": "apex.checkpoint.apex_cp_61_315km",
+      "reward_bundle_id": "bundle_apex_cp_61_315km",
       "reward_bundle_kinds": [
-        "restoration_scene",
-        "crown_shard"
+        "profile_frame",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_12",
+      "story_or_world_effect": "restoration_pulse_1",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_61_324km",
-      "index": 61,
+      "checkpoint_id": "apex_cp_62_324km",
+      "index": 62,
       "threshold_meters": 324000,
       "threshold_km": 324,
       "major_rank": "vanguard",
-      "name_key": "apex.checkpoint.apex_cp_61_324km",
-      "reward_bundle_id": "bundle_apex_cp_61_324km",
+      "name_key": "apex.checkpoint.apex_cp_62_324km",
+      "reward_bundle_id": "bundle_apex_cp_62_324km",
       "reward_bundle_kinds": [
-        "profile_frame",
-        "character_episode"
+        "season_point",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_1",
+      "story_or_world_effect": "restoration_pulse_2",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_62_333km",
-      "index": 62,
+      "checkpoint_id": "apex_cp_63_333km",
+      "index": 63,
       "threshold_meters": 333000,
       "threshold_km": 333,
       "major_rank": "vanguard",
-      "name_key": "apex.checkpoint.apex_cp_62_333km",
-      "reward_bundle_id": "bundle_apex_cp_62_333km",
+      "name_key": "apex.checkpoint.apex_cp_63_333km",
+      "reward_bundle_id": "bundle_apex_cp_63_333km",
       "reward_bundle_kinds": [
-        "season_point",
-        "restoration_scene"
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_2",
+      "story_or_world_effect": "restoration_pulse_3",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_63_342km",
-      "index": 63,
+      "checkpoint_id": "apex_cp_64_342km",
+      "index": 64,
       "threshold_meters": 342000,
       "threshold_km": 342,
       "major_rank": "vanguard",
-      "name_key": "apex.checkpoint.apex_cp_63_342km",
-      "reward_bundle_id": "bundle_apex_cp_63_342km",
+      "name_key": "apex.checkpoint.apex_cp_64_342km",
+      "reward_bundle_id": "bundle_apex_cp_64_342km",
       "reward_bundle_kinds": [
-        "crown_shard"
+        "cosmetic",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_3",
+      "story_or_world_effect": "restoration_pulse_4",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_64_351km",
-      "index": 64,
+      "checkpoint_id": "apex_cp_65_351km",
+      "index": 65,
       "threshold_meters": 351000,
       "threshold_km": 351,
       "major_rank": "vanguard",
-      "name_key": "apex.checkpoint.apex_cp_64_351km",
-      "reward_bundle_id": "bundle_apex_cp_64_351km",
+      "name_key": "apex.checkpoint.apex_cp_65_351km",
+      "reward_bundle_id": "bundle_apex_cp_65_351km",
       "reward_bundle_kinds": [
-        "cosmetic",
-        "character_episode"
+        "story",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_4",
+      "story_or_world_effect": "restoration_pulse_5",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_65_360km",
-      "index": 65,
+      "checkpoint_id": "apex_cp_66_360km",
+      "index": 66,
       "threshold_meters": 360000,
       "threshold_km": 360,
       "major_rank": "vanguard",
-      "name_key": "apex.checkpoint.apex_cp_65_360km",
-      "reward_bundle_id": "bundle_apex_cp_65_360km",
+      "name_key": "apex.checkpoint.apex_cp_66_360km",
+      "reward_bundle_id": "bundle_apex_cp_66_360km",
       "reward_bundle_kinds": [
-        "story",
-        "restoration_scene"
+        "character_episode",
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_5",
+      "story_or_world_effect": "restoration_pulse_6",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_66_369km",
-      "index": 66,
+      "checkpoint_id": "apex_cp_67_369km",
+      "index": 67,
       "threshold_meters": 369000,
       "threshold_km": 369,
       "major_rank": "vanguard",
-      "name_key": "apex.checkpoint.apex_cp_66_369km",
-      "reward_bundle_id": "bundle_apex_cp_66_369km",
+      "name_key": "apex.checkpoint.apex_cp_67_369km",
+      "reward_bundle_id": "bundle_apex_cp_67_369km",
       "reward_bundle_kinds": [
-        "character_episode",
-        "crown_shard"
+        "relic_choice",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_6",
+      "story_or_world_effect": "restoration_pulse_7",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_67_379km",
-      "index": 67,
+      "checkpoint_id": "apex_cp_68_379km",
+      "index": 68,
       "threshold_meters": 379000,
       "threshold_km": 379,
       "major_rank": "vanguard",
-      "name_key": "apex.checkpoint.apex_cp_67_379km",
-      "reward_bundle_id": "bundle_apex_cp_67_379km",
+      "name_key": "apex.checkpoint.apex_cp_68_379km",
+      "reward_bundle_id": "bundle_apex_cp_68_379km",
       "reward_bundle_kinds": [
-        "relic_choice",
-        "character_episode"
+        "boss_key",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_7",
+      "story_or_world_effect": "restoration_pulse_8",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_68_388km",
-      "index": 68,
+      "checkpoint_id": "apex_cp_69_388km",
+      "index": 69,
       "threshold_meters": 388000,
       "threshold_km": 388,
       "major_rank": "vanguard",
-      "name_key": "apex.checkpoint.apex_cp_68_388km",
-      "reward_bundle_id": "bundle_apex_cp_68_388km",
+      "name_key": "apex.checkpoint.apex_cp_69_388km",
+      "reward_bundle_id": "bundle_apex_cp_69_388km",
       "reward_bundle_kinds": [
-        "boss_key",
-        "restoration_scene"
+        "restoration_scene",
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_8",
+      "story_or_world_effect": "restoration_pulse_9",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_69_398km",
-      "index": 69,
+      "checkpoint_id": "apex_cp_70_398km",
+      "index": 70,
       "threshold_meters": 398000,
       "threshold_km": 398,
       "major_rank": "vanguard",
-      "name_key": "apex.checkpoint.apex_cp_69_398km",
-      "reward_bundle_id": "bundle_apex_cp_69_398km",
+      "name_key": "apex.checkpoint.apex_cp_70_398km",
+      "reward_bundle_id": "bundle_apex_cp_70_398km",
       "reward_bundle_kinds": [
-        "restoration_scene",
-        "crown_shard"
+        "profile_frame",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_9",
+      "story_or_world_effect": "restoration_pulse_10",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_70_407km",
-      "index": 70,
+      "checkpoint_id": "apex_cp_71_407km",
+      "index": 71,
       "threshold_meters": 407000,
       "threshold_km": 407,
       "major_rank": "champion",
-      "name_key": "apex.checkpoint.apex_cp_70_407km",
-      "reward_bundle_id": "bundle_apex_cp_70_407km",
+      "name_key": "apex.checkpoint.apex_cp_71_407km",
+      "reward_bundle_id": "bundle_apex_cp_71_407km",
       "reward_bundle_kinds": [
-        "profile_frame",
-        "character_episode"
+        "season_point",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_10",
+      "story_or_world_effect": "restoration_pulse_11",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_71_417km",
-      "index": 71,
+      "checkpoint_id": "apex_cp_72_417km",
+      "index": 72,
       "threshold_meters": 417000,
       "threshold_km": 417,
       "major_rank": "champion",
-      "name_key": "apex.checkpoint.apex_cp_71_417km",
-      "reward_bundle_id": "bundle_apex_cp_71_417km",
+      "name_key": "apex.checkpoint.apex_cp_72_417km",
+      "reward_bundle_id": "bundle_apex_cp_72_417km",
       "reward_bundle_kinds": [
-        "season_point",
-        "restoration_scene"
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_11",
+      "story_or_world_effect": "restoration_pulse_12",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_72_427km",
-      "index": 72,
+      "checkpoint_id": "apex_cp_73_427km",
+      "index": 73,
       "threshold_meters": 427000,
       "threshold_km": 427,
       "major_rank": "champion",
-      "name_key": "apex.checkpoint.apex_cp_72_427km",
-      "reward_bundle_id": "bundle_apex_cp_72_427km",
+      "name_key": "apex.checkpoint.apex_cp_73_427km",
+      "reward_bundle_id": "bundle_apex_cp_73_427km",
       "reward_bundle_kinds": [
-        "crown_shard"
+        "cosmetic",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_12",
+      "story_or_world_effect": "restoration_pulse_1",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_73_437km",
-      "index": 73,
+      "checkpoint_id": "apex_cp_74_437km",
+      "index": 74,
       "threshold_meters": 437000,
       "threshold_km": 437,
       "major_rank": "champion",
-      "name_key": "apex.checkpoint.apex_cp_73_437km",
-      "reward_bundle_id": "bundle_apex_cp_73_437km",
+      "name_key": "apex.checkpoint.apex_cp_74_437km",
+      "reward_bundle_id": "bundle_apex_cp_74_437km",
       "reward_bundle_kinds": [
-        "cosmetic",
-        "character_episode"
+        "story",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_1",
+      "story_or_world_effect": "restoration_pulse_2",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_74_447km",
-      "index": 74,
+      "checkpoint_id": "apex_cp_75_447km",
+      "index": 75,
       "threshold_meters": 447000,
       "threshold_km": 447,
       "major_rank": "champion",
-      "name_key": "apex.checkpoint.apex_cp_74_447km",
-      "reward_bundle_id": "bundle_apex_cp_74_447km",
+      "name_key": "apex.checkpoint.apex_cp_75_447km",
+      "reward_bundle_id": "bundle_apex_cp_75_447km",
       "reward_bundle_kinds": [
-        "story",
-        "restoration_scene"
+        "character_episode",
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_2",
+      "story_or_world_effect": "restoration_pulse_3",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_75_457km",
-      "index": 75,
+      "checkpoint_id": "apex_cp_76_457km",
+      "index": 76,
       "threshold_meters": 457000,
       "threshold_km": 457,
       "major_rank": "champion",
-      "name_key": "apex.checkpoint.apex_cp_75_457km",
-      "reward_bundle_id": "bundle_apex_cp_75_457km",
+      "name_key": "apex.checkpoint.apex_cp_76_457km",
+      "reward_bundle_id": "bundle_apex_cp_76_457km",
       "reward_bundle_kinds": [
-        "character_episode",
-        "crown_shard"
+        "relic_choice",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_3",
+      "story_or_world_effect": "restoration_pulse_4",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_76_467km",
-      "index": 76,
+      "checkpoint_id": "apex_cp_77_467km",
+      "index": 77,
       "threshold_meters": 467000,
       "threshold_km": 467,
       "major_rank": "champion",
-      "name_key": "apex.checkpoint.apex_cp_76_467km",
-      "reward_bundle_id": "bundle_apex_cp_76_467km",
+      "name_key": "apex.checkpoint.apex_cp_77_467km",
+      "reward_bundle_id": "bundle_apex_cp_77_467km",
       "reward_bundle_kinds": [
-        "relic_choice",
-        "character_episode"
+        "boss_key",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_4",
+      "story_or_world_effect": "restoration_pulse_5",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_77_478km",
-      "index": 77,
+      "checkpoint_id": "apex_cp_78_478km",
+      "index": 78,
       "threshold_meters": 478000,
       "threshold_km": 478,
       "major_rank": "champion",
-      "name_key": "apex.checkpoint.apex_cp_77_478km",
-      "reward_bundle_id": "bundle_apex_cp_77_478km",
+      "name_key": "apex.checkpoint.apex_cp_78_478km",
+      "reward_bundle_id": "bundle_apex_cp_78_478km",
       "reward_bundle_kinds": [
-        "boss_key",
-        "restoration_scene"
+        "restoration_scene",
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_5",
+      "story_or_world_effect": "restoration_pulse_6",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_78_488km",
-      "index": 78,
+      "checkpoint_id": "apex_cp_79_488km",
+      "index": 79,
       "threshold_meters": 488000,
       "threshold_km": 488,
       "major_rank": "champion",
-      "name_key": "apex.checkpoint.apex_cp_78_488km",
-      "reward_bundle_id": "bundle_apex_cp_78_488km",
+      "name_key": "apex.checkpoint.apex_cp_79_488km",
+      "reward_bundle_id": "bundle_apex_cp_79_488km",
       "reward_bundle_kinds": [
-        "restoration_scene",
-        "crown_shard"
+        "profile_frame",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_6",
+      "story_or_world_effect": "restoration_pulse_7",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_79_499km",
-      "index": 79,
+      "checkpoint_id": "apex_cp_80_499km",
+      "index": 80,
       "threshold_meters": 499000,
       "threshold_km": 499,
       "major_rank": "champion",
-      "name_key": "apex.checkpoint.apex_cp_79_499km",
-      "reward_bundle_id": "bundle_apex_cp_79_499km",
+      "name_key": "apex.checkpoint.apex_cp_80_499km",
+      "reward_bundle_id": "bundle_apex_cp_80_499km",
       "reward_bundle_kinds": [
-        "profile_frame",
-        "character_episode"
+        "season_point",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_7",
+      "story_or_world_effect": "restoration_pulse_8",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_80_509km",
-      "index": 80,
+      "checkpoint_id": "apex_cp_81_509km",
+      "index": 81,
       "threshold_meters": 509000,
       "threshold_km": 509,
       "major_rank": "master",
-      "name_key": "apex.checkpoint.apex_cp_80_509km",
-      "reward_bundle_id": "bundle_apex_cp_80_509km",
+      "name_key": "apex.checkpoint.apex_cp_81_509km",
+      "reward_bundle_id": "bundle_apex_cp_81_509km",
       "reward_bundle_kinds": [
-        "season_point",
-        "restoration_scene"
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_8",
+      "story_or_world_effect": "restoration_pulse_9",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_81_520km",
-      "index": 81,
+      "checkpoint_id": "apex_cp_82_520km",
+      "index": 82,
       "threshold_meters": 520000,
       "threshold_km": 520,
       "major_rank": "master",
-      "name_key": "apex.checkpoint.apex_cp_81_520km",
-      "reward_bundle_id": "bundle_apex_cp_81_520km",
+      "name_key": "apex.checkpoint.apex_cp_82_520km",
+      "reward_bundle_id": "bundle_apex_cp_82_520km",
       "reward_bundle_kinds": [
-        "crown_shard"
+        "cosmetic",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_9",
+      "story_or_world_effect": "restoration_pulse_10",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_82_531km",
-      "index": 82,
+      "checkpoint_id": "apex_cp_83_531km",
+      "index": 83,
       "threshold_meters": 531000,
       "threshold_km": 531,
       "major_rank": "master",
-      "name_key": "apex.checkpoint.apex_cp_82_531km",
-      "reward_bundle_id": "bundle_apex_cp_82_531km",
+      "name_key": "apex.checkpoint.apex_cp_83_531km",
+      "reward_bundle_id": "bundle_apex_cp_83_531km",
       "reward_bundle_kinds": [
-        "cosmetic",
-        "character_episode"
+        "story",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_10",
+      "story_or_world_effect": "restoration_pulse_11",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_83_541km",
-      "index": 83,
+      "checkpoint_id": "apex_cp_84_541km",
+      "index": 84,
       "threshold_meters": 541000,
       "threshold_km": 541,
       "major_rank": "master",
-      "name_key": "apex.checkpoint.apex_cp_83_541km",
-      "reward_bundle_id": "bundle_apex_cp_83_541km",
+      "name_key": "apex.checkpoint.apex_cp_84_541km",
+      "reward_bundle_id": "bundle_apex_cp_84_541km",
       "reward_bundle_kinds": [
-        "story",
-        "restoration_scene"
+        "character_episode",
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_11",
+      "story_or_world_effect": "restoration_pulse_12",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_84_552km",
-      "index": 84,
+      "checkpoint_id": "apex_cp_85_552km",
+      "index": 85,
       "threshold_meters": 552000,
       "threshold_km": 552,
       "major_rank": "master",
-      "name_key": "apex.checkpoint.apex_cp_84_552km",
-      "reward_bundle_id": "bundle_apex_cp_84_552km",
+      "name_key": "apex.checkpoint.apex_cp_85_552km",
+      "reward_bundle_id": "bundle_apex_cp_85_552km",
       "reward_bundle_kinds": [
-        "character_episode",
-        "crown_shard"
+        "relic_choice",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_12",
+      "story_or_world_effect": "restoration_pulse_1",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_85_563km",
-      "index": 85,
+      "checkpoint_id": "apex_cp_86_563km",
+      "index": 86,
       "threshold_meters": 563000,
       "threshold_km": 563,
       "major_rank": "master",
-      "name_key": "apex.checkpoint.apex_cp_85_563km",
-      "reward_bundle_id": "bundle_apex_cp_85_563km",
+      "name_key": "apex.checkpoint.apex_cp_86_563km",
+      "reward_bundle_id": "bundle_apex_cp_86_563km",
       "reward_bundle_kinds": [
-        "relic_choice",
-        "character_episode"
+        "boss_key",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_1",
+      "story_or_world_effect": "restoration_pulse_2",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_86_574km",
-      "index": 86,
+      "checkpoint_id": "apex_cp_87_574km",
+      "index": 87,
       "threshold_meters": 574000,
       "threshold_km": 574,
       "major_rank": "master",
-      "name_key": "apex.checkpoint.apex_cp_86_574km",
-      "reward_bundle_id": "bundle_apex_cp_86_574km",
+      "name_key": "apex.checkpoint.apex_cp_87_574km",
+      "reward_bundle_id": "bundle_apex_cp_87_574km",
       "reward_bundle_kinds": [
-        "boss_key",
-        "restoration_scene"
+        "restoration_scene",
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_2",
+      "story_or_world_effect": "restoration_pulse_3",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_87_586km",
-      "index": 87,
+      "checkpoint_id": "apex_cp_88_586km",
+      "index": 88,
       "threshold_meters": 586000,
       "threshold_km": 586,
       "major_rank": "master",
-      "name_key": "apex.checkpoint.apex_cp_87_586km",
-      "reward_bundle_id": "bundle_apex_cp_87_586km",
+      "name_key": "apex.checkpoint.apex_cp_88_586km",
+      "reward_bundle_id": "bundle_apex_cp_88_586km",
       "reward_bundle_kinds": [
-        "restoration_scene",
-        "crown_shard"
+        "profile_frame",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_3",
+      "story_or_world_effect": "restoration_pulse_4",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_88_597km",
-      "index": 88,
+      "checkpoint_id": "apex_cp_89_597km",
+      "index": 89,
       "threshold_meters": 597000,
       "threshold_km": 597,
       "major_rank": "master",
-      "name_key": "apex.checkpoint.apex_cp_88_597km",
-      "reward_bundle_id": "bundle_apex_cp_88_597km",
+      "name_key": "apex.checkpoint.apex_cp_89_597km",
+      "reward_bundle_id": "bundle_apex_cp_89_597km",
       "reward_bundle_kinds": [
-        "profile_frame",
-        "character_episode"
+        "season_point",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_4",
+      "story_or_world_effect": "restoration_pulse_5",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_89_608km",
-      "index": 89,
+      "checkpoint_id": "apex_cp_90_608km",
+      "index": 90,
       "threshold_meters": 608000,
       "threshold_km": 608,
       "major_rank": "grandmaster",
-      "name_key": "apex.checkpoint.apex_cp_89_608km",
-      "reward_bundle_id": "bundle_apex_cp_89_608km",
+      "name_key": "apex.checkpoint.apex_cp_90_608km",
+      "reward_bundle_id": "bundle_apex_cp_90_608km",
       "reward_bundle_kinds": [
-        "season_point",
-        "restoration_scene"
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_5",
+      "story_or_world_effect": "restoration_pulse_6",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_90_620km",
-      "index": 90,
+      "checkpoint_id": "apex_cp_91_620km",
+      "index": 91,
       "threshold_meters": 620000,
       "threshold_km": 620,
       "major_rank": "grandmaster",
-      "name_key": "apex.checkpoint.apex_cp_90_620km",
-      "reward_bundle_id": "bundle_apex_cp_90_620km",
+      "name_key": "apex.checkpoint.apex_cp_91_620km",
+      "reward_bundle_id": "bundle_apex_cp_91_620km",
       "reward_bundle_kinds": [
-        "crown_shard"
+        "cosmetic",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_6",
+      "story_or_world_effect": "restoration_pulse_7",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_91_631km",
-      "index": 91,
+      "checkpoint_id": "apex_cp_92_631km",
+      "index": 92,
       "threshold_meters": 631000,
       "threshold_km": 631,
       "major_rank": "grandmaster",
-      "name_key": "apex.checkpoint.apex_cp_91_631km",
-      "reward_bundle_id": "bundle_apex_cp_91_631km",
+      "name_key": "apex.checkpoint.apex_cp_92_631km",
+      "reward_bundle_id": "bundle_apex_cp_92_631km",
       "reward_bundle_kinds": [
-        "cosmetic",
-        "character_episode"
+        "story",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_7",
+      "story_or_world_effect": "restoration_pulse_8",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_92_643km",
-      "index": 92,
+      "checkpoint_id": "apex_cp_93_643km",
+      "index": 93,
       "threshold_meters": 643000,
       "threshold_km": 643,
       "major_rank": "grandmaster",
-      "name_key": "apex.checkpoint.apex_cp_92_643km",
-      "reward_bundle_id": "bundle_apex_cp_92_643km",
+      "name_key": "apex.checkpoint.apex_cp_93_643km",
+      "reward_bundle_id": "bundle_apex_cp_93_643km",
       "reward_bundle_kinds": [
-        "story",
-        "restoration_scene"
+        "character_episode",
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_8",
+      "story_or_world_effect": "restoration_pulse_9",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_93_654km",
-      "index": 93,
+      "checkpoint_id": "apex_cp_94_654km",
+      "index": 94,
       "threshold_meters": 654000,
       "threshold_km": 654,
       "major_rank": "grandmaster",
-      "name_key": "apex.checkpoint.apex_cp_93_654km",
-      "reward_bundle_id": "bundle_apex_cp_93_654km",
+      "name_key": "apex.checkpoint.apex_cp_94_654km",
+      "reward_bundle_id": "bundle_apex_cp_94_654km",
       "reward_bundle_kinds": [
-        "character_episode",
-        "crown_shard"
+        "relic_choice",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_9",
+      "story_or_world_effect": "restoration_pulse_10",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_94_666km",
-      "index": 94,
+      "checkpoint_id": "apex_cp_95_666km",
+      "index": 95,
       "threshold_meters": 666000,
       "threshold_km": 666,
       "major_rank": "grandmaster",
-      "name_key": "apex.checkpoint.apex_cp_94_666km",
-      "reward_bundle_id": "bundle_apex_cp_94_666km",
+      "name_key": "apex.checkpoint.apex_cp_95_666km",
+      "reward_bundle_id": "bundle_apex_cp_95_666km",
       "reward_bundle_kinds": [
-        "relic_choice",
-        "character_episode"
+        "boss_key",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_10",
+      "story_or_world_effect": "restoration_pulse_11",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_95_678km",
-      "index": 95,
+      "checkpoint_id": "apex_cp_96_678km",
+      "index": 96,
       "threshold_meters": 678000,
       "threshold_km": 678,
       "major_rank": "grandmaster",
-      "name_key": "apex.checkpoint.apex_cp_95_678km",
-      "reward_bundle_id": "bundle_apex_cp_95_678km",
+      "name_key": "apex.checkpoint.apex_cp_96_678km",
+      "reward_bundle_id": "bundle_apex_cp_96_678km",
       "reward_bundle_kinds": [
-        "boss_key",
-        "restoration_scene"
+        "restoration_scene",
+        "crown_shard"
       ],
-      "story_or_world_effect": "restoration_pulse_11",
+      "story_or_world_effect": "restoration_pulse_12",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_96_690km",
-      "index": 96,
+      "checkpoint_id": "apex_cp_97_690km",
+      "index": 97,
       "threshold_meters": 690000,
       "threshold_km": 690,
       "major_rank": "grandmaster",
-      "name_key": "apex.checkpoint.apex_cp_96_690km",
-      "reward_bundle_id": "bundle_apex_cp_96_690km",
+      "name_key": "apex.checkpoint.apex_cp_97_690km",
+      "reward_bundle_id": "bundle_apex_cp_97_690km",
       "reward_bundle_kinds": [
-        "restoration_scene",
-        "crown_shard"
+        "profile_frame",
+        "character_episode"
       ],
-      "story_or_world_effect": "restoration_pulse_12",
+      "story_or_world_effect": "restoration_pulse_1",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_97_702km",
-      "index": 97,
+      "checkpoint_id": "apex_cp_98_702km",
+      "index": 98,
       "threshold_meters": 702000,
       "threshold_km": 702,
       "major_rank": "legend",
-      "name_key": "apex.checkpoint.apex_cp_97_702km",
-      "reward_bundle_id": "bundle_apex_cp_97_702km",
+      "name_key": "apex.checkpoint.apex_cp_98_702km",
+      "reward_bundle_id": "bundle_apex_cp_98_702km",
       "reward_bundle_kinds": [
-        "profile_frame",
-        "character_episode"
+        "season_point",
+        "restoration_scene"
       ],
-      "story_or_world_effect": "restoration_pulse_1",
+      "story_or_world_effect": "restoration_pulse_2",
       "is_final": false,
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_98_714km",
-      "index": 98,
+      "checkpoint_id": "apex_cp_99_714km",
+      "index": 99,
       "threshold_meters": 714000,
       "threshold_km": 714,
       "major_rank": "legend",
-      "name_key": "apex.checkpoint.apex_cp_98_714km",
-      "reward_bundle_id": "bundle_apex_cp_98_714km",
-      "reward_bundle_kinds": [
-        "season_point",
-        "restoration_scene"
-      ],
-      "story_or_world_effect": "restoration_pulse_2",
-      "is_final": false,
-      "content_version": "1.0.0"
-    },
-    {
-      "checkpoint_id": "apex_cp_99_726km",
-      "index": 99,
-      "threshold_meters": 726000,
-      "threshold_km": 726,
-      "major_rank": "legend",
-      "name_key": "apex.checkpoint.apex_cp_99_726km",
-      "reward_bundle_id": "bundle_apex_cp_99_726km",
+      "name_key": "apex.checkpoint.apex_cp_99_714km",
+      "reward_bundle_id": "bundle_apex_cp_99_714km",
       "reward_bundle_kinds": [
         "crown_shard"
       ],
@@ -1678,13 +1678,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_100_738km",
+      "checkpoint_id": "apex_cp_100_726km",
       "index": 100,
-      "threshold_meters": 738000,
-      "threshold_km": 738,
+      "threshold_meters": 726000,
+      "threshold_km": 726,
       "major_rank": "legend",
-      "name_key": "apex.checkpoint.apex_cp_100_738km",
-      "reward_bundle_id": "bundle_apex_cp_100_738km",
+      "name_key": "apex.checkpoint.apex_cp_100_726km",
+      "reward_bundle_id": "bundle_apex_cp_100_726km",
       "reward_bundle_kinds": [
         "cosmetic",
         "character_episode"
@@ -1694,13 +1694,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_101_751km",
+      "checkpoint_id": "apex_cp_101_738km",
       "index": 101,
-      "threshold_meters": 751000,
-      "threshold_km": 751,
+      "threshold_meters": 738000,
+      "threshold_km": 738,
       "major_rank": "legend",
-      "name_key": "apex.checkpoint.apex_cp_101_751km",
-      "reward_bundle_id": "bundle_apex_cp_101_751km",
+      "name_key": "apex.checkpoint.apex_cp_101_738km",
+      "reward_bundle_id": "bundle_apex_cp_101_738km",
       "reward_bundle_kinds": [
         "story",
         "restoration_scene"
@@ -1710,13 +1710,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_102_763km",
+      "checkpoint_id": "apex_cp_102_751km",
       "index": 102,
-      "threshold_meters": 763000,
-      "threshold_km": 763,
+      "threshold_meters": 751000,
+      "threshold_km": 751,
       "major_rank": "legend",
-      "name_key": "apex.checkpoint.apex_cp_102_763km",
-      "reward_bundle_id": "bundle_apex_cp_102_763km",
+      "name_key": "apex.checkpoint.apex_cp_102_751km",
+      "reward_bundle_id": "bundle_apex_cp_102_751km",
       "reward_bundle_kinds": [
         "character_episode",
         "crown_shard"
@@ -1726,13 +1726,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_103_776km",
+      "checkpoint_id": "apex_cp_103_763km",
       "index": 103,
-      "threshold_meters": 776000,
-      "threshold_km": 776,
+      "threshold_meters": 763000,
+      "threshold_km": 763,
       "major_rank": "legend",
-      "name_key": "apex.checkpoint.apex_cp_103_776km",
-      "reward_bundle_id": "bundle_apex_cp_103_776km",
+      "name_key": "apex.checkpoint.apex_cp_103_763km",
+      "reward_bundle_id": "bundle_apex_cp_103_763km",
       "reward_bundle_kinds": [
         "relic_choice",
         "character_episode"
@@ -1742,13 +1742,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_104_788km",
+      "checkpoint_id": "apex_cp_104_776km",
       "index": 104,
-      "threshold_meters": 788000,
-      "threshold_km": 788,
+      "threshold_meters": 776000,
+      "threshold_km": 776,
       "major_rank": "legend",
-      "name_key": "apex.checkpoint.apex_cp_104_788km",
-      "reward_bundle_id": "bundle_apex_cp_104_788km",
+      "name_key": "apex.checkpoint.apex_cp_104_776km",
+      "reward_bundle_id": "bundle_apex_cp_104_776km",
       "reward_bundle_kinds": [
         "boss_key",
         "restoration_scene"
@@ -1758,13 +1758,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_105_801km",
+      "checkpoint_id": "apex_cp_105_788km",
       "index": 105,
-      "threshold_meters": 801000,
-      "threshold_km": 801,
-      "major_rank": "mythic",
-      "name_key": "apex.checkpoint.apex_cp_105_801km",
-      "reward_bundle_id": "bundle_apex_cp_105_801km",
+      "threshold_meters": 788000,
+      "threshold_km": 788,
+      "major_rank": "legend",
+      "name_key": "apex.checkpoint.apex_cp_105_788km",
+      "reward_bundle_id": "bundle_apex_cp_105_788km",
       "reward_bundle_kinds": [
         "restoration_scene",
         "crown_shard"
@@ -1774,13 +1774,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_106_814km",
+      "checkpoint_id": "apex_cp_106_801km",
       "index": 106,
-      "threshold_meters": 814000,
-      "threshold_km": 814,
+      "threshold_meters": 801000,
+      "threshold_km": 801,
       "major_rank": "mythic",
-      "name_key": "apex.checkpoint.apex_cp_106_814km",
-      "reward_bundle_id": "bundle_apex_cp_106_814km",
+      "name_key": "apex.checkpoint.apex_cp_106_801km",
+      "reward_bundle_id": "bundle_apex_cp_106_801km",
       "reward_bundle_kinds": [
         "profile_frame",
         "character_episode"
@@ -1790,13 +1790,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_107_826km",
+      "checkpoint_id": "apex_cp_107_814km",
       "index": 107,
-      "threshold_meters": 826000,
-      "threshold_km": 826,
+      "threshold_meters": 814000,
+      "threshold_km": 814,
       "major_rank": "mythic",
-      "name_key": "apex.checkpoint.apex_cp_107_826km",
-      "reward_bundle_id": "bundle_apex_cp_107_826km",
+      "name_key": "apex.checkpoint.apex_cp_107_814km",
+      "reward_bundle_id": "bundle_apex_cp_107_814km",
       "reward_bundle_kinds": [
         "season_point",
         "restoration_scene"
@@ -1806,13 +1806,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_108_839km",
+      "checkpoint_id": "apex_cp_108_826km",
       "index": 108,
-      "threshold_meters": 839000,
-      "threshold_km": 839,
+      "threshold_meters": 826000,
+      "threshold_km": 826,
       "major_rank": "mythic",
-      "name_key": "apex.checkpoint.apex_cp_108_839km",
-      "reward_bundle_id": "bundle_apex_cp_108_839km",
+      "name_key": "apex.checkpoint.apex_cp_108_826km",
+      "reward_bundle_id": "bundle_apex_cp_108_826km",
       "reward_bundle_kinds": [
         "crown_shard"
       ],
@@ -1821,13 +1821,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_109_852km",
+      "checkpoint_id": "apex_cp_109_839km",
       "index": 109,
-      "threshold_meters": 852000,
-      "threshold_km": 852,
+      "threshold_meters": 839000,
+      "threshold_km": 839,
       "major_rank": "mythic",
-      "name_key": "apex.checkpoint.apex_cp_109_852km",
-      "reward_bundle_id": "bundle_apex_cp_109_852km",
+      "name_key": "apex.checkpoint.apex_cp_109_839km",
+      "reward_bundle_id": "bundle_apex_cp_109_839km",
       "reward_bundle_kinds": [
         "cosmetic",
         "character_episode"
@@ -1837,13 +1837,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_110_865km",
+      "checkpoint_id": "apex_cp_110_852km",
       "index": 110,
-      "threshold_meters": 865000,
-      "threshold_km": 865,
+      "threshold_meters": 852000,
+      "threshold_km": 852,
       "major_rank": "mythic",
-      "name_key": "apex.checkpoint.apex_cp_110_865km",
-      "reward_bundle_id": "bundle_apex_cp_110_865km",
+      "name_key": "apex.checkpoint.apex_cp_110_852km",
+      "reward_bundle_id": "bundle_apex_cp_110_852km",
       "reward_bundle_kinds": [
         "story",
         "restoration_scene"
@@ -1853,13 +1853,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_111_878km",
+      "checkpoint_id": "apex_cp_111_865km",
       "index": 111,
-      "threshold_meters": 878000,
-      "threshold_km": 878,
+      "threshold_meters": 865000,
+      "threshold_km": 865,
       "major_rank": "mythic",
-      "name_key": "apex.checkpoint.apex_cp_111_878km",
-      "reward_bundle_id": "bundle_apex_cp_111_878km",
+      "name_key": "apex.checkpoint.apex_cp_111_865km",
+      "reward_bundle_id": "bundle_apex_cp_111_865km",
       "reward_bundle_kinds": [
         "character_episode",
         "crown_shard"
@@ -1869,13 +1869,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_112_892km",
+      "checkpoint_id": "apex_cp_112_878km",
       "index": 112,
-      "threshold_meters": 892000,
-      "threshold_km": 892,
+      "threshold_meters": 878000,
+      "threshold_km": 878,
       "major_rank": "mythic",
-      "name_key": "apex.checkpoint.apex_cp_112_892km",
-      "reward_bundle_id": "bundle_apex_cp_112_892km",
+      "name_key": "apex.checkpoint.apex_cp_112_878km",
+      "reward_bundle_id": "bundle_apex_cp_112_878km",
       "reward_bundle_kinds": [
         "relic_choice",
         "character_episode"
@@ -1885,13 +1885,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_113_905km",
+      "checkpoint_id": "apex_cp_113_892km",
       "index": 113,
-      "threshold_meters": 905000,
-      "threshold_km": 905,
-      "major_rank": "apex",
-      "name_key": "apex.checkpoint.apex_cp_113_905km",
-      "reward_bundle_id": "bundle_apex_cp_113_905km",
+      "threshold_meters": 892000,
+      "threshold_km": 892,
+      "major_rank": "mythic",
+      "name_key": "apex.checkpoint.apex_cp_113_892km",
+      "reward_bundle_id": "bundle_apex_cp_113_892km",
       "reward_bundle_kinds": [
         "boss_key",
         "restoration_scene"
@@ -1901,13 +1901,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_114_918km",
+      "checkpoint_id": "apex_cp_114_905km",
       "index": 114,
-      "threshold_meters": 918000,
-      "threshold_km": 918,
+      "threshold_meters": 905000,
+      "threshold_km": 905,
       "major_rank": "apex",
-      "name_key": "apex.checkpoint.apex_cp_114_918km",
-      "reward_bundle_id": "bundle_apex_cp_114_918km",
+      "name_key": "apex.checkpoint.apex_cp_114_905km",
+      "reward_bundle_id": "bundle_apex_cp_114_905km",
       "reward_bundle_kinds": [
         "restoration_scene",
         "crown_shard"
@@ -1917,13 +1917,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_115_932km",
+      "checkpoint_id": "apex_cp_115_918km",
       "index": 115,
-      "threshold_meters": 932000,
-      "threshold_km": 932,
+      "threshold_meters": 918000,
+      "threshold_km": 918,
       "major_rank": "apex",
-      "name_key": "apex.checkpoint.apex_cp_115_932km",
-      "reward_bundle_id": "bundle_apex_cp_115_932km",
+      "name_key": "apex.checkpoint.apex_cp_115_918km",
+      "reward_bundle_id": "bundle_apex_cp_115_918km",
       "reward_bundle_kinds": [
         "profile_frame",
         "character_episode"
@@ -1933,13 +1933,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_116_945km",
+      "checkpoint_id": "apex_cp_116_932km",
       "index": 116,
-      "threshold_meters": 945000,
-      "threshold_km": 945,
+      "threshold_meters": 932000,
+      "threshold_km": 932,
       "major_rank": "apex",
-      "name_key": "apex.checkpoint.apex_cp_116_945km",
-      "reward_bundle_id": "bundle_apex_cp_116_945km",
+      "name_key": "apex.checkpoint.apex_cp_116_932km",
+      "reward_bundle_id": "bundle_apex_cp_116_932km",
       "reward_bundle_kinds": [
         "season_point",
         "restoration_scene"
@@ -1949,13 +1949,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_117_959km",
+      "checkpoint_id": "apex_cp_117_945km",
       "index": 117,
-      "threshold_meters": 959000,
-      "threshold_km": 959,
+      "threshold_meters": 945000,
+      "threshold_km": 945,
       "major_rank": "apex",
-      "name_key": "apex.checkpoint.apex_cp_117_959km",
-      "reward_bundle_id": "bundle_apex_cp_117_959km",
+      "name_key": "apex.checkpoint.apex_cp_117_945km",
+      "reward_bundle_id": "bundle_apex_cp_117_945km",
       "reward_bundle_kinds": [
         "crown_shard"
       ],
@@ -1964,13 +1964,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_118_972km",
+      "checkpoint_id": "apex_cp_118_959km",
       "index": 118,
-      "threshold_meters": 972000,
-      "threshold_km": 972,
+      "threshold_meters": 959000,
+      "threshold_km": 959,
       "major_rank": "apex",
-      "name_key": "apex.checkpoint.apex_cp_118_972km",
-      "reward_bundle_id": "bundle_apex_cp_118_972km",
+      "name_key": "apex.checkpoint.apex_cp_118_959km",
+      "reward_bundle_id": "bundle_apex_cp_118_959km",
       "reward_bundle_kinds": [
         "cosmetic",
         "character_episode"
@@ -1980,13 +1980,13 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_119_986km",
+      "checkpoint_id": "apex_cp_119_972km",
       "index": 119,
-      "threshold_meters": 986000,
-      "threshold_km": 986,
+      "threshold_meters": 972000,
+      "threshold_km": 972,
       "major_rank": "apex",
-      "name_key": "apex.checkpoint.apex_cp_119_986km",
-      "reward_bundle_id": "bundle_apex_cp_119_986km",
+      "name_key": "apex.checkpoint.apex_cp_119_972km",
+      "reward_bundle_id": "bundle_apex_cp_119_972km",
       "reward_bundle_kinds": [
         "story",
         "restoration_scene"
@@ -1996,18 +1996,34 @@
       "content_version": "1.0.0"
     },
     {
-      "checkpoint_id": "apex_cp_120_1000km",
+      "checkpoint_id": "apex_cp_120_986km",
       "index": 120,
-      "threshold_meters": 1000000,
-      "threshold_km": 1000,
-      "major_rank": "world_crown",
-      "name_key": "apex.checkpoint.apex_cp_120_1000km",
-      "reward_bundle_id": "bundle_apex_cp_120_1000km",
+      "threshold_meters": 986000,
+      "threshold_km": 986,
+      "major_rank": "apex",
+      "name_key": "apex.checkpoint.apex_cp_120_986km",
+      "reward_bundle_id": "bundle_apex_cp_120_986km",
       "reward_bundle_kinds": [
         "character_episode",
         "crown_shard"
       ],
       "story_or_world_effect": "restoration_pulse_12",
+      "is_final": false,
+      "content_version": "1.0.0"
+    },
+    {
+      "checkpoint_id": "apex_cp_121_1000km",
+      "index": 121,
+      "threshold_meters": 1000000,
+      "threshold_km": 1000,
+      "major_rank": "world_crown",
+      "name_key": "apex.checkpoint.apex_cp_121_1000km",
+      "reward_bundle_id": "bundle_apex_cp_121_1000km",
+      "reward_bundle_kinds": [
+        "relic_choice",
+        "character_episode"
+      ],
+      "story_or_world_effect": "restoration_pulse_1",
       "is_final": true,
       "content_version": "1.0.0"
     }

@@ -47,9 +47,9 @@
     "ko",
     "en"
   ],
-  "localization_key_count": 850,
+  "localization_key_count": 851,
   "monthly_apex": {
-    "checkpoint_count": 120,
+    "checkpoint_count": 121,
     "final_checkpoint_meters": 1000000,
     "tiers_above_final": 0
   },
@@ -80,5 +80,5 @@
     "content/launch/world/stages/side_stages.json",
     "content/launch/world/story_chapters.json"
   ],
-  "content_sha256": "149a662f4b59319933b46def7e2f46854232d041d3999f8b978918a38a3f14e9"
+  "content_sha256": "931cbe2d82abc881c8287bc1cc588696da131abe40c6fcd3dc5d85070d76920b"
 }

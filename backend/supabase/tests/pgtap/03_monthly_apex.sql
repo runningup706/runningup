@@ -9,7 +9,7 @@ select plan(45);
 -- ---------------------------------------------------------------------------
 select is(
   (select count(*)::int from api.monthly_apex_checkpoints where ladder_version = 'apex.v1.0.0'),
-  120, 'the seeded ladder has exactly 120 checkpoints');
+  121, 'the seeded ladder has exactly 121 checkpoints');
 
 select is(
   (select max(threshold_meters) from api.monthly_apex_checkpoints where ladder_version = 'apex.v1.0.0'),
@@ -23,16 +23,13 @@ select is(
   (select count(*)::int from api.monthly_apex_checkpoints where is_final),
   1, 'exactly one checkpoint is marked final');
 
--- The pre-V14 52-step ladder carried 42_195 as a marathon-symbolic checkpoint. The V14
--- 120-step ladder steps 41 km -> 45 km instead. Asserted in the negative so that
--- re-introducing it is a visible decision rather than a silent drift.
 select ok(
-  not exists(select 1 from api.monthly_apex_checkpoints where threshold_meters = 42195),
-  'the V14 ladder has no 42.195 km checkpoint');
+  exists(select 1 from api.monthly_apex_checkpoints where threshold_meters = 42195),
+  'the 42.195 km marathon checkpoint exists with exact precision');
 
 select ok(
   (select count(*) from api.monthly_apex_checkpoints where threshold_meters in (41000, 45000)) = 2,
-  'the V14 ladder steps 41 km -> 45 km across the marathon distance');
+  'the marathon sits between the 41 km and 45 km checkpoints');
 
 -- The enum IS the rank order: world_crown must be the last value.
 select is(
@@ -161,7 +158,7 @@ select is(
     (private.apply_verified_run_reward(
       pg_temp.make_session('aaaaaaaa-0000-0000-0000-000000000001', 85000, '2026-03-04T09:00:00+09'),
       'run-4') -> 'crossed_checkpoint_ids')),
-  20, 'from 15 km, a single 85 km session crosses the 20 checkpoints in (15 km, 100 km]');
+  21, 'from 15 km, a single 85 km session crosses the 21 checkpoints in (15 km, 100 km]');
 
 select is(
   (select count(*)::int from api.monthly_apex_checkpoint_claims
@@ -261,7 +258,7 @@ select is(
     (private.apply_verified_run_reward(
       pg_temp.make_session('aaaaaaaa-0000-0000-0000-000000000003', 1200000, '2026-05-01T09:00:00+09'),
       'over-1') -> 'crossed_checkpoint_ids')),
-  120, 'a single 1200 km session claims all 120 checkpoints exactly once');
+  121, 'a single 1200 km session claims all 121 checkpoints exactly once');
 
 select is(
   (select over_crown_meters from api.monthly_apex_progress

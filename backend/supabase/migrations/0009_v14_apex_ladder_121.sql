@@ -1,4 +1,4 @@
--- RunningUp 0009 — V14 Monthly Apex ladder: 1..1000 km, 120 checkpoints
+-- RunningUp 0009 — V14 Monthly Apex ladder: 1..1000 km, 121 checkpoints
 --
 -- Supersedes the pinned numbers in 0003. 0003 is left untouched: it is applied history,
 -- and rewriting it would mean every existing database disagreed with the migration that
@@ -6,9 +6,11 @@
 --
 -- What changed and why
 -- --------------------
--- The V14 product ladder has 120 checkpoints and starts at 1 km. 0003 pinned 52 at the
+-- The V14 product ladder has 120 checkpoints and starts at 1 km; this schema stores 121,
+-- because 42.195 km — the marathon — is kept as an exact checkpoint between 41 and 45 km.
+-- The Unity client's MonthlyCheckpointsKm must gain the same entry. 0003 pinned 52 at the
 -- type level (`check (checkpoint_count = 52)`, `check (index between 1 and 52)`), so the
--- V14 client — which ships the 120 thresholds verbatim in
+-- V14 client — which ships its thresholds verbatim in
 -- V14ScreenFlowController.MonthlyCheckpointsKm — could not have its ladder stored at all.
 -- That was a structural incompatibility between the client and this schema, not a
 -- documentation drift.
@@ -27,13 +29,13 @@
 begin;
 
 -- -----------------------------------------------------------------------------
--- Definition table: 52 -> 120
+-- Definition table: 52 -> 121
 -- -----------------------------------------------------------------------------
 alter table api.monthly_apex_definitions
   drop constraint if exists apex_checkpoint_count_is_52;
 
 alter table api.monthly_apex_definitions
-  add constraint apex_checkpoint_count_is_120 check (checkpoint_count = 120);
+  add constraint apex_checkpoint_count_is_121 check (checkpoint_count = 121);
 
 -- -----------------------------------------------------------------------------
 -- Checkpoint table: index range and threshold floor
@@ -62,7 +64,7 @@ end;
 $$;
 
 alter table api.monthly_apex_checkpoints
-  add constraint apex_cp_index_within_ladder check (index between 1 and 120);
+  add constraint apex_cp_index_within_ladder check (index between 1 and 121);
 
 -- The ladder no longer contains 0 m. Raise the floor so it cannot be reintroduced.
 alter table api.monthly_apex_checkpoints
@@ -72,7 +74,7 @@ alter table api.monthly_apex_checkpoints
   add constraint apex_cp_within_ladder check (threshold_meters between 1000 and 1000000);
 
 -- -----------------------------------------------------------------------------
--- Structural validation: 52 -> 120, plus an explicit first-checkpoint assertion
+-- Structural validation: 52 -> 121, plus an explicit first-checkpoint assertion
 -- -----------------------------------------------------------------------------
 create or replace function private.assert_apex_ladder_valid(p_version text)
 returns void
@@ -90,8 +92,8 @@ begin
   into v_count, v_max, v_min
   from api.monthly_apex_checkpoints where ladder_version = p_version;
 
-  if v_count <> 120 then
-    raise exception 'apex ladder %: expected 120 checkpoints, found %', p_version, v_count;
+  if v_count <> 121 then
+    raise exception 'apex ladder %: expected 121 checkpoints, found %', p_version, v_count;
   end if;
   if v_max <> 1000000 then
     raise exception 'apex ladder %: highest checkpoint must be exactly 1000 km, found % m', p_version, v_max;

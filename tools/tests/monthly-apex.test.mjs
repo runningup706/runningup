@@ -10,9 +10,9 @@ import { applyDistance, applyBatch, emptyProgress, ladderSnapshot, nextCheckpoin
 
 const KM = 1000;
 
-test('seed shape: exactly 120 checkpoints, ascending, final is exactly 1000 km', () => {
-  assert.equal(APEX_CHECKPOINT_METERS.length, 120);
-  assert.equal(DIRECTION_LOCK.CHECKPOINT_COUNT, 120);
+test('seed shape: exactly 121 checkpoints, ascending, final is exactly 1000 km', () => {
+  assert.equal(APEX_CHECKPOINT_METERS.length, 121);
+  assert.equal(DIRECTION_LOCK.CHECKPOINT_COUNT, 121);
   assert.equal(APEX_CHECKPOINT_METERS[0], 1_000, 'the ladder starts at 1 km, not 0');
   assert.equal(APEX_CHECKPOINT_METERS.at(-1), 1_000_000);
   for (let i = 1; i < APEX_CHECKPOINT_METERS.length; i += 1) {
@@ -32,14 +32,14 @@ test('DL-1: no checkpoint at 1250/1500/2000 km and no rank above World Crown', (
   assert.equal(crown.max_meters, null, 'World Crown is open-ended: nothing exists above it');
 });
 
-test('the V14 ladder has no 42.195 km marathon checkpoint', () => {
-  // The pre-V14 52-step ladder carried 42_195 as a marathon-symbolic checkpoint. The V14
-  // 120-step ladder does not — it steps 41 km -> 45 km. This test records that as a
-  // deliberate, known consequence of adopting the V14 ladder rather than an accident, so
-  // that re-introducing it is a visible decision and not a silent drift.
-  assert.ok(!APEX_CHECKPOINT_METERS.includes(42_195));
-  assert.ok(APEX_CHECKPOINT_METERS.includes(41_000));
-  assert.ok(APEX_CHECKPOINT_METERS.includes(45_000));
+test('42.195 km is an exact checkpoint between 41 km and 45 km', () => {
+  // The marathon is the one non-round value in the ladder and the reason the count is 121
+  // rather than the V14 client's 120. Exactness matters: 42.2 km would let a runner who
+  // covered the distance miss the checkpoint that names it.
+  assert.ok(APEX_CHECKPOINT_METERS.includes(42_195));
+  const i = APEX_CHECKPOINT_METERS.indexOf(42_195);
+  assert.equal(APEX_CHECKPOINT_METERS[i - 1], 41_000);
+  assert.equal(APEX_CHECKPOINT_METERS[i + 1], 45_000);
 });
 
 test('the first checkpoint is 1 km: a runner who has not run reaches nothing', () => {
@@ -97,7 +97,7 @@ test('exceeding 1000 km inside one session: ladder stops at the crown, surplus i
   assert.equal(r.after.laddered_meters, 1_000_000);
   assert.equal(r.after.over_crown_meters, 200_000);
   assert.equal(r.rank_after, 'world_crown');
-  assert.equal(r.crossed_checkpoints.length, 120, 'all 120 checkpoints claimed exactly once');
+  assert.equal(r.crossed_checkpoints.length, 121, 'all 121 checkpoints claimed exactly once');
   assert.equal(r.crossed_checkpoints.at(-1).threshold_meters, 1_000_000);
 });
 
@@ -121,8 +121,8 @@ test('ladder snapshot never advertises a tier above the final one', () => {
   assert.equal(snap.is_final_rank, true);
   assert.equal(snap.rank, 'world_crown');
   assert.deepEqual(snap.next, [], 'nothing is displayed after the crown');
-  assert.equal(snap.checkpoints_total, 120);
-  assert.equal(snap.checkpoints_reached, 120);
+  assert.equal(snap.checkpoints_total, 121);
+  assert.equal(snap.checkpoints_reached, 121);
 });
 
 test('out-of-order import produces the same result as chronological order', () => {
@@ -214,8 +214,8 @@ test('every checkpoint is reachable and claimed exactly once across a full month
     claimed.push(...r.crossed_checkpoints.map((c) => c.checkpoint_id));
   }
   assert.equal(progress.laddered_meters, 1_000_000);
-  assert.equal(claimed.length, 120, 'exactly 120 claims for a full month');
-  assert.equal(new Set(claimed).size, 120, 'no checkpoint claimed twice');
+  assert.equal(claimed.length, 121, 'exactly 121 claims for a full month');
+  assert.equal(new Set(claimed).size, 121, 'no checkpoint claimed twice');
   assert.equal(progress.world_crown_awarded, true);
   assert.equal(progress.apex_axis_unlocked, true);
 });

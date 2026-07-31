@@ -17,38 +17,44 @@
 
 export const DIRECTION_LOCK = Object.freeze({
   FINAL_APEX_METERS: 1_000_000,
-  CHECKPOINT_COUNT: 120,
+  CHECKPOINT_COUNT: 121,
   MAJOR_RANK_COUNT: 11,
   FINAL_RANK_ID: 'world_crown',
 });
 
 /**
- * Monthly Apex Ladder — the 120 canonical checkpoints of the 1..1000 km journey.
+ * Monthly Apex Ladder — the 121 canonical checkpoints of the 1..1000 km journey.
  * Values are integer meters, strictly ascending, ending at exactly 1000 km.
  *
  * There is deliberately no 0 km checkpoint: a runner who has not run yet has reached
  * nothing. The first checkpoint is 1 km.
  *
- * This ladder is the V14 product ladder and is mirrored verbatim by the Unity client
- * (`V14ScreenFlowController.MonthlyCheckpointsKm`) and by `MonthlyApexLadder.cs`. All
- * three are pinned to each other by content/conformance/monthly-apex-cases.json.
+ * 42_195 is the marathon, kept as an exact checkpoint between 41 km and 45 km. It is the
+ * one non-round value in the ladder and the only reason the count is 121 rather than the
+ * V14 client's 120: the distance is the single most meaningful number in the sport, and a
+ * runner who covers it in a month should see it named rather than rounded past.
+ *
+ * This ladder is mirrored verbatim by `MonthlyApexLadder.cs` and must be mirrored by the
+ * Unity client's `V14ScreenFlowController.MonthlyCheckpointsKm`, which still ships the
+ * 120-value list. All are pinned by content/conformance/monthly-apex-cases.json.
  */
 export const APEX_CHECKPOINT_METERS = Object.freeze([
       1_000,     2_000,     3_000,     4_000,     5_000,     6_000,     8_000,    10_000,
      13_000,    15_000,    18_000,    21_000,    24_000,    27_000,    30_000,    34_000,
-     37_000,    41_000,    45_000,    49_000,    54_000,    58_000,    63_000,    67_000,
-     72_000,    77_000,    82_000,    87_000,    93_000,    98_000,   104_000,   110_000,
-    115_000,   121_000,   127_000,   134_000,   140_000,   146_000,   153_000,   160_000,
-    166_000,   173_000,   180_000,   187_000,   194_000,   202_000,   209_000,   217_000,
-    224_000,   232_000,   240_000,   248_000,   256_000,   264_000,   272_000,   281_000,
-    289_000,   298_000,   306_000,   315_000,   324_000,   333_000,   342_000,   351_000,
-    360_000,   369_000,   379_000,   388_000,   398_000,   407_000,   417_000,   427_000,
-    437_000,   447_000,   457_000,   467_000,   478_000,   488_000,   499_000,   509_000,
-    520_000,   531_000,   541_000,   552_000,   563_000,   574_000,   586_000,   597_000,
-    608_000,   620_000,   631_000,   643_000,   654_000,   666_000,   678_000,   690_000,
-    702_000,   714_000,   726_000,   738_000,   751_000,   763_000,   776_000,   788_000,
-    801_000,   814_000,   826_000,   839_000,   852_000,   865_000,   878_000,   892_000,
-    905_000,   918_000,   932_000,   945_000,   959_000,   972_000,   986_000, 1_000_000,
+     37_000,    41_000,    42_195,    45_000,    49_000,    54_000,    58_000,    63_000,
+     67_000,    72_000,    77_000,    82_000,    87_000,    93_000,    98_000,   104_000,
+    110_000,   115_000,   121_000,   127_000,   134_000,   140_000,   146_000,   153_000,
+    160_000,   166_000,   173_000,   180_000,   187_000,   194_000,   202_000,   209_000,
+    217_000,   224_000,   232_000,   240_000,   248_000,   256_000,   264_000,   272_000,
+    281_000,   289_000,   298_000,   306_000,   315_000,   324_000,   333_000,   342_000,
+    351_000,   360_000,   369_000,   379_000,   388_000,   398_000,   407_000,   417_000,
+    427_000,   437_000,   447_000,   457_000,   467_000,   478_000,   488_000,   499_000,
+    509_000,   520_000,   531_000,   541_000,   552_000,   563_000,   574_000,   586_000,
+    597_000,   608_000,   620_000,   631_000,   643_000,   654_000,   666_000,   678_000,
+    690_000,   702_000,   714_000,   726_000,   738_000,   751_000,   763_000,   776_000,
+    788_000,   801_000,   814_000,   826_000,   839_000,   852_000,   865_000,   878_000,
+    892_000,   905_000,   918_000,   932_000,   945_000,   959_000,   972_000,   986_000,
+  1_000_000,
 ]);
 
 /**
