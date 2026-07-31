@@ -1,0 +1,270 @@
+name: android-apk
+
+# Builds the V14 Android APK in CI and attaches it to a GitHub Release.
+#
+# WHY THIS EXISTS
+# ---------------
+# Until now the APK could only be produced on one person's machine, from a Unity project
+# that lived only on that machine. That made the build unreproducible, made the project
+# one disk failure away from gone, and made every release depend on someone being at a
+# keyboard. This job removes all three.
+#
+# WHAT IT NEEDS BEFORE IT CAN RUN
+# -------------------------------
+#   1. The Unity project committed to this repository (scenes, prefabs, ProjectSettings,
+#      Packages). Right now `client/unity/` holds four files; the preflight job below says
+#      so out loud rather than failing with a confusing Unity error.
+#   2. Three repository secrets, from a free Unity Personal licence:
+#        UNITY_LICENSE   — contents of the .ulf licence file
+#        UNITY_EMAIL     — the Unity account email
+#        UNITY_PASSWORD  — the Unity account password
+#      See docs/ANDROID_BUILD.md for how to obtain them.
+#
+# When either is missing the job SKIPS with an explanation instead of failing red, so a
+# missing licence never looks like a broken build. It never reports success for a build it
+# did not run — the preflight output says exactly which of the two is absent.
+#
+# WHAT IT DELIBERATELY DOES NOT DO
+# --------------------------------
+# It does not claim the APK is verified. CI has no phone. Back navigation, cold start and
+# the SELinux/logcat checks require a physical device (master # 22.9 forbids substituting
+# emulator numbers), so the release notes below record them as NOT_RUN, not as passed.
+
+on:
+  push:
+    branches: ['**']
+    # Tagging is what publishes. A branch push builds and uploads an artifact only.
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      supabase_env:
+        description: 'Which Supabase project the APK points at'
+        required: true
+        default: 'production'
+        type: choice
+        options: [production, staging]
+
+permissions:
+  contents: write
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Preflight: say precisely what is present and what is missing
+  # ---------------------------------------------------------------------------
+  preflight:
+    runs-on: ubuntu-latest
+    outputs:
+      project_present: ${{ steps.check.outputs.project_present }}
+      licence_present: ${{ steps.check.outputs.licence_present }}
+      can_build: ${{ steps.check.outputs.can_build }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - id: check
+        name: Is a buildable Unity project actually here?
+        env:
+          HAS_LICENCE: ${{ secrets.UNITY_LICENSE != '' }}
+        run: |
+          set -euo pipefail
+
+          # A Unity project is not "some .cs files". These four things decide whether a
+          # build is even possible, and each is reported separately so a partial push is
+          # diagnosable rather than mysterious.
+          scenes=$(find client/unity -name '*.unity' 2>/dev/null | wc -l)
+          prefabs=$(find client/unity -name '*.prefab' 2>/dev/null | wc -l)
+          settings=$([ -d client/unity/ProjectSettings ] && echo 1 || echo 0)
+          packages=$([ -f client/unity/Packages/manifest.json ] && echo 1 || echo 0)
+
+          echo "scenes            : $scenes"
+          echo "prefabs           : $prefabs"
+          echo "ProjectSettings/  : $settings"
+          echo "Packages/manifest : $packages"
+
+          project_present=false
+          if [ "$scenes" -gt 0 ] && [ "$settings" = "1" ] && [ "$packages" = "1" ]; then
+            project_present=true
+          fi
+
+          echo "project_present=$project_present" >> "$GITHUB_OUTPUT"
+          echo "licence_present=$HAS_LICENCE"     >> "$GITHUB_OUTPUT"
+
+          if [ "$project_present" = "true" ] && [ "$HAS_LICENCE" = "true" ]; then
+            echo "can_build=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::Unity project and licence both present — the APK will be built."
+          else
+            echo "can_build=false" >> "$GITHUB_OUTPUT"
+            if [ "$project_present" != "true" ]; then
+              echo "::warning::No Unity project in client/unity (no scenes, or no ProjectSettings/Packages). Run tools/release/push-unity-project.sh from the machine that has it."
+            fi
+            if [ "$HAS_LICENCE" != "true" ]; then
+              echo "::warning::UNITY_LICENSE secret is not set. See docs/ANDROID_BUILD.md."
+            fi
+            echo "::notice::APK build SKIPPED — this is not a build failure. See the warnings above."
+          fi
+
+  # ---------------------------------------------------------------------------
+  # The same gates a human is told to run before building
+  # ---------------------------------------------------------------------------
+  gates:
+    needs: preflight
+    if: needs.preflight.outputs.can_build == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          node-version: '22'
+
+      - name: Direction lock
+        run: node tools/direction-lock/scan.mjs
+      - name: Launch content
+        run: node tools/content-validator/validate.mjs
+      - name: Unit tests
+        run: node --test "tests/*.test.mjs"
+      # The one check that has actually caught a bad merge: a client still carrying the
+      # 52-checkpoint kilometre ladder instead of the canonical 121 integer-metre one.
+      - name: Client ladder matches the server
+        run: node tools/release/emit-client-ladder.mjs --check
+
+  # ---------------------------------------------------------------------------
+  # Build
+  # ---------------------------------------------------------------------------
+  build:
+    needs: [preflight, gates]
+    if: needs.preflight.outputs.can_build == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          lfs: true
+
+      # Unity's Library/ is gitignored and expensive to rebuild. Keyed on the packages and
+      # settings so a dependency change invalidates it rather than silently reusing stale
+      # imports.
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: client/unity/Library
+          key: unity-library-${{ hashFiles('client/unity/Packages/manifest.json', 'client/unity/ProjectSettings/ProjectVersion.txt') }}
+          restore-keys: unity-library-
+
+      - name: Build Android APK
+        uses: game-ci/unity-builder@1d4ee0697f193f54668e98961d79907911f4b4f2 # v4.8.1
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          # The APK must not ship pointing at somebody's laptop. These come from repository
+          # secrets and are the *publishable* keys only — a service-role key in the client
+          # would hand every reader full database write access.
+          RUNNINGUP_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          RUNNINGUP_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        with:
+          projectPath: client/unity
+          targetPlatform: Android
+          androidAppBundle: false
+          androidKeystoreName: runningup.keystore
+          androidKeystoreBase64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}
+          androidKeyaliasName: ${{ secrets.ANDROID_KEYALIAS_NAME }}
+          androidKeyaliasPass: ${{ secrets.ANDROID_KEYALIAS_PASS }}
+          allowDirtyBuild: false
+
+      - name: Record what was built
+        id: apk
+        run: |
+          set -euo pipefail
+          apk=$(find build -name '*.apk' | head -1)
+          if [ -z "$apk" ]; then
+            echo "::error::Unity reported success but produced no APK. Do not treat an exit code as a build."
+            exit 1
+          fi
+          echo "path=$apk"                          >> "$GITHUB_OUTPUT"
+          echo "sha256=$(sha256sum "$apk" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+          echo "size=$(du -h "$apk" | cut -f1)"     >> "$GITHUB_OUTPUT"
+
+      # A combat concept reaching a shipped binary is the one regression DL-6 exists to
+      # stop, and the source scan cannot see inside a compiled APK.
+      - name: DL-6 — no combat strings in the built binary
+        run: |
+          set -euo pipefail
+          apk='${{ steps.apk.outputs.path }}'
+          unzip -o -q "$apk" -d /tmp/apk-scan
+          found=0
+          for token in world_bosses enemy_families tactical_relics character_skills battle_node boss_break; do
+            if grep -rqa "$token" /tmp/apk-scan; then
+              echo "::error::DL-6 violation: '$token' is present in the built APK"
+              found=1
+            fi
+          done
+          [ "$found" = "0" ] && echo "no combat identifiers in the binary"
+
+      - uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4.6.0
+        with:
+          name: runningup-v14-apk
+          path: ${{ steps.apk.outputs.path }}
+          retention-days: 30
+
+      - name: Publish a Release when a tag is pushed
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cat > notes.md <<EOF
+          # RunningUp V14 — ${GITHUB_REF_NAME}
+
+          | | |
+          |---|---|
+          | APK SHA-256 | \`${{ steps.apk.outputs.sha256 }}\` |
+          | Size | ${{ steps.apk.outputs.size }} |
+          | Commit | \`${GITHUB_SHA}\` |
+          | Package | kr.robom.runningup |
+          | targetSdk | 36 |
+
+          ## Verified by this build
+          - Direction lock, launch content, unit tests and client-ladder parity all passed
+          - No combat identifiers in the built binary (DL-6)
+          - Signed and built by CI from the tagged commit — reproducible from source
+
+          ## NOT verified — no physical device in CI
+          Master # 22.9 forbids substituting emulator numbers for device measurements, so
+          these are **NOT_RUN**, not passed:
+          - System back button (gesture and 3-button) on a real device
+          - Cold start returning to Home after force-stop
+          - logcat: fatal exceptions, ANR, SELinux denials
+          - FPS, battery and thermal behaviour
+
+          Install this APK and run those checks before treating it as shippable.
+          EOF
+          gh release create "${GITHUB_REF_NAME}" \
+            --title "RunningUp V14 ${GITHUB_REF_NAME}" \
+            --notes-file notes.md \
+            --prerelease \
+            '${{ steps.apk.outputs.path }}'
+
+  # ---------------------------------------------------------------------------
+  # A skip has to be visible, or it reads as a pass
+  # ---------------------------------------------------------------------------
+  report:
+    needs: [preflight, build]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Summary
+        run: |
+          {
+            echo "## Android APK"
+            echo ""
+            echo "| Prerequisite | State |"
+            echo "|---|---|"
+            echo "| Unity project committed | ${{ needs.preflight.outputs.project_present }} |"
+            echo "| UNITY_LICENSE secret set | ${{ needs.preflight.outputs.licence_present }} |"
+            echo ""
+            if [ "${{ needs.preflight.outputs.can_build }}" = "true" ]; then
+              echo "Build ran. Result: ${{ needs.build.result }}"
+            else
+              echo "**Build SKIPPED** — a prerequisite above is false. This is not a passing build."
+              echo "See docs/ANDROID_BUILD.md."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

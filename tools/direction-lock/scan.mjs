@@ -47,6 +47,8 @@ export const ALLOWLIST = new Map([
   ['backend/supabase/migrations/0012_v14_race_content.sql', 'names the combat tables in order to drop them'],
   ['docs/audits/AUDIT_06_CHARACTER_CONTENT_DEPTH.md', 'audit record of the combat kit that was later removed'],
   ['backend/supabase/tests/pgtap/05_content_completeness.sql', 'asserts the combat catalogue no longer exists in the schema'],
+  ['.github/workflows/android-apk.yml', 'greps the built APK for combat identifiers, so it must name them'],
+  ['docs/ANDROID_BUILD.md', 'documents the APK combat scan, quoting the identifiers it searches for'],
   ['docs/DATABASE_SCHEMA.md', 'generated from the live schema, including tables 0012 renames'],
   ['docs/archive/USER_DIRECTION_LOCK_v4.0.0.md', 'archived lock: the record of what the product used to be'],
   ['docs/V14_FUNCTION_FIX_PROMPT_KO.md', 'defect analysis quoting the combat code it recommends removing'],

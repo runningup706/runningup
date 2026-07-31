@@ -4,6 +4,17 @@
 
 ---
 
+> **2026-07-31 갱신 — 먼저 읽어라.**
+>
+> 이제 CI가 APK를 빌드한다. `.github/workflows/android-apk.yml` 이 들어왔다.
+> 네가 로컬에서 수동 빌드하기 전에, **1순위 작업은 로컬 Unity 프로젝트를 저장소에 올리는
+> 것이다**: `bash tools/release/push-unity-project.sh` (먼저 인자 없이 실행해 계획을 확인,
+> 그 다음 `--commit`). 이 스크립트는 파괴적 git 명령을 절대 실행하지 않고, 미추적 V14
+> 파일을 지우지 않으며, 키스토어나 service-role 키가 섞여 있으면 멈춘다.
+>
+> 그게 끝나면 아래 3~5번(수동 병합·수동 빌드)은 불필요하다. 6~7번의 **실기기 설치 검증**만
+> 하면 된다. 설정 방법은 `docs/ANDROID_BUILD.md`.
+
 ## 0. 너의 임무
 
 RunningUp V14 Android APK를 빌드해서 GitHub Release에 올리고, 실제로 설치·실행해 검증하라.
