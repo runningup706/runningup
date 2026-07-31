@@ -20,7 +20,7 @@ RunningUp V14 Android APK를 빌드해서 GitHub Release에 올리고, 실제로
 |---|---|
 | 저장소 | `runningup706/runningup` |
 | 브랜치 | `claude/runningup-v14-handoff-hr19xk` |
-| 기준 커밋 | `fc13dc6` (또는 그 이후 최신) |
+| 기준 커밋 | `10b7cf2` (또는 그 이후 최신) |
 | 패키지 | `kr.robom.runningup` |
 | targetSdk | 36 |
 | 액티비티 | `com.unity3d.player.UnityPlayerGameActivity` |
@@ -29,7 +29,7 @@ RunningUp V14 Android APK를 빌드해서 GitHub Release에 올리고, 실제로
 
 ## 2. 이미 되어 있는 것 — 다시 하지 마라
 
-이 브랜치에는 커밋 15개가 들어 있다. 되돌리거나 중복 구현하지 마라.
+이 브랜치에는 커밋 17개가 들어 있다. 되돌리거나 중복 구현하지 마라.
 
 **클라이언트 수정 (네가 빌드할 대상)**
 - 시스템 뒤로가기가 동작한다. targetSdk 36에서 `KEYCODE_BACK`이 디스패치되지 않는 문제를
@@ -44,10 +44,14 @@ RunningUp V14 Android APK를 빌드해서 GitHub Release에 올리고, 실제로
 - 월간 체크포인트 52 → 121, DB CHECK 제약까지 이동 (마이그레이션 0009)
 - 지역 96 → 192 (0010), 코스 2,304개 신설 (0011, `api.world_courses`)
 - 전투 엔진 `battle.mjs` 삭제 → `race.mjs`(8인 러닝 대결)로 교체
+- **전투 콘텐츠 전면 삭제 완료 (DL-6).** 전투 스테이지·적 계열·보스·전술 스킬·유물이 모두
+  사라지고, 같은 개수의 러닝 콘텐츠(레이스 72+24, 라이벌 크루 24+12, 챔피언 12+4+1,
+  레이스 테크닉 48, 기어 세트 72)로 대체됐다. DB 테이블 5개는 마이그레이션 0012 에서
+  드롭됐고 pgTAP 이 "존재하지 않음"을 검증한다.
 - CI 2건 복구 — 저장소 역사상 한 번도 통과한 적 없던 것
 
 **아직 안 된 것 (네 임무가 아니다. 손대지 마라)**
-- 전투 *콘텐츠* 9개 파일과 DB 테이블 5개는 아직 남아 있다. 별도 작업으로 진행 중이다.
+- 폴더 이동(`client/unity`→`apps/` 등)은 아직이다. 경로를 바꾸지 마라.
 
 ---
 
@@ -204,7 +208,7 @@ gh release create "$TAG" \
 - 7-1, 7-2 표의 항목별 통과/실패
 - cold launch `TotalTime`
 - fatal crash / ANR / SELinux denial 유무
-- 이 빌드에 **들어가지 않은 것**: 전투 콘텐츠와 DB 테이블은 아직 남아 있다
+- 이 빌드에 **들어가지 않은 것**: 폴더 재배치는 아직 진행 중이다
 
 ---
 
@@ -212,7 +216,7 @@ gh release create "$TAG" \
 
 - 디자인 변경. 2.5D Live Journey Home, chibi My Runner, pacer, HUD 배치, 색상, 문구 전부 잠겨 있다.
 - 게임 안 뒤로가기 버튼 추가. 사용자가 명시적으로 원치 않았고 테스트가 막는다.
-- 전투·몬스터·무기·피해량·공격 스킬 부활.
+- 전투·몬스터·무기·피해량·공격 스킬 부활. `tools/direction-lock/scan.mjs` 가 빌드를 막는다.
 - `git reset --hard`, `git clean`, 광범위 삭제, 사용자 변경 덮어쓰기.
 - 증거 없는 `PASS`. 안 돌린 건 `NOT_RUN`, 막힌 건 `BLOCKED`.
 - Unity 클라이언트에 Supabase service-role 키 넣기.
