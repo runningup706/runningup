@@ -42,8 +42,8 @@ namespace RunningUp.Editor
                 BuildOptions.Development | BuildOptions.AllowDebugging,
                 V11VisualSliceBuilder.ScenePath,
                 false,
-                "14.0.0",
-                140000,
+                "14.0.1",
+                140001,
                 true);
         }
 
