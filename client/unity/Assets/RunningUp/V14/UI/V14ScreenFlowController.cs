@@ -421,6 +421,19 @@ namespace RunningUp.V14.UI
             var rootObject = Ui("V14ScreenFlow", transform);
             flowRoot = rootObject.GetComponent<RectTransform>();
             Stretch(flowRoot);
+
+            // 상단 HUD 는 화면 맨 위 92px, 하단 내비는 맨 아래 154px 에 고정돼 있어서
+            // 상태바·제스처 바와 겹쳤다. 모든 화면과 크롬이 flowRoot 밑에 있으므로
+            // 여기 한 곳만 안전영역으로 좁히면 전부 해결된다.
+            //
+            // 배경(approvedJourneyBackdrop)은 flowRoot 의 형제라 좁혀지지 않는다.
+            // 2.5D 배경은 화면 끝까지 차야 하고, 그것이 잠긴 디자인이다.
+            var safeArea = gameObject.GetComponent<V14SafeArea>();
+            if (safeArea == null)
+            {
+                safeArea = gameObject.AddComponent<V14SafeArea>();
+            }
+            safeArea.Bind(flowRoot);
             BuildHome();
             BuildSync();
             BuildTraining();
@@ -2001,32 +2014,6 @@ namespace RunningUp.V14.UI
                 new Vector2(560f, 50f),
                 new Vector2(1f, 1f),
                 TextAnchor.MiddleRight);
-        }
-
-        private void ChoiceRow(Transform parent, string title, string[] choices, float y)
-        {
-            Label(
-                $"Choice{title}",
-                parent,
-                title,
-                25,
-                FontStyle.Bold,
-                Color.white,
-                new Vector2(52f, y),
-                new Vector2(220f, 70f),
-                new Vector2(0f, 1f));
-            for (var index = 0; index < choices.Length; index++)
-            {
-                Button(
-                    $"{title}{choices[index]}",
-                    parent,
-                    choices[index],
-                    new Vector2(300f + index * 235f, y),
-                    new Vector2(210f, 76f),
-                    new Vector2(0f, 1f),
-                    index == 0 ? Blue : PanelSoft,
-                    null).interactable = false;
-            }
         }
 
         private void SettingsRow(
