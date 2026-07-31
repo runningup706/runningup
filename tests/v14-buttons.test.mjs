@@ -91,9 +91,49 @@ test('navigation buttons record history so the system back button works', () => 
 test('no user-facing control is a placeholder', () => {
   // The master prompt forbids "coming soon" and success-toast-only features outright.
   // Checked against the string literals a user can read, not against comments.
-  const literals = [...src.matchAll(/"([^"\\]{3,})"/g)].map((m) => m[1]);
+  const literals = [...src.matchAll(/"([^"\\\n]{3,})"/g)].map((m) => m[1]);
   const placeholders = literals.filter((s) =>
     /coming soon|준비\s*중|추후|TBD|TODO|not implemented|미구현/i.test(s));
   assert.deepEqual(placeholders, [],
     `placeholder text is visible to users: ${placeholders.join(', ')}`);
+});
+
+// ---------------------------------------------------------------------------
+// The words on screen
+// ---------------------------------------------------------------------------
+
+test('no screen text hardcodes the checkpoint count', () => {
+  // Three labels said "120" — "MONTHLY APEX · 120 CHECKPOINTS", "120 server-verified
+  // checkpoints", and "CLAIMED 5 / 120" — while the ladder had grown to 121 by gaining the
+  // 42.195 km marathon point. The array is checked by emit-client-ladder; the sentences
+  // about it were checked by nobody, so a user saw a wrong number on every visit.
+  const ladder = src.match(/MonthlyCheckpointsMeters\s*=\s*\{([\s\S]*?)\};/);
+  assert.ok(ladder, 'the client must still store the ladder');
+  const count = ladder[1].split(',').filter((v) => v.trim()).length;
+
+  for (const [, text] of src.matchAll(/"([^"\\\n]*\bCHECKPOINTS?\b[^"\\\n]*)"/gi)) {
+    const digits = text.match(/\b\d{2,4}\b/g) ?? [];
+    for (const d of digits) {
+      assert.notEqual(Number(d), count - 1,
+        `"${text}" looks like a stale checkpoint count; derive it from the array`);
+      assert.ok(Number(d) !== 120 && Number(d) !== 52,
+        `"${text}" hardcodes a checkpoint count that has already changed twice`);
+    }
+  }
+});
+
+test('screen text avoids the internal vocabulary users cannot parse', () => {
+  // The audience reads English as a second language. "Server-authoritative participant
+  // list", "verified server snapshots" and "provider-authorized records" are accurate and
+  // unreadable. The rule is about user-facing sentences, so object names and log lines are
+  // excluded by requiring a space — every label here is a phrase, every id is one token.
+  // The literal pattern excludes newlines: allowing them makes the gap *between* two
+  // string literals look like one long string, and the check then reports `FontStyle.Bold`
+  // as user-facing copy.
+  const jargon = /(server-authoritative|snapshots?\b|provider-authorized|finalization|capability)/i;
+  const offenders = [...src.matchAll(/"([^"\\\n]{8,})"/g)]
+    .map((m) => m[1])
+    .filter((t) => t.includes(' ') && jargon.test(t));
+  assert.deepEqual(offenders, [],
+    `these read as engineering notes rather than app text:\n  ${offenders.join('\n  ')}`);
 });

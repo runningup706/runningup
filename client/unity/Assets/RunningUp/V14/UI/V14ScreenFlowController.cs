@@ -40,6 +40,13 @@ namespace RunningUp.V14.UI
             738000, 751000, 763000, 776000, 788000, 801000, 814000, 826000, 839000, 852000, 865000, 878000, 892000, 905000,
             918000, 932000, 945000, 959000, 972000, 986000, 1000000,
         };
+
+        /// 화면에 보이는 체크포인트 개수. 배열에서 직접 센다.
+        ///
+        /// 세 곳이 "120" 이라고 적혀 있었다. 사다리가 42.195 km 마라톤 지점을 얻어 121 이
+        /// 된 뒤에도 문구는 그대로였고, 사용자에게는 "CLAIMED 5 / 120" 이 계속 보였다.
+        /// 배열 값은 emit-client-ladder --check 가 검사하지만 문구는 아무도 안 봤다.
+        private static int CheckpointCount => MonthlyCheckpointsMeters.Length;
         private static readonly (string id, string label)[] TrainingPlans =
         {
             ("RUN_WALK", "RUN-WALK\nBEGINNER"),
@@ -551,7 +558,7 @@ namespace RunningUp.V14.UI
                 new Vector2(0f, 154f),
                 new Vector2(0f, 56f));
             generatedChrome.Add(rail.gameObject);
-            globalStatus = CenterLabel(rail, "Connecting secure session…", 22, Cyan);
+            globalStatus = CenterLabel(rail, "Connecting…", 22, Cyan);
         }
 
         private void BuildHome()
@@ -592,7 +599,7 @@ namespace RunningUp.V14.UI
             Label(
                 "Progress",
                 journeyCard,
-                "Monthly verified distance updates after server approval",
+                "Your monthly distance updates once the server confirms the run",
                 22,
                 FontStyle.Normal,
                 Color.white,
@@ -733,7 +740,7 @@ namespace RunningUp.V14.UI
                 new Vector2(1f, 1f),
                 PanelSoft,
                 () => Publish(
-                    "Only provider-authorized running records can be imported"));
+                    "You can import runs only from apps you have connected"));
 
             var intro = ImagePanel(
                 "SyncIntro",
@@ -746,7 +753,7 @@ namespace RunningUp.V14.UI
             Label(
                 "IntroTitle",
                 intro,
-                "BRING YOUR VERIFIED RUN INTO RUNNINGUP",
+                "IMPORT YOUR RUN INTO RUNNINGUP",
                 27,
                 FontStyle.Bold,
                 Color.white,
@@ -756,7 +763,7 @@ namespace RunningUp.V14.UI
             syncState = Label(
                 "SyncState",
                 intro,
-                "Checking Health Connect capability…",
+                "Checking if Health Connect is available…",
                 22,
                 FontStyle.Normal,
                 Cyan,
@@ -891,7 +898,7 @@ namespace RunningUp.V14.UI
             var root = ScreenRoot(
                 Screen.Training,
                 V14Design.SurfaceDeep.Alpha(0.7f));
-            Header(root, "TRAIN", "Choose a verified plan. Change it any time before GPS starts.");
+            Header(root, "TRAIN", "Pick a plan. You can change it any time before the run starts.");
             var recommendation = ImagePanel(
                 "CoachRecommendation",
                 root,
@@ -1089,7 +1096,7 @@ namespace RunningUp.V14.UI
             var root = ScreenRoot(
                 Screen.Matchmaking,
                 V14Design.SurfaceDeep.Alpha(0.84f));
-            Header(root, "LIVE RACE", "Skill-based verified matchmaking. Eight real runners are required.");
+            Header(root, "LIVE RACE", "Matched by your recent pace. A race needs eight real runners.");
             Label(
                 "DistanceTitle",
                 root,
@@ -1216,7 +1223,7 @@ namespace RunningUp.V14.UI
             trainingResultSummary = Label(
                 "Summary",
                 card,
-                "Waiting for the verified server result",
+                "Waiting for the server to confirm your run",
                 31,
                 FontStyle.Bold,
                 Color.white,
@@ -1227,7 +1234,7 @@ namespace RunningUp.V14.UI
             trainingResultRewards = Label(
                 "Rewards",
                 card,
-                "Permanent progress is granted only after server approval.",
+                "Progress is saved only after the server confirms your run.",
                 27,
                 FontStyle.Normal,
                 Cyan,
@@ -1251,8 +1258,8 @@ namespace RunningUp.V14.UI
             var root = ScreenRoot(
                 Screen.Lobby,
                 V14Design.SurfaceDeep.Alpha(0.86f));
-            Header(root, "RACE LOBBY", "Server-authoritative participant list and countdown");
-            lobbyState = StatusCard(root, "Waiting for a server-created match", -310f);
+            Header(root, "RACE LOBBY", "The server decides who is in the race and when it starts");
+            lobbyState = StatusCard(root, "Waiting for the server to find a match", -310f);
             for (var index = 0; index < 8; index++)
             {
                 var row = ImagePanel(
@@ -1265,14 +1272,14 @@ namespace RunningUp.V14.UI
                     new Vector2(-160f, 82f));
                 lobbySlots.Add(CenterLabel(
                     row,
-                    $"SLOT {index + 1} · WAITING FOR SERVER",
+                    $"SLOT {index + 1} · WAITING",
                     23,
                     Color.white));
             }
             lobbyCountdown = Label(
                 "ServerCountdown",
                 root,
-                "SERVER COUNTDOWN --",
+                "STARTS IN --",
                 30,
                 FontStyle.Bold,
                 Cyan,
@@ -1296,8 +1303,8 @@ namespace RunningUp.V14.UI
             var root = ScreenRoot(
                 Screen.LiveRace,
                 V14Design.SurfaceDeep.Alpha(0.18f));
-            Header(root, "LIVE RACE", "Rank and opponent progress are accepted only from server snapshots.");
-            liveRaceState = StatusCard(root, "No active verified race", -310f);
+            Header(root, "LIVE RACE", "Your place and everyone else's are sent by the server, not guessed here.");
+            liveRaceState = StatusCard(root, "No race running right now", -310f);
             var metricsPanel = ImagePanel(
                 "LiveMetricsPanel",
                 root,
@@ -1327,7 +1334,7 @@ namespace RunningUp.V14.UI
             Label(
                 "StandingsTitle",
                 standingsPanel,
-                "SERVER STANDINGS",
+                "LIVE STANDINGS",
                 25,
                 FontStyle.Bold,
                 Cyan,
@@ -1338,7 +1345,7 @@ namespace RunningUp.V14.UI
             liveRaceStandings = Label(
                 "StandingsRows",
                 standingsPanel,
-                "WAITING FOR VERIFIED SERVER SNAPSHOTS",
+                "WAITING FOR THE SERVER",
                 22,
                 FontStyle.Normal,
                 Color.white,
@@ -1374,7 +1381,7 @@ namespace RunningUp.V14.UI
                 new Vector2(-84f, 142f));
             liveRaceProgressStrip = CenterLabel(
                 progressStrip,
-                "SERVER PROGRESS · WAITING FOR LIVE SNAPSHOT",
+                "PROGRESS · WAITING FOR THE SERVER",
                 20,
                 Cyan);
         }
@@ -1384,8 +1391,8 @@ namespace RunningUp.V14.UI
             var root = ScreenRoot(
                 Screen.RaceResult,
                 V14Design.SurfaceDeep.Alpha(0.86f));
-            Header(root, "RACE RESULT", "Rewards appear after verified server finalization.");
-            raceResultState = StatusCard(root, "No finalized race result", -310f);
+            Header(root, "RACE RESULT", "Rewards appear once the server finishes the race.");
+            raceResultState = StatusCard(root, "No finished race yet", -310f);
             raceResultValues = Label(
                 "ResultValues",
                 root,
@@ -1416,10 +1423,10 @@ namespace RunningUp.V14.UI
             Header(
                 root,
                 "ACTIVITY HISTORY",
-                "Only server-verified runs appear here. Imported duplicates never create another entry.");
+                "Only confirmed runs show here. Importing the same run twice adds nothing.");
             activityHistoryState = StatusCard(
                 root,
-                "Load your verified activity from the secure server.",
+                "Load your run history from the server.",
                 -310f);
             Button(
                 "HistoryBack",
@@ -1452,8 +1459,8 @@ namespace RunningUp.V14.UI
         private void BuildCharacter()
         {
             var root = ScreenRoot(Screen.Character, V14Design.Scrim.Alpha(0.48f));
-            Header(root, "MY RUNNER", "Owned and equipped items are server-authoritative.");
-            characterState = StatusCard(root, "Loading wardrobe from your account", -310f);
+            Header(root, "MY RUNNER", "What you own and wear is stored on the server.");
+            characterState = StatusCard(root, "Loading your wardrobe", -310f);
             var wardrobe = ImagePanel(
                 "Wardrobe",
                 root,
@@ -1465,7 +1472,7 @@ namespace RunningUp.V14.UI
             Label(
                 "Slots",
                 wardrobe,
-                "WARDROBE · SELECT AN ITEM, THEN PURCHASE, EQUIP, OR UNEQUIP",
+                "WARDROBE · PICK AN ITEM, THEN BUY, WEAR, OR TAKE OFF",
                 22,
                 FontStyle.Bold,
                 Color.white,
@@ -1496,7 +1503,7 @@ namespace RunningUp.V14.UI
             Button(
                 "PurchaseSelectedCosmetic",
                 wardrobe,
-                "PURCHASE SELECTED",
+                "BUY",
                 new Vector2(30f, -410f),
                 new Vector2(286f, 82f),
                 new Vector2(0f, 1f),
@@ -1505,7 +1512,7 @@ namespace RunningUp.V14.UI
             Button(
                 "EquipSelectedCosmetic",
                 wardrobe,
-                "EQUIP SELECTED",
+                "WEAR",
                 new Vector2(337f, -410f),
                 new Vector2(286f, 82f),
                 new Vector2(0f, 1f),
@@ -1603,7 +1610,7 @@ namespace RunningUp.V14.UI
                 Button(
                     "OpenMonthlyApex",
                     root,
-                    "MONTHLY APEX · 120 CHECKPOINTS · WORLD CROWN AT 1,000 KM",
+                    $"MONTHLY APEX · {CheckpointCount} CHECKPOINTS · WORLD CROWN AT 1,000 KM",
                     new Vector2(52f, -1180f),
                     new Vector2(976f, 80f),
                     new Vector2(0f, 1f),
@@ -1643,10 +1650,10 @@ namespace RunningUp.V14.UI
             Header(
                 root,
                 "MONTHLY APEX",
-                "120 server-verified checkpoints. 1,000 km is the only World Crown.");
+                $"{CheckpointCount} verified checkpoints. 1,000 km is the only World Crown.");
             monthlyApexState = StatusCard(
                 root,
-                "Load your server-authoritative monthly progress.",
+                "Load this month's progress from the server.",
                 -310f);
             monthlyApexSummary = Label(
                 "MonthlyApexSummary",
@@ -1662,7 +1669,7 @@ namespace RunningUp.V14.UI
             monthlyApexClaimButton = Button(
                 "ClaimMonthlyCheckpoint",
                 root,
-                "CHECK SERVER PROGRESS",
+                "CHECK PROGRESS",
                 new Vector2(72f, -790f),
                 new Vector2(936f, 112f),
                 new Vector2(0f, 1f),
@@ -1691,7 +1698,7 @@ namespace RunningUp.V14.UI
         private void BuildCrew()
         {
             var root = ScreenRoot(Screen.Crew, Ink);
-            Header(root, "CREW & RANKING", "Only verified public activity can enter social rankings.");
+            Header(root, "CREW & RANKING", "Only confirmed runs you share publicly count for rankings.");
             crewState = StatusCard(root, "Loading your crew…", -310f);
             var create = ImagePanel(
                 "CrewCreate",
@@ -1824,7 +1831,7 @@ namespace RunningUp.V14.UI
         private void BuildSettings()
         {
             var root = ScreenRoot(Screen.Settings, Ink);
-            Header(root, "SETTINGS", "Runtime controls apply now and sync to your account when signed in.");
+            Header(root, "SETTINGS", "Changes apply right away, and save to your account when you sign in.");
             var gps = bridge == null ? "Unavailable" : bridge.DirectGpsCapability;
             SettingsRow(root, "DIRECT GPS", gps, -330f, null);
             SettingsRow(
@@ -1918,7 +1925,7 @@ namespace RunningUp.V14.UI
             Label(
                 "SettingsTruth",
                 root,
-                "Guest access is protected on this device and can be signed out here. Provider connections remain disabled unless an official capability is available. Account upgrades require the dedicated V14 server project.",
+                "You are signed in as a guest on this device, and you can sign out here. Connecting a running app stays off until that app is officially supported. Turning this into a full account needs the V14 server.",
                 24,
                 FontStyle.Normal,
                 Color.white,
@@ -2717,7 +2724,7 @@ namespace RunningUp.V14.UI
                         ? $"SERVER COUNTDOWN {journey.RaceCountdownSeconds}"
                         : journey.RaceState == V14RaceState.READY
                             ? "WAITING FOR ALL 8 RUNNERS TO READY"
-                            : "SERVER COUNTDOWN --";
+                            : "STARTS IN --";
             }
             if (raceReadyButton != null)
             {
@@ -2753,7 +2760,7 @@ namespace RunningUp.V14.UI
             {
                 var standings = journey.RaceStandingLabels;
                 liveRaceProgressStrip.text = standings.Length == 0
-                    ? "SERVER PROGRESS · WAITING FOR LIVE SNAPSHOT"
+                    ? "PROGRESS · WAITING FOR THE SERVER"
                     : string.Join("  ·  ", standings);
             }
             if (raceFinishButton != null)
@@ -2780,7 +2787,7 @@ namespace RunningUp.V14.UI
             {
                 raceResultState.text = journey.LastRacePlace > 0
                     ? "SERVER VERIFIED · REWARD SAVED"
-                    : "No finalized race result";
+                    : "No finished race yet";
             }
             if (raceResultValues != null && journey.LastRacePlace > 0)
             {
@@ -3099,7 +3106,7 @@ namespace RunningUp.V14.UI
             {
                 if (journey == null || !journey.CrewLoaded)
                 {
-                    crewState.text = "Loading server-authoritative crew membership…";
+                    crewState.text = "Loading your crew from the server…";
                 }
                 else if (!journey.HasCrew)
                 {
@@ -3305,7 +3312,7 @@ namespace RunningUp.V14.UI
             {
                 monthlyApexSummary.text =
                     "MONTHLY DISTANCE --\nNEXT CHECKPOINT --\nWORLD CROWN --";
-                buttonText.text = "CHECK SERVER PROGRESS";
+                buttonText.text = "CHECK PROGRESS";
                 monthlyApexClaimButton.interactable = false;
                 return;
             }
@@ -3320,7 +3327,7 @@ namespace RunningUp.V14.UI
                 (crown
                     ? "WORLD CROWN EARNED · 1,000 km\n"
                     : $"NEXT CHECKPOINT {next} · {nextMeters / 1000f:0.###} km\n") +
-                $"CLAIMED {journey.MonthlyHighestClaimedCheckpoint} / 120";
+                $"CLAIMED {journey.MonthlyHighestClaimedCheckpoint} / {CheckpointCount}";
             if (crown || next > MonthlyCheckpointsMeters.Length)
             {
                 buttonText.text = "WORLD CROWN COMPLETE";
