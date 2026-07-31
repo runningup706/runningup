@@ -87,6 +87,18 @@ for (const [key, floor] of Object.entries(LAUNCH_CONTENT_FLOOR)) {
   }
 }
 
+// GATE 1b — the counted categories and the floor must be the same set.
+//
+// A floor without a counter already fails loudly above (`counts[key] ?? 0` is 0). The
+// silent direction is a counted category with no floor: content that ships ungated,
+// which is indistinguishable from content that does not exist as far as the build is
+// concerned. Compare the sets in both directions rather than trusting one.
+for (const key of Object.keys(counts)) {
+  if (!(key in LAUNCH_CONTENT_FLOOR)) {
+    fail('counts', `${key} is counted but has no launch floor — it ships ungated`);
+  }
+}
+
 // ===========================================================================
 // GATE 2 — nothing disabled, debug-only or "coming soon" is counted
 // ===========================================================================
@@ -220,6 +232,59 @@ skills.forEach((s) => { if (!characterIds.has(s.character_id)) fail('reference',
 episodes.forEach((e) => { if (!characterIds.has(e.character_id)) fail('reference', `episode ${e.id}: unknown character`); });
 cosmetics.forEach((c) => { if (!characterIds.has(c.character_id)) fail('reference', `cosmetic ${c.id}: unknown character`); });
 continentBosses.forEach((b) => { if (!continentIds.has(b.continent_id)) fail('reference', `boss ${b.id}: unknown continent`); });
+
+/**
+ * GATE 5b — coverage: every parent must actually own its children.
+ *
+ * GATE 5 checks child -> parent (a region's continent exists). That direction alone is
+ * blind to the failure that matters: twelve continent bosses could all belong to Lumena
+ * and eleven continents have none. The count gate passes, every reference resolves, and
+ * eleven twelfths of the world is empty.
+ *
+ * This is the same one-way blindness that let the race engine key its course table on
+ * five continent ids that do not exist while five real continents silently shared
+ * Lumena's course. Counting a set is not the same as checking which set it is.
+ */
+function requireCoverage(label, parentIds, children, parentKey, expectedPerParent) {
+  const byParent = new Map([...parentIds].map((id) => [id, 0]));
+  for (const child of children) {
+    const parent = child[parentKey];
+    if (!byParent.has(parent)) continue; // GATE 5 already reports unknown parents
+    byParent.set(parent, byParent.get(parent) + 1);
+  }
+  for (const [parent, actual] of byParent) {
+    if (actual !== expectedPerParent) {
+      fail('coverage', `${label}: ${parent} owns ${actual}, expected ${expectedPerParent}`);
+    }
+  }
+}
+
+const regionsPerContinent = regions.length / continents.length;
+const mainStagesPerContinent = mainStages.length / continents.length;
+const sideStagesPerContinent = sideStages.length / continents.length;
+const cosmeticsPerCharacter = cosmetics.length / characters.length;
+
+for (const [label, count] of [
+  ['regions per continent', regionsPerContinent],
+  ['main stages per continent', mainStagesPerContinent],
+  ['side stages per continent', sideStagesPerContinent],
+  ['cosmetics per character', cosmeticsPerCharacter],
+]) {
+  if (!Number.isInteger(count)) {
+    fail('coverage', `${label} is ${count}: the content does not divide evenly, so some parent is short`);
+  }
+}
+
+requireCoverage('regions per continent', continentIds, regions, 'continent_id', regionsPerContinent);
+requireCoverage('main stages per continent', continentIds, mainStages, 'continent_id', mainStagesPerContinent);
+requireCoverage('side stages per continent', continentIds, sideStages, 'continent_id', sideStagesPerContinent);
+requireCoverage('continent bosses', continentIds, continentBosses, 'continent_id', 1);
+requireCoverage('standard enemy families', continentIds, standardEnemies, 'continent_id', standardEnemies.length / continents.length);
+requireCoverage('elite enemy families', continentIds, eliteEnemies, 'continent_id', eliteEnemies.length / continents.length);
+requireCoverage('companions per continent', continentIds, companions, 'continent_id', companions.length / continents.length);
+requireCoverage('skills per character', characterIds, skills, 'character_id', 4);
+requireCoverage('episodes per character', characterIds, episodes, 'character_id', 3);
+requireCoverage('cosmetics per character', characterIds, cosmetics, 'character_id', cosmeticsPerCharacter);
 
 // ===========================================================================
 // GATE 6 — route reachability: every region node must be reachable at launch
