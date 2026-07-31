@@ -55,6 +55,7 @@ export const ALLOWLIST = new Map([
   ['docs/V14_FUNCTION_FIX_PROMPT_KO.md', 'defect analysis quoting the combat code it recommends removing'],
   ['docs/V14_MASTER_REMEDIATION_PROMPT_KO.md', 'remediation plan naming the combat content it removes'],
   ['docs/CODEX_V14_APK_BUILD_PROMPT_KO.md', 'build handoff listing the combat removal as out of its scope'],
+  ['docs/CODEX_V14_LICENSE_AND_RELEASE_KO.md', 'release handoff quoting the combat identifiers its APK scan searches for'],
   ['docs/REPOSITORY_LAYOUT.md', 'describes the directories the combat content used to occupy'],
   ['packages/domain/constants.mjs', 'declares the forbidden activity list used for negative tests'],
   ['packages/domain/reward.mjs', 'declares the forbidden reward input keys it rejects'],
