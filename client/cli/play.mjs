@@ -5,7 +5,7 @@
  * WHAT THIS IS: the real game loop, running. Runner Passport onboarding, the full goal
  * library, a captured run, server-side verification, the authoritative reward transaction,
  * Monthly Apex checkpoints, character selection from the real 12-character roster, a
- * deterministic auto-battle on a real stage from one of the 12 continents, and world
+ * a deterministic eight-runner race on a real course from one of the 12 continents, and world
  * restoration — all against the actual PostgreSQL backend with the actual seeded content.
  *
  * WHAT THIS IS NOT: the 3D Unity Android client. There is no Unity Editor and no Android
@@ -27,7 +27,7 @@ import { randomUUID } from 'node:crypto';
 
 import { buildPassport, recommend, selectGoal } from '../../tools/lib/runner-passport.mjs';
 import { verifyRun } from '../../tools/lib/anomaly-detection.mjs';
-import { buildStats, buildEnemy, resolveBattle, offerModifiers, CONTINENT_MECHANICS } from '../../tools/lib/battle.mjs';
+import { buildRunnerForm, buildPacer, resolveRace, offerStrategies, CONTINENT_COURSES, RACE_FIELD_SIZE } from '../../tools/lib/race.mjs';
 import { GOAL_DISTANCES, APEX_CHECKPOINT_METERS } from '../../tools/lib/constants.mjs';
 
 const DB = process.env.RUNNINGUP_DB || process.env.RUNNINGUP_TEST_DB || 'runningup_test';
@@ -191,9 +191,9 @@ async function main() {
     from api.world_continents order by display_order
   `, { json: true });
   continents.forEach((ct) => {
-    const mech = CONTINENT_MECHANICS[ct.mechanic_id];
+    const course = CONTINENT_COURSES[ct.id];
     say(`  ${String(ct.display_order).padStart(2)}. ${c.bold}${(locale[ct.name_key] ?? ct.id).padEnd(22)}${c.reset}` +
-        `${c.dim}${mech ? mech.label : ct.mechanic_id}${c.reset}`);
+        `${c.dim}${course ? `${course.surface} · ${course.label}` : ct.id}${c.reset}`);
   });
   say(`  ${c.dim}all ${continents.length} are entered directly — none is gated behind another${c.reset}`);
   say();
@@ -279,56 +279,68 @@ async function main() {
   }
   say();
 
-  // -- 8. Battle --------------------------------------------------------------
-  rule('BATTLE');
-  const stage = sql(`
-    select id, name_key, objective, objective_twist
-    from api.world_stages
-    where continent_id='${continent.id}' and kind='main'
+  // -- 8. Live race -----------------------------------------------------------
+  rule('LIVE RACE');
+  // Courses are still carried by the region rows until the dedicated course table lands;
+  // surface and distance come from the continent's course character and the region order,
+  // so this reads the same shape the course table will provide.
+  const region = sql(`
+    select id, name_key, display_order
+    from api.world_regions
+    where continent_id='${continent.id}'
     order by display_order limit 1`, { json: true })[0];
+  const RACE_DISTANCES = [1_000, 3_000, 5_000, 10_000];
+  const course = {
+    id: region.id,
+    name_key: region.name_key,
+    surface: CONTINENT_COURSES[continent.id]?.surface ?? 'road',
+    distance_meters: RACE_DISTANCES[(region.display_order - 1) % RACE_DISTANCES.length],
+  };
 
   const totalXp = Number(sql(`select coalesce(sum(final_amount),0) from api.xp_ledger where user_id='${userId}'`));
-  const stats = buildStats({ corePower: totalXp, role: character.role });
+  const form = buildRunnerForm({ corePower: totalXp, role: character.role });
 
-  say(`  stage: ${c.bold}${locale[stage.name_key] ?? stage.id}${c.reset}`);
-  say(`  objective: ${stage.objective} — ${c.dim}${stage.objective_twist}${c.reset}`);
-  say(`  mechanic: ${c.dim}${CONTINENT_MECHANICS[continent.mechanic_id]?.label ?? continent.mechanic_id}${c.reset}`);
-  say(`  ${c.dim}Fitness Core ${totalXp.toFixed(0)} (verified running only) → atk ${stats.attack.toFixed(0)} def ${stats.defence.toFixed(0)} hp ${stats.maxHp}${c.reset}`);
+  say(`  course: ${c.bold}${locale[course.name_key] ?? course.id}${c.reset}`);
+  say(`  ${course.distance_meters} m on ${course.surface}`);
+  say(`  character: ${c.dim}${CONTINENT_COURSES[continent.id]?.label ?? continent.id}${c.reset}`);
+  say(`  ${c.dim}Fitness Core ${totalXp.toFixed(0)} (verified running only) → cruise ${form.cruise.toFixed(0)} stamina ${form.stamina.toFixed(0)} kick ${form.kick.toFixed(0)}${c.reset}`);
   say();
 
-  const seed = `${sessionId}:${stage.id}`;
-  const modifiers = offerModifiers(seed);
-  modifiers.forEach((m, i) => say(`   ${i + 1}. ${m.label}`));
-  const modIndex = Number(await ask('  choose a modifier 1-3 [1]:', '1')) || 1;
-  const modifier = modifiers[Math.min(3, Math.max(1, modIndex)) - 1];
+  const seed = `${sessionId}:${course.id}`;
+  const strategies = offerStrategies(seed);
+  strategies.forEach((s, i) => say(`   ${i + 1}. ${s.label}`));
+  const stratIndex = Number(await ask('  choose a strategy 1-3 [1]:', '1')) || 1;
+  const strategy = strategies[Math.min(3, Math.max(1, stratIndex)) - 1];
   say();
 
-  const enemy = buildEnemy({ tier: 3, mechanicId: continent.mechanic_id });
-  const battle = resolveBattle({ stats, enemy, seed, modifierId: modifier.id });
+  // Skill-based matchmaking: the field is drawn to the runner's verified fitness, so a
+  // first-week runner races other first-week runners rather than being handed a losing
+  // field. Losing must be a result, not a foregone conclusion.
+  const tier = Math.max(0, Math.min(6, Math.round(Math.sqrt(Math.max(0, totalXp)) / 14)));
+  const pacers = Array.from({ length: RACE_FIELD_SIZE - 1 }, (_, i) =>
+    buildPacer({ tier, index: i, courseId: continent.id }));
+  const raceResult = resolveRace({
+    form,
+    pacers,
+    seed,
+    distanceMeters: course.distance_meters,
+    courseId: continent.id,
+    strategyId: strategy.id,
+  });
 
-  for (const entry of battle.log.slice(0, 8)) {
-    if (entry.actor === 'player') {
-      say(`   ${c.dim}t${String(entry.turn).padStart(2)}${c.reset} you ${entry.kind.padEnd(8)} ${c.yellow}${String(entry.damage).padStart(5)}${c.reset} dmg  ${c.dim}enemy ${entry.enemy_hp}${c.reset}`);
-    } else if (entry.kind === 'outsped') {
-      say(`   ${c.dim}t${String(entry.turn).padStart(2)} enemy out-sped${c.reset}`);
-    } else {
-      say(`   ${c.dim}t${String(entry.turn).padStart(2)}${c.reset} foe ${entry.kind.padEnd(8)} ${c.red}${String(entry.damage).padStart(5)}${c.reset} dmg  ${c.dim}you ${entry.player_hp}${c.reset}`);
-    }
-  }
-  if (battle.log.length > 8) say(`   ${c.dim}... ${battle.log.length - 8} more turns${c.reset}`);
+  for (const line of raceResult.log) say(`   ${c.dim}${line}${c.reset}`);
   say();
-  say(`  ${battle.victory ? `${c.green}${c.bold}VICTORY${c.reset}` : `${c.red}defeat${c.reset} ${c.dim}— nothing confiscated, retry freely${c.reset}`}` +
-      ` ${c.dim}in ${battle.turns} turns · seed ${battle.seed.slice(0, 8)} · reproducible${c.reset}`);
+  const place = raceResult.placement;
+  const ordinal = place === 1 ? '1st' : place === 2 ? '2nd' : place === 3 ? '3rd' : `${place}th`;
+  say(`  ${place === 1 ? `${c.green}${c.bold}WON${c.reset}` : `${c.yellow}${ordinal}${c.reset} ${c.dim}of ${raceResult.fieldSize} — nothing lost, race again freely${c.reset}`}` +
+      ` ${c.dim}· seed ${raceResult.seed.slice(0, 8)} · reproducible${c.reset}`);
   say();
 
   // -- 9. World restoration ---------------------------------------------------
-  if (battle.victory) {
+  if (place <= 3) {
     rule('WORLD RESTORATION');
-    const states = sql(`
-      select id from api.world_bosses
-      where continent_id='${continent.id}' and kind='continent_boss' limit 1`, { json: true });
     say(`  ${locale[continent.name_key]} — 정지의 안개가 걷힙니다.`);
-    say(`  ${c.dim}region restored · continent boss ${states[0]?.id ?? 'boss'} now reachable${c.reset}`);
+    say(`  ${c.dim}region restored · a podium finish opens the next course${c.reset}`);
     say();
   }
 
@@ -337,14 +349,14 @@ async function main() {
   say(`  verified run      ${km(actualMeters)} km, grade ${verification.grade}`);
   say(`  fitness XP        ${reward.final_amount}`);
   say(`  monthly distance  ${km(laddered)} km  (rank ${reward.major_rank})`);
-  say(`  checkpoints       ${crossed.length} crossed this session, ${reached}/52 this month`);
-  say(`  battle            ${battle.victory ? 'victory' : 'defeat'} in ${battle.turns} turns`);
+  say(`  checkpoints       ${crossed.length} crossed this session, ${reached}/120 this month`);
+  say(`  race              ${ordinal} of ${raceResult.fieldSize} on ${course.surface} (tier ${tier} field)`);
   say();
   say(`  ${c.dim}every number above came from the database, not from this client${c.reset}`);
   say();
 
   rl?.close();
-  return { userId, reward, battle, verification, laddered, crossed, reached };
+  return { userId, reward, race: raceResult, verification, laddered, crossed, reached };
 }
 
 main().then((r) => {
@@ -354,7 +366,7 @@ main().then((r) => {
       monthly_distance_after: r.laddered,
       major_rank: r.reward.major_rank,
       crossed: r.crossed.length,
-      victory: r.battle.victory,
+      placement: r.race.placement,
       grade: r.verification.grade,
     })}\n`);
   }
