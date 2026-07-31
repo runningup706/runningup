@@ -27,30 +27,17 @@ namespace RunningUp.V14.UI
         private static readonly Color Cyan = new(0.10f, 0.82f, 1f, 1f);
         private static readonly Color Green = new(0.10f, 0.88f, 0.54f, 1f);
         private static readonly Color Gold = new(1f, 0.69f, 0.14f, 1f);
-        // 121 checkpoints in integer metres, generated from
-        // packages/domain/constants.mjs by tools/release/emit-client-ladder.mjs.
-        // Do not hand-edit: run the generator and paste the whole block.
-        //
-        // The field is MonthlyCheckpointsMeters, not …Km, because 42195 m is not a whole
-        // number of kilometres and an int[] of km cannot hold the marathon checkpoint.
         private static readonly int[] MonthlyCheckpointsMeters =
         {
-                1_000,     2_000,     3_000,     4_000,     5_000,     6_000,     8_000,    10_000,
-               13_000,    15_000,    18_000,    21_000,    24_000,    27_000,    30_000,    34_000,
-               37_000,    41_000,    42_195,    45_000,    49_000,    54_000,    58_000,    63_000,
-               67_000,    72_000,    77_000,    82_000,    87_000,    93_000,    98_000,   104_000,
-              110_000,   115_000,   121_000,   127_000,   134_000,   140_000,   146_000,   153_000,
-              160_000,   166_000,   173_000,   180_000,   187_000,   194_000,   202_000,   209_000,
-              217_000,   224_000,   232_000,   240_000,   248_000,   256_000,   264_000,   272_000,
-              281_000,   289_000,   298_000,   306_000,   315_000,   324_000,   333_000,   342_000,
-              351_000,   360_000,   369_000,   379_000,   388_000,   398_000,   407_000,   417_000,
-              427_000,   437_000,   447_000,   457_000,   467_000,   478_000,   488_000,   499_000,
-              509_000,   520_000,   531_000,   541_000,   552_000,   563_000,   574_000,   586_000,
-              597_000,   608_000,   620_000,   631_000,   643_000,   654_000,   666_000,   678_000,
-              690_000,   702_000,   714_000,   726_000,   738_000,   751_000,   763_000,   776_000,
-              788_000,   801_000,   814_000,   826_000,   839_000,   852_000,   865_000,   878_000,
-              892_000,   905_000,   918_000,   932_000,   945_000,   959_000,   972_000,   986_000,
-            1_000_000,
+            1000, 2000, 3000, 4000, 5000, 6000, 8000, 10000, 13000, 15000, 18000, 21000, 24000, 27000, 30000,
+            34000, 37000, 41000, 42195, 45000, 49000, 54000, 58000, 63000, 67000, 72000, 77000, 82000, 87000, 93000,
+            98000, 104000, 110000, 115000, 121000, 127000, 134000, 140000, 146000, 153000, 160000, 166000, 173000, 180000,
+            187000, 194000, 202000, 209000, 217000, 224000, 232000, 240000, 248000, 256000, 264000, 272000, 281000, 289000,
+            298000, 306000, 315000, 324000, 333000, 342000, 351000, 360000, 369000, 379000, 388000, 398000, 407000, 417000,
+            427000, 437000, 447000, 457000, 467000, 478000, 488000, 499000, 509000, 520000, 531000, 541000, 552000, 563000,
+            574000, 586000, 597000, 608000, 620000, 631000, 643000, 654000, 666000, 678000, 690000, 702000, 714000, 726000,
+            738000, 751000, 763000, 776000, 788000, 801000, 814000, 826000, 839000, 852000, 865000, 878000, 892000, 905000,
+            918000, 932000, 945000, 959000, 972000, 986000, 1000000,
         };
         private static readonly (string id, string label)[] TrainingPlans =
         {
@@ -102,8 +89,10 @@ namespace RunningUp.V14.UI
             Lobby,
             LiveRace,
             RaceResult,
+            ActivityHistory,
             Character,
             World,
+            MonthlyApex,
             Crew,
             Settings,
         }
@@ -164,7 +153,15 @@ namespace RunningUp.V14.UI
         private Button raceReconnectButton;
         private Text raceResultState;
         private Text raceResultValues;
+        private Text activityHistoryState;
+        private Transform activityHistoryRowsRoot;
+        private Text monthlyApexState;
+        private Text monthlyApexSummary;
+        private Button monthlyApexClaimButton;
         private Text characterState;
+        private Text characterSelection;
+        private Text characterPresetSummary;
+        private Transform characterItemsRoot;
         private Text worldState;
         private Text crewState;
         private InputField crewNameInput;
@@ -186,18 +183,8 @@ namespace RunningUp.V14.UI
         private int selectedWorldContinent = 1;
         private int selectedWorldRegion = 1;
         private int worldSelectionStage;
-
-        /// <summary>
-        /// Where the system back button goes. Without this, Show() only overwrote
-        /// currentScreen and there was nothing to go back to.
-        /// </summary>
         private readonly List<Screen> backStack = new();
         private const int MaxBackDepth = 12;
-
-        /// <summary>Set while a runtime event moves the screen, so it is not recorded as a user step.</summary>
-        private bool suppressHistory;
-
-        /// <summary>Home is the root: the first back there asks, the second leaves the app.</summary>
         private float homeExitArmedUntil;
         private const float HomeExitWindowSeconds = 2f;
 
@@ -265,15 +252,6 @@ namespace RunningUp.V14.UI
             selectedTraining = NormalizeTrainingId(
                 PlayerPrefs.GetString(TrainingKey, "EASY_RUN"));
             ApplyRuntimePreferences();
-            // A cold launch always lands on Home.
-            //
-            // This used to restore the last screen from PlayerPrefs, which meant killing the
-            // app on Active Training or Live Race reopened it there — with the chrome hidden,
-            // no back control and no live session behind it. The screen the app died on is
-            // not a place to start.
-            //
-            // A run that was genuinely in flight is recovered by the run runtime and surfaced
-            // from Home, not by reopening the screen that was on top when the process died.
             PlayerPrefs.DeleteKey(ScreenKey);
             currentScreen = Screen.Home;
             backStack.Clear();
@@ -332,51 +310,32 @@ namespace RunningUp.V14.UI
             }
         }
 
-        /// <summary>
-        /// The single entry point for the system back button.
-        ///
-        /// Called from Update() for the legacy KEYCODE_BACK path and the Editor, and by the
-        /// Android plugin via UnitySendMessage for the predictive-back path. Apps targeting
-        /// API 36 no longer receive KEYCODE_BACK at all, so the native callback is the real
-        /// route on modern devices and Escape is the fallback.
-        ///
-        /// Returns true when the app handled the press. False means "let the system leave".
-        /// </summary>
         public bool HandleSystemBack()
         {
-            // A run in progress is not abandoned by a stray back press. Leave the screen,
-            // keep the session; the foreground service and the runtime are untouched.
             if (currentScreen is Screen.ActiveTraining or Screen.LiveRace)
             {
-                GoTo(Screen.Home, recordHistory: false);
+                Show(Screen.Home, false);
                 Publish("Run continues in the background");
                 return true;
             }
-
-            // World browses continent -> region -> course in place, so back should undo one
-            // level of that before it leaves the screen entirely.
             if (currentScreen == Screen.World && worldSelectionStage > 0)
             {
                 worldSelectionStage--;
                 RebuildWorld();
                 return true;
             }
-
             if (backStack.Count > 0)
             {
                 var previous = backStack[^1];
                 backStack.RemoveAt(backStack.Count - 1);
-                GoTo(previous, recordHistory: false);
+                Show(previous, false);
                 return true;
             }
-
             if (currentScreen != Screen.Home)
             {
-                GoTo(Screen.Home, recordHistory: false);
+                Show(Screen.Home, false);
                 return true;
             }
-
-            // At the root. Require a second press so a mis-swipe never closes the app.
             if (Time.unscaledTime <= homeExitArmedUntil)
             {
                 return false;
@@ -386,8 +345,15 @@ namespace RunningUp.V14.UI
             return true;
         }
 
-        /// <summary>Called by the Android plugin. The argument is unused and exists for UnitySendMessage.</summary>
         public void OnAndroidBackPressed(string _)
+        {
+            if (!HandleSystemBack())
+            {
+                Application.Quit();
+            }
+        }
+
+        private void NavigateBack()
         {
             if (!HandleSystemBack())
             {
@@ -397,22 +363,15 @@ namespace RunningUp.V14.UI
 
         private void Update()
         {
-            // Unity maps KEYCODE_BACK to Escape. On API 36 that key is no longer dispatched,
-            // so this path covers older devices, the Editor, and any build where the manifest
-            // opts out of predictive back.
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) && !HandleSystemBack())
             {
-                if (!HandleSystemBack())
-                {
-                    Application.Quit();
-                }
+                Application.Quit();
             }
         }
 
-        /// <summary>Navigate as the user, recording where they came from.</summary>
-        private void GoTo(Screen screen, bool recordHistory = true)
+        private void GoTo(Screen screen)
         {
-            if (recordHistory && screen != currentScreen)
+            if (screen != currentScreen)
             {
                 backStack.Add(currentScreen);
                 if (backStack.Count > MaxBackDepth)
@@ -467,8 +426,10 @@ namespace RunningUp.V14.UI
             BuildLobby();
             BuildLiveRace();
             BuildRaceResult();
+            BuildActivityHistory();
             BuildCharacter();
             BuildWorld();
+            BuildMonthlyApex();
             BuildCrew();
             BuildSettings();
             BuildTopHud();
@@ -515,6 +476,15 @@ namespace RunningUp.V14.UI
                 new Vector2(1f, 1f),
                 PanelSoft,
                 () => GoTo(Screen.Settings));
+            Button(
+                "HistoryShortcut",
+                bar,
+                "HISTORY",
+                new Vector2(-382f, -18f),
+                new Vector2(108f, 54f),
+                new Vector2(1f, 1f),
+                PanelSoft,
+                () => GoTo(Screen.ActivityHistory));
         }
 
         private void BuildBottomNavigation()
@@ -705,7 +675,7 @@ namespace RunningUp.V14.UI
             {
                 var destination = destinations[index];
                 approvedHomeNavigation[index]?.onClick.AddListener(
-                    () => Show(destination));
+                    () => GoTo(destination));
             }
             approvedSettingsButton?.onClick.AddListener(
                 () => GoTo(Screen.Settings));
@@ -726,7 +696,7 @@ namespace RunningUp.V14.UI
                 new Vector2(108f, 66f),
                 new Vector2(0f, 1f),
                 PanelSoft,
-                () => GoTo(Screen.Home));
+                NavigateBack);
             Label(
                 "ScreenTitle",
                 root,
@@ -1014,7 +984,7 @@ namespace RunningUp.V14.UI
                 new Vector2(976f, 112f),
                 new Vector2(0f, 1f),
                 PanelSoft,
-                () => GoTo(Screen.Matchmaking));
+                () => Show(Screen.Matchmaking));
             Label(
                 "TrainingTruth",
                 root,
@@ -1256,7 +1226,7 @@ namespace RunningUp.V14.UI
                 new Vector2(804f, 112f),
                 new Vector2(0f, 1f),
                 Blue,
-                () => GoTo(Screen.Home));
+                NavigateBack);
         }
 
         private void BuildLobby()
@@ -1418,14 +1388,55 @@ namespace RunningUp.V14.UI
                 new Vector2(880f, 112f),
                 new Vector2(0f, 1f),
                 Blue,
-                () => GoTo(Screen.Home));
+                NavigateBack);
+        }
+
+        private void BuildActivityHistory()
+        {
+            var root = ScreenRoot(
+                Screen.ActivityHistory,
+                new Color(0.005f, 0.03f, 0.065f, 0.90f));
+            Header(
+                root,
+                "ACTIVITY HISTORY",
+                "Only server-verified runs appear here. Imported duplicates never create another entry.");
+            activityHistoryState = StatusCard(
+                root,
+                "Load your verified activity from the secure server.",
+                -310f);
+            Button(
+                "HistoryBack",
+                root,
+                "BACK",
+                new Vector2(52f, -390f),
+                new Vector2(180f, 82f),
+                new Vector2(0f, 1f),
+                PanelSoft,
+                NavigateBack);
+            Button(
+                "RefreshActivityHistory",
+                root,
+                "REFRESH",
+                new Vector2(-52f, -390f),
+                new Vector2(230f, 82f),
+                new Vector2(1f, 1f),
+                Blue,
+                () => journey?.RefreshActivityHistory());
+            activityHistoryRowsRoot = ImagePanel(
+                "ActivityHistoryRows",
+                root,
+                Ink,
+                new Vector2(0f, 0f),
+                new Vector2(1f, 0f),
+                new Vector2(42f, 222f),
+                new Vector2(-84f, 742f));
         }
 
         private void BuildCharacter()
         {
             var root = ScreenRoot(Screen.Character, new Color(0f, 0.03f, 0.07f, 0.48f));
             Header(root, "MY RUNNER", "Owned and equipped items are server-authoritative.");
-            characterState = StatusCard(root, "Select an item to purchase or equip", -310f);
+            characterState = StatusCard(root, "Loading wardrobe from your account", -310f);
             var wardrobe = ImagePanel(
                 "Wardrobe",
                 root,
@@ -1437,43 +1448,91 @@ namespace RunningUp.V14.UI
             Label(
                 "Slots",
                 wardrobe,
-                "HAIR   FACE   TOP   BOTTOM   SHOES\nHAT   GLASSES   WATCH   ACCESSORY   EFFECT",
-                27,
+                "WARDROBE · SELECT AN ITEM, THEN PURCHASE, EQUIP, OR UNEQUIP",
+                22,
                 FontStyle.Bold,
                 Color.white,
                 new Vector2(30f, -28f),
-                new Vector2(920f, 120f),
+                new Vector2(920f, 56f),
                 new Vector2(0f, 1f),
                 TextAnchor.MiddleCenter);
-            Button(
-                "PurchaseTop",
+            characterSelection = Label(
+                "CharacterSelection",
                 wardrobe,
-                "PURCHASE BLUE RUN TOP",
-                new Vector2(30f, -190f),
-                new Vector2(920f, 112f),
+                "SELECTED · --",
+                21,
+                FontStyle.Bold,
+                Color.white,
+                new Vector2(30f, -92f),
+                new Vector2(920f, 62f),
+                new Vector2(0f, 1f),
+                TextAnchor.MiddleCenter);
+            var items = ImagePanel(
+                "CosmeticItems",
+                wardrobe,
+                new Color(0.01f, 0.06f, 0.12f, 0.92f),
+                new Vector2(0f, 0f),
+                new Vector2(1f, 1f),
+                new Vector2(30f, 382f),
+                new Vector2(-30f, -188f));
+            characterItemsRoot = items.transform;
+            Button(
+                "PurchaseSelectedCosmetic",
+                wardrobe,
+                "PURCHASE SELECTED",
+                new Vector2(30f, -410f),
+                new Vector2(286f, 82f),
                 new Vector2(0f, 1f),
                 PanelSoft,
-                () => journey?.PurchaseStarterTop());
+                () => journey?.PurchaseSelectedCosmetic());
             Button(
-                "EquipTop",
+                "EquipSelectedCosmetic",
                 wardrobe,
-                "EQUIP OWNED RUN TOP",
-                new Vector2(30f, -332f),
-                new Vector2(920f, 112f),
+                "EQUIP SELECTED",
+                new Vector2(337f, -410f),
+                new Vector2(286f, 82f),
                 new Vector2(0f, 1f),
                 Blue,
-                () => journey?.EquipStarterTop());
-            Label(
-                "CharacterTruth",
+                () => journey?.EquipSelectedCosmetic());
+            Button(
+                "UnequipSelectedCosmetic",
                 wardrobe,
-                "The 3D outfit changes only after the server confirms ownership and persistence.",
-                22,
+                "UNEQUIP",
+                new Vector2(644f, -410f),
+                new Vector2(286f, 82f),
+                new Vector2(0f, 1f),
+                new Color(0.22f, 0.24f, 0.31f, 0.96f),
+                () => journey?.UnequipSelectedCosmetic());
+            characterPresetSummary = Label(
+                "WardrobePresetSummary",
+                wardrobe,
+                "PRESET 1 · --",
+                19,
                 FontStyle.Normal,
                 Color.white,
-                new Vector2(40f, -472f),
-                new Vector2(900f, 80f),
+                new Vector2(30f, -510f),
+                new Vector2(500f, 64f),
                 new Vector2(0f, 1f),
-                TextAnchor.MiddleCenter);
+                TextAnchor.MiddleLeft);
+            Button(
+                "SaveWardrobePresetOne",
+                wardrobe,
+                "SAVE PRESET 1",
+                new Vector2(548f, -500f),
+                new Vector2(382f, 72f),
+                new Vector2(0f, 1f),
+                Gold,
+                () => journey?.SaveWardrobePreset(1, "Live Journey"));
+            Button(
+                "RefreshCosmeticInventory",
+                wardrobe,
+                "REFRESH WARDROBE",
+                new Vector2(260f, -594f),
+                new Vector2(440f, 64f),
+                new Vector2(0f, 1f),
+                new Color(0.04f, 0.28f, 0.40f, 0.96f),
+                () => journey?.RefreshCosmeticInventory());
+            RefreshCharacterUi();
         }
 
         private void BuildWorld()
@@ -1524,17 +1583,15 @@ namespace RunningUp.V14.UI
             }
             if (worldSelectionStage == 0)
             {
-                Label(
-                    "MonthlyApex",
+                Button(
+                    "OpenMonthlyApex",
                     root,
                     "MONTHLY APEX · 120 CHECKPOINTS · WORLD CROWN AT 1,000 KM",
-                    25,
-                    FontStyle.Bold,
-                    Gold,
                     new Vector2(52f, -1180f),
                     new Vector2(976f, 80f),
                     new Vector2(0f, 1f),
-                    TextAnchor.MiddleCenter);
+                    Gold,
+                    () => Show(Screen.MonthlyApex));
             }
         }
 
@@ -1559,6 +1616,59 @@ namespace RunningUp.V14.UI
             screens.Remove(Screen.World);
             BuildWorld();
             Show(Screen.World, false);
+        }
+
+        private void BuildMonthlyApex()
+        {
+            var root = ScreenRoot(
+                Screen.MonthlyApex,
+                new Color(0.005f, 0.03f, 0.065f, 0.90f));
+            Header(
+                root,
+                "MONTHLY APEX",
+                "120 server-verified checkpoints. 1,000 km is the only World Crown.");
+            monthlyApexState = StatusCard(
+                root,
+                "Load your server-authoritative monthly progress.",
+                -310f);
+            monthlyApexSummary = Label(
+                "MonthlyApexSummary",
+                root,
+                "MONTHLY DISTANCE --\nNEXT CHECKPOINT --\nWORLD CROWN --",
+                30,
+                FontStyle.Bold,
+                Color.white,
+                new Vector2(72f, -480f),
+                new Vector2(930f, 260f),
+                new Vector2(0f, 1f),
+                TextAnchor.MiddleCenter);
+            monthlyApexClaimButton = Button(
+                "ClaimMonthlyCheckpoint",
+                root,
+                "CHECK SERVER PROGRESS",
+                new Vector2(72f, -790f),
+                new Vector2(936f, 112f),
+                new Vector2(0f, 1f),
+                Blue,
+                ClaimNextMonthlyCheckpoint);
+            Button(
+                "RefreshMonthlyApex",
+                root,
+                "REFRESH",
+                new Vector2(72f, -930f),
+                new Vector2(450f, 92f),
+                new Vector2(0f, 1f),
+                PanelSoft,
+                () => journey?.RefreshMonthlyApex());
+            Button(
+                "MonthlyApexBack",
+                root,
+                "BACK TO WORLD",
+                new Vector2(-72f, -930f),
+                new Vector2(450f, 92f),
+                new Vector2(1f, 1f),
+                PanelSoft,
+                NavigateBack);
         }
 
         private void BuildCrew()
@@ -1697,7 +1807,7 @@ namespace RunningUp.V14.UI
         private void BuildSettings()
         {
             var root = ScreenRoot(Screen.Settings, Ink);
-            Header(root, "SETTINGS", "Runtime controls apply immediately and persist on this device.");
+            Header(root, "SETTINGS", "Runtime controls apply now and sync to your account when signed in.");
             var gps = bridge == null ? "Unavailable" : bridge.DirectGpsCapability;
             SettingsRow(root, "DIRECT GPS", gps, -330f, null);
             SettingsRow(
@@ -1743,12 +1853,23 @@ namespace RunningUp.V14.UI
                 -1240f,
                 bridge == null ? null : RequestHealthConnectPermission);
             Button(
+                "SyncSettings",
+                root,
+                journey != null && journey.AccountSummaryLoaded
+                    ? "SYNC SETTINGS"
+                    : "SIGN IN TO SYNC SETTINGS",
+                new Vector2(52f, -1372f),
+                new Vector2(976f, 96f),
+                new Vector2(0f, 1f),
+                PanelSoft,
+                SyncRuntimePreferences);
+            Button(
                 "AccountAction",
                 root,
                 journey != null && journey.AccountSummaryLoaded
                     ? "SIGN OUT"
                     : "CONTINUE AS GUEST",
-                new Vector2(52f, -1372f),
+                new Vector2(52f, -1484f),
                 new Vector2(976f, 96f),
                 new Vector2(0f, 1f),
                 PanelSoft,
@@ -1772,11 +1893,11 @@ namespace RunningUp.V14.UI
                 "CrewShortcut",
                 root,
                 "CREW & RANKINGS",
-                new Vector2(52f, -1484f),
+                new Vector2(52f, -1596f),
                 new Vector2(976f, 96f),
                 new Vector2(0f, 1f),
                 PanelSoft,
-                () => GoTo(Screen.Crew));
+                () => Show(Screen.Crew));
             Label(
                 "SettingsTruth",
                 root,
@@ -1784,7 +1905,7 @@ namespace RunningUp.V14.UI
                 24,
                 FontStyle.Normal,
                 Color.white,
-                new Vector2(80f, -1610f),
+                new Vector2(80f, -1722f),
                 new Vector2(920f, 180f),
                 new Vector2(0f, 1f),
                 TextAnchor.MiddleCenter);
@@ -2060,7 +2181,13 @@ namespace RunningUp.V14.UI
                 }
                 var plan = TrainingPlans[planIndex];
                 trainingButtons[plan.id] = button;
-                SetButtonText(button, plan.label);
+                var serverPlanAvailable = journey == null ||
+                    !journey.TrainingTemplatesLoaded ||
+                    journey.IsTrainingTemplateAvailable(plan.id);
+                button.interactable = serverPlanAvailable;
+                SetButtonText(
+                    button,
+                    $"{plan.label}\n{journey?.TrainingTemplateDetail(plan.id) ?? "SERVER PLAN LOADING"}");
             }
             if (trainingPageLabel != null)
             {
@@ -2114,9 +2241,15 @@ namespace RunningUp.V14.UI
         private void StartSelectedTraining()
         {
             selectedTraining = NormalizeTrainingId(selectedTraining);
+            if (journey != null && journey.TrainingTemplatesLoaded &&
+                !journey.IsTrainingTemplateAvailable(selectedTraining))
+            {
+                Publish("Selected plan is unavailable on the server");
+                return;
+            }
             liveSamples.Clear();
             ResetMetrics();
-            Show(Screen.ActiveTraining);
+            GoTo(Screen.ActiveTraining);
             journey?.StartTraining(selectedTraining);
         }
 
@@ -2194,6 +2327,7 @@ namespace RunningUp.V14.UI
             PlayerPrefs.SetInt(AudioKey, enabled ? 1 : 0);
             PlayerPrefs.Save();
             AudioListener.volume = enabled ? 1f : 0f;
+            SyncRuntimePreferences();
             RebuildSettings();
         }
 
@@ -2202,6 +2336,7 @@ namespace RunningUp.V14.UI
             var metric = PlayerPrefs.GetInt(UnitsKey, 1) != 1;
             PlayerPrefs.SetInt(UnitsKey, metric ? 1 : 0);
             PlayerPrefs.Save();
+            SyncRuntimePreferences();
             RebuildSettings();
             RefreshMetrics();
         }
@@ -2214,6 +2349,7 @@ namespace RunningUp.V14.UI
             QualitySettings.SetQualityLevel(high
                 ? Mathf.Max(0, QualitySettings.names.Length - 1)
                 : 0, true);
+            SyncRuntimePreferences();
             RebuildSettings();
         }
 
@@ -2223,13 +2359,30 @@ namespace RunningUp.V14.UI
             PlayerPrefs.SetInt(BatteryKey, battery ? 1 : 0);
             PlayerPrefs.Save();
             Application.targetFrameRate = battery ? 30 : 60;
+            SyncRuntimePreferences();
             RebuildSettings();
         }
 
         private void ToggleAutoPause()
         {
             Publish(bridge?.ToggleAutoPause() ?? "bridge_unavailable");
+            SyncRuntimePreferences();
             RebuildSettings();
+        }
+
+        private void SyncRuntimePreferences()
+        {
+            if (journey == null || !journey.AccountSummaryLoaded)
+            {
+                Publish("runtime_preferences_local_only");
+                return;
+            }
+            journey.SaveRuntimePreferences(
+                PlayerPrefs.GetInt(UnitsKey, 1) == 1 ? "METRIC" : "IMPERIAL",
+                PlayerPrefs.GetInt(AudioKey, 1) == 1,
+                PlayerPrefs.GetInt(GraphicsKey, 1) == 1 ? "HIGH" : "BATTERY",
+                (short)(PlayerPrefs.GetInt(BatteryKey, 0) == 1 ? 30 : 60),
+                bridge?.AutoPauseStatus != "disabled");
         }
 
         private void RequestNotificationPermission()
@@ -2254,6 +2407,41 @@ namespace RunningUp.V14.UI
                 true);
         }
 
+        private void ApplyServerRuntimePreferences()
+        {
+            var preferences = journey?.RuntimePreferences;
+            if (preferences == null || !journey.RuntimePreferencesLoaded)
+            {
+                return;
+            }
+
+            PlayerPrefs.SetInt(
+                UnitsKey,
+                string.Equals(
+                    preferences.distance_unit,
+                    "IMPERIAL",
+                    StringComparison.OrdinalIgnoreCase) ? 0 : 1);
+            PlayerPrefs.SetInt(AudioKey, preferences.audio_enabled ? 1 : 0);
+            PlayerPrefs.SetInt(
+                GraphicsKey,
+                string.Equals(
+                    preferences.graphics_profile,
+                    "BATTERY",
+                    StringComparison.OrdinalIgnoreCase) ? 0 : 1);
+            PlayerPrefs.SetInt(
+                BatteryKey,
+                preferences.target_frame_rate == 30 ? 1 : 0);
+            PlayerPrefs.Save();
+            ApplyRuntimePreferences();
+
+            var deviceAutoPause = bridge?.AutoPauseStatus;
+            if ((deviceAutoPause == "enabled" || deviceAutoPause == "disabled") &&
+                preferences.auto_pause_enabled != (deviceAutoPause == "enabled"))
+            {
+                bridge?.ToggleAutoPause();
+            }
+        }
+
         private void RebuildSettings()
         {
             if (!screens.TryGetValue(Screen.Settings, out var old))
@@ -2270,6 +2458,15 @@ namespace RunningUp.V14.UI
         private void OnJourneyStatus(string status)
         {
             Publish(Humanize(status));
+            if (status == "runtime_preferences_loaded" ||
+                status == "runtime_preferences_saved")
+            {
+                ApplyServerRuntimePreferences();
+                if (currentScreen == Screen.Settings)
+                {
+                    RebuildSettings();
+                }
+            }
             if (syncState != null && currentScreen == Screen.Sync)
             {
                 RefreshSyncView();
@@ -2282,6 +2479,38 @@ namespace RunningUp.V14.UI
             if (characterState != null && currentScreen == Screen.Character)
             {
                 characterState.text = Humanize(status);
+                if (status == "cosmetics_loaded" ||
+                    status == "inventory_added" ||
+                    status.StartsWith("cosmetic_selected:", StringComparison.Ordinal) ||
+                    status.StartsWith("appearance_", StringComparison.Ordinal) ||
+                    status == "wardrobe_preset_saved")
+                {
+                    RefreshCharacterUi();
+                }
+                if (status == "cosmetics_loaded")
+                {
+                    ApplyServerEquippedCosmetics();
+                }
+            }
+            if (activityHistoryState != null &&
+                currentScreen == Screen.ActivityHistory)
+            {
+                activityHistoryState.text = Humanize(status);
+                if (status == "activity_history_loaded" ||
+                    status == "activity_history_empty")
+                {
+                    RefreshActivityHistoryUi();
+                }
+            }
+            if (monthlyApexState != null && currentScreen == Screen.MonthlyApex)
+            {
+                monthlyApexState.text = Humanize(status);
+                if (status == "monthly_apex_loaded" ||
+                    status == "monthly_checkpoint_claimed" ||
+                    status == "monthly_checkpoint_already_claimed")
+                {
+                    RefreshMonthlyApexUi();
+                }
             }
             if (worldState != null && currentScreen == Screen.World)
             {
@@ -2295,29 +2524,44 @@ namespace RunningUp.V14.UI
             if (currentScreen == Screen.Settings &&
                 (status.StartsWith("authentication_", StringComparison.Ordinal) ||
                  status.StartsWith("sign_out", StringComparison.Ordinal) ||
-                 status == "signed_out" || status == "authenticated"))
+                 status == "signed_out" || status == "authenticated" ||
+                 status == "runtime_preferences_saved" ||
+                 status == "runtime_preferences_loaded"))
             {
                 RebuildSettings();
             }
+            if (status == "training_catalog_loaded" &&
+                currentScreen == Screen.Training)
+            {
+                RefreshTrainingPlanPage();
+            }
             if (status == "training_active")
             {
-                Show(Screen.ActiveTraining);
+                Show(Screen.ActiveTraining, false);
                 runner?.Play("steady_run");
             }
-            else if (status == "appearance_persisted")
+            else if (status.StartsWith(
+                         "appearance_persisted:",
+                         StringComparison.Ordinal))
             {
-                ApplyEquippedTop();
+                ApplyEquippedCosmetic(status["appearance_persisted:".Length..]);
+            }
+            else if (status.StartsWith(
+                         "appearance_unequipped:",
+                         StringComparison.Ordinal))
+            {
+                ApplyUnequippedCosmetic(status["appearance_unequipped:".Length..]);
             }
             else if (status == "training_rewarded")
             {
                 RefreshApprovedResources();
                 RefreshTrainingResult();
-                Show(Screen.TrainingResult);
+                Show(Screen.TrainingResult, false);
             }
             else if (status == "race_lobby_ready")
             {
                 RefreshRaceUi();
-                Show(Screen.Lobby);
+                Show(Screen.Lobby, false);
             }
             else if (status.StartsWith(
                          "race_countdown:",
@@ -2330,7 +2574,7 @@ namespace RunningUp.V14.UI
                      status == "race_reconnected")
             {
                 RefreshRaceUi();
-                Show(Screen.LiveRace);
+                Show(Screen.LiveRace, false);
                 runner?.Play("steady_run");
             }
             else if (status == "race_reconnect_requested" ||
@@ -2343,7 +2587,7 @@ namespace RunningUp.V14.UI
             {
                 RefreshApprovedResources();
                 RefreshRaceUi();
-                Show(Screen.RaceResult);
+                Show(Screen.RaceResult, false);
             }
         }
 
@@ -2630,15 +2874,66 @@ namespace RunningUp.V14.UI
             activeGps.text = "GPS · waiting";
         }
 
-        private void ApplyEquippedTop()
+        private void ApplyEquippedCosmetic(string itemId)
         {
-            PlayerPrefs.SetString("runningup.v14.equipped-top", "V13-TOP-BASE-02");
+            V14CosmeticCatalogRow item = null;
+            foreach (var catalogItem in journey?.CosmeticCatalog ??
+                Array.Empty<V14CosmeticCatalogRow>())
+            {
+                if (string.Equals(catalogItem.item_id, itemId,
+                    StringComparison.Ordinal))
+                {
+                    item = catalogItem;
+                    break;
+                }
+            }
+            if (item == null)
+            {
+                return;
+            }
+            PlayerPrefs.SetString(
+                $"runningup.v14.equipped-{item.category.ToLowerInvariant()}",
+                item.item_id);
             PlayerPrefs.Save();
+            ApplyCosmeticMaterial(item.category, CosmeticColor(item.item_id));
+            runner?.Play("cheer");
+        }
+
+        private void ApplyServerEquippedCosmetics()
+        {
+            foreach (var item in journey?.CosmeticCatalog ??
+                Array.Empty<V14CosmeticCatalogRow>())
+            {
+                if (!item.equipped)
+                {
+                    continue;
+                }
+                PlayerPrefs.SetString(
+                    $"runningup.v14.equipped-{item.category.ToLowerInvariant()}",
+                    item.item_id);
+                ApplyCosmeticMaterial(item.category, CosmeticColor(item.item_id));
+            }
+            PlayerPrefs.Save();
+        }
+
+        private void ApplyUnequippedCosmetic(string category)
+        {
+            if (string.IsNullOrWhiteSpace(category))
+            {
+                return;
+            }
+            PlayerPrefs.DeleteKey(
+                $"runningup.v14.equipped-{category.ToLowerInvariant()}");
+            PlayerPrefs.Save();
+            runner?.Play("steady_run");
+        }
+
+        private void ApplyCosmeticMaterial(string category, Color color)
+        {
             foreach (var renderer in runner?.GetComponentsInChildren<Renderer>(true) ??
                 Array.Empty<Renderer>())
             {
-                if (!renderer.name.Contains("Torso", StringComparison.OrdinalIgnoreCase) &&
-                    !renderer.name.Contains("Jersey", StringComparison.OrdinalIgnoreCase))
+                if (!RendererMatchesCosmetic(renderer.name, category))
                 {
                     continue;
                 }
@@ -2646,13 +2941,46 @@ namespace RunningUp.V14.UI
                 {
                     if (material.HasProperty("_BaseColor"))
                     {
-                        material.SetColor("_BaseColor", Blue);
+                        material.SetColor("_BaseColor", color);
                     }
-                    material.color = Blue;
+                    material.color = color;
                 }
             }
-            runner?.Play("cheer");
         }
+
+        private static bool RendererMatchesCosmetic(string rendererName, string category)
+        {
+            if (string.IsNullOrWhiteSpace(rendererName) ||
+                string.IsNullOrWhiteSpace(category))
+            {
+                return false;
+            }
+            var name = rendererName.ToUpperInvariant();
+            return category.ToUpperInvariant() switch
+            {
+                "HAIR" => name.Contains("HAIR"),
+                "TOP" => name.Contains("TORSO") || name.Contains("JERSEY") ||
+                         name.Contains("TOP"),
+                "BOTTOM" => name.Contains("SHORT") || name.Contains("LEG") ||
+                            name.Contains("BOTTOM"),
+                "SHOES" => name.Contains("SHOE") || name.Contains("FOOT"),
+                "WATCH" => name.Contains("WATCH") || name.Contains("WRIST"),
+                "AURA" => name.Contains("AURA") || name.Contains("EFFECT"),
+                _ => false,
+            };
+        }
+
+        private static Color CosmeticColor(string itemId) =>
+            itemId switch
+            {
+                "V13-HAIR-BASE-01" => new Color(0.18f, 0.07f, 0.03f, 1f),
+                "V13-TOP-BASE-02" => Blue,
+                "V13-BOTTOM-BASE-03" => new Color(0.02f, 0.08f, 0.20f, 1f),
+                "V13-SHOES-BASE-04" => new Color(0.10f, 0.92f, 0.66f, 1f),
+                "V13-WATCH-BASE-05" => Gold,
+                "V13-AURA-BASE-06" => new Color(0.68f, 0.40f, 1f, 1f),
+                _ => Color.white,
+            };
 
         private void RefreshApprovedResources()
         {
@@ -2719,20 +3047,15 @@ namespace RunningUp.V14.UI
             }
         }
 
-        /// <summary>
-        /// The next checkpoint, compared in integer metres so the marathon threshold is
-        /// exact. Comparing in kilometres would make 42.195 km a floating-point boundary.
-        /// </summary>
         private static string NextCheckpointLabel(long monthlyMeters)
         {
             foreach (var checkpointMeters in MonthlyCheckpointsMeters)
             {
                 if (monthlyMeters < checkpointMeters)
                 {
-                    // Whole kilometres render as "5 KM"; the marathon renders as "42.195 KM".
-                    return checkpointMeters % 1000 == 0
-                        ? $"{checkpointMeters / 1000} KM"
-                        : $"{checkpointMeters / 1000.0:0.###} KM";
+                    return checkpointMeters == 42195
+                        ? "42.195 KM"
+                        : $"{checkpointMeters / 1000f:0} KM";
                 }
             }
             return "WORLD CROWN";
@@ -2825,6 +3148,193 @@ namespace RunningUp.V14.UI
             }
         }
 
+        private void RefreshActivityHistoryUi()
+        {
+            if (activityHistoryRowsRoot == null)
+            {
+                return;
+            }
+            for (var index = activityHistoryRowsRoot.childCount - 1;
+                 index >= 0;
+                 index--)
+            {
+                Destroy(activityHistoryRowsRoot.GetChild(index).gameObject);
+            }
+            var count = journey?.ActivityHistoryCount ?? 0;
+            if (count == 0)
+            {
+                Label(
+                    "ActivityHistoryEmpty",
+                    activityHistoryRowsRoot,
+                    "NO VERIFIED RUNS YET\nFinish a real run or sync an authorized activity, then refresh.",
+                    25,
+                    FontStyle.Normal,
+                    new Color(0.70f, 0.80f, 0.88f, 0.9f),
+                    new Vector2(32f, -36f),
+                    new Vector2(890f, 120f),
+                    new Vector2(0f, 1f));
+                return;
+            }
+            var visibleCount = Math.Min(4, count);
+            for (var index = 0; index < visibleCount; index++)
+            {
+                Label(
+                    $"ActivityHistory{index}",
+                    activityHistoryRowsRoot,
+                    journey.ActivityHistoryLabel(index),
+                    22,
+                    FontStyle.Normal,
+                    Color.white,
+                    new Vector2(28f, -26f - index * 166f),
+                    new Vector2(900f, 148f),
+                    new Vector2(0f, 1f));
+            }
+        }
+
+        private void RefreshCharacterUi()
+        {
+            if (characterSelection != null)
+            {
+                var selected = journey?.SelectedCosmetic;
+                characterSelection.text = selected == null
+                    ? "SELECTED · Loading server wardrobe…"
+                    : $"SELECTED · {selected.runtime_name_en.ToUpperInvariant()} · " +
+                      (selected.equipped
+                          ? "EQUIPPED"
+                          : selected.owned
+                              ? "OWNED"
+                              : $"{selected.price:N0} {selected.currency}");
+            }
+            if (characterPresetSummary != null)
+            {
+                var preset = journey?.WardrobePresets.Count > 0
+                    ? journey.WardrobePresets[0]
+                    : null;
+                characterPresetSummary.text = preset == null
+                    ? "PRESET 1 · NOT SAVED"
+                    : $"PRESET {preset.slot} · {preset.runtime_name_en.ToUpperInvariant()}";
+            }
+            if (characterItemsRoot == null)
+            {
+                return;
+            }
+            for (var index = characterItemsRoot.childCount - 1; index >= 0;
+                 index--)
+            {
+                Destroy(characterItemsRoot.GetChild(index).gameObject);
+            }
+            var cosmetics = journey?.CosmeticCatalog;
+            if (cosmetics == null || cosmetics.Count == 0)
+            {
+                Label(
+                    "WardrobeLoading",
+                    characterItemsRoot,
+                    "LOADING SERVER WARDROBE…",
+                    20,
+                    FontStyle.Bold,
+                    new Color(0.70f, 0.80f, 0.88f, 0.9f),
+                    new Vector2(20f, -20f),
+                    new Vector2(890f, 80f),
+                    new Vector2(0f, 1f),
+                    TextAnchor.MiddleCenter);
+                return;
+            }
+            var visibleCount = Math.Min(8, cosmetics.Count);
+            for (var index = 0; index < visibleCount; index++)
+            {
+                var item = cosmetics[index];
+                var column = index % 4;
+                var row = index / 4;
+                var itemId = item.item_id;
+                var label = $"{item.category}\n" +
+                            (item.equipped
+                                ? "EQUIPPED"
+                                : item.owned
+                                    ? "OWNED"
+                                    : $"{item.price:N0} {item.currency}");
+                var color = item.equipped
+                    ? Green
+                    : string.Equals(
+                        journey.SelectedCosmeticItemId,
+                        item.item_id,
+                        StringComparison.Ordinal)
+                        ? Blue
+                        : PanelSoft;
+                Button(
+                    $"SelectCosmetic{index}",
+                    characterItemsRoot,
+                    label,
+                    new Vector2(12f + column * 232f, -14f - row * 86f),
+                    new Vector2(216f, 72f),
+                    new Vector2(0f, 1f),
+                    color,
+                    () => journey?.SelectCosmeticItem(itemId));
+            }
+        }
+
+        private void ClaimNextMonthlyCheckpoint()
+        {
+            if (journey == null || !journey.MonthlyApexLoaded ||
+                journey.MonthlyWorldCrown)
+            {
+                journey?.RefreshMonthlyApex();
+                return;
+            }
+            var next = journey.MonthlyHighestClaimedCheckpoint + 1;
+            if (next < 1 || next > MonthlyCheckpointsMeters.Length)
+            {
+                return;
+            }
+            journey.ClaimMonthlyApexCheckpoint(
+                next,
+                MonthlyCheckpointsMeters[next - 1]);
+        }
+
+        private void RefreshMonthlyApexUi()
+        {
+            if (monthlyApexSummary == null || monthlyApexClaimButton == null)
+            {
+                return;
+            }
+            var buttonText = monthlyApexClaimButton.GetComponentInChildren<Text>();
+            if (journey == null || !journey.MonthlyApexLoaded)
+            {
+                monthlyApexSummary.text =
+                    "MONTHLY DISTANCE --\nNEXT CHECKPOINT --\nWORLD CROWN --";
+                buttonText.text = "CHECK SERVER PROGRESS";
+                monthlyApexClaimButton.interactable = false;
+                return;
+            }
+            var monthlyMeters = Math.Max(0L, journey.MonthlyVerifiedMeters);
+            var next = journey.MonthlyHighestClaimedCheckpoint + 1;
+            var crown = journey.MonthlyWorldCrown;
+            var nextMeters = next >= 1 && next <= MonthlyCheckpointsMeters.Length
+                ? MonthlyCheckpointsMeters[next - 1]
+                : 1000000L;
+            monthlyApexSummary.text =
+                $"MONTHLY DISTANCE {monthlyMeters / 1000f:0.00} km\n" +
+                (crown
+                    ? "WORLD CROWN EARNED · 1,000 km\n"
+                    : $"NEXT CHECKPOINT {next} · {nextMeters / 1000f:0.###} km\n") +
+                $"CLAIMED {journey.MonthlyHighestClaimedCheckpoint} / 120";
+            if (crown || next > MonthlyCheckpointsMeters.Length)
+            {
+                buttonText.text = "WORLD CROWN COMPLETE";
+                monthlyApexClaimButton.interactable = false;
+            }
+            else if (monthlyMeters < nextMeters)
+            {
+                buttonText.text =
+                    $"NEXT CHECKPOINT AT {nextMeters / 1000f:0.###} KM";
+                monthlyApexClaimButton.interactable = false;
+            }
+            else
+            {
+                buttonText.text = $"CLAIM CHECKPOINT {next}";
+                monthlyApexClaimButton.interactable = true;
+            }
+        }
+
         private void Show(Screen screen, bool persist = true)
         {
             currentScreen = screen;
@@ -2858,10 +3368,11 @@ namespace RunningUp.V14.UI
                 button.transform.parent.gameObject.SetActive(
                     !immersive && !approvedHomeVisible);
             }
-            // The last screen is deliberately not persisted. A cold launch starts at Home
-            // (see Awake), so writing it would only leave a value nothing reads — and the
-            // next person would reasonably assume restoring it was still the intent.
-            _ = persist;
+            if (persist)
+            {
+                PlayerPrefs.SetString(ScreenKey, screen.ToString());
+                PlayerPrefs.Save();
+            }
             if (screen == Screen.Home)
             {
                 runner?.Play("steady_run");
@@ -2882,6 +3393,21 @@ namespace RunningUp.V14.UI
             else if (screen == Screen.Crew)
             {
                 RefreshCrewUi();
+            }
+            else if (screen == Screen.ActivityHistory)
+            {
+                RefreshActivityHistoryUi();
+                journey?.RefreshActivityHistory();
+            }
+            else if (screen == Screen.MonthlyApex)
+            {
+                RefreshMonthlyApexUi();
+                journey?.RefreshMonthlyApex();
+            }
+            else if (screen == Screen.Character)
+            {
+                RefreshCharacterUi();
+                journey?.RefreshCosmeticInventory();
             }
             else if (screen is Screen.Matchmaking or Screen.Lobby or
                      Screen.LiveRace or Screen.RaceResult)

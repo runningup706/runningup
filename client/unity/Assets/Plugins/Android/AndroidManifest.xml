@@ -1,39 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Custom main manifest for the Android player.
-
-  Why this file exists
-  --------------------
-  The app targets API 36. Apps targeting Android 16 or higher get predictive back by
-  default, and under it `onBackPressed` is not called and KEYCODE_BACK is not dispatched.
-  Unity maps KEYCODE_BACK to KeyCode.Escape, so on those devices the back press never
-  reached game code at all — the system simply finished the activity. That is the whole
-  of "the back button does not work": not a navigation bug, an input that never arrived.
-
-  android:enableOnBackInvokedCallback="false" restores legacy dispatch, so KEYCODE_BACK
-  reaches Unity and V14ScreenFlowController.Update() sees Escape.
-
-  This is deliberately the opt-out, not the migration. It is the change that makes back
-  work on a device today with no native plugin and no Gradle template. Google removes the
-  opt-out in SDK 37, so V14AndroidBackPlugin (registered via OnBackInvokedDispatcher) has
-  to land before the next targetSdk bump — the C# side already exposes
-  OnAndroidBackPressed for it, so that migration is a plugin, not a rewrite.
-
-  See docs/V14_MASTER_REMEDIATION_PROMPT_KO.md FIX-01.
--->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-  <application android:enableOnBackInvokedCallback="false">
-    <activity
-        android:name="com.unity3d.player.UnityPlayerGameActivity"
-        android:theme="@style/UnityThemeSelector"
-        android:exported="true"
-        android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
-        android:hardwareAccelerated="false">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
-    </activity>
-  </application>
+<!-- Android 16 시스템 뒤로가기를 Unity 입력으로 전달하는 주 매니페스트다. -->
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <application
+        android:enableOnBackInvokedCallback="false"
+        tools:replace="android:enableOnBackInvokedCallback">
+        <activity
+            android:name="com.unity3d.player.UnityPlayerGameActivity"
+            android:theme="@style/UnityThemeSelector"
+            android:exported="true"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+            android:hardwareAccelerated="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+        </activity>
+    </application>
 </manifest>

@@ -1,0 +1,1809 @@
+{
+  "version": "11.0.0",
+  "baseline_km": 0,
+  "claimable_count": 120,
+  "final_km": 1000,
+  "rule": "1000km is the only monthly final tier; no checkpoints above 1000km",
+  "checkpoints": [
+    {
+      "checkpoint_id": "MA001",
+      "order": 1,
+      "km": 1,
+      "continent_id": "C01",
+      "crown_mark": 1,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 1,
+        "pacer_fragments": 2,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA002",
+      "order": 2,
+      "km": 2,
+      "continent_id": "C01",
+      "crown_mark": 2,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 1,
+        "pacer_fragments": 3,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA003",
+      "order": 3,
+      "km": 3,
+      "continent_id": "C01",
+      "crown_mark": 3,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 2,
+        "pacer_fragments": 4,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA004",
+      "order": 4,
+      "km": 4,
+      "continent_id": "C01",
+      "crown_mark": 4,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 2,
+        "pacer_fragments": 1,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA005",
+      "order": 5,
+      "km": 5,
+      "continent_id": "C01",
+      "crown_mark": 5,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 2,
+        "pacer_fragments": 2,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA006",
+      "order": 6,
+      "km": 6,
+      "continent_id": "C01",
+      "crown_mark": 6,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 2,
+        "pacer_fragments": 3,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA007",
+      "order": 7,
+      "km": 8,
+      "continent_id": "C01",
+      "crown_mark": 7,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 3,
+        "pacer_fragments": 4,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA008",
+      "order": 8,
+      "km": 10,
+      "continent_id": "C01",
+      "crown_mark": 8,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 3,
+        "pacer_fragments": 1,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA009",
+      "order": 9,
+      "km": 13,
+      "continent_id": "C01",
+      "crown_mark": 9,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 4,
+        "pacer_fragments": 2,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA010",
+      "order": 10,
+      "km": 15,
+      "continent_id": "C01",
+      "crown_mark": 10,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 4,
+        "pacer_fragments": 3,
+        "gear_material": 6,
+        "visual_reward": true
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA011",
+      "order": 11,
+      "km": 18,
+      "continent_id": "C02",
+      "crown_mark": 1,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 4,
+        "pacer_fragments": 4,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA012",
+      "order": 12,
+      "km": 21,
+      "continent_id": "C02",
+      "crown_mark": 2,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 5,
+        "pacer_fragments": 1,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA013",
+      "order": 13,
+      "km": 24,
+      "continent_id": "C02",
+      "crown_mark": 3,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 5,
+        "pacer_fragments": 2,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA014",
+      "order": 14,
+      "km": 27,
+      "continent_id": "C02",
+      "crown_mark": 4,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 5,
+        "pacer_fragments": 3,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA015",
+      "order": 15,
+      "km": 30,
+      "continent_id": "C02",
+      "crown_mark": 5,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 5,
+        "pacer_fragments": 4,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA016",
+      "order": 16,
+      "km": 34,
+      "continent_id": "C02",
+      "crown_mark": 6,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 6,
+        "pacer_fragments": 1,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA017",
+      "order": 17,
+      "km": 37,
+      "continent_id": "C02",
+      "crown_mark": 7,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 6,
+        "pacer_fragments": 2,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA018",
+      "order": 18,
+      "km": 41,
+      "continent_id": "C02",
+      "crown_mark": 8,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 6,
+        "pacer_fragments": 3,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA019",
+      "order": 19,
+      "km": 45,
+      "continent_id": "C02",
+      "crown_mark": 9,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 7,
+        "pacer_fragments": 4,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA020",
+      "order": 20,
+      "km": 49,
+      "continent_id": "C02",
+      "crown_mark": 10,
+      "tier": "START",
+      "reward_bundle": {
+        "verified_stride_tokens": 7,
+        "pacer_fragments": 1,
+        "gear_material": 4,
+        "visual_reward": true
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA021",
+      "order": 21,
+      "km": 54,
+      "continent_id": "C03",
+      "crown_mark": 1,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 7,
+        "pacer_fragments": 2,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA022",
+      "order": 22,
+      "km": 58,
+      "continent_id": "C03",
+      "crown_mark": 2,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 8,
+        "pacer_fragments": 3,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA023",
+      "order": 23,
+      "km": 63,
+      "continent_id": "C03",
+      "crown_mark": 3,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 8,
+        "pacer_fragments": 4,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA024",
+      "order": 24,
+      "km": 67,
+      "continent_id": "C03",
+      "crown_mark": 4,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 8,
+        "pacer_fragments": 1,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA025",
+      "order": 25,
+      "km": 72,
+      "continent_id": "C03",
+      "crown_mark": 5,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 8,
+        "pacer_fragments": 2,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA026",
+      "order": 26,
+      "km": 77,
+      "continent_id": "C03",
+      "crown_mark": 6,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 9,
+        "pacer_fragments": 3,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA027",
+      "order": 27,
+      "km": 82,
+      "continent_id": "C03",
+      "crown_mark": 7,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 9,
+        "pacer_fragments": 4,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA028",
+      "order": 28,
+      "km": 87,
+      "continent_id": "C03",
+      "crown_mark": 8,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 9,
+        "pacer_fragments": 1,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA029",
+      "order": 29,
+      "km": 93,
+      "continent_id": "C03",
+      "crown_mark": 9,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 10,
+        "pacer_fragments": 2,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA030",
+      "order": 30,
+      "km": 98,
+      "continent_id": "C03",
+      "crown_mark": 10,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 10,
+        "pacer_fragments": 3,
+        "gear_material": 2,
+        "visual_reward": true
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA031",
+      "order": 31,
+      "km": 104,
+      "continent_id": "C04",
+      "crown_mark": 1,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 10,
+        "pacer_fragments": 4,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA032",
+      "order": 32,
+      "km": 110,
+      "continent_id": "C04",
+      "crown_mark": 2,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 10,
+        "pacer_fragments": 1,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA033",
+      "order": 33,
+      "km": 115,
+      "continent_id": "C04",
+      "crown_mark": 3,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 11,
+        "pacer_fragments": 2,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA034",
+      "order": 34,
+      "km": 121,
+      "continent_id": "C04",
+      "crown_mark": 4,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 11,
+        "pacer_fragments": 3,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA035",
+      "order": 35,
+      "km": 127,
+      "continent_id": "C04",
+      "crown_mark": 5,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 11,
+        "pacer_fragments": 4,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA036",
+      "order": 36,
+      "km": 134,
+      "continent_id": "C04",
+      "crown_mark": 6,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 12,
+        "pacer_fragments": 1,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA037",
+      "order": 37,
+      "km": 140,
+      "continent_id": "C04",
+      "crown_mark": 7,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 12,
+        "pacer_fragments": 2,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA038",
+      "order": 38,
+      "km": 146,
+      "continent_id": "C04",
+      "crown_mark": 8,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 12,
+        "pacer_fragments": 3,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA039",
+      "order": 39,
+      "km": 153,
+      "continent_id": "C04",
+      "crown_mark": 9,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 12,
+        "pacer_fragments": 4,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA040",
+      "order": 40,
+      "km": 160,
+      "continent_id": "C04",
+      "crown_mark": 10,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 13,
+        "pacer_fragments": 1,
+        "gear_material": 6,
+        "visual_reward": true
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA041",
+      "order": 41,
+      "km": 166,
+      "continent_id": "C05",
+      "crown_mark": 1,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 13,
+        "pacer_fragments": 2,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA042",
+      "order": 42,
+      "km": 173,
+      "continent_id": "C05",
+      "crown_mark": 2,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 13,
+        "pacer_fragments": 3,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA043",
+      "order": 43,
+      "km": 180,
+      "continent_id": "C05",
+      "crown_mark": 3,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 13,
+        "pacer_fragments": 4,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA044",
+      "order": 44,
+      "km": 187,
+      "continent_id": "C05",
+      "crown_mark": 4,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 14,
+        "pacer_fragments": 1,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA045",
+      "order": 45,
+      "km": 194,
+      "continent_id": "C05",
+      "crown_mark": 5,
+      "tier": "BUILD",
+      "reward_bundle": {
+        "verified_stride_tokens": 14,
+        "pacer_fragments": 2,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA046",
+      "order": 46,
+      "km": 202,
+      "continent_id": "C05",
+      "crown_mark": 6,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 14,
+        "pacer_fragments": 3,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA047",
+      "order": 47,
+      "km": 209,
+      "continent_id": "C05",
+      "crown_mark": 7,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 14,
+        "pacer_fragments": 4,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA048",
+      "order": 48,
+      "km": 217,
+      "continent_id": "C05",
+      "crown_mark": 8,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 15,
+        "pacer_fragments": 1,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA049",
+      "order": 49,
+      "km": 224,
+      "continent_id": "C05",
+      "crown_mark": 9,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 15,
+        "pacer_fragments": 2,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA050",
+      "order": 50,
+      "km": 232,
+      "continent_id": "C05",
+      "crown_mark": 10,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 15,
+        "pacer_fragments": 3,
+        "gear_material": 4,
+        "visual_reward": true
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA051",
+      "order": 51,
+      "km": 240,
+      "continent_id": "C06",
+      "crown_mark": 1,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 15,
+        "pacer_fragments": 4,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA052",
+      "order": 52,
+      "km": 248,
+      "continent_id": "C06",
+      "crown_mark": 2,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 16,
+        "pacer_fragments": 1,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA053",
+      "order": 53,
+      "km": 256,
+      "continent_id": "C06",
+      "crown_mark": 3,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 16,
+        "pacer_fragments": 2,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA054",
+      "order": 54,
+      "km": 264,
+      "continent_id": "C06",
+      "crown_mark": 4,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 16,
+        "pacer_fragments": 3,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA055",
+      "order": 55,
+      "km": 272,
+      "continent_id": "C06",
+      "crown_mark": 5,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 16,
+        "pacer_fragments": 4,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA056",
+      "order": 56,
+      "km": 281,
+      "continent_id": "C06",
+      "crown_mark": 6,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 17,
+        "pacer_fragments": 1,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA057",
+      "order": 57,
+      "km": 289,
+      "continent_id": "C06",
+      "crown_mark": 7,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 17,
+        "pacer_fragments": 2,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA058",
+      "order": 58,
+      "km": 298,
+      "continent_id": "C06",
+      "crown_mark": 8,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 17,
+        "pacer_fragments": 3,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA059",
+      "order": 59,
+      "km": 306,
+      "continent_id": "C06",
+      "crown_mark": 9,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 17,
+        "pacer_fragments": 4,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA060",
+      "order": 60,
+      "km": 315,
+      "continent_id": "C06",
+      "crown_mark": 10,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 18,
+        "pacer_fragments": 1,
+        "gear_material": 2,
+        "visual_reward": true
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA061",
+      "order": 61,
+      "km": 324,
+      "continent_id": "C07",
+      "crown_mark": 1,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 18,
+        "pacer_fragments": 2,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA062",
+      "order": 62,
+      "km": 333,
+      "continent_id": "C07",
+      "crown_mark": 2,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 18,
+        "pacer_fragments": 3,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA063",
+      "order": 63,
+      "km": 342,
+      "continent_id": "C07",
+      "crown_mark": 3,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 18,
+        "pacer_fragments": 4,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA064",
+      "order": 64,
+      "km": 351,
+      "continent_id": "C07",
+      "crown_mark": 4,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 19,
+        "pacer_fragments": 1,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA065",
+      "order": 65,
+      "km": 360,
+      "continent_id": "C07",
+      "crown_mark": 5,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 19,
+        "pacer_fragments": 2,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA066",
+      "order": 66,
+      "km": 369,
+      "continent_id": "C07",
+      "crown_mark": 6,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 19,
+        "pacer_fragments": 3,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA067",
+      "order": 67,
+      "km": 379,
+      "continent_id": "C07",
+      "crown_mark": 7,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 19,
+        "pacer_fragments": 4,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA068",
+      "order": 68,
+      "km": 388,
+      "continent_id": "C07",
+      "crown_mark": 8,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 20,
+        "pacer_fragments": 1,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA069",
+      "order": 69,
+      "km": 398,
+      "continent_id": "C07",
+      "crown_mark": 9,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 20,
+        "pacer_fragments": 2,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA070",
+      "order": 70,
+      "km": 407,
+      "continent_id": "C07",
+      "crown_mark": 10,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 20,
+        "pacer_fragments": 3,
+        "gear_material": 6,
+        "visual_reward": true
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA071",
+      "order": 71,
+      "km": 417,
+      "continent_id": "C08",
+      "crown_mark": 1,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 20,
+        "pacer_fragments": 4,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA072",
+      "order": 72,
+      "km": 427,
+      "continent_id": "C08",
+      "crown_mark": 2,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 21,
+        "pacer_fragments": 1,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA073",
+      "order": 73,
+      "km": 437,
+      "continent_id": "C08",
+      "crown_mark": 3,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 21,
+        "pacer_fragments": 2,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA074",
+      "order": 74,
+      "km": 447,
+      "continent_id": "C08",
+      "crown_mark": 4,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 21,
+        "pacer_fragments": 3,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA075",
+      "order": 75,
+      "km": 457,
+      "continent_id": "C08",
+      "crown_mark": 5,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 21,
+        "pacer_fragments": 4,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA076",
+      "order": 76,
+      "km": 467,
+      "continent_id": "C08",
+      "crown_mark": 6,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 22,
+        "pacer_fragments": 1,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA077",
+      "order": 77,
+      "km": 478,
+      "continent_id": "C08",
+      "crown_mark": 7,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 22,
+        "pacer_fragments": 2,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA078",
+      "order": 78,
+      "km": 488,
+      "continent_id": "C08",
+      "crown_mark": 8,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 22,
+        "pacer_fragments": 3,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA079",
+      "order": 79,
+      "km": 499,
+      "continent_id": "C08",
+      "crown_mark": 9,
+      "tier": "STRIDE",
+      "reward_bundle": {
+        "verified_stride_tokens": 22,
+        "pacer_fragments": 4,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA080",
+      "order": 80,
+      "km": 509,
+      "continent_id": "C08",
+      "crown_mark": 10,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 23,
+        "pacer_fragments": 1,
+        "gear_material": 4,
+        "visual_reward": true
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA081",
+      "order": 81,
+      "km": 520,
+      "continent_id": "C09",
+      "crown_mark": 1,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 23,
+        "pacer_fragments": 2,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA082",
+      "order": 82,
+      "km": 531,
+      "continent_id": "C09",
+      "crown_mark": 2,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 23,
+        "pacer_fragments": 3,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA083",
+      "order": 83,
+      "km": 541,
+      "continent_id": "C09",
+      "crown_mark": 3,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 23,
+        "pacer_fragments": 4,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA084",
+      "order": 84,
+      "km": 552,
+      "continent_id": "C09",
+      "crown_mark": 4,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 23,
+        "pacer_fragments": 1,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA085",
+      "order": 85,
+      "km": 563,
+      "continent_id": "C09",
+      "crown_mark": 5,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 24,
+        "pacer_fragments": 2,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA086",
+      "order": 86,
+      "km": 574,
+      "continent_id": "C09",
+      "crown_mark": 6,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 24,
+        "pacer_fragments": 3,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA087",
+      "order": 87,
+      "km": 586,
+      "continent_id": "C09",
+      "crown_mark": 7,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 24,
+        "pacer_fragments": 4,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA088",
+      "order": 88,
+      "km": 597,
+      "continent_id": "C09",
+      "crown_mark": 8,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 24,
+        "pacer_fragments": 1,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA089",
+      "order": 89,
+      "km": 608,
+      "continent_id": "C09",
+      "crown_mark": 9,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 25,
+        "pacer_fragments": 2,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA090",
+      "order": 90,
+      "km": 620,
+      "continent_id": "C09",
+      "crown_mark": 10,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 25,
+        "pacer_fragments": 3,
+        "gear_material": 2,
+        "visual_reward": true
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA091",
+      "order": 91,
+      "km": 631,
+      "continent_id": "C10",
+      "crown_mark": 1,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 25,
+        "pacer_fragments": 4,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA092",
+      "order": 92,
+      "km": 643,
+      "continent_id": "C10",
+      "crown_mark": 2,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 25,
+        "pacer_fragments": 1,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA093",
+      "order": 93,
+      "km": 654,
+      "continent_id": "C10",
+      "crown_mark": 3,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 26,
+        "pacer_fragments": 2,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA094",
+      "order": 94,
+      "km": 666,
+      "continent_id": "C10",
+      "crown_mark": 4,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 26,
+        "pacer_fragments": 3,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA095",
+      "order": 95,
+      "km": 678,
+      "continent_id": "C10",
+      "crown_mark": 5,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 26,
+        "pacer_fragments": 4,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA096",
+      "order": 96,
+      "km": 690,
+      "continent_id": "C10",
+      "crown_mark": 6,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 26,
+        "pacer_fragments": 1,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA097",
+      "order": 97,
+      "km": 702,
+      "continent_id": "C10",
+      "crown_mark": 7,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 26,
+        "pacer_fragments": 2,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA098",
+      "order": 98,
+      "km": 714,
+      "continent_id": "C10",
+      "crown_mark": 8,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 27,
+        "pacer_fragments": 3,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA099",
+      "order": 99,
+      "km": 726,
+      "continent_id": "C10",
+      "crown_mark": 9,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 27,
+        "pacer_fragments": 4,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA100",
+      "order": 100,
+      "km": 738,
+      "continent_id": "C10",
+      "crown_mark": 10,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 27,
+        "pacer_fragments": 1,
+        "gear_material": 6,
+        "visual_reward": true
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA101",
+      "order": 101,
+      "km": 751,
+      "continent_id": "C11",
+      "crown_mark": 1,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 27,
+        "pacer_fragments": 2,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA102",
+      "order": 102,
+      "km": 763,
+      "continent_id": "C11",
+      "crown_mark": 2,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 28,
+        "pacer_fragments": 3,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA103",
+      "order": 103,
+      "km": 776,
+      "continent_id": "C11",
+      "crown_mark": 3,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 28,
+        "pacer_fragments": 4,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA104",
+      "order": 104,
+      "km": 788,
+      "continent_id": "C11",
+      "crown_mark": 4,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 28,
+        "pacer_fragments": 1,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA105",
+      "order": 105,
+      "km": 801,
+      "continent_id": "C11",
+      "crown_mark": 5,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 28,
+        "pacer_fragments": 2,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA106",
+      "order": 106,
+      "km": 814,
+      "continent_id": "C11",
+      "crown_mark": 6,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 29,
+        "pacer_fragments": 3,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA107",
+      "order": 107,
+      "km": 826,
+      "continent_id": "C11",
+      "crown_mark": 7,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 29,
+        "pacer_fragments": 4,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA108",
+      "order": 108,
+      "km": 839,
+      "continent_id": "C11",
+      "crown_mark": 8,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 29,
+        "pacer_fragments": 1,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA109",
+      "order": 109,
+      "km": 852,
+      "continent_id": "C11",
+      "crown_mark": 9,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 29,
+        "pacer_fragments": 2,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA110",
+      "order": 110,
+      "km": 865,
+      "continent_id": "C11",
+      "crown_mark": 10,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 29,
+        "pacer_fragments": 3,
+        "gear_material": 4,
+        "visual_reward": true
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA111",
+      "order": 111,
+      "km": 878,
+      "continent_id": "C12",
+      "crown_mark": 1,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 30,
+        "pacer_fragments": 4,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA112",
+      "order": 112,
+      "km": 892,
+      "continent_id": "C12",
+      "crown_mark": 2,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 30,
+        "pacer_fragments": 1,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA113",
+      "order": 113,
+      "km": 905,
+      "continent_id": "C12",
+      "crown_mark": 3,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 30,
+        "pacer_fragments": 2,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA114",
+      "order": 114,
+      "km": 918,
+      "continent_id": "C12",
+      "crown_mark": 4,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 30,
+        "pacer_fragments": 3,
+        "gear_material": 2,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA115",
+      "order": 115,
+      "km": 932,
+      "continent_id": "C12",
+      "crown_mark": 5,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 31,
+        "pacer_fragments": 4,
+        "gear_material": 3,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA116",
+      "order": 116,
+      "km": 945,
+      "continent_id": "C12",
+      "crown_mark": 6,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 31,
+        "pacer_fragments": 1,
+        "gear_material": 4,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA117",
+      "order": 117,
+      "km": 959,
+      "continent_id": "C12",
+      "crown_mark": 7,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 31,
+        "pacer_fragments": 2,
+        "gear_material": 5,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA118",
+      "order": 118,
+      "km": 972,
+      "continent_id": "C12",
+      "crown_mark": 8,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 31,
+        "pacer_fragments": 3,
+        "gear_material": 6,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA119",
+      "order": 119,
+      "km": 986,
+      "continent_id": "C12",
+      "crown_mark": 9,
+      "tier": "CROWN_CHASE",
+      "reward_bundle": {
+        "verified_stride_tokens": 31,
+        "pacer_fragments": 4,
+        "gear_material": 7,
+        "visual_reward": false
+      },
+      "is_final": false
+    },
+    {
+      "checkpoint_id": "MA120",
+      "order": 120,
+      "km": 1000,
+      "continent_id": "C12",
+      "crown_mark": 10,
+      "tier": "WORLD_CROWN",
+      "reward_bundle": {
+        "verified_stride_tokens": 32,
+        "pacer_fragments": 1,
+        "gear_material": 2,
+        "visual_reward": true
+      },
+      "is_final": true
+    }
+  ]
+}
