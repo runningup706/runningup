@@ -79,9 +79,51 @@ fi
 # ---------------------------------------------------------------------------
 # 1. The source has to actually be a Unity project
 # ---------------------------------------------------------------------------
-[ -n "$SRC" ] || die "--from is required: the path to the Unity project in your old folder,
-     e.g. --from ~/runningup/client/unity"
-[ -d "$SRC" ] || die "--from path does not exist: $SRC"
+# `--from` needs a real path, and the documented example uses a placeholder. Pasting the
+# example verbatim is the single most likely way to get this wrong, so rather than just
+# reporting that the path is missing, go and find the project.
+suggest_paths() {
+  local found
+  # Unity keeps its own Library/ inside a project, and macOS has ~/Library; neither is a
+  # project root. maxdepth keeps this from walking an entire home directory.
+  found=$(find "$HOME" -maxdepth 6 -type d -name ProjectSettings 2>/dev/null \
+          | grep -v "/Library/" | head -10 || true)
+  if [ -z "$found" ]; then
+    printf '     No Unity project found under %s (searched 6 levels deep).\n' "$HOME"
+    printf '     Point --from at the folder that contains Assets/ and ProjectSettings/.\n'
+    return
+  fi
+  printf '     Unity projects found on this machine — one of these is probably it:\n\n'
+  printf '%s\n' "$found" | while IFS= read -r ps; do
+    printf '         %s\n' "$(dirname "$ps")"
+  done
+  printf '\n     Re-run with one of those, e.g.\n\n'
+  printf '         bash tools/release/push-unity-project.sh --from '"'"'%s'"'"'\n' \
+    "$(dirname "$(printf '%s\n' "$found" | head -1)")"
+}
+
+if [ -z "$SRC" ]; then
+  printf '\n'
+  die "--from is required: the path to the Unity project in your old folder.
+
+$(suggest_paths)"
+fi
+
+if [ ! -d "$SRC" ]; then
+  case "$SRC" in
+    *기존폴더*|*old/runningup*|*'<'*|*'>'*)
+      printf '\n'
+      die "--from path does not exist: $SRC
+
+     That looks like the placeholder from the documentation rather than a real path.
+
+$(suggest_paths)" ;;
+  esac
+  printf '\n'
+  die "--from path does not exist: $SRC
+
+$(suggest_paths)"
+fi
 
 SRC="$(cd "$SRC" && pwd)"          # absolute, so the copy cannot be confused by cwd
 [ "$SRC" = "$(pwd)/$DEST" ] && die "--from points at this clone's own $DEST. Point it at the OLD folder."
