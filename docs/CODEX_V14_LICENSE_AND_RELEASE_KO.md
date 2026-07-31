@@ -241,6 +241,17 @@ gh release create "$TAG" \
 
 ## 4. 작업 C — 실기기 검증 (폰이 연결됐을 때만)
 
+**`adb` 가 없다고 먼저 포기하지 마라.** Unity 번들 Android SDK 안에 들어 있다:
+
+```bash
+PLAYBACK="$UNITY_APP/Contents/PlaybackEngines/AndroidPlayer"
+export PATH="$PLAYBACK/SDK/platform-tools:$PATH"
+adb version
+```
+
+이래도 없으면 그때 `BLOCKED_DEVICE` 다. homebrew 로 새로 설치하지 마라 — 이 맥의
+homebrew Android 도구가 바로 빌드를 멈추게 한 원인이다.
+
 `adb devices -l` 로 기기가 안 보이면 이 절 전체를 `BLOCKED_DEVICE` 로 보고하고 넘어가라.
 **에뮬레이터 수치로 대체하지 마라** (마스터 프롬프트 # 22.9 금지 사항).
 

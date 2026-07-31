@@ -64,9 +64,29 @@ Windows는 **Git Bash**에서 실행하십시오. `rsync` 대신 `tar` 를 쓰�
 |---|---|
 | `UNITY_EMAIL` | Unity 계정 이메일 |
 | `UNITY_PASSWORD` | Unity 계정 비밀번호 |
-| `UNITY_LICENSE` | `.ulf` 라이선스 파일의 **내용 전체** |
+| `UNITY_LICENSE` | `.ulf` 라이선스 파일의 **내용 전체** — Personal 은 현재 발급 불가, 아래 참조 |
 
-#### `.ulf` 얻는 법
+#### ⛔ 2026-07 현재: Personal 라이선스로는 이 경로가 막혀 있습니다
+
+`https://license.unity3d.com/manual` 이 **Unity Personal 의 `.alf → .ulf` 발급을 더 이상
+지원하지 않는다**고 표시합니다. `.alf` 파일 생성까지는 되지만 교환이 되지 않으므로
+`UNITY_LICENSE` 시크릿을 채울 수 없고, **GameCI 방식의 CI 빌드는 Personal 라이선스로는
+현재 불가능합니다.**
+
+가능한 경로는 셋입니다.
+
+| 경로 | 필요한 것 | 비고 |
+|---|---|---|
+| **① 로컬 빌드** | 이미 설치된 Unity 에디터 | **지금 권장.** 라이선스가 이미 활성화돼 있으므로 추가 절차 없음 |
+| ② 자체 호스팅 러너 | Unity 가 설치·활성화된 맥 1대를 상시 연결 | 그 맥의 활성 라이선스를 그대로 쓰므로 `.ulf` 불필요 |
+| ③ Pro/Enterprise 시리얼 | 유료 구독 | `UNITY_SERIAL` + `UNITY_EMAIL` + `UNITY_PASSWORD` 로 CI 활성화 가능 |
+
+`.github/workflows/android-apk.yml` 은 라이선스가 없으면 **빨간 실패가 아니라 SKIP** 으로
+남습니다. 위 ②·③ 중 하나가 준비되면 워크플로 수정 없이 그대로 동작합니다.
+
+아래 내용은 ②·③ 이 준비됐거나 Unity 2022 이하를 쓰는 경우에만 해당합니다.
+
+#### `.ulf` 얻는 법 (구버전 / Pro)
 
 > ⚠️ **Unity 6(6000.x)에는 `.ulf` 파일이 없습니다.** 라이선스 형식이
 > `~/Library/Unity/licenses/UnityEntitlementLicense.xml` 로 바뀌었습니다. 아무리 찾아도
