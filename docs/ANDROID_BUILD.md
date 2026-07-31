@@ -134,6 +134,16 @@ cat ~/Downloads/Unity_v*.ulf | pbcopy      # macOS
 > **`service_role` 키는 절대 넣지 마십시오.** 클라이언트에 들어가면 APK를 받은 누구나
 > 데이터베이스 전체를 쓸 수 있게 됩니다. 워크플로가 넘기는 값도 publishable 키뿐입니다.
 
+시크릿 이름(`SUPABASE_ANON_KEY`)과 Unity 빌드 스크립트가 읽는 환경변수 이름
+(`RUNNINGUP_SUPABASE_PUBLISHABLE_KEY`)은 서로 다릅니다. 워크플로가 그 사이를 이어줍니다.
+**두 이름이 어긋나면 URL만 들어가고 키는 안 들어가서, 빌드는 성공하는데 앱의 모든 서버
+호출이 `SUPABASE_CONFIG_REQUIRED` 로 실패합니다.** 실제로 한 번 어긋나 있었고,
+`tests/build-config.test.mjs` 가 양쪽 이름을 비교해 이제 막습니다.
+
+**두 시크릿을 안 넣어도 빌드는 됩니다.** 그 경우 서버 기능만 동작하지 않고, 릴리즈 노트에
+`Backend: UNCONFIGURED` 로 표시됩니다. **뒤로가기와 콜드 스타트 검증에는 서버가 필요
+없으므로**, 그것만 확인하려면 이대로도 충분합니다.
+
 이게 코덱스가 만든 APK를 릴리즈하지 않은 이유이기도 합니다 — 그 APK는 **로컬 개발용
 Supabase**를 보고 있어서, 배포해도 만든 사람 PC가 켜져 있을 때만 동작합니다.
 

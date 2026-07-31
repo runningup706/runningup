@@ -157,8 +157,17 @@ jobs:
           # The APK must not ship pointing at somebody's laptop. These come from repository
           # secrets and are the *publishable* keys only — a service-role key in the client
           # would hand every reader full database write access.
+          #
+          # These two names are a CONTRACT with the client's build script, which reads
+          # them in V11ProjectBuilder.CreateScene and bakes the result into the scene. The
+          # key was passed as RUNNINGUP_SUPABASE_ANON_KEY here while the client reads
+          # RUNNINGUP_SUPABASE_PUBLISHABLE_KEY, so the URL arrived and the key did not —
+          # IsConfigured stayed false and every server call would have thrown
+          # SUPABASE_CONFIG_REQUIRED. Nothing failed at build time; it would have surfaced
+          # only when someone installed the release. tests/build-config.test.mjs now
+          # compares both sides so the names cannot drift apart again.
           RUNNINGUP_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          RUNNINGUP_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          RUNNINGUP_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         with:
           projectPath: client/unity
           targetPlatform: Android
@@ -174,6 +183,21 @@ jobs:
           androidKeyaliasName: ${{ secrets.ANDROID_KEYALIAS_NAME }}
           androidKeyaliasPass: ${{ secrets.ANDROID_KEYALIAS_PASS }}
           allowDirtyBuild: false
+
+      # A build with no backend configuration succeeds and produces an APK in which every
+      # server call throws. Say so before the build, not after someone installs it.
+      - name: Is there a backend for this APK to talk to?
+        id: backend
+        env:
+          HAS_URL: ${{ secrets.SUPABASE_URL != '' }}
+          HAS_KEY: ${{ secrets.SUPABASE_ANON_KEY != '' }}
+        run: |
+          if [ "$HAS_URL" = "true" ] && [ "$HAS_KEY" = "true" ]; then
+            echo "mode=configured" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=UNCONFIGURED" >> "$GITHUB_OUTPUT"
+            echo "::warning::SUPABASE_URL / SUPABASE_ANON_KEY are not both set. The APK will build, but every server call will fail with SUPABASE_CONFIG_REQUIRED. Screen navigation and cold start can still be tested."
+          fi
 
       - name: Say how this APK is signed
         id: signing
@@ -239,6 +263,11 @@ jobs:
           | Package | kr.robom.runningup |
           | targetSdk | 36 |
           | Signing | ${{ steps.signing.outputs.mode }} |
+          | Backend | ${{ steps.backend.outputs.mode }} |
+
+          ${{ steps.backend.outputs.mode == 'UNCONFIGURED' && '> **This APK has no backend.** Supabase was not configured at build time, so every
+          > server call fails with `SUPABASE_CONFIG_REQUIRED`. Screen navigation, the back
+          > button and cold start are testable; anything that needs the server is not.' || '' }}
 
           ## Verified by this build
           - Direction lock, launch content, unit tests and client-ladder parity all passed
