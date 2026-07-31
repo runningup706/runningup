@@ -8,6 +8,21 @@
     client/unity/Assets/RunningUp/, which is possible only because those files reference
     nothing from UnityEngine (master # 17.2). If someone adds a Unity dependency to the
     domain layer, this project stops compiling — which is the point.
+
+    The include used to be `Assets/RunningUp/**/*.cs`, which guarded far more than the
+    domain layer: it made the whole Unity client uncompilable-by-construction, so the V14
+    screen flow, the run runtime and the Android bridge could not live in this repository
+    at all. That is a real cost — those files hold the back-navigation and input defects
+    this project needs to fix, and they cannot be fixed where they cannot be stored.
+
+    So the include now names the domain layer explicitly. The guard is unchanged in
+    intent and is no longer enforced by accident: tests/domain-layer.test.mjs reads these
+    Include globs, resolves them, and fails if any matched file uses UnityEngine — and
+    fails if the globs match nothing, so an empty include cannot pass vacuously.
+
+    Adding Unity-free domain code? Add its directory here and the test follows
+    automatically. Adding client code that needs UnityEngine? It goes anywhere under
+    Assets/RunningUp that is NOT listed here.
   -->
 
   <PropertyGroup>
@@ -20,7 +35,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="../../unity/Assets/RunningUp/**/*.cs" />
+    <!-- The Unity domain layer: Unity-free by contract, enforced by tests/domain-layer.test.mjs. -->
+    <Compile Include="../../unity/Assets/RunningUp/Progression/**/*.cs" />
     <Compile Include="*.cs" />
   </ItemGroup>
 
