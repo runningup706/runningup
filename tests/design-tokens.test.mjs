@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 /**
  * The V14 screen code had 33 colours written inline as `new Color(r, g, b, a)`, spread
- * through a 3,600-line file, while a palette (`RunningUp.Core.V11Palette`) already existed
+ * through a 3,600-line file, while a palette (`RunningUp.Core.V14Palette`) already existed
  * and went unused. Retoning the app meant finding and editing every one of them, and
  * telling two nearly-identical navies apart meant comparing decimals by eye.
  *

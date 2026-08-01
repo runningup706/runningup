@@ -10,7 +10,7 @@
 보통 Unity 앱은 에디터에서 버튼을 끌어다 배치하고 그게 `.unity` 씬 파일에 저장됩니다.
 **이 프로젝트는 그렇지 않습니다.**
 
-씬 파일은 2개뿐이고, 그마저도 빌드할 때 `V11ProjectBuilder.cs` 가 **자동으로 다시
+씬 파일은 2개뿐이고, 그마저도 빌드할 때 `V14ProjectBuilder.cs` 가 **자동으로 다시
 생성**합니다. 화면의 모든 요소 — 버튼 위치, 글자 크기, 색, 여백 — 는 C# 코드가 실행 시점에
 만들어냅니다.
 
@@ -21,7 +21,7 @@
 |---|---|
 | 화면 UI 코드 | **`client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs`** (3,661줄) |
 | 그림 파일 | `client/unity/Assets/RunningUp/ProductionArt/VisualSliceAssets/` (PNG 15개) |
-| 폰트 | `client/unity/Assets/RunningUp/Fonts/NotoSansKR-V11.ttf` |
+| 폰트 | `client/unity/Assets/RunningUp/Fonts/NotoSansKR-V14.ttf` |
 | 3D 재질·애니메이션 | `client/unity/Assets/RunningUp/Generated/` |
 | 씬 (자동 생성 — 직접 고치지 말 것) | `client/unity/Assets/RunningUp/Scenes/LiveJourneyHome.unity` |
 
@@ -108,7 +108,7 @@ public static readonly Color SurfaceDeep = new(0.005f, 0.03f, 0.065f);
 편이 안전합니다.
 
 `...Target.png` 로 끝나는 것들은 실제로 화면에 보이는 그림이 아니라 **"이렇게 보여야
-한다"는 기준 이미지**입니다. `V11ProductionArtGate.cs` 가 실제 렌더 결과를 이것과 비교해
+한다"는 기준 이미지**입니다. `V14ProductionArtGate.cs` 가 실제 렌더 결과를 이것과 비교해
 검사합니다.
 
 ---
@@ -117,11 +117,11 @@ public static readonly Color SurfaceDeep = new(0.005f, 0.03f, 0.065f);
 
 | | |
 |---|---|
-| 러너 프리팹 | `Generated/Prefabs/MyRunnerV11.prefab` |
-| 재질(색·질감) | `Generated/Materials/` — `MyRunnerV11Mint.mat`, `Road.mat`, `Grass.mat` 등 15개 |
+| 러너 프리팹 | `Generated/Prefabs/MyRunnerV14.prefab` |
+| 재질(색·질감) | `Generated/Materials/` — `MyRunnerV14Mint.mat`, `Road.mat`, `Grass.mat` 등 15개 |
 | 동작 | `Generated/Animations/` — `easy_jog`, `tempo_run`, `interval_sprint`, `final_kick`, `finish`, `cheer`, `idle_stretch`, `tired_but_proud`, `steady_run` |
 
-`Generated/` 라는 이름 그대로 **`V11PremiumRunnerBaker.cs` 가 생성**합니다. 직접 고치면
+`Generated/` 라는 이름 그대로 **`V14PremiumRunnerBaker.cs` 가 생성**합니다. 직접 고치면
 다음 빌드에 사라질 수 있으니, 지속적인 변경은 그 스크립트를 고쳐야 합니다.
 
 ---

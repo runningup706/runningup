@@ -107,7 +107,7 @@ namespace RunningUp.V14.UI
 
         [SerializeField] private Font font;
         [SerializeField] private V14JourneyRuntime journey;
-        [SerializeField] private V11AndroidRunBridge bridge;
+        [SerializeField] private V14AndroidRunBridge bridge;
         [SerializeField] private ChibiRunnerView runner;
         [SerializeField] private GameObject approvedJourneyBackdrop;
         [SerializeField] private GameObject approvedHomeRoot;
@@ -206,7 +206,7 @@ namespace RunningUp.V14.UI
         public void Configure(
             Font uiFont,
             V14JourneyRuntime runtime,
-            V11AndroidRunBridge androidBridge,
+            V14AndroidRunBridge androidBridge,
             ChibiRunnerView runnerView)
         {
             font = uiFont;
@@ -251,7 +251,7 @@ namespace RunningUp.V14.UI
         {
             font ??= Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             journey ??= FindFirstObjectByType<V14JourneyRuntime>();
-            bridge ??= FindFirstObjectByType<V11AndroidRunBridge>();
+            bridge ??= FindFirstObjectByType<V14AndroidRunBridge>();
             runner ??= FindFirstObjectByType<ChibiRunnerView>();
             SetApprovedHudDynamicVisibility(true);
             HideLegacyHud();
@@ -416,10 +416,10 @@ namespace RunningUp.V14.UI
                 }
                 child.gameObject.SetActive(false);
             }
-            var legacy = GetComponent<RunningUp.UI.V11HudController>();
-            if (legacy != null)
+            var hudController = GetComponent<RunningUp.UI.V14HudController>();
+            if (hudController != null)
             {
-                legacy.enabled = false;
+                hudController.enabled = false;
             }
         }
 

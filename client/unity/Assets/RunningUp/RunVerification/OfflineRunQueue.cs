@@ -101,7 +101,7 @@ namespace RunningUp.RunVerification
             var backup = TryLoad(backupPath);
             if (backup != null)
             {
-                Debug.LogWarning("V11 offline queue recovered from the previous atomic backup.");
+                Debug.LogWarning("V14 offline queue recovered from the previous atomic backup.");
                 return backup;
             }
 
@@ -124,7 +124,7 @@ namespace RunningUp.RunVerification
             catch (Exception exception)
             {
                 Debug.LogWarning(
-                    $"V11 offline queue copy could not be read: {exception.GetType().Name}");
+                    $"V14 offline queue copy could not be read: {exception.GetType().Name}");
                 return null;
             }
         }

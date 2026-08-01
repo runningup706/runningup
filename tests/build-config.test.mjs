@@ -9,9 +9,9 @@ import { fileURLToPath } from 'node:url';
  * names, and nothing compared them.
  *
  * They had already drifted: the workflow passed the Supabase key as
- * RUNNINGUP_SUPABASE_ANON_KEY while `V11ProjectBuilder` read
+ * RUNNINGUP_SUPABASE_ANON_KEY while `V14ProjectBuilder` read
  * RUNNINGUP_SUPABASE_PUBLISHABLE_KEY. The URL arrived, the key did not, so
- * `V11SupabaseRuntimeConfig.IsConfigured` stayed false and every server call would have
+ * `V14SupabaseRuntimeConfig.IsConfigured` stayed false and every server call would have
  * thrown SUPABASE_CONFIG_REQUIRED. Nothing failed at build time. The first sign of it
  * would have been a user installing the release and finding that nothing worked.
  *

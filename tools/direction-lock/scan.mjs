@@ -36,7 +36,7 @@ export const ALLOWLIST = new Map([
   ['tests/reward.test.mjs', 'asserts forbidden reward inputs are rejected'],
   ['tests/direction-lock.test.mjs', 'asserts the scanner itself works'],
   ['tests/race.test.mjs', 'asserts the race engine defines no combat identifiers'],
-  ['client/unity/Assets/RunningUp/Tests/EditMode/V11RunnerQualityTests.cs', 'the client-side DL-6 test lists the combat terms it forbids at runtime'],
+  ['client/unity/Assets/RunningUp/Tests/EditMode/V14RunnerQualityTests.cs', 'the client-side DL-6 test lists the combat terms it forbids at runtime'],
   ['packages/domain/race.mjs', 'states that prohibited combat concepts are absent from race resolution'],
   ['tools/content-factory/world/world-design.mjs', 'states that the world has no enemies or bosses'],
   ['tools/content-factory/characters/character-design.mjs', 'states that a runner carries no weapon'],

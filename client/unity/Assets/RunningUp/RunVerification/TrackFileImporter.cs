@@ -1,4 +1,4 @@
-// GPX·TCX·FIT 기록을 동일한 V11 검증 러닝 후보로 변환한다.
+// GPX·TCX·FIT 기록을 동일한 V14 검증 러닝 후보로 변환한다.
 using System;
 using System.Collections.Generic;
 using System.Globalization;

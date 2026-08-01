@@ -441,8 +441,8 @@ namespace RunningUp.V14
     {
         private const string InstallIdKey = "runningup.v14.install-id";
         [SerializeField] private V14SupabaseGateway gateway;
-        [SerializeField] private V11AndroidRunBridge runBridge;
-        [SerializeField] private V11VerifiedRunUploader uploader;
+        [SerializeField] private V14AndroidRunBridge runBridge;
+        [SerializeField] private V14VerifiedRunUploader uploader;
 
         private V14StateJournal journal;
         private V14FlowSnapshot snapshot;
@@ -650,8 +650,8 @@ namespace RunningUp.V14
         private void Awake()
         {
             gateway ??= GetComponent<V14SupabaseGateway>();
-            runBridge ??= GetComponent<V11AndroidRunBridge>();
-            uploader ??= GetComponent<V11VerifiedRunUploader>();
+            runBridge ??= GetComponent<V14AndroidRunBridge>();
+            uploader ??= GetComponent<V14VerifiedRunUploader>();
             journal = new V14StateJournal(Path.Combine(
                 Application.persistentDataPath,
                 "v14-flow-state.json"));

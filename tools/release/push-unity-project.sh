@@ -6,7 +6,7 @@
 # The machine that holds the Unity project has it in a working tree that cannot be safely
 # committed from: 281 staged deletions, of which only 148 are the retired V5 client — the
 # other 133 are CI workflows, Supabase migrations, tests and docs that V14 needs. It also
-# sits on a different branch (`agent/runningup-v11-complete`), so a `git pull` there merges
+# sits on a different branch (`agent/runningup-v14-complete`), so a `git pull` there merges
 # into the wrong lineage. An earlier version of this script tried to sort that tree out in
 # place; unstaging 133 files one at a time is not a procedure anyone should follow.
 #
