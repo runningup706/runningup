@@ -22,8 +22,8 @@ namespace RunningUp.V14.Backend
     [DisallowMultipleComponent]
     public sealed class V14SupabaseGateway : MonoBehaviour
     {
-        [SerializeField] private V11SupabaseRuntimeConfig config;
-        [SerializeField] private V11SupabaseSessionRuntime session;
+        [SerializeField] private V14SupabaseRuntimeConfig config;
+        [SerializeField] private V14SupabaseSessionRuntime session;
         private readonly HashSet<string> inFlight = new();
 
         public bool IsConfigured => config != null && config.IsConfigured;
@@ -34,13 +34,13 @@ namespace RunningUp.V14.Backend
 
         private void Awake()
         {
-            config ??= GetComponent<V11SupabaseRuntimeConfig>();
-            session ??= GetComponent<V11SupabaseSessionRuntime>();
+            config ??= GetComponent<V14SupabaseRuntimeConfig>();
+            session ??= GetComponent<V14SupabaseSessionRuntime>();
         }
 
         public void Configure(
-            V11SupabaseRuntimeConfig runtimeConfig,
-            V11SupabaseSessionRuntime sessionRuntime)
+            V14SupabaseRuntimeConfig runtimeConfig,
+            V14SupabaseSessionRuntime sessionRuntime)
         {
             config = runtimeConfig;
             session = sessionRuntime;

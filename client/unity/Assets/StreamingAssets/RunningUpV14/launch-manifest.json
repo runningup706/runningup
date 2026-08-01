@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "product_version": "11.0.0",
+  "generated_by": "tools/content-factory/refine-v14.mjs",
+  "counts": {
+    "continents": 12,
+    "regions": 192,
+    "routes": 2304,
+    "my_runner_forms": 12,
+    "pacers": 60,
+    "cards": 360,
+    "running_gear": 192,
+    "monthly_checkpoints": 120,
+    "screens": 21
+  },
+  "hashes": {
+    "WORLD_ROUTE_CATALOG_V14.json": "52fcf0a2c7c5eabe445aadad491cb411b50fabf61cd1154171b082d17fbc4acb",
+    "PACER_ROSTER_60_V14.json": "1d32e3ec183d8b11305f48bafd53e3f773e3b5ef6ef99865d0a15031dfbb2e65",
+    "CARD_CATALOG_360_V14.json": "5a8bf7c932518021d9d4c01687ead93349f50623903d79856ed3d8a123ee80c3",
+    "RUNNING_GEAR_192_V14.json": "ba3636ad33390da7457acf39f080e05d41bba2847136e6f6930517bbac567bba",
+    "MY_RUNNER_EVOLUTION_V14.json": "ccb2a5e4e0f8bea270c3ca1e1b250402a64a73ce637d9583c637ecea387ec24d",
+    "MONTHLY_APEX_120_CHECKPOINTS_V14.json": "e9c96f05132fea403b90f8c8b1dff2cfdc25d1ebaa92fc11bc486d498afb739f",
+    "SCREEN_CATALOG_V14.json": "8106591811d803b79ed67a9cdbbd98f99dc934b947095c4bbe5aff2ab67f346b"
+  }
+}

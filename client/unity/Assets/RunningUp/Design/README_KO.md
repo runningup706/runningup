@@ -64,14 +64,14 @@ public static readonly Color SurfaceDeep = new(26f / 255f, 61f / 255f, 92f / 255
 | | 위치 |
 |---|---|
 | 그림 (PNG 15개) | `../ProductionArt/VisualSliceAssets/` |
-| 폰트 | `../Fonts/NotoSansKR-V11.ttf` |
+| 폰트 | `../Fonts/NotoSansKR-V14.ttf` |
 | 3D 재질 · 애니메이션 | `../Generated/` — **자동 생성물.** 직접 고치면 다음 빌드에 사라집니다 |
 
 ---
 
 ## ⚠️ 씬 파일은 고치지 마십시오
 
-`../Scenes/LiveJourneyHome.unity` 는 빌드할 때 `../Editor/V11ProjectBuilder.cs` 가
+`../Scenes/LiveJourneyHome.unity` 는 빌드할 때 `../Editor/V14ProjectBuilder.cs` 가
 **다시 만듭니다.** Unity 에디터에서 손으로 옮긴 것은 다음 빌드에 사라집니다.
 
 ---

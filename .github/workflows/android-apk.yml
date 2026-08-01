@@ -159,7 +159,7 @@ jobs:
           # would hand every reader full database write access.
           #
           # These two names are a CONTRACT with the client's build script, which reads
-          # them in V11ProjectBuilder.CreateScene and bakes the result into the scene. The
+          # them in V14ProjectBuilder.CreateScene and bakes the result into the scene. The
           # key was passed as RUNNINGUP_SUPABASE_ANON_KEY here while the client reads
           # RUNNINGUP_SUPABASE_PUBLISHABLE_KEY, so the URL arrived and the key did not —
           # IsConfigured stayed false and every server call would have thrown

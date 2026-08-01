@@ -1,0 +1,21 @@
+{
+  "name": "RunningUp.V14.PlayModeTests",
+  "rootNamespace": "RunningUp.Tests.PlayMode",
+  "references": [
+    "RunningUp.V14.Runtime"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

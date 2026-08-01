@@ -101,7 +101,7 @@
     "ChibiMeshFactory"
   ],
   "humanQaScorecard": "artifacts/visual/production-art/scorecard.json",
-  "targetCapture": "artifacts/visual/production-art/v11-2_5d-reference-v2-1080x1920.png",
+  "targetCapture": "artifacts/visual/production-art/v14-2_5d-reference-v2-1080x1920.png",
   "productionCapture": "artifacts/visual/production-art/live-journey-production-1080x1920.png",
   "comparisonCapture": "artifacts/visual/production-art/target-vs-unity-2160x1920.png"
 }

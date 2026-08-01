@@ -42,8 +42,8 @@ $ git ls-tree -r --name-only origin/main | grep -c "V14\|ScreenFlow\|RunVerifica
 - `client/unity/Assets/RunningUp/` 아래에 실제로 존재하는 파일은 2개뿐이다
   (`Progression/MonthlyApex/MonthlyApexLadder.cs`, `RunningUp.Progression.asmdef`).
 - 인계 ZIP의 `05_SELECTED_SOURCE`에도 V14 파일 중 **4개만** 들어 있다
-  (`V11RunRuntime.cs`, `V11VerifiedRunUploader.cs`, `V11RunVerificationTests.cs`, `V14ScreenFlowController.cs`).
-  `V14JourneyRuntime.cs`, `V11AndroidRunBridge.cs`, `ChibiRunnerView.cs`, 씬/프리팹, 부트스트랩,
+  (`V14RunRuntime.cs`, `V14VerifiedRunUploader.cs`, `V14RunVerificationTests.cs`, `V14ScreenFlowController.cs`).
+  `V14JourneyRuntime.cs`, `V14AndroidRunBridge.cs`, `ChibiRunnerView.cs`, 씬/프리팹, 부트스트랩,
   `AndroidManifest.xml`, Gradle 템플릿은 **어디에도 없다.**
 
 ### FIX-00 · 소스 단일 진실 확보 (블로커)
@@ -301,7 +301,7 @@ PL/pgSQL에서 `PERFORM`은 **행을 1개 이상 생성하면 `FOUND`를 true로
 - ③의 cross-source 병합이 **실행되지 않고**,
 - ④가 참이 되어 `run_id = NULL`, `duplicate = true`, 모든 보상 0으로 응답한다.
 
-그리고 최근에 넣은 Unity 중복 억제 수정(`V11RunRuntime.ConfirmServerAcceptedRun`, 88-99행)이
+그리고 최근에 넣은 Unity 중복 억제 수정(`V14RunRuntime.ConfirmServerAcceptedRun`, 88-99행)이
 `canonicalDuplicate == true`를 보고 **큐만 ACK하고 성장 적용을 건너뛴다.**
 → **실제로 뛴 러닝이 아무 흔적 없이 사라진다.** 오류 표시도 없다.
 
@@ -372,7 +372,7 @@ private void RefreshMetrics()
 
 #### D-3. 업로더가 매 프레임 폴링하고 10초마다 상태를 재방송
 
-`V11VerifiedRunUploader.Update()`는 매 프레임 `Time.unscaledTime >= nextSyncAt`를 검사하고,
+`V14VerifiedRunUploader.Update()`는 매 프레임 `Time.unscaledTime >= nextSyncAt`를 검사하고,
 큐가 비어 있어도 10초마다 `Publish("synchronized")`를 쏜다.
 이 상태 이벤트는 `V14ScreenFlowController.OnJourneyStatus`/`OnBridgeStatus`를 거쳐
 `Publish` + `RefreshSyncView()` + 경우에 따라 `Show()`까지 유발한다. 유휴 상태에서의 순수 낭비다.
@@ -738,7 +738,7 @@ uGUI는 매 포인터 이벤트마다 모든 활성 raycast 대상을 정렬·�
 문제:
   - RefreshRuntimeState()가 모든 Show() 끝과 모든 StateChanged에서
     현재 화면과 무관하게 RefreshApprovedResources() + RefreshRaceUi()를 돌린다. (2255-2302행)
-  - V11VerifiedRunUploader가 매 프레임 폴링하고 큐가 비어도 10초마다 "synchronized"를 방송한다.
+  - V14VerifiedRunUploader가 매 프레임 폴링하고 큐가 비어도 10초마다 "synchronized"를 방송한다.
   - Toggle* 6종이 전부 RebuildSettings()로 화면을 통째로 파괴·재생성한다. (2063-2117행)
 
 작업:
@@ -946,7 +946,7 @@ bash tools/build/android-v14.sh
 1. **V14 Unity 프로젝트 전체 소스** — 원격 저장소에 없다. FIX-00 없이는 FIX-01~16을 적용·검증할 수 없다.
 2. `AndroidManifest.xml`과 `ProjectSettings` — targetSdk 36 확인은 logcat으로 했으나
    매니페스트와 CanvasScaler 기준 해상도를 못 봐서 FIX-06/FIX-10의 수치를 확정하지 못했다.
-3. `V14JourneyRuntime.cs` / `V11AndroidRunBridge.cs` — `V14TrainingState`의 `RESUMED` 의미(FIX-09)와
+3. `V14JourneyRuntime.cs` / `V14AndroidRunBridge.cs` — `V14TrainingState`의 `RESUMED` 의미(FIX-09)와
    bridge의 `capturing` 발행 주기(FIX-03)를 소스로 확인해야 한다.
 4. 원격 Supabase 프로젝트 URL / publishable key / 사용자 승인 — FIX-13/14의 원격 검증에 필요.
 5. 실기기 + 야외 경로 — FIX-06(safe area)과 FIX-11(성능)의 최종 증거에 필요.
