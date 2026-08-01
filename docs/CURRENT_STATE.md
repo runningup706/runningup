@@ -45,7 +45,6 @@ done, and nothing done is inflated into more than it is.
 ### Direction lock (DL-1 … DL-6)
 - `docs/USER_DIRECTION_LOCK.md` + `content/schemas/direction_lock.json`
 - `tools/direction-lock/scan.mjs`: 141 files, 32 concept patterns, **0 violations**
-- `docs/archive/USER_DIRECTION_LOCK_v4.0.0.md`: 이전 잠금(52 체크포인트·96 지역·전투 콘텐츠) 보존본
 - Enforced additionally by DB CHECK constraints, enum ordering and pgTAP
 
 ### Domain engine — 190 unit tests, all passing

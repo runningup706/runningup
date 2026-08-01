@@ -1,8 +1,8 @@
 /**
  * RunningUp race resolution.
  *
- * This module replaces the V5 auto-battle engine. RunningUp is not a combat game: the
- * contest is a race against pacers, decided by pace, endurance and a finishing kick.
+ * RunningUp is not a combat game: the contest is a race against pacers, decided by pace,
+ * endurance and a finishing kick.
  * There is no HP, no damage, no attack and no enemy here, and none may be reintroduced —
  * `tools/direction-lock/scan.mjs` fails the build on those concepts.
  *

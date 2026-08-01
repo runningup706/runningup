@@ -194,10 +194,7 @@ export const VERIFICATION_GRADES = Object.freeze([
  * Launch content floor. Mirrors content/schemas/direction_lock.json.
  *
  * RunningUp is a running race, so the world is counted in races, rival crews, champions
- * and courses. The combat categories these replaced (battle stages, enemy families,
- * bosses, tactical skills and relics) are gone from the product entirely — see
- * `docs/USER_DIRECTION_LOCK.md` DL-6. Every category kept its floor across that change:
- * nothing was deleted to make a number easier to hit.
+ * and courses. Combat categories are forbidden by `docs/USER_DIRECTION_LOCK.md` DL-6.
  */
 export const LAUNCH_CONTENT_FLOOR = Object.freeze({
   continents: 12,

@@ -1,22 +1,19 @@
-# USER_DIRECTION_LOCK — RunningUp v5.0.0
+# USER_DIRECTION_LOCK — RunningUp V14
 
 **Status: LOCKED.** These are top-level user product decisions, not engineering trade-offs.
 No agent, session, schedule pressure, performance concern, or "realism" argument may
 reduce, defer, re-scope, or reinterpret any item on this page. Improvements are allowed
 only *inside* these boundaries.
 
-Source of truth: `RUNNINGUP_3D_REAL_RUN_RPG_DUAL_AGENT_MASTER_PROMPT_v4.0.0_FINAL.txt`
-SHA-256 `b80ecb1077daf3967d9b4a8c918b4eebe942d93d5aa8805fdf10de8c7dca1978`
-(sections `# -1`, `# 6.3`, `# 7`, `# 11.8`, `# 17.4`, `# 22.1`, `# 28`, `# 29`),
-plus three direction decisions taken by the product owner after that document:
+Source of truth: the current V14 product direction and the user-approved V14 runtime.
+The lock is intentionally self-contained so the active product does not depend on an
+older version's prompt or archive.
 
 | Decision | Effect |
 |---|---|
-| Where two candidate numbers existed, take the larger | 52 → **121** checkpoints, 96 → **192** regions |
-| "It is not combat any more, it is a running race — delete what combat needs" | **DL-6**, and the DL-4 floor restated over running content |
+| Launch scale | **121** checkpoints and **192** regions |
+| Product mode | **DL-6**, a running race with no combat systems |
 | The V14 Unity client is the client of record | Client ladder and navigation contracts are testable in this repo |
-
-Previous revision: [`docs/archive/USER_DIRECTION_LOCK_v4.0.0.md`](archive/USER_DIRECTION_LOCK_v4.0.0.md) (archived, not in force).
 
 Machine-readable mirror: [`content/schemas/direction_lock.json`](../content/schemas/direction_lock.json).
 Enforced by `tools/direction-lock/scan.mjs` (run in `npm run validate:direction-lock` and CI),
