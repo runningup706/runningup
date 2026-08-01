@@ -1,0 +1,247 @@
+# SCREEN_REGISTRY — what screens exist, and what is true about each of them
+#
+# WHY THIS FILE
+#
+# `SCREEN_CATALOG_V14.json` mixes shipped screens, planned screens and internal tools in
+# one list, so it cannot answer "what can a user actually open today". This registry can,
+# because it is compared against the code: `tests/screen-registry.test.mjs` reads the
+# `Screen` enum out of `V14ScreenFlowController.cs` and fails if the two disagree in either
+# direction — a screen in the enum with no entry here, or an entry here claiming
+# IMPLEMENTED for a screen the enum does not have.
+#
+# implementation_status:
+#   IMPLEMENTED    reachable in the running app, every listed feature works
+#   PARTIAL        reachable, but a listed feature is stubbed or unwired
+#   APPROVED_DESIGN design settled, no runtime yet
+#   PLANNED        agreed to exist, nothing settled
+#   DEPRECATED     still in the build, on the way out
+#   INTERNAL_TOOL  not user-facing
+#
+# back_policy is the Android system-back behaviour, which is the single most-reported
+# defect class in this app and therefore stated per screen rather than assumed.
+
+schema_version: 1
+source_of_truth: client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs
+enum_name: Screen
+checked_by: tests/screen-registry.test.mjs
+
+screens:
+  - id: Home
+    runtime_route: Screen.Home
+    implementation_status: IMPLEMENTED
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildHome]
+    features: [daily_contract, journey_summary, quick_start, world_shortcut, sync_shortcut]
+    native_requirements: []
+    backend_requirements: [journey_state]
+    preview: pending
+    tests: [tests/v14-buttons.test.mjs, tests/v14-safe-area.test.mjs]
+    back_policy: >-
+      terminal. First back arms a 2-second window and shows "Press back again to exit";
+      a second back inside the window quits.
+
+  - id: Sync
+    runtime_route: Screen.Sync
+    implementation_status: PARTIAL
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildSync]
+    features: [health_connect_import, track_file_import, sync_history]
+    native_requirements: [health_connect, file_picker]
+    backend_requirements: [run_ingest, verification]
+    preview: pending
+    tests: []
+    back_policy: pops the back stack, or returns to Home when the stack is empty.
+
+  - id: Training
+    runtime_route: Screen.Training
+    implementation_status: IMPLEMENTED
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildTraining]
+    features: [goal_library, session_style, course_selection, start_run]
+    native_requirements: [gps, foreground_service]
+    backend_requirements: [run_plan_snapshot]
+    preview: pending
+    tests: []
+    back_policy: pops the back stack, or returns to Home when the stack is empty.
+
+  - id: ActiveTraining
+    runtime_route: Screen.ActiveTraining
+    implementation_status: PARTIAL
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildActiveTraining]
+    features: [live_metrics, pause_resume, finish, discard]
+    native_requirements: [gps, foreground_service, notification]
+    backend_requirements: [run_session]
+    preview: pending
+    tests: []
+    back_policy: >-
+      protected. Back returns to Home and the run KEEPS RUNNING in the background —
+      it never discards an in-progress run. Announces "Run continues in the background".
+
+  - id: TrainingResult
+    runtime_route: Screen.TrainingResult
+    implementation_status: IMPLEMENTED
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildTrainingResult]
+    features: [run_summary, verification_grade, reward_summary]
+    native_requirements: []
+    backend_requirements: [verification, xp_ledger]
+    preview: pending
+    tests: []
+    back_policy: pops the back stack, or returns to Home when the stack is empty.
+
+  - id: Matchmaking
+    runtime_route: Screen.Matchmaking
+    implementation_status: PARTIAL
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildMatchmaking]
+    features: [lane_selection, field_preview, queue]
+    native_requirements: []
+    backend_requirements: [matchmaking]
+    preview: pending
+    tests: []
+    back_policy: pops the back stack, or returns to Home when the stack is empty.
+
+  - id: Lobby
+    runtime_route: Screen.Lobby
+    implementation_status: PARTIAL
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildLobby]
+    features: [field_roster, countdown, ready_state]
+    native_requirements: []
+    backend_requirements: [race_session]
+    preview: pending
+    tests: []
+    back_policy: pops the back stack, or returns to Home when the stack is empty.
+
+  - id: LiveRace
+    runtime_route: Screen.LiveRace
+    implementation_status: PARTIAL
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildLiveRace]
+    features: [live_positions, pace_state, rank_strip]
+    native_requirements: [gps, foreground_service]
+    backend_requirements: [race_session, progress_snapshot]
+    preview: pending
+    tests: []
+    back_policy: >-
+      protected, same as ActiveTraining. Back returns to Home and the race continues.
+
+  - id: RaceResult
+    runtime_route: Screen.RaceResult
+    implementation_status: IMPLEMENTED
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildRaceResult]
+    features: [finish_order, elapsed, reward_summary]
+    native_requirements: []
+    backend_requirements: [race_result, reward_grant]
+    preview: pending
+    tests: []
+    back_policy: pops the back stack, or returns to Home when the stack is empty.
+
+  - id: ActivityHistory
+    runtime_route: Screen.ActivityHistory
+    implementation_status: IMPLEMENTED
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildActivityHistory]
+    features: [run_list, best_efforts, monthly_totals]
+    native_requirements: []
+    backend_requirements: [run_sessions, run_best_efforts]
+    preview: pending
+    tests: []
+    back_policy: pops the back stack, or returns to Home when the stack is empty.
+
+  - id: Character
+    runtime_route: Screen.Character
+    implementation_status: PARTIAL
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildCharacter]
+    features: [roster, cosmetic_slots, technique_kit]
+    native_requirements: []
+    backend_requirements: [characters, cosmetics]
+    preview: pending
+    tests: []
+    back_policy: pops the back stack, or returns to Home when the stack is empty.
+    notes: >-
+      Does not yet surface the My Runner base styles or the wardrobe added in
+      migration 0013. That runtime work is PHASE G and this entry stays PARTIAL
+      until it lands — the catalogue existing is not the screen existing.
+
+  - id: World
+    runtime_route: Screen.World
+    implementation_status: IMPLEMENTED
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildWorld]
+    features: [continent_map, region_nodes, course_selection]
+    native_requirements: []
+    backend_requirements: [world_continents, world_regions, world_courses]
+    preview: pending
+    tests: []
+    back_policy: >-
+      staged. Back steps the selection stage down one level (course to region to
+      continent) before it pops the back stack.
+
+  - id: MonthlyApex
+    runtime_route: Screen.MonthlyApex
+    implementation_status: IMPLEMENTED
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildMonthlyApex]
+    features: [checkpoint_ladder, rank, world_crown]
+    native_requirements: []
+    backend_requirements: [monthly_apex_progress]
+    preview: pending
+    tests: [tests/v14-buttons.test.mjs]
+    back_policy: pops the back stack, or returns to Home when the stack is empty.
+
+  - id: Crew
+    runtime_route: Screen.Crew
+    implementation_status: PARTIAL
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildCrew]
+    features: [crew_roster, crew_campaign]
+    native_requirements: []
+    backend_requirements: [crews]
+    preview: pending
+    tests: []
+    back_policy: pops the back stack, or returns to Home when the stack is empty.
+
+  - id: Settings
+    runtime_route: Screen.Settings
+    implementation_status: IMPLEMENTED
+    design_status: APPROVED
+    source_files: [client/unity/Assets/RunningUp/V14/UI/V14ScreenFlowController.cs#BuildSettings]
+    features: [permissions, units, art_swatches, account]
+    native_requirements: [permission_settings]
+    backend_requirements: [user_settings]
+    preview: pending
+    tests: [tests/design-tokens.test.mjs]
+    back_policy: pops the back stack, or returns to Home when the stack is empty.
+
+# Screens the product needs and does not have. Listed so that "not built" is a recorded
+# state rather than an absence somebody has to notice.
+planned_screens:
+  - id: MyRunner
+    implementation_status: PLANNED
+    design_status: APPROVED_DESIGN
+    features: [base_style_picker, appearance_preview]
+    backend_requirements: [my_runner_base_styles, my_runners]
+    notes: The 24 base styles have a catalogue, a schema and a seed. No screen opens them.
+
+  - id: Wardrobe
+    implementation_status: PLANNED
+    design_status: APPROVED_DESIGN
+    features: [slot_grid, set_browser, owned_filter, equip, preset]
+    backend_requirements: [wearable_items, outfit_sets, my_runner_equipment]
+    notes: >-
+      684 items across 18 slots and 120 sets exist and the equip rule is enforced by the
+      database. Needs virtualization — the direction is explicit that 600 items must not
+      all be instantiated at once.
+
+  - id: GlobalEvent
+    implementation_status: PLANNED
+    design_status: APPROVED_DESIGN
+    features: [schedule, entry, check_in, heat, countdown, live_field, result]
+    backend_requirements: [global_events, global_event_occurrences, global_event_entries]
+    notes: >-
+      Capacity 50-100 is designed, constrained and gated. Every load-test evidence entry
+      reads NOT_RUN.

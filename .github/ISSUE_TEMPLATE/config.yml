@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 지금 상태가 궁금해요
+    url: https://github.com/runningup706/runningup/blob/main/CURRENT_STATE_KO.md
+    about: 현재 상태 한 장. 뭐가 되고 뭐가 막혀 있는지.
+  - name: 뭐가 바뀌었는지 궁금해요
+    url: https://github.com/runningup706/runningup/blob/main/CHANGELOG_KO.md
+    about: 오너가 체감하실 변화만 모아둔 기록.
+  - name: 어느 파일인지 궁금해요
+    url: https://github.com/runningup706/runningup/blob/main/FILE_MAP_KO.md
+    about: 쓰시는 표현을 실제 파일에 연결한 표.
