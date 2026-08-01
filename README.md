@@ -1,19 +1,19 @@
 # RunningUp (러닝업)
 
-A 3D real-run linked idle action RPG for Android. Your verified real-world running is the
+A V14 2.5D real-run linked Android game. Your verified real-world running is the
 only thing that grows your character, and a month of running is a journey across twelve
 continents toward a single final goal: **1000 km, the World Crown**.
 
-**Status: pre-alpha (`0.1.0-alpha.1`).** Backend, domain engine and launch content data are
-implemented and tested. The Unity client and the Android build are not — see
-[`docs/CURRENT_STATE.md`](docs/CURRENT_STATE.md) for an exact, unembellished breakdown.
+**Status: V14 verified development prerelease.** The Unity Android client has a verified
+emulator launch build. See [`docs/CURRENT_STATE.md`](docs/CURRENT_STATE.md) for the current
+evidence and remaining production work.
 
 ## The product in five fixed decisions
 
 These are user decisions, not engineering preferences. They are enforced by tests, database
 constraints and a static scanner — see [`docs/USER_DIRECTION_LOCK.md`](docs/USER_DIRECTION_LOCK.md).
 
-1. **1000 km is the end of the month.** 52 checkpoints from 0 to 1000 km, 11 ranks plus the
+1. **1000 km is the end of the month.** 121 checkpoints from 0 to 1000 km, 11 ranks plus the
    World Crown, and nothing above it. Running past 1000 km still earns its ordinary reward;
    it just does not invent a new tier.
 2. **Everyone starts at their own level on day one.** A marathon runner is never made to
@@ -22,8 +22,8 @@ constraints and a static scanner — see [`docs/USER_DIRECTION_LOCK.md`](docs/US
 3. **Running only.** Road, track, treadmill and indoor. Run-walk is a beginner running
    method. No trail, hiking, cycling or elevation progression — and no weather or
    time-of-day multipliers.
-4. **The world is broad on launch day.** 12 continents, 96 regions, 72 main stages, 24 side
-   stages and 12 characters, all real. No "coming soon" counted as content.
+4. **The world is broad on launch day.** 12 continents, 192 regions, 2,304 courses and 12
+   characters, all real. No "coming soon" counted as content.
 5. **Verified running is the only source of power.** Money, ads, idle time, cosmetics and
    referrals contribute exactly zero.
 

@@ -190,9 +190,7 @@ test('content/schemas/direction_lock.json mirrors the canonical constants exactl
   assert.equal(mirror.race_scope.combat_allowed, false);
 });
 
-test('the mirror points at the human-readable lock and its archive', () => {
+test('the mirror points at the current human-readable lock', () => {
   const mirror = JSON.parse(readFileSync(join(SCAN_ROOT, 'content/schemas/direction_lock.json'), 'utf8'));
-  for (const rel of [mirror.human_readable, mirror.human_readable_archive]) {
-    assert.ok(existsSync(join(SCAN_ROOT, rel)), `${rel} does not exist`);
-  }
+  assert.ok(existsSync(join(SCAN_ROOT, mirror.human_readable)), `${mirror.human_readable} does not exist`);
 });

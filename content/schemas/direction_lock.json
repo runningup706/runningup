@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "lock_id": "runningup.direction_lock.v5",
-  "source_master_sha256": "b80ecb1077daf3967d9b4a8c918b4eebe942d93d5aa8805fdf10de8c7dca1978",
+  "lock_id": "runningup.direction_lock.v14",
+  "source_revision": "v14-current",
   "human_readable": "docs/USER_DIRECTION_LOCK.md",
   "monthly_apex": {
     "final_distance_km": 1000,
@@ -146,8 +146,6 @@
       "dungeon"
     ]
   },
-  "supersedes": "runningup.direction_lock.v4",
-  "human_readable_archive": "docs/archive/USER_DIRECTION_LOCK_v4.0.0.md",
   "race_scope": {
     "product_is_a_running_race": true,
     "combat_allowed": false,

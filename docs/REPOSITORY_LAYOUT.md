@@ -150,6 +150,6 @@ diff를 비교해서, 커밋된 트리와 다르면 실패한다.
 | `client/dotnet/` | `packages/domain-dotnet/` | 도메인 정합성 테스트지 클라이언트가 아니다 |
 | `backend/supabase/` | `services/supabase/` | "backend"보다 무엇인지 정확하다 |
 | `content/launch/` | `content/generated/` | 경로만 보고 생성물임을 알 수 있게 |
-| `HANDOFF.md` · `CODEX_HANDOFF.md` | `docs/handoff/` | 최상위 마크다운 6개는 너무 많다 |
+| `HANDOFF.md` | `docs/handoff/` | 인계 문서는 한 곳에서 관리한다 |
 
 각 이동은 전체 게이트(단위 107 · pgTAP 1129 · 검증기 · smoke-play)를 통과한 뒤에만 커밋한다.
