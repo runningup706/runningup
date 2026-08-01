@@ -51,9 +51,26 @@ Verified by `backend/supabase/tests/pgtap/01_schema_rls.sql` and `06_profile_wri
 | ↳ column grant | | | | `authenticated` SELECT | `character_id, core_power, extra_core_reward_multiplier, hidden_stat, id, name_key, purchasable_with_real_money, ranking_multiplier, slot, verification_bonus, xp_multiplier` |
 | `currency_ledger` | ✅ | ✅ | — — — — | ✅ — — — | `currency_ledger_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` SELECT | `amount, created_at, currency_kind, id, idempotency_key, source_id, source_type, user_id` |
+| `equipment_slots` | ✅ | ✅ | ✅ — — — | ✅ — — — | `equipment_slots_read_all` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `content_version, display_order, icon_address, id, is_required, name_key, render_layer, slot` |
+| ↳ column grant | | | | `authenticated` SELECT | `content_version, display_order, icon_address, id, is_required, name_key, render_layer, slot` |
 | `gear_sets` | ✅ | ✅ | ✅ — — — | ✅ — — — | `gear_sets_public_read` (SELECT) |
 | ↳ column grant | | | | `anon` SELECT | `activation_condition, budget_delta, continent_id, id, name_key, trade_from, trade_to` |
 | ↳ column grant | | | | `authenticated` SELECT | `activation_condition, budget_delta, continent_id, id, name_key, trade_from, trade_to` |
+| `global_event_entries` | ✅ | ✅ | — — — — | ✅ ✅ ✅ — | `global_event_entries_insert_own` (INSERT)<br>`global_event_entries_select_own` (SELECT)<br>`global_event_entries_update_own` (UPDATE) |
+| ↳ column grant | | | | `authenticated` INSERT | `checked_in_at, entered_at, heat_number, occurrence_id, state, user_id` |
+| ↳ column grant | | | | `authenticated` SELECT | `checked_in_at, entered_at, heat_number, occurrence_id, state, user_id` |
+| ↳ column grant | | | | `authenticated` UPDATE | `checked_in_at, entered_at, heat_number, occurrence_id, state, user_id` |
+| `global_event_occurrences` | ✅ | ✅ | ✅ — — — | ✅ — — — | `global_event_occurrences_read` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `check_in_opens_at, created_at, entry_closes_at, event_id, id, settled_at, starts_at, state` |
+| ↳ column grant | | | | `authenticated` SELECT | `check_in_opens_at, created_at, entry_closes_at, event_id, id, settled_at, starts_at, state` |
+| `global_event_progress` | ✅ | ✅ | — — — — | ✅ — — — | `global_event_progress_read_same_occurrence` (SELECT) |
+| ↳ column grant | | | | `authenticated` SELECT | `course_progress_ratio, occurrence_id, pace_state, recorded_at, sequence, server_rank, user_id, verified_distance_meters` |
+| `global_event_results` | ✅ | ✅ | — — — — | ✅ — — — | `global_event_results_read_same_occurrence` (SELECT) |
+| ↳ column grant | | | | `authenticated` SELECT | `elapsed_seconds, final_rank, finish_state, occurrence_id, reward_grant_key, settled_at, user_id, verified_distance_meters` |
+| `global_events` | ✅ | ✅ | ✅ — — — | ✅ — — — | `global_events_read_all` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `cadence, check_in_window_minutes, content_version, countdown_seconds, debug_only, display_order, distance_meters, enabled, entry_rule, heat_size, host_continent_id, id, max_participants, min_participants, name_key, scene_address` |
+| ↳ column grant | | | | `authenticated` SELECT | `cadence, check_in_window_minutes, content_version, countdown_seconds, debug_only, display_order, distance_meters, enabled, entry_rule, heat_size, host_continent_id, id, max_participants, min_participants, name_key, scene_address` |
 | `monthly_apex_checkpoint_claims` | ✅ | ✅ | — — — — | ✅ — — — | `apex_claims_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` SELECT | `checkpoint_id, claimed_at, id, ledger_entry_id, month_key, user_id` |
 | `monthly_apex_checkpoints` | ✅ | ✅ | ✅ — — — | ✅ — — — | `monthly_apex_checkpoints_public_read` (SELECT) |
@@ -64,6 +81,22 @@ Verified by `backend/supabase/tests/pgtap/01_schema_rls.sql` and `06_profile_wri
 | ↳ column grant | | | | `authenticated` SELECT | `checkpoint_count, content_version, effective_at, final_checkpoint_meters, is_active, ladder_version` |
 | `monthly_apex_progress` | ✅ | ✅ | — — — — | ✅ — — — | `apex_progress_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` SELECT | `apex_axis_unlocked, first_run_at, ladder_version, laddered_meters, major_rank, month_key, over_crown_meters, updated_at, user_id, world_crown_awarded` |
+| `my_runner_base_styles` | ✅ | ✅ | ✅ — — — | ✅ — — — | `my_runner_base_styles_read_all` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `adaptive_kit_id, age_band, animation_set_id, build, content_version, display_order, head_ratio, id, name_key, paid_gacha, portrait_address, prefab_address, presentation, rig_id, selectable_at_launch, skin_tone_id, thumbnail_address` |
+| ↳ column grant | | | | `authenticated` SELECT | `adaptive_kit_id, age_band, animation_set_id, build, content_version, display_order, head_ratio, id, name_key, paid_gacha, portrait_address, prefab_address, presentation, rig_id, selectable_at_launch, skin_tone_id, thumbnail_address` |
+| `my_runner_equipment` | ✅ | ✅ | — — — — | ✅ ✅ ✅ ✅ | `my_runner_equipment_own` (ALL) |
+| ↳ column grant | | | | `authenticated` INSERT | `equipped_at, item_id, slot_id, user_id` |
+| ↳ column grant | | | | `authenticated` SELECT | `equipped_at, item_id, slot_id, user_id` |
+| ↳ column grant | | | | `authenticated` UPDATE | `equipped_at, item_id, slot_id, user_id` |
+| `my_runner_wardrobe` | ✅ | ✅ | — — — — | ✅ — — — | `my_runner_wardrobe_select_own` (SELECT) |
+| ↳ column grant | | | | `authenticated` SELECT | `acquired_at, acquired_from, item_id, user_id` |
+| `my_runners` | ✅ | ✅ | — — — — | ✅ ✅ ✅ — | `my_runners_own` (ALL) |
+| ↳ column grant | | | | `authenticated` INSERT | `base_style_id, created_at, display_name, updated_at, user_id` |
+| ↳ column grant | | | | `authenticated` SELECT | `base_style_id, created_at, display_name, updated_at, user_id` |
+| ↳ column grant | | | | `authenticated` UPDATE | `base_style_id, created_at, display_name, updated_at, user_id` |
+| `outfit_sets` | ✅ | ✅ | ✅ — — — | ✅ — — — | `outfit_sets_read_all` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `acquisition_source, content_version, continent_id, display_order, id, name_key, shape_id, thumbnail_address` |
+| ↳ column grant | | | | `authenticated` SELECT | `acquisition_source, content_version, continent_id, display_order, id, name_key, shape_id, thumbnail_address` |
 | `personal_baselines` | ✅ | ✅ | — — — — | ✅ — — — | `baselines_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` SELECT | `baseline_speed_mps, calculated_at, distance_meters, sample_count, user_id, window_days` |
 | `profiles` | ✅ | ✅ | — — — — | ✅ — — — | `profiles_select_own` (SELECT)<br>`profiles_update_own` (UPDATE) |
@@ -110,6 +143,9 @@ Verified by `backend/supabase/tests/pgtap/01_schema_rls.sql` and `06_profile_wri
 | ↳ column grant | | | | `authenticated` INSERT | `audio_cue_frequency, graphics_tier, haptics_enabled, large_text, notification_opt_in, quiet_hours_end, quiet_hours_start, reduced_motion, updated_at, user_id, voice_cues_enabled` |
 | ↳ column grant | | | | `authenticated` SELECT | `audio_cue_frequency, graphics_tier, haptics_enabled, large_text, notification_opt_in, quiet_hours_end, quiet_hours_start, reduced_motion, updated_at, user_id, voice_cues_enabled` |
 | ↳ column grant | | | | `authenticated` UPDATE | `audio_cue_frequency, graphics_tier, haptics_enabled, large_text, notification_opt_in, quiet_hours_end, quiet_hours_start, reduced_motion, updated_at, user_id, voice_cues_enabled` |
+| `wearable_items` | ✅ | ✅ | ✅ — — — | ✅ — — — | `wearable_items_read_all` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `acquisition_source, compatible_base_style_ids, content_version, continent_id, display_order, id, name_key, prefab_address, rig_id, set_id, slot_id, thumbnail_address` |
+| ↳ column grant | | | | `authenticated` SELECT | `acquisition_source, compatible_base_style_ids, content_version, continent_id, display_order, id, name_key, prefab_address, rig_id, set_id, slot_id, thumbnail_address` |
 | `weekly_goal_snapshots` | ✅ | ✅ | — — — — | ✅ — — — | `weekly_goals_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` SELECT | `achieved_value, goal_kind, met, target_value, user_id, week_key` |
 | `world_champions` | ✅ | ✅ | ✅ — — — | ✅ — — — | `world_champions_public_read` (SELECT) |
@@ -129,6 +165,9 @@ Verified by `backend/supabase/tests/pgtap/01_schema_rls.sql` and `06_profile_wri
 | `world_regions` | ✅ | ✅ | ✅ — — — | ✅ — — — | `world_regions_public_read` (SELECT) |
 | ↳ column grant | | | | `anon` SELECT | `bypass_allowed, continent_id, display_order, id, name_key, node_type, scene_address` |
 | ↳ column grant | | | | `authenticated` SELECT | `bypass_allowed, continent_id, display_order, id, name_key, node_type, scene_address` |
+| `world_runners` | ✅ | ✅ | ✅ — — — | ✅ — — — | `world_runners_read_all` (SELECT) |
+| ↳ column grant | | | | `anon` SELECT | `base_style_id, content_version, continent_id, crew_id, crew_slot, display_order, home_region_id, id, intro_key, name_key, open_field, portrait_address, prefab_address, race_signature, role, tendency_id` |
+| ↳ column grant | | | | `authenticated` SELECT | `base_style_id, content_version, continent_id, crew_id, crew_slot, display_order, home_region_id, id, intro_key, name_key, open_field, portrait_address, prefab_address, race_signature, role, tendency_id` |
 | `xp_ledger` | ✅ | ✅ | — — — — | ✅ — — — | `xp_ledger_select_own` (SELECT) |
 | ↳ column grant | | | | `authenticated` SELECT | `base_components, created_at, crossed_checkpoint_ids, final_amount, formula_version, id, idempotency_key, modifiers, monthly_distance_after, monthly_distance_before, monthly_multiplier, passport_version, reversal_of, source_id, source_type, user_id, verification_grade` |
 

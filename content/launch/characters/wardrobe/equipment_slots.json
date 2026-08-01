@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "equipment_slot",
+  "count": 18,
+  "items": [
+    {
+      "id": "slt_hair",
+      "slot": "hair",
+      "order": 1,
+      "layer": 20,
+      "required": true,
+      "hides": [],
+      "name_key": "wardrobe.slot.hair",
+      "icon_address": "wardrobe/slot/hair"
+    },
+    {
+      "id": "slt_headwear",
+      "slot": "headwear",
+      "order": 2,
+      "layer": 60,
+      "required": false,
+      "hides": [],
+      "name_key": "wardrobe.slot.headwear",
+      "icon_address": "wardrobe/slot/headwear"
+    },
+    {
+      "id": "slt_face",
+      "slot": "face",
+      "order": 3,
+      "layer": 55,
+      "required": false,
+      "hides": [],
+      "name_key": "wardrobe.slot.face",
+      "icon_address": "wardrobe/slot/face"
+    },
+    {
+      "id": "slt_eyewear",
+      "slot": "eyewear",
+      "order": 4,
+      "layer": 58,
+      "required": false,
+      "hides": [],
+      "name_key": "wardrobe.slot.eyewear",
+      "icon_address": "wardrobe/slot/eyewear"
+    },
+    {
+      "id": "slt_ear",
+      "slot": "ear",
+      "order": 5,
+      "layer": 57,
+      "required": false,
+      "hides": [],
+      "name_key": "wardrobe.slot.ear",
+      "icon_address": "wardrobe/slot/ear"
+    },
+    {
+      "id": "slt_neck",
+      "slot": "neck",
+      "order": 6,
+      "layer": 45,
+      "required": false,
+      "hides": [],
+      "name_key": "wardrobe.slot.neck",
+      "icon_address": "wardrobe/slot/neck"
+    },
+    {
+      "id": "slt_top",
+      "slot": "top",
+      "order": 7,
+      "layer": 30,
+      "required": true,
+      "hides": [],
+      "name_key": "wardrobe.slot.top",
+      "icon_address": "wardrobe/slot/top"
+    },
+    {
+      "id": "slt_outer",
+      "slot": "outer",
+      "order": 8,
+      "layer": 40,
+      "required": false,
+      "hides": [],
+      "name_key": "wardrobe.slot.outer",
+      "icon_address": "wardrobe/slot/outer"
+    },
+    {
+      "id": "slt_arm",
+      "slot": "arm",
+      "order": 9,
+      "layer": 32,
+      "required": false,
+      "hides": [],
+      "name_key": "wardrobe.slot.arm",
+      "icon_address": "wardrobe/slot/arm"
+    },
+    {
+      "id": "slt_wrist",
+      "slot": "wrist",
+      "order": 10,
+      "layer": 34,
+      "required": false,
+      "hides": [],
+      "name_key": "wardrobe.slot.wrist",
+      "icon_address": "wardrobe/slot/wrist"
+    },
+    {
+      "id": "slt_hand",
+      "slot": "hand",
+      "order": 11,
+      "layer": 36,
+      "required": false,
+      "hides": [],
+      "name_key": "wardrobe.slot.hand",
+      "icon_address": "wardrobe/slot/hand"
+    },
+    {
+      "id": "slt_waist",
+      "slot": "waist",
+      "order": 12,
+      "layer": 38,
+      "required": false,
+      "hides": [],
+      "name_key": "wardrobe.slot.waist",
+      "icon_address": "wardrobe/slot/waist"
+    },
+    {
+      "id": "slt_bottom",
+      "slot": "bottom",
+      "order": 13,
+      "layer": 28,
+      "required": true,
+      "hides": [],
+      "name_key": "wardrobe.slot.bottom",
+      "icon_address": "wardrobe/slot/bottom"
+    },
+    {
+      "id": "slt_leg",
+      "slot": "leg",
+      "order": 14,
+      "layer": 26,
+      "required": false,
+      "hides": [],
+      "name_key": "wardrobe.slot.leg",
+      "icon_address": "wardrobe/slot/leg"
+    },
+    {
+      "id": "slt_socks",
+      "slot": "socks",
+      "order": 15,
+      "layer": 22,
+      "required": true,
+      "hides": [],
+      "name_key": "wardrobe.slot.socks",
+      "icon_address": "wardrobe/slot/socks"
+    },
+    {
+      "id": "slt_shoes",
+      "slot": "shoes",
+      "order": 16,
+      "layer": 24,
+      "required": true,
+      "hides": [],
+      "name_key": "wardrobe.slot.shoes",
+      "icon_address": "wardrobe/slot/shoes"
+    },
+    {
+      "id": "slt_back",
+      "slot": "back",
+      "order": 17,
+      "layer": 15,
+      "required": false,
+      "hides": [],
+      "name_key": "wardrobe.slot.back",
+      "icon_address": "wardrobe/slot/back"
+    },
+    {
+      "id": "slt_trail",
+      "slot": "trail",
+      "order": 18,
+      "layer": 10,
+      "required": false,
+      "hides": [],
+      "name_key": "wardrobe.slot.trail",
+      "icon_address": "wardrobe/slot/trail"
+    }
+  ]
+}

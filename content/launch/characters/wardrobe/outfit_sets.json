@@ -1,0 +1,4496 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": "1.0.0",
+  "kind": "outfit_set",
+  "count": 120,
+  "items": [
+    {
+      "id": "ost_lumena_vigil",
+      "continent_id": "con_lumena",
+      "order": 1,
+      "name_key": "wardrobe.set.lumena.vigil",
+      "shape_id": "road_kit",
+      "construction": "single-layer racing kit cut close to the body",
+      "material": "bleached linen and thin gilt plate",
+      "material_construction": "panelled and pinned like vestments, every seam visible",
+      "detail": "worn through the night watch, hem weighted so it hangs still",
+      "palette": [
+        "#F2E8C9",
+        "#D9B25F",
+        "#3B5BA5",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_lumena_vigil_top",
+        "wrb_lumena_vigil_bottom",
+        "wrb_lumena_vigil_socks",
+        "wrb_lumena_vigil_shoes",
+        "wrb_lumena_vigil_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_socks",
+        "slt_shoes",
+        "slt_headwear"
+      ],
+      "acquisition_source": "world_progress",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/lumena/vigil"
+    },
+    {
+      "id": "ost_lumena_reliquary",
+      "continent_id": "con_lumena",
+      "order": 2,
+      "name_key": "wardrobe.set.lumena.reliquary",
+      "shape_id": "layered",
+      "construction": "shell over a base layer, carried weight on the back",
+      "material": "bleached linen and thin gilt plate",
+      "material_construction": "panelled and pinned like vestments, every seam visible",
+      "detail": "a sealed pocket over the sternum that is never opened",
+      "palette": [
+        "#F2E8C9",
+        "#D9B25F",
+        "#3B5BA5",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_lumena_reliquary_top",
+        "wrb_lumena_reliquary_outer",
+        "wrb_lumena_reliquary_bottom",
+        "wrb_lumena_reliquary_shoes",
+        "wrb_lumena_reliquary_neck",
+        "wrb_lumena_reliquary_back"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_outer",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_neck",
+        "slt_back"
+      ],
+      "acquisition_source": "region_restoration",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/lumena/reliquary"
+    },
+    {
+      "id": "ost_lumena_rampart",
+      "continent_id": "con_lumena",
+      "order": 3,
+      "name_key": "wardrobe.set.lumena.rampart",
+      "shape_id": "minimal",
+      "construction": "the least fabric the climate allows",
+      "material": "bleached linen and thin gilt plate",
+      "material_construction": "panelled and pinned like vestments, every seam visible",
+      "detail": "plate at the shoulder in the shape of the wall it is named for",
+      "palette": [
+        "#F2E8C9",
+        "#D9B25F",
+        "#3B5BA5",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_lumena_rampart_top",
+        "wrb_lumena_rampart_bottom",
+        "wrb_lumena_rampart_shoes",
+        "wrb_lumena_rampart_wrist",
+        "wrb_lumena_rampart_face"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_wrist",
+        "slt_face"
+      ],
+      "acquisition_source": "race_placement",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/lumena/rampart"
+    },
+    {
+      "id": "ost_lumena_matins",
+      "continent_id": "con_lumena",
+      "order": 4,
+      "name_key": "wardrobe.set.lumena.matins",
+      "shape_id": "head_first",
+      "construction": "built outward from what covers the head",
+      "material": "bleached linen and thin gilt plate",
+      "material_construction": "panelled and pinned like vestments, every seam visible",
+      "detail": "undyed and unlined, made to be run in before sunrise",
+      "palette": [
+        "#F2E8C9",
+        "#D9B25F",
+        "#3B5BA5",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_lumena_matins_hair",
+        "wrb_lumena_matins_headwear",
+        "wrb_lumena_matins_eyewear",
+        "wrb_lumena_matins_top",
+        "wrb_lumena_matins_bottom",
+        "wrb_lumena_matins_shoes"
+      ],
+      "slot_ids": [
+        "slt_hair",
+        "slt_headwear",
+        "slt_eyewear",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "challenge_clear",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/lumena/matins"
+    },
+    {
+      "id": "ost_lumena_censer",
+      "continent_id": "con_lumena",
+      "order": 5,
+      "name_key": "wardrobe.set.lumena.censer",
+      "shape_id": "arm_driven",
+      "construction": "sleeves, wraps and grips — a kit for the upper body",
+      "material": "bleached linen and thin gilt plate",
+      "material_construction": "panelled and pinned like vestments, every seam visible",
+      "detail": "perforated panels that vent heat in a repeating pattern",
+      "palette": [
+        "#F2E8C9",
+        "#D9B25F",
+        "#3B5BA5",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_lumena_censer_top",
+        "wrb_lumena_censer_arm",
+        "wrb_lumena_censer_wrist",
+        "wrb_lumena_censer_hand",
+        "wrb_lumena_censer_bottom",
+        "wrb_lumena_censer_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_arm",
+        "slt_wrist",
+        "slt_hand",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "monthly_apex_checkpoint",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/lumena/censer"
+    },
+    {
+      "id": "ost_lumena_chorister",
+      "continent_id": "con_lumena",
+      "order": 6,
+      "name_key": "wardrobe.set.lumena.chorister",
+      "shape_id": "leg_driven",
+      "construction": "compression through the whole leg and nothing loose",
+      "material": "bleached linen and thin gilt plate",
+      "material_construction": "panelled and pinned like vestments, every seam visible",
+      "detail": "a high collar that carries sound rather than blocking wind",
+      "palette": [
+        "#F2E8C9",
+        "#D9B25F",
+        "#3B5BA5",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_lumena_chorister_top",
+        "wrb_lumena_chorister_bottom",
+        "wrb_lumena_chorister_leg",
+        "wrb_lumena_chorister_socks",
+        "wrb_lumena_chorister_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_leg",
+        "slt_socks",
+        "slt_shoes"
+      ],
+      "acquisition_source": "season_track",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/lumena/chorister"
+    },
+    {
+      "id": "ost_lumena_sunspear",
+      "continent_id": "con_lumena",
+      "order": 7,
+      "name_key": "wardrobe.set.lumena.sunspear",
+      "shape_id": "accented",
+      "construction": "plain body, everything spent on the small pieces",
+      "material": "bleached linen and thin gilt plate",
+      "material_construction": "panelled and pinned like vestments, every seam visible",
+      "detail": "one gilt line running the full length of the outside leg",
+      "palette": [
+        "#F2E8C9",
+        "#D9B25F",
+        "#3B5BA5",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_lumena_sunspear_top",
+        "wrb_lumena_sunspear_bottom",
+        "wrb_lumena_sunspear_shoes",
+        "wrb_lumena_sunspear_ear",
+        "wrb_lumena_sunspear_neck",
+        "wrb_lumena_sunspear_trail"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_ear",
+        "slt_neck",
+        "slt_trail"
+      ],
+      "acquisition_source": "crew_campaign",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/lumena/sunspear"
+    },
+    {
+      "id": "ost_lumena_ivory",
+      "continent_id": "con_lumena",
+      "order": 8,
+      "name_key": "wardrobe.set.lumena.ivory",
+      "shape_id": "night",
+      "construction": "dark ground, reflective seams, a light carried behind",
+      "material": "bleached linen and thin gilt plate",
+      "material_construction": "panelled and pinned like vestments, every seam visible",
+      "detail": "entirely without metal, for the runners who refuse it",
+      "palette": [
+        "#F2E8C9",
+        "#D9B25F",
+        "#3B5BA5",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_lumena_ivory_outer",
+        "wrb_lumena_ivory_top",
+        "wrb_lumena_ivory_bottom",
+        "wrb_lumena_ivory_shoes",
+        "wrb_lumena_ivory_trail",
+        "wrb_lumena_ivory_back"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_trail",
+        "slt_back"
+      ],
+      "acquisition_source": "open_race_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/lumena/ivory"
+    },
+    {
+      "id": "ost_lumena_beacon",
+      "continent_id": "con_lumena",
+      "order": 9,
+      "name_key": "wardrobe.set.lumena.beacon",
+      "shape_id": "field",
+      "construction": "a working kit with somewhere to put things",
+      "material": "bleached linen and thin gilt plate",
+      "material_construction": "panelled and pinned like vestments, every seam visible",
+      "detail": "reflective at the back only, so it reads as a light leaving",
+      "palette": [
+        "#F2E8C9",
+        "#D9B25F",
+        "#3B5BA5",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_lumena_beacon_top",
+        "wrb_lumena_beacon_waist",
+        "wrb_lumena_beacon_bottom",
+        "wrb_lumena_beacon_shoes",
+        "wrb_lumena_beacon_hand",
+        "wrb_lumena_beacon_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_waist",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hand",
+        "slt_headwear"
+      ],
+      "acquisition_source": "character_episode",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/lumena/beacon"
+    },
+    {
+      "id": "ost_lumena_procession",
+      "continent_id": "con_lumena",
+      "order": 10,
+      "name_key": "wardrobe.set.lumena.procession",
+      "shape_id": "ceremonial",
+      "construction": "what this place wears to a start line that matters",
+      "material": "bleached linen and thin gilt plate",
+      "material_construction": "panelled and pinned like vestments, every seam visible",
+      "detail": "cut to look identical from any angle in a moving line",
+      "palette": [
+        "#F2E8C9",
+        "#D9B25F",
+        "#3B5BA5",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_lumena_procession_outer",
+        "wrb_lumena_procession_top",
+        "wrb_lumena_procession_bottom",
+        "wrb_lumena_procession_shoes",
+        "wrb_lumena_procession_hair",
+        "wrb_lumena_procession_ear"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hair",
+        "slt_ear"
+      ],
+      "acquisition_source": "global_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/lumena/procession"
+    },
+    {
+      "id": "ost_verdia_canopy",
+      "continent_id": "con_verdia",
+      "order": 1,
+      "name_key": "wardrobe.set.verdia.canopy",
+      "shape_id": "road_kit",
+      "construction": "single-layer racing kit cut close to the body",
+      "material": "woven bast fibre and living leaf-lamina",
+      "material_construction": "grown to shape rather than cut, edges left raw",
+      "detail": "layered leaf-lamina that overlaps upward, shedding rain outward",
+      "palette": [
+        "#2F5D3A",
+        "#8FCB6B",
+        "#E7F0C9",
+        "#5A3E2B"
+      ],
+      "item_ids": [
+        "wrb_verdia_canopy_top",
+        "wrb_verdia_canopy_bottom",
+        "wrb_verdia_canopy_socks",
+        "wrb_verdia_canopy_shoes",
+        "wrb_verdia_canopy_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_socks",
+        "slt_shoes",
+        "slt_headwear"
+      ],
+      "acquisition_source": "region_restoration",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/verdia/canopy"
+    },
+    {
+      "id": "ost_verdia_spore",
+      "continent_id": "con_verdia",
+      "order": 2,
+      "name_key": "wardrobe.set.verdia.spore",
+      "shape_id": "layered",
+      "construction": "shell over a base layer, carried weight on the back",
+      "material": "woven bast fibre and living leaf-lamina",
+      "material_construction": "grown to shape rather than cut, edges left raw",
+      "detail": "a dusting across the shoulders that lifts when the wearer moves",
+      "palette": [
+        "#2F5D3A",
+        "#8FCB6B",
+        "#E7F0C9",
+        "#5A3E2B"
+      ],
+      "item_ids": [
+        "wrb_verdia_spore_top",
+        "wrb_verdia_spore_outer",
+        "wrb_verdia_spore_bottom",
+        "wrb_verdia_spore_shoes",
+        "wrb_verdia_spore_neck",
+        "wrb_verdia_spore_back"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_outer",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_neck",
+        "slt_back"
+      ],
+      "acquisition_source": "race_placement",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/verdia/spore"
+    },
+    {
+      "id": "ost_verdia_bark",
+      "continent_id": "con_verdia",
+      "order": 3,
+      "name_key": "wardrobe.set.verdia.bark",
+      "shape_id": "minimal",
+      "construction": "the least fabric the climate allows",
+      "material": "woven bast fibre and living leaf-lamina",
+      "material_construction": "grown to shape rather than cut, edges left raw",
+      "detail": "ridged panels that stiffen at the joint and stay soft between",
+      "palette": [
+        "#2F5D3A",
+        "#8FCB6B",
+        "#E7F0C9",
+        "#5A3E2B"
+      ],
+      "item_ids": [
+        "wrb_verdia_bark_top",
+        "wrb_verdia_bark_bottom",
+        "wrb_verdia_bark_shoes",
+        "wrb_verdia_bark_wrist",
+        "wrb_verdia_bark_face"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_wrist",
+        "slt_face"
+      ],
+      "acquisition_source": "challenge_clear",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/verdia/bark"
+    },
+    {
+      "id": "ost_verdia_fern",
+      "continent_id": "con_verdia",
+      "order": 4,
+      "name_key": "wardrobe.set.verdia.fern",
+      "shape_id": "head_first",
+      "construction": "built outward from what covers the head",
+      "material": "woven bast fibre and living leaf-lamina",
+      "material_construction": "grown to shape rather than cut, edges left raw",
+      "detail": "a curled edge at every hem that uncoils as it warms",
+      "palette": [
+        "#2F5D3A",
+        "#8FCB6B",
+        "#E7F0C9",
+        "#5A3E2B"
+      ],
+      "item_ids": [
+        "wrb_verdia_fern_hair",
+        "wrb_verdia_fern_headwear",
+        "wrb_verdia_fern_eyewear",
+        "wrb_verdia_fern_top",
+        "wrb_verdia_fern_bottom",
+        "wrb_verdia_fern_shoes"
+      ],
+      "slot_ids": [
+        "slt_hair",
+        "slt_headwear",
+        "slt_eyewear",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "monthly_apex_checkpoint",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/verdia/fern"
+    },
+    {
+      "id": "ost_verdia_sapline",
+      "continent_id": "con_verdia",
+      "order": 5,
+      "name_key": "wardrobe.set.verdia.sapline",
+      "shape_id": "arm_driven",
+      "construction": "sleeves, wraps and grips — a kit for the upper body",
+      "material": "woven bast fibre and living leaf-lamina",
+      "material_construction": "grown to shape rather than cut, edges left raw",
+      "detail": "a single wet-looking channel tracing the spine",
+      "palette": [
+        "#2F5D3A",
+        "#8FCB6B",
+        "#E7F0C9",
+        "#5A3E2B"
+      ],
+      "item_ids": [
+        "wrb_verdia_sapline_top",
+        "wrb_verdia_sapline_arm",
+        "wrb_verdia_sapline_wrist",
+        "wrb_verdia_sapline_hand",
+        "wrb_verdia_sapline_bottom",
+        "wrb_verdia_sapline_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_arm",
+        "slt_wrist",
+        "slt_hand",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "season_track",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/verdia/sapline"
+    },
+    {
+      "id": "ost_verdia_thornline",
+      "continent_id": "con_verdia",
+      "order": 6,
+      "name_key": "wardrobe.set.verdia.thornline",
+      "shape_id": "leg_driven",
+      "construction": "compression through the whole leg and nothing loose",
+      "material": "woven bast fibre and living leaf-lamina",
+      "material_construction": "grown to shape rather than cut, edges left raw",
+      "detail": "blunt thorn ribs along the forearm, protective and not sharp",
+      "palette": [
+        "#2F5D3A",
+        "#8FCB6B",
+        "#E7F0C9",
+        "#5A3E2B"
+      ],
+      "item_ids": [
+        "wrb_verdia_thornline_top",
+        "wrb_verdia_thornline_bottom",
+        "wrb_verdia_thornline_leg",
+        "wrb_verdia_thornline_socks",
+        "wrb_verdia_thornline_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_leg",
+        "slt_socks",
+        "slt_shoes"
+      ],
+      "acquisition_source": "crew_campaign",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/verdia/thornline"
+    },
+    {
+      "id": "ost_verdia_mycelia",
+      "continent_id": "con_verdia",
+      "order": 7,
+      "name_key": "wardrobe.set.verdia.mycelia",
+      "shape_id": "accented",
+      "construction": "plain body, everything spent on the small pieces",
+      "material": "woven bast fibre and living leaf-lamina",
+      "material_construction": "grown to shape rather than cut, edges left raw",
+      "detail": "a branching pale network that glows faintly under load",
+      "palette": [
+        "#2F5D3A",
+        "#8FCB6B",
+        "#E7F0C9",
+        "#5A3E2B"
+      ],
+      "item_ids": [
+        "wrb_verdia_mycelia_top",
+        "wrb_verdia_mycelia_bottom",
+        "wrb_verdia_mycelia_shoes",
+        "wrb_verdia_mycelia_ear",
+        "wrb_verdia_mycelia_neck",
+        "wrb_verdia_mycelia_trail"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_ear",
+        "slt_neck",
+        "slt_trail"
+      ],
+      "acquisition_source": "open_race_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/verdia/mycelia"
+    },
+    {
+      "id": "ost_verdia_bloomfall",
+      "continent_id": "con_verdia",
+      "order": 8,
+      "name_key": "wardrobe.set.verdia.bloomfall",
+      "shape_id": "night",
+      "construction": "dark ground, reflective seams, a light carried behind",
+      "material": "woven bast fibre and living leaf-lamina",
+      "material_construction": "grown to shape rather than cut, edges left raw",
+      "detail": "petals sewn loose so they trail and settle behind the runner",
+      "palette": [
+        "#2F5D3A",
+        "#8FCB6B",
+        "#E7F0C9",
+        "#5A3E2B"
+      ],
+      "item_ids": [
+        "wrb_verdia_bloomfall_outer",
+        "wrb_verdia_bloomfall_top",
+        "wrb_verdia_bloomfall_bottom",
+        "wrb_verdia_bloomfall_shoes",
+        "wrb_verdia_bloomfall_trail",
+        "wrb_verdia_bloomfall_back"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_trail",
+        "slt_back"
+      ],
+      "acquisition_source": "character_episode",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/verdia/bloomfall"
+    },
+    {
+      "id": "ost_verdia_understory",
+      "continent_id": "con_verdia",
+      "order": 9,
+      "name_key": "wardrobe.set.verdia.understory",
+      "shape_id": "field",
+      "construction": "a working kit with somewhere to put things",
+      "material": "woven bast fibre and living leaf-lamina",
+      "material_construction": "grown to shape rather than cut, edges left raw",
+      "detail": "deep green and matte, built to disappear at ground level",
+      "palette": [
+        "#2F5D3A",
+        "#8FCB6B",
+        "#E7F0C9",
+        "#5A3E2B"
+      ],
+      "item_ids": [
+        "wrb_verdia_understory_top",
+        "wrb_verdia_understory_waist",
+        "wrb_verdia_understory_bottom",
+        "wrb_verdia_understory_shoes",
+        "wrb_verdia_understory_hand",
+        "wrb_verdia_understory_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_waist",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hand",
+        "slt_headwear"
+      ],
+      "acquisition_source": "global_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/verdia/understory"
+    },
+    {
+      "id": "ost_verdia_greenwake",
+      "continent_id": "con_verdia",
+      "order": 10,
+      "name_key": "wardrobe.set.verdia.greenwake",
+      "shape_id": "ceremonial",
+      "construction": "what this place wears to a start line that matters",
+      "material": "woven bast fibre and living leaf-lamina",
+      "material_construction": "grown to shape rather than cut, edges left raw",
+      "detail": "the only Verdia line cut symmetrically, for ceremony",
+      "palette": [
+        "#2F5D3A",
+        "#8FCB6B",
+        "#E7F0C9",
+        "#5A3E2B"
+      ],
+      "item_ids": [
+        "wrb_verdia_greenwake_outer",
+        "wrb_verdia_greenwake_top",
+        "wrb_verdia_greenwake_bottom",
+        "wrb_verdia_greenwake_shoes",
+        "wrb_verdia_greenwake_hair",
+        "wrb_verdia_greenwake_ear"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hair",
+        "slt_ear"
+      ],
+      "acquisition_source": "world_progress",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/verdia/greenwake"
+    },
+    {
+      "id": "ost_rubra_cinder",
+      "continent_id": "con_rubra",
+      "order": 1,
+      "name_key": "wardrobe.set.rubra.cinder",
+      "shape_id": "road_kit",
+      "construction": "single-layer racing kit cut close to the body",
+      "material": "fire-treated hide and slag-thread weave",
+      "material_construction": "riveted at the stress points, nothing sewn that heat can open",
+      "detail": "scorch marks placed deliberately where heat actually lands",
+      "palette": [
+        "#7A1F1F",
+        "#E2611F",
+        "#F2C14E",
+        "#2B1A15"
+      ],
+      "item_ids": [
+        "wrb_rubra_cinder_top",
+        "wrb_rubra_cinder_bottom",
+        "wrb_rubra_cinder_socks",
+        "wrb_rubra_cinder_shoes",
+        "wrb_rubra_cinder_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_socks",
+        "slt_shoes",
+        "slt_headwear"
+      ],
+      "acquisition_source": "race_placement",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/rubra/cinder"
+    },
+    {
+      "id": "ost_rubra_slagline",
+      "continent_id": "con_rubra",
+      "order": 2,
+      "name_key": "wardrobe.set.rubra.slagline",
+      "shape_id": "layered",
+      "construction": "shell over a base layer, carried weight on the back",
+      "material": "fire-treated hide and slag-thread weave",
+      "material_construction": "riveted at the stress points, nothing sewn that heat can open",
+      "detail": "a poured metal edge along the hem, cooled rough on purpose",
+      "palette": [
+        "#7A1F1F",
+        "#E2611F",
+        "#F2C14E",
+        "#2B1A15"
+      ],
+      "item_ids": [
+        "wrb_rubra_slagline_top",
+        "wrb_rubra_slagline_outer",
+        "wrb_rubra_slagline_bottom",
+        "wrb_rubra_slagline_shoes",
+        "wrb_rubra_slagline_neck",
+        "wrb_rubra_slagline_back"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_outer",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_neck",
+        "slt_back"
+      ],
+      "acquisition_source": "challenge_clear",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/rubra/slagline"
+    },
+    {
+      "id": "ost_rubra_redvein",
+      "continent_id": "con_rubra",
+      "order": 3,
+      "name_key": "wardrobe.set.rubra.redvein",
+      "shape_id": "minimal",
+      "construction": "the least fabric the climate allows",
+      "material": "fire-treated hide and slag-thread weave",
+      "material_construction": "riveted at the stress points, nothing sewn that heat can open",
+      "detail": "the canyon seam pattern, matched to the region it was earned in",
+      "palette": [
+        "#7A1F1F",
+        "#E2611F",
+        "#F2C14E",
+        "#2B1A15"
+      ],
+      "item_ids": [
+        "wrb_rubra_redvein_top",
+        "wrb_rubra_redvein_bottom",
+        "wrb_rubra_redvein_shoes",
+        "wrb_rubra_redvein_wrist",
+        "wrb_rubra_redvein_face"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_wrist",
+        "slt_face"
+      ],
+      "acquisition_source": "monthly_apex_checkpoint",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/rubra/redvein"
+    },
+    {
+      "id": "ost_rubra_kiln",
+      "continent_id": "con_rubra",
+      "order": 4,
+      "name_key": "wardrobe.set.rubra.kiln",
+      "shape_id": "head_first",
+      "construction": "built outward from what covers the head",
+      "material": "fire-treated hide and slag-thread weave",
+      "material_construction": "riveted at the stress points, nothing sewn that heat can open",
+      "detail": "double-fired hide that has gone hard and stays cool inside",
+      "palette": [
+        "#7A1F1F",
+        "#E2611F",
+        "#F2C14E",
+        "#2B1A15"
+      ],
+      "item_ids": [
+        "wrb_rubra_kiln_hair",
+        "wrb_rubra_kiln_headwear",
+        "wrb_rubra_kiln_eyewear",
+        "wrb_rubra_kiln_top",
+        "wrb_rubra_kiln_bottom",
+        "wrb_rubra_kiln_shoes"
+      ],
+      "slot_ids": [
+        "slt_hair",
+        "slt_headwear",
+        "slt_eyewear",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "season_track",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/rubra/kiln"
+    },
+    {
+      "id": "ost_rubra_ashfall",
+      "continent_id": "con_rubra",
+      "order": 5,
+      "name_key": "wardrobe.set.rubra.ashfall",
+      "shape_id": "arm_driven",
+      "construction": "sleeves, wraps and grips — a kit for the upper body",
+      "material": "fire-treated hide and slag-thread weave",
+      "material_construction": "riveted at the stress points, nothing sewn that heat can open",
+      "detail": "grey over red, so it lightens as the wearer sweats through it",
+      "palette": [
+        "#7A1F1F",
+        "#E2611F",
+        "#F2C14E",
+        "#2B1A15"
+      ],
+      "item_ids": [
+        "wrb_rubra_ashfall_top",
+        "wrb_rubra_ashfall_arm",
+        "wrb_rubra_ashfall_wrist",
+        "wrb_rubra_ashfall_hand",
+        "wrb_rubra_ashfall_bottom",
+        "wrb_rubra_ashfall_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_arm",
+        "slt_wrist",
+        "slt_hand",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "crew_campaign",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/rubra/ashfall"
+    },
+    {
+      "id": "ost_rubra_emberline",
+      "continent_id": "con_rubra",
+      "order": 6,
+      "name_key": "wardrobe.set.rubra.emberline",
+      "shape_id": "leg_driven",
+      "construction": "compression through the whole leg and nothing loose",
+      "material": "fire-treated hide and slag-thread weave",
+      "material_construction": "riveted at the stress points, nothing sewn that heat can open",
+      "detail": "a single heat-reactive thread that brightens with core temperature",
+      "palette": [
+        "#7A1F1F",
+        "#E2611F",
+        "#F2C14E",
+        "#2B1A15"
+      ],
+      "item_ids": [
+        "wrb_rubra_emberline_top",
+        "wrb_rubra_emberline_bottom",
+        "wrb_rubra_emberline_leg",
+        "wrb_rubra_emberline_socks",
+        "wrb_rubra_emberline_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_leg",
+        "slt_socks",
+        "slt_shoes"
+      ],
+      "acquisition_source": "open_race_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/rubra/emberline"
+    },
+    {
+      "id": "ost_rubra_forgewalk",
+      "continent_id": "con_rubra",
+      "order": 7,
+      "name_key": "wardrobe.set.rubra.forgewalk",
+      "shape_id": "accented",
+      "construction": "plain body, everything spent on the small pieces",
+      "material": "fire-treated hide and slag-thread weave",
+      "material_construction": "riveted at the stress points, nothing sewn that heat can open",
+      "detail": "sole and cuff built for a floor that is always too hot",
+      "palette": [
+        "#7A1F1F",
+        "#E2611F",
+        "#F2C14E",
+        "#2B1A15"
+      ],
+      "item_ids": [
+        "wrb_rubra_forgewalk_top",
+        "wrb_rubra_forgewalk_bottom",
+        "wrb_rubra_forgewalk_shoes",
+        "wrb_rubra_forgewalk_ear",
+        "wrb_rubra_forgewalk_neck",
+        "wrb_rubra_forgewalk_trail"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_ear",
+        "slt_neck",
+        "slt_trail"
+      ],
+      "acquisition_source": "character_episode",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/rubra/forgewalk"
+    },
+    {
+      "id": "ost_rubra_basalt",
+      "continent_id": "con_rubra",
+      "order": 8,
+      "name_key": "wardrobe.set.rubra.basalt",
+      "shape_id": "night",
+      "construction": "dark ground, reflective seams, a light carried behind",
+      "material": "fire-treated hide and slag-thread weave",
+      "material_construction": "riveted at the stress points, nothing sewn that heat can open",
+      "detail": "hexagonal plate, the only Rubra line with no red in it at all",
+      "palette": [
+        "#7A1F1F",
+        "#E2611F",
+        "#F2C14E",
+        "#2B1A15"
+      ],
+      "item_ids": [
+        "wrb_rubra_basalt_outer",
+        "wrb_rubra_basalt_top",
+        "wrb_rubra_basalt_bottom",
+        "wrb_rubra_basalt_shoes",
+        "wrb_rubra_basalt_trail",
+        "wrb_rubra_basalt_back"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_trail",
+        "slt_back"
+      ],
+      "acquisition_source": "global_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/rubra/basalt"
+    },
+    {
+      "id": "ost_rubra_magmaline",
+      "continent_id": "con_rubra",
+      "order": 9,
+      "name_key": "wardrobe.set.rubra.magmaline",
+      "shape_id": "field",
+      "construction": "a working kit with somewhere to put things",
+      "material": "fire-treated hide and slag-thread weave",
+      "material_construction": "riveted at the stress points, nothing sewn that heat can open",
+      "detail": "glows along the underside of the arm and nowhere else",
+      "palette": [
+        "#7A1F1F",
+        "#E2611F",
+        "#F2C14E",
+        "#2B1A15"
+      ],
+      "item_ids": [
+        "wrb_rubra_magmaline_top",
+        "wrb_rubra_magmaline_waist",
+        "wrb_rubra_magmaline_bottom",
+        "wrb_rubra_magmaline_shoes",
+        "wrb_rubra_magmaline_hand",
+        "wrb_rubra_magmaline_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_waist",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hand",
+        "slt_headwear"
+      ],
+      "acquisition_source": "world_progress",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/rubra/magmaline"
+    },
+    {
+      "id": "ost_rubra_scorchmark",
+      "continent_id": "con_rubra",
+      "order": 10,
+      "name_key": "wardrobe.set.rubra.scorchmark",
+      "shape_id": "ceremonial",
+      "construction": "what this place wears to a start line that matters",
+      "material": "fire-treated hide and slag-thread weave",
+      "material_construction": "riveted at the stress points, nothing sewn that heat can open",
+      "detail": "each piece carries the mark of the race that awarded it",
+      "palette": [
+        "#7A1F1F",
+        "#E2611F",
+        "#F2C14E",
+        "#2B1A15"
+      ],
+      "item_ids": [
+        "wrb_rubra_scorchmark_outer",
+        "wrb_rubra_scorchmark_top",
+        "wrb_rubra_scorchmark_bottom",
+        "wrb_rubra_scorchmark_shoes",
+        "wrb_rubra_scorchmark_hair",
+        "wrb_rubra_scorchmark_ear"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hair",
+        "slt_ear"
+      ],
+      "acquisition_source": "region_restoration",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/rubra/scorchmark"
+    },
+    {
+      "id": "ost_anel_gale",
+      "continent_id": "con_anel",
+      "order": 1,
+      "name_key": "wardrobe.set.anel.gale",
+      "shape_id": "road_kit",
+      "construction": "single-layer racing kit cut close to the body",
+      "material": "ripstop sailcloth and cord",
+      "material_construction": "reefed and tied down so the wind has nothing to hold",
+      "detail": "cut deliberately loose so the wind is audible against it",
+      "palette": [
+        "#BFD8E6",
+        "#7FA650",
+        "#E8E3D3",
+        "#4A6C8C"
+      ],
+      "item_ids": [
+        "wrb_anel_gale_top",
+        "wrb_anel_gale_bottom",
+        "wrb_anel_gale_socks",
+        "wrb_anel_gale_shoes",
+        "wrb_anel_gale_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_socks",
+        "slt_shoes",
+        "slt_headwear"
+      ],
+      "acquisition_source": "challenge_clear",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/anel/gale"
+    },
+    {
+      "id": "ost_anel_vane",
+      "continent_id": "con_anel",
+      "order": 2,
+      "name_key": "wardrobe.set.anel.vane",
+      "shape_id": "layered",
+      "construction": "shell over a base layer, carried weight on the back",
+      "material": "ripstop sailcloth and cord",
+      "material_construction": "reefed and tied down so the wind has nothing to hold",
+      "detail": "a stiffened tail panel that turns the runner into a wind indicator",
+      "palette": [
+        "#BFD8E6",
+        "#7FA650",
+        "#E8E3D3",
+        "#4A6C8C"
+      ],
+      "item_ids": [
+        "wrb_anel_vane_top",
+        "wrb_anel_vane_outer",
+        "wrb_anel_vane_bottom",
+        "wrb_anel_vane_shoes",
+        "wrb_anel_vane_neck",
+        "wrb_anel_vane_back"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_outer",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_neck",
+        "slt_back"
+      ],
+      "acquisition_source": "monthly_apex_checkpoint",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/anel/vane"
+    },
+    {
+      "id": "ost_anel_thermal",
+      "continent_id": "con_anel",
+      "order": 3,
+      "name_key": "wardrobe.set.anel.thermal",
+      "shape_id": "minimal",
+      "construction": "the least fabric the climate allows",
+      "material": "ripstop sailcloth and cord",
+      "material_construction": "reefed and tied down so the wind has nothing to hold",
+      "detail": "vented at the ribs, sealed everywhere else",
+      "palette": [
+        "#BFD8E6",
+        "#7FA650",
+        "#E8E3D3",
+        "#4A6C8C"
+      ],
+      "item_ids": [
+        "wrb_anel_thermal_top",
+        "wrb_anel_thermal_bottom",
+        "wrb_anel_thermal_shoes",
+        "wrb_anel_thermal_wrist",
+        "wrb_anel_thermal_face"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_wrist",
+        "slt_face"
+      ],
+      "acquisition_source": "season_track",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/anel/thermal"
+    },
+    {
+      "id": "ost_anel_chaff",
+      "continent_id": "con_anel",
+      "order": 4,
+      "name_key": "wardrobe.set.anel.chaff",
+      "shape_id": "head_first",
+      "construction": "built outward from what covers the head",
+      "material": "ripstop sailcloth and cord",
+      "material_construction": "reefed and tied down so the wind has nothing to hold",
+      "detail": "a fine straw-coloured nap that never quite lies flat",
+      "palette": [
+        "#BFD8E6",
+        "#7FA650",
+        "#E8E3D3",
+        "#4A6C8C"
+      ],
+      "item_ids": [
+        "wrb_anel_chaff_hair",
+        "wrb_anel_chaff_headwear",
+        "wrb_anel_chaff_eyewear",
+        "wrb_anel_chaff_top",
+        "wrb_anel_chaff_bottom",
+        "wrb_anel_chaff_shoes"
+      ],
+      "slot_ids": [
+        "slt_hair",
+        "slt_headwear",
+        "slt_eyewear",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "crew_campaign",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/anel/chaff"
+    },
+    {
+      "id": "ost_anel_sailcloth",
+      "continent_id": "con_anel",
+      "order": 5,
+      "name_key": "wardrobe.set.anel.sailcloth",
+      "shape_id": "arm_driven",
+      "construction": "sleeves, wraps and grips — a kit for the upper body",
+      "material": "ripstop sailcloth and cord",
+      "material_construction": "reefed and tied down so the wind has nothing to hold",
+      "detail": "reused sail, the seam numbers still legible on the panel",
+      "palette": [
+        "#BFD8E6",
+        "#7FA650",
+        "#E8E3D3",
+        "#4A6C8C"
+      ],
+      "item_ids": [
+        "wrb_anel_sailcloth_top",
+        "wrb_anel_sailcloth_arm",
+        "wrb_anel_sailcloth_wrist",
+        "wrb_anel_sailcloth_hand",
+        "wrb_anel_sailcloth_bottom",
+        "wrb_anel_sailcloth_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_arm",
+        "slt_wrist",
+        "slt_hand",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "open_race_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/anel/sailcloth"
+    },
+    {
+      "id": "ost_anel_updraft",
+      "continent_id": "con_anel",
+      "order": 6,
+      "name_key": "wardrobe.set.anel.updraft",
+      "shape_id": "leg_driven",
+      "construction": "compression through the whole leg and nothing loose",
+      "material": "ripstop sailcloth and cord",
+      "material_construction": "reefed and tied down so the wind has nothing to hold",
+      "detail": "hems that lift rather than press when the pace rises",
+      "palette": [
+        "#BFD8E6",
+        "#7FA650",
+        "#E8E3D3",
+        "#4A6C8C"
+      ],
+      "item_ids": [
+        "wrb_anel_updraft_top",
+        "wrb_anel_updraft_bottom",
+        "wrb_anel_updraft_leg",
+        "wrb_anel_updraft_socks",
+        "wrb_anel_updraft_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_leg",
+        "slt_socks",
+        "slt_shoes"
+      ],
+      "acquisition_source": "character_episode",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/anel/updraft"
+    },
+    {
+      "id": "ost_anel_weathervane",
+      "continent_id": "con_anel",
+      "order": 7,
+      "name_key": "wardrobe.set.anel.weathervane",
+      "shape_id": "accented",
+      "construction": "plain body, everything spent on the small pieces",
+      "material": "ripstop sailcloth and cord",
+      "material_construction": "reefed and tied down so the wind has nothing to hold",
+      "detail": "a brass cardinal marker at the collar, aligned by hand",
+      "palette": [
+        "#BFD8E6",
+        "#7FA650",
+        "#E8E3D3",
+        "#4A6C8C"
+      ],
+      "item_ids": [
+        "wrb_anel_weathervane_top",
+        "wrb_anel_weathervane_bottom",
+        "wrb_anel_weathervane_shoes",
+        "wrb_anel_weathervane_ear",
+        "wrb_anel_weathervane_neck",
+        "wrb_anel_weathervane_trail"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_ear",
+        "slt_neck",
+        "slt_trail"
+      ],
+      "acquisition_source": "global_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/anel/weathervane"
+    },
+    {
+      "id": "ost_anel_grasswake",
+      "continent_id": "con_anel",
+      "order": 8,
+      "name_key": "wardrobe.set.anel.grasswake",
+      "shape_id": "night",
+      "construction": "dark ground, reflective seams, a light carried behind",
+      "material": "ripstop sailcloth and cord",
+      "material_construction": "reefed and tied down so the wind has nothing to hold",
+      "detail": "a green bend printed across it in the direction of travel",
+      "palette": [
+        "#BFD8E6",
+        "#7FA650",
+        "#E8E3D3",
+        "#4A6C8C"
+      ],
+      "item_ids": [
+        "wrb_anel_grasswake_outer",
+        "wrb_anel_grasswake_top",
+        "wrb_anel_grasswake_bottom",
+        "wrb_anel_grasswake_shoes",
+        "wrb_anel_grasswake_trail",
+        "wrb_anel_grasswake_back"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_trail",
+        "slt_back"
+      ],
+      "acquisition_source": "world_progress",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/anel/grasswake"
+    },
+    {
+      "id": "ost_anel_kiteline",
+      "continent_id": "con_anel",
+      "order": 9,
+      "name_key": "wardrobe.set.anel.kiteline",
+      "shape_id": "field",
+      "construction": "a working kit with somewhere to put things",
+      "material": "ripstop sailcloth and cord",
+      "material_construction": "reefed and tied down so the wind has nothing to hold",
+      "detail": "cord runs from wrist to waist and takes the strain off the shoulder",
+      "palette": [
+        "#BFD8E6",
+        "#7FA650",
+        "#E8E3D3",
+        "#4A6C8C"
+      ],
+      "item_ids": [
+        "wrb_anel_kiteline_top",
+        "wrb_anel_kiteline_waist",
+        "wrb_anel_kiteline_bottom",
+        "wrb_anel_kiteline_shoes",
+        "wrb_anel_kiteline_hand",
+        "wrb_anel_kiteline_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_waist",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hand",
+        "slt_headwear"
+      ],
+      "acquisition_source": "region_restoration",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/anel/kiteline"
+    },
+    {
+      "id": "ost_anel_dustline",
+      "continent_id": "con_anel",
+      "order": 10,
+      "name_key": "wardrobe.set.anel.dustline",
+      "shape_id": "ceremonial",
+      "construction": "what this place wears to a start line that matters",
+      "material": "ripstop sailcloth and cord",
+      "material_construction": "reefed and tied down so the wind has nothing to hold",
+      "detail": "the plain working line, worn by everyone on the plain",
+      "palette": [
+        "#BFD8E6",
+        "#7FA650",
+        "#E8E3D3",
+        "#4A6C8C"
+      ],
+      "item_ids": [
+        "wrb_anel_dustline_outer",
+        "wrb_anel_dustline_top",
+        "wrb_anel_dustline_bottom",
+        "wrb_anel_dustline_shoes",
+        "wrb_anel_dustline_hair",
+        "wrb_anel_dustline_ear"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hair",
+        "slt_ear"
+      ],
+      "acquisition_source": "race_placement",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/anel/dustline"
+    },
+    {
+      "id": "ost_serene_tideline",
+      "continent_id": "con_serene",
+      "order": 1,
+      "name_key": "wardrobe.set.serene.tideline",
+      "shape_id": "road_kit",
+      "construction": "single-layer racing kit cut close to the body",
+      "material": "salt-cured net and mother-of-pearl scale",
+      "material_construction": "knotted in open mesh that sheds water on the run",
+      "detail": "a wet-dark band at the exact height the water reached",
+      "palette": [
+        "#123B5C",
+        "#3FA9C9",
+        "#DCE9F2",
+        "#F0C987"
+      ],
+      "item_ids": [
+        "wrb_serene_tideline_top",
+        "wrb_serene_tideline_bottom",
+        "wrb_serene_tideline_socks",
+        "wrb_serene_tideline_shoes",
+        "wrb_serene_tideline_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_socks",
+        "slt_shoes",
+        "slt_headwear"
+      ],
+      "acquisition_source": "monthly_apex_checkpoint",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/serene/tideline"
+    },
+    {
+      "id": "ost_serene_phosphor",
+      "continent_id": "con_serene",
+      "order": 2,
+      "name_key": "wardrobe.set.serene.phosphor",
+      "shape_id": "layered",
+      "construction": "shell over a base layer, carried weight on the back",
+      "material": "salt-cured net and mother-of-pearl scale",
+      "material_construction": "knotted in open mesh that sheds water on the run",
+      "detail": "holds daylight and gives it back for the first hour after dark",
+      "palette": [
+        "#123B5C",
+        "#3FA9C9",
+        "#DCE9F2",
+        "#F0C987"
+      ],
+      "item_ids": [
+        "wrb_serene_phosphor_top",
+        "wrb_serene_phosphor_outer",
+        "wrb_serene_phosphor_bottom",
+        "wrb_serene_phosphor_shoes",
+        "wrb_serene_phosphor_neck",
+        "wrb_serene_phosphor_back"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_outer",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_neck",
+        "slt_back"
+      ],
+      "acquisition_source": "season_track",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/serene/phosphor"
+    },
+    {
+      "id": "ost_serene_stiltwalk",
+      "continent_id": "con_serene",
+      "order": 3,
+      "name_key": "wardrobe.set.serene.stiltwalk",
+      "shape_id": "minimal",
+      "construction": "the least fabric the climate allows",
+      "material": "salt-cured net and mother-of-pearl scale",
+      "material_construction": "knotted in open mesh that sheds water on the run",
+      "detail": "ankle wrap for running a plank walkway without looking down",
+      "palette": [
+        "#123B5C",
+        "#3FA9C9",
+        "#DCE9F2",
+        "#F0C987"
+      ],
+      "item_ids": [
+        "wrb_serene_stiltwalk_top",
+        "wrb_serene_stiltwalk_bottom",
+        "wrb_serene_stiltwalk_shoes",
+        "wrb_serene_stiltwalk_wrist",
+        "wrb_serene_stiltwalk_face"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_wrist",
+        "slt_face"
+      ],
+      "acquisition_source": "crew_campaign",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/serene/stiltwalk"
+    },
+    {
+      "id": "ost_serene_brine",
+      "continent_id": "con_serene",
+      "order": 4,
+      "name_key": "wardrobe.set.serene.brine",
+      "shape_id": "head_first",
+      "construction": "built outward from what covers the head",
+      "material": "salt-cured net and mother-of-pearl scale",
+      "material_construction": "knotted in open mesh that sheds water on the run",
+      "detail": "salt-stiffened and never washed, by choice",
+      "palette": [
+        "#123B5C",
+        "#3FA9C9",
+        "#DCE9F2",
+        "#F0C987"
+      ],
+      "item_ids": [
+        "wrb_serene_brine_hair",
+        "wrb_serene_brine_headwear",
+        "wrb_serene_brine_eyewear",
+        "wrb_serene_brine_top",
+        "wrb_serene_brine_bottom",
+        "wrb_serene_brine_shoes"
+      ],
+      "slot_ids": [
+        "slt_hair",
+        "slt_headwear",
+        "slt_eyewear",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "open_race_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/serene/brine"
+    },
+    {
+      "id": "ost_serene_mirrorwave",
+      "continent_id": "con_serene",
+      "order": 5,
+      "name_key": "wardrobe.set.serene.mirrorwave",
+      "shape_id": "arm_driven",
+      "construction": "sleeves, wraps and grips — a kit for the upper body",
+      "material": "salt-cured net and mother-of-pearl scale",
+      "material_construction": "knotted in open mesh that sheds water on the run",
+      "detail": "scale panels that break up the runner outline on the water",
+      "palette": [
+        "#123B5C",
+        "#3FA9C9",
+        "#DCE9F2",
+        "#F0C987"
+      ],
+      "item_ids": [
+        "wrb_serene_mirrorwave_top",
+        "wrb_serene_mirrorwave_arm",
+        "wrb_serene_mirrorwave_wrist",
+        "wrb_serene_mirrorwave_hand",
+        "wrb_serene_mirrorwave_bottom",
+        "wrb_serene_mirrorwave_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_arm",
+        "slt_wrist",
+        "slt_hand",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "character_episode",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/serene/mirrorwave"
+    },
+    {
+      "id": "ost_serene_netmend",
+      "continent_id": "con_serene",
+      "order": 6,
+      "name_key": "wardrobe.set.serene.netmend",
+      "shape_id": "leg_driven",
+      "construction": "compression through the whole leg and nothing loose",
+      "material": "salt-cured net and mother-of-pearl scale",
+      "material_construction": "knotted in open mesh that sheds water on the run",
+      "detail": "visibly repaired in a contrasting thread, and prouder for it",
+      "palette": [
+        "#123B5C",
+        "#3FA9C9",
+        "#DCE9F2",
+        "#F0C987"
+      ],
+      "item_ids": [
+        "wrb_serene_netmend_top",
+        "wrb_serene_netmend_bottom",
+        "wrb_serene_netmend_leg",
+        "wrb_serene_netmend_socks",
+        "wrb_serene_netmend_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_leg",
+        "slt_socks",
+        "slt_shoes"
+      ],
+      "acquisition_source": "global_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/serene/netmend"
+    },
+    {
+      "id": "ost_serene_moonpull",
+      "continent_id": "con_serene",
+      "order": 7,
+      "name_key": "wardrobe.set.serene.moonpull",
+      "shape_id": "accented",
+      "construction": "plain body, everything spent on the small pieces",
+      "material": "salt-cured net and mother-of-pearl scale",
+      "material_construction": "knotted in open mesh that sheds water on the run",
+      "detail": "weighted at one hip so it hangs the same way every stride",
+      "palette": [
+        "#123B5C",
+        "#3FA9C9",
+        "#DCE9F2",
+        "#F0C987"
+      ],
+      "item_ids": [
+        "wrb_serene_moonpull_top",
+        "wrb_serene_moonpull_bottom",
+        "wrb_serene_moonpull_shoes",
+        "wrb_serene_moonpull_ear",
+        "wrb_serene_moonpull_neck",
+        "wrb_serene_moonpull_trail"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_ear",
+        "slt_neck",
+        "slt_trail"
+      ],
+      "acquisition_source": "world_progress",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/serene/moonpull"
+    },
+    {
+      "id": "ost_serene_saltglass",
+      "continent_id": "con_serene",
+      "order": 8,
+      "name_key": "wardrobe.set.serene.saltglass",
+      "shape_id": "night",
+      "construction": "dark ground, reflective seams, a light carried behind",
+      "material": "salt-cured net and mother-of-pearl scale",
+      "material_construction": "knotted in open mesh that sheds water on the run",
+      "detail": "clear beads at the cuff that ring faintly against each other",
+      "palette": [
+        "#123B5C",
+        "#3FA9C9",
+        "#DCE9F2",
+        "#F0C987"
+      ],
+      "item_ids": [
+        "wrb_serene_saltglass_outer",
+        "wrb_serene_saltglass_top",
+        "wrb_serene_saltglass_bottom",
+        "wrb_serene_saltglass_shoes",
+        "wrb_serene_saltglass_trail",
+        "wrb_serene_saltglass_back"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_trail",
+        "slt_back"
+      ],
+      "acquisition_source": "region_restoration",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/serene/saltglass"
+    },
+    {
+      "id": "ost_serene_undertow",
+      "continent_id": "con_serene",
+      "order": 9,
+      "name_key": "wardrobe.set.serene.undertow",
+      "shape_id": "field",
+      "construction": "a working kit with somewhere to put things",
+      "material": "salt-cured net and mother-of-pearl scale",
+      "material_construction": "knotted in open mesh that sheds water on the run",
+      "detail": "the darkest line Serene makes, worn for night crossings",
+      "palette": [
+        "#123B5C",
+        "#3FA9C9",
+        "#DCE9F2",
+        "#F0C987"
+      ],
+      "item_ids": [
+        "wrb_serene_undertow_top",
+        "wrb_serene_undertow_waist",
+        "wrb_serene_undertow_bottom",
+        "wrb_serene_undertow_shoes",
+        "wrb_serene_undertow_hand",
+        "wrb_serene_undertow_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_waist",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hand",
+        "slt_headwear"
+      ],
+      "acquisition_source": "race_placement",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/serene/undertow"
+    },
+    {
+      "id": "ost_serene_harborlight",
+      "continent_id": "con_serene",
+      "order": 10,
+      "name_key": "wardrobe.set.serene.harborlight",
+      "shape_id": "ceremonial",
+      "construction": "what this place wears to a start line that matters",
+      "material": "salt-cured net and mother-of-pearl scale",
+      "material_construction": "knotted in open mesh that sheds water on the run",
+      "detail": "one warm point of light at the collarbone, visible from the sea",
+      "palette": [
+        "#123B5C",
+        "#3FA9C9",
+        "#DCE9F2",
+        "#F0C987"
+      ],
+      "item_ids": [
+        "wrb_serene_harborlight_outer",
+        "wrb_serene_harborlight_top",
+        "wrb_serene_harborlight_bottom",
+        "wrb_serene_harborlight_shoes",
+        "wrb_serene_harborlight_hair",
+        "wrb_serene_harborlight_ear"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hair",
+        "slt_ear"
+      ],
+      "acquisition_source": "challenge_clear",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/serene/harborlight"
+    },
+    {
+      "id": "ost_voltis_arcline",
+      "continent_id": "con_voltis",
+      "order": 1,
+      "name_key": "wardrobe.set.voltis.arcline",
+      "shape_id": "road_kit",
+      "construction": "single-layer racing kit cut close to the body",
+      "material": "insulated mesh with earthed copper trace",
+      "material_construction": "every panel bonded to a common ground before it is worn",
+      "detail": "a copper trace that follows the shortest path to the ground strap",
+      "palette": [
+        "#1B2733",
+        "#4FE0E8",
+        "#C8B8FF",
+        "#E8E45A"
+      ],
+      "item_ids": [
+        "wrb_voltis_arcline_top",
+        "wrb_voltis_arcline_bottom",
+        "wrb_voltis_arcline_socks",
+        "wrb_voltis_arcline_shoes",
+        "wrb_voltis_arcline_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_socks",
+        "slt_shoes",
+        "slt_headwear"
+      ],
+      "acquisition_source": "season_track",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/voltis/arcline"
+    },
+    {
+      "id": "ost_voltis_coil",
+      "continent_id": "con_voltis",
+      "order": 2,
+      "name_key": "wardrobe.set.voltis.coil",
+      "shape_id": "layered",
+      "construction": "shell over a base layer, carried weight on the back",
+      "material": "insulated mesh with earthed copper trace",
+      "material_construction": "every panel bonded to a common ground before it is worn",
+      "detail": "wound sleeve that stores nothing and looks like it stores everything",
+      "palette": [
+        "#1B2733",
+        "#4FE0E8",
+        "#C8B8FF",
+        "#E8E45A"
+      ],
+      "item_ids": [
+        "wrb_voltis_coil_top",
+        "wrb_voltis_coil_outer",
+        "wrb_voltis_coil_bottom",
+        "wrb_voltis_coil_shoes",
+        "wrb_voltis_coil_neck",
+        "wrb_voltis_coil_back"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_outer",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_neck",
+        "slt_back"
+      ],
+      "acquisition_source": "crew_campaign",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/voltis/coil"
+    },
+    {
+      "id": "ost_voltis_smelter",
+      "continent_id": "con_voltis",
+      "order": 3,
+      "name_key": "wardrobe.set.voltis.smelter",
+      "shape_id": "minimal",
+      "construction": "the least fabric the climate allows",
+      "material": "insulated mesh with earthed copper trace",
+      "material_construction": "every panel bonded to a common ground before it is worn",
+      "detail": "heat-rejecting outer face, still warm to the touch inside",
+      "palette": [
+        "#1B2733",
+        "#4FE0E8",
+        "#C8B8FF",
+        "#E8E45A"
+      ],
+      "item_ids": [
+        "wrb_voltis_smelter_top",
+        "wrb_voltis_smelter_bottom",
+        "wrb_voltis_smelter_shoes",
+        "wrb_voltis_smelter_wrist",
+        "wrb_voltis_smelter_face"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_wrist",
+        "slt_face"
+      ],
+      "acquisition_source": "open_race_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/voltis/smelter"
+    },
+    {
+      "id": "ost_voltis_capacitor",
+      "continent_id": "con_voltis",
+      "order": 4,
+      "name_key": "wardrobe.set.voltis.capacitor",
+      "shape_id": "head_first",
+      "construction": "built outward from what covers the head",
+      "material": "insulated mesh with earthed copper trace",
+      "material_construction": "every panel bonded to a common ground before it is worn",
+      "detail": "flat cells across the back that are decorative and stated to be so",
+      "palette": [
+        "#1B2733",
+        "#4FE0E8",
+        "#C8B8FF",
+        "#E8E45A"
+      ],
+      "item_ids": [
+        "wrb_voltis_capacitor_hair",
+        "wrb_voltis_capacitor_headwear",
+        "wrb_voltis_capacitor_eyewear",
+        "wrb_voltis_capacitor_top",
+        "wrb_voltis_capacitor_bottom",
+        "wrb_voltis_capacitor_shoes"
+      ],
+      "slot_ids": [
+        "slt_hair",
+        "slt_headwear",
+        "slt_eyewear",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "character_episode",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/voltis/capacitor"
+    },
+    {
+      "id": "ost_voltis_strikeplate",
+      "continent_id": "con_voltis",
+      "order": 5,
+      "name_key": "wardrobe.set.voltis.strikeplate",
+      "shape_id": "arm_driven",
+      "construction": "sleeves, wraps and grips — a kit for the upper body",
+      "material": "insulated mesh with earthed copper trace",
+      "material_construction": "every panel bonded to a common ground before it is worn",
+      "detail": "a shoulder plate scarred by an actual strike, once",
+      "palette": [
+        "#1B2733",
+        "#4FE0E8",
+        "#C8B8FF",
+        "#E8E45A"
+      ],
+      "item_ids": [
+        "wrb_voltis_strikeplate_top",
+        "wrb_voltis_strikeplate_arm",
+        "wrb_voltis_strikeplate_wrist",
+        "wrb_voltis_strikeplate_hand",
+        "wrb_voltis_strikeplate_bottom",
+        "wrb_voltis_strikeplate_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_arm",
+        "slt_wrist",
+        "slt_hand",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "global_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/voltis/strikeplate"
+    },
+    {
+      "id": "ost_voltis_conduit",
+      "continent_id": "con_voltis",
+      "order": 6,
+      "name_key": "wardrobe.set.voltis.conduit",
+      "shape_id": "leg_driven",
+      "construction": "compression through the whole leg and nothing loose",
+      "material": "insulated mesh with earthed copper trace",
+      "material_construction": "every panel bonded to a common ground before it is worn",
+      "detail": "channels down the outside of both legs, empty and open",
+      "palette": [
+        "#1B2733",
+        "#4FE0E8",
+        "#C8B8FF",
+        "#E8E45A"
+      ],
+      "item_ids": [
+        "wrb_voltis_conduit_top",
+        "wrb_voltis_conduit_bottom",
+        "wrb_voltis_conduit_leg",
+        "wrb_voltis_conduit_socks",
+        "wrb_voltis_conduit_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_leg",
+        "slt_socks",
+        "slt_shoes"
+      ],
+      "acquisition_source": "world_progress",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/voltis/conduit"
+    },
+    {
+      "id": "ost_voltis_dynamo",
+      "continent_id": "con_voltis",
+      "order": 7,
+      "name_key": "wardrobe.set.voltis.dynamo",
+      "shape_id": "accented",
+      "construction": "plain body, everything spent on the small pieces",
+      "material": "insulated mesh with earthed copper trace",
+      "material_construction": "every panel bonded to a common ground before it is worn",
+      "detail": "a hub at the small of the back that turns with the hips",
+      "palette": [
+        "#1B2733",
+        "#4FE0E8",
+        "#C8B8FF",
+        "#E8E45A"
+      ],
+      "item_ids": [
+        "wrb_voltis_dynamo_top",
+        "wrb_voltis_dynamo_bottom",
+        "wrb_voltis_dynamo_shoes",
+        "wrb_voltis_dynamo_ear",
+        "wrb_voltis_dynamo_neck",
+        "wrb_voltis_dynamo_trail"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_ear",
+        "slt_neck",
+        "slt_trail"
+      ],
+      "acquisition_source": "region_restoration",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/voltis/dynamo"
+    },
+    {
+      "id": "ost_voltis_bluearc",
+      "continent_id": "con_voltis",
+      "order": 8,
+      "name_key": "wardrobe.set.voltis.bluearc",
+      "shape_id": "night",
+      "construction": "dark ground, reflective seams, a light carried behind",
+      "material": "insulated mesh with earthed copper trace",
+      "material_construction": "every panel bonded to a common ground before it is worn",
+      "detail": "the city racing colour, and the only Voltis line without copper",
+      "palette": [
+        "#1B2733",
+        "#4FE0E8",
+        "#C8B8FF",
+        "#E8E45A"
+      ],
+      "item_ids": [
+        "wrb_voltis_bluearc_outer",
+        "wrb_voltis_bluearc_top",
+        "wrb_voltis_bluearc_bottom",
+        "wrb_voltis_bluearc_shoes",
+        "wrb_voltis_bluearc_trail",
+        "wrb_voltis_bluearc_back"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_trail",
+        "slt_back"
+      ],
+      "acquisition_source": "race_placement",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/voltis/bluearc"
+    },
+    {
+      "id": "ost_voltis_groundwire",
+      "continent_id": "con_voltis",
+      "order": 9,
+      "name_key": "wardrobe.set.voltis.groundwire",
+      "shape_id": "field",
+      "construction": "a working kit with somewhere to put things",
+      "material": "insulated mesh with earthed copper trace",
+      "material_construction": "every panel bonded to a common ground before it is worn",
+      "detail": "a trailing earth strap that touches the road behind the heel",
+      "palette": [
+        "#1B2733",
+        "#4FE0E8",
+        "#C8B8FF",
+        "#E8E45A"
+      ],
+      "item_ids": [
+        "wrb_voltis_groundwire_top",
+        "wrb_voltis_groundwire_waist",
+        "wrb_voltis_groundwire_bottom",
+        "wrb_voltis_groundwire_shoes",
+        "wrb_voltis_groundwire_hand",
+        "wrb_voltis_groundwire_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_waist",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hand",
+        "slt_headwear"
+      ],
+      "acquisition_source": "challenge_clear",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/voltis/groundwire"
+    },
+    {
+      "id": "ost_voltis_flashpoint",
+      "continent_id": "con_voltis",
+      "order": 10,
+      "name_key": "wardrobe.set.voltis.flashpoint",
+      "shape_id": "ceremonial",
+      "construction": "what this place wears to a start line that matters",
+      "material": "insulated mesh with earthed copper trace",
+      "material_construction": "every panel bonded to a common ground before it is worn",
+      "detail": "goes white for a half second at the finish and then back",
+      "palette": [
+        "#1B2733",
+        "#4FE0E8",
+        "#C8B8FF",
+        "#E8E45A"
+      ],
+      "item_ids": [
+        "wrb_voltis_flashpoint_outer",
+        "wrb_voltis_flashpoint_top",
+        "wrb_voltis_flashpoint_bottom",
+        "wrb_voltis_flashpoint_shoes",
+        "wrb_voltis_flashpoint_hair",
+        "wrb_voltis_flashpoint_ear"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hair",
+        "slt_ear"
+      ],
+      "acquisition_source": "monthly_apex_checkpoint",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/voltis/flashpoint"
+    },
+    {
+      "id": "ost_hora_vitrine",
+      "continent_id": "con_hora",
+      "order": 1,
+      "name_key": "wardrobe.set.hora.vitrine",
+      "shape_id": "road_kit",
+      "construction": "single-layer racing kit cut close to the body",
+      "material": "spun silica gauze and mirrored film",
+      "material_construction": "double-skinned with an air gap that holds the heat out",
+      "detail": "a clear outer skin over a coloured one, with the gap visible",
+      "palette": [
+        "#E9D8A6",
+        "#B9BFC9",
+        "#8A6A4F",
+        "#F7F3E8"
+      ],
+      "item_ids": [
+        "wrb_hora_vitrine_top",
+        "wrb_hora_vitrine_bottom",
+        "wrb_hora_vitrine_socks",
+        "wrb_hora_vitrine_shoes",
+        "wrb_hora_vitrine_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_socks",
+        "slt_shoes",
+        "slt_headwear"
+      ],
+      "acquisition_source": "crew_campaign",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/hora/vitrine"
+    },
+    {
+      "id": "ost_hora_mirage",
+      "continent_id": "con_hora",
+      "order": 2,
+      "name_key": "wardrobe.set.hora.mirage",
+      "shape_id": "layered",
+      "construction": "shell over a base layer, carried weight on the back",
+      "material": "spun silica gauze and mirrored film",
+      "material_construction": "double-skinned with an air gap that holds the heat out",
+      "detail": "the hem reads as detached from the leg at distance",
+      "palette": [
+        "#E9D8A6",
+        "#B9BFC9",
+        "#8A6A4F",
+        "#F7F3E8"
+      ],
+      "item_ids": [
+        "wrb_hora_mirage_top",
+        "wrb_hora_mirage_outer",
+        "wrb_hora_mirage_bottom",
+        "wrb_hora_mirage_shoes",
+        "wrb_hora_mirage_neck",
+        "wrb_hora_mirage_back"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_outer",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_neck",
+        "slt_back"
+      ],
+      "acquisition_source": "open_race_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/hora/mirage"
+    },
+    {
+      "id": "ost_hora_sandglass",
+      "continent_id": "con_hora",
+      "order": 3,
+      "name_key": "wardrobe.set.hora.sandglass",
+      "shape_id": "minimal",
+      "construction": "the least fabric the climate allows",
+      "material": "spun silica gauze and mirrored film",
+      "material_construction": "double-skinned with an air gap that holds the heat out",
+      "detail": "a narrow waist panel that is the only fitted part of it",
+      "palette": [
+        "#E9D8A6",
+        "#B9BFC9",
+        "#8A6A4F",
+        "#F7F3E8"
+      ],
+      "item_ids": [
+        "wrb_hora_sandglass_top",
+        "wrb_hora_sandglass_bottom",
+        "wrb_hora_sandglass_shoes",
+        "wrb_hora_sandglass_wrist",
+        "wrb_hora_sandglass_face"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_wrist",
+        "slt_face"
+      ],
+      "acquisition_source": "character_episode",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/hora/sandglass"
+    },
+    {
+      "id": "ost_hora_refract",
+      "continent_id": "con_hora",
+      "order": 4,
+      "name_key": "wardrobe.set.hora.refract",
+      "shape_id": "head_first",
+      "construction": "built outward from what covers the head",
+      "material": "spun silica gauze and mirrored film",
+      "material_construction": "double-skinned with an air gap that holds the heat out",
+      "detail": "splits direct sun into a band of colour across the ground",
+      "palette": [
+        "#E9D8A6",
+        "#B9BFC9",
+        "#8A6A4F",
+        "#F7F3E8"
+      ],
+      "item_ids": [
+        "wrb_hora_refract_hair",
+        "wrb_hora_refract_headwear",
+        "wrb_hora_refract_eyewear",
+        "wrb_hora_refract_top",
+        "wrb_hora_refract_bottom",
+        "wrb_hora_refract_shoes"
+      ],
+      "slot_ids": [
+        "slt_hair",
+        "slt_headwear",
+        "slt_eyewear",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "global_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/hora/refract"
+    },
+    {
+      "id": "ost_hora_duneline",
+      "continent_id": "con_hora",
+      "order": 5,
+      "name_key": "wardrobe.set.hora.duneline",
+      "shape_id": "arm_driven",
+      "construction": "sleeves, wraps and grips — a kit for the upper body",
+      "material": "spun silica gauze and mirrored film",
+      "material_construction": "double-skinned with an air gap that holds the heat out",
+      "detail": "wind-ripple texture running across the body, not along it",
+      "palette": [
+        "#E9D8A6",
+        "#B9BFC9",
+        "#8A6A4F",
+        "#F7F3E8"
+      ],
+      "item_ids": [
+        "wrb_hora_duneline_top",
+        "wrb_hora_duneline_arm",
+        "wrb_hora_duneline_wrist",
+        "wrb_hora_duneline_hand",
+        "wrb_hora_duneline_bottom",
+        "wrb_hora_duneline_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_arm",
+        "slt_wrist",
+        "slt_hand",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "world_progress",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/hora/duneline"
+    },
+    {
+      "id": "ost_hora_sunfleck",
+      "continent_id": "con_hora",
+      "order": 6,
+      "name_key": "wardrobe.set.hora.sunfleck",
+      "shape_id": "leg_driven",
+      "construction": "compression through the whole leg and nothing loose",
+      "material": "spun silica gauze and mirrored film",
+      "material_construction": "double-skinned with an air gap that holds the heat out",
+      "detail": "mirrored flecks scattered thin enough to read as dust",
+      "palette": [
+        "#E9D8A6",
+        "#B9BFC9",
+        "#8A6A4F",
+        "#F7F3E8"
+      ],
+      "item_ids": [
+        "wrb_hora_sunfleck_top",
+        "wrb_hora_sunfleck_bottom",
+        "wrb_hora_sunfleck_leg",
+        "wrb_hora_sunfleck_socks",
+        "wrb_hora_sunfleck_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_leg",
+        "slt_socks",
+        "slt_shoes"
+      ],
+      "acquisition_source": "region_restoration",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/hora/sunfleck"
+    },
+    {
+      "id": "ost_hora_silica",
+      "continent_id": "con_hora",
+      "order": 7,
+      "name_key": "wardrobe.set.hora.silica",
+      "shape_id": "accented",
+      "construction": "plain body, everything spent on the small pieces",
+      "material": "spun silica gauze and mirrored film",
+      "material_construction": "double-skinned with an air gap that holds the heat out",
+      "detail": "raw spun gauze, unfinished, the cheapest thing Hora makes",
+      "palette": [
+        "#E9D8A6",
+        "#B9BFC9",
+        "#8A6A4F",
+        "#F7F3E8"
+      ],
+      "item_ids": [
+        "wrb_hora_silica_top",
+        "wrb_hora_silica_bottom",
+        "wrb_hora_silica_shoes",
+        "wrb_hora_silica_ear",
+        "wrb_hora_silica_neck",
+        "wrb_hora_silica_trail"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_ear",
+        "slt_neck",
+        "slt_trail"
+      ],
+      "acquisition_source": "race_placement",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/hora/silica"
+    },
+    {
+      "id": "ost_hora_heathaze",
+      "continent_id": "con_hora",
+      "order": 8,
+      "name_key": "wardrobe.set.hora.heathaze",
+      "shape_id": "night",
+      "construction": "dark ground, reflective seams, a light carried behind",
+      "material": "spun silica gauze and mirrored film",
+      "material_construction": "double-skinned with an air gap that holds the heat out",
+      "detail": "edges printed soft so the silhouette never resolves fully",
+      "palette": [
+        "#E9D8A6",
+        "#B9BFC9",
+        "#8A6A4F",
+        "#F7F3E8"
+      ],
+      "item_ids": [
+        "wrb_hora_heathaze_outer",
+        "wrb_hora_heathaze_top",
+        "wrb_hora_heathaze_bottom",
+        "wrb_hora_heathaze_shoes",
+        "wrb_hora_heathaze_trail",
+        "wrb_hora_heathaze_back"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_trail",
+        "slt_back"
+      ],
+      "acquisition_source": "challenge_clear",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/hora/heathaze"
+    },
+    {
+      "id": "ost_hora_shardwalk",
+      "continent_id": "con_hora",
+      "order": 9,
+      "name_key": "wardrobe.set.hora.shardwalk",
+      "shape_id": "field",
+      "construction": "a working kit with somewhere to put things",
+      "material": "spun silica gauze and mirrored film",
+      "material_construction": "double-skinned with an air gap that holds the heat out",
+      "detail": "a sole built for a surface that is glass all the way down",
+      "palette": [
+        "#E9D8A6",
+        "#B9BFC9",
+        "#8A6A4F",
+        "#F7F3E8"
+      ],
+      "item_ids": [
+        "wrb_hora_shardwalk_top",
+        "wrb_hora_shardwalk_waist",
+        "wrb_hora_shardwalk_bottom",
+        "wrb_hora_shardwalk_shoes",
+        "wrb_hora_shardwalk_hand",
+        "wrb_hora_shardwalk_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_waist",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hand",
+        "slt_headwear"
+      ],
+      "acquisition_source": "monthly_apex_checkpoint",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/hora/shardwalk"
+    },
+    {
+      "id": "ost_hora_glasswind",
+      "continent_id": "con_hora",
+      "order": 10,
+      "name_key": "wardrobe.set.hora.glasswind",
+      "shape_id": "ceremonial",
+      "construction": "what this place wears to a start line that matters",
+      "material": "spun silica gauze and mirrored film",
+      "material_construction": "double-skinned with an air gap that holds the heat out",
+      "detail": "Hora ceremonial: a full mirrored outer worn once a season",
+      "palette": [
+        "#E9D8A6",
+        "#B9BFC9",
+        "#8A6A4F",
+        "#F7F3E8"
+      ],
+      "item_ids": [
+        "wrb_hora_glasswind_outer",
+        "wrb_hora_glasswind_top",
+        "wrb_hora_glasswind_bottom",
+        "wrb_hora_glasswind_shoes",
+        "wrb_hora_glasswind_hair",
+        "wrb_hora_glasswind_ear"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hair",
+        "slt_ear"
+      ],
+      "acquisition_source": "season_track",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/hora/glasswind"
+    },
+    {
+      "id": "ost_nival_rimefall",
+      "continent_id": "con_nival",
+      "order": 1,
+      "name_key": "wardrobe.set.nival.rimefall",
+      "shape_id": "road_kit",
+      "construction": "single-layer racing kit cut close to the body",
+      "material": "boiled wool and windproof laminate",
+      "material_construction": "overlapped like roof tiles so nothing catches spindrift",
+      "detail": "a frosted nap that flattens under the hand and springs back",
+      "palette": [
+        "#DCEAF5",
+        "#7FA8C9",
+        "#2E4057",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_nival_rimefall_top",
+        "wrb_nival_rimefall_bottom",
+        "wrb_nival_rimefall_socks",
+        "wrb_nival_rimefall_shoes",
+        "wrb_nival_rimefall_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_socks",
+        "slt_shoes",
+        "slt_headwear"
+      ],
+      "acquisition_source": "open_race_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/nival/rimefall"
+    },
+    {
+      "id": "ost_nival_snowline",
+      "continent_id": "con_nival",
+      "order": 2,
+      "name_key": "wardrobe.set.nival.snowline",
+      "shape_id": "layered",
+      "construction": "shell over a base layer, carried weight on the back",
+      "material": "boiled wool and windproof laminate",
+      "material_construction": "overlapped like roof tiles so nothing catches spindrift",
+      "detail": "white above and dark below, split at the exact ribs",
+      "palette": [
+        "#DCEAF5",
+        "#7FA8C9",
+        "#2E4057",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_nival_snowline_top",
+        "wrb_nival_snowline_outer",
+        "wrb_nival_snowline_bottom",
+        "wrb_nival_snowline_shoes",
+        "wrb_nival_snowline_neck",
+        "wrb_nival_snowline_back"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_outer",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_neck",
+        "slt_back"
+      ],
+      "acquisition_source": "character_episode",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/nival/snowline"
+    },
+    {
+      "id": "ost_nival_whiteout",
+      "continent_id": "con_nival",
+      "order": 3,
+      "name_key": "wardrobe.set.nival.whiteout",
+      "shape_id": "minimal",
+      "construction": "the least fabric the climate allows",
+      "material": "boiled wool and windproof laminate",
+      "material_construction": "overlapped like roof tiles so nothing catches spindrift",
+      "detail": "entirely white including the sole, which is a real problem",
+      "palette": [
+        "#DCEAF5",
+        "#7FA8C9",
+        "#2E4057",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_nival_whiteout_top",
+        "wrb_nival_whiteout_bottom",
+        "wrb_nival_whiteout_shoes",
+        "wrb_nival_whiteout_wrist",
+        "wrb_nival_whiteout_face"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_wrist",
+        "slt_face"
+      ],
+      "acquisition_source": "global_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/nival/whiteout"
+    },
+    {
+      "id": "ost_nival_glacier",
+      "continent_id": "con_nival",
+      "order": 4,
+      "name_key": "wardrobe.set.nival.glacier",
+      "shape_id": "head_first",
+      "construction": "built outward from what covers the head",
+      "material": "boiled wool and windproof laminate",
+      "material_construction": "overlapped like roof tiles so nothing catches spindrift",
+      "detail": "compressed layers visible at the cut edge of every panel",
+      "palette": [
+        "#DCEAF5",
+        "#7FA8C9",
+        "#2E4057",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_nival_glacier_hair",
+        "wrb_nival_glacier_headwear",
+        "wrb_nival_glacier_eyewear",
+        "wrb_nival_glacier_top",
+        "wrb_nival_glacier_bottom",
+        "wrb_nival_glacier_shoes"
+      ],
+      "slot_ids": [
+        "slt_hair",
+        "slt_headwear",
+        "slt_eyewear",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "world_progress",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/nival/glacier"
+    },
+    {
+      "id": "ost_nival_hoarfrost",
+      "continent_id": "con_nival",
+      "order": 5,
+      "name_key": "wardrobe.set.nival.hoarfrost",
+      "shape_id": "arm_driven",
+      "construction": "sleeves, wraps and grips — a kit for the upper body",
+      "material": "boiled wool and windproof laminate",
+      "material_construction": "overlapped like roof tiles so nothing catches spindrift",
+      "detail": "crystalline embroidery only visible below freezing",
+      "palette": [
+        "#DCEAF5",
+        "#7FA8C9",
+        "#2E4057",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_nival_hoarfrost_top",
+        "wrb_nival_hoarfrost_arm",
+        "wrb_nival_hoarfrost_wrist",
+        "wrb_nival_hoarfrost_hand",
+        "wrb_nival_hoarfrost_bottom",
+        "wrb_nival_hoarfrost_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_arm",
+        "slt_wrist",
+        "slt_hand",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "region_restoration",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/nival/hoarfrost"
+    },
+    {
+      "id": "ost_nival_breathcloud",
+      "continent_id": "con_nival",
+      "order": 6,
+      "name_key": "wardrobe.set.nival.breathcloud",
+      "shape_id": "leg_driven",
+      "construction": "compression through the whole leg and nothing loose",
+      "material": "boiled wool and windproof laminate",
+      "material_construction": "overlapped like roof tiles so nothing catches spindrift",
+      "detail": "a fleece collar shaped by years of being breathed into",
+      "palette": [
+        "#DCEAF5",
+        "#7FA8C9",
+        "#2E4057",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_nival_breathcloud_top",
+        "wrb_nival_breathcloud_bottom",
+        "wrb_nival_breathcloud_leg",
+        "wrb_nival_breathcloud_socks",
+        "wrb_nival_breathcloud_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_leg",
+        "slt_socks",
+        "slt_shoes"
+      ],
+      "acquisition_source": "race_placement",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/nival/breathcloud"
+    },
+    {
+      "id": "ost_nival_icewall",
+      "continent_id": "con_nival",
+      "order": 7,
+      "name_key": "wardrobe.set.nival.icewall",
+      "shape_id": "accented",
+      "construction": "plain body, everything spent on the small pieces",
+      "material": "boiled wool and windproof laminate",
+      "material_construction": "overlapped like roof tiles so nothing catches spindrift",
+      "detail": "a rigid front panel that takes the wind off the chest entirely",
+      "palette": [
+        "#DCEAF5",
+        "#7FA8C9",
+        "#2E4057",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_nival_icewall_top",
+        "wrb_nival_icewall_bottom",
+        "wrb_nival_icewall_shoes",
+        "wrb_nival_icewall_ear",
+        "wrb_nival_icewall_neck",
+        "wrb_nival_icewall_trail"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_ear",
+        "slt_neck",
+        "slt_trail"
+      ],
+      "acquisition_source": "challenge_clear",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/nival/icewall"
+    },
+    {
+      "id": "ost_nival_driftline",
+      "continent_id": "con_nival",
+      "order": 8,
+      "name_key": "wardrobe.set.nival.driftline",
+      "shape_id": "night",
+      "construction": "dark ground, reflective seams, a light carried behind",
+      "material": "boiled wool and windproof laminate",
+      "material_construction": "overlapped like roof tiles so nothing catches spindrift",
+      "detail": "overlapping tiles angled to shed spindrift sideways",
+      "palette": [
+        "#DCEAF5",
+        "#7FA8C9",
+        "#2E4057",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_nival_driftline_outer",
+        "wrb_nival_driftline_top",
+        "wrb_nival_driftline_bottom",
+        "wrb_nival_driftline_shoes",
+        "wrb_nival_driftline_trail",
+        "wrb_nival_driftline_back"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_trail",
+        "slt_back"
+      ],
+      "acquisition_source": "monthly_apex_checkpoint",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/nival/driftline"
+    },
+    {
+      "id": "ost_nival_coldsnap",
+      "continent_id": "con_nival",
+      "order": 9,
+      "name_key": "wardrobe.set.nival.coldsnap",
+      "shape_id": "field",
+      "construction": "a working kit with somewhere to put things",
+      "material": "boiled wool and windproof laminate",
+      "material_construction": "overlapped like roof tiles so nothing catches spindrift",
+      "detail": "the thinnest thing Nival will sell you, and it is a dare",
+      "palette": [
+        "#DCEAF5",
+        "#7FA8C9",
+        "#2E4057",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_nival_coldsnap_top",
+        "wrb_nival_coldsnap_waist",
+        "wrb_nival_coldsnap_bottom",
+        "wrb_nival_coldsnap_shoes",
+        "wrb_nival_coldsnap_hand",
+        "wrb_nival_coldsnap_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_waist",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hand",
+        "slt_headwear"
+      ],
+      "acquisition_source": "season_track",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/nival/coldsnap"
+    },
+    {
+      "id": "ost_nival_summitwind",
+      "continent_id": "con_nival",
+      "order": 10,
+      "name_key": "wardrobe.set.nival.summitwind",
+      "shape_id": "ceremonial",
+      "construction": "what this place wears to a start line that matters",
+      "material": "boiled wool and windproof laminate",
+      "material_construction": "overlapped like roof tiles so nothing catches spindrift",
+      "detail": "the ridge racing line, awarded rather than made",
+      "palette": [
+        "#DCEAF5",
+        "#7FA8C9",
+        "#2E4057",
+        "#FFFFFF"
+      ],
+      "item_ids": [
+        "wrb_nival_summitwind_outer",
+        "wrb_nival_summitwind_top",
+        "wrb_nival_summitwind_bottom",
+        "wrb_nival_summitwind_shoes",
+        "wrb_nival_summitwind_hair",
+        "wrb_nival_summitwind_ear"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hair",
+        "slt_ear"
+      ],
+      "acquisition_source": "crew_campaign",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/nival/summitwind"
+    },
+    {
+      "id": "ost_kael_updrift",
+      "continent_id": "con_kael",
+      "order": 1,
+      "name_key": "wardrobe.set.kael.updrift",
+      "shape_id": "road_kit",
+      "construction": "single-layer racing kit cut close to the body",
+      "material": "feather-light ripstop and braided tether cord",
+      "material_construction": "nothing that flaps, everything anchored twice",
+      "detail": "nothing on it weighs more than the cord holding it down",
+      "palette": [
+        "#9FD4E8",
+        "#F2E2C4",
+        "#5C8A72",
+        "#3A4A6B"
+      ],
+      "item_ids": [
+        "wrb_kael_updrift_top",
+        "wrb_kael_updrift_bottom",
+        "wrb_kael_updrift_socks",
+        "wrb_kael_updrift_shoes",
+        "wrb_kael_updrift_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_socks",
+        "slt_shoes",
+        "slt_headwear"
+      ],
+      "acquisition_source": "character_episode",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/kael/updrift"
+    },
+    {
+      "id": "ost_kael_tetherline",
+      "continent_id": "con_kael",
+      "order": 2,
+      "name_key": "wardrobe.set.kael.tetherline",
+      "shape_id": "layered",
+      "construction": "shell over a base layer, carried weight on the back",
+      "material": "feather-light ripstop and braided tether cord",
+      "material_construction": "nothing that flaps, everything anchored twice",
+      "detail": "a working clip at the hip that is genuinely load-rated",
+      "palette": [
+        "#9FD4E8",
+        "#F2E2C4",
+        "#5C8A72",
+        "#3A4A6B"
+      ],
+      "item_ids": [
+        "wrb_kael_tetherline_top",
+        "wrb_kael_tetherline_outer",
+        "wrb_kael_tetherline_bottom",
+        "wrb_kael_tetherline_shoes",
+        "wrb_kael_tetherline_neck",
+        "wrb_kael_tetherline_back"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_outer",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_neck",
+        "slt_back"
+      ],
+      "acquisition_source": "global_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/kael/tetherline"
+    },
+    {
+      "id": "ost_kael_cloudbank",
+      "continent_id": "con_kael",
+      "order": 3,
+      "name_key": "wardrobe.set.kael.cloudbank",
+      "shape_id": "minimal",
+      "construction": "the least fabric the climate allows",
+      "material": "feather-light ripstop and braided tether cord",
+      "material_construction": "nothing that flaps, everything anchored twice",
+      "detail": "graded pale to dark from shoulder to hem, like weather",
+      "palette": [
+        "#9FD4E8",
+        "#F2E2C4",
+        "#5C8A72",
+        "#3A4A6B"
+      ],
+      "item_ids": [
+        "wrb_kael_cloudbank_top",
+        "wrb_kael_cloudbank_bottom",
+        "wrb_kael_cloudbank_shoes",
+        "wrb_kael_cloudbank_wrist",
+        "wrb_kael_cloudbank_face"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_wrist",
+        "slt_face"
+      ],
+      "acquisition_source": "world_progress",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/kael/cloudbank"
+    },
+    {
+      "id": "ost_kael_skybridge",
+      "continent_id": "con_kael",
+      "order": 4,
+      "name_key": "wardrobe.set.kael.skybridge",
+      "shape_id": "head_first",
+      "construction": "built outward from what covers the head",
+      "material": "feather-light ripstop and braided tether cord",
+      "material_construction": "nothing that flaps, everything anchored twice",
+      "detail": "rope-braid trim copied from the bridges it is worn across",
+      "palette": [
+        "#9FD4E8",
+        "#F2E2C4",
+        "#5C8A72",
+        "#3A4A6B"
+      ],
+      "item_ids": [
+        "wrb_kael_skybridge_hair",
+        "wrb_kael_skybridge_headwear",
+        "wrb_kael_skybridge_eyewear",
+        "wrb_kael_skybridge_top",
+        "wrb_kael_skybridge_bottom",
+        "wrb_kael_skybridge_shoes"
+      ],
+      "slot_ids": [
+        "slt_hair",
+        "slt_headwear",
+        "slt_eyewear",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "region_restoration",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/kael/skybridge"
+    },
+    {
+      "id": "ost_kael_featherfall",
+      "continent_id": "con_kael",
+      "order": 5,
+      "name_key": "wardrobe.set.kael.featherfall",
+      "shape_id": "arm_driven",
+      "construction": "sleeves, wraps and grips — a kit for the upper body",
+      "material": "feather-light ripstop and braided tether cord",
+      "material_construction": "nothing that flaps, everything anchored twice",
+      "detail": "the lightest set in the world, and it is stated in grams",
+      "palette": [
+        "#9FD4E8",
+        "#F2E2C4",
+        "#5C8A72",
+        "#3A4A6B"
+      ],
+      "item_ids": [
+        "wrb_kael_featherfall_top",
+        "wrb_kael_featherfall_arm",
+        "wrb_kael_featherfall_wrist",
+        "wrb_kael_featherfall_hand",
+        "wrb_kael_featherfall_bottom",
+        "wrb_kael_featherfall_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_arm",
+        "slt_wrist",
+        "slt_hand",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "race_placement",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/kael/featherfall"
+    },
+    {
+      "id": "ost_kael_thermalride",
+      "continent_id": "con_kael",
+      "order": 6,
+      "name_key": "wardrobe.set.kael.thermalride",
+      "shape_id": "leg_driven",
+      "construction": "compression through the whole leg and nothing loose",
+      "material": "feather-light ripstop and braided tether cord",
+      "material_construction": "nothing that flaps, everything anchored twice",
+      "detail": "wing vents under the arm that open only above a certain pace",
+      "palette": [
+        "#9FD4E8",
+        "#F2E2C4",
+        "#5C8A72",
+        "#3A4A6B"
+      ],
+      "item_ids": [
+        "wrb_kael_thermalride_top",
+        "wrb_kael_thermalride_bottom",
+        "wrb_kael_thermalride_leg",
+        "wrb_kael_thermalride_socks",
+        "wrb_kael_thermalride_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_leg",
+        "slt_socks",
+        "slt_shoes"
+      ],
+      "acquisition_source": "challenge_clear",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/kael/thermalride"
+    },
+    {
+      "id": "ost_kael_ropewalk",
+      "continent_id": "con_kael",
+      "order": 7,
+      "name_key": "wardrobe.set.kael.ropewalk",
+      "shape_id": "accented",
+      "construction": "plain body, everything spent on the small pieces",
+      "material": "feather-light ripstop and braided tether cord",
+      "material_construction": "nothing that flaps, everything anchored twice",
+      "detail": "grip surfaces on both palms and the inside of both forearms",
+      "palette": [
+        "#9FD4E8",
+        "#F2E2C4",
+        "#5C8A72",
+        "#3A4A6B"
+      ],
+      "item_ids": [
+        "wrb_kael_ropewalk_top",
+        "wrb_kael_ropewalk_bottom",
+        "wrb_kael_ropewalk_shoes",
+        "wrb_kael_ropewalk_ear",
+        "wrb_kael_ropewalk_neck",
+        "wrb_kael_ropewalk_trail"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_ear",
+        "slt_neck",
+        "slt_trail"
+      ],
+      "acquisition_source": "monthly_apex_checkpoint",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/kael/ropewalk"
+    },
+    {
+      "id": "ost_kael_highwind",
+      "continent_id": "con_kael",
+      "order": 8,
+      "name_key": "wardrobe.set.kael.highwind",
+      "shape_id": "night",
+      "construction": "dark ground, reflective seams, a light carried behind",
+      "material": "feather-light ripstop and braided tether cord",
+      "material_construction": "nothing that flaps, everything anchored twice",
+      "detail": "sealed at every opening, for the routes between islands",
+      "palette": [
+        "#9FD4E8",
+        "#F2E2C4",
+        "#5C8A72",
+        "#3A4A6B"
+      ],
+      "item_ids": [
+        "wrb_kael_highwind_outer",
+        "wrb_kael_highwind_top",
+        "wrb_kael_highwind_bottom",
+        "wrb_kael_highwind_shoes",
+        "wrb_kael_highwind_trail",
+        "wrb_kael_highwind_back"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_trail",
+        "slt_back"
+      ],
+      "acquisition_source": "season_track",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/kael/highwind"
+    },
+    {
+      "id": "ost_kael_aerie",
+      "continent_id": "con_kael",
+      "order": 9,
+      "name_key": "wardrobe.set.kael.aerie",
+      "shape_id": "field",
+      "construction": "a working kit with somewhere to put things",
+      "material": "feather-light ripstop and braided tether cord",
+      "material_construction": "nothing that flaps, everything anchored twice",
+      "detail": "lined in down that came from nowhere anyone will explain",
+      "palette": [
+        "#9FD4E8",
+        "#F2E2C4",
+        "#5C8A72",
+        "#3A4A6B"
+      ],
+      "item_ids": [
+        "wrb_kael_aerie_top",
+        "wrb_kael_aerie_waist",
+        "wrb_kael_aerie_bottom",
+        "wrb_kael_aerie_shoes",
+        "wrb_kael_aerie_hand",
+        "wrb_kael_aerie_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_waist",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hand",
+        "slt_headwear"
+      ],
+      "acquisition_source": "crew_campaign",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/kael/aerie"
+    },
+    {
+      "id": "ost_kael_glidepath",
+      "continent_id": "con_kael",
+      "order": 10,
+      "name_key": "wardrobe.set.kael.glidepath",
+      "shape_id": "ceremonial",
+      "construction": "what this place wears to a start line that matters",
+      "material": "feather-light ripstop and braided tether cord",
+      "material_construction": "nothing that flaps, everything anchored twice",
+      "detail": "the archipelago race line: one long taper from collar to ankle",
+      "palette": [
+        "#9FD4E8",
+        "#F2E2C4",
+        "#5C8A72",
+        "#3A4A6B"
+      ],
+      "item_ids": [
+        "wrb_kael_glidepath_outer",
+        "wrb_kael_glidepath_top",
+        "wrb_kael_glidepath_bottom",
+        "wrb_kael_glidepath_shoes",
+        "wrb_kael_glidepath_hair",
+        "wrb_kael_glidepath_ear"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hair",
+        "slt_ear"
+      ],
+      "acquisition_source": "open_race_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/kael/glidepath"
+    },
+    {
+      "id": "ost_neris_pressure",
+      "continent_id": "con_neris",
+      "order": 1,
+      "name_key": "wardrobe.set.neris.pressure",
+      "shape_id": "road_kit",
+      "construction": "single-layer racing kit cut close to the body",
+      "material": "sealed neoprene and lume-thread",
+      "material_construction": "welded seams, no stitch holes anywhere below the ribs",
+      "detail": "graduated compression that is tightest at the ankle by design",
+      "palette": [
+        "#0B2A3A",
+        "#1F6F7A",
+        "#7FD1C4",
+        "#0A1418"
+      ],
+      "item_ids": [
+        "wrb_neris_pressure_top",
+        "wrb_neris_pressure_bottom",
+        "wrb_neris_pressure_socks",
+        "wrb_neris_pressure_shoes",
+        "wrb_neris_pressure_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_socks",
+        "slt_shoes",
+        "slt_headwear"
+      ],
+      "acquisition_source": "global_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/neris/pressure"
+    },
+    {
+      "id": "ost_neris_sonar",
+      "continent_id": "con_neris",
+      "order": 2,
+      "name_key": "wardrobe.set.neris.sonar",
+      "shape_id": "layered",
+      "construction": "shell over a base layer, carried weight on the back",
+      "material": "sealed neoprene and lume-thread",
+      "material_construction": "welded seams, no stitch holes anywhere below the ribs",
+      "detail": "concentric rings from a single point at the sternum",
+      "palette": [
+        "#0B2A3A",
+        "#1F6F7A",
+        "#7FD1C4",
+        "#0A1418"
+      ],
+      "item_ids": [
+        "wrb_neris_sonar_top",
+        "wrb_neris_sonar_outer",
+        "wrb_neris_sonar_bottom",
+        "wrb_neris_sonar_shoes",
+        "wrb_neris_sonar_neck",
+        "wrb_neris_sonar_back"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_outer",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_neck",
+        "slt_back"
+      ],
+      "acquisition_source": "world_progress",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/neris/sonar"
+    },
+    {
+      "id": "ost_neris_lumenfish",
+      "continent_id": "con_neris",
+      "order": 3,
+      "name_key": "wardrobe.set.neris.lumenfish",
+      "shape_id": "minimal",
+      "construction": "the least fabric the climate allows",
+      "material": "sealed neoprene and lume-thread",
+      "material_construction": "welded seams, no stitch holes anywhere below the ribs",
+      "detail": "lume-thread arranged as a shoal that reads as movement",
+      "palette": [
+        "#0B2A3A",
+        "#1F6F7A",
+        "#7FD1C4",
+        "#0A1418"
+      ],
+      "item_ids": [
+        "wrb_neris_lumenfish_top",
+        "wrb_neris_lumenfish_bottom",
+        "wrb_neris_lumenfish_shoes",
+        "wrb_neris_lumenfish_wrist",
+        "wrb_neris_lumenfish_face"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_wrist",
+        "slt_face"
+      ],
+      "acquisition_source": "region_restoration",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/neris/lumenfish"
+    },
+    {
+      "id": "ost_neris_siltline",
+      "continent_id": "con_neris",
+      "order": 4,
+      "name_key": "wardrobe.set.neris.siltline",
+      "shape_id": "head_first",
+      "construction": "built outward from what covers the head",
+      "material": "sealed neoprene and lume-thread",
+      "material_construction": "welded seams, no stitch holes anywhere below the ribs",
+      "detail": "settled sediment tone, matte, absorbs every light there is",
+      "palette": [
+        "#0B2A3A",
+        "#1F6F7A",
+        "#7FD1C4",
+        "#0A1418"
+      ],
+      "item_ids": [
+        "wrb_neris_siltline_hair",
+        "wrb_neris_siltline_headwear",
+        "wrb_neris_siltline_eyewear",
+        "wrb_neris_siltline_top",
+        "wrb_neris_siltline_bottom",
+        "wrb_neris_siltline_shoes"
+      ],
+      "slot_ids": [
+        "slt_hair",
+        "slt_headwear",
+        "slt_eyewear",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "race_placement",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/neris/siltline"
+    },
+    {
+      "id": "ost_neris_currentline",
+      "continent_id": "con_neris",
+      "order": 5,
+      "name_key": "wardrobe.set.neris.currentline",
+      "shape_id": "arm_driven",
+      "construction": "sleeves, wraps and grips — a kit for the upper body",
+      "material": "sealed neoprene and lume-thread",
+      "material_construction": "welded seams, no stitch holes anywhere below the ribs",
+      "detail": "flow lines that match the drift of the region it came from",
+      "palette": [
+        "#0B2A3A",
+        "#1F6F7A",
+        "#7FD1C4",
+        "#0A1418"
+      ],
+      "item_ids": [
+        "wrb_neris_currentline_top",
+        "wrb_neris_currentline_arm",
+        "wrb_neris_currentline_wrist",
+        "wrb_neris_currentline_hand",
+        "wrb_neris_currentline_bottom",
+        "wrb_neris_currentline_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_arm",
+        "slt_wrist",
+        "slt_hand",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "challenge_clear",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/neris/currentline"
+    },
+    {
+      "id": "ost_neris_deepglass",
+      "continent_id": "con_neris",
+      "order": 6,
+      "name_key": "wardrobe.set.neris.deepglass",
+      "shape_id": "leg_driven",
+      "construction": "compression through the whole leg and nothing loose",
+      "material": "sealed neoprene and lume-thread",
+      "material_construction": "welded seams, no stitch holes anywhere below the ribs",
+      "detail": "a single pane at the forearm, and nobody knows what it is for",
+      "palette": [
+        "#0B2A3A",
+        "#1F6F7A",
+        "#7FD1C4",
+        "#0A1418"
+      ],
+      "item_ids": [
+        "wrb_neris_deepglass_top",
+        "wrb_neris_deepglass_bottom",
+        "wrb_neris_deepglass_leg",
+        "wrb_neris_deepglass_socks",
+        "wrb_neris_deepglass_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_leg",
+        "slt_socks",
+        "slt_shoes"
+      ],
+      "acquisition_source": "monthly_apex_checkpoint",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/neris/deepglass"
+    },
+    {
+      "id": "ost_neris_archive",
+      "continent_id": "con_neris",
+      "order": 7,
+      "name_key": "wardrobe.set.neris.archive",
+      "shape_id": "accented",
+      "construction": "plain body, everything spent on the small pieces",
+      "material": "sealed neoprene and lume-thread",
+      "material_construction": "welded seams, no stitch holes anywhere below the ribs",
+      "detail": "text from the drowned archive, unreadable and never translated",
+      "palette": [
+        "#0B2A3A",
+        "#1F6F7A",
+        "#7FD1C4",
+        "#0A1418"
+      ],
+      "item_ids": [
+        "wrb_neris_archive_top",
+        "wrb_neris_archive_bottom",
+        "wrb_neris_archive_shoes",
+        "wrb_neris_archive_ear",
+        "wrb_neris_archive_neck",
+        "wrb_neris_archive_trail"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_ear",
+        "slt_neck",
+        "slt_trail"
+      ],
+      "acquisition_source": "season_track",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/neris/archive"
+    },
+    {
+      "id": "ost_neris_kelpline",
+      "continent_id": "con_neris",
+      "order": 8,
+      "name_key": "wardrobe.set.neris.kelpline",
+      "shape_id": "night",
+      "construction": "dark ground, reflective seams, a light carried behind",
+      "material": "sealed neoprene and lume-thread",
+      "material_construction": "welded seams, no stitch holes anywhere below the ribs",
+      "detail": "long trailing strands that move a half beat behind the runner",
+      "palette": [
+        "#0B2A3A",
+        "#1F6F7A",
+        "#7FD1C4",
+        "#0A1418"
+      ],
+      "item_ids": [
+        "wrb_neris_kelpline_outer",
+        "wrb_neris_kelpline_top",
+        "wrb_neris_kelpline_bottom",
+        "wrb_neris_kelpline_shoes",
+        "wrb_neris_kelpline_trail",
+        "wrb_neris_kelpline_back"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_trail",
+        "slt_back"
+      ],
+      "acquisition_source": "crew_campaign",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/neris/kelpline"
+    },
+    {
+      "id": "ost_neris_bathysphere",
+      "continent_id": "con_neris",
+      "order": 9,
+      "name_key": "wardrobe.set.neris.bathysphere",
+      "shape_id": "field",
+      "construction": "a working kit with somewhere to put things",
+      "material": "sealed neoprene and lume-thread",
+      "material_construction": "welded seams, no stitch holes anywhere below the ribs",
+      "detail": "a rigid collar ring that the rest of the set hangs from",
+      "palette": [
+        "#0B2A3A",
+        "#1F6F7A",
+        "#7FD1C4",
+        "#0A1418"
+      ],
+      "item_ids": [
+        "wrb_neris_bathysphere_top",
+        "wrb_neris_bathysphere_waist",
+        "wrb_neris_bathysphere_bottom",
+        "wrb_neris_bathysphere_shoes",
+        "wrb_neris_bathysphere_hand",
+        "wrb_neris_bathysphere_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_waist",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hand",
+        "slt_headwear"
+      ],
+      "acquisition_source": "open_race_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/neris/bathysphere"
+    },
+    {
+      "id": "ost_neris_quietdepth",
+      "continent_id": "con_neris",
+      "order": 10,
+      "name_key": "wardrobe.set.neris.quietdepth",
+      "shape_id": "ceremonial",
+      "construction": "what this place wears to a start line that matters",
+      "material": "sealed neoprene and lume-thread",
+      "material_construction": "welded seams, no stitch holes anywhere below the ribs",
+      "detail": "the abyssal ceremonial line, and it emits no light at all",
+      "palette": [
+        "#0B2A3A",
+        "#1F6F7A",
+        "#7FD1C4",
+        "#0A1418"
+      ],
+      "item_ids": [
+        "wrb_neris_quietdepth_outer",
+        "wrb_neris_quietdepth_top",
+        "wrb_neris_quietdepth_bottom",
+        "wrb_neris_quietdepth_shoes",
+        "wrb_neris_quietdepth_hair",
+        "wrb_neris_quietdepth_ear"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hair",
+        "slt_ear"
+      ],
+      "acquisition_source": "character_episode",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/neris/quietdepth"
+    },
+    {
+      "id": "ost_tempora_escapement",
+      "continent_id": "con_tempora",
+      "order": 1,
+      "name_key": "wardrobe.set.tempora.escapement",
+      "shape_id": "road_kit",
+      "construction": "single-layer racing kit cut close to the body",
+      "material": "oiled canvas and brass fitting",
+      "material_construction": "buckled and adjustable in fixed increments, like a movement",
+      "detail": "a ticking counterweight at the hip, set to the wearer cadence",
+      "palette": [
+        "#3B2F4A",
+        "#C9A227",
+        "#E8E2D0",
+        "#6E5A7A"
+      ],
+      "item_ids": [
+        "wrb_tempora_escapement_top",
+        "wrb_tempora_escapement_bottom",
+        "wrb_tempora_escapement_socks",
+        "wrb_tempora_escapement_shoes",
+        "wrb_tempora_escapement_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_socks",
+        "slt_shoes",
+        "slt_headwear"
+      ],
+      "acquisition_source": "world_progress",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/tempora/escapement"
+    },
+    {
+      "id": "ost_tempora_mainspring",
+      "continent_id": "con_tempora",
+      "order": 2,
+      "name_key": "wardrobe.set.tempora.mainspring",
+      "shape_id": "layered",
+      "construction": "shell over a base layer, carried weight on the back",
+      "material": "oiled canvas and brass fitting",
+      "material_construction": "buckled and adjustable in fixed increments, like a movement",
+      "detail": "a coiled band across the back that visibly tensions with the stride",
+      "palette": [
+        "#3B2F4A",
+        "#C9A227",
+        "#E8E2D0",
+        "#6E5A7A"
+      ],
+      "item_ids": [
+        "wrb_tempora_mainspring_top",
+        "wrb_tempora_mainspring_outer",
+        "wrb_tempora_mainspring_bottom",
+        "wrb_tempora_mainspring_shoes",
+        "wrb_tempora_mainspring_neck",
+        "wrb_tempora_mainspring_back"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_outer",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_neck",
+        "slt_back"
+      ],
+      "acquisition_source": "region_restoration",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/tempora/mainspring"
+    },
+    {
+      "id": "ost_tempora_tickline",
+      "continent_id": "con_tempora",
+      "order": 3,
+      "name_key": "wardrobe.set.tempora.tickline",
+      "shape_id": "minimal",
+      "construction": "the least fabric the climate allows",
+      "material": "oiled canvas and brass fitting",
+      "material_construction": "buckled and adjustable in fixed increments, like a movement",
+      "detail": "sixty marks around the waist, one gone for every minute run",
+      "palette": [
+        "#3B2F4A",
+        "#C9A227",
+        "#E8E2D0",
+        "#6E5A7A"
+      ],
+      "item_ids": [
+        "wrb_tempora_tickline_top",
+        "wrb_tempora_tickline_bottom",
+        "wrb_tempora_tickline_shoes",
+        "wrb_tempora_tickline_wrist",
+        "wrb_tempora_tickline_face"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_wrist",
+        "slt_face"
+      ],
+      "acquisition_source": "race_placement",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/tempora/tickline"
+    },
+    {
+      "id": "ost_tempora_gearfall",
+      "continent_id": "con_tempora",
+      "order": 4,
+      "name_key": "wardrobe.set.tempora.gearfall",
+      "shape_id": "head_first",
+      "construction": "built outward from what covers the head",
+      "material": "oiled canvas and brass fitting",
+      "material_construction": "buckled and adjustable in fixed increments, like a movement",
+      "detail": "brass teeth along the outer seam, decorative and stated to be so",
+      "palette": [
+        "#3B2F4A",
+        "#C9A227",
+        "#E8E2D0",
+        "#6E5A7A"
+      ],
+      "item_ids": [
+        "wrb_tempora_gearfall_hair",
+        "wrb_tempora_gearfall_headwear",
+        "wrb_tempora_gearfall_eyewear",
+        "wrb_tempora_gearfall_top",
+        "wrb_tempora_gearfall_bottom",
+        "wrb_tempora_gearfall_shoes"
+      ],
+      "slot_ids": [
+        "slt_hair",
+        "slt_headwear",
+        "slt_eyewear",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "challenge_clear",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/tempora/gearfall"
+    },
+    {
+      "id": "ost_tempora_hourhand",
+      "continent_id": "con_tempora",
+      "order": 5,
+      "name_key": "wardrobe.set.tempora.hourhand",
+      "shape_id": "arm_driven",
+      "construction": "sleeves, wraps and grips — a kit for the upper body",
+      "material": "oiled canvas and brass fitting",
+      "material_construction": "buckled and adjustable in fixed increments, like a movement",
+      "detail": "one heavy dark line from the collar down the centre front",
+      "palette": [
+        "#3B2F4A",
+        "#C9A227",
+        "#E8E2D0",
+        "#6E5A7A"
+      ],
+      "item_ids": [
+        "wrb_tempora_hourhand_top",
+        "wrb_tempora_hourhand_arm",
+        "wrb_tempora_hourhand_wrist",
+        "wrb_tempora_hourhand_hand",
+        "wrb_tempora_hourhand_bottom",
+        "wrb_tempora_hourhand_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_arm",
+        "slt_wrist",
+        "slt_hand",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "monthly_apex_checkpoint",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/tempora/hourhand"
+    },
+    {
+      "id": "ost_tempora_balance",
+      "continent_id": "con_tempora",
+      "order": 6,
+      "name_key": "wardrobe.set.tempora.balance",
+      "shape_id": "leg_driven",
+      "construction": "compression through the whole leg and nothing loose",
+      "material": "oiled canvas and brass fitting",
+      "material_construction": "buckled and adjustable in fixed increments, like a movement",
+      "detail": "symmetric to the millimetre, which no other Tempora line is",
+      "palette": [
+        "#3B2F4A",
+        "#C9A227",
+        "#E8E2D0",
+        "#6E5A7A"
+      ],
+      "item_ids": [
+        "wrb_tempora_balance_top",
+        "wrb_tempora_balance_bottom",
+        "wrb_tempora_balance_leg",
+        "wrb_tempora_balance_socks",
+        "wrb_tempora_balance_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_leg",
+        "slt_socks",
+        "slt_shoes"
+      ],
+      "acquisition_source": "season_track",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/tempora/balance"
+    },
+    {
+      "id": "ost_tempora_chime",
+      "continent_id": "con_tempora",
+      "order": 7,
+      "name_key": "wardrobe.set.tempora.chime",
+      "shape_id": "accented",
+      "construction": "plain body, everything spent on the small pieces",
+      "material": "oiled canvas and brass fitting",
+      "material_construction": "buckled and adjustable in fixed increments, like a movement",
+      "detail": "small tuned plates that sound only above a certain cadence",
+      "palette": [
+        "#3B2F4A",
+        "#C9A227",
+        "#E8E2D0",
+        "#6E5A7A"
+      ],
+      "item_ids": [
+        "wrb_tempora_chime_top",
+        "wrb_tempora_chime_bottom",
+        "wrb_tempora_chime_shoes",
+        "wrb_tempora_chime_ear",
+        "wrb_tempora_chime_neck",
+        "wrb_tempora_chime_trail"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_ear",
+        "slt_neck",
+        "slt_trail"
+      ],
+      "acquisition_source": "crew_campaign",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/tempora/chime"
+    },
+    {
+      "id": "ost_tempora_ratchet",
+      "continent_id": "con_tempora",
+      "order": 8,
+      "name_key": "wardrobe.set.tempora.ratchet",
+      "shape_id": "night",
+      "construction": "dark ground, reflective seams, a light carried behind",
+      "material": "oiled canvas and brass fitting",
+      "material_construction": "buckled and adjustable in fixed increments, like a movement",
+      "detail": "adjusts in fixed clicks and never smoothly",
+      "palette": [
+        "#3B2F4A",
+        "#C9A227",
+        "#E8E2D0",
+        "#6E5A7A"
+      ],
+      "item_ids": [
+        "wrb_tempora_ratchet_outer",
+        "wrb_tempora_ratchet_top",
+        "wrb_tempora_ratchet_bottom",
+        "wrb_tempora_ratchet_shoes",
+        "wrb_tempora_ratchet_trail",
+        "wrb_tempora_ratchet_back"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_trail",
+        "slt_back"
+      ],
+      "acquisition_source": "open_race_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/tempora/ratchet"
+    },
+    {
+      "id": "ost_tempora_pendulum",
+      "continent_id": "con_tempora",
+      "order": 9,
+      "name_key": "wardrobe.set.tempora.pendulum",
+      "shape_id": "field",
+      "construction": "a working kit with somewhere to put things",
+      "material": "oiled canvas and brass fitting",
+      "material_construction": "buckled and adjustable in fixed increments, like a movement",
+      "detail": "a weighted trailing hem that swings against the arm carriage",
+      "palette": [
+        "#3B2F4A",
+        "#C9A227",
+        "#E8E2D0",
+        "#6E5A7A"
+      ],
+      "item_ids": [
+        "wrb_tempora_pendulum_top",
+        "wrb_tempora_pendulum_waist",
+        "wrb_tempora_pendulum_bottom",
+        "wrb_tempora_pendulum_shoes",
+        "wrb_tempora_pendulum_hand",
+        "wrb_tempora_pendulum_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_waist",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hand",
+        "slt_headwear"
+      ],
+      "acquisition_source": "character_episode",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/tempora/pendulum"
+    },
+    {
+      "id": "ost_tempora_timeworn",
+      "continent_id": "con_tempora",
+      "order": 10,
+      "name_key": "wardrobe.set.tempora.timeworn",
+      "shape_id": "ceremonial",
+      "construction": "what this place wears to a start line that matters",
+      "material": "oiled canvas and brass fitting",
+      "material_construction": "buckled and adjustable in fixed increments, like a movement",
+      "detail": "issued already aged, and the wear pattern is the same on every copy",
+      "palette": [
+        "#3B2F4A",
+        "#C9A227",
+        "#E8E2D0",
+        "#6E5A7A"
+      ],
+      "item_ids": [
+        "wrb_tempora_timeworn_outer",
+        "wrb_tempora_timeworn_top",
+        "wrb_tempora_timeworn_bottom",
+        "wrb_tempora_timeworn_shoes",
+        "wrb_tempora_timeworn_hair",
+        "wrb_tempora_timeworn_ear"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hair",
+        "slt_ear"
+      ],
+      "acquisition_source": "global_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/tempora/timeworn"
+    },
+    {
+      "id": "ost_origin_seamline",
+      "continent_id": "con_origin",
+      "order": 1,
+      "name_key": "wardrobe.set.origin.seamline",
+      "shape_id": "road_kit",
+      "construction": "single-layer racing kit cut close to the body",
+      "material": "unstable weave that reads as two fabrics at once",
+      "material_construction": "seamed along the fracture rather than the body line",
+      "detail": "the join runs where the worldline broke, not where the body bends",
+      "palette": [
+        "#1A1030",
+        "#8A5CF6",
+        "#F2F0FF",
+        "#2ED9C3"
+      ],
+      "item_ids": [
+        "wrb_origin_seamline_top",
+        "wrb_origin_seamline_bottom",
+        "wrb_origin_seamline_socks",
+        "wrb_origin_seamline_shoes",
+        "wrb_origin_seamline_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_socks",
+        "slt_shoes",
+        "slt_headwear"
+      ],
+      "acquisition_source": "region_restoration",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/origin/seamline"
+    },
+    {
+      "id": "ost_origin_fracture",
+      "continent_id": "con_origin",
+      "order": 2,
+      "name_key": "wardrobe.set.origin.fracture",
+      "shape_id": "layered",
+      "construction": "shell over a base layer, carried weight on the back",
+      "material": "unstable weave that reads as two fabrics at once",
+      "material_construction": "seamed along the fracture rather than the body line",
+      "detail": "panels that do not quite meet, with dark showing through",
+      "palette": [
+        "#1A1030",
+        "#8A5CF6",
+        "#F2F0FF",
+        "#2ED9C3"
+      ],
+      "item_ids": [
+        "wrb_origin_fracture_top",
+        "wrb_origin_fracture_outer",
+        "wrb_origin_fracture_bottom",
+        "wrb_origin_fracture_shoes",
+        "wrb_origin_fracture_neck",
+        "wrb_origin_fracture_back"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_outer",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_neck",
+        "slt_back"
+      ],
+      "acquisition_source": "race_placement",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/origin/fracture"
+    },
+    {
+      "id": "ost_origin_worldline",
+      "continent_id": "con_origin",
+      "order": 3,
+      "name_key": "wardrobe.set.origin.worldline",
+      "shape_id": "minimal",
+      "construction": "the least fabric the climate allows",
+      "material": "unstable weave that reads as two fabrics at once",
+      "material_construction": "seamed along the fracture rather than the body line",
+      "detail": "twelve threads, one per continent, running the full length",
+      "palette": [
+        "#1A1030",
+        "#8A5CF6",
+        "#F2F0FF",
+        "#2ED9C3"
+      ],
+      "item_ids": [
+        "wrb_origin_worldline_top",
+        "wrb_origin_worldline_bottom",
+        "wrb_origin_worldline_shoes",
+        "wrb_origin_worldline_wrist",
+        "wrb_origin_worldline_face"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_wrist",
+        "slt_face"
+      ],
+      "acquisition_source": "challenge_clear",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/origin/worldline"
+    },
+    {
+      "id": "ost_origin_prism",
+      "continent_id": "con_origin",
+      "order": 4,
+      "name_key": "wardrobe.set.origin.prism",
+      "shape_id": "head_first",
+      "construction": "built outward from what covers the head",
+      "material": "unstable weave that reads as two fabrics at once",
+      "material_construction": "seamed along the fracture rather than the body line",
+      "detail": "reads a different colour from each of three viewing angles",
+      "palette": [
+        "#1A1030",
+        "#8A5CF6",
+        "#F2F0FF",
+        "#2ED9C3"
+      ],
+      "item_ids": [
+        "wrb_origin_prism_hair",
+        "wrb_origin_prism_headwear",
+        "wrb_origin_prism_eyewear",
+        "wrb_origin_prism_top",
+        "wrb_origin_prism_bottom",
+        "wrb_origin_prism_shoes"
+      ],
+      "slot_ids": [
+        "slt_hair",
+        "slt_headwear",
+        "slt_eyewear",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "monthly_apex_checkpoint",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/origin/prism"
+    },
+    {
+      "id": "ost_origin_threadbare",
+      "continent_id": "con_origin",
+      "order": 5,
+      "name_key": "wardrobe.set.origin.threadbare",
+      "shape_id": "arm_driven",
+      "construction": "sleeves, wraps and grips — a kit for the upper body",
+      "material": "unstable weave that reads as two fabrics at once",
+      "material_construction": "seamed along the fracture rather than the body line",
+      "detail": "deliberately worn through at the elbows and nowhere else",
+      "palette": [
+        "#1A1030",
+        "#8A5CF6",
+        "#F2F0FF",
+        "#2ED9C3"
+      ],
+      "item_ids": [
+        "wrb_origin_threadbare_top",
+        "wrb_origin_threadbare_arm",
+        "wrb_origin_threadbare_wrist",
+        "wrb_origin_threadbare_hand",
+        "wrb_origin_threadbare_bottom",
+        "wrb_origin_threadbare_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_arm",
+        "slt_wrist",
+        "slt_hand",
+        "slt_bottom",
+        "slt_shoes"
+      ],
+      "acquisition_source": "season_track",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/origin/threadbare"
+    },
+    {
+      "id": "ost_origin_splitsecond",
+      "continent_id": "con_origin",
+      "order": 6,
+      "name_key": "wardrobe.set.origin.splitsecond",
+      "shape_id": "leg_driven",
+      "construction": "compression through the whole leg and nothing loose",
+      "material": "unstable weave that reads as two fabrics at once",
+      "material_construction": "seamed along the fracture rather than the body line",
+      "detail": "an afterimage baked into the fabric a half stride behind",
+      "palette": [
+        "#1A1030",
+        "#8A5CF6",
+        "#F2F0FF",
+        "#2ED9C3"
+      ],
+      "item_ids": [
+        "wrb_origin_splitsecond_top",
+        "wrb_origin_splitsecond_bottom",
+        "wrb_origin_splitsecond_leg",
+        "wrb_origin_splitsecond_socks",
+        "wrb_origin_splitsecond_shoes"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_leg",
+        "slt_socks",
+        "slt_shoes"
+      ],
+      "acquisition_source": "crew_campaign",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/origin/splitsecond"
+    },
+    {
+      "id": "ost_origin_convergence",
+      "continent_id": "con_origin",
+      "order": 7,
+      "name_key": "wardrobe.set.origin.convergence",
+      "shape_id": "accented",
+      "construction": "plain body, everything spent on the small pieces",
+      "material": "unstable weave that reads as two fabrics at once",
+      "material_construction": "seamed along the fracture rather than the body line",
+      "detail": "every line on it points at a single spot over the heart",
+      "palette": [
+        "#1A1030",
+        "#8A5CF6",
+        "#F2F0FF",
+        "#2ED9C3"
+      ],
+      "item_ids": [
+        "wrb_origin_convergence_top",
+        "wrb_origin_convergence_bottom",
+        "wrb_origin_convergence_shoes",
+        "wrb_origin_convergence_ear",
+        "wrb_origin_convergence_neck",
+        "wrb_origin_convergence_trail"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_ear",
+        "slt_neck",
+        "slt_trail"
+      ],
+      "acquisition_source": "open_race_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/origin/convergence"
+    },
+    {
+      "id": "ost_origin_nullpoint",
+      "continent_id": "con_origin",
+      "order": 8,
+      "name_key": "wardrobe.set.origin.nullpoint",
+      "shape_id": "night",
+      "construction": "dark ground, reflective seams, a light carried behind",
+      "material": "unstable weave that reads as two fabrics at once",
+      "material_construction": "seamed along the fracture rather than the body line",
+      "detail": "completely featureless, and the rarest thing Origin awards",
+      "palette": [
+        "#1A1030",
+        "#8A5CF6",
+        "#F2F0FF",
+        "#2ED9C3"
+      ],
+      "item_ids": [
+        "wrb_origin_nullpoint_outer",
+        "wrb_origin_nullpoint_top",
+        "wrb_origin_nullpoint_bottom",
+        "wrb_origin_nullpoint_shoes",
+        "wrb_origin_nullpoint_trail",
+        "wrb_origin_nullpoint_back"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_trail",
+        "slt_back"
+      ],
+      "acquisition_source": "character_episode",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/origin/nullpoint"
+    },
+    {
+      "id": "ost_origin_echoform",
+      "continent_id": "con_origin",
+      "order": 9,
+      "name_key": "wardrobe.set.origin.echoform",
+      "shape_id": "field",
+      "construction": "a working kit with somewhere to put things",
+      "material": "unstable weave that reads as two fabrics at once",
+      "material_construction": "seamed along the fracture rather than the body line",
+      "detail": "the silhouette repeats at reduced opacity behind the runner",
+      "palette": [
+        "#1A1030",
+        "#8A5CF6",
+        "#F2F0FF",
+        "#2ED9C3"
+      ],
+      "item_ids": [
+        "wrb_origin_echoform_top",
+        "wrb_origin_echoform_waist",
+        "wrb_origin_echoform_bottom",
+        "wrb_origin_echoform_shoes",
+        "wrb_origin_echoform_hand",
+        "wrb_origin_echoform_headwear"
+      ],
+      "slot_ids": [
+        "slt_top",
+        "slt_waist",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hand",
+        "slt_headwear"
+      ],
+      "acquisition_source": "global_event",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/origin/echoform"
+    },
+    {
+      "id": "ost_origin_riftwalk",
+      "continent_id": "con_origin",
+      "order": 10,
+      "name_key": "wardrobe.set.origin.riftwalk",
+      "shape_id": "ceremonial",
+      "construction": "what this place wears to a start line that matters",
+      "material": "unstable weave that reads as two fabrics at once",
+      "material_construction": "seamed along the fracture rather than the body line",
+      "detail": "the Apex Axis line, and it cannot be earned anywhere else",
+      "palette": [
+        "#1A1030",
+        "#8A5CF6",
+        "#F2F0FF",
+        "#2ED9C3"
+      ],
+      "item_ids": [
+        "wrb_origin_riftwalk_outer",
+        "wrb_origin_riftwalk_top",
+        "wrb_origin_riftwalk_bottom",
+        "wrb_origin_riftwalk_shoes",
+        "wrb_origin_riftwalk_hair",
+        "wrb_origin_riftwalk_ear"
+      ],
+      "slot_ids": [
+        "slt_outer",
+        "slt_top",
+        "slt_bottom",
+        "slt_shoes",
+        "slt_hair",
+        "slt_ear"
+      ],
+      "acquisition_source": "world_progress",
+      "purchasable_with_real_money": false,
+      "random_box": false,
+      "complete_set_bonus": null,
+      "thumbnail_address": "wardrobe/set/origin/riftwalk"
+    }
+  ]
+}

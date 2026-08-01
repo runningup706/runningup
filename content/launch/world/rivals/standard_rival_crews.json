@@ -13,16 +13,16 @@
       "trait_id": "trait_even_effort",
       "runners": [
         {
-          "id": "rvl_lumena_01_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_lumena_01",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_lumena_01_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_lumena_02",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_lumena_01_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_lumena_03",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/lumena/standard_01"
@@ -36,16 +36,16 @@
       "trait_id": "trait_even_effort",
       "runners": [
         {
-          "id": "rvl_lumena_02_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_lumena_04",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_lumena_02_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_lumena_05",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_lumena_02_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_lumena_06",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/lumena/standard_02"
@@ -59,16 +59,16 @@
       "trait_id": "trait_soft_footing",
       "runners": [
         {
-          "id": "rvl_verdia_01_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_verdia_01",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_verdia_01_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_verdia_02",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_verdia_01_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_verdia_03",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/verdia/standard_01"
@@ -82,16 +82,16 @@
       "trait_id": "trait_soft_footing",
       "runners": [
         {
-          "id": "rvl_verdia_02_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_verdia_04",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_verdia_02_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_verdia_05",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_verdia_02_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_verdia_06",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/verdia/standard_02"
@@ -105,16 +105,16 @@
       "trait_id": "trait_late_heat",
       "runners": [
         {
-          "id": "rvl_rubra_01_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_rubra_01",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_rubra_01_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_rubra_02",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_rubra_01_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_rubra_03",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/rubra/standard_01"
@@ -128,16 +128,16 @@
       "trait_id": "trait_late_heat",
       "runners": [
         {
-          "id": "rvl_rubra_02_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_rubra_04",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_rubra_02_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_rubra_05",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_rubra_02_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_rubra_06",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/rubra/standard_02"
@@ -151,16 +151,16 @@
       "trait_id": "trait_alternating_wind",
       "runners": [
         {
-          "id": "rvl_anel_01_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_anel_01",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_anel_01_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_anel_02",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_anel_01_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_anel_03",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/anel/standard_01"
@@ -174,16 +174,16 @@
       "trait_id": "trait_alternating_wind",
       "runners": [
         {
-          "id": "rvl_anel_02_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_anel_04",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_anel_02_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_anel_05",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_anel_02_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_anel_06",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/anel/standard_02"
@@ -197,16 +197,16 @@
       "trait_id": "trait_forced_surge",
       "runners": [
         {
-          "id": "rvl_serene_01_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_serene_01",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_serene_01_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_serene_02",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_serene_01_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_serene_03",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/serene/standard_01"
@@ -220,16 +220,16 @@
       "trait_id": "trait_forced_surge",
       "runners": [
         {
-          "id": "rvl_serene_02_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_serene_04",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_serene_02_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_serene_05",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_serene_02_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_serene_06",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/serene/standard_02"
@@ -243,16 +243,16 @@
       "trait_id": "trait_tight_corners",
       "runners": [
         {
-          "id": "rvl_voltis_01_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_voltis_01",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_voltis_01_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_voltis_02",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_voltis_01_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_voltis_03",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/voltis/standard_01"
@@ -266,16 +266,16 @@
       "trait_id": "trait_tight_corners",
       "runners": [
         {
-          "id": "rvl_voltis_02_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_voltis_04",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_voltis_02_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_voltis_05",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_voltis_02_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_voltis_06",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/voltis/standard_02"
@@ -289,16 +289,16 @@
       "trait_id": "trait_blind_pacing",
       "runners": [
         {
-          "id": "rvl_hora_01_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_hora_01",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_hora_01_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_hora_02",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_hora_01_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_hora_03",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/hora/standard_01"
@@ -312,16 +312,16 @@
       "trait_id": "trait_blind_pacing",
       "runners": [
         {
-          "id": "rvl_hora_02_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_hora_04",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_hora_02_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_hora_05",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_hora_02_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_hora_06",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/hora/standard_02"
@@ -335,16 +335,16 @@
       "trait_id": "trait_slow_opening",
       "runners": [
         {
-          "id": "rvl_nival_01_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_nival_01",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_nival_01_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_nival_02",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_nival_01_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_nival_03",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/nival/standard_01"
@@ -358,16 +358,16 @@
       "trait_id": "trait_slow_opening",
       "runners": [
         {
-          "id": "rvl_nival_02_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_nival_04",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_nival_02_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_nival_05",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_nival_02_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_nival_06",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/nival/standard_02"
@@ -381,16 +381,16 @@
       "trait_id": "trait_negative_split",
       "runners": [
         {
-          "id": "rvl_kael_01_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_kael_01",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_kael_01_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_kael_02",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_kael_01_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_kael_03",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/kael/standard_01"
@@ -404,16 +404,16 @@
       "trait_id": "trait_negative_split",
       "runners": [
         {
-          "id": "rvl_kael_02_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_kael_04",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_kael_02_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_kael_05",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_kael_02_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_kael_06",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/kael/standard_02"
@@ -427,16 +427,16 @@
       "trait_id": "trait_pack_draft",
       "runners": [
         {
-          "id": "rvl_neris_01_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_neris_01",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_neris_01_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_neris_02",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_neris_01_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_neris_03",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/neris/standard_01"
@@ -450,16 +450,16 @@
       "trait_id": "trait_pack_draft",
       "runners": [
         {
-          "id": "rvl_neris_02_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_neris_04",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_neris_02_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_neris_05",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_neris_02_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_neris_06",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/neris/standard_02"
@@ -473,16 +473,16 @@
       "trait_id": "trait_exact_pace",
       "runners": [
         {
-          "id": "rvl_tempora_01_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_tempora_01",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_tempora_01_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_tempora_02",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_tempora_01_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_tempora_03",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/tempora/standard_01"
@@ -496,16 +496,16 @@
       "trait_id": "trait_exact_pace",
       "runners": [
         {
-          "id": "rvl_tempora_02_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_tempora_04",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_tempora_02_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_tempora_05",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_tempora_02_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_tempora_06",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/tempora/standard_02"
@@ -519,16 +519,16 @@
       "trait_id": "trait_championship_composite",
       "runners": [
         {
-          "id": "rvl_origin_01_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_origin_01",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_origin_01_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_origin_02",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_origin_01_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_origin_03",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/origin/standard_01"
@@ -542,16 +542,16 @@
       "trait_id": "trait_championship_composite",
       "runners": [
         {
-          "id": "rvl_origin_02_r1",
-          "pacer_index": 0
+          "world_runner_id": "wrn_origin_04",
+          "crew_slot": 0
         },
         {
-          "id": "rvl_origin_02_r2",
-          "pacer_index": 1
+          "world_runner_id": "wrn_origin_05",
+          "crew_slot": 1
         },
         {
-          "id": "rvl_origin_02_r3",
-          "pacer_index": 2
+          "world_runner_id": "wrn_origin_06",
+          "crew_slot": 2
         }
       ],
       "prefab_address": "rival/origin/standard_02"

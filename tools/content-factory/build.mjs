@@ -25,6 +25,18 @@ import {
 import { CONTINENT_COURSES, RACE_FIELD_SIZE } from '../../packages/domain/race.mjs';
 import { CHARACTERS, COMPANIONS, COSMETIC_SLOTS, GEAR_THEMES, ROLES } from './characters/character-design.mjs';
 import {
+  MY_RUNNER_BASE_STYLES, AGE_BANDS, BUILDS, SKIN_TONES, ADAPTIVE_KITS,
+  RIG_ID, ANIMATION_SET_ID, STARTER_SLOT_FILL,
+} from './characters/my-runner-design.mjs';
+import {
+  EQUIPMENT_SLOTS, SET_SHAPES, OUTFIT_SETS, WARDROBE_LANGUAGES, SLOT_GARMENTS,
+  ACQUISITION_ROUTES, ADULT_ONLY_SLOTS,
+} from './characters/wardrobe-design.mjs';
+import { WORLD_RUNNER_ROSTERS, TENDENCIES, assignment } from './characters/world-runner-design.mjs';
+import {
+  GLOBAL_EVENTS, EVENT_LIFECYCLE, SHARED_FIELDS, RENDER_BUDGET, EVIDENCE_REQUIRED, CAPACITY,
+} from './events/global-event-design.mjs';
+import {
   APEX_CHECKPOINT_METERS, MAJOR_RANKS, GOAL_DISTANCES, GOAL_DURATIONS, SESSION_STYLES,
   PASSPORT_BANDS, BEST_EFFORT_DISTANCES, DIFFICULTY_LANES, ALLOWED_ACTIVITY_TYPES,
   LAUNCH_CONTENT_FLOOR, checkpointId, rankForMeters, APEX_LADDER_VERSION, DIRECTION_LOCK,
@@ -80,6 +92,60 @@ const eliteRivals = [];
 const continentChampions = [];
 const restorationStates = [];
 const gearSets = [];
+
+// ---------------------------------------------------------------------------
+// World runners — built before the continents because the rival crews are made OF them.
+//
+// A crew used to hold three anonymous seats (`{id, pacer_index}`). Now it holds three of
+// these people. Building the roster first is what makes that possible without a second
+// pass, and it is why a crew can no longer contain a runner who does not exist.
+// ---------------------------------------------------------------------------
+const worldRunners = [];
+const runnersByContinent = new Map();
+{
+  const tendencyById = new Map(TENDENCIES.map((t) => [t.id, t]));
+  let index = 0;
+  for (const c of CONTINENTS) {
+    const cShort = c.id.replace('con_', '');
+    const roster = WORLD_RUNNER_ROSTERS[c.id];
+    if (!roster) throw new Error(`no world runner roster for ${c.id}`);
+    const own = [];
+    roster.forEach(([en, ko, homeRegion, signature, intro], i) => {
+      const a = assignment(index);
+      const id = `wrn_${cShort}_${pad(i + 1)}`;
+      const record = {
+        id,
+        order: index + 1,
+        continent_id: c.id,
+        home_region_id: `rgn_${cShort}_${pad(homeRegion)}`,
+        name_key: loc(`world_runner.${cShort}.${pad(i + 1)}`, { ko, en }),
+        intro_key: loc(`world_runner.${cShort}.${pad(i + 1)}.intro`, {
+          ko: intro, en: intro,
+        }),
+        // Appearance is a base style, so a world runner and a My Runner are drawn by the
+        // same rig and wear the same wardrobe. One character system, not two.
+        base_style_id: a.base_style_id,
+        role: a.role,
+        tendency_id: a.tendency_id,
+        tendency: tendencyById.get(a.tendency_id).en,
+        race_signature: signature,
+        introduction: intro,
+        // Which of the two race systems this runner appears in. Assigned below.
+        crew_id: null,
+        crew_slot: null,
+        open_field: true,
+        prefab_address: `runner/${cShort}/${pad(i + 1)}`,
+        portrait_address: `runner/${cShort}/${pad(i + 1)}/portrait`,
+        // DL-5: a world runner is a way of running, never a pool of power.
+        grants_core_power: false,
+      };
+      worldRunners.push(record);
+      own.push(record);
+      index += 1;
+    });
+    runnersByContinent.set(c.id, own);
+  }
+}
 
 for (const c of CONTINENTS) {
   const cShort = c.id.replace('con_', '');
@@ -230,6 +296,19 @@ for (const c of CONTINENTS) {
     });
   });
 
+  // A crew is three named people from this continent, taken in roster order. The seats
+  // used to be `{id: 'rvl_lumena_01_r1', pacer_index: 0}` — an id and an index, which is
+  // what let 108 of them pass as pacers while none of them was anyone. Assigning the crew
+  // id back onto the runner record keeps the two directions in agreement instead of
+  // leaving a reference that only points one way.
+  const ownRunners = runnersByContinent.get(c.id);
+  const takeCrew = (crewId, offset) => ownRunners.slice(offset, offset + 3).map((runner, slot) => {
+    runner.crew_id = crewId;
+    runner.crew_slot = slot;
+    runner.open_field = false;
+    return { world_runner_id: runner.id, crew_slot: slot };
+  });
+
   c.rivals.forEach((r, i) => {
     standardRivals.push({
       id: `rvl_${cShort}_${pad(i + 1)}`,
@@ -238,12 +317,7 @@ for (const c of CONTINENTS) {
       name_key: loc(`rival.${cShort}.${pad(i + 1)}`, r),
       tactic: r.tactic,
       trait_id: c.race_trait.id,
-      // Three runners per crew = 72 individual pacers on the start line at launch. They
-      // share the crew's tactic and differ in depth of form: a front, a middle, a back.
-      runners: [1, 2, 3].map((v) => ({
-        id: `rvl_${cShort}_${pad(i + 1)}_r${v}`,
-        pacer_index: v - 1,
-      })),
+      runners: takeCrew(`rvl_${cShort}_${pad(i + 1)}`, i * 3),
       prefab_address: `rival/${cShort}/standard_${pad(i + 1)}`,
     });
   });
@@ -255,6 +329,7 @@ for (const c of CONTINENTS) {
     name_key: loc(`rival.${cShort}.elite`, c.elite_rival),
     tactic: c.elite_rival.tactic,
     trait_id: c.race_trait.id,
+    runners: takeCrew(`rve_${cShort}_01`, c.rivals.length * 3),
     prefab_address: `rival/${cShort}/elite_01`,
   });
 
@@ -425,6 +500,201 @@ const companions = COMPANIONS.map((c, i) => ({
   reward_kinds: ['craft_material', 'story_fragment', 'restoration_support'],
   grants_core_power: false,
   prefab_address: `companion/${c.id}`,
+}));
+
+// ---------------------------------------------------------------------------
+// My Runner: the account's one persistent runner, and the 24 bodies it can be
+// ---------------------------------------------------------------------------
+
+const ageBandById = new Map(AGE_BANDS.map((b) => [b.id, b]));
+const buildById = new Map(BUILDS.map((b) => [b.id, b]));
+const skinById = new Map(SKIN_TONES.map((t) => [t.id, t]));
+const adaptiveById = new Map(ADAPTIVE_KITS.map((k) => [k.id, k]));
+
+const myRunnerStyles = MY_RUNNER_BASE_STYLES.map((s) => {
+  const short = s.id.replace('mrs_', '');
+  const band = ageBandById.get(s.age_band);
+  const build = buildById.get(s.build);
+  const skin = skinById.get(s.skin);
+  const adaptive = s.adaptive === null ? null : adaptiveById.get(s.adaptive);
+  if (!band) throw new Error(`${s.id}: unknown age band ${s.age_band}`);
+  if (!build) throw new Error(`${s.id}: unknown build ${s.build}`);
+  if (!skin) throw new Error(`${s.id}: unknown skin tone ${s.skin}`);
+  if (s.adaptive !== null && !adaptive) throw new Error(`${s.id}: unknown adaptive kit ${s.adaptive}`);
+
+  return {
+    id: s.id,
+    order: s.order,
+    name_key: loc(`my_runner.style.${short}`, s.name),
+    age_band: s.age_band,
+    build: s.build,
+    presentation: s.presentation,
+    skin_tone_id: s.skin,
+    skin_hex: skin.hex,
+    // Skeleton scaling on one shared rig, not 24 meshes. This is what makes a wardrobe of
+    // 600+ items wearable by every style without a per-style asset explosion.
+    rig_id: RIG_ID,
+    animation_set_id: ANIMATION_SET_ID,
+    head_ratio: band.head_ratio,
+    build_scale: build.scale,
+    face: s.face,
+    hair: s.hair,
+    gait: s.gait,
+    posture: s.posture,
+    expression_neutral: s.neutral,
+    expression_effort: s.effort,
+    finish_motion: s.finish,
+    adaptive_kit_id: s.adaptive,
+    adaptive_equipment: adaptive ? adaptive.equipment : null,
+    adaptive_gait_note: adaptive ? adaptive.gait_note : null,
+    // DL-5, stated rather than implied: a body is not a stat.
+    grants_core_power: false,
+    // DL-4: every style is selectable on day one. There is no style to unlock.
+    selectable_at_launch: true,
+    paid_gacha: false,
+    starter_slot_fill: STARTER_SLOT_FILL,
+    prefab_address: `myrunner/style/${short}`,
+    portrait_address: `myrunner/style/${short}/portrait`,
+    thumbnail_address: `myrunner/style/${short}/thumb`,
+  };
+});
+
+// ---------------------------------------------------------------------------
+// Wardrobe: 18 slots, 120 outfit sets, 600+ individually equippable items
+// ---------------------------------------------------------------------------
+
+const equipmentSlots = EQUIPMENT_SLOTS.map((s) => ({
+  id: `slt_${s.id}`,
+  slot: s.id,
+  order: s.order,
+  layer: s.layer,
+  required: s.required,
+  hides: s.hides,
+  name_key: loc(`wardrobe.slot.${s.id}`, { ko: s.ko, en: s.en }),
+  icon_address: `wardrobe/slot/${s.id}`,
+}));
+
+const childStyleIds = new Set(
+  MY_RUNNER_BASE_STYLES.filter((s) => s.age_band === 'child').map((s) => s.id),
+);
+const allStyleIds = MY_RUNNER_BASE_STYLES.map((s) => s.id);
+const adultStyleIds = allStyleIds.filter((id) => !childStyleIds.has(id));
+
+const outfitSets = [];
+const wearableItems = [];
+
+CONTINENTS.forEach((c, continentIndex) => {
+  const cShort = c.id.replace('con_', '');
+  const language = WARDROBE_LANGUAGES[c.id];
+  if (!language) throw new Error(`no wardrobe language for ${c.id}`);
+  const sets = OUTFIT_SETS[c.id];
+  if (!sets || sets.length !== SET_SHAPES.length) {
+    throw new Error(`${c.id}: expected ${SET_SHAPES.length} outfit sets, got ${sets?.length ?? 0}`);
+  }
+
+  sets.forEach((set, setIndex) => {
+    const shape = SET_SHAPES[setIndex];
+    const setId = `ost_${cShort}_${set.suffix}`;
+    const acquisition = ACQUISITION_ROUTES[(continentIndex + setIndex) % ACQUISITION_ROUTES.length];
+    const itemIds = shape.slots.map((slot) => `wrb_${cShort}_${set.suffix}_${slot}`);
+
+    outfitSets.push({
+      id: setId,
+      continent_id: c.id,
+      order: setIndex + 1,
+      name_key: loc(`wardrobe.set.${cShort}.${set.suffix}`, {
+        ko: `${c.name.ko} · ${set.ko}`, en: `${set.en} — ${c.name.en.split(',')[0]}` }),
+      shape_id: shape.id,
+      construction: shape.construction,
+      material: language.material,
+      material_construction: language.construction,
+      detail: set.detail,
+      // Palette comes from the continent, once. A set does not carry its own copy of a
+      // colour that already exists one file away.
+      palette: c.palette,
+      item_ids: itemIds,
+      slot_ids: shape.slots.map((slot) => `slt_${slot}`),
+      acquisition_source: acquisition,
+      purchasable_with_real_money: false,
+      random_box: false,
+      complete_set_bonus: null,
+      thumbnail_address: `wardrobe/set/${cShort}/${set.suffix}`,
+    });
+
+    shape.slots.forEach((slot, slotIndex) => {
+      const garment = SLOT_GARMENTS[slot][(setIndex + slotIndex) % SLOT_GARMENTS[slot].length];
+      const adultOnly = ADULT_ONLY_SLOTS.includes(slot);
+      wearableItems.push({
+        id: `wrb_${cShort}_${set.suffix}_${slot}`,
+        set_id: setId,
+        continent_id: c.id,
+        slot,
+        slot_id: `slt_${slot}`,
+        order: slotIndex + 1,
+        name_key: loc(`wardrobe.item.${cShort}.${set.suffix}.${slot}`, {
+          ko: `${set.ko} ${garment.ko}`, en: `${set.en} ${garment.en}` }),
+        // Compatibility is stated per item, not assumed. Two slots carry adult race
+        // equipment and are honestly not fitted to the child styles; the other sixteen
+        // fit all 24, and the validator proves that rather than trusting this comment.
+        compatible_base_style_ids: adultOnly ? adultStyleIds : allStyleIds,
+        equippable: true,
+        thumbnail_address: `wardrobe/item/${cShort}/${set.suffix}/${slot}`,
+        prefab_address: `wardrobe/mesh/${cShort}/${set.suffix}/${slot}`,
+        rig_id: RIG_ID,
+        acquisition_source: acquisition,
+        default_owned: false,
+        default_equipped: false,
+        server_persisted: true,
+        restores_on_relaunch: true,
+        // DL-5. Every power-bearing field is an explicit zero so the fairness test reads a
+        // value instead of trusting an absence.
+        core_power: 0,
+        xp_multiplier: 0,
+        ranking_multiplier: 0,
+        verification_bonus: 0,
+        hidden_stat: 0,
+        extra_core_reward_multiplier: 0,
+        purchasable_with_real_money: false,
+        random_box: false,
+      });
+    });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Global Events: the 50-100 runner scheduled races
+// ---------------------------------------------------------------------------
+
+const globalEvents = GLOBAL_EVENTS.map((e, i) => ({
+  id: e.id,
+  order: i + 1,
+  host_continent_id: e.host_continent_id,
+  name_key: loc(`global_event.${e.id}`, e.name),
+  distance_meters: e.distance_meters,
+  cadence: e.cadence,
+  entry_rule: e.entry_rule,
+  // Capacity is the owner floor, not a per-event number somebody could type smaller.
+  min_participants: CAPACITY.min_participants,
+  max_participants: CAPACITY.max_participants,
+  heat_size: e.heat_size,
+  heats_at_capacity: Math.ceil(CAPACITY.max_participants / e.heat_size),
+  check_in_window_minutes: e.check_in_window_minutes,
+  countdown_seconds: e.countdown_seconds,
+  summary: e.summary,
+  lifecycle: EVENT_LIFECYCLE.map((s) => s.id),
+  shared_participant_fields: SHARED_FIELDS,
+  shares_raw_gps: false,
+  render_budget: RENDER_BUDGET,
+  // Honest by construction: nothing here says a measurement was taken. The release report
+  // prints NOT_RUN for every entry until a run actually writes one.
+  evidence_required: EVIDENCE_REQUIRED,
+  evidence: Object.fromEntries(EVIDENCE_REQUIRED.map((k) => [k, 'NOT_RUN'])),
+  // Not `..._key`: the localization gate treats every field ending in `_key` as a string
+  // to look up, and this is an idempotency template, not user-facing copy.
+  reward_idempotency_template: `${e.id}:{user_id}:{occurrence_id}`,
+  scene_address: `event/global/${e.id}`,
+  enabled: true,
+  debug_only: false,
 }));
 
 // ---------------------------------------------------------------------------
@@ -636,6 +906,12 @@ written.push(write('characters/gear/gear_sets.json', envelope('gear_set', gearSe
 written.push(write('characters/episodes/character_episodes.json', envelope('character_episode', episodes)));
 written.push(write('characters/cosmetics/cosmetics.json', envelope('cosmetic', cosmetics)));
 written.push(write('characters/companions.json', envelope('companion', companions)));
+written.push(write('characters/my_runner/base_styles.json', envelope('my_runner_base_style', myRunnerStyles)));
+written.push(write('characters/world_runners/world_runners.json', envelope('world_runner', worldRunners)));
+written.push(write('characters/wardrobe/equipment_slots.json', envelope('equipment_slot', equipmentSlots)));
+written.push(write('characters/wardrobe/outfit_sets.json', envelope('outfit_set', outfitSets)));
+written.push(write('characters/wardrobe/wearable_items.json', envelope('wearable_item', wearableItems)));
+written.push(write('events/global_events.json', envelope('global_event', globalEvents)));
 
 written.push(write('progression/monthly_apex_0_1000.json', apexLadder));
 written.push(write('running/goal_library.json', goalLibrary));
@@ -694,6 +970,12 @@ const counts = {
   story_chapters: STORY_CHAPTERS.length,
   launch_seasons: 1,
   event_arcs: eventArcs.length,
+  my_runner_base_styles: myRunnerStyles.length,
+  world_runners: worldRunners.length,
+  equipment_slots: equipmentSlots.length,
+  outfit_sets: outfitSets.length,
+  wearable_items: wearableItems.length,
+  global_events: globalEvents.length,
 };
 
 const manifest = {

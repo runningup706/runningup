@@ -105,6 +105,27 @@ mapping, reward wiring, analytics wiring, at least one automated test, and QA ev
 | Story chapters | 12 |
 | Launch season | 1 |
 | Event arcs | 3 |
+| My Runner base styles | 24 |
+| World runners (pacers) | 200 |
+| Equipment slots | 18 |
+| Outfit sets | 120 |
+| Wearable items | 600 |
+| Global Events | 6 |
+
+The last six rows are the owner's scale expansion. They are held separately as
+`SCALE_FLOOR` in `packages/domain/constants.mjs` and `LAUNCH_CONTENT_FLOOR` is built from
+them, so the number exists once. The rule attached to them is
+
+```
+effective minimum = max(current implemented floor, owner floor)
+```
+
+— a floor may rise and may never fall. `equipable_cosmetics` (96, per playable runner) and
+`wearable_items` (600, the My Runner wardrobe) are deliberately separate categories with
+separate floors: folding one into the other would let 96 vanish into a larger number.
+
+A Global Event carries **50–100** participants. The eight-runner race is unchanged and
+stays eight: they are different products sharing one engine.
 
 The canonical copy of this table is `LAUNCH_CONTENT_FLOOR` in `packages/domain/constants.mjs`;
 `private.assert_launch_content_complete()` restates it in SQL and the content validator
@@ -119,7 +140,12 @@ cannot exist with nothing counting it.
   ≥ 6 main races and 6 gear sets of its own; every region carries exactly 12 courses; every
   runner carries exactly 4 techniques. A total met by one rich continent is not met.
 - `Coming Soon`, empty portals, disabled flags, debug-only entries and colour/name reskins
-  **do not count**.
+  **do not count**. This is enforced, not asked for: two base styles that differ only in
+  skin tone fail the build, two world runners with the same appearance, role and tendency
+  cannot be stored, and an item that fits no body violates a CHECK constraint. The
+  equipment case is the one a count can never see — 600 wearable items and a child style
+  with no shoes — so `private.assert_launch_content_complete()` and the content validator
+  both check that *every* base style can fill *every* required slot.
 - Performance or APK size is solved by tiered scene streaming and optional content packs —
   **never** by deleting continents or postponing them to P1/P2.
 
@@ -188,7 +214,7 @@ the product, **never** to make a launch floor easier to reach.
 | DL-1 | `tools/direction-lock/scan.mjs`, `backend/supabase/migrations/*` CHECK constraints, `backend/supabase/tests/pgtap/*apex*`, `tools/monthly-apex-simulator`, `tools/release/emit-client-ladder.mjs --check` |
 | DL-2 | `tools/runner-passport-simulator` (8 fixtures), `tools/content-validator` goal-library completeness |
 | DL-3 | `tools/direction-lock/scan.mjs` forbidden-mode scan, DB enum/CHECK on `activity_type` and `world_courses.surface`, negative fixtures, `pgtap/02_running_scope.sql` |
-| DL-4 | `tools/content-validator` hard count gate, per-parent coverage gate and semantic duplicate detection; `private.assert_launch_content_complete()`; `pgtap/05_content_completeness.sql` |
+| DL-4 | `tools/content-validator` hard count gate, per-parent coverage gate, semantic duplicate detection and scale gate (GATE 10); `private.assert_launch_content_complete()`; `pgtap/05_content_completeness.sql`, `pgtap/08_my_runner_scale.sql`; `tests/scale-floor.test.mjs`, whose second half feeds the validator deliberately broken content and asserts each gate fires |
 | DL-5 | DB: `xp_ledger.source_type` allow-list + pgTAP invariant tests; `tests/race.test.mjs` role/gear budget assertions |
 | DL-6 | `tools/direction-lock/scan.mjs` combat-concept patterns (self-tested by `tests/direction-lock.test.mjs`), `pgtap/05_content_completeness.sql` schema-absence and CHECK-constraint tests, `tests/race.test.mjs` source scan |
 
