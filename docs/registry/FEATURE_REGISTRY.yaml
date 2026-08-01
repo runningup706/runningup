@@ -1,0 +1,202 @@
+# FEATURE_REGISTRY — what the product does, and how far along each part is
+#
+# One row per feature, with the honest state of each. The rule this file follows is the one
+# the whole repository follows: a feature is not DONE because the data exists, the schema
+# exists or a document describes it. It is DONE when a user can do it in a build.
+#
+# status:
+#   DONE          works in the app, tested, evidence exists
+#   BACKEND_ONLY  schema, seed and server rules exist; no screen reaches it
+#   PARTIAL       reachable but incomplete or unwired in a stated way
+#   PLANNED       agreed, not started
+#   BLOCKED       cannot proceed without something named in `blocker`
+#
+# `evidence` names what was actually run. NOT_RUN is a legitimate value and appears here
+# rather than being omitted, because an omitted measurement reads as a passing one.
+
+schema_version: 1
+checked_by: tests/scale-floor.test.mjs, tools/content-validator/validate.mjs, backend/supabase/tests/pgtap
+
+features:
+  # --- world and progression ------------------------------------------------
+  - id: world_scale
+    summary: 12 continents, 192 regions, 2304 courses, all reachable from first login
+    status: DONE
+    screens: [World]
+    evidence: [content-validator reachability gate, pgtap/05_content_completeness.sql]
+
+  - id: monthly_apex_ladder
+    summary: 121 checkpoints to a 1000 km World Crown, nothing above it
+    status: DONE
+    screens: [MonthlyApex, Home]
+    evidence: [pgtap/03_monthly_apex.sql, pgtap/07_apex_conformance.sql, tools/monthly-apex-simulator]
+
+  - id: runner_passport
+    summary: recommendation from history and self-report, never a restriction
+    status: PARTIAL
+    screens: [Training]
+    evidence: [tools/runner-passport-simulator 8 fixtures]
+    notes: Simulated and gated; the onboarding screen that collects it is not built.
+
+  - id: goal_library
+    summary: every distance, duration and style selectable on day one, no prerequisites
+    status: DONE
+    screens: [Training]
+    evidence: [content-validator DL-2 gate, pgtap/02_running_scope.sql]
+
+  # --- the runner and the wardrobe -----------------------------------------
+  - id: my_runner_base_styles
+    summary: 24 base styles across seven age bands, twelve builds, five adaptive kits
+    status: BACKEND_ONLY
+    screens: [MyRunner]
+    evidence: [tests/scale-floor.test.mjs, pgtap/08_my_runner_scale.sql]
+    notes: >-
+      Catalogue, schema, seed and uniqueness gates are complete. No screen opens the
+      picker, and the meshes are BLOCKED_ART_ASSET — every style names its prefab address
+      and no prefab exists behind it.
+
+  - id: one_account_one_runner
+    summary: an account has exactly one persistent My Runner
+    status: DONE
+    screens: []
+    evidence: [pgtap/08_my_runner_scale.sql — a second insert raises 23505]
+    notes: Enforced by the primary key on api.my_runners, not by application code.
+
+  - id: wardrobe
+    summary: 684 wearable items across 18 slots and 120 outfit sets
+    status: BACKEND_ONLY
+    screens: [Wardrobe]
+    evidence: [tests/scale-floor.test.mjs, pgtap/08_my_runner_scale.sql]
+    notes: >-
+      The equip rule is enforced by trigger: wrong slot, incompatible body and unowned
+      item are all rejected at write time. Required slots cannot be emptied. What is
+      missing is the screen and the meshes.
+
+  - id: wardrobe_persistence
+    summary: owned and equipped state survives an app restart
+    status: BACKEND_ONLY
+    screens: [Wardrobe]
+    evidence: NOT_RUN
+    notes: >-
+      Tables and constraints exist. The round trip has not been exercised from a client,
+      so this is not DONE and is not reported as such.
+
+  # --- racing ---------------------------------------------------------------
+  - id: eight_runner_race
+    summary: eight runners, one distance, a finishing order, nothing lost by losing
+    status: PARTIAL
+    screens: [Matchmaking, Lobby, LiveRace, RaceResult]
+    evidence: [tests/race.test.mjs role and gear budget assertions]
+    notes: The engine is settled and tested. Reconnect, timeout and DNF paths are PHASE F.
+
+  - id: world_runners
+    summary: 204 named runners with home region, race signature and introduction
+    status: BACKEND_ONLY
+    screens: [LiveRace, Lobby]
+    evidence: [tests/scale-floor.test.mjs, pgtap/08_my_runner_scale.sql]
+    notes: >-
+      108 fill the 36 rival crews; 96 are the open field. They replaced 108 anonymous
+      seats. Rendering them is PHASE G.
+
+  - id: global_event
+    summary: a scheduled 50-100 runner race with heats, check-in and server settlement
+    status: BACKEND_ONLY
+    screens: [GlobalEvent]
+    evidence:
+      load_test_50: NOT_RUN
+      load_test_100: NOT_RUN
+      realtime_connection_count: NOT_RUN
+      snapshot_bandwidth_bytes: NOT_RUN
+      db_write_rate: NOT_RUN
+      timeout_path: NOT_RUN
+      dnf_path: NOT_RUN
+      reconnect_path: NOT_RUN
+      reward_idempotency: pgtap/08_my_runner_scale.sql (unique reward_grant_key)
+    notes: >-
+      Lifecycle, capacity constraint, privacy allow-list and reward idempotency are in the
+      schema. Capacity is designed and gated, NOT measured. Nothing here may be reported
+      as complete until the two load tests run.
+
+  - id: global_event_privacy
+    summary: participants share progress and rank, never a coordinate
+    status: DONE
+    screens: [GlobalEvent]
+    evidence: [pgtap/08_my_runner_scale.sql — no location column exists on the snapshot table]
+    notes: A schema property rather than a serializer decision, so it cannot regress quietly.
+
+  # --- capture and verification --------------------------------------------
+  - id: direct_gps_capture
+    summary: foreground-service GPS capture that survives process death
+    status: PARTIAL
+    screens: [ActiveTraining]
+    evidence: NOT_RUN
+    notes: PHASE F. Service recreation, journal append and discard scope are the known gaps.
+
+  - id: health_connect_import
+    summary: incremental import of running activities from Health Connect
+    status: PARTIAL
+    screens: [Sync]
+    evidence: NOT_RUN
+    notes: PHASE F. Cursor, paging and permission-revoke handling are the known gaps.
+
+  - id: verified_run_is_the_only_power
+    summary: nothing but a verified run moves Fitness Core Power
+    status: DONE
+    screens: []
+    evidence: [pgtap/04_ledger_integrity.sql, content-validator GATE 8 and GATE 10]
+    notes: >-
+      Extended by this change: no wardrobe, style or world-runner table has a power column
+      at all, and pgTAP asserts the absence rather than the value.
+
+  # --- platform -------------------------------------------------------------
+  - id: safe_area
+    summary: the interface clears the status bar and the gesture bar on Android
+    status: DONE
+    screens: [all]
+    evidence: [tests/v14-safe-area.test.mjs]
+
+  - id: system_back
+    summary: predictable Android back on every screen, protected during a run
+    status: DONE
+    screens: [all]
+    evidence: [tests/v14-buttons.test.mjs, docs/registry/SCREEN_REGISTRY.yaml back_policy]
+
+  - id: design_tokens
+    summary: every colour in one file, provably unchanged by the refactor
+    status: DONE
+    screens: [all]
+    evidence: [tests/design-tokens.test.mjs]
+
+  - id: platform_interfaces
+    summary: Android native behind interfaces so WebGL and Editor can substitute
+    status: PLANNED
+    screens: []
+    evidence: NOT_RUN
+    notes: PHASE E. IRunCapturePlatform, IHealthConnectPlatform, ITrackFilePicker, ISystemBackPlatform, ISecureSessionStore, INotificationPlatform.
+
+  # --- build and release ----------------------------------------------------
+  - id: android_apk_build
+    summary: a CI-produced APK
+    status: BLOCKED
+    blocker: >-
+      Unity Personal can no longer be activated for CI — manual activation no longer
+      issues a licence file, so the GameCI Personal path is closed. Options are a local
+      build, a self-hosted runner, or a Pro serial.
+    evidence: >-
+      One APK was built locally (101 MB, Build Finished / Result Success, 0 combat
+      identifiers). DEVICE_TEST_EXECUTED is BLOCKED_DEVICE and the APK has no backend
+      configured.
+    notes: >-
+      The workflow SKIPS rather than fails without a licence, and the release report
+      records UNITY_BUILD_EXECUTED separately from WORKFLOW_SUCCESS so a green tick
+      cannot be read as a built APK.
+
+  - id: supabase_project
+    summary: a Supabase project dedicated to RunningUp
+    status: BLOCKED
+    blocker: >-
+      USER ACTION — no RunningUp project ref exists. The free plan already holds two
+      unrelated projects and neither may be reused.
+    evidence: >-
+      Every migration and the full seed apply to a local PostgreSQL 16 from scratch;
+      1181 pgTAP tests pass against it. Nothing has been applied to a remote database.

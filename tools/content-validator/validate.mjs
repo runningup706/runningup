@@ -15,12 +15,18 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { LAUNCH_CONTENT_FLOOR, DIRECTION_LOCK } from '../../packages/domain/constants.mjs';
+import { LAUNCH_CONTENT_FLOOR, DIRECTION_LOCK, SCALE_FLOOR } from '../../packages/domain/constants.mjs';
 // The race engine's course table is the other half of the continent identity contract.
-import { CONTINENT_COURSES } from '../../packages/domain/race.mjs';
+import { CONTINENT_COURSES, ROLE_IDS } from '../../packages/domain/race.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
-const LAUNCH = join(ROOT, 'content', 'launch');
+// Overridable so a test can point the validator at a deliberately broken copy of the
+// content and check that the gate it is aiming at actually fires. A gate nobody has ever
+// seen fail is indistinguishable from a gate that cannot fail — which is how a validator
+// full of vacuous passes happens. Unset in CI and in every normal run.
+const LAUNCH = process.env.RUNNINGUP_CONTENT_DIR
+  ? join(process.cwd(), process.env.RUNNINGUP_CONTENT_DIR)
+  : join(ROOT, 'content', 'launch');
 const LOCALES = ['ko', 'en'];
 
 const failures = [];
@@ -56,6 +62,12 @@ const gearSets = items('characters/gear/gear_sets.json');
 const episodes = items('characters/episodes/character_episodes.json');
 const cosmetics = items('characters/cosmetics/cosmetics.json');
 const companions = items('characters/companions.json');
+const myRunnerStyles = items('characters/my_runner/base_styles.json');
+const worldRunners = items('characters/world_runners/world_runners.json');
+const equipmentSlots = items('characters/wardrobe/equipment_slots.json');
+const outfitSets = items('characters/wardrobe/outfit_sets.json');
+const wearableItems = items('characters/wardrobe/wearable_items.json');
+const globalEvents = items('events/global_events.json');
 const quests = items('quests/quests.json');
 const eventArcs = items('events/event_arcs.json');
 const apexLadder = read('progression/monthly_apex_0_1000.json');
@@ -87,6 +99,12 @@ const counts = {
   story_chapters: storyChapters.length,
   launch_seasons: season ? 1 : 0,
   event_arcs: eventArcs.length,
+  my_runner_base_styles: myRunnerStyles.length,
+  world_runners: worldRunners.length,
+  equipment_slots: equipmentSlots.length,
+  outfit_sets: outfitSets.length,
+  wearable_items: wearableItems.length,
+  global_events: globalEvents.length,
 };
 
 for (const [key, floor] of Object.entries(LAUNCH_CONTENT_FLOOR)) {
@@ -146,6 +164,9 @@ const idGroups = [
   ['race_technique', techniques], ['gear_set', gearSets], ['episode', episodes],
   ['cosmetic', cosmetics], ['companion', companions], ['quest', quests],
   ['event_arc', eventArcs],
+  ['my_runner_base_style', myRunnerStyles], ['world_runner', worldRunners],
+  ['equipment_slot', equipmentSlots], ['outfit_set', outfitSets],
+  ['wearable_item', wearableItems], ['global_event', globalEvents],
 ];
 for (const [kind, list] of idGroups) {
   for (const item of list) {
@@ -592,6 +613,314 @@ for (const required of ['d_400m', 'd_1km', 'd_5km', 'd_10km', 'd_20km', 'd_half'
 for (const t of goalLibrary.allowed_activity_types) {
   if (!['road', 'track', 'treadmill', 'indoor'].includes(t)) {
     fail('direction_lock', `goal library allows non-running activity type "${t}"`);
+  }
+}
+
+// ===========================================================================
+// GATE 10 — owner scale floors, and the ways a scale number lies
+// ===========================================================================
+//
+// A count is the weakest possible evidence that content exists. Every check below exists
+// because the count on its own would have passed while the thing it counted did not work:
+// a base style that is a recolour of the one above it, an item in a slot nothing can
+// equip, a runner who is an id and an index, an event whose capacity is 24 in the data and
+// 100 in the report.
+
+// Restated here rather than imported from the design table on purpose: a validator that
+// imports the thing it is validating only proves the generator ran. This list is the
+// contract — none of these routes is a purchase and none is a random box.
+const ACQUISITION_ALLOWED = new Set([
+  'world_progress', 'region_restoration', 'race_placement', 'challenge_clear',
+  'monthly_apex_checkpoint', 'season_track', 'crew_campaign', 'open_race_event',
+  'character_episode', 'global_event',
+]);
+
+// --- My Runner base styles -------------------------------------------------
+if (myRunnerStyles.length < SCALE_FLOOR.MY_RUNNER_BASE_STYLE_MIN) {
+  fail('scale', `my runner base styles: ${myRunnerStyles.length} < ${SCALE_FLOOR.MY_RUNNER_BASE_STYLE_MIN}`);
+}
+{
+  // Colour is deliberately absent from the signature. Two styles that differ only in skin
+  // tone or hair colour are one style shipped twice, which is the exact thing the owner
+  // floor says does not count.
+  const shapeSig = new Map();
+  const buildPerBand = new Map();
+  for (const s of myRunnerStyles) {
+    const sig = [s.age_band, s.build, s.presentation, s.gait.description, s.posture, s.finish_motion].join('|');
+    if (shapeSig.has(sig)) {
+      fail('scale', `base style ${s.id} is a recolour of ${shapeSig.get(sig)} — same age, build, gait and finish`);
+    }
+    shapeSig.set(sig, s.id);
+
+    const key = `${s.age_band}|${s.build}`;
+    if (buildPerBand.has(key)) {
+      fail('scale', `base styles ${s.id} and ${buildPerBand.get(key)} share age band and build`);
+    }
+    buildPerBand.set(key, s.id);
+
+    if (s.grants_core_power !== false) fail('scale', `base style ${s.id} grants core power (DL-5)`);
+    if (s.selectable_at_launch !== true) fail('scale', `base style ${s.id} is not selectable at launch`);
+    if (s.paid_gacha === true) fail('scale', `base style ${s.id} is behind paid gacha`);
+    requireAddress('my_runner_base_style', s, 'prefab_address');
+    requireAddress('my_runner_base_style', s, 'thumbnail_address');
+    for (const [field, value] of Object.entries(s)) {
+      if (STAT_LIKE.test(field) && value !== 0 && value !== false) {
+        fail('scale', `base style ${s.id}: unexpected stat-like field "${field}"`);
+      }
+    }
+  }
+
+  // Representation floors. The owner direction names these explicitly, so they are gates,
+  // not guidance: a roster of 24 lean young adults meets the count and misses the point.
+  const bands = new Set(myRunnerStyles.map((s) => s.age_band));
+  if (bands.size < 6) fail('scale', `base styles span only ${bands.size} age bands, minimum 6`);
+  for (const required of ['child', 'senior', 'elder']) {
+    if (!bands.has(required)) fail('scale', `no base style in the "${required}" age band`);
+  }
+  const builds = new Set(myRunnerStyles.map((s) => s.build));
+  if (builds.size < 10) fail('scale', `base styles span only ${builds.size} builds, minimum 10`);
+  const tones = new Set(myRunnerStyles.map((s) => s.skin_tone_id));
+  if (tones.size < 6) fail('scale', `base styles span only ${tones.size} skin tones, minimum 6`);
+  const presentations = new Set(myRunnerStyles.map((s) => s.presentation));
+  if (presentations.size < 3) fail('scale', 'base styles do not cover masculine, feminine and neutral presentation');
+  const adaptive = myRunnerStyles.filter((s) => s.adaptive_kit_id !== null);
+  if (adaptive.length < 3) fail('scale', `only ${adaptive.length} adaptive base styles, minimum 3`);
+  if (new Set(adaptive.map((s) => s.age_band)).size < 3) {
+    fail('scale', 'adaptive base styles are concentrated in fewer than 3 age bands');
+  }
+  // One rig, or the wardrobe cannot be worn by everyone.
+  if (new Set(myRunnerStyles.map((s) => s.rig_id)).size !== 1) {
+    fail('scale', 'base styles do not all share one rig — a shared wardrobe is impossible');
+  }
+}
+
+// --- World runners ---------------------------------------------------------
+if (worldRunners.length < SCALE_FLOOR.PACER_WORLD_RUNNER_MIN) {
+  fail('scale', `world runners: ${worldRunners.length} < ${SCALE_FLOOR.PACER_WORLD_RUNNER_MIN}`);
+}
+{
+  const styleIds = new Set(myRunnerStyles.map((s) => s.id));
+  const triples = new Map();
+  const signatures = new Map();
+  const intros = new Map();
+  for (const r of worldRunners) {
+    if (!continentIds.has(r.continent_id)) fail('reference', `world runner ${r.id}: unknown continent`);
+    if (!regionIds.has(r.home_region_id)) fail('reference', `world runner ${r.id}: unknown home region ${r.home_region_id}`);
+    if (!styleIds.has(r.base_style_id)) fail('reference', `world runner ${r.id}: unknown base style ${r.base_style_id}`);
+    if (!ROLE_IDS.includes(r.role)) fail('reference', `world runner ${r.id}: unknown role ${r.role}`);
+    if (r.grants_core_power !== false) fail('scale', `world runner ${r.id} grants core power (DL-5)`);
+    requireAddress('world_runner', r, 'prefab_address');
+    requireAddress('world_runner', r, 'portrait_address');
+
+    const triple = `${r.base_style_id}|${r.role}|${r.tendency_id}`;
+    if (triples.has(triple)) {
+      fail('scale', `world runners ${r.id} and ${triples.get(triple)} share appearance, role and tendency`);
+    }
+    triples.set(triple, r.id);
+
+    // Written identity, not a template. "runs strongly" 204 times is the prose form of a
+    // recolour, and this is what catches it.
+    if (signatures.has(r.race_signature)) {
+      fail('scale', `world runner ${r.id} has the same race signature as ${signatures.get(r.race_signature)}`);
+    }
+    signatures.set(r.race_signature, r.id);
+    if (intros.has(r.introduction)) {
+      fail('scale', `world runner ${r.id} has the same introduction as ${intros.get(r.introduction)}`);
+    }
+    intros.set(r.introduction, r.id);
+  }
+
+  // Every base style has to appear in the world, or the styles the player never sees are
+  // decoration in a catalogue.
+  const usedStyles = new Set(worldRunners.map((r) => r.base_style_id));
+  for (const id of styleIds) {
+    if (!usedStyles.has(id)) fail('scale', `base style ${id} is worn by no world runner`);
+  }
+  const usedRoles = new Set(worldRunners.map((r) => r.role));
+  if (usedRoles.size !== ROLE_IDS.length) {
+    fail('scale', `world runners cover ${usedRoles.size} of ${ROLE_IDS.length} roles`);
+  }
+
+  // Crew membership has to agree in both directions. A crew that names a runner who does
+  // not name the crew back is how the anonymous seats survived for as long as they did.
+  const runnerById = new Map(worldRunners.map((r) => [r.id, r]));
+  for (const crew of [...standardRivals, ...eliteRivals]) {
+    if (!Array.isArray(crew.runners) || crew.runners.length !== 3) {
+      fail('scale', `crew ${crew.id}: expected 3 named runners, got ${crew.runners?.length ?? 0}`);
+      continue;
+    }
+    for (const seat of crew.runners) {
+      const runner = runnerById.get(seat.world_runner_id);
+      if (!runner) {
+        fail('reference', `crew ${crew.id}: runner ${seat.world_runner_id} does not exist`);
+        continue;
+      }
+      if (runner.crew_id !== crew.id) {
+        fail('scale', `crew ${crew.id} claims ${runner.id}, who belongs to ${runner.crew_id ?? 'no crew'}`);
+      }
+      if (runner.continent_id !== crew.continent_id) {
+        fail('scale', `crew ${crew.id} contains ${runner.id} from another continent`);
+      }
+    }
+  }
+  const crewed = worldRunners.filter((r) => r.crew_id !== null).length;
+  const openField = worldRunners.filter((r) => r.open_field === true).length;
+  if (crewed + openField !== worldRunners.length) {
+    fail('scale', 'a world runner is neither in a crew nor in the open field');
+  }
+  // Global Event heats and open races draw from the open field. Too small a field and the
+  // same faces appear in every event.
+  if (openField < SCALE_FLOOR.GLOBAL_EVENT_MAX_PARTICIPANTS - 8) {
+    fail('scale', `open field is ${openField} runners, too few to fill a ${SCALE_FLOOR.GLOBAL_EVENT_MAX_PARTICIPANTS}-runner event`);
+  }
+}
+
+// --- Wardrobe --------------------------------------------------------------
+if (equipmentSlots.length < SCALE_FLOOR.EQUIPMENT_SLOT_MIN) {
+  fail('scale', `equipment slots: ${equipmentSlots.length} < ${SCALE_FLOOR.EQUIPMENT_SLOT_MIN}`);
+}
+if (outfitSets.length < SCALE_FLOOR.OUTFIT_SET_MIN) {
+  fail('scale', `outfit sets: ${outfitSets.length} < ${SCALE_FLOOR.OUTFIT_SET_MIN}`);
+}
+if (wearableItems.length < SCALE_FLOOR.WEARABLE_ITEM_MIN) {
+  fail('scale', `wearable items: ${wearableItems.length} < ${SCALE_FLOOR.WEARABLE_ITEM_MIN}`);
+}
+{
+  const slotIds = new Set(equipmentSlots.map((s) => s.id));
+  const slotNames = new Set(equipmentSlots.map((s) => s.slot));
+  const setIds = new Set(outfitSets.map((s) => s.id));
+  const itemIds = new Set(wearableItems.map((i) => i.id));
+  const styleIds = new Set(myRunnerStyles.map((s) => s.id));
+  const layers = equipmentSlots.map((s) => s.layer);
+  if (new Set(layers).size !== layers.length) fail('scale', 'two equipment slots share a render layer');
+
+  for (const item of wearableItems) {
+    if (!slotNames.has(item.slot)) fail('reference', `wearable ${item.id}: unknown slot ${item.slot}`);
+    if (!slotIds.has(item.slot_id)) fail('reference', `wearable ${item.id}: unknown slot id ${item.slot_id}`);
+    if (!setIds.has(item.set_id)) fail('reference', `wearable ${item.id}: unknown set ${item.set_id}`);
+    // "600 items" that cannot be put on a runner is a catalogue, not a wardrobe.
+    if (item.equippable !== true) fail('scale', `wearable ${item.id} is not equippable but is counted`);
+    if (!Array.isArray(item.compatible_base_style_ids) || item.compatible_base_style_ids.length === 0) {
+      fail('scale', `wearable ${item.id} fits no base style but is counted`);
+    }
+    for (const id of item.compatible_base_style_ids ?? []) {
+      if (!styleIds.has(id)) fail('reference', `wearable ${item.id}: unknown compatible style ${id}`);
+    }
+    if (item.server_persisted !== true) fail('scale', `wearable ${item.id} is not server persisted`);
+    if (item.restores_on_relaunch !== true) fail('scale', `wearable ${item.id} does not restore on relaunch`);
+    requireAddress('wearable_item', item, 'thumbnail_address');
+    requireAddress('wearable_item', item, 'prefab_address');
+    if (!ACQUISITION_ALLOWED.has(item.acquisition_source)) {
+      fail('scale', `wearable ${item.id}: unknown acquisition source ${item.acquisition_source}`);
+    }
+    if (item.purchasable_with_real_money !== false) fail('scale', `wearable ${item.id} is a real-money purchase`);
+    if (item.random_box !== false) fail('scale', `wearable ${item.id} comes from a random box`);
+    for (const field of POWER_FIELDS) {
+      if (item[field] !== 0) fail('scale', `wearable ${item.id}: ${field} must be exactly 0`);
+    }
+    for (const [field, value] of Object.entries(item)) {
+      if (POWER_FIELDS.includes(field)) continue;
+      if (STAT_LIKE.test(field) && value !== 0 && value !== false) {
+        fail('scale', `wearable ${item.id}: unexpected stat-like field "${field}"`);
+      }
+    }
+  }
+
+  // Every slot must be fillable — an 18-slot system where two slots have no garment is a
+  // 16-slot system with two rows in a table.
+  for (const slot of equipmentSlots) {
+    const own = wearableItems.filter((i) => i.slot === slot.slot);
+    if (own.length === 0) fail('scale', `slot ${slot.slot} has no wearable item at all`);
+  }
+
+  // The one that matters most: every base style must be able to fill every REQUIRED slot.
+  // Without this, "600 items compatible with 24 styles" can be true while a child style
+  // has no shoes.
+  const requiredSlots = equipmentSlots.filter((s) => s.required).map((s) => s.slot);
+  for (const style of myRunnerStyles) {
+    for (const slot of requiredSlots) {
+      const wearable = wearableItems.some(
+        (i) => i.slot === slot && (i.compatible_base_style_ids ?? []).includes(style.id),
+      );
+      if (!wearable) fail('scale', `base style ${style.id} has nothing to wear in required slot "${slot}"`);
+    }
+  }
+
+  for (const set of outfitSets) {
+    if (!continentIds.has(set.continent_id)) fail('reference', `outfit set ${set.id}: unknown continent`);
+    if (!Array.isArray(set.item_ids) || set.item_ids.length < 5) {
+      fail('scale', `outfit set ${set.id}: ${set.item_ids?.length ?? 0} pieces, minimum 5`);
+    }
+    for (const id of set.item_ids ?? []) {
+      if (!itemIds.has(id)) fail('reference', `outfit set ${set.id}: item ${id} does not exist`);
+    }
+    if (set.purchasable_with_real_money !== false) fail('scale', `outfit set ${set.id} is a real-money purchase`);
+    if (set.random_box !== false) fail('scale', `outfit set ${set.id} comes from a random box`);
+    // A set that granted a bonus for completion would make the wardrobe a power system.
+    if (set.complete_set_bonus !== null) fail('scale', `outfit set ${set.id} grants a completion bonus (DL-5)`);
+  }
+  // No two sets may be the same garment line twice.
+  duplicateScan('outfit_set', outfitSets, (s) => new Set([
+    `material:${s.material}`, `shape:${s.shape_id}`, `detail:${s.detail}`,
+  ]), 0.7);
+  requireCoverage('outfit sets per continent', continentIds, outfitSets, 'continent_id',
+    outfitSets.length / continents.length);
+  requireCoverage('wearable items per continent', continentIds, wearableItems, 'continent_id',
+    wearableItems.length / continents.length);
+}
+
+// --- Global Events ---------------------------------------------------------
+{
+  const REQUIRED_STAGES = ['scheduled', 'entry_open', 'check_in', 'heats_assigned', 'countdown', 'running', 'verifying', 'settled', 'rewarded'];
+  const ALLOWED_SHARED = new Set([
+    'participant_id', 'display_name', 'my_runner_appearance_id', 'course_progress_ratio',
+    'verified_distance_meters', 'server_rank', 'pace_state', 'status',
+  ]);
+  for (const e of globalEvents) {
+    if (!continentIds.has(e.host_continent_id)) fail('reference', `global event ${e.id}: unknown host continent`);
+    if (e.min_participants < SCALE_FLOOR.GLOBAL_EVENT_MIN_PARTICIPANTS) {
+      fail('scale', `global event ${e.id}: capacity ${e.min_participants} < ${SCALE_FLOOR.GLOBAL_EVENT_MIN_PARTICIPANTS}`);
+    }
+    if (e.max_participants !== SCALE_FLOOR.GLOBAL_EVENT_MAX_PARTICIPANTS) {
+      fail('scale', `global event ${e.id}: max ${e.max_participants}, expected ${SCALE_FLOOR.GLOBAL_EVENT_MAX_PARTICIPANTS}`);
+    }
+    if (e.heats_at_capacity * e.heat_size < e.max_participants) {
+      fail('scale', `global event ${e.id}: ${e.heats_at_capacity} heats of ${e.heat_size} cannot hold ${e.max_participants}`);
+    }
+    for (const stage of REQUIRED_STAGES) {
+      if (!e.lifecycle.includes(stage)) fail('scale', `global event ${e.id}: lifecycle is missing "${stage}"`);
+    }
+    // Privacy is a data gate, not a promise in a doc.
+    if (e.shares_raw_gps !== false) fail('privacy', `global event ${e.id} shares raw GPS`);
+    for (const field of e.shared_participant_fields) {
+      if (!ALLOWED_SHARED.has(field)) {
+        fail('privacy', `global event ${e.id} shares "${field}", which is not on the allow-list`);
+      }
+    }
+    if (/gps|latitude|longitude|coordinate|location/i.test(e.shared_participant_fields.join(' '))) {
+      fail('privacy', `global event ${e.id} shares a location field`);
+    }
+    // 100 in the data is not 100 on screen, and the record has to say which it means.
+    const drawn = e.render_budget.full_3d_near + e.render_budget.low_cost_3d_mid + e.render_budget.animated_billboard_far;
+    if (drawn >= e.max_participants) {
+      fail('scale', `global event ${e.id}: render budget draws ${drawn} of ${e.max_participants} at full fidelity`);
+    }
+    if (e.render_budget.rank_panel_only + drawn < e.max_participants) {
+      fail('scale', `global event ${e.id}: render budget accounts for fewer than ${e.max_participants} participants`);
+    }
+    // Evidence must be present and honest. NOT_RUN is a valid value; a missing key is not.
+    for (const key of e.evidence_required) {
+      if (!(key in e.evidence)) fail('evidence', `global event ${e.id}: no evidence entry for ${key}`);
+    }
+    if (!e.reward_idempotency_template.includes('{user_id}')) {
+      fail('scale', `global event ${e.id}: reward idempotency key is not per user`);
+    }
+    requireAddress('global_event', e, 'scene_address');
+    if (e.enabled !== true) fail('availability', `global event ${e.id} is not enabled`);
+  }
+  const notRun = globalEvents.flatMap((e) => Object.entries(e.evidence).filter(([, v]) => v === 'NOT_RUN'));
+  if (notRun.length > 0) {
+    note(`global events: ${notRun.length} evidence entries are NOT_RUN — capacity is designed and gated, not yet measured`);
   }
 }
 

@@ -1,0 +1,68 @@
+name: 기능 추가
+description: 이런 게 있었으면 좋겠어요
+title: "[추가] "
+labels: [enhancement,owner-request]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        없는 기능을 새로 만드는 요청입니다.
+
+  - type: input
+    id: target
+    attributes:
+      label: 1. 어디 이야기인가요
+      description: 화면 이름, 버튼 이름, 아니면 "이 부분" 정도로도 충분합니다.
+      placeholder: 예) 메인 화면 아래쪽 메뉴 / 러닝 끝난 뒤 결과 화면
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 2. 지금 뭐가 문제인가요
+      description: 지금 어떻게 되고 있는지 그대로 적어 주십시오.
+    validations:
+      required: true
+
+  - type: textarea
+    id: want
+    attributes:
+      label: 3. 어떻게 되면 좋겠나요
+      description: 원하시는 결과만 적으시면 됩니다. 방법은 제가 정합니다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: dont_touch
+    attributes:
+      label: 4. 건드리면 안 되는 것
+      description: >-
+        가장 중요한 칸입니다. "여기는 그대로" 라고 적어 두시면 그 부분은 손대지 않습니다.
+        비워 두시면 제가 판단해서 최소한만 바꿉니다.
+      placeholder: 예) 색은 그대로 / 개수는 줄이지 마세요 / 기존 기록은 지우지 마세요
+    validations:
+      required: false
+
+  - type: textarea
+    id: done_when
+    attributes:
+      label: 5. 다 됐다는 걸 어떻게 확인할까요
+      description: 오너가 직접 눌러보고 확인하실 방법을 적어 주십시오.
+      placeholder: 예) 메인에서 저 버튼 누르면 세계 지도가 열린다
+    validations:
+      required: true
+
+  - type: textarea
+    id: reference
+    attributes:
+      label: 6. 참고 이미지 (있으면)
+      description: 스크린샷이나 사진을 이 칸에 그대로 끌어다 놓으시면 됩니다.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        C# · SQL · 브랜치 · Gradle · Unity · Supabase 는 몰라도 됩니다. 그건 제 쪽 일입니다.

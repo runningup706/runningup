@@ -191,10 +191,40 @@ export const VERIFICATION_GRADES = Object.freeze([
 ]);
 
 /**
+ * Owner-set scale floors.
+ *
+ * These are product decisions, not engineering targets: the owner fixed them and the rule
+ * attached to them is `effective minimum = max(current implemented floor, owner floor)`.
+ * Nothing below may be lowered for schedule, performance, APK size or test convenience.
+ *
+ * They live here, once, and everything downstream imports them — the content factory, the
+ * validator, the seed generator and the tests. `LAUNCH_CONTENT_FLOOR` below is *built from*
+ * these rather than restating them, because a second hand-typed copy of a number is the
+ * defect this file exists to prevent.
+ *
+ * `GLOBAL_EVENT_MAX_PARTICIPANTS` is a ceiling, not a floor: it is the largest field the
+ * server contract, the load tests and the renderer are required to hold.
+ */
+export const SCALE_FLOOR = Object.freeze({
+  MY_RUNNER_BASE_STYLE_MIN: 24,
+  PACER_WORLD_RUNNER_MIN: 200,
+  WEARABLE_ITEM_MIN: 600,
+  OUTFIT_SET_MIN: 120,
+  EQUIPMENT_SLOT_MIN: 18,
+  GLOBAL_EVENT_MIN_PARTICIPANTS: 50,
+  GLOBAL_EVENT_MAX_PARTICIPANTS: 100,
+});
+
+/**
  * Launch content floor. Mirrors content/schemas/direction_lock.json.
  *
  * RunningUp is a running race, so the world is counted in races, rival crews, champions
  * and courses. Combat categories are forbidden by `docs/USER_DIRECTION_LOCK.md` DL-6.
+ *
+ * `equipable_cosmetics` (96) and `wearable_items` (600) are different things and both are
+ * kept: the first is the per-playable-runner cosmetic set that already shipped, the second
+ * is the My Runner wardrobe. Folding one into the other would have let the 96 disappear
+ * into a bigger number, which is the shrink this table is here to make impossible.
  */
 export const LAUNCH_CONTENT_FLOOR = Object.freeze({
   continents: 12,
@@ -218,6 +248,12 @@ export const LAUNCH_CONTENT_FLOOR = Object.freeze({
   story_chapters: 12,
   launch_seasons: 1,
   event_arcs: 3,
+  my_runner_base_styles: SCALE_FLOOR.MY_RUNNER_BASE_STYLE_MIN,
+  world_runners: SCALE_FLOOR.PACER_WORLD_RUNNER_MIN,
+  equipment_slots: SCALE_FLOOR.EQUIPMENT_SLOT_MIN,
+  outfit_sets: SCALE_FLOOR.OUTFIT_SET_MIN,
+  wearable_items: SCALE_FLOOR.WEARABLE_ITEM_MIN,
+  global_events: 6,
 });
 
 /** Reward formula version. Every ledger row records the version that produced it. */

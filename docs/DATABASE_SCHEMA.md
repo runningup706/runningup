@@ -3,7 +3,7 @@
 **GENERATED FILE.** Produced by `tools/release/generate-evidence.mjs` from a live
 database with all migrations applied. Regenerate after any migration.
 
-Relations: 55 · Columns: 441 · Constraints: 256 · Enums: 9 · Functions: 11
+Relations: 68 · Columns: 561 · Constraints: 329 · Enums: 9 · Functions: 15
 
 ## Enumerated types
 
@@ -233,6 +233,26 @@ Constraints:
 - `currency_ledger_user_id_fkey`: `FOREIGN KEY (user_id) REFERENCES api.profiles(user_id) ON DELETE CASCADE`
 - `currency_ledger_user_id_idempotency_key_key`: `UNIQUE (user_id, idempotency_key)`
 
+## `api.equipment_slots`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `id` | text | no | — |
+| `slot` | text | no | — |
+| `display_order` | integer | no | — |
+| `render_layer` | integer | no | — |
+| `is_required` | boolean | no | `false` |
+| `name_key` | text | no | — |
+| `icon_address` | text | no | — |
+| `content_version` | text | no | — |
+
+Constraints:
+
+- `equipment_slots_display_order_key`: `UNIQUE (display_order)`
+- `equipment_slots_pkey`: `PRIMARY KEY (id)`
+- `equipment_slots_render_layer_key`: `UNIQUE (render_layer)`
+- `equipment_slots_slot_key`: `UNIQUE (slot)`
+
 ## `api.gear_sets`
 
 | column | type | null | default |
@@ -254,6 +274,123 @@ Constraints:
 - `gear_sets_trade_from_check`: `CHECK ((trade_from = ANY (ARRAY['cruise'::text, 'stamina'::text, 'kick'::text])))`
 - `gear_sets_trade_to_check`: `CHECK ((trade_to = ANY (ARRAY['cruise'::text, 'stamina'::text, 'kick'::text])))`
 - `gear_trade_moves_something`: `CHECK ((trade_from <> trade_to))`
+
+## `api.global_event_entries`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `occurrence_id` | uuid | no | — |
+| `user_id` | uuid | no | — |
+| `state` | text | no | `'entered'::text` |
+| `heat_number` | integer | yes | — |
+| `entered_at` | timestamp with time zone | no | `now()` |
+| `checked_in_at` | timestamp with time zone | yes | — |
+
+Constraints:
+
+- `entry_heat_positive`: `CHECK (((heat_number IS NULL) OR (heat_number >= 1)))`
+- `entry_state_known`: `CHECK ((state = ANY (ARRAY['entered'::text, 'checked_in'::text, 'racing'::text, 'finished'::text, 'dnf'::text, 'withdrawn'::text])))`
+- `global_event_entries_occurrence_id_fkey`: `FOREIGN KEY (occurrence_id) REFERENCES api.global_event_occurrences(id) ON DELETE CASCADE`
+- `global_event_entries_pkey`: `PRIMARY KEY (occurrence_id, user_id)`
+- `global_event_entries_user_id_fkey`: `FOREIGN KEY (user_id) REFERENCES api.profiles(user_id) ON DELETE CASCADE`
+
+## `api.global_event_occurrences`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `id` | uuid | no | `gen_random_uuid()` |
+| `event_id` | text | no | — |
+| `state` | text | no | `'scheduled'::text` |
+| `starts_at` | timestamp with time zone | no | — |
+| `entry_closes_at` | timestamp with time zone | no | — |
+| `check_in_opens_at` | timestamp with time zone | no | — |
+| `settled_at` | timestamp with time zone | yes | — |
+| `created_at` | timestamp with time zone | no | `now()` |
+
+Constraints:
+
+- `global_event_occurrences_event_id_fkey`: `FOREIGN KEY (event_id) REFERENCES api.global_events(id)`
+- `global_event_occurrences_pkey`: `PRIMARY KEY (id)`
+- `occurrence_state_known`: `CHECK ((state = ANY (ARRAY['scheduled'::text, 'entry_open'::text, 'entry_closed'::text, 'check_in'::text, 'heats_assigned'::text, 'countdown'::text, 'running'::text, 'verifying'::text, 'settled'::text, 'rewarded'::text, 'archived'::text])))`
+- `occurrence_unique_per_start`: `UNIQUE (event_id, starts_at)`
+- `occurrence_windows_ordered`: `CHECK (((entry_closes_at <= starts_at) AND (check_in_opens_at <= starts_at)))`
+
+## `api.global_event_progress`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `occurrence_id` | uuid | no | — |
+| `user_id` | uuid | no | — |
+| `sequence` | integer | no | — |
+| `course_progress_ratio` | numeric | no | — |
+| `verified_distance_meters` | integer | no | — |
+| `server_rank` | integer | yes | — |
+| `pace_state` | text | no | — |
+| `recorded_at` | timestamp with time zone | no | `now()` |
+
+Constraints:
+
+- `global_event_progress_occurrence_id_fkey`: `FOREIGN KEY (occurrence_id) REFERENCES api.global_event_occurrences(id) ON DELETE CASCADE`
+- `global_event_progress_pkey`: `PRIMARY KEY (occurrence_id, user_id, sequence)`
+- `global_event_progress_user_id_fkey`: `FOREIGN KEY (user_id) REFERENCES api.profiles(user_id) ON DELETE CASCADE`
+- `progress_distance_nonneg`: `CHECK ((verified_distance_meters >= 0))`
+- `progress_pace_state_known`: `CHECK ((pace_state = ANY (ARRAY['holding'::text, 'lifting'::text, 'fading'::text, 'finished'::text, 'dnf'::text])))`
+- `progress_ratio_bounded`: `CHECK (((course_progress_ratio >= (0)::numeric) AND (course_progress_ratio <= (1)::numeric)))`
+
+## `api.global_event_results`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `occurrence_id` | uuid | no | — |
+| `user_id` | uuid | no | — |
+| `final_rank` | integer | yes | — |
+| `finish_state` | text | no | — |
+| `elapsed_seconds` | integer | yes | — |
+| `verified_distance_meters` | integer | no | — |
+| `reward_grant_key` | text | no | — |
+| `settled_at` | timestamp with time zone | no | `now()` |
+
+Constraints:
+
+- `global_event_results_occurrence_id_fkey`: `FOREIGN KEY (occurrence_id) REFERENCES api.global_event_occurrences(id) ON DELETE CASCADE`
+- `global_event_results_pkey`: `PRIMARY KEY (occurrence_id, user_id)`
+- `global_event_results_user_id_fkey`: `FOREIGN KEY (user_id) REFERENCES api.profiles(user_id) ON DELETE CASCADE`
+- `result_finish_state_known`: `CHECK ((finish_state = ANY (ARRAY['finished'::text, 'dnf'::text, 'dsq'::text, 'no_show'::text])))`
+- `result_reward_grant_unique`: `UNIQUE (reward_grant_key)`
+
+## `api.global_events`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `id` | text | no | — |
+| `display_order` | integer | no | — |
+| `host_continent_id` | text | no | — |
+| `name_key` | text | no | — |
+| `distance_meters` | integer | no | — |
+| `cadence` | text | no | — |
+| `entry_rule` | text | no | — |
+| `min_participants` | integer | no | — |
+| `max_participants` | integer | no | — |
+| `heat_size` | integer | no | — |
+| `check_in_window_minutes` | integer | no | — |
+| `countdown_seconds` | integer | no | — |
+| `scene_address` | text | no | — |
+| `enabled` | boolean | no | `true` |
+| `debug_only` | boolean | no | `false` |
+| `content_version` | text | no | — |
+
+Constraints:
+
+- `global_event_cadence_known`: `CHECK ((cadence = ANY (ARRAY['weekly'::text, 'fortnightly'::text, 'monthly'::text])))`
+- `global_event_capacity_ceiling`: `CHECK ((max_participants = 100))`
+- `global_event_capacity_floor`: `CHECK ((min_participants >= 50))`
+- `global_event_capacity_ordered`: `CHECK ((min_participants <= max_participants))`
+- `global_event_distance_positive`: `CHECK ((distance_meters > 0))`
+- `global_event_entry_rule_known`: `CHECK ((entry_rule = ANY (ARRAY['open_to_all'::text, 'qualified'::text, 'crew_entry'::text])))`
+- `global_event_heats_cover_capacity`: `CHECK (((heat_size > 0) AND ((ceil(((max_participants)::numeric / (heat_size)::numeric)) * (heat_size)::numeric) >= (max_participants)::numeric)))`
+- `global_events_display_order_key`: `UNIQUE (display_order)`
+- `global_events_host_continent_id_fkey`: `FOREIGN KEY (host_continent_id) REFERENCES api.world_continents(id)`
+- `global_events_pkey`: `PRIMARY KEY (id)`
 
 ## `api.monthly_apex_checkpoint_claims`
 
@@ -340,6 +477,105 @@ Constraints:
 - `monthly_apex_progress_over_crown_meters_check`: `CHECK ((over_crown_meters >= 0))`
 - `monthly_apex_progress_pkey`: `PRIMARY KEY (user_id, month_key)`
 - `monthly_apex_progress_user_id_fkey`: `FOREIGN KEY (user_id) REFERENCES api.profiles(user_id) ON DELETE CASCADE`
+
+## `api.my_runner_base_styles`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `id` | text | no | — |
+| `display_order` | integer | no | — |
+| `name_key` | text | no | — |
+| `age_band` | text | no | — |
+| `build` | text | no | — |
+| `presentation` | text | no | — |
+| `skin_tone_id` | text | no | — |
+| `rig_id` | text | no | — |
+| `animation_set_id` | text | no | — |
+| `head_ratio` | numeric | no | — |
+| `adaptive_kit_id` | text | yes | — |
+| `selectable_at_launch` | boolean | no | `true` |
+| `paid_gacha` | boolean | no | `false` |
+| `prefab_address` | text | no | — |
+| `portrait_address` | text | no | — |
+| `thumbnail_address` | text | no | — |
+| `content_version` | text | no | — |
+
+Constraints:
+
+- `base_style_age_band_known`: `CHECK ((age_band = ANY (ARRAY['child'::text, 'teen'::text, 'young_adult'::text, 'adult'::text, 'midlife'::text, 'senior'::text, 'elder'::text])))`
+- `base_style_available_at_launch`: `CHECK (selectable_at_launch)`
+- `base_style_not_gacha`: `CHECK ((NOT paid_gacha))`
+- `base_style_order_unique`: `UNIQUE (display_order)`
+- `base_style_presentation_known`: `CHECK ((presentation = ANY (ARRAY['masculine'::text, 'feminine'::text, 'neutral'::text])))`
+- `base_style_shared_rig`: `CHECK ((rig_id = 'rig_v14_chibi'::text))`
+- `my_runner_base_styles_pkey`: `PRIMARY KEY (id)`
+
+## `api.my_runner_equipment`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `user_id` | uuid | no | — |
+| `slot_id` | text | no | — |
+| `item_id` | text | no | — |
+| `equipped_at` | timestamp with time zone | no | `now()` |
+
+Constraints:
+
+- `my_runner_equipment_item_id_fkey`: `FOREIGN KEY (item_id) REFERENCES api.wearable_items(id)`
+- `my_runner_equipment_pkey`: `PRIMARY KEY (user_id, slot_id)`
+- `my_runner_equipment_slot_id_fkey`: `FOREIGN KEY (slot_id) REFERENCES api.equipment_slots(id)`
+- `my_runner_equipment_user_id_fkey`: `FOREIGN KEY (user_id) REFERENCES api.profiles(user_id) ON DELETE CASCADE`
+
+## `api.my_runner_wardrobe`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `user_id` | uuid | no | — |
+| `item_id` | text | no | — |
+| `acquired_at` | timestamp with time zone | no | `now()` |
+| `acquired_from` | text | no | — |
+
+Constraints:
+
+- `my_runner_wardrobe_item_id_fkey`: `FOREIGN KEY (item_id) REFERENCES api.wearable_items(id)`
+- `my_runner_wardrobe_pkey`: `PRIMARY KEY (user_id, item_id)`
+- `my_runner_wardrobe_user_id_fkey`: `FOREIGN KEY (user_id) REFERENCES api.profiles(user_id) ON DELETE CASCADE`
+
+## `api.my_runners`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `user_id` | uuid | no | — |
+| `base_style_id` | text | no | — |
+| `display_name` | text | yes | — |
+| `created_at` | timestamp with time zone | no | `now()` |
+| `updated_at` | timestamp with time zone | no | `now()` |
+
+Constraints:
+
+- `my_runners_base_style_id_fkey`: `FOREIGN KEY (base_style_id) REFERENCES api.my_runner_base_styles(id)`
+- `my_runners_pkey`: `PRIMARY KEY (user_id)`
+- `my_runners_user_id_fkey`: `FOREIGN KEY (user_id) REFERENCES api.profiles(user_id) ON DELETE CASCADE`
+
+## `api.outfit_sets`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `id` | text | no | — |
+| `continent_id` | text | no | — |
+| `display_order` | integer | no | — |
+| `name_key` | text | no | — |
+| `shape_id` | text | no | — |
+| `acquisition_source` | text | no | — |
+| `thumbnail_address` | text | no | — |
+| `content_version` | text | no | — |
+
+Constraints:
+
+- `outfit_set_acquisition_known`: `CHECK ((acquisition_source = ANY (ARRAY['world_progress'::text, 'region_restoration'::text, 'race_placement'::text, 'challenge_clear'::text, 'monthly_apex_checkpoint'::text, 'season_track'::text, 'crew_campaign'::text, 'open_race_event'::text, 'character_episode'::text, 'global_event'::text])))`
+- `outfit_set_order_unique`: `UNIQUE (continent_id, display_order)`
+- `outfit_sets_continent_id_fkey`: `FOREIGN KEY (continent_id) REFERENCES api.world_continents(id)`
+- `outfit_sets_pkey`: `PRIMARY KEY (id)`
 
 ## `api.personal_baselines`
 
@@ -738,6 +974,33 @@ Constraints:
 | `user_id` | uuid | yes | — |
 | `total_fitness_xp` | numeric | yes | — |
 
+## `api.wearable_items`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `id` | text | no | — |
+| `set_id` | text | no | — |
+| `continent_id` | text | no | — |
+| `slot_id` | text | no | — |
+| `display_order` | integer | no | — |
+| `name_key` | text | no | — |
+| `compatible_base_style_ids` | ARRAY | no | — |
+| `thumbnail_address` | text | no | — |
+| `prefab_address` | text | no | — |
+| `rig_id` | text | no | — |
+| `acquisition_source` | text | no | — |
+| `content_version` | text | no | — |
+
+Constraints:
+
+- `wearable_acquisition_known`: `CHECK ((acquisition_source = ANY (ARRAY['world_progress'::text, 'region_restoration'::text, 'race_placement'::text, 'challenge_clear'::text, 'monthly_apex_checkpoint'::text, 'season_track'::text, 'crew_campaign'::text, 'open_race_event'::text, 'character_episode'::text, 'global_event'::text])))`
+- `wearable_fits_someone`: `CHECK ((cardinality(compatible_base_style_ids) > 0))`
+- `wearable_items_continent_id_fkey`: `FOREIGN KEY (continent_id) REFERENCES api.world_continents(id)`
+- `wearable_items_pkey`: `PRIMARY KEY (id)`
+- `wearable_items_set_id_fkey`: `FOREIGN KEY (set_id) REFERENCES api.outfit_sets(id)`
+- `wearable_items_slot_id_fkey`: `FOREIGN KEY (slot_id) REFERENCES api.equipment_slots(id)`
+- `wearable_shared_rig`: `CHECK ((rig_id = 'rig_v14_chibi'::text))`
+
 ## `api.weekly_goal_snapshots`
 
 | column | type | null | default |
@@ -895,6 +1158,40 @@ Constraints:
 - `world_regions_continent_id_fkey`: `FOREIGN KEY (continent_id) REFERENCES api.world_continents(id) ON DELETE CASCADE`
 - `world_regions_node_type_check`: `CHECK ((node_type = ANY (ARRAY['race_node'::text, 'challenge_node'::text, 'champion_node'::text])))`
 - `world_regions_pkey`: `PRIMARY KEY (id)`
+
+## `api.world_runners`
+
+| column | type | null | default |
+|---|---|:--:|---|
+| `id` | text | no | — |
+| `display_order` | integer | no | — |
+| `continent_id` | text | no | — |
+| `home_region_id` | text | no | — |
+| `name_key` | text | no | — |
+| `intro_key` | text | no | — |
+| `base_style_id` | text | no | — |
+| `role` | text | no | — |
+| `tendency_id` | text | no | — |
+| `race_signature` | text | no | — |
+| `crew_id` | text | yes | — |
+| `crew_slot` | integer | yes | — |
+| `open_field` | boolean | no | — |
+| `prefab_address` | text | no | — |
+| `portrait_address` | text | no | — |
+| `content_version` | text | no | — |
+
+Constraints:
+
+- `world_runner_crew_consistent`: `CHECK ((((crew_id IS NULL) AND (crew_slot IS NULL) AND open_field) OR ((crew_id IS NOT NULL) AND ((crew_slot >= 0) AND (crew_slot <= 2)) AND (NOT open_field))))`
+- `world_runner_crew_seat_unique`: `UNIQUE (crew_id, crew_slot)`
+- `world_runner_identity_unique`: `UNIQUE (base_style_id, role, tendency_id)`
+- `world_runner_role_known`: `CHECK ((role = ANY (ARRAY['vanguard'::text, 'burst'::text, 'sustained'::text, 'control'::text, 'counter'::text, 'support'::text, 'surger'::text, 'grinder'::text])))`
+- `world_runners_base_style_id_fkey`: `FOREIGN KEY (base_style_id) REFERENCES api.my_runner_base_styles(id)`
+- `world_runners_continent_id_fkey`: `FOREIGN KEY (continent_id) REFERENCES api.world_continents(id)`
+- `world_runners_crew_id_fkey`: `FOREIGN KEY (crew_id) REFERENCES api.rival_crews(id)`
+- `world_runners_display_order_key`: `UNIQUE (display_order)`
+- `world_runners_home_region_id_fkey`: `FOREIGN KEY (home_region_id) REFERENCES api.world_regions(id)`
+- `world_runners_pkey`: `PRIMARY KEY (id)`
 
 ## `api.xp_ledger`
 
@@ -1179,9 +1476,13 @@ Constraints:
 | `private.apply_timezone_change` | yes | ✅ |
 | `private.apply_verified_run_reward` | yes | ✅ |
 | `private.assert_apex_ladder_valid` | — | ✅ |
+| `private.assert_equip_is_valid` | yes | ✅ |
 | `private.assert_launch_content_complete` | — | ✅ |
+| `private.assert_required_slot_kept` | yes | ✅ |
 | `private.guard_profile_immutable_columns` | — | ✅ |
 | `private.month_key` | — | ✅ |
+| `private.reconcile_equipment_after_style_change` | yes | ✅ |
 | `private.reward_day` | — | ✅ |
+| `private.touch_my_runner_updated_at` | — | ✅ |
 | `private.touch_updated_at` | — | ✅ |
 

@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RunningUp V14 — design proposal</title>
+<style>
+:root{
+  --deep:#010811;--cool:#010913;--mid:#030f1f;
+  --panel:#062440;--warm:#06294a;--slate:#383d4f;
+  --teal:#0a4766;--scrim:#000812;
+  --muted:#a3b3c7;--sec:#b3cce0;--ph:#9ebad1;
+  --hi:#d1f0ff;--press:#a3d1ff;--off:#6b7a8f;
+  --a:#1ae0a8;
+  --b:#ad66ff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#080c12;color:#dbe6f2;font:15px/1.5 -apple-system,"Segoe UI",Roboto,"Noto Sans KR",sans-serif}
+.page{max-width:1400px;margin:0 auto;padding:32px 20px 80px}
+h1{font-size:26px;margin:0 0 6px}
+.lede{color:var(--muted);max-width:62ch;margin:0 0 20px}
+.banner{border:1px solid var(--hi);background:#030f1f;border-radius:10px;padding:14px 16px;margin:0 0 28px}
+.banner b{display:block;letter-spacing:.14em;font-size:12px;color:var(--a)}
+.banner p{margin:6px 0 0;color:var(--sec);font-size:13px}
+h2.sec{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+  border-top:1px solid #1b2836;padding-top:22px;margin:44px 0 18px}
+.rail{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:34px}
+
+.phone-wrap{margin:0}
+figcaption{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:0 0 8px;font-size:13px}
+figcaption b{font-size:15px}
+figcaption span{color:var(--muted);font-size:12px}
+.tag{font-style:normal;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--off);border-radius:99px;padding:1px 8px;color:var(--sec)}
+.tag-error{border-color:#d4614a;color:#f0917c}
+.note{margin:10px 2px 0;font-size:12px;color:var(--muted);line-height:1.45}
+
+.phone{position:relative;width:280px;height:606px;border-radius:26px;overflow:hidden;
+  background:var(--deep);border:1px solid #223449;display:flex;flex-direction:column;
+  box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.phone.is-disabled .view{opacity:.55}
+.safe{flex:0 0 auto;font-size:8px;letter-spacing:.1em;color:#7d92a8;display:flex;
+  align-items:center;justify-content:center;gap:6px;
+  background:repeating-linear-gradient(45deg,#101a25 0 6px,#0c141d 6px 12px)}
+.safe-top{height:30px}
+.safe-bottom{height:24px;flex-direction:column;gap:3px}
+.safe-bottom i{width:76px;height:3px;border-radius:99px;background:#43566b}
+.hud{flex:0 0 auto;display:flex;justify-content:space-between;padding:9px 14px;
+  background:var(--cool);font-size:11px;color:var(--sec)}
+.crown{color:var(--a);font-weight:700}
+.view{flex:1 1 auto;position:relative;padding:14px;overflow:hidden;background:var(--deep)}
+.tabs{flex:0 0 auto;display:flex;background:var(--mid);border-top:1px solid #1c2c3c}
+.tabs button{flex:1;background:none;border:0;padding:7px 0 6px;display:flex;
+  flex-direction:column;align-items:center;gap:2px;color:var(--muted);font-size:9px;cursor:default}
+.tabs svg{width:19px;height:19px}
+.tabs .on{color:#d1e9ff}
+.stamp{flex:0 0 auto;text-align:center;background:#0b1119;color:var(--a);
+  font-size:7px;letter-spacing:.1em;padding:3px 0;border-top:1px solid #1b2836}
+
+.eyebrow{margin:0 0 3px;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.view h2{margin:0 0 10px;font-size:19px}
+.big{margin:6px 0 12px}
+.big b{display:block;font-size:46px;line-height:1;letter-spacing:-.02em}
+.big span{font-size:11px;color:var(--muted)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.row{background:var(--panel);border-radius:8px;padding:7px 10px;display:flex;
+  justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);margin-bottom:6px}
+.row b{color:#e6f0fa;font-size:12px}
+.split .row{margin:0;display:block}
+.split .row b{display:block;margin-top:2px}
+.bar{height:5px;border-radius:99px;background:var(--slate);overflow:hidden;margin:0 0 12px}
+.bar i{display:block;height:100%;background:var(--a)}
+.cta{width:100%;min-height:44px;border:0;border-radius:11px;background:var(--hi);
+  color:#08131e;font-size:14px;font-weight:700;cursor:default}
+.cta.ghost{background:none;border:1px solid var(--off);color:var(--sec)}
+.cta:disabled{background:var(--off);color:#8d9dad}
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.quick{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.chip,.pill{background:var(--slate);border-radius:99px;padding:4px 10px;font-size:10px;
+  color:var(--sec);font-style:normal;display:inline-block}
+.pill.on{background:var(--teal);color:#062028}
+.facets{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+.micro{margin:9px 0 0;font-size:9px;color:var(--ph)}
+.list{list-style:none;margin:0;padding:0}
+.list li{background:var(--panel);border-radius:8px;padding:7px 10px;margin-bottom:5px;
+  display:flex;justify-content:space-between;font-size:11px}
+.list li span{color:var(--muted)}
+.list.tight li{padding:5px 9px;margin-bottom:4px}
+
+.live{position:relative;height:120px;border-radius:10px;overflow:hidden;margin-bottom:10px;
+  background:linear-gradient(180deg,var(--cool) 0%,var(--deep) 70%)}
+.road{position:absolute;bottom:0;left:0;right:0;height:44px;background:var(--slate)}
+.me{position:absolute;bottom:30px;left:44%;width:16px;height:30px;border-radius:7px;background:var(--a)}
+.pacer{position:absolute;bottom:32px;width:11px;height:22px;border-radius:5px;
+  background:var(--b);opacity:calc(.85 - var(--z) * .13)}
+.globe{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.dot{width:22px;height:22px;border-radius:50%;background:var(--slate);display:block}
+.dot.on{background:var(--a)}
+.ladder{display:flex;gap:2px;flex-wrap:wrap;margin-bottom:12px}
+.ladder i{width:9px;height:9px;border-radius:2px;background:var(--slate)}
+.ladder i.done{background:var(--a)}
+.ladder i.mark{background:var(--b)}
+.ladder i.crown{background:#f0c987;width:13px}
+.portrait{height:112px;border-radius:10px;background:var(--slate);display:flex;
+  align-items:center;justify-content:center;margin-bottom:10px}
+.portrait span{font-size:10px;color:var(--ph);letter-spacing:.1em}
+.grid4{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-bottom:10px}
+.cell{aspect-ratio:1;border-radius:7px;background:var(--tone,var(--slate));display:block;
+  border:2px solid transparent}
+.cell.on{border-color:var(--a)}
+.cell.more{background:var(--slate);display:flex;align-items:center;justify-content:center;
+  font-size:9px;color:var(--muted);font-style:normal}
+.slots{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px}
+.count{font-size:10px;color:var(--muted);margin-bottom:7px}
+.count b{color:#e6f0fa}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:9px}
+.tile{aspect-ratio:1;border-radius:8px;background:var(--panel);border:2px solid transparent;
+  display:flex;align-items:flex-end;padding:4px;overflow:hidden}
+.tile.on{border-color:var(--a)}
+.tile span{font-size:7px;color:var(--muted);line-height:1.2;font-style:normal}
+.pager{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:10px;
+  font-size:10px;color:var(--muted)}
+.pager button{background:var(--slate);border:0;color:var(--sec);border-radius:6px;
+  width:26px;height:22px;cursor:default}
+.strip{position:relative;height:26px;border-radius:99px;background:var(--slate);margin:8px 0}
+.strip i{position:absolute;top:9px;width:6px;height:8px;border-radius:2px;background:var(--b);opacity:.6}
+.strip b{position:absolute;top:6px;width:8px;height:14px;border-radius:3px;background:var(--a)}
+
+.veil{position:absolute;inset:0;background:var(--scrim);display:flex;align-items:center;
+  justify-content:center;backdrop-filter:blur(1px)}
+.state{text-align:center;padding:0 24px}
+.state p{margin:10px 0 3px;font-size:14px}
+.state span{display:block;font-size:10px;color:var(--muted);max-width:26ch;margin:0 auto}
+.state .glyph{font-size:30px;color:var(--muted)}
+.state.err .glyph{color:#f0917c}
+.retry{display:block;margin:12px auto 0;background:var(--hi);border:0;border-radius:9px;padding:8px 20px;
+  font-size:12px;font-weight:700;color:#08131e;cursor:default}
+.spin{width:26px;height:26px;border-radius:50%;border:3px solid var(--slate);
+  border-top-color:var(--a);margin:0 auto;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+table{border-collapse:collapse;width:100%;font-size:13px;margin-top:8px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid #182634}
+th{color:var(--muted);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+td b{color:var(--a)}
+@media (max-width:640px){.phone{width:100%;max-width:280px}}
+</style>
+</head><body>
+<div class="page">
+
+<h1>RunningUp V14 — screen design proposal</h1>
+<p class="lede">Fixed-camera 2.5D, portrait, read at arm’s length while running. Every number,
+name and colour on this page is read out of the repository — the content the game actually
+ships and the palette the app actually uses. Nothing here is a mock-up number.</p>
+
+<div class="banner">
+  <b>DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD · NATIVE FEATURES NOT EXECUTED</b>
+  <p>This is a drawing, not a capture. GPS, Health Connect, the system back button and
+  notifications are Android-only and are not running here — a real screenshot of the app
+  would be labelled CURRENT UNITY RUNTIME CAPTURE and would look different in the details.</p>
+</div>
+
+<table>
+  <tr><th>Source</th><th>Value</th></tr>
+  <tr><td>Continents / regions / courses</td><td><b>12 / 192 / 2,304</b></td></tr>
+  <tr><td>Monthly checkpoints → World Crown</td><td><b>121 → 1000 km</b></td></tr>
+  <tr><td>My Runner base styles</td><td><b>24</b></td></tr>
+  <tr><td>Named world runners</td><td><b>204</b></td></tr>
+  <tr><td>Wearable items / sets / slots</td><td><b>684 / 120 / 18</b></td></tr>
+  <tr><td>Global Event capacity</td><td><b>50–100</b> (load test NOT_RUN)</td></tr>
+  <tr><td>Palette</td><td>parsed from <b>Design/V14Design.cs</b></td></tr>
+</table>
+
+<h2 class="sec">Screens</h2>
+<div class="rail">
+<figure class="phone-wrap" id="scr-home">
+  <figcaption>
+    <b>Home</b><span>the one screen that must work at arm’s length, moving</span>
+    
+  </figcaption>
+  <div class="phone ">
+    <div class="safe safe-top" title="status bar / camera cutout — the interface never enters this">
+      <span>SAFE AREA — status bar</span>
+    </div>
+    <header class="hud">
+      <div class="hud-l"><span class="crown">121</span> checkpoints</div>
+      <div class="hud-r">1000 km</div>
+    </header>
+    <main class="view">
+    <p class="eyebrow">Today’s contract</p>
+    <h2>Steady 8 km</h2>
+    <div class="big"><b>8.0</b><span>km target</span></div>
+    <div class="split"><div class="row"><span>This month</span><b>312 km</b></div><div class="row"><span>Next checkpoint</span><b>315 km</b></div></div>
+    <div class="bar"><i style="width:31%"></i></div>
+    <button class="cta">Start run</button>
+    <div class="quick"><span class="chip">Sync a run</span><span class="chip">World</span><span class="chip">Race</span></div></main>
+    <div class="stamp">DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD</div>
+    <nav class="tabs">
+      <button class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#d1e9ff"/></svg><span>Home</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 22l3-7-2-3-3 4-2-1 4-6 4-1 5 3 3-1 1 2-4 2-3-2-1 3 3 4v6h-2v-5l-3-3-2 5z" fill="#a3b3c7"/></svg><span>Run</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 1.6c1.2 0 2.6 2.9 2.6 7.4S13.2 19.4 12 19.4 9.4 16.5 9.4 12 10.8 4.6 12 4.6zM3.6 10.4h16.8v1.4H3.6z" fill="#a3b3c7"/></svg><span>World</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-8H4zm6 0h4V6h-4zm6 0h4v-4h-4z" fill="#a3b3c7"/></svg><span>Journey</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z" fill="#a3b3c7"/></svg><span>Runner</span></button>
+    </nav>
+    <div class="safe safe-bottom" title="gesture / back bar — the interface never enters this">
+      <span>SAFE AREA — gesture bar</span><i></i>
+    </div>
+  </div>
+  <p class="note">One action, one number. Everything else is a chip.</p>
+</figure>
+<figure class="phone-wrap" id="scr-active">
+  <figcaption>
+    <b>Active Training</b><span>read at a glance while moving — three numbers, nothing else</span>
+    
+  </figcaption>
+  <div class="phone ">
+    <div class="safe safe-top" title="status bar / camera cutout — the interface never enters this">
+      <span>SAFE AREA — status bar</span>
+    </div>
+    <header class="hud">
+      <div class="hud-l"><span class="crown">121</span> checkpoints</div>
+      <div class="hud-r">1000 km</div>
+    </header>
+    <main class="view">
+    <div class="live"><div class="road"></div><div class="me"></div></div>
+    <div class="big"><b>5.42</b><span>km</span></div>
+    <div class="split"><div class="row"><span>Pace</span><b>5:38 /km</b></div><div class="row"><span>Time</span><b>30:34</b></div></div>
+    <div class="dual"><button class="cta">Pause</button><button class="cta ghost">Finish</button></div>
+    <p class="micro">Back returns to Home. The run keeps going.</p></main>
+    <div class="stamp">DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD</div>
+    <nav class="tabs">
+      <button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#a3b3c7"/></svg><span>Home</span></button><button class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 22l3-7-2-3-3 4-2-1 4-6 4-1 5 3 3-1 1 2-4 2-3-2-1 3 3 4v6h-2v-5l-3-3-2 5z" fill="#d1e9ff"/></svg><span>Run</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 1.6c1.2 0 2.6 2.9 2.6 7.4S13.2 19.4 12 19.4 9.4 16.5 9.4 12 10.8 4.6 12 4.6zM3.6 10.4h16.8v1.4H3.6z" fill="#a3b3c7"/></svg><span>World</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-8H4zm6 0h4V6h-4zm6 0h4v-4h-4z" fill="#a3b3c7"/></svg><span>Journey</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z" fill="#a3b3c7"/></svg><span>Runner</span></button>
+    </nav>
+    <div class="safe safe-bottom" title="gesture / back bar — the interface never enters this">
+      <span>SAFE AREA — gesture bar</span><i></i>
+    </div>
+  </div>
+  <p class="note">System back here NEVER discards the run — the single most damaging possible bug.</p>
+</figure>
+<figure class="phone-wrap" id="scr-world">
+  <figcaption>
+    <b>World</b><span>12 continents · 192 regions · 2,304 courses</span>
+    
+  </figcaption>
+  <div class="phone ">
+    <div class="safe safe-top" title="status bar / camera cutout — the interface never enters this">
+      <span>SAFE AREA — status bar</span>
+    </div>
+    <header class="hud">
+      <div class="hud-l"><span class="crown">121</span> checkpoints</div>
+      <div class="hud-r">1000 km</div>
+    </header>
+    <main class="view">
+    <p class="eyebrow">Continent</p>
+    <h2>Lumena, Citadel of First Light</h2>
+    <div class="globe"><i class="dot on" title="Lumena, Citadel of First Light"></i><i class="dot " title="Verdia, Forest of Breath"></i><i class="dot " title="Rubra, Canyon of Red Veins"></i><i class="dot " title="Anel, Plain of Winds"></i><i class="dot " title="Serene, Coast of Starwaves"></i><i class="dot " title="Voltis, Thunderforge City"></i><i class="dot " title="Hora, the Glass Desert"></i><i class="dot " title="Nival, the White Ridge"></i><i class="dot " title="Kael, the Floating Archipelago"></i><i class="dot " title="Neris, the Abyssal Ruin"></i><i class="dot " title="Tempora, the Clockwork Bastion"></i><i class="dot " title="Origin, the Worldline Rift"></i></div>
+    <p class="eyebrow">Courses in Dawnward Gate</p>
+    <ul class="list">
+      <li><b>Dawnward Gate 1K Loop</b><span>1 km · road</span></li><li><b>Dawnward Gate 1K Out and Back</b><span>1 km · road</span></li><li><b>Dawnward Gate 1K Point to Point</b><span>1 km · road</span></li><li><b>Dawnward Gate 2K Loop</b><span>2 km · road</span></li>
+    </ul>
+    <p class="micro">Back steps continent ← region ← course.</p></main>
+    <div class="stamp">DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD</div>
+    <nav class="tabs">
+      <button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#a3b3c7"/></svg><span>Home</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 22l3-7-2-3-3 4-2-1 4-6 4-1 5 3 3-1 1 2-4 2-3-2-1 3 3 4v6h-2v-5l-3-3-2 5z" fill="#a3b3c7"/></svg><span>Run</span></button><button class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 1.6c1.2 0 2.6 2.9 2.6 7.4S13.2 19.4 12 19.4 9.4 16.5 9.4 12 10.8 4.6 12 4.6zM3.6 10.4h16.8v1.4H3.6z" fill="#d1e9ff"/></svg><span>World</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-8H4zm6 0h4V6h-4zm6 0h4v-4h-4z" fill="#a3b3c7"/></svg><span>Journey</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z" fill="#a3b3c7"/></svg><span>Runner</span></button>
+    </nav>
+    <div class="safe safe-bottom" title="gesture / back bar — the interface never enters this">
+      <span>SAFE AREA — gesture bar</span><i></i>
+    </div>
+  </div>
+  <p class="note">All 12 continents visible from first login. Nothing is Coming Soon.</p>
+</figure>
+<figure class="phone-wrap" id="scr-apex">
+  <figcaption>
+    <b>Monthly Apex</b><span>121 checkpoints to the World Crown at 1000 km</span>
+    
+  </figcaption>
+  <div class="phone ">
+    <div class="safe safe-top" title="status bar / camera cutout — the interface never enters this">
+      <span>SAFE AREA — status bar</span>
+    </div>
+    <header class="hud">
+      <div class="hud-l"><span class="crown">121</span> checkpoints</div>
+      <div class="hud-r">1000 km</div>
+    </header>
+    <main class="view">
+    <div class="big"><b>312</b><span>km this month</span></div>
+    <div class="ladder">
+      
+        <i class="done  "
+           title="1 km"></i>
+        <i class="done  "
+           title="8 km"></i>
+        <i class="done  "
+           title="24 km"></i>
+        <i class="done mark "
+           title="42.195 km"></i>
+        <i class="done  "
+           title="67 km"></i>
+        <i class="done  "
+           title="98 km"></i>
+        <i class="done  "
+           title="134 km"></i>
+        <i class="done  "
+           title="173 km"></i>
+        <i class="done  "
+           title="217 km"></i>
+        <i class="done  "
+           title="264 km"></i>
+        <i class="  "
+           title="315 km"></i>
+        <i class="  "
+           title="369 km"></i>
+        <i class="  "
+           title="427 km"></i>
+        <i class="  "
+           title="488 km"></i>
+        <i class="  "
+           title="552 km"></i>
+        <i class="  "
+           title="620 km"></i>
+        <i class="  "
+           title="690 km"></i>
+        <i class="  "
+           title="763 km"></i>
+        <i class="  "
+           title="839 km"></i>
+        <i class="  "
+           title="918 km"></i>
+        <i class="  crown"
+           title="1000 km"></i>
+    </div>
+    <div class="split"><div class="row"><span>Rank</span><b>Vanguard</b></div><div class="row"><span>Marathon point</span><b>#19</b></div></div>
+    <div class="row"><span>Final</span><b>World Crown · 1000 km</b></div>
+    <p class="micro">Nothing exists above the World Crown.</p></main>
+    <div class="stamp">DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD</div>
+    <nav class="tabs">
+      <button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#a3b3c7"/></svg><span>Home</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 22l3-7-2-3-3 4-2-1 4-6 4-1 5 3 3-1 1 2-4 2-3-2-1 3 3 4v6h-2v-5l-3-3-2 5z" fill="#a3b3c7"/></svg><span>Run</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 1.6c1.2 0 2.6 2.9 2.6 7.4S13.2 19.4 12 19.4 9.4 16.5 9.4 12 10.8 4.6 12 4.6zM3.6 10.4h16.8v1.4H3.6z" fill="#a3b3c7"/></svg><span>World</span></button><button class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-8H4zm6 0h4V6h-4zm6 0h4v-4h-4z" fill="#d1e9ff"/></svg><span>Journey</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z" fill="#a3b3c7"/></svg><span>Runner</span></button>
+    </nav>
+    <div class="safe safe-bottom" title="gesture / back bar — the interface never enters this">
+      <span>SAFE AREA — gesture bar</span><i></i>
+    </div>
+  </div>
+  <p class="note">The marathon sits at exactly 42.195 km — that is why the count is 121, not 120.</p>
+</figure>
+<figure class="phone-wrap" id="scr-myrunner">
+  <figcaption>
+    <b>My Runner  (planned)</b><span>24 base styles · one account, one runner</span>
+    
+  </figcaption>
+  <div class="phone ">
+    <div class="safe safe-top" title="status bar / camera cutout — the interface never enters this">
+      <span>SAFE AREA — status bar</span>
+    </div>
+    <header class="hud">
+      <div class="hud-l"><span class="crown">121</span> checkpoints</div>
+      <div class="hud-r">1000 km</div>
+    </header>
+    <main class="view">
+    <p class="eyebrow">Your runner</p>
+    <div class="portrait"><span>art pending</span></div>
+    <p class="eyebrow">Base style — 24 available</p>
+    <div class="grid4">
+      <i class="cell on" style="--tone:#E5BE9B" title="Sprout · child · compact"></i>
+      <i class="cell " style="--tone:#7C5030" title="Kite · child · wiry"></i>
+      <i class="cell " style="--tone:#A26E43" title="Ember · teen · lean"></i>
+      <i class="cell " style="--tone:#F2D7C4" title="Static · teen · tall_slim"></i>
+      <i class="cell " style="--tone:#D19E6F" title="Lark · teen · athletic"></i>
+      <i class="cell " style="--tone:#5A3823" title="Quarry · young_adult · broad"></i>
+      <i class="cell " style="--tone:#B98A5E" title="Meridian · young_adult · long_limbed"></i>
+      <i class="cell " style="--tone:#E5BE9B" title="Ash · young_adult · wiry"></i>
+      <i class="cell " style="--tone:#3D2418" title="Pillar · young_adult · muscular"></i>
+      <i class="cell " style="--tone:#A26E43" title="Current · young_adult · athletic"></i>
+      <i class="cell " style="--tone:#F2D7C4" title="Ledger · adult · stocky"></i>
+      <i class="cell " style="--tone:#7C5030" title="Harbor · adult · full"></i>
+      <i class="cell more">+12</i></div>
+    <div class="facets">
+      <span class="chip">child</span><span class="chip">teen</span><span class="chip">young adult</span><span class="chip">adult</span><span class="chip">midlife</span><span class="chip">senior</span><span class="chip">elder</span>
+    </div>
+    <button class="cta">Save</button></main>
+    <div class="stamp">DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD</div>
+    <nav class="tabs">
+      <button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#a3b3c7"/></svg><span>Home</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 22l3-7-2-3-3 4-2-1 4-6 4-1 5 3 3-1 1 2-4 2-3-2-1 3 3 4v6h-2v-5l-3-3-2 5z" fill="#a3b3c7"/></svg><span>Run</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 1.6c1.2 0 2.6 2.9 2.6 7.4S13.2 19.4 12 19.4 9.4 16.5 9.4 12 10.8 4.6 12 4.6zM3.6 10.4h16.8v1.4H3.6z" fill="#a3b3c7"/></svg><span>World</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-8H4zm6 0h4V6h-4zm6 0h4v-4h-4z" fill="#a3b3c7"/></svg><span>Journey</span></button><button class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z" fill="#d1e9ff"/></svg><span>Runner</span></button>
+    </nav>
+    <div class="safe safe-bottom" title="gesture / back bar — the interface never enters this">
+      <span>SAFE AREA — gesture bar</span><i></i>
+    </div>
+  </div>
+  <p class="note">Ages 7, builds 12, adaptive athletes 5. Meshes are BLOCKED_ART_ASSET.</p>
+</figure>
+<figure class="phone-wrap" id="scr-wardrobe">
+  <figcaption>
+    <b>Wardrobe  (planned)</b><span>684 items · 120 sets · 18 slots</span>
+    
+  </figcaption>
+  <div class="phone ">
+    <div class="safe safe-top" title="status bar / camera cutout — the interface never enters this">
+      <span>SAFE AREA — status bar</span>
+    </div>
+    <header class="hud">
+      <div class="hud-l"><span class="crown">121</span> checkpoints</div>
+      <div class="hud-r">1000 km</div>
+    </header>
+    <main class="view">
+    <p class="eyebrow">Slot</p>
+    <div class="slots"><i class="pill ">Hair</i><i class="pill ">Headwear</i><i class="pill ">Face</i><i class="pill ">Eyewear</i><i class="pill ">Ear</i><i class="pill ">Neck</i><i class="pill on">Top</i><i class="pill ">Outer</i><i class="pill ">Arm</i><i class="pill">+9</i></div>
+    <div class="count">Showing <b>1–12</b> of <b>120</b> tops</div>
+    <div class="grid3">
+      <i class="tile " title="Vigil Singlet"><span>Vigil Singlet</span></i>
+      <i class="tile on" title="Reliquary Long Sleeve"><span>Reliquary Long Sleeve</span></i>
+      <i class="tile " title="Rampart Singlet"><span>Rampart Singlet</span></i>
+      <i class="tile " title="Matins Singlet"><span>Matins Singlet</span></i>
+      <i class="tile " title="Censer Singlet"><span>Censer Singlet</span></i>
+      <i class="tile " title="Chorister Long Sleeve"><span>Chorister Long Sleeve</span></i>
+      <i class="tile " title="Sunspear Singlet"><span>Sunspear Singlet</span></i>
+      <i class="tile " title="Ivory Singlet"><span>Ivory Singlet</span></i>
+      <i class="tile " title="Beacon Singlet"><span>Beacon Singlet</span></i></div>
+    <div class="pager"><button>‹</button><span>1 / 10</span><button>›</button></div>
+    <button class="cta">Equip</button></main>
+    <div class="stamp">DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD</div>
+    <nav class="tabs">
+      <button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#a3b3c7"/></svg><span>Home</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 22l3-7-2-3-3 4-2-1 4-6 4-1 5 3 3-1 1 2-4 2-3-2-1 3 3 4v6h-2v-5l-3-3-2 5z" fill="#a3b3c7"/></svg><span>Run</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 1.6c1.2 0 2.6 2.9 2.6 7.4S13.2 19.4 12 19.4 9.4 16.5 9.4 12 10.8 4.6 12 4.6zM3.6 10.4h16.8v1.4H3.6z" fill="#a3b3c7"/></svg><span>World</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-8H4zm6 0h4V6h-4zm6 0h4v-4h-4z" fill="#a3b3c7"/></svg><span>Journey</span></button><button class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z" fill="#d1e9ff"/></svg><span>Runner</span></button>
+    </nav>
+    <div class="safe safe-bottom" title="gesture / back bar — the interface never enters this">
+      <span>SAFE AREA — gesture bar</span><i></i>
+    </div>
+  </div>
+  <p class="note">Paged, not a wall of 684. The direction forbids instantiating the whole catalogue at once.</p>
+</figure>
+<figure class="phone-wrap" id="scr-globalevent">
+  <figcaption>
+    <b>Global Event  (planned)</b><span>50–100 runners</span>
+    
+  </figcaption>
+  <div class="phone ">
+    <div class="safe safe-top" title="status bar / camera cutout — the interface never enters this">
+      <span>SAFE AREA — status bar</span>
+    </div>
+    <header class="hud">
+      <div class="hud-l"><span class="crown">121</span> checkpoints</div>
+      <div class="hud-r">1000 km</div>
+    </header>
+    <main class="view">
+    <p class="eyebrow">weekly · Canyon Ten</p>
+    <h2>10 km</h2>
+    <div class="big"><b>04:12</b><span>until check-in</span></div>
+    <div class="split"><div class="row"><span>Field</span><b>100 max</b></div><div class="row"><span>Heat</span><b>25 per heat</b></div></div>
+    <div class="strip"><i style="left:3.0%"></i><i style="left:7.4%"></i><i style="left:11.8%"></i><i style="left:16.2%"></i><i style="left:20.6%"></i><i style="left:25.0%"></i><i style="left:29.4%"></i><i style="left:33.8%"></i><i style="left:38.2%"></i><i style="left:42.6%"></i><i style="left:47.0%"></i><i style="left:51.4%"></i><i style="left:55.8%"></i><i style="left:60.2%"></i><i style="left:64.6%"></i><i style="left:69.0%"></i><i style="left:73.4%"></i><i style="left:77.8%"></i><i style="left:82.2%"></i><i style="left:86.6%"></i><b style="left:46%"></b></div>
+    <p class="micro">Progress and rank only. Never a location.</p>
+    <button class="cta">Check in</button></main>
+    <div class="stamp">DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD</div>
+    <nav class="tabs">
+      <button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#a3b3c7"/></svg><span>Home</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 22l3-7-2-3-3 4-2-1 4-6 4-1 5 3 3-1 1 2-4 2-3-2-1 3 3 4v6h-2v-5l-3-3-2 5z" fill="#a3b3c7"/></svg><span>Run</span></button><button class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 1.6c1.2 0 2.6 2.9 2.6 7.4S13.2 19.4 12 19.4 9.4 16.5 9.4 12 10.8 4.6 12 4.6zM3.6 10.4h16.8v1.4H3.6z" fill="#d1e9ff"/></svg><span>World</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-8H4zm6 0h4V6h-4zm6 0h4v-4h-4z" fill="#a3b3c7"/></svg><span>Journey</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z" fill="#a3b3c7"/></svg><span>Runner</span></button>
+    </nav>
+    <div class="safe safe-bottom" title="gesture / back bar — the interface never enters this">
+      <span>SAFE AREA — gesture bar</span><i></i>
+    </div>
+  </div>
+  <p class="note">Capacity is designed, constrained and gated. The 50- and 100-runner load tests are NOT_RUN.</p>
+</figure>
+<figure class="phone-wrap" id="scr-race">
+  <figcaption>
+    <b>Live Race</b><span>204 named world runners exist; 8 line up</span>
+    
+  </figcaption>
+  <div class="phone ">
+    <div class="safe safe-top" title="status bar / camera cutout — the interface never enters this">
+      <span>SAFE AREA — status bar</span>
+    </div>
+    <header class="hud">
+      <div class="hud-l"><span class="crown">121</span> checkpoints</div>
+      <div class="hud-r">1000 km</div>
+    </header>
+    <main class="view">
+    <div class="live"><div class="road"></div>
+      <i class="pacer" style="left:18%;--z:0"></i><i class="pacer" style="left:34%;--z:1"></i><i class="pacer" style="left:46%;--z:2"></i><i class="pacer" style="left:58%;--z:3"></i><i class="pacer" style="left:70%;--z:4"></i>
+      <div class="me"></div></div>
+    <div class="big"><b>3rd</b><span>of 8</span></div>
+    <ul class="list tight">
+      <li><b>1. Halvard</b><span>front from gun</span></li><li><b>2. Isolde</b><span>metronome</span></li><li><b>3. Pell</b><span>negative split</span></li><li><b>4. Corven</b><span>sit and pounce</span></li>
+    </ul></main>
+    <div class="stamp">DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD</div>
+    <nav class="tabs">
+      <button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#a3b3c7"/></svg><span>Home</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 22l3-7-2-3-3 4-2-1 4-6 4-1 5 3 3-1 1 2-4 2-3-2-1 3 3 4v6h-2v-5l-3-3-2 5z" fill="#a3b3c7"/></svg><span>Run</span></button><button class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 1.6c1.2 0 2.6 2.9 2.6 7.4S13.2 19.4 12 19.4 9.4 16.5 9.4 12 10.8 4.6 12 4.6zM3.6 10.4h16.8v1.4H3.6z" fill="#d1e9ff"/></svg><span>World</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-8H4zm6 0h4V6h-4zm6 0h4v-4h-4z" fill="#a3b3c7"/></svg><span>Journey</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z" fill="#a3b3c7"/></svg><span>Runner</span></button>
+    </nav>
+    <div class="safe safe-bottom" title="gesture / back bar — the interface never enters this">
+      <span>SAFE AREA — gesture bar</span><i></i>
+    </div>
+  </div>
+  <p class="note">A rival is described entirely by how it runs. No health, no damage, no attack.</p>
+</figure>
+<figure class="phone-wrap" id="scr-training">
+  <figcaption>
+    <b>Training</b><span>every distance and style available on day one</span>
+    
+  </figcaption>
+  <div class="phone ">
+    <div class="safe safe-top" title="status bar / camera cutout — the interface never enters this">
+      <span>SAFE AREA — status bar</span>
+    </div>
+    <header class="hud">
+      <div class="hud-l"><span class="crown">121</span> checkpoints</div>
+      <div class="hud-r">1000 km</div>
+    </header>
+    <main class="view">
+    <p class="eyebrow">Distance</p>
+    <div class="facets"><span class="chip">1 km</span><span class="chip">5 km</span><span class="chip">10 km</span><span class="chip">Half</span><span class="chip">Marathon</span><span class="chip">50 km</span><span class="chip">Custom</span></div>
+    <p class="eyebrow">Style</p>
+    <div class="facets"><span class="chip">Easy</span><span class="chip">Steady</span><span class="chip">Tempo</span><span class="chip">Intervals</span><span class="chip">Long run</span><span class="chip">Run-walk</span></div>
+    <p class="eyebrow">Course</p>
+    <div class="row"><span>Dawnward Gate 1K Loop</span><b>1 km</b></div>
+    <button class="cta">Start</button>
+    <p class="micro">No distance is locked behind a shorter one.</p></main>
+    <div class="stamp">DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD</div>
+    <nav class="tabs">
+      <button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#a3b3c7"/></svg><span>Home</span></button><button class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 22l3-7-2-3-3 4-2-1 4-6 4-1 5 3 3-1 1 2-4 2-3-2-1 3 3 4v6h-2v-5l-3-3-2 5z" fill="#d1e9ff"/></svg><span>Run</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 1.6c1.2 0 2.6 2.9 2.6 7.4S13.2 19.4 12 19.4 9.4 16.5 9.4 12 10.8 4.6 12 4.6zM3.6 10.4h16.8v1.4H3.6z" fill="#a3b3c7"/></svg><span>World</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-8H4zm6 0h4V6h-4zm6 0h4v-4h-4z" fill="#a3b3c7"/></svg><span>Journey</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z" fill="#a3b3c7"/></svg><span>Runner</span></button>
+    </nav>
+    <div class="safe safe-bottom" title="gesture / back bar — the interface never enters this">
+      <span>SAFE AREA — gesture bar</span><i></i>
+    </div>
+  </div>
+  <p class="note">DL-2: a recommendation is never a restriction.</p>
+</figure>
+<figure class="phone-wrap" id="scr-result">
+  <figcaption>
+    <b>Race Result</b><span>losing costs nothing but the placing</span>
+    
+  </figcaption>
+  <div class="phone ">
+    <div class="safe safe-top" title="status bar / camera cutout — the interface never enters this">
+      <span>SAFE AREA — status bar</span>
+    </div>
+    <header class="hud">
+      <div class="hud-l"><span class="crown">121</span> checkpoints</div>
+      <div class="hud-r">1000 km</div>
+    </header>
+    <main class="view">
+    <div class="big"><b>2nd</b><span>of 8</span></div>
+    <div class="split"><div class="row"><span>Distance</span><b>10.00 km</b></div><div class="row"><span>Time</span><b>48:12</b></div></div>
+    <div class="row"><span>Verification</span><b>Grade A</b></div>
+    <div class="row"><span>Fitness XP</span><b>+340</b></div>
+    <div class="quick"><span class="chip">Rematch</span><span class="chip">Share</span></div>
+    <p class="micro">Nothing was taken. The rematch is immediate.</p></main>
+    <div class="stamp">DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD</div>
+    <nav class="tabs">
+      <button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#a3b3c7"/></svg><span>Home</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 22l3-7-2-3-3 4-2-1 4-6 4-1 5 3 3-1 1 2-4 2-3-2-1 3 3 4v6h-2v-5l-3-3-2 5z" fill="#a3b3c7"/></svg><span>Run</span></button><button class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 1.6c1.2 0 2.6 2.9 2.6 7.4S13.2 19.4 12 19.4 9.4 16.5 9.4 12 10.8 4.6 12 4.6zM3.6 10.4h16.8v1.4H3.6z" fill="#d1e9ff"/></svg><span>World</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-8H4zm6 0h4V6h-4zm6 0h4v-4h-4z" fill="#a3b3c7"/></svg><span>Journey</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z" fill="#a3b3c7"/></svg><span>Runner</span></button>
+    </nav>
+    <div class="safe safe-bottom" title="gesture / back bar — the interface never enters this">
+      <span>SAFE AREA — gesture bar</span><i></i>
+    </div>
+  </div>
+  
+</figure></div>
+
+<h2 class="sec">The states that get forgotten</h2>
+<p class="lede">Loading, empty, error and disabled are where an app stops feeling finished.
+Each is drawn here so it is a decision rather than an omission — and a disabled control
+always says what would enable it.</p>
+<div class="rail">
+<figure class="phone-wrap" id="scr-state-loading">
+  <figcaption>
+    <b>Activity History — loading</b><span>every screen needs these four, and they are what gets forgotten</span>
+    <em class="tag tag-loading">loading</em>
+  </figcaption>
+  <div class="phone ">
+    <div class="safe safe-top" title="status bar / camera cutout — the interface never enters this">
+      <span>SAFE AREA — status bar</span>
+    </div>
+    <header class="hud">
+      <div class="hud-l"><span class="crown">121</span> checkpoints</div>
+      <div class="hud-r">1000 km</div>
+    </header>
+    <main class="view">
+      <ul class="list"><li><b>12 Jul</b><span>10.0 km</span></li><li><b>10 Jul</b><span>5.2 km</span></li><li><b>08 Jul</b><span>21.1 km</span></li></ul><div class="veil"><div class="state"><div class="spin"></div><p>Loading</p></div></div></main>
+    <div class="stamp">DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD</div>
+    <nav class="tabs">
+      <button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#a3b3c7"/></svg><span>Home</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 22l3-7-2-3-3 4-2-1 4-6 4-1 5 3 3-1 1 2-4 2-3-2-1 3 3 4v6h-2v-5l-3-3-2 5z" fill="#a3b3c7"/></svg><span>Run</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 1.6c1.2 0 2.6 2.9 2.6 7.4S13.2 19.4 12 19.4 9.4 16.5 9.4 12 10.8 4.6 12 4.6zM3.6 10.4h16.8v1.4H3.6z" fill="#a3b3c7"/></svg><span>World</span></button><button class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-8H4zm6 0h4V6h-4zm6 0h4v-4h-4z" fill="#d1e9ff"/></svg><span>Journey</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z" fill="#a3b3c7"/></svg><span>Runner</span></button>
+    </nav>
+    <div class="safe safe-bottom" title="gesture / back bar — the interface never enters this">
+      <span>SAFE AREA — gesture bar</span><i></i>
+    </div>
+  </div>
+  <p class="note">The loading state, drawn rather than assumed.</p>
+</figure>
+<figure class="phone-wrap" id="scr-state-empty">
+  <figcaption>
+    <b>Activity History — empty</b><span>every screen needs these four, and they are what gets forgotten</span>
+    <em class="tag tag-empty">empty</em>
+  </figcaption>
+  <div class="phone ">
+    <div class="safe safe-top" title="status bar / camera cutout — the interface never enters this">
+      <span>SAFE AREA — status bar</span>
+    </div>
+    <header class="hud">
+      <div class="hud-l"><span class="crown">121</span> checkpoints</div>
+      <div class="hud-r">1000 km</div>
+    </header>
+    <main class="view">
+      <ul class="list"><li><b>12 Jul</b><span>10.0 km</span></li><li><b>10 Jul</b><span>5.2 km</span></li><li><b>08 Jul</b><span>21.1 km</span></li></ul><div class="veil"><div class="state"><div class="glyph">—</div><p>Nothing here yet</p>
+            <span>Finish a run and this fills in.</span></div></div></main>
+    <div class="stamp">DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD</div>
+    <nav class="tabs">
+      <button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#a3b3c7"/></svg><span>Home</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 22l3-7-2-3-3 4-2-1 4-6 4-1 5 3 3-1 1 2-4 2-3-2-1 3 3 4v6h-2v-5l-3-3-2 5z" fill="#a3b3c7"/></svg><span>Run</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 1.6c1.2 0 2.6 2.9 2.6 7.4S13.2 19.4 12 19.4 9.4 16.5 9.4 12 10.8 4.6 12 4.6zM3.6 10.4h16.8v1.4H3.6z" fill="#a3b3c7"/></svg><span>World</span></button><button class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-8H4zm6 0h4V6h-4zm6 0h4v-4h-4z" fill="#d1e9ff"/></svg><span>Journey</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z" fill="#a3b3c7"/></svg><span>Runner</span></button>
+    </nav>
+    <div class="safe safe-bottom" title="gesture / back bar — the interface never enters this">
+      <span>SAFE AREA — gesture bar</span><i></i>
+    </div>
+  </div>
+  <p class="note">The empty state, drawn rather than assumed.</p>
+</figure>
+<figure class="phone-wrap" id="scr-state-error">
+  <figcaption>
+    <b>Activity History — error</b><span>every screen needs these four, and they are what gets forgotten</span>
+    <em class="tag tag-error">error</em>
+  </figcaption>
+  <div class="phone ">
+    <div class="safe safe-top" title="status bar / camera cutout — the interface never enters this">
+      <span>SAFE AREA — status bar</span>
+    </div>
+    <header class="hud">
+      <div class="hud-l"><span class="crown">121</span> checkpoints</div>
+      <div class="hud-r">1000 km</div>
+    </header>
+    <main class="view">
+      <ul class="list"><li><b>12 Jul</b><span>10.0 km</span></li><li><b>10 Jul</b><span>5.2 km</span></li><li><b>08 Jul</b><span>21.1 km</span></li></ul><div class="veil"><div class="state err"><div class="glyph">!</div><p>Could not load</p>
+            <span>Check your connection.</span><button class="retry">Retry</button></div></div></main>
+    <div class="stamp">DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD</div>
+    <nav class="tabs">
+      <button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#a3b3c7"/></svg><span>Home</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 22l3-7-2-3-3 4-2-1 4-6 4-1 5 3 3-1 1 2-4 2-3-2-1 3 3 4v6h-2v-5l-3-3-2 5z" fill="#a3b3c7"/></svg><span>Run</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 1.6c1.2 0 2.6 2.9 2.6 7.4S13.2 19.4 12 19.4 9.4 16.5 9.4 12 10.8 4.6 12 4.6zM3.6 10.4h16.8v1.4H3.6z" fill="#a3b3c7"/></svg><span>World</span></button><button class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-8H4zm6 0h4V6h-4zm6 0h4v-4h-4z" fill="#d1e9ff"/></svg><span>Journey</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z" fill="#a3b3c7"/></svg><span>Runner</span></button>
+    </nav>
+    <div class="safe safe-bottom" title="gesture / back bar — the interface never enters this">
+      <span>SAFE AREA — gesture bar</span><i></i>
+    </div>
+  </div>
+  <p class="note">The error state, drawn rather than assumed.</p>
+</figure>
+<figure class="phone-wrap" id="scr-state-disabled">
+  <figcaption>
+    <b>Activity History — disabled</b><span>every screen needs these four, and they are what gets forgotten</span>
+    <em class="tag tag-disabled">disabled</em>
+  </figcaption>
+  <div class="phone is-disabled">
+    <div class="safe safe-top" title="status bar / camera cutout — the interface never enters this">
+      <span>SAFE AREA — status bar</span>
+    </div>
+    <header class="hud">
+      <div class="hud-l"><span class="crown">121</span> checkpoints</div>
+      <div class="hud-r">1000 km</div>
+    </header>
+    <main class="view">
+      <p class="eyebrow">Sync</p>
+      <h2>Health Connect</h2>
+      <div class="row"><span>Permission</span><b>not granted</b></div>
+      <button class="cta" disabled>Import runs</button>
+      <p class="micro">Grant permission in Settings to enable this.</p></main>
+    <div class="stamp">DESIGN PROPOSAL · NOT THE RUNNING UNITY BUILD</div>
+    <nav class="tabs">
+      <button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="#a3b3c7"/></svg><span>Home</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM8 22l3-7-2-3-3 4-2-1 4-6 4-1 5 3 3-1 1 2-4 2-3-2-1 3 3 4v6h-2v-5l-3-3-2 5z" fill="#a3b3c7"/></svg><span>Run</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 1.6c1.2 0 2.6 2.9 2.6 7.4S13.2 19.4 12 19.4 9.4 16.5 9.4 12 10.8 4.6 12 4.6zM3.6 10.4h16.8v1.4H3.6z" fill="#a3b3c7"/></svg><span>World</span></button><button class="on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-8H4zm6 0h4V6h-4zm6 0h4v-4h-4z" fill="#d1e9ff"/></svg><span>Journey</span></button><button class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-4 0-8 2-8 5v3h16v-3c0-3-4-5-8-5z" fill="#a3b3c7"/></svg><span>Runner</span></button>
+    </nav>
+    <div class="safe safe-bottom" title="gesture / back bar — the interface never enters this">
+      <span>SAFE AREA — gesture bar</span><i></i>
+    </div>
+  </div>
+  <p class="note">A disabled button says why it is disabled and what would enable it.</p>
+</figure></div>
+
+<h2 class="sec">Safe area</h2>
+<p class="lede">The hatched bands at the top and bottom of every frame are the phone’s
+status bar and gesture bar. The interface never enters them. This app has collided with
+both before, so they are drawn on every single frame rather than assumed — a design that
+looks right only on a phone without a cutout is not a design that works.</p>
+
+<h2 class="sec">Why this design</h2>
+<table>
+  <tr><th>Constraint</th><th>What it decided</th></tr>
+  <tr><td>Read while running, moving, at arm’s length</td><td>one primary action per screen, one 46px number, everything else demoted to a chip</td></tr>
+  <tr><td>Fixed-camera 2.5D, portrait</td><td>a top HUD and bottom nav that never move between screens; the live view keeps the middle</td></tr>
+  <tr><td>Status bar and gesture bar have collided before</td><td>the safe area is drawn on every frame, not assumed</td></tr>
+  <tr><td>684 items and 204 runners now exist</td><td>catalogues are paged with a count header — never a wall of 684 tiles</td></tr>
+  <tr><td>Retoning is a separate decision from layout</td><td>the palette is the app’s current one, unchanged, so this review is about layout only</td></tr>
+</table>
+
+</div></body></html>

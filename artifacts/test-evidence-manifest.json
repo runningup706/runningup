@@ -1,9 +1,9 @@
 {
   "manifest_version": "1.0.0",
   "generated_by": "tools/release/generate-evidence.mjs",
-  "git_commit": "b5b36fc87a166646ddf169ffe23da9bd5f2c305f",
+  "git_commit": "8a548d8ef09414ccfb8f375436dcbe8f03dec9a1",
   "content_version": "1.0.0",
-  "content_sha256": "5b0ad89528046203d0fc4c99c5874028b1cc73175e97914015c38e35146d2707",
+  "content_sha256": "6ee667003b1e7d62faaac8876427b15fb6e26331225c0a4034559524e47cbaec",
   "suites": [
     {
       "id": "direction_lock",
@@ -49,12 +49,12 @@
     }
   ],
   "database": {
-    "relations": 55,
-    "columns": 441,
-    "constraints": 256,
+    "relations": 68,
+    "columns": 561,
+    "constraints": 329,
     "enums": 9,
-    "functions": 11,
-    "rls_enabled_relations": 55,
+    "functions": 15,
+    "rls_enabled_relations": 68,
     "security_definer_functions_without_pinned_search_path": 0,
     "client_writable_ledger_tables": 0
   },
@@ -80,7 +80,13 @@
       "equipable_cosmetics": 96,
       "story_chapters": 12,
       "launch_seasons": 1,
-      "event_arcs": 3
+      "event_arcs": 3,
+      "my_runner_base_styles": 24,
+      "world_runners": 204,
+      "equipment_slots": 18,
+      "outfit_sets": 120,
+      "wearable_items": 684,
+      "global_events": 6
     },
     "meets_floor": true
   },

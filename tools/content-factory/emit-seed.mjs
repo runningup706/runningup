@@ -43,6 +43,12 @@ const gearSets = items('characters/gear/gear_sets.json');
 const episodes = items('characters/episodes/character_episodes.json');
 const cosmetics = items('characters/cosmetics/cosmetics.json');
 const companions = items('characters/companions.json');
+const baseStyles = items('characters/my_runner/base_styles.json');
+const worldRunners = items('characters/world_runners/world_runners.json');
+const equipmentSlots = items('characters/wardrobe/equipment_slots.json');
+const outfitSets = items('characters/wardrobe/outfit_sets.json');
+const wearableItems = items('characters/wardrobe/wearable_items.json');
+const globalEvents = items('events/global_events.json');
 const ladder = read('progression/monthly_apex_0_1000.json');
 const manifest = read('launch_content_manifest.json');
 
@@ -157,6 +163,38 @@ for (const c of cosmetics) {
 w('');
 for (const c of companions) {
   w(`insert into api.companions (id, display_order, name_key, continent_id, expedition_type) values (${q(c.id)}, ${c.order}, ${q(c.name_key)}, ${q(c.continent_id)}, ${q(c.expedition_type)}) on conflict (id) do nothing;`);
+}
+w('');
+
+w('-- My Runner base styles -----------------------------------------------------------');
+for (const s of baseStyles) {
+  w(`insert into api.my_runner_base_styles (id, display_order, name_key, age_band, build, presentation, skin_tone_id, rig_id, animation_set_id, head_ratio, adaptive_kit_id, selectable_at_launch, paid_gacha, prefab_address, portrait_address, thumbnail_address, content_version) values (${q(s.id)}, ${s.order}, ${q(s.name_key)}, ${q(s.age_band)}, ${q(s.build)}, ${q(s.presentation)}, ${q(s.skin_tone_id)}, ${q(s.rig_id)}, ${q(s.animation_set_id)}, ${s.head_ratio}, ${q(s.adaptive_kit_id)}, ${b(s.selectable_at_launch)}, ${b(s.paid_gacha)}, ${q(s.prefab_address)}, ${q(s.portrait_address)}, ${q(s.thumbnail_address)}, ${q(manifest.content_version)}) on conflict (id) do nothing;`);
+}
+w('');
+
+w('-- Wardrobe: slots, sets, items -----------------------------------------------------');
+for (const s of equipmentSlots) {
+  w(`insert into api.equipment_slots (id, slot, display_order, render_layer, is_required, name_key, icon_address, content_version) values (${q(s.id)}, ${q(s.slot)}, ${s.order}, ${s.layer}, ${b(s.required)}, ${q(s.name_key)}, ${q(s.icon_address)}, ${q(manifest.content_version)}) on conflict (id) do nothing;`);
+}
+w('');
+for (const s of outfitSets) {
+  w(`insert into api.outfit_sets (id, continent_id, display_order, name_key, shape_id, acquisition_source, thumbnail_address, content_version) values (${q(s.id)}, ${q(s.continent_id)}, ${s.order}, ${q(s.name_key)}, ${q(s.shape_id)}, ${q(s.acquisition_source)}, ${q(s.thumbnail_address)}, ${q(manifest.content_version)}) on conflict (id) do nothing;`);
+}
+w('');
+for (const i of wearableItems) {
+  w(`insert into api.wearable_items (id, set_id, continent_id, slot_id, display_order, name_key, compatible_base_style_ids, thumbnail_address, prefab_address, rig_id, acquisition_source, content_version) values (${q(i.id)}, ${q(i.set_id)}, ${q(i.continent_id)}, ${q(i.slot_id)}, ${i.order}, ${q(i.name_key)}, ${arr(i.compatible_base_style_ids)}, ${q(i.thumbnail_address)}, ${q(i.prefab_address)}, ${q(i.rig_id)}, ${q(i.acquisition_source)}, ${q(manifest.content_version)}) on conflict (id) do nothing;`);
+}
+w('');
+
+w('-- World runners -------------------------------------------------------------------');
+for (const r of worldRunners) {
+  w(`insert into api.world_runners (id, display_order, continent_id, home_region_id, name_key, intro_key, base_style_id, role, tendency_id, race_signature, crew_id, crew_slot, open_field, prefab_address, portrait_address, content_version) values (${q(r.id)}, ${r.order}, ${q(r.continent_id)}, ${q(r.home_region_id)}, ${q(r.name_key)}, ${q(r.intro_key)}, ${q(r.base_style_id)}, ${q(r.role)}, ${q(r.tendency_id)}, ${q(r.race_signature)}, ${q(r.crew_id)}, ${n(r.crew_slot)}, ${b(r.open_field)}, ${q(r.prefab_address)}, ${q(r.portrait_address)}, ${q(manifest.content_version)}) on conflict (id) do nothing;`);
+}
+w('');
+
+w('-- Global Events -------------------------------------------------------------------');
+for (const e of globalEvents) {
+  w(`insert into api.global_events (id, display_order, host_continent_id, name_key, distance_meters, cadence, entry_rule, min_participants, max_participants, heat_size, check_in_window_minutes, countdown_seconds, scene_address, enabled, debug_only, content_version) values (${q(e.id)}, ${e.order}, ${q(e.host_continent_id)}, ${q(e.name_key)}, ${e.distance_meters}, ${q(e.cadence)}, ${q(e.entry_rule)}, ${e.min_participants}, ${e.max_participants}, ${e.heat_size}, ${e.check_in_window_minutes}, ${e.countdown_seconds}, ${q(e.scene_address)}, ${b(e.enabled)}, ${b(e.debug_only)}, ${q(manifest.content_version)}) on conflict (id) do nothing;`);
 }
 w('');
 

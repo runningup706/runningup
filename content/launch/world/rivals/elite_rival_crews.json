@@ -11,6 +11,20 @@
       "name_key": "rival.lumena.elite",
       "tactic": "copies whatever pace the player sets and holds it a half-second quicker",
       "trait_id": "trait_even_effort",
+      "runners": [
+        {
+          "world_runner_id": "wrn_lumena_07",
+          "crew_slot": 0
+        },
+        {
+          "world_runner_id": "wrn_lumena_08",
+          "crew_slot": 1
+        },
+        {
+          "world_runner_id": "wrn_lumena_09",
+          "crew_slot": 2
+        }
+      ],
       "prefab_address": "rival/lumena/elite_01"
     },
     {
@@ -20,6 +34,20 @@
       "name_key": "rival.verdia.elite",
       "tactic": "never changes gear, so the soft ground costs her less than it costs the field",
       "trait_id": "trait_soft_footing",
+      "runners": [
+        {
+          "world_runner_id": "wrn_verdia_07",
+          "crew_slot": 0
+        },
+        {
+          "world_runner_id": "wrn_verdia_08",
+          "crew_slot": 1
+        },
+        {
+          "world_runner_id": "wrn_verdia_09",
+          "crew_slot": 2
+        }
+      ],
       "prefab_address": "rival/verdia/elite_01"
     },
     {
@@ -29,6 +57,20 @@
       "name_key": "rival.rubra.elite",
       "tactic": "reads the heat better than anyone and changes gear exactly once, at the vent",
       "trait_id": "trait_late_heat",
+      "runners": [
+        {
+          "world_runner_id": "wrn_rubra_07",
+          "crew_slot": 0
+        },
+        {
+          "world_runner_id": "wrn_rubra_08",
+          "crew_slot": 1
+        },
+        {
+          "world_runner_id": "wrn_rubra_09",
+          "crew_slot": 2
+        }
+      ],
       "prefab_address": "rival/rubra/elite_01"
     },
     {
@@ -38,6 +80,20 @@
       "name_key": "rival.anel.elite",
       "tactic": "sits exactly one stride behind the leader for the whole headwind and comes past at the turn",
       "trait_id": "trait_alternating_wind",
+      "runners": [
+        {
+          "world_runner_id": "wrn_anel_07",
+          "crew_slot": 0
+        },
+        {
+          "world_runner_id": "wrn_anel_08",
+          "crew_slot": 1
+        },
+        {
+          "world_runner_id": "wrn_anel_09",
+          "crew_slot": 2
+        }
+      ],
       "prefab_address": "rival/anel/elite_01"
     },
     {
@@ -47,6 +103,20 @@
       "name_key": "rival.serene.elite",
       "tactic": "times the surge later than anyone and arrives at the span at full speed",
       "trait_id": "trait_forced_surge",
+      "runners": [
+        {
+          "world_runner_id": "wrn_serene_07",
+          "crew_slot": 0
+        },
+        {
+          "world_runner_id": "wrn_serene_08",
+          "crew_slot": 1
+        },
+        {
+          "world_runner_id": "wrn_serene_09",
+          "crew_slot": 2
+        }
+      ],
       "prefab_address": "rival/serene/elite_01"
     },
     {
@@ -56,6 +126,20 @@
       "name_key": "rival.voltis.elite",
       "tactic": "never loses cadence through a turn, so the field pays for corners that cost him nothing",
       "trait_id": "trait_tight_corners",
+      "runners": [
+        {
+          "world_runner_id": "wrn_voltis_07",
+          "crew_slot": 0
+        },
+        {
+          "world_runner_id": "wrn_voltis_08",
+          "crew_slot": 1
+        },
+        {
+          "world_runner_id": "wrn_voltis_09",
+          "crew_slot": 2
+        }
+      ],
       "prefab_address": "rival/voltis/elite_01"
     },
     {
@@ -65,6 +149,20 @@
       "name_key": "rival.hora.elite",
       "tactic": "reads the real horizon off the shadows and never misjudges a distance",
       "trait_id": "trait_blind_pacing",
+      "runners": [
+        {
+          "world_runner_id": "wrn_hora_07",
+          "crew_slot": 0
+        },
+        {
+          "world_runner_id": "wrn_hora_08",
+          "crew_slot": 1
+        },
+        {
+          "world_runner_id": "wrn_hora_09",
+          "crew_slot": 2
+        }
+      ],
       "prefab_address": "rival/hora/elite_01"
     },
     {
@@ -74,6 +172,20 @@
       "name_key": "rival.nival.elite",
       "tactic": "holds an exact effort while cold, so she loses nothing to the opening the field loses",
       "trait_id": "trait_slow_opening",
+      "runners": [
+        {
+          "world_runner_id": "wrn_nival_07",
+          "crew_slot": 0
+        },
+        {
+          "world_runner_id": "wrn_nival_08",
+          "crew_slot": 1
+        },
+        {
+          "world_runner_id": "wrn_nival_09",
+          "crew_slot": 2
+        }
+      ],
       "prefab_address": "rival/nival/elite_01"
     },
     {
@@ -83,6 +195,20 @@
       "name_key": "rival.kael.elite",
       "tactic": "gives away more of the first half than looks survivable and always takes it back",
       "trait_id": "trait_negative_split",
+      "runners": [
+        {
+          "world_runner_id": "wrn_kael_07",
+          "crew_slot": 0
+        },
+        {
+          "world_runner_id": "wrn_kael_08",
+          "crew_slot": 1
+        },
+        {
+          "world_runner_id": "wrn_kael_09",
+          "crew_slot": 2
+        }
+      ],
       "prefab_address": "rival/kael/elite_01"
     },
     {
@@ -92,6 +218,20 @@
       "name_key": "rival.neris.elite",
       "tactic": "sits at the back of the pack all race and only shows herself in the last gallery",
       "trait_id": "trait_pack_draft",
+      "runners": [
+        {
+          "world_runner_id": "wrn_neris_07",
+          "crew_slot": 0
+        },
+        {
+          "world_runner_id": "wrn_neris_08",
+          "crew_slot": 1
+        },
+        {
+          "world_runner_id": "wrn_neris_09",
+          "crew_slot": 2
+        }
+      ],
       "prefab_address": "rival/neris/elite_01"
     },
     {
@@ -101,6 +241,20 @@
       "name_key": "rival.tempora.elite",
       "tactic": "holds a chosen pace to the tenth of a second for as long as the race lasts",
       "trait_id": "trait_exact_pace",
+      "runners": [
+        {
+          "world_runner_id": "wrn_tempora_07",
+          "crew_slot": 0
+        },
+        {
+          "world_runner_id": "wrn_tempora_08",
+          "crew_slot": 1
+        },
+        {
+          "world_runner_id": "wrn_tempora_09",
+          "crew_slot": 2
+        }
+      ],
       "prefab_address": "rival/tempora/elite_01"
     },
     {
@@ -110,6 +264,20 @@
       "name_key": "rival.origin.elite",
       "tactic": "mirrors the player own race plan lap for lap and finishes a stride ahead of it",
       "trait_id": "trait_championship_composite",
+      "runners": [
+        {
+          "world_runner_id": "wrn_origin_07",
+          "crew_slot": 0
+        },
+        {
+          "world_runner_id": "wrn_origin_08",
+          "crew_slot": 1
+        },
+        {
+          "world_runner_id": "wrn_origin_09",
+          "crew_slot": 2
+        }
+      ],
       "prefab_address": "rival/origin/elite_01"
     }
   ]

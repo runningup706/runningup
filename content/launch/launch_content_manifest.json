@@ -23,7 +23,13 @@
     "equipable_cosmetics": 96,
     "story_chapters": 12,
     "launch_seasons": 1,
-    "event_arcs": 3
+    "event_arcs": 3,
+    "my_runner_base_styles": 24,
+    "world_runners": 204,
+    "equipment_slots": 18,
+    "outfit_sets": 120,
+    "wearable_items": 684,
+    "global_events": 6
   },
   "floor": {
     "continents": 12,
@@ -46,14 +52,20 @@
     "equipable_cosmetics": 96,
     "story_chapters": 12,
     "launch_seasons": 1,
-    "event_arcs": 3
+    "event_arcs": 3,
+    "my_runner_base_styles": 24,
+    "world_runners": 200,
+    "equipment_slots": 18,
+    "outfit_sets": 120,
+    "wearable_items": 600,
+    "global_events": 6
   },
   "meets_floor": true,
   "localization_locales": [
     "ko",
     "en"
   ],
-  "localization_key_count": 3251,
+  "localization_key_count": 4511,
   "monthly_apex": {
     "checkpoint_count": 121,
     "final_checkpoint_meters": 1000000,
@@ -64,9 +76,15 @@
     "content/launch/characters/cosmetics/cosmetics.json",
     "content/launch/characters/episodes/character_episodes.json",
     "content/launch/characters/gear/gear_sets.json",
+    "content/launch/characters/my_runner/base_styles.json",
     "content/launch/characters/roster/characters.json",
     "content/launch/characters/techniques/race_techniques.json",
+    "content/launch/characters/wardrobe/equipment_slots.json",
+    "content/launch/characters/wardrobe/outfit_sets.json",
+    "content/launch/characters/wardrobe/wearable_items.json",
+    "content/launch/characters/world_runners/world_runners.json",
     "content/launch/events/event_arcs.json",
+    "content/launch/events/global_events.json",
     "content/launch/progression/monthly_apex_0_1000.json",
     "content/launch/quests/quests.json",
     "content/launch/running/best_effort_distances.json",
@@ -88,5 +106,5 @@
     "content/launch/world/rivals/standard_rival_crews.json",
     "content/launch/world/story_chapters.json"
   ],
-  "content_sha256": "5b0ad89528046203d0fc4c99c5874028b1cc73175e97914015c38e35146d2707"
+  "content_sha256": "6ee667003b1e7d62faaac8876427b15fb6e26331225c0a4034559524e47cbaec"
 }

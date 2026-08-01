@@ -84,7 +84,24 @@
     "equipable_cosmetics": 96,
     "story_chapters": 12,
     "launch_seasons": 1,
-    "event_arcs": 3
+    "event_arcs": 3,
+    "my_runner_base_styles": 24,
+    "world_runners": 200,
+    "equipment_slots": 18,
+    "outfit_sets": 120,
+    "wearable_items": 600,
+    "global_events": 6
+  },
+  "scale_floor": {
+    "my_runner_base_style_min": 24,
+    "pacer_world_runner_min": 200,
+    "wearable_item_min": 600,
+    "outfit_set_min": 120,
+    "equipment_slot_min": 18,
+    "global_event_min_participants": 50,
+    "global_event_max_participants": 100,
+    "one_account_one_main_runner": true,
+    "shrinking_any_of_these_is_a_release_blocker": true
   },
   "core_power": {
     "sources": [
